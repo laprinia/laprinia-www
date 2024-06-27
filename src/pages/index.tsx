@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Canvas } from "@react-three/fiber";
+import WaveTexture from "../molecules/WaveTexture";
 
 const Container = styled.div`
   display: grid;
@@ -32,7 +34,7 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
       : vAlign === "center"
         ? "center"
         : "flex-end"};
-  font-size: ${({ big }) => (big ? "5rem" : "1rem")};
+  font-size: ${({ big }) => (big ? "3rem" : "1rem")};
   font-family: ${({ big }) =>
     big ? "var(--font-heading)" : "var(--font-heading)"};
   padding: 0 1rem;
@@ -40,9 +42,8 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
   p {
     margin: 0;
     padding: 0;
-
-    margin-top: ${({ big }) => (big ? "0rem" : "2rem")};
-    margin-bottom: ${({ big }) => (big ? "0rem" : "1rem")};
+    font-size: ${({ big }) =>
+      big ? "6vw" : "1rem"}; /* Adjusted for scaling */
   }
 
   nav {
@@ -66,14 +67,9 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
   }
 `;
 
-const SpaceBetween = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-`;
-
 const Home = () => {
+  const texturePath = "/dev.png";
+
   return (
     <Container>
       <Box align="left" vAlign="top" big aria-labelledby="name">
@@ -105,12 +101,15 @@ const Home = () => {
         </article>
       </Box>
       <Box align="right" vAlign="bottom" big>
-        <footer aria-labelledby="job-title">
-          <p id="job-title" hidden>
-            Job Title
-          </p>
-          <p>WEB</p>
-          <p>DEVELOPER</p>
+        <footer
+          aria-labelledby="job-title"
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Canvas>
+            <ambientLight intensity={1} />
+            <pointLight position={[10, 10, 10]} />
+            <WaveTexture texturePath={texturePath} />
+          </Canvas>
         </footer>
       </Box>
     </Container>

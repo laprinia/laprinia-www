@@ -5,14 +5,14 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Lavinia Dumitrenco Web Developer</title>
+        <title>laprinia</title>
         <meta
           name="description"
           content="Hi! I am Lavinia, an experienced Web Developer based in Buchares. Currently available for work."
         />
         <meta
           name="keywords"
-          content="Web Developer, Portfolio, Hire Developer, Frontend Romania,Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner"
+          content="Web Developer, Portfolio, Hire Developer, Frontend Romania,Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner, laprinia, laprinion"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
