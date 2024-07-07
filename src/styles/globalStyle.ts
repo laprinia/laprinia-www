@@ -5,7 +5,8 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --font-body: ${robotoFlex.style.fontFamily};
         --font-heading: ${raleway.style.fontFamily};
-        --background-color: #E5E5E5;
+        --background-color: #F6F6F6;
+        --accent-color: #0141D5;
     }
 
     * {

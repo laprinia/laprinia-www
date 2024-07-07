@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { GlobalStyle } from "../styles/globalStyle";
 import Head from "next/head";
+import { NextUIProvider } from "@nextui-org/system";
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
@@ -8,7 +9,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>laprinia</title>
         <meta
           name="description"
-          content="Hi! I am Lavinia, an experienced Web Developer based in Buchares. Currently available for work."
+          content="Hi! I am Lavinia, an experienced Web Developer based in Bucharest. Currently available for work."
         />
         <meta
           name="keywords"
@@ -17,7 +18,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <NextUIProvider>
+        <Component {...pageProps} />
+      </NextUIProvider>
     </>
   );
 };

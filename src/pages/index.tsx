@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import WaveTexture from "../molecules/WaveTexture";
+import { Button } from "@nextui-org/button";
 
 const Container = styled.div`
   display: grid;
@@ -42,8 +43,7 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
   p {
     margin: 0;
     padding: 0;
-    font-size: ${({ big }) =>
-      big ? "6vw" : "1rem"}; /* Adjusted for scaling */
+    font-size: ${({ big }) => (big ? "6vw" : "1rem")};
   }
 
   nav {
@@ -83,9 +83,9 @@ const Home = () => {
           <p id="navigation" hidden>
             Navigation
           </p>
-          <a href="#about">ABOUT</a>
-          <a href="#portfolio">PORTFOLIO</a>
-          <a href="#contact">CONTACT</a>
+          <a href="about">ABOUT</a>
+          <a href="portfolio">PORTFOLIO</a>
+          <a href="contact">CONTACT</a>
         </nav>
       </Box>
       <Box align="left" vAlign="bottom">
@@ -97,7 +97,9 @@ const Home = () => {
             Hi! I am Lavinia, an experienced Web Developer based in Bucharest,
             RO.
           </p>
-          <p>AVAILABLE FOR WORK</p>
+          <Button color="success" variant="shadow">
+            Available for work
+          </Button>
         </article>
       </Box>
       <Box align="right" vAlign="bottom" big>
