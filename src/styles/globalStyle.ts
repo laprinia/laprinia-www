@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         --font-heading: ${raleway.style.fontFamily};
         --background-color: #F6F6F6;
         --accent-color: #0141D5;
+        --cursor-size: 16;
     }
 
     * {
@@ -18,5 +19,9 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: var(--background-color);
         font-family: var(--font-body),sans-serif;
+        cursor: url('/cursor.png') var(--cursor-size) var(--cursor-size), auto;
+    }
+    *:hover, *:active, *:focus {
+        cursor: url('/cursor.png') var(--cursor-size) var(--cursor-size), auto;
     }
 `;
