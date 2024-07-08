@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import WaveTexture from "../molecules/WaveTexture";
+import CursorWaveTexture from "../molecules/textures/CursorWaveTexture";
 import { Button } from "@nextui-org/button";
+import StillTexture from "../molecules/textures/StillTexture";
 
 const Container = styled.div`
   display: grid;
@@ -68,14 +69,20 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
 `;
 
 const Home = () => {
-  const texturePath = "/dev.png";
-
+  const footerPath = "/dev.png";
+  const headerPath = "/name.png";
   return (
     <Container>
       <Box align="left" vAlign="top" big aria-labelledby="name">
-        <header>
-          <p>LAVINIA</p>
-          <p>DUMITRENCO</p>
+        <header
+          aria-labelledby="name"
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Canvas>
+            <ambientLight intensity={1} />
+            <pointLight position={[10, 10, 10]} />
+            <StillTexture texturePath={headerPath} />
+          </Canvas>
         </header>
       </Box>
       <Box align="right" vAlign="top">
@@ -110,7 +117,7 @@ const Home = () => {
           <Canvas>
             <ambientLight intensity={1} />
             <pointLight position={[10, 10, 10]} />
-            <WaveTexture texturePath={texturePath} />
+            <CursorWaveTexture texturePath={footerPath} />
           </Canvas>
         </footer>
       </Box>
