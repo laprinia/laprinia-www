@@ -4,7 +4,6 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   font-size: var(--font-size-L);
 
   @media (max-width: 1023px) {

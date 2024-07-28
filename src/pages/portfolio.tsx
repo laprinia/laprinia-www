@@ -1,16 +1,25 @@
 import React from "react";
-import DummyContainer from "../atoms/DummyContainer/DummyContainer";
-import DummyHeading from "../atoms/DummyHeading/DummyHeading";
 import NavBar from "../organisms/NavBar/NavBar";
 import { navItems } from "../consts";
+import PortfolioContainer from "../organisms/PortfolioContainer/PortfolioContainer";
+import Layout from "../organisms/Layout/Layout";
 
 const Portfolio = () => (
-  <>
+  <Layout>
     <NavBar items={navItems} highlightedIndex={0} />
-    <DummyContainer>
-      <DummyHeading sizing={4}>/* work in progress */</DummyHeading>
-    </DummyContainer>
-  </>
+    <PortfolioContainer category="UI/UX" no="A">
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+    </PortfolioContainer>
+    <PortfolioContainer category="WEB" no="B">
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+      <div style={{ backgroundColor: "lightgray", height: "200px" }}></div>
+    </PortfolioContainer>
+  </Layout>
 );
 
 export default Portfolio;
