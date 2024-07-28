@@ -20,7 +20,8 @@ interface NavItemProps {
   highlighted: boolean;
 }
 
-const NavItem = styled.div<NavItemProps>`
+const NavItem = styled.li<NavItemProps>`
+  list-style: none;
   font-family: var(--font-heading);
   font-weight: ${(props) =>
     props.highlighted ? "var(--font-weight-bold)" : "var(--font-weight-light)"};
@@ -31,11 +32,12 @@ const NavItem = styled.div<NavItemProps>`
   }
 `;
 
-const NavItemsContainer = styled.div`
+const NavItemsContainer = styled.ul`
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 
   @media (max-width: 767px) {
     display: none;
@@ -48,9 +50,10 @@ const CenteredItemWrapper = styled.div`
   flex-grow: 1;
 `;
 
-const NavItems = styled.div`
+const NavItems = styled.ul`
   display: flex;
   justify-content: flex-start;
+  list-style: none;
 
   @media (max-width: 767px) {
     display: none;
@@ -65,7 +68,7 @@ const NavLink = styled.a`
   }
 `;
 
-export const Dropdown = styled.div`
+const Dropdown = styled.div`
   display: none;
   position: relative;
 
@@ -135,7 +138,7 @@ const NavBar = ({
           <NavItem highlighted={true}>
             <NavLink
               href={reorderedItems[0].href}
-              aria-labelledby={`nav-link-highlighted`}
+              aria-labelledby={`${reorderedItems[0].label}`}
             >
               {reorderedItems[0].label}
             </NavLink>
@@ -144,11 +147,7 @@ const NavBar = ({
         <NavItems>
           {reorderedItems.slice(1).map((item, index) => (
             <NavItem key={index} highlighted={false}>
-              <NavLink
-                href={item.href}
-                key={index}
-                aria-labelledby={`nav-link-${index}`}
-              >
+              <NavLink href={item.href} aria-labelledby={`${item.label}`}>
                 {item.label}
               </NavLink>
             </NavItem>
