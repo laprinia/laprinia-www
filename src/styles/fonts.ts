@@ -9,6 +9,6 @@ export const robotoFlex = Roboto_Flex({
 export const raleway = Raleway({
   style: ["normal"],
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["200", "400", "500", "700"],
   variable: "--font-raleway",
 });

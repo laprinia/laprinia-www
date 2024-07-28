@@ -5,6 +5,14 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --font-body: ${robotoFlex.style.fontFamily};
         --font-heading: ${raleway.style.fontFamily};
+        --font-weight-lighter: 200;
+        --font-weight-light: 400;
+        --font-weight-regular: 500;
+        --font-weight-bold: 700;
+        --font-size-XL: 5rem;
+        --font-size-L: 1.5rem;
+        --font-size-M: 1.0rem;
+        --font-size-S: 0.75rem;
         --background-color: #F6F6F6;
         --accent-color: #0141D5;
         --cursor-size: 16;

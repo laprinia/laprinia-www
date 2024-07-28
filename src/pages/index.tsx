@@ -1,16 +1,15 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import CursorWaveTexture from "../molecules/textures/CursorWaveTexture";
-import { Button } from "@nextui-org/button";
 import StillTexture from "../molecules/textures/StillTexture";
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 70% 30%;
-  width: calc(100vw - 4rem);
-  height: calc(100vh - 4rem);
-  margin: 2rem;
+  width: calc(100vw - 5rem);
+  height: calc(100vh - 5rem);
+  margin: 2.5rem;
   gap: 1rem;
 
   @media (max-width: 1023px) {
@@ -26,25 +25,42 @@ const Container = styled.div`
   }
 `;
 
-const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
+const BottomBox = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  p {
+    margin-bottom: 1rem;
+  }
+  font-size: var(--font-size-L);
+  @media (max-width: 1023px) {
+    font-size: "1rem";
+  }
+
+  @media (max-width: 767px) {
+    font-size: "0.75rem";
+  }
+`;
+
+const AvailabilityBox = styled.article`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+`;
+const TopBox = styled.section<{ align: string }>`
   display: flex;
   flex-direction: column;
   align-items: ${({ align }) => (align === "left" ? "flex-start" : "flex-end")};
-  justify-content: ${({ vAlign }) =>
-    vAlign === "top"
-      ? "flex-start"
-      : vAlign === "center"
-        ? "center"
-        : "flex-end"};
-  font-size: ${({ big }) => (big ? "3rem" : "1rem")};
-  font-family: ${({ big }) =>
-    big ? "var(--font-heading)" : "var(--font-heading)"};
+  justify-content: "flex-start";
+  font-size: var(--font-size-L);
+  font-weight: var(--font-weight-light);
   padding: 0 1rem;
 
   p {
     margin: 0;
     padding: 0;
-    font-size: ${({ big }) => (big ? "6vw" : "1rem")};
+    font-size: "1rem";
   }
 
   nav {
@@ -53,6 +69,7 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
     align-items: flex-end;
 
     a {
+      font-weight: var(--font-weight-light);
       margin-bottom: 0.5rem;
       text-decoration: none;
       color: black;
@@ -60,11 +77,11 @@ const Box = styled.section<{ big?: boolean; vAlign: string; align: string }>`
   }
 
   @media (max-width: 1023px) {
-    font-size: ${({ big }) => (big ? "3rem" : "1rem")};
+    font-size: var(--font-size-L);
   }
 
   @media (max-width: 767px) {
-    font-size: ${({ big }) => (big ? "2rem" : "0.75rem")};
+    font-size: var(--font-size-S);
   }
 `;
 
@@ -73,7 +90,7 @@ const Home = () => {
   const headerPath = "/name.png";
   return (
     <Container>
-      <Box align="left" vAlign="top" big aria-labelledby="name">
+      <TopBox align="left" aria-labelledby="name">
         <header
           aria-labelledby="name"
           style={{ width: "100%", height: "100%" }}
@@ -84,8 +101,8 @@ const Home = () => {
             <StillTexture texturePath={headerPath} />
           </Canvas>
         </header>
-      </Box>
-      <Box align="right" vAlign="top">
+      </TopBox>
+      <TopBox align="right">
         <nav aria-labelledby="navigation">
           <p id="navigation" hidden>
             Navigation
@@ -94,8 +111,8 @@ const Home = () => {
           <a href="portfolio">PORTFOLIO</a>
           <a href="contact">CONTACT</a>
         </nav>
-      </Box>
-      <Box align="left" vAlign="bottom">
+      </TopBox>
+      <BottomBox>
         <article aria-labelledby="introduction">
           <p id="introduction" hidden>
             Introduction
@@ -104,12 +121,12 @@ const Home = () => {
             Hi! I am Lavinia, an experienced Web Developer based in Bucharest,
             RO.
           </p>
-          <Button color="success" variant="shadow">
-            Available for work
-          </Button>
         </article>
-      </Box>
-      <Box align="right" vAlign="bottom" big>
+        <AvailabilityBox aria-labelledby="availability">
+          <p>AVAILABLE FOR WORK</p>
+        </AvailabilityBox>
+      </BottomBox>
+      <TopBox align="right">
         <footer
           aria-labelledby="job-title"
           style={{ width: "100%", height: "100%" }}
@@ -120,7 +137,7 @@ const Home = () => {
             <CursorWaveTexture texturePath={footerPath} />
           </Canvas>
         </footer>
-      </Box>
+      </TopBox>
     </Container>
   );
 };
