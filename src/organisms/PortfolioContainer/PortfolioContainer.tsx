@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import MDivider from "../../molecules/Divider/MDivider";
+import React from "react";
 
 const ContainerWrapper = styled.div`
-  margin: 1rem 1rem;
+  margin: 0;
+  padding: 0rem 1rem;
+  width: 100%;
 `;
 
 const CategoryHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 2rem;
   margin-bottom: 1rem;
 `;
 
@@ -28,15 +31,15 @@ const Line = styled.div`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 4rem;
+  width: 100%;
+  box-sizing: border-box;
+  @media (max-width: 1023px) {
+    gap: 3rem;
   }
-
-  @media (min-width: 769px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 767px) {
+    gap: 2rem;
   }
 `;
 
@@ -51,6 +54,7 @@ const PortfolioContainer = ({
 }) => {
   return (
     <ContainerWrapper>
+      <MDivider />
       <CategoryHeader>
         <CategoryText>{`${no}) ${category}`}</CategoryText>
       </CategoryHeader>
