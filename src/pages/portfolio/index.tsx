@@ -1,10 +1,10 @@
 import React from "react";
-import NavBar from "../organisms/NavBar/NavBar";
-import { navItems } from "../consts";
-import PortfolioContainer from "../organisms/PortfolioContainer/PortfolioContainer";
-import Layout from "../organisms/Layout/Layout";
-import ProjectCard from "../molecules/ProjectCard/ProjectCard";
-import MDivider from "../molecules/Divider/MDivider";
+import NavBar from "../../organisms/NavBar/NavBar";
+import { navItems } from "../../consts";
+import PortfolioContainer from "../../organisms/PortfolioContainer/PortfolioContainer";
+import Layout from "../../organisms/Layout/Layout";
+import ProjectCard from "../../molecules/ProjectCard/ProjectCard";
+import MDivider from "../../molecules/Divider/MDivider";
 
 const Portfolio = () => (
   <Layout>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../molecules/textures/CursorWaveTexture";
-import StillTexture from "../molecules/textures/StillTexture";
+import CursorWaveTexture from "../molecules/Texture/CursorWaveTexture";
+import StillTexture from "../molecules/Texture/StillTexture";
 
 const Container = styled.div`
   display: grid;
