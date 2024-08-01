@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Nav = styled.nav`
   display: flex;
@@ -78,39 +79,64 @@ const Dropdown = styled.div`
   }
 `;
 
-const DropdownButton = styled.button`
+const DropdownButton = styled.button<{ isOpen: boolean }>`
   background: none;
   border: none;
-  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.15em;
+  z-index: 10;
 
-  @media (max-width: 767px) {
-    font-size: var(--font-size-L);
+  span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #020000;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
+
+    &:nth-child(1) {
+      transform: ${({ isOpen }) =>
+        isOpen ? "rotate(45deg) translateY(11px)" : "rotate(0)"};
+    }
+
+    &:nth-child(2) {
+      opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+    }
+
+    &:nth-child(3) {
+      transform: ${({ isOpen }) =>
+        isOpen ? "rotate(-45deg) translateY(-11px)" : "rotate(0)"};
+    }
   }
 `;
 
-const DropdownContent = styled.div`
-  display: none;
+const DropdownContent = styled.div<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   top: 100%;
   right: 0;
   background-color: white;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  opacity: 0;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
-
-  ${DropdownButton}:focus + &,
-  ${DropdownButton}:hover + & {
-    display: block;
-    opacity: 1;
-  }
 
   a {
     padding: 1rem;
     display: block;
+    color: black;
+    text-decoration: none;
+    &:hover {
+      background-color: #f1f1f1;
+    }
   }
 `;
 
@@ -121,6 +147,10 @@ const NavBar = ({
   items: { label: string; href: string }[];
   highlightedIndex: number;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
   const reorderedItems = [
     items[highlightedIndex],
     ...items.filter((_, index) => index !== highlightedIndex),
@@ -155,13 +185,22 @@ const NavBar = ({
         </NavItems>
       </NavItemsContainer>
       <Dropdown>
-        <DropdownButton aria-label="Menu">☰</DropdownButton>
-        <DropdownContent>
+        <DropdownButton
+          isOpen={isOpen}
+          onClick={toggleDropdown}
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </DropdownButton>
+        <DropdownContent isOpen={isOpen}>
           {items.map((item, index) => (
             <NavLink
               aria-labelledby={`dropdown-link-${index}`}
               key={index}
               href={item.href}
+              onClick={() => setIsOpen(false)}
             >
               {item.label}
             </NavLink>
