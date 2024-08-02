@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import MDivider from "../../molecules/Divider/MDivider";
+import ContentCarousel from "../../molecules/ContentCarousel/ContentCarousel";
+import ColorSwatches from "../../molecules/ColorSwatches/ColorSwatches";
 
 const ContainerWrapper = styled.div`
   flex-direction: column;
@@ -56,7 +58,6 @@ const MediaComponent = styled.aside`
 
 const ColorComponent = styled.aside`
   flex: 0 0 8%;
-  background-color: #fb6008;
   @media (max-width: 768px) {
     flex: 0 0 10rem;
     width: 100%;
@@ -64,6 +65,10 @@ const ColorComponent = styled.aside`
 `;
 
 const ProjectContainer = () => {
+  const items = [
+    { type: "image", src: "/1.1/1.png" },
+    { type: "image", src: "/insta-template.png" },
+  ];
   return (
     <ContainerWrapper>
       <MDivider />
@@ -78,11 +83,15 @@ const ProjectContainer = () => {
             <h2 hidden id="media-carousel">
               Picture Carousel
             </h2>
+            <ContentCarousel items={items} />
           </MediaComponent>
           <ColorComponent aria-labelledby="color-swatches">
             <h2 hidden id="color-swatches">
               Color Swatches
             </h2>
+            <ColorSwatches
+              colors={["#ECE3E1", "#FB6008", "#FAC205", "#040406", "#040406"]}
+            />
           </ColorComponent>
         </ProjectMediaContainer>
       </ContentContainer>
