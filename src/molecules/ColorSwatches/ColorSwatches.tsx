@@ -7,7 +7,8 @@ interface ColorBoxesProps {
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   height: 100%;
   width: 100%;
 `;
