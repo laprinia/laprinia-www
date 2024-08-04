@@ -47,7 +47,7 @@ const DetailsContainer = styled.section`
 `;
 
 const TextContainer = styled.aside`
-  flex: 0 0 92%;
+  flex: 0 0 85%;
   margin-bottom: 1rem;
   padding: 1rem;
   padding-top: 2rem;
@@ -66,7 +66,7 @@ const TextContainer = styled.aside`
 `;
 
 const ColorComponent = styled.aside`
-  flex: 0 0 8%;
+  flex: 0 0 15%;
   border: 2px solid var(--accent-color);
   @media (max-width: 900px) {
     flex: 0 0 10rem;
@@ -213,23 +213,27 @@ const ProjectContainer = () => {
       <span className="asterisk">*</span>
     </span>
   ));
+
   return (
     <ContainerWrapper>
       <MDivider />
       <ContentContainer>
         <CarouselContainer aria-labelledby="media-carousel">
-          <h1 hidden id="media-carousel">
+          <h2 hidden id="media-carousel">
             Media Carousel
-          </h1>
+          </h2>
           <ContentCarousel items={items} />
         </CarouselContainer>
         <DetailsContainer aria-labelledby="project-media">
           <TextContainer aria-labelledby="project-description">
             <h2 hidden id="project-description">
-              Project Container
+              Project Description
             </h2>
             <Header>{projectName}</Header>
             <LoopingTextContainer>
+              <h2 hidden id="project-description">
+                Technologies Used
+              </h2>
               <LoopingText>{loopingTextContent}</LoopingText>
             </LoopingTextContainer>
             <ButtonContainer>
@@ -256,7 +260,14 @@ const ProjectContainer = () => {
               Color Swatches
             </h2>
             <ColorSwatches
-              colors={["#ECE3E1", "#FB6008", "#FAC205", "#040406", "#040406"]}
+              colors={[
+                "#ECE3E1",
+                "#FB6008",
+                "#FAC205",
+                "#040406",
+                "#040406",
+                "#040406",
+              ]}
             />
           </ColorComponent>
         </DetailsContainer>
