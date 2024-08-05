@@ -9,7 +9,6 @@ const CarouselWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--background-color);
 `;
 
 const CarouselContent = styled.figure<{ active: boolean }>`

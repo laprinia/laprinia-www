@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const Nav = styled.nav`
   display: flex;
+  padding: 1.25rem;
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size-L);
@@ -123,7 +124,6 @@ const DropdownContent = styled.div<{ isOpen: boolean }>`
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
