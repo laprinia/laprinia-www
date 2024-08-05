@@ -76,6 +76,7 @@ const Dropdown = styled.div`
 
   @media (max-width: 767px) {
     display: flex;
+    background-color: var(--background-color);
     align-items: center;
   }
 `;
@@ -105,7 +106,7 @@ const DropdownButton = styled.button<{ isOpen: boolean }>`
 
     &:nth-child(1) {
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(45deg) translateY(11px)" : "rotate(0)"};
+        isOpen ? "rotate(45deg) translateY(9px)" : "rotate(0)"};
     }
 
     &:nth-child(2) {
@@ -114,12 +115,13 @@ const DropdownButton = styled.button<{ isOpen: boolean }>`
 
     &:nth-child(3) {
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(-45deg) translateY(-11px)" : "rotate(0)"};
+        isOpen ? "rotate(-45deg) translateY(-9px)" : "rotate(0)"};
     }
   }
 `;
 
 const DropdownContent = styled.div<{ isOpen: boolean }>`
+  background-color: var(--background-color);
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   top: 100%;

@@ -79,6 +79,22 @@ const ProjectContainer = () => {
       header: "B) Process",
       text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
     },
+    {
+      header: "A) About",
+      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
+    },
+    {
+      header: "B) Process",
+      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
+    },
+    {
+      header: "A) About",
+      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
+    },
+    {
+      header: "B) Process",
+      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
+    },
   ];
 
   const colors = [

@@ -3,13 +3,13 @@ import React from "react";
 import styled from "styled-components";
 
 const TextContainer = styled.aside`
-  flex: 0 0 85%;
+  flex: 1;
+  max-height: 85vh;
   padding: 1rem;
   padding-top: 2rem;
   border-bottom: 0.25rem solid var(--accent-color);
   display: flex;
   flex-direction: column;
-  height: 100%;
   overflow: hidden;
   box-sizing: border-box;
 
@@ -70,7 +70,7 @@ const LoopingText = styled.div`
 
 const ScrollArea = styled.div`
   overflow-y: auto;
-  flex: 1;
+  flex-grow: 1;
 `;
 
 const Section = styled.section`
