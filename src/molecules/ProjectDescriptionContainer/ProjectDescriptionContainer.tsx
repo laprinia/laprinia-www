@@ -14,8 +14,9 @@ const TextContainer = styled.aside`
   box-sizing: border-box;
 
   @media (max-width: 900px) {
+    padding-top: 0rem;
     border: none;
-    flex: 0 0 30rem;
+    flex: 0 0 40rem;
     width: 100%;
     margin-bottom: 1rem;
   }

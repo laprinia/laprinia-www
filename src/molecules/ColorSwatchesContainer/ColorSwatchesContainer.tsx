@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Container = styled.aside`
   flex: 0 0 15%;
   @media (max-width: 900px) {
-    flex: 0 0 10rem;
+    flex: 0 0 5rem;
     width: 100%;
   }
 `;

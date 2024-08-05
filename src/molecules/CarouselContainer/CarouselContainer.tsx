@@ -9,7 +9,7 @@ const Container = styled.article`
 
   @media (max-width: 900px) {
     border: none;
-    flex: 0 0 60rem;
+    flex: 0 0 20rem;
     width: 100%;
     margin-right: 0;
     margin-bottom: 1rem;
