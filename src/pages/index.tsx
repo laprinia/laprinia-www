@@ -1,9 +1,70 @@
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import CursorWaveTexture from "../molecules/Texture/CursorWaveTexture";
 import StillTexture from "../molecules/Texture/StillTexture";
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 5rem);
+  height: calc(100vh - 5rem);
+  margin: 2.5rem;
+  gap: 1rem;
+
+  @media (max-width: 767px) {
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 2rem);
+    margin: 1rem;
+    gap: 0.5rem;
+  }
+`;
+
+const Navbar = styled.nav`
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    font-weight: var(--font-weight-light);
+    text-decoration: none;
+    color: black;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+`;
+
+const CanvasSectionWrapper = styled.div`
+  height: 60%;
+  display: flex;
+  align-items: flex-end;
+`;
+
+const CanvasSection = styled.div`
+  width: 100%;
+  height: 60%;
+`;
+
+const InfoSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40%; /* Remaining 40% height */
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    justify-content: space-evenly !important;
+  }
+`;
+
+// Styled components for tablet/desktop
+const OriginalContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 70% 30%;
@@ -18,14 +79,11 @@ const Container = styled.div`
   }
 
   @media (max-width: 767px) {
-    margin: 1rem;
-    width: calc(100vw - 2rem);
-    height: calc(100vh - 2rem);
-    gap: 0.5rem;
+    display: none;
   }
 `;
 
-const BottomBox = styled.section`
+const BottomAllignedBox = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -48,7 +106,8 @@ const AvailabilityBox = styled.article`
   flex-direction: row;
   gap: 1rem;
 `;
-const TopBox = styled.section<{ align: string }>`
+
+const TopAllignedBox = styled.section<{ align: string }>`
   display: flex;
   flex-direction: column;
   align-items: ${({ align }) => (align === "left" ? "flex-start" : "flex-end")};
@@ -81,16 +140,64 @@ const TopBox = styled.section<{ align: string }>`
   }
 
   @media (max-width: 767px) {
-    font-size: var(--font-size-S);
+    display: none;
   }
 `;
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const footerPath = "/dev.png";
   const headerPath = "/name.png";
-  return (
+  const mobilePath = "/mobile.png";
+
+  return isMobile ? (
     <Container>
-      <TopBox align="left" aria-labelledby="name">
+      <Navbar aria-labelledby="navigation">
+        <p id="navigation" hidden>
+          Navigation
+        </p>
+        <a href="about">ABOUT</a>
+        <a href="portfolio">PORTFOLIO</a>
+        <a href="contact">CONTACT</a>
+      </Navbar>
+
+      <CanvasSectionWrapper>
+        <CanvasSection>
+          <Canvas>
+            <ambientLight intensity={3} />
+            <pointLight position={[10, 10, 10]} intensity={1} />
+            <CursorWaveTexture texturePath={mobilePath} isAutoAnimated />
+          </Canvas>
+        </CanvasSection>
+      </CanvasSectionWrapper>
+
+      <InfoSection>
+        <p id="introduction" hidden>
+          Introduction
+        </p>
+        <p>
+          Hi! I am Lavinia, an experienced Web Developer based in Bucharest, RO.
+        </p>
+        <p>AVAILABLE FOR WORK</p>
+      </InfoSection>
+    </Container>
+  ) : (
+    <OriginalContainer>
+      <TopAllignedBox align="left" aria-labelledby="name">
         <header
           aria-labelledby="name"
           style={{ width: "100%", height: "100%" }}
@@ -101,8 +208,8 @@ const Home = () => {
             <StillTexture texturePath={headerPath} />
           </Canvas>
         </header>
-      </TopBox>
-      <TopBox align="right">
+      </TopAllignedBox>
+      <TopAllignedBox align="right">
         <nav aria-labelledby="navigation">
           <p id="navigation" hidden>
             Navigation
@@ -111,8 +218,8 @@ const Home = () => {
           <a href="portfolio">PORTFOLIO</a>
           <a href="contact">CONTACT</a>
         </nav>
-      </TopBox>
-      <BottomBox>
+      </TopAllignedBox>
+      <BottomAllignedBox>
         <article aria-labelledby="introduction">
           <p id="introduction" hidden>
             Introduction
@@ -125,8 +232,8 @@ const Home = () => {
         <AvailabilityBox aria-labelledby="availability">
           <p>AVAILABLE FOR WORK</p>
         </AvailabilityBox>
-      </BottomBox>
-      <TopBox align="right">
+      </BottomAllignedBox>
+      <TopAllignedBox align="right">
         <footer
           aria-labelledby="job-title"
           style={{ width: "100%", height: "100%" }}
@@ -137,8 +244,8 @@ const Home = () => {
             <CursorWaveTexture texturePath={footerPath} />
           </Canvas>
         </footer>
-      </TopBox>
-    </Container>
+      </TopAllignedBox>
+    </OriginalContainer>
   );
 };
 

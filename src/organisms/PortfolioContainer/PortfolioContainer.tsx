@@ -54,7 +54,7 @@ const PortfolioContainer = ({
 }) => {
   return (
     <ContainerWrapper>
-      <MDivider />
+      {!no.startsWith("A") && <MDivider />}
       <CategoryHeader>
         <CategoryText>{`${no}) ${category}`}</CategoryText>
       </CategoryHeader>
