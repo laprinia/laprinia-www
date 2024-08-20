@@ -11,8 +11,11 @@ export const GlobalStyle = createGlobalStyle`
         --font-weight-bold: 700;
         --font-size-XL: 5rem;
         --font-size-L: 1.25rem;
+        --font-size-L-heading: 2rem;
         --font-size-M: 1.0rem;
-        --font-size-S: 0.75rem;
+        --font-size-M-heading: 1.5rem;
+        --font-size-S: 0.875rem;
+        --font-size-S-heading: 1.24rem;
         --background-color: #F6F6F6;
         --accent-color: #0141D5;
     }

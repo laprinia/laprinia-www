@@ -39,12 +39,13 @@ const BottomAllignedBox = styled.section`
     margin-bottom: 1rem;
   }
   font-size: var(--font-size-L);
+
   @media (max-width: 1023px) {
-    font-size: "1rem";
+    font-size: var(--font-size-M);
   }
 
   @media (max-width: 767px) {
-    font-size: "0.75rem";
+    font-size: var(--font-size-S);
   }
 `;
 

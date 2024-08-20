@@ -38,12 +38,12 @@ const InfoSection = styled.section`
     margin: 0;
   }
   @media (max-width: 1023px) {
-    font-size: "1rem";
+    font-size: var(--font-size-M);
+  }
+  @media (max-width: 767px) {
+    font-size: var(--font-size-S);
   }
 
-  @media (max-width: 767px) {
-    font-size: "0.75rem";
-  }
   @media (max-width: 767px) {
     justify-content: space-evenly !important;
   }

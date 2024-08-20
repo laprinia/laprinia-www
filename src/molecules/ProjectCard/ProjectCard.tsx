@@ -54,6 +54,9 @@ const ProjectName = styled.h2`
   font-size: var(--font-size-M);
   font-weight: var(--font-weight-regular);
   margin: 0;
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-S);
+  }
 `;
 
 const Year = styled.h3`
@@ -61,6 +64,9 @@ const Year = styled.h3`
   font-size: var(--font-size-M);
   font-weight: var(--font-weight-regular);
   margin: 0;
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-S);
+  }
 `;
 
 const TechText = styled.p`
@@ -68,6 +74,9 @@ const TechText = styled.p`
   font-size: var(--font-size-M);
   font-weight: var(--font-weight-lighter);
   margin: 0.5rem 0;
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-S);
+  }
 `;
 
 const ProjectCard = ({

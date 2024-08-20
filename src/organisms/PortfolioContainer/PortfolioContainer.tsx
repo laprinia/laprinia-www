@@ -20,6 +20,14 @@ const CategoryText = styled.div`
   font-size: var(--font-size-L);
   font-weight: var(--font-weight-bold);
   color: var(--accent-color);
+    @media (max-width: 1023px) {
+        font-size: var(--font-size-M);
+    }
+    @media (max-width: 767px) {
+
+        font-size: var(--font-size-S);
+    }
+  }
 `;
 
 const Line = styled.div`

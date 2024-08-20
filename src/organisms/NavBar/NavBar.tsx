@@ -13,6 +13,7 @@ const Nav = styled.nav`
   }
 
   @media (max-width: 767px) {
+    font-size: var(--font-size-S);
     flex-direction: row;
     align-items: center;
   }
