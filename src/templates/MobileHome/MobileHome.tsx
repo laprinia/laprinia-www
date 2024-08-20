@@ -33,11 +33,17 @@ const InfoSection = styled.section`
   justify-content: space-evenly;
   height: 40%;
   text-align: center;
-
+  font-size: var(--font-size-L);
   p {
     margin: 0;
   }
+  @media (max-width: 1023px) {
+    font-size: "1rem";
+  }
 
+  @media (max-width: 767px) {
+    font-size: "0.75rem";
+  }
   @media (max-width: 767px) {
     justify-content: space-evenly !important;
   }

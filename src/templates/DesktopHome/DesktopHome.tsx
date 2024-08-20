@@ -33,7 +33,7 @@ const CanvasSection = styled.div`
 const BottomAllignedBox = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 
   p {
     margin-bottom: 1rem;
@@ -117,7 +117,7 @@ const DesktopHome = ({
       <TopAllignedBox align="right">
         <HomeNavBar />
       </TopAllignedBox>
-      <BottomAllignedBox>
+      <BottomAllignedBox style={{ marginTop: "4rem" }}>
         <article aria-labelledby="introduction">
           <p id="introduction" hidden>
             Introduction
