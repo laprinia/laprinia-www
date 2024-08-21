@@ -29,10 +29,10 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: var(--background-color);
         font-family: var(--font-body),sans-serif;
-        cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
+        //cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
     }
 
     *:hover, *:active, *:focus {
-        cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
+        //cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
     }
 `;

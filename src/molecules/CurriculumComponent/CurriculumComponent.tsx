@@ -1,35 +1,39 @@
 import React from "react";
 import styled from "styled-components";
+import { aboutIntroduction } from "../../consts";
 
 const Container = styled.main`
   font-family: var(--font-heading);
-  background-color: aquamarine;
-  width: 70%;
-  padding: 1rem;
+  width: 65%;
+  padding: 1.5rem;
   box-sizing: border-box;
 `;
 
 const Description = styled.section`
+  font-size: var(--font-size-M);
   height: 20%;
-  margin-bottom: 1rem;
-  background: #e0e0e0;
+  padding-bottom: 1.5rem;
+  display: flex;
+  align-items: top;
+  p {
+    text-align: justify;
+  }
 `;
 
 const CurriculumText = styled.section`
-  height: 60%;
+  height: 70%;
   display: flex;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 `;
 
 const Column = styled.article`
-  background-color: darkgreen;
   flex: 1;
-  padding: 0 0.5rem;
+  padding-right: 0 0.5rem;
 `;
 
 const TechnologiesComponent = styled.section`
   padding-bottom: 1rem;
-  height: 20%;
+  height: 10%;
   background: #e0e0e0;
 `;
 
@@ -40,14 +44,14 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
 
   return (
     <Container>
-      <Description aria-labelledby="description">Description here</Description>
+      <Description aria-labelledby="description">
+        <p>{aboutIntroduction}</p>
+      </Description>
       <CurriculumText aria-labelledby="curriculum">
         <Column>{leftColumn}</Column>
         <Column>{rightColumn}</Column>
       </CurriculumText>
-      <TechnologiesComponent aria-labelledby="technologies">
-        Technologies here
-      </TechnologiesComponent>
+      <TechnologiesComponent aria-labelledby="technologies"></TechnologiesComponent>
     </Container>
   );
 };

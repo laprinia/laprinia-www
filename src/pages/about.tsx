@@ -5,6 +5,12 @@ import Layout from "../organisms/Layout/Layout";
 import styled from "styled-components";
 import CurriculumComponent from "../molecules/CurriculumComponent/CurriculumComponent";
 import HeadshotComponent from "../molecules/HeadshotComponent/HeadshotComponent";
+import ExperienceArticle from "../molecules/ExperienceArticle/ExperienceArticle";
+import KeyStrenghtsArticle from "../molecules/KeyStrengthsArticle/KeyStrenghtsArticle";
+import HobbiesArticle from "../molecules/HobbiesArticle/HobbiesArticle";
+import EducationArticle from "../molecules/EducationArticle/EducationArticle";
+import LanguageArticle from "../molecules/LanguageArticle/LanguageArticle";
+import CertificationArticle from "../molecules/CertificationsArticle/CertificationArticle";
 
 const Wrapper = styled.div`
   margin: 0 1.5rem;
@@ -20,10 +26,12 @@ const ContainerWrapper = styled.section`
 
 const About = () => {
   const articles = [
-    <p key="1">Article 1</p>,
-    <p key="2">Article 2</p>,
-    <p key="3">Article 3</p>,
-    <p key="4">Article 4</p>,
+    <ExperienceArticle />,
+    <KeyStrenghtsArticle />,
+    <HobbiesArticle />,
+    <EducationArticle />,
+    <CertificationArticle />,
+    <LanguageArticle />,
   ];
   return (
     <Layout>

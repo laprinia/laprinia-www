@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.aside`
-  width: 30%;
+  width: 35%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   border-right: 0.25rem solid var(--accent-color);
+  padding-bottom: 2rem;
 `;
 
 const HeadshotImage = styled.img`
