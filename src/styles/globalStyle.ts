@@ -8,14 +8,17 @@ export const GlobalStyle = createGlobalStyle`
         --font-weight-lighter: 200;
         --font-weight-light: 400;
         --font-weight-regular: 500;
+        --font-weight-semibold: 600;
         --font-weight-bold: 700;
         --font-size-XL: 5rem;
         --font-size-L: 1.25rem;
         --font-size-L-heading: 2rem;
         --font-size-M: 1.0rem;
-        --font-size-M-heading: 1.5rem;
+        --font-size-M-heading: 1.25rem;
         --font-size-S: 0.875rem;
         --font-size-S-heading: 1.24rem;
+        --font-size-XS: 0.775rem;
+        --font-size-XS-heading: 1rem;
         --background-color: #F6F6F6;
         --accent-color: #0141D5;
     }
@@ -28,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: var(--background-color);
-        font-family: var(--font-body),sans-serif;
+        font-family: var(--font-heading),sans-serif;
         //cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
     }
 

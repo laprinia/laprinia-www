@@ -12,9 +12,9 @@ import EducationArticle from "../molecules/EducationArticle/EducationArticle";
 import LanguageArticle from "../molecules/LanguageArticle/LanguageArticle";
 import CertificationArticle from "../molecules/CertificationsArticle/CertificationArticle";
 
-const Wrapper = styled.div`
-  margin: 0 1.5rem;
-`;
+// const Wrapper = styled.div`
+//   margin: 0 1.5rem;
+// `;
 
 const ContainerWrapper = styled.section`
   display: flex;

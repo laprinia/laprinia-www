@@ -37,15 +37,6 @@ const TechnologiesComponent = styled.section`
   height: 10%;
 `;
 
-const LoopingTextContainer = styled.div`
-  overflow: hidden;
-  margin-bottom: 1rem;
-  flex-shrink: 0;
-  position: relative;
-  height: 100%;
-  width: 100%;
-`;
-
 const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
   const midIndex = Math.ceil(articles.length / 2);
   const leftColumn = articles.slice(0, midIndex);
@@ -77,9 +68,6 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
     "Accessibility",
     "SEO",
   ];
-  const loopingTextContent = tags.map((tag, index) => (
-    <span key={index} style={{ paddingRight: "1rem" }}>{`${tag}`}</span>
-  ));
   return (
     <Container>
       <Description aria-labelledby="description">
@@ -90,16 +78,8 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
         <Column>{rightColumn}</Column>
       </CurriculumText>
       <TechnologiesComponent aria-labelledby="skills">
-        <section hidden aria-labelledby="skills-used">
-          {tags.map((tag, index) => (
-            <p hidden key={index}>
-              {tag}
-            </p>
-          ))}
-        </section>
-        <LoopingTextContainer>
-          <LoopingText loopingTextContent={loopingTextContent} reverse={true} />
-        </LoopingTextContainer>
+        <LoopingText items={tags} />
+        <LoopingText items={tags.reverse()} isReverse />
       </TechnologiesComponent>
     </Container>
   );

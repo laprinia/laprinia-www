@@ -1,13 +1,11 @@
-import ButtonContainer from "../ButtonContainer/ButtonContainer";
 import React from "react";
 import styled from "styled-components";
-import LoopingText from "../LoopingText/LoopingText";
+import ButtonContainer from "../ButtonContainer/ButtonContainer";
 
 const TextContainer = styled.aside`
   flex: 1;
   max-height: 85vh;
-  padding: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem 1rem;
   border-bottom: 0.25rem solid var(--accent-color);
   display: flex;
   flex-direction: column;
@@ -24,18 +22,20 @@ const TextContainer = styled.aside`
 `;
 
 const Header = styled.div`
-  font-size: var(--font-size-L);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-M-heading);
+  font-weight: var(--font-weight-semibold);
   color: var(--accent-color);
   margin-bottom: 1rem;
 `;
 
 const LoopingTextContainer = styled.div`
-  overflow: hidden;
-  margin-bottom: 1rem;
-  flex-shrink: 0;
-  position: relative;
+  display: flex;
+  flex: 1;
   height: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
 `;
 
 const ScrollArea = styled.div`
@@ -48,11 +48,11 @@ const Section = styled.section`
 
   h2 {
     font-size: var(--font-size-M);
-    font-weight: bold;
     margin-bottom: 1rem;
   }
 
   p {
+    font-family: var(--font-heading);
     font-size: var(--font-size-M);
     text-align: justify;
   }
@@ -69,13 +69,6 @@ const ProjectDescriptionContainer = ({
   buttons: { imageSrc: string; alt: string; link: string }[];
   content: { header: string; text: string }[];
 }) => {
-  const loopingTextContent = tags.map((tag, index) => (
-    <span key={index}>
-      {tag}
-      <span className="asterisk">*</span>
-    </span>
-  ));
-
   return (
     <TextContainer aria-labelledby="project-description">
       <h2 hidden id="project-description">
@@ -83,10 +76,7 @@ const ProjectDescriptionContainer = ({
       </h2>
       <Header>{projectName}</Header>
       <LoopingTextContainer>
-        <h2 hidden id="project-description">
-          Technologies Used
-        </h2>
-        <LoopingText loopingTextContent={loopingTextContent} />
+        {/*<LoopingText items={tags} />*/}
       </LoopingTextContainer>
       <ButtonContainer buttons={buttons} />
       <ScrollArea>

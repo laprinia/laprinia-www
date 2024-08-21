@@ -18,7 +18,7 @@ const CategoryHeader = styled.div`
 const CategoryText = styled.div`
   font-family: var(--font-heading);
   font-size: var(--font-size-L);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--accent-color);
     @media (max-width: 1023px) {
         font-size: var(--font-size-M);

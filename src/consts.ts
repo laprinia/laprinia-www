@@ -1,7 +1,7 @@
 export const navItems = [
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "/contact" },
-  { label: "About", href: "/about" },
+  { label: "PORTFOLIO", href: "/portfolio" },
+  { label: "CONTACT", href: "/contact" },
+  { label: "ABOUT", href: "/about" },
 ];
 
 export const mobileHeroPath = "/mobile.png";

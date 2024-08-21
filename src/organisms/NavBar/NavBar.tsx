@@ -6,14 +6,14 @@ const Nav = styled.nav`
   padding: 1.25rem;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--font-size-L);
+  font-size: var(--font-size-M-heading);
 
   @media (max-width: 1023px) {
-    font-size: var(--font-size-M);
+    font-size: var(--font-size-S-heading);
   }
 
   @media (max-width: 767px) {
-    font-size: var(--font-size-S);
+    font-size: var(--font-size-XS-heading);
     flex-direction: row;
     align-items: center;
   }
@@ -27,7 +27,9 @@ const NavItem = styled.li<NavItemProps>`
   list-style: none;
   font-family: var(--font-heading);
   font-weight: ${(props) =>
-    props.highlighted ? "var(--font-weight-bold)" : "var(--font-weight-light)"};
+    props.highlighted
+      ? "var(--font-weight-semibold)"
+      : "var(--font-weight-light)"};
   margin: 0 1rem;
 
   @media (max-width: 767px) {
@@ -163,7 +165,7 @@ const NavBar = ({
     <Nav>
       <NavItem highlighted={true}>
         <NavLink aria-labelledby="home-link" href="/">
-          LD // Home
+          LD // HOME
         </NavLink>
       </NavItem>
       <NavItemsContainer>
