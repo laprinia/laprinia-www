@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { aboutIntroduction } from "../../consts";
+import LoopingText from "../LoopingText/LoopingText";
 
 const Container = styled.main`
   font-family: var(--font-heading);
@@ -34,14 +35,51 @@ const Column = styled.article`
 const TechnologiesComponent = styled.section`
   padding-bottom: 1rem;
   height: 10%;
-  background: #e0e0e0;
+`;
+
+const LoopingTextContainer = styled.div`
+  overflow: hidden;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
 `;
 
 const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
   const midIndex = Math.ceil(articles.length / 2);
   const leftColumn = articles.slice(0, midIndex);
   const rightColumn = articles.slice(midIndex);
-
+  const tags = [
+    "React",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "Figma",
+    "Adobe XD",
+    "Next.js",
+    "WebGL",
+    "D3",
+    "SASS",
+    "Storybook",
+    "Playwright",
+    "Redux",
+    "Node.js",
+    "REST",
+    "React Testing Library",
+    "Jest",
+    "AWS",
+    "Docker",
+    "Angular",
+    "OpenGL",
+    "C++",
+    "Responsive Design",
+    "Accessibility",
+    "SEO",
+  ];
+  const loopingTextContent = tags.map((tag, index) => (
+    <span key={index} style={{ paddingRight: "1rem" }}>{`${tag}`}</span>
+  ));
   return (
     <Container>
       <Description aria-labelledby="description">
@@ -51,7 +89,18 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
         <Column>{leftColumn}</Column>
         <Column>{rightColumn}</Column>
       </CurriculumText>
-      <TechnologiesComponent aria-labelledby="technologies"></TechnologiesComponent>
+      <TechnologiesComponent aria-labelledby="skills">
+        <section hidden aria-labelledby="skills-used">
+          {tags.map((tag, index) => (
+            <p hidden key={index}>
+              {tag}
+            </p>
+          ))}
+        </section>
+        <LoopingTextContainer>
+          <LoopingText loopingTextContent={loopingTextContent} reverse={true} />
+        </LoopingTextContainer>
+      </TechnologiesComponent>
     </Container>
   );
 };

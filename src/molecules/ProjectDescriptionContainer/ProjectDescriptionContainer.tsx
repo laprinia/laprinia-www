@@ -1,6 +1,7 @@
 import ButtonContainer from "../ButtonContainer/ButtonContainer";
 import React from "react";
 import styled from "styled-components";
+import LoopingText from "../LoopingText/LoopingText";
 
 const TextContainer = styled.aside`
   flex: 1;
@@ -35,37 +36,6 @@ const LoopingTextContainer = styled.div`
   flex-shrink: 0;
   position: relative;
   height: 1.5rem;
-`;
-
-const LoopingText = styled.div`
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll 30s linear infinite;
-  font-size: var(--font-size-M);
-  font-weight: var(--font-weight-bold);
-  color: var(--accent-color);
-  position: absolute;
-  will-change: transform;
-
-  span {
-    display: inline-flex;
-    align-items: end;
-  }
-
-  .asterisk {
-    margin: 0 0.5rem;
-    transform: translateY(35%);
-    font-size: var(--font-size-L);
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 `;
 
 const ScrollArea = styled.div`
@@ -116,7 +86,7 @@ const ProjectDescriptionContainer = ({
         <h2 hidden id="project-description">
           Technologies Used
         </h2>
-        <LoopingText>{loopingTextContent}</LoopingText>
+        <LoopingText loopingTextContent={loopingTextContent} />
       </LoopingTextContainer>
       <ButtonContainer buttons={buttons} />
       <ScrollArea>
