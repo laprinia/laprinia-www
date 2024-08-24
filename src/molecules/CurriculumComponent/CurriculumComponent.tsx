@@ -5,24 +5,35 @@ import LoopingText from "../LoopingText/LoopingText";
 
 const Container = styled.main`
   font-family: var(--font-heading);
+  display: flex;
+  flex-direction: column;
   width: 65%;
-  padding: 1.5rem;
+  padding: 2rem;
   box-sizing: border-box;
+  overflow: hidden;
+`;
+
+const ScrollableWrapper = styled.div`
+  flex: 1 1 80%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 `;
 
 const Description = styled.section`
+  flex: 0 1 auto;
   font-size: var(--font-size-M);
-  height: 20%;
   padding-bottom: 1.5rem;
   display: flex;
-  align-items: top;
+  align-items: flex-start;
+
   p {
     text-align: justify;
   }
 `;
 
 const CurriculumText = styled.section`
-  height: 70%;
+  flex: 1 1 auto;
   display: flex;
   padding-bottom: 2rem;
 `;
@@ -33,8 +44,10 @@ const Column = styled.article`
 `;
 
 const TechnologiesComponent = styled.section`
-  padding-bottom: 1rem;
-  height: 10%;
+  flex: 0 1 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
@@ -70,13 +83,15 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
   ];
   return (
     <Container>
-      <Description aria-labelledby="description">
-        <p>{aboutIntroduction}</p>
-      </Description>
-      <CurriculumText aria-labelledby="curriculum">
-        <Column>{leftColumn}</Column>
-        <Column>{rightColumn}</Column>
-      </CurriculumText>
+      <ScrollableWrapper>
+        <Description aria-labelledby="description">
+          <p>{aboutIntroduction}</p>
+        </Description>
+        <CurriculumText aria-labelledby="curriculum">
+          <Column>{leftColumn}</Column>
+          <Column>{rightColumn}</Column>
+        </CurriculumText>
+      </ScrollableWrapper>
       <TechnologiesComponent aria-labelledby="skills">
         <LoopingText items={tags} />
         <LoopingText items={tags.reverse()} isReverse />

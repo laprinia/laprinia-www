@@ -22,6 +22,11 @@ const ContainerWrapper = styled.section`
   margin: 0;
   padding: 0 0rem;
   border-top: 0.25rem solid var(--accent-color);
+  overflow: auto; /* Manage overflow on cross axis */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  /* Optional: Add max-width and max-height if necessary */
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 const About = () => {

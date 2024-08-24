@@ -3,36 +3,43 @@ import styled from "styled-components";
 
 const Container = styled.aside`
   width: 35%;
-  padding: 1rem;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   border-right: 0.25rem solid var(--accent-color);
-  padding-bottom: 2rem;
+  padding: 1rem 1rem 1rem;
+  box-sizing: border-box;
 `;
 
 const HeadshotImage = styled.img`
-  flex: 0 0 80%;
+  flex: 1 1 auto;
   object-fit: contain;
   width: 100%;
-  height: auto;
+  max-height: 80%;
 `;
 
 const HeadshotButtonContainer = styled.nav`
+  width: 100%;
+  height: 20%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  flex: 0 0 20%;
+  gap: 0.5rem 0.5rem;
+  align-items: flex-end;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const HeadshotButton = styled.button`
-  width: 3rem;
-  height: 3rem;
+  width: auto;
+  height: auto;
+  font-size: var(--font-size-M);
   margin: 0 0.25rem;
   border: none;
-  background: gray;
+  background: var(--accent-color);
+  color: white;
   box-sizing: border-box;
-
+  padding: 0 1rem;
   &:first-child {
     margin-left: 0;
   }
@@ -47,10 +54,10 @@ const HeadshotComponent = () => {
     <Container>
       <HeadshotImage src="/headshot.png" alt="Headshot" />
       <HeadshotButtonContainer aria-labelledby="headshot-buttons">
-        <HeadshotButton id="button-1">1</HeadshotButton>
-        <HeadshotButton id="button-2">2</HeadshotButton>
-        <HeadshotButton id="button-3">3</HeadshotButton>
-        <HeadshotButton id="button-4">4</HeadshotButton>
+        <HeadshotButton id="button-1">LinkedIn</HeadshotButton>
+        <HeadshotButton id="button-2">Behance</HeadshotButton>
+        <HeadshotButton id="button-3">GitHub</HeadshotButton>
+        <HeadshotButton id="button-4">Instagram</HeadshotButton>
       </HeadshotButtonContainer>
     </Container>
   );

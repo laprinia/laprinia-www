@@ -18,7 +18,6 @@ const ScrollingTextContainer = styled.div`
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-M);
   color: var(--accent-color);
-  margin-bottom: 1rem;
 `;
 
 const ScrollingTextInner = styled.div<{
