@@ -7,14 +7,14 @@ const Container = styled.main`
   font-family: var(--font-heading);
   display: flex;
   flex-direction: column;
-  width: 65%;
+  flex: 1;
   padding: 2rem;
   box-sizing: border-box;
   overflow: hidden;
 `;
 
-const ScrollableWrapper = styled.div`
-  flex: 1 1 80%;
+const ScrollableWrapper = styled.article`
+  flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -44,10 +44,17 @@ const Column = styled.article`
 `;
 
 const TechnologiesComponent = styled.section`
-  flex: 0 1 20%;
+  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+`;
+
+// Parent component that uses Container
+const LayoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 65%;
 `;
 
 const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
@@ -81,22 +88,25 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
     "Accessibility",
     "SEO",
   ];
+
   return (
-    <Container>
-      <ScrollableWrapper>
-        <Description aria-labelledby="description">
-          <p>{aboutIntroduction}</p>
-        </Description>
-        <CurriculumText aria-labelledby="curriculum">
-          <Column>{leftColumn}</Column>
-          <Column>{rightColumn}</Column>
-        </CurriculumText>
-      </ScrollableWrapper>
-      <TechnologiesComponent aria-labelledby="skills">
-        <LoopingText items={tags} />
-        <LoopingText items={tags.reverse()} isReverse />
-      </TechnologiesComponent>
-    </Container>
+    <LayoutWrapper>
+      <Container>
+        <ScrollableWrapper aria-labelledby="about">
+          <Description aria-labelledby="description">
+            <p>{aboutIntroduction}</p>
+          </Description>
+          <CurriculumText aria-labelledby="curriculum">
+            <Column>{leftColumn}</Column>
+            <Column>{rightColumn}</Column>
+          </CurriculumText>
+        </ScrollableWrapper>
+        <TechnologiesComponent aria-labelledby="skills">
+          <LoopingText items={tags} />
+          <LoopingText items={tags.reverse()} isReverse />
+        </TechnologiesComponent>
+      </Container>
+    </LayoutWrapper>
   );
 };
 
