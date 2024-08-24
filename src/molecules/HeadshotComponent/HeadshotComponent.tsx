@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  behanceLink,
+  githubLink,
+  instagramLink,
+  linkedinLink,
+} from "../../consts";
 
 const Container = styled.aside`
   width: 35%;
@@ -23,29 +29,43 @@ const HeadshotButtonContainer = styled.nav`
   height: 20%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 0.5rem;
+  justify-content: space-evenly;
   align-items: flex-end;
+  gap: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
 
-const HeadshotButton = styled.button`
-  width: auto;
-  height: auto;
+const HeadshotButton = styled.a`
+  flex: 1 1 auto;
+  height: 2rem;
+  max-width: 4rem;
+  min-width: 4rem;
   font-size: var(--font-size-M);
-  margin: 0 0.25rem;
   border: none;
   background: var(--accent-color);
   color: white;
-  box-sizing: border-box;
-  padding: 0 1rem;
-  &:first-child {
-    margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0.5rem;
+  text-decoration: none;
+
+  img {
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+    width: auto;
+    display: block;
   }
 
-  &:last-child {
-    margin-right: 0;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--darker-accent-color);
+  }
+
+  &:hover img {
+    transform: scale(1.1);
   }
 `;
 
@@ -54,10 +74,38 @@ const HeadshotComponent = () => {
     <Container>
       <HeadshotImage src="/headshot.png" alt="Headshot" />
       <HeadshotButtonContainer aria-labelledby="headshot-buttons">
-        <HeadshotButton id="button-1">LinkedIn</HeadshotButton>
-        <HeadshotButton id="button-2">Behance</HeadshotButton>
-        <HeadshotButton id="button-3">GitHub</HeadshotButton>
-        <HeadshotButton id="button-4">Instagram</HeadshotButton>
+        <HeadshotButton
+          id="button-1"
+          href={linkedinLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/social/linkedin.png" alt="LinkedIn logo" />
+        </HeadshotButton>
+        <HeadshotButton
+          id="button-2"
+          href={behanceLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/social/behance.png" alt="Behance logo" />
+        </HeadshotButton>
+        <HeadshotButton
+          id="button-3"
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/social/github.png" alt="Github logo" />
+        </HeadshotButton>
+        <HeadshotButton
+          id="button-4"
+          href={instagramLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/social/instagram.png" alt="Instagram logo" />
+        </HeadshotButton>
       </HeadshotButtonContainer>
     </Container>
   );

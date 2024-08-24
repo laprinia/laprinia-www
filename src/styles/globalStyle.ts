@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
         --font-size-XS-heading: 1rem;
         --background-color: #F6F6F6;
         --accent-color: #0141D5;
+        --darker-accent-color: #0136af;
     }
 
     * {
@@ -31,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: var(--background-color);
-        font-family: var(--font-heading),sans-serif;
+        font-family: var(--font-heading), sans-serif;
         //cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
     }
 
