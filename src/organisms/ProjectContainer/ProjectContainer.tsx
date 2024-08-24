@@ -59,12 +59,12 @@ const ProjectContainer = () => {
   ];
   const buttons = [
     {
-      imageSrc: "/behance.png",
+      imageSrc: "/social/behance.png",
       alt: "Behance",
       link: "https://www.behance.com/",
     },
     {
-      imageSrc: "/github.png",
+      imageSrc: "/social/github.png",
       alt: "GitHub",
       link: "https://github.com/",
     },
