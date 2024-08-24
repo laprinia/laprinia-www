@@ -39,7 +39,7 @@ const Line = styled.div`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 4rem;
   width: 100%;
   box-sizing: border-box;

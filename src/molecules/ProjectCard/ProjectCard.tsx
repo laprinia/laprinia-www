@@ -4,7 +4,7 @@ import styled from "styled-components";
 const CardContainer = styled.article`
   overflow: hidden;
   width: 100%;
-  height: 300px;
+  height: 18.7rem;
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -17,12 +17,12 @@ const CardContainer = styled.article`
 `;
 
 const ImageContainer = styled.figure`
-  width: 100%;
+  width: max(16rem, 100%);
   height: 70%;
   margin: 0;
   background-size: cover;
   background-position: center;
-  position: relative;
+  align-self: center;
   background-image: url(${(props) => props.imagePath});
 
   img {

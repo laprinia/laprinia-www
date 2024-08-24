@@ -9,6 +9,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   margin: 0 1.5rem;
+  overflow-y: auto;
 `;
 
 const Portfolio = () => (
