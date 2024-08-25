@@ -17,6 +17,7 @@ const Article = styled.article`
   }
   h2 {
     font-size: var(--font-size-M);
+    font-weight: var(--font-weight-semibold);
   }
   p {
     text-align: justify;

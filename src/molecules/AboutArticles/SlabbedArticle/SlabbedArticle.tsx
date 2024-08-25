@@ -6,6 +6,7 @@ const Article = styled.article<{ isActive: boolean }>`
 
   h2 {
     font-size: var(--font-size-M);
+    font-weight: var(--font-weight-semibold);
   }
   section {
     margin-bottom: 1rem;
