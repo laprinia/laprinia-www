@@ -2,7 +2,7 @@ import SectionedArticle from "../SectionedArticle/SectionedArticle";
 
 const EducationArticle = () => {
   return (
-    <SectionedArticle aria-labelledby="education" heading={"D) Education"}>
+    <SectionedArticle aria-labelledby="education" heading={"D) EDUCATION"}>
       <section>
         <p>
           2020-2022 Master's Degree in <strong>Computer Graphics</strong>

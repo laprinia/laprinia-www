@@ -25,3 +25,58 @@ export const behanceLink = "https://www.behance.net/lavinialoghin";
 export const githubLink = "https://github.com/laprinia";
 
 export const instagramLink = "https://www.instagram.com/laprinion/";
+
+export const technologiesTags = [
+  "React",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "Figma",
+  "Adobe XD",
+  "Next.js",
+  "WebGL",
+  "D3",
+  "SASS",
+  "Storybook",
+  "Playwright",
+  "Redux",
+  "Node.js",
+  "REST",
+  "React Testing Library",
+  "Jest",
+  "AWS",
+  "Docker",
+  "Angular",
+  "OpenGL",
+  "C++",
+  "Responsive Design",
+  "Accessibility",
+  "SEO",
+];
+
+export const socialButtons = [
+  {
+    id: "button-1",
+    href: linkedinLink,
+    imgSrc: "/social/linkedin.png",
+    alt: "LinkedIn Logo",
+  },
+  {
+    id: "button-2",
+    href: behanceLink,
+    imgSrc: "/social/behance.png",
+    alt: "Behance Logo",
+  },
+  {
+    id: "button-3",
+    href: githubLink,
+    imgSrc: "/social/github.png",
+    alt: "GitHub Logo",
+  },
+  {
+    id: "button-4",
+    href: instagramLink,
+    imgSrc: "/social/instagram.png",
+    alt: "Instagram Logo",
+  },
+];

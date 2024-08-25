@@ -4,7 +4,7 @@ const HobbiesArticle = () => {
   return (
     <SlabbedArticle
       aria-labelledby="hobbies"
-      heading={"C) Hobbies"}
+      heading={"C) HOBBIES"}
       slabs={[
         "PHOTOGRAPHY",
         "VIDEOGRAPHY",

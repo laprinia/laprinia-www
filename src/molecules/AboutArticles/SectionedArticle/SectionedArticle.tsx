@@ -10,6 +10,10 @@ const Article = styled.article`
     margin-bottom: 1rem;
     margin-top: 0.5rem;
     margin-right: 1rem;
+
+    p strong {
+      font-weight: var(--font-weight-regular);
+    }
   }
   h2 {
     font-size: var(--font-size-M);

@@ -2,7 +2,7 @@ import SectionedArticle from "../SectionedArticle/SectionedArticle";
 
 const LanguageArticle = () => {
   return (
-    <SectionedArticle aria-labelledby="experience" heading={"F) Languages"}>
+    <SectionedArticle aria-labelledby="experience" heading={"F) LANGUAGES"}>
       <section>
         <p>Romanian - Native</p>
       </section>

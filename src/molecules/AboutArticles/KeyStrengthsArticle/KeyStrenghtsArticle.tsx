@@ -4,7 +4,7 @@ const KeyStrengthsArticle = () => {
   return (
     <SlabbedArticle
       aria-labelledby="key-strenghts"
-      heading={"B) Key Strengths"}
+      heading={"B) KEY STRENGTHS"}
       slabs={[
         "CREATIVE",
         "RESPONSIBLE",

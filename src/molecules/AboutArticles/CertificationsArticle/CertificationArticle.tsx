@@ -4,7 +4,7 @@ const CertificationArticle = () => {
   return (
     <SectionedArticle
       aria-labelledby="experience"
-      heading={"E) Certifications"}
+      heading={"E) CERTIFICATIONS"}
     >
       <section>
         <p>2024 Figma UI/UX Design Essentials, Udemy</p>
