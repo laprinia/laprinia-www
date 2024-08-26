@@ -7,6 +7,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size-M-heading);
+  position: relative;
 
   @media (max-width: 1023px) {
     font-size: var(--font-size-S-heading);
@@ -40,7 +41,7 @@ const NavItem = styled.li<NavItemProps>`
 const NavItemsContainer = styled.ul`
   display: flex;
   flex-grow: 1;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   list-style: none;
 
@@ -53,11 +54,14 @@ const CenteredItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-grow: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const NavItems = styled.ul`
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   list-style: none;
 
   @media (max-width: 767px) {
