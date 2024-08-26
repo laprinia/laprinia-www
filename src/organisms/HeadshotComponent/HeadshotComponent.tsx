@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { socialButtons } from "../../consts";
-import SocialButtonsContainer from "../../organisms/SocialButtonsContainer/SocialButtonsContainer";
-import HeadshotImage from "../HeadshotImage/HeadshotImage";
+import SocialButtonsContainer from "../SocialButtonsContainer/SocialButtonsContainer";
+import HeadshotImage from "../../molecules/HeadshotImage/HeadshotImage";
 
 const Container = styled.aside`
   width: 35%;

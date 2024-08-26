@@ -4,7 +4,7 @@ import CarouselContainer from "../../molecules/CarouselContainer/CarouselContain
 import ProjectDescriptionContainer from "../../molecules/ProjectDescriptionContainer/ProjectDescriptionContainer";
 import ColorSwatchesContainer from "../../molecules/ColorSwatchesContainer/ColorSwatchesContainer";
 
-const ContainerWrapper = styled.div`
+const ContainerWrapper = styled.main`
   font-family: var(--font-heading), serif;
   flex-direction: column;
   margin: 0;

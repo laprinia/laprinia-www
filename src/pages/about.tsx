@@ -9,7 +9,7 @@ import {
 import Layout from "../organisms/Layout/Layout";
 import styled from "styled-components";
 import CurriculumComponent from "../molecules/CurriculumComponent/CurriculumComponent";
-import HeadshotComponent from "../molecules/HeadshotComponent/HeadshotComponent";
+import HeadshotComponent from "../organisms/HeadshotComponent/HeadshotComponent";
 import ExperienceArticle from "../molecules/AboutArticles/ExperienceArticle/ExperienceArticle";
 import KeyStrengthsArticle from "../molecules/AboutArticles/KeyStrengthsArticle/KeyStrenghtsArticle";
 import HobbiesArticle from "../molecules/AboutArticles/HobbiesArticle/HobbiesArticle";

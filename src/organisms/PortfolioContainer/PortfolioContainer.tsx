@@ -2,13 +2,13 @@ import styled from "styled-components";
 import MDivider from "../../molecules/Divider/MDivider";
 import React from "react";
 
-const ContainerWrapper = styled.div`
+const ContainerWrapper = styled.main`
   margin: 0;
   padding: 0rem 1rem;
   width: 100%;
 `;
 
-const CategoryHeader = styled.div`
+const CategoryHeader = styled.article`
   display: flex;
   justify-content: flex-end;
   align-items: center;
