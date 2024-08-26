@@ -1,12 +1,37 @@
 import styled from "styled-components";
 import BisectorText from "../../molecules/BisectorText/BisectorText";
 
+const ContainerWrapper = styled.main`
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
+  margin: 0;
+  padding: 0 0rem;
+  display: flex;
+  flex: 1;
+`;
+
 const ContactContainer = styled.section`
   width: 70%;
   height: 90%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    height: 90%;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -18,6 +43,15 @@ const LeftContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1023px) {
+    border: none;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
 `;
 
 const RightContainer = styled.div`
@@ -27,6 +61,11 @@ const RightContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 40%;
+  }
 `;
 
 const Form = styled.form`
@@ -93,25 +132,32 @@ const Button = styled.button`
 
 const ContactForm = () => {
   return (
-    <ContactContainer>
-      <LeftContainer>
-        <Form>
-          <Label htmlFor="name">A) NAME:</Label>
-          <Input id="name" type="text" aria-label="Your Name" required />
+    <ContainerWrapper>
+      <ContactContainer>
+        <LeftContainer>
+          <Form>
+            <Label htmlFor="name">A) NAME:</Label>
+            <Input id="name" type="text" aria-label="Your Name" required />
 
-          <Label htmlFor="email">B) EMAIL:</Label>
-          <Input id="email" type="email" aria-label="Your Email" required />
+            <Label htmlFor="email">B) EMAIL:</Label>
+            <Input id="email" type="email" aria-label="Your Email" required />
 
-          <Label htmlFor="message">C) YOUR MESSAGE:</Label>
-          <TextArea id="message" rows={5} aria-label="Your Message" required />
+            <Label htmlFor="message">C) YOUR MESSAGE:</Label>
+            <TextArea
+              id="message"
+              rows={5}
+              aria-label="Your Message"
+              required
+            />
 
-          <Button type="submit">SUBMIT</Button>
-        </Form>
-      </LeftContainer>
-      <RightContainer>
-        <BisectorText paragraphs={["1.", "Let's", "Talk"]} />
-      </RightContainer>
-    </ContactContainer>
+            <Button type="submit">SUBMIT</Button>
+          </Form>
+        </LeftContainer>
+        <RightContainer>
+          <BisectorText paragraphs={["1.", "Let's", "Talk"]} />
+        </RightContainer>
+      </ContactContainer>
+    </ContainerWrapper>
   );
 };
 
