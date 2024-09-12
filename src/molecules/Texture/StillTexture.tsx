@@ -31,7 +31,7 @@ const StillTexture = ({ texturePath }: { texturePath: string }) => {
   return (
     <Plane
       ref={meshRef}
-      args={[planeSize[0], planeSize[1], 32, 32]}
+      args={[planeSize[0] * 0.95, planeSize[1] * 0.95, 32, 32]}
       position={[
         viewport.width / 2 - planeSize[0] / 2,
         viewport.height / 2 - planeSize[1] / 2,

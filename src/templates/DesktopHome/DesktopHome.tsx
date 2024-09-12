@@ -3,7 +3,7 @@ import StillTexture from "../../molecules/Texture/StillTexture";
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
 import { introductionItems } from "../../consts";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const DesktopContainer = styled.div`
@@ -37,10 +37,10 @@ const Box = styled.section`
   box-sizing: border-box;
 `;
 
-const TopAllignedBox = styled(Box)<{ align: string }>`
+const TopAlignedBox = styled(Box)<{ align: string }>`
   top: 0;
   ${({ align }) => (align === "left" ? "left: 0;" : "right: 0;")}
-
+  margin-right: 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: ${({ align }) => (align === "left" ? "flex-start" : "flex-end")};
@@ -52,7 +52,7 @@ const TopAllignedBox = styled(Box)<{ align: string }>`
   p {
     margin: 0;
     padding: 0;
-    font-size: "1rem";
+    font-size: 1rem;
   }
 
   nav {
@@ -77,7 +77,9 @@ const TopAllignedBox = styled(Box)<{ align: string }>`
   }
 `;
 
-const BottomAllignedBox = styled(Box)<{ align: string }>`
+const BottomAlignedBox = styled(Box)<{ align: string }>`
+  margin-left: 1.25rem;
+  margin-bottom: 0.5rem;
   bottom: 0;
   ${({ align }) => (align === "left" ? "left: 0;" : "right: 0;")}
   display: flex;
@@ -85,7 +87,7 @@ const BottomAllignedBox = styled(Box)<{ align: string }>`
   justify-content: flex-start;
 `;
 
-const BottomAllignedBoxContent = styled.section`
+const BottomAlignedBoxContent = styled.section`
   display: flex;
   gap: 1.25rem;
   flex-direction: column;
@@ -123,9 +125,22 @@ const DesktopHome = ({
   headerHeroPath: string;
   footerHeroPath: string;
 }) => {
+  const [isTablet, setIsTablet] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTablet(window.innerWidth <= 1023);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <DesktopContainer>
-      <TopAllignedBox align="left" aria-labelledby="name">
+      <TopAlignedBox align="left" aria-labelledby="name">
         <p id="name" hidden>
           Lavinia Dumitrenco
         </p>
@@ -145,14 +160,14 @@ const DesktopHome = ({
             </Canvas>
           </CanvasSection>
         </header>
-      </TopAllignedBox>
+      </TopAlignedBox>
 
-      <TopAllignedBox align="right">
+      <TopAlignedBox align="right">
         <HomeNavBar />
-      </TopAllignedBox>
+      </TopAlignedBox>
 
-      <BottomAllignedBox align="left">
-        <BottomAllignedBoxContent>
+      <BottomAlignedBox align="left">
+        <BottomAlignedBoxContent>
           <article aria-labelledby="introduction">
             <p id="introduction" hidden>
               Introduction
@@ -162,10 +177,10 @@ const DesktopHome = ({
           <AvailabilityBox aria-labelledby="availability">
             <p>{introductionItems[1]}</p>
           </AvailabilityBox>
-        </BottomAllignedBoxContent>
-      </BottomAllignedBox>
+        </BottomAlignedBoxContent>
+      </BottomAlignedBox>
 
-      <BottomAllignedBox align="right">
+      <BottomAlignedBox align="right">
         <p id="title" hidden>
           Web Developer
         </p>
@@ -181,11 +196,15 @@ const DesktopHome = ({
               camera={{ position: [0, 0, 5] }}
             >
               <ambientLight />
-              <CursorWaveTexture texturePath={footerHeroPath} />
+              <CursorWaveTexture
+                texturePath={footerHeroPath}
+                isAutoAnimated={isTablet}
+                animationSpeed={0.4}
+              />
             </Canvas>
           </CanvasSection>
         </footer>
-      </BottomAllignedBox>
+      </BottomAlignedBox>
     </DesktopContainer>
   );
 };

@@ -6,9 +6,11 @@ import * as THREE from "three";
 const CursorWaveTexture = ({
   texturePath,
   isAutoAnimated = false,
+  animationSpeed = 0.8,
 }: {
   texturePath: string;
   isAutoAnimated?: boolean;
+  animationSpeed?: number;
 }) => {
   const meshRef = useRef<THREE.Mesh>(null!);
   const targetIntensityRef = useRef(0);
@@ -50,19 +52,18 @@ const CursorWaveTexture = ({
         Math.pow(clientX - canvasCenterRef.current.x, 2) +
           Math.pow(clientY - canvasCenterRef.current.y, 2),
       );
-
       const maxDistance = Math.sqrt(
         Math.pow(viewport.width / 2, 2) + Math.pow(viewport.height / 2, 2),
       );
 
-      const newTargetIntensity = (distance * 0.5) / maxDistance / 100;
+      const newTargetIntensity = (distance * 0.5) / maxDistance / 200;
       targetIntensityRef.current = Math.max(0.01, newTargetIntensity);
     };
 
     if (!isAutoAnimated) {
       window.addEventListener("mousemove", handleMouseMove);
     } else {
-      targetIntensityRef.current = 0.8;
+      targetIntensityRef.current = animationSpeed;
     }
 
     return () => {
@@ -84,7 +85,7 @@ const CursorWaveTexture = ({
 
         const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);
         const waveX2 = 0.25 * Math.sin(vertex.x * 1.5 + time);
-        const waveY1 = 0.5 * Math.sin(vertex.y * 2.5 + time * 2);
+        const waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);
 
         vertex.z = targetIntensityRef.current * (waveX1 + waveX2 + waveY1);
 
@@ -102,10 +103,12 @@ const CursorWaveTexture = ({
   return (
     <Plane
       ref={meshRef}
-      args={[planeSize[0], planeSize[1], 32, 32]}
+      args={[planeSize[0] * 0.8, planeSize[1] * 0.95, 32, 32]}
       position={[
-        viewport.width / 2 - planeSize[0] / 2,
-        -viewport.height / 2 + planeSize[1] / 2,
+        viewport.width / 2 -
+          planeSize[0] / 2 +
+          planeSize[1] * (animationSpeed === 0.8 ? 0 : 0.15),
+        -viewport.height / 2 + planeSize[1] / 2 + planeSize[1] * 0.0005,
         0,
       ]}
     >
