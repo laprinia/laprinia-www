@@ -5,6 +5,7 @@ import { introductionItems } from "../../consts";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
 
 const DesktopContainer = styled.div`
   position: relative;
@@ -96,6 +97,10 @@ const BottomAlignedBoxContent = styled.section`
   width: 40%;
   height: 100%;
 
+  p {
+    text-align: justify;
+  }
+
   @media (max-width: 1023px) {
     font-size: var(--font-size-heading1-tablet);
     width: 50%;
@@ -104,12 +109,6 @@ const BottomAlignedBoxContent = styled.section`
   @media (max-width: 767px) {
     font-size: var(--font-size-heading1-tablet);
   }
-`;
-
-const AvailabilityBox = styled.article`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
 `;
 
 const CanvasSection = styled.div`
@@ -174,9 +173,7 @@ const DesktopHome = ({
             </p>
             <p>{introductionItems[0]}</p>
           </article>
-          <AvailabilityBox aria-labelledby="availability">
-            <p>{introductionItems[1]}</p>
-          </AvailabilityBox>
+          <PulsatingBadge />
         </BottomAlignedBoxContent>
       </BottomAlignedBox>
 

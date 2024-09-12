@@ -4,6 +4,7 @@ import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import { introductionItems } from "../../consts";
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
 
 const MobileContainer = styled.main`
   display: flex;
@@ -26,6 +27,7 @@ const InfoSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   height: 40%;
   text-align: center;
 
@@ -71,9 +73,8 @@ const MobileHome = ({ mobileHeroPath }: { mobileHeroPath: string }) => {
         <p id="introduction" hidden>
           Introduction
         </p>
-        {introductionItems.map((item, index) => (
-          <p>{item}</p>
-        ))}
+        <p>{introductionItems[0]}</p>
+        <PulsatingBadge />
       </InfoSection>
     </MobileContainer>
   );
