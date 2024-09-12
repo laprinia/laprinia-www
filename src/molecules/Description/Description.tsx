@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const DescriptionContainer = styled.section`
   flex: 0 1 auto;
-  font-size: var(--font-size-M);
   padding-bottom: 1.5rem;
   display: flex;
   align-items: flex-start;

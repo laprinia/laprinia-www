@@ -6,15 +6,15 @@ const Nav = styled.nav`
   padding: 1.25rem;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--font-size-M-heading);
+  font-size: var(--font-size-heading1-desktop);
   position: relative;
 
   @media (max-width: 1023px) {
-    font-size: var(--font-size-S-heading);
+    font-size: var(--font-size-heading1-tablet);
   }
 
   @media (max-width: 767px) {
-    font-size: var(--font-size-XS-heading);
+    font-size: var(--font-size-heading1-phone);
     flex-direction: row;
     align-items: center;
   }
@@ -26,7 +26,6 @@ interface NavItemProps {
 
 const NavItem = styled.li<NavItemProps>`
   list-style: none;
-  font-family: var(--font-heading);
   font-weight: ${(props) =>
     props.highlighted
       ? "var(--font-weight-semibold)"

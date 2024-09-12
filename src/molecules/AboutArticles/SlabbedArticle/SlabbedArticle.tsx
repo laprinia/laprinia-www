@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
 const Article = styled.article<{ isActive: boolean }>`
-  font-family: var(--font-heading);
-  font-size: var(--font-size-M);
-
   h2 {
-    font-size: var(--font-size-M);
+    font-size: var(--font-size-base-desktop);
     font-weight: var(--font-weight-semibold);
   }
   section {

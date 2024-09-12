@@ -5,7 +5,6 @@ import ProjectDescriptionContainer from "../../molecules/ProjectDescriptionConta
 import ColorSwatchesContainer from "../../molecules/ColorSwatchesContainer/ColorSwatchesContainer";
 
 const ContainerWrapper = styled.main`
-  font-family: var(--font-heading), serif;
   flex-direction: column;
   margin: 0;
   padding: 0 0rem;

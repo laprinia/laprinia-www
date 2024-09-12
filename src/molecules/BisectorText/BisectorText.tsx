@@ -9,10 +9,9 @@ const Container = styled.div`
   height: auto;
   padding: 2rem;
   box-sizing: border-box;
-  font-family: var(--font-heading);
   font-size: 4rem;
   font-weight: var(--font-weight-bold);
-  color: white;
+  color: var(--background-color);
 
   @media (max-width: 1023px) {
     font-size: 3rem;

@@ -22,7 +22,6 @@ const HeadshotButton = styled.a`
   height: 2rem;
   max-width: 4rem;
   min-width: 4rem;
-  font-size: var(--font-size-M);
   border: none;
   background: var(--accent-color);
   color: white;

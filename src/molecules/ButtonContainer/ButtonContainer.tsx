@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 
   button {
     width: 2rem;

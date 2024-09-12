@@ -7,17 +7,19 @@ import React from "react";
 import styled from "styled-components";
 
 const DesktopContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 70% 30%;
-  width: calc(100vw - 5rem);
-  height: calc(100vh - 5rem);
-  margin: 2.5rem;
-  gap: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 2.5rem);
+  height: calc(100vh - 2.5rem);
+  margin: 1.25rem;
+  padding: 0;
 
   @media (max-width: 1023px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    flex-direction: column;
+    height: calc(100vh - 2.5rem);
+    width: calc(100vw - 2.5rem);
+    margin: 1.25rem;
   }
 
   @media (max-width: 767px) {
@@ -25,37 +27,20 @@ const DesktopContainer = styled.div`
   }
 `;
 
-const CanvasSection = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-const BottomAllignedBox = styled.section`
+const Box = styled.section`
+  position: absolute;
+  width: calc(50% - 1.25rem);
+  height: calc(50% - 1.25rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  p {
-    margin-bottom: 1rem;
-  }
-  font-size: var(--font-size-L);
-
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-M);
-  }
-
-  @media (max-width: 767px) {
-    font-size: var(--font-size-S);
-  }
+  padding: 1rem;
+  box-sizing: border-box;
 `;
 
-const AvailabilityBox = styled.article`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-`;
+const TopAllignedBox = styled(Box)<{ align: string }>`
+  top: 0;
+  ${({ align }) => (align === "left" ? "left: 0;" : "right: 0;")}
 
-const TopAllignedBox = styled.section<{ align: string }>`
   display: flex;
   flex-direction: column;
   align-items: ${({ align }) => (align === "left" ? "flex-start" : "flex-end")};
@@ -92,6 +77,45 @@ const TopAllignedBox = styled.section<{ align: string }>`
   }
 `;
 
+const BottomAllignedBox = styled(Box)<{ align: string }>`
+  bottom: 0;
+  ${({ align }) => (align === "left" ? "left: 0;" : "right: 0;")}
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+const BottomAllignedBoxContent = styled.section`
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 40%;
+  height: 100%;
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-heading1-tablet);
+    width: 50%;
+  }
+
+  @media (max-width: 767px) {
+    font-size: var(--font-size-heading1-tablet);
+  }
+`;
+
+const AvailabilityBox = styled.article`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+`;
+
+const CanvasSection = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
 const DesktopHome = ({
   headerHeroPath,
   footerHeroPath,
@@ -102,47 +126,66 @@ const DesktopHome = ({
   return (
     <DesktopContainer>
       <TopAllignedBox align="left" aria-labelledby="name">
+        <p id="name" hidden>
+          Lavinia Dumitrenco
+        </p>
         <header
           aria-labelledby="name"
           style={{ width: "100%", height: "100%" }}
         >
           <CanvasSection>
-            <Canvas>
-              <ambientLight intensity={1} />
-              <pointLight position={[10, 10, 10]} />
+            <Canvas
+              resize={{ debounce: { scroll: 50, resize: 50 } }}
+              gl={{ antialias: true }}
+              style={{ width: "100%", height: "100%" }}
+              camera={{ position: [0, 0, 5] }}
+            >
+              <ambientLight />
               <StillTexture texturePath={headerHeroPath} />
             </Canvas>
           </CanvasSection>
         </header>
       </TopAllignedBox>
+
       <TopAllignedBox align="right">
         <HomeNavBar />
       </TopAllignedBox>
-      <BottomAllignedBox style={{ marginTop: "4rem" }}>
-        <article aria-labelledby="introduction">
-          <p id="introduction" hidden>
-            Introduction
-          </p>
-          <p>{introductionItems[0]}</p>
-        </article>
-        <AvailabilityBox aria-labelledby="availability">
-          <p>{introductionItems[1]}</p>
-        </AvailabilityBox>
+
+      <BottomAllignedBox align="left">
+        <BottomAllignedBoxContent>
+          <article aria-labelledby="introduction">
+            <p id="introduction" hidden>
+              Introduction
+            </p>
+            <p>{introductionItems[0]}</p>
+          </article>
+          <AvailabilityBox aria-labelledby="availability">
+            <p>{introductionItems[1]}</p>
+          </AvailabilityBox>
+        </BottomAllignedBoxContent>
       </BottomAllignedBox>
-      <TopAllignedBox align="right">
+
+      <BottomAllignedBox align="right">
+        <p id="title" hidden>
+          Web Developer
+        </p>
         <footer
           aria-labelledby="job-title"
           style={{ width: "100%", height: "100%" }}
         >
           <CanvasSection>
-            <Canvas>
-              <ambientLight intensity={1} />
-              <pointLight position={[10, 10, 10]} />
+            <Canvas
+              resize={{ debounce: { scroll: 50, resize: 50 } }}
+              gl={{ antialias: true }}
+              style={{ width: "100%", height: "100%" }}
+              camera={{ position: [0, 0, 5] }}
+            >
+              <ambientLight />
               <CursorWaveTexture texturePath={footerHeroPath} />
             </Canvas>
           </CanvasSection>
         </footer>
-      </TopAllignedBox>
+      </BottomAllignedBox>
     </DesktopContainer>
   );
 };

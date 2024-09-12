@@ -14,9 +14,7 @@ const ScrollingTextContainer = styled.div`
   overflow: hidden;
   position: relative;
   width: 100%;
-  font-family: var(--font-heading);
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-M);
   color: var(--accent-color);
 `;
 

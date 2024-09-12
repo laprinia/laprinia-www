@@ -6,7 +6,6 @@ import DoubleTextRibbon from "../../organisms/TextRibbon/DoubleTextRibbon";
 import ArticlesContainer from "../../organisms/ArticlesContainer/ArticlesContainer";
 
 const Container = styled.main`
-  font-family: var(--font-heading);
   display: flex;
   flex-direction: column;
   flex: 1;

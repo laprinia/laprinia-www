@@ -16,18 +16,9 @@ const CategoryHeader = styled.article`
 `;
 
 const CategoryText = styled.div`
-  font-family: var(--font-heading);
-  font-size: var(--font-size-L);
+  font-size: var(--font-size-heading1-desktop);
   font-weight: var(--font-weight-semibold);
   color: var(--accent-color);
-    @media (max-width: 1023px) {
-        font-size: var(--font-size-M);
-    }
-    @media (max-width: 767px) {
-
-        font-size: var(--font-size-S);
-    }
-  }
 `;
 
 const Line = styled.div`
@@ -62,7 +53,7 @@ const PortfolioContainer = ({
 }) => {
   return (
     <ContainerWrapper>
-      {!no.startsWith("A") && <MDivider />}
+      <MDivider />
       <CategoryHeader>
         <CategoryText>{`${no}) ${category}`}</CategoryText>
       </CategoryHeader>

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ReactNode } from "react";
 
 const Paragraph = styled.p<{ sizing: number; fontColor: string }>`
-  font-size: ${({ sizing }) => sizing}rem;
   text-align: center;
   color: ${({ fontColor }) => fontColor};
 `;

@@ -11,7 +11,13 @@ const Navbar = styled.nav<{ isMobile?: boolean }>`
     `}
 
   a {
-    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-heading1-desktop);
+    @media (max-width: 1023px) {
+      font-size: var(--font-size-heading1-tablet);
+    }
+    @media (max-width: 767px) {
+      font-size: var(--font-size-heading1-phone);
+    }
     text-decoration: none;
     color: black;
   }

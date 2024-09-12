@@ -5,7 +5,7 @@ import ButtonContainer from "../ButtonContainer/ButtonContainer";
 const TextContainer = styled.aside`
   flex: 1;
   max-height: 85vh;
-  padding: 2rem 1rem 1rem;
+  padding: 1rem 1rem 1rem;
   border-bottom: 0.25rem solid var(--accent-color);
   display: flex;
   flex-direction: column;
@@ -21,8 +21,8 @@ const TextContainer = styled.aside`
   }
 `;
 
-const Header = styled.div`
-  font-size: var(--font-size-M-heading);
+const Header = styled.h1`
+  font-size: calc(1.2 * var(--font-size-heading1-desktop));
   font-weight: var(--font-weight-semibold);
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -44,16 +44,15 @@ const ScrollArea = styled.div`
 `;
 
 const Section = styled.section`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   h2 {
-    font-size: var(--font-size-M);
-    margin-bottom: 1rem;
+    font-size: var(--font-size-base-desktop);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 0.5rem;
   }
 
   p {
-    font-family: var(--font-heading);
-    font-size: var(--font-size-M);
     text-align: justify;
   }
 `;
@@ -82,7 +81,7 @@ const ProjectDescriptionContainer = ({
       <ScrollArea>
         {content.map((item, index) => (
           <Section key={index}>
-            <h2>{item.header}</h2>
+            <h2>{item.header.toUpperCase()}</h2>
             <p>{item.text}</p>
           </Section>
         ))}

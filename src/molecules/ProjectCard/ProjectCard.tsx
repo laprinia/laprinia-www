@@ -50,23 +50,15 @@ const HeaderContainer = styled.div`
 `;
 
 const ProjectName = styled.h2`
-  font-family: var(--font-heading);
-  font-size: var(--font-size-M);
   font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base-desktop);
   margin: 0;
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-S);
-  }
 `;
 
 const Year = styled.h3`
-  font-family: var(--font-heading);
-  font-size: var(--font-size-M);
   font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base-desktop);
   margin: 0;
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-S);
-  }
 `;
 
 const TechText = styled.p`

@@ -5,24 +5,18 @@ import { introductionItems } from "../../consts";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-const MobileContainer = styled.div`
+const MobileContainer = styled.main`
   display: flex;
   flex-direction: column;
-  width: calc(100vw - 5rem);
-  height: calc(var(--vh, 1vh) * 100 - 5rem);
-  margin: 2.5rem;
-  gap: 1rem;
-
+  height: calc(100vh - 5rem);
+  flex: 1;
   @media (max-width: 767px) {
-    overflow: hidden;
-    width: calc(100vw - 2rem);
-    height: calc(var(--vh, 1vh) * 100 - 2rem);
-    margin: 1rem;
+    padding: 1.25rem 1.5rem 1.5rem;
     gap: 0.5rem;
   }
 `;
 
-const CanvasSectionWrapper = styled.div`
+const CanvasSectionWrapper = styled.section`
   height: 60%;
   display: flex;
   align-items: flex-end;
@@ -34,23 +28,13 @@ const InfoSection = styled.section`
   justify-content: space-evenly;
   height: 40%;
   text-align: center;
-  font-size: var(--font-size-L);
-  p {
-    margin: 0;
-  }
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-M);
-  }
-  @media (max-width: 767px) {
-    font-size: var(--font-size-S);
-  }
 
   @media (max-width: 767px) {
     justify-content: space-evenly !important;
   }
 `;
 
-const CanvasSection = styled.div`
+const CanvasSection = styled.article`
   width: 100%;
   height: 100%;
 `;

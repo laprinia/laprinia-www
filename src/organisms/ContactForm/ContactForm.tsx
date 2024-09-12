@@ -72,8 +72,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 80%;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-M);
 `;
 
 const Label = styled.label`

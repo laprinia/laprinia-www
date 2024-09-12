@@ -4,8 +4,7 @@ import styled from "styled-components";
 const Article = styled.article`
   display: flex;
   flex-direction: column;
-  font-family: var(--font-heading);
-  font-size: var(--font-size-M);
+
   section {
     margin-bottom: 1rem;
     margin-top: 0.5rem;
@@ -16,7 +15,7 @@ const Article = styled.article`
     }
   }
   h2 {
-    font-size: var(--font-size-M);
+    font-size: var(--font-size-base-desktop);
     font-weight: var(--font-weight-semibold);
   }
   p {
