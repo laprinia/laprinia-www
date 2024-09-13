@@ -104,13 +104,17 @@ const CursorWaveTexture = ({
     <Plane
       ref={meshRef}
       args={[planeSize[0] * 0.8, planeSize[1] * 0.95, 32, 32]}
-      position={[
-        viewport.width / 2 -
-          planeSize[0] / 2 +
-          planeSize[1] * (animationSpeed === 0.8 ? 0 : 0.15),
-        -viewport.height / 2 + planeSize[1] / 2 + planeSize[1] * 0.0005,
-        0,
-      ]}
+      position={
+        isAutoAnimated
+          ? [0, 0, 0]
+          : [
+              viewport.width / 2 -
+                planeSize[0] / 2 +
+                planeSize[1] * (animationSpeed === 0.8 ? 0 : 0.15),
+              -viewport.height / 2 + planeSize[1] / 2 + planeSize[1] * 0.0005,
+              0,
+            ]
+      }
     >
       <meshStandardMaterial map={texture} transparent />
     </Plane>
