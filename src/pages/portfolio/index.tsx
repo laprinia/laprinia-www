@@ -6,65 +6,48 @@ import Layout from "../../organisms/Layout/Layout";
 import ProjectCard from "../../molecules/ProjectCard/ProjectCard";
 import MDivider from "../../molecules/Divider/MDivider";
 import styled from "styled-components";
+import { Project, ProjectCategories, projects } from "../../const/projects";
 
 const Wrapper = styled.div`
   margin: 0 1.5rem;
   overflow-y: auto;
 `;
 
-const Portfolio = () => (
-  <Layout>
-    <NavBar items={navItems} highlightedIndex={0} />
-    <Wrapper>
-      <PortfolioContainer category="UI/UX" no="A">
-        <ProjectCard
-          projectName="1.1 fullstack authentication"
-          year="2023"
-          imagePath="/1.1/1.png"
-          gifPath="/1.1/2.gif"
-          techText="/*react, mongodb*/"
-        />
-        <ProjectCard
-          projectName="1.1 fullstack authentication"
-          year="2023"
-          imagePath="/1.1/1.png"
-          gifPath="/1.1/2.gif"
-          techText="/*react, mongodb*/"
-        />
-        <ProjectCard
-          projectName="1.1 fullstack authentication"
-          year="2023"
-          imagePath="/1.1/1.png"
-          gifPath="/1.1/2.gif"
-          techText="/*react, mongodb*/"
-        />
-      </PortfolioContainer>
-      <MDivider />
-      <PortfolioContainer category="WEB" no="B">
-        <ProjectCard
-          projectName="1.1 fullstack authentication"
-          year="2023"
-          imagePath="/1.1/1.png"
-          gifPath="/1.1/2.gif"
-          techText="/*react, mongodb*/"
-        />
-        <ProjectCard
-          projectName="1.1 fullstack authentication"
-          year="2023"
-          imagePath="/1.1/1.png"
-          gifPath="/1.1/2.gif"
-          techText="/*react, mongodb*/"
-        />
-        <ProjectCard
-          projectName="1.1 fullstack authentication"
-          year="2023"
-          imagePath="/1.1/1.png"
-          gifPath="/1.1/2.gif"
-          techText="/*react, mongodb*/"
-        />
-      </PortfolioContainer>
-    </Wrapper>
-  </Layout>
-);
+const Portfolio = () => {
+  const categories = Object.keys(projects) as (keyof ProjectCategories)[];
+  return (
+    <Layout>
+      <NavBar items={navItems} highlightedIndex={0} />
+      <Wrapper>
+        {categories.map((category, categoryIndex) => (
+          <>
+            <PortfolioContainer
+              key={category}
+              category={category.toUpperCase()}
+              no={String.fromCharCode(65 + categoryIndex)}
+            >
+              {projects[category].map(
+                (project: Project, projectIndex: number) => {
+                  const projectNumber = `${categoryIndex + 1}.${projectIndex + 1}`;
+                  return (
+                    <ProjectCard
+                      key={project.name}
+                      projectName={`${projectNumber} ${project.name}`}
+                      year={String(project.year)}
+                      imagePath={`/${projectNumber}/1.png`}
+                      gifPath={`/${projectNumber}/2.gif`}
+                      techText={project.techStackPreview}
+                    />
+                  );
+                },
+              )}
+            </PortfolioContainer>
+            <MDivider />
+          </>
+        ))}
+      </Wrapper>
+    </Layout>
+  );
+};
 
 export default Portfolio;

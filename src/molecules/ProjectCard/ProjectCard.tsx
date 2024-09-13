@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const CardContainer = styled.article`
   overflow: hidden;
-  width: 100%;
   height: 18.7rem;
   padding: 0.5rem 1rem;
   display: flex;
