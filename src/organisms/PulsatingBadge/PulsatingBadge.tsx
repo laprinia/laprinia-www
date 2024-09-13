@@ -8,7 +8,7 @@ const pulse = keyframes`
     }
     50% {
         transform: scale(1.1);
-        opacity: 0.7;
+        opacity: 0.8;
     }
     100% {
         transform: scale(1);
@@ -40,7 +40,6 @@ const Container = styled.div`
   align-items: center;
   width: auto;
   height: auto;
-  overflow-x: visible;
 `;
 
 const Circle = styled.div`

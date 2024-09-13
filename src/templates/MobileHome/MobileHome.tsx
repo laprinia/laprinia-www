@@ -1,7 +1,7 @@
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
 import { Canvas } from "@react-three/fiber";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
-import { introductionItems } from "../../consts";
+import { landingPageIntroduction } from "../../consts";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
@@ -73,7 +73,7 @@ const MobileHome = ({ mobileHeroPath }: { mobileHeroPath: string }) => {
         <p id="introduction" hidden>
           Introduction
         </p>
-        <p>{introductionItems[0]}</p>
+        <p>{landingPageIntroduction}</p>
         <PulsatingBadge />
       </InfoSection>
     </MobileContainer>

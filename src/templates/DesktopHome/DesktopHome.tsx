@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import StillTexture from "../../molecules/Texture/StillTexture";
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
-import { introductionItems } from "../../consts";
+import { landingName, landingPageIntroduction } from "../../consts";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -65,7 +65,6 @@ const TopAlignedBox = styled(Box)<{ align: string }>`
       font-weight: var(--font-weight-light);
       margin-bottom: 0.5rem;
       text-decoration: none;
-      color: black;
     }
   }
 
@@ -137,11 +136,12 @@ const DesktopHome = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <DesktopContainer>
       <TopAlignedBox align="left" aria-labelledby="name">
         <p id="name" hidden>
-          Lavinia Dumitrenco
+          {landingName}
         </p>
         <header
           aria-labelledby="name"
@@ -171,7 +171,7 @@ const DesktopHome = ({
             <p id="introduction" hidden>
               Introduction
             </p>
-            <p>{introductionItems[0]}</p>
+            <p>{landingPageIntroduction}</p>
           </article>
           <PulsatingBadge />
         </BottomAlignedBoxContent>
@@ -187,7 +187,6 @@ const DesktopHome = ({
         >
           <CanvasSection>
             <Canvas
-              resize={{ debounce: { scroll: 50, resize: 50 } }}
               gl={{ antialias: true }}
               style={{ width: "100%", height: "100%" }}
               camera={{ position: [0, 0, 5] }}
