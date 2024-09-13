@@ -17,7 +17,7 @@ const Container = styled.aside`
 const HeadshotComponent = () => {
   return (
     <Container>
-      <HeadshotImage src={"/headshot.png"} />
+      <HeadshotImage src={"/headshot.png"} relativeHeight={"100%"} />
       <SocialButtonsContainer buttons={socialButtons} />
     </Container>
   );

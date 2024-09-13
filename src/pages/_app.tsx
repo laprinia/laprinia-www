@@ -5,7 +5,7 @@ import { NextUIProvider } from "@nextui-org/system";
 import ErrorBoundary from "../templates/ErrorBoundary/ErrorBoundary";
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ErrorBoundary>
+    <>
       <Head>
         <title>laprinia</title>
         <meta
@@ -20,9 +20,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <GlobalStyle />
       <NextUIProvider>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </NextUIProvider>
-    </ErrorBoundary>
+    </>
   );
 };
 

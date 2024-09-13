@@ -16,7 +16,7 @@ const CardContainer = styled.article`
   }
 `;
 
-const ImageContainer = styled.figure`
+const ImageContainer = styled.figure<{ imagePath: string }>`
   width: max(16rem, 100%);
   height: 70%;
   margin: 0;

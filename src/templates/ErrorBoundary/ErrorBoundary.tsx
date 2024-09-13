@@ -12,6 +12,7 @@ const CanvasSectionWrapper = styled.section`
   display: flex;
   align-items: flex-end;
 `;
+
 const CanvasSection = styled.article`
   width: 100%;
   height: 100%;
@@ -21,7 +22,7 @@ const ErrorBoundary = ({ children }: { children: React.ReactNode }) => {
   const [hasError, setHasError] = useState(false);
 
   const handleError = (error: Error) => {
-    console.error("Uncaught error:", error);
+    console.error("Error captured by ErrorBoundary:", error);
     setHasError(true);
   };
 
