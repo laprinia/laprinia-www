@@ -4,11 +4,11 @@ import styled, { keyframes } from "styled-components";
 const pulse = keyframes`
     0% {
         transform: scale(1);
-        opacity: 1;
+        background-color: var(--accent-color);
     }
     50% {
         transform: scale(1.1);
-        opacity: 0.8;
+        background-color: var(--way-darker-accent-color);
     }
     100% {
         transform: scale(1);
@@ -19,15 +19,15 @@ const pulse = keyframes`
 const outlinePulse = keyframes`
   0% {
     transform: scale(1);
-    opacity: 0.2;
+    color: var(--darker-accent-color);
   }
   50% {
     transform: scale(1.5);
-    opacity: 0.5;
+    color: var(--way-darker-accent-color);
   }
   100% {
     transform: scale(1);
-    opacity: 1;
+    color: var(--accent-color);
   }
 `;
 

@@ -18,27 +18,28 @@ export const GlobalStyle = createGlobalStyle`
         --font-weight-regular: 500;
         --font-weight-semibold: 600;
         --font-weight-bold: 700;
-         // Desktop Sizes
+        // Desktop Sizes
         --font-size-base-desktop: ${baseFontSizeDesktop};
         --font-size-heading1-desktop: ${remDesktop("22px")};
         --font-size-heading2-desktop: ${remDesktop("20px")};
         --font-size-body-desktop: ${remDesktop("18px")};
-    
+
         // Tablet Sizes
         --font-size-base-tablet: ${baseFontSizeTablet};
         --font-size-heading1-tablet: ${remTablet("20px")};
         --font-size-heading2-tablet: ${remTablet("18px")};
         --font-size-body-tablet: ${remTablet("16px")};
-    
+
         // Phone Sizes
         --font-size-base-phone: ${baseFontSizePhone};
         --font-size-heading1-phone: ${remPhone("20px")};
         --font-size-heading2-phone: ${remPhone("18px")};
         --font-size-body-phone: ${remPhone("16px")};
-        
+
         --background-color: #F6F6F6;
         --accent-color: #0141D5;
         --darker-accent-color: #0136af;
+        --way-darker-accent-color: #002986;
     }
 
     * {
@@ -62,7 +63,7 @@ export const GlobalStyle = createGlobalStyle`
             font-size: var(--font-size-base-phone);
         }
     }
-    
+
     body {
         background-color: var(--background-color);
         font-family: var(--font-heading), sans-serif;

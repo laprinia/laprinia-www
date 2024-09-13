@@ -49,7 +49,7 @@ const NavItemsContainer = styled.ul`
   }
 `;
 
-const CenteredItemWrapper = styled.div`
+const CenteredItemWrapper = styled.article`
   display: flex;
   justify-content: center;
   flex-grow: 1;
@@ -76,7 +76,7 @@ const NavLink = styled.a`
   }
 `;
 
-const Dropdown = styled.div`
+const Dropdown = styled.section`
   display: none;
   position: relative;
 
@@ -105,14 +105,14 @@ const DropdownButton = styled.button<{ isOpen: boolean }>`
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #020000;
+    background-color: var(--accent-color);
     transition:
       transform 0.3s ease,
       background-color 0.3s ease;
 
     &:nth-child(1) {
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(45deg) translateY(9px)" : "rotate(0)"};
+        isOpen ? "rotate(45deg) translateY(9.7px)" : "rotate(0)"};
     }
 
     &:nth-child(2) {
@@ -121,7 +121,7 @@ const DropdownButton = styled.button<{ isOpen: boolean }>`
 
     &:nth-child(3) {
       transform: ${({ isOpen }) =>
-        isOpen ? "rotate(-45deg) translateY(-9px)" : "rotate(0)"};
+        isOpen ? "rotate(-45deg) translateY(-9.7px)" : "rotate(0)"};
     }
   }
 `;
