@@ -12,6 +12,8 @@ export const headerHeroPath = "/name.png";
 
 export const notFoundPath = "/notfound.png";
 
+export const somethingWentWrongPath = "/somethingwrong.png";
+
 export const landingName = "Lavinia Dumitrenco";
 export const landingPageIntroduction =
   "I'm Lavinia, a Web Developer and Designer based in Bucharest RO.";

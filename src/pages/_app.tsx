@@ -2,9 +2,10 @@ import type { AppProps } from "next/app";
 import { GlobalStyle } from "../styles/globalStyle";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/system";
+import ErrorBoundary from "../templates/ErrorBoundary/ErrorBoundary";
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <ErrorBoundary>
       <Head>
         <title>laprinia</title>
         <meta
@@ -21,7 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <NextUIProvider>
         <Component {...pageProps} />
       </NextUIProvider>
-    </>
+    </ErrorBoundary>
   );
 };
 
