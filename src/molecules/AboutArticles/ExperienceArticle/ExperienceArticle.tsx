@@ -14,7 +14,7 @@ const ExperienceArticle = () => {
       </section>
       <section>
         <p>
-          2022-2023 Wev Developer at <strong>Ubisoft</strong>
+          2022-2023 Web Developer at <strong>Ubisoft</strong>
         </p>
         <p>
           Enhanced functionalities and workflows for most used web product,

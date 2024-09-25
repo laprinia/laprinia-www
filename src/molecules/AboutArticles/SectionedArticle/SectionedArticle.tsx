@@ -21,6 +21,9 @@ const Article = styled.article`
   p {
     text-align: justify;
   }
+  p:nth-child(2) {
+    margin-top: 0.25rem;
+  }
 `;
 
 const SectionedArticle = ({

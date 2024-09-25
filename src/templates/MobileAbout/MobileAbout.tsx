@@ -49,10 +49,10 @@ const MobileAboutLayout = ({
   return (
     <MobileContainerWrapper>
       <HeadshotImage src={"/headshot.png"} relativeHeight={"50%"} />
-      <DoubleTextRibbon tags={technologies} />
+      <SocialButtonsContainer buttons={buttons} />
       <Description content={descriptionText} />
       <ArticlesContainer leftColumn={leftColumn} rightColumn={rightColumn} />
-      <SocialButtonsContainer buttons={buttons} />
+      <DoubleTextRibbon tags={technologies} />
     </MobileContainerWrapper>
   );
 };

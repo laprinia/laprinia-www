@@ -9,6 +9,9 @@ const LanguageArticle = () => {
       <section>
         <p>English - Proficient</p>
       </section>
+      <section>
+        <p>Spanish - Beginner</p>
+      </section>
     </SectionedArticle>
   );
 };
