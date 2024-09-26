@@ -9,7 +9,6 @@ import { useEffect } from "react";
 const MobileContainerWrapper = styled.section`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -48,11 +47,11 @@ const MobileAboutLayout = ({
   const rightColumn = articles.slice(midIndex);
   return (
     <MobileContainerWrapper>
+      <DoubleTextRibbon tags={technologies} />
       <HeadshotImage src={"/headshot.png"} relativeHeight={"50%"} />
       <SocialButtonsContainer buttons={buttons} />
       <Description content={descriptionText} />
       <ArticlesContainer leftColumn={leftColumn} rightColumn={rightColumn} />
-      <DoubleTextRibbon tags={technologies} />
     </MobileContainerWrapper>
   );
 };

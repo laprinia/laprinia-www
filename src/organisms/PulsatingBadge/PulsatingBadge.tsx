@@ -55,8 +55,8 @@ const Circle = styled.div`
   &::before {
     content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
+    top: -5.5px;
+    left: -5.5px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
