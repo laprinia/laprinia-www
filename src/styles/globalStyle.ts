@@ -40,6 +40,11 @@ export const GlobalStyle = createGlobalStyle`
         --accent-color: #0141D5;
         --darker-accent-color: #0136af;
         --way-darker-accent-color: #002986;
+
+        --toastify-color-success: #0141D5;
+        --toastify-color-error: #0141D5;
+        --toastify-text-color-success: #F6F6F6;
+        --toastify-text-color-error: #fff;
     }
 
     * {

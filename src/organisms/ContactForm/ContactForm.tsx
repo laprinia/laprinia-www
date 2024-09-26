@@ -1,17 +1,25 @@
 import styled from "styled-components";
 import BisectorText from "../../molecules/BisectorText/BisectorText";
-
+import { useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { Flip, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ContainerWrapper = styled.main`
   flex-direction: column;
+  margin: 0;
+  padding: 0 0rem;
+  display: flex;
+  flex: 1;
+
+  @media (max-width: 767px) {
+    overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100 - 5rem);
+  }
 
   @media (min-width: 768px) {
     align-items: center;
     justify-content: center;
   }
-  margin: 0;
-  padding: 0 0rem;
-  display: flex;
-  flex: 1;
 `;
 
 const ContactContainer = styled.section`
@@ -28,8 +36,6 @@ const ContactContainer = styled.section`
     flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: flex-end;
-    width: 100%;
-    height: auto;
     overflow-y: auto;
   }
 `;
@@ -49,7 +55,7 @@ const LeftContainer = styled.div`
   }
   @media (max-width: 767px) {
     width: 100%;
-    height: auto;
+    height: 70%;
     margin-top: 1rem;
   }
 `;
@@ -64,7 +70,7 @@ const RightContainer = styled.div`
 
   @media (max-width: 767px) {
     width: 100%;
-    height: 40%;
+    height: 30%;
   }
 `;
 
@@ -129,22 +135,101 @@ const Button = styled.button`
 `;
 
 const ContactForm = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+  const nameRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
+  const messageRef = useRef<HTMLTextAreaElement | null>(null);
+
+  useEffect(() => {
+    const updateVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    updateVh();
+    window.addEventListener("resize", updateVh);
+
+    return () => {
+      window.removeEventListener("resize", updateVh);
+    };
+  }, []);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (form.current) {
+      emailjs
+        .sendForm("service_xr7hbe8", "template_bbtt41o", form.current, {
+          publicKey: "QPN0eIf0zed3MnRFt",
+        })
+        .then(
+          () => {
+            toast.success("I will get back to you ASAP! 💌", {
+              position: "bottom-left",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Flip,
+            });
+          },
+          (error) => {
+            toast.error("Oops! Something went wrong! 🥸", {
+              position: "bottom-left",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Flip,
+            });
+          },
+        )
+        .finally(() => {
+          if (nameRef.current && emailRef.current && messageRef.current) {
+            nameRef.current.value = "";
+            emailRef.current.value = "";
+            messageRef.current.value = "";
+          }
+        });
+    }
+  };
   return (
     <ContainerWrapper>
       <ContactContainer>
         <LeftContainer>
-          <Form>
+          <Form ref={form} onSubmit={sendEmail}>
             <Label htmlFor="name">A) NAME:</Label>
-            <Input id="name" type="text" aria-label="Your Name" required />
+            <Input
+              id="name"
+              type="text"
+              aria-label="Your Name"
+              name="user_name"
+              ref={nameRef}
+              required
+            />
 
             <Label htmlFor="email">B) EMAIL:</Label>
-            <Input id="email" type="email" aria-label="Your Email" required />
+            <Input
+              id="email"
+              type="email"
+              aria-label="Your Email"
+              name="user_email"
+              ref={emailRef}
+              required
+            />
 
             <Label htmlFor="message">C) YOUR MESSAGE:</Label>
             <TextArea
               id="message"
               rows={5}
               aria-label="Your Message"
+              name="message"
+              ref={messageRef}
               required
             />
 
@@ -154,6 +239,7 @@ const ContactForm = () => {
         <RightContainer>
           <BisectorText paragraphs={["1.", "Let's", "Talk"]} />
         </RightContainer>
+        <ToastContainer />
       </ContactContainer>
     </ContainerWrapper>
   );
