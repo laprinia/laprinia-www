@@ -18,7 +18,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 767px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   p {
