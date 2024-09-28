@@ -47,13 +47,13 @@ export const projects: ProjectCategories = {
           "jwt"
       ],
       mediaContents: [
-        {type: "image", src:"projects/fullstack-authentication/content/1.png"},
-        {type: "image", src:"projects/fullstack-authentication/content/2.png"},
-        {type: "image", src:"projects/fullstack-authentication/content/3.png"},
-        {type: "image", src:"projects/fullstack-authentication/content/4.png"},
-        {type: "image", src:"projects/fullstack-authentication/content/5.png"},
-        {type: "video", src:"projects/fullstack-authentication/content/6.mp4"},
-        {type: "video", src:"projects/fullstack-authentication/content/7.mp4"},
+        {type: "image", src:"/projects/fullstack-authentication/content/1.png"},
+        {type: "image", src:"/projects/fullstack-authentication/content/2.png"},
+        {type: "image", src:"/projects/fullstack-authentication/content/3.png"},
+        {type: "image", src:"/projects/fullstack-authentication/content/4.png"},
+        {type: "image", src:"/projects/fullstack-authentication/content/5.png"},
+        {type: "video", src:"/projects/fullstack-authentication/content/6.mp4"},
+        {type: "video", src:"/projects/fullstack-authentication/content/7.mp4"},
       ],
       buttons: [
         {

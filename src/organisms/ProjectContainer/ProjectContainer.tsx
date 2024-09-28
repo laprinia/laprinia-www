@@ -3,6 +3,8 @@ import styled from "styled-components";
 import CarouselContainer from "../../molecules/CarouselContainer/CarouselContainer";
 import ProjectDescriptionContainer from "../../molecules/ProjectDescriptionContainer/ProjectDescriptionContainer";
 import ColorSwatchesContainer from "../../molecules/ColorSwatchesContainer/ColorSwatchesContainer";
+import {Button, MediaContent, TextArticle} from "../../const/projects";
+
 
 const ContainerWrapper = styled.main`
   flex-direction: column;
@@ -33,102 +35,43 @@ const DetailsContainer = styled.section`
   }
 `;
 
-const ProjectContainer = () => {
-  const projectName = "1.1. frontend project";
-  const tags = [
-    "React",
-    "Tailwind",
-    "Node.js",
-    "React",
-    "Tailwind",
-    "Node.js",
-    "React",
-    "Tailwind",
-    "Node.js",
-    "React",
-    "Tailwind",
-    "Node.js",
-    "React",
-    "Tailwind",
-    "Node.js",
-  ];
-  const items = [
-    { type: "image", src: "/1.1/1.png" },
-    { type: "image", src: "/insta-template.png" },
-  ];
-  const buttons = [
-    {
-      imageSrc: "/social/behance.png",
-      alt: "Behance",
-      link: "https://www.behance.com/",
-    },
-    {
-      imageSrc: "/social/github.png",
-      alt: "GitHub",
-      link: "https://github.com/",
-    },
-  ];
-
-  const content = [
-    {
-      header: "A) About",
-      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
-    },
-    {
-      header: "B) Process",
-      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
-    },
-    {
-      header: "A) About",
-      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
-    },
-    {
-      header: "B) Process",
-      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
-    },
-    {
-      header: "A) About",
-      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
-    },
-    {
-      header: "B) Process",
-      text: "This project is a demonstration of a modern minimalist UI implemented in React. The primary focus was on creating a user-friendly, visually appealing interface that prioritizes efficiency and clarity. The development process involved addressing numerous challenges, including optimizing performance and ensuring cross-browser compatibility.",
-    },
-  ];
-
-  const colors = [
-    "#ECE3E1",
-    "#FB6008",
-    "#FAC205",
-    "#040406",
-    "#040406",
-    "#040406",
-  ];
-
+const ProjectContainer = ({
+                            projectName,
+                            tags,
+                            buttons,
+                            content,
+                            mediaContents,
+                          }: {
+  projectName: string;
+  tags: string[];
+  buttons: Button[];
+  content: TextArticle[];
+  mediaContents: MediaContent[];
+}) => {
   return (
-    <ContainerWrapper>
-      <Container>
-        <h2 hidden id="media-carousel">
-          Media Carousel
-        </h2>
-        <CarouselContainer aria-labelledby="media-carousel" items={items} />
-        <DetailsContainer aria-labelledby="project-media">
-          <h2 hidden id="project-description">
-            Project Description
+      <ContainerWrapper>
+        <Container>
+          <h2 hidden id="media-carousel">
+            Media Carousel
           </h2>
-          <ProjectDescriptionContainer
-            projectName={projectName}
-            tags={tags}
-            buttons={buttons}
-            content={content}
-          />
-          <h2 hidden id="color-swatches">
-            Color Swatches
-          </h2>
-          <ColorSwatchesContainer colors={colors} />
-        </DetailsContainer>
-      </Container>
-    </ContainerWrapper>
+          <CarouselContainer aria-labelledby="media-carousel" items={mediaContents} />
+          <DetailsContainer aria-labelledby="project-media">
+            <h2 hidden id="project-description">
+              Project Description
+            </h2>
+            <ProjectDescriptionContainer
+                projectName={projectName}
+                tags={tags}
+                buttons={buttons}
+                content={content}
+            />
+            <h2 hidden id="color-swatches">
+              Color Swatches
+            </h2>
+            <ColorSwatchesContainer colors={["#FF5733", "#33FF57", "#3357FF"]} /> {/* Example colors */}
+          </DetailsContainer>
+        </Container>
+      </ContainerWrapper>
   );
 };
 

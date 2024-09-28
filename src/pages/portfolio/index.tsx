@@ -34,6 +34,7 @@ const Portfolio = () => {
                     <ProjectCard
                       key={project.name}
                       projectName={`${projectNumber} ${project.name}`}
+                      projectId={project.name}
                       year={String(project.year)}
                       imagePath={`/projects/${project.name.replaceAll(/\s+/g,"-")}/headshot.png`}
                       gifPath={`/projects/${project.name.replaceAll(/\s+/g,"-")}/headshot.gif`}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import styled from "styled-components";
 
 const CardContainer = styled.article`
@@ -9,6 +10,7 @@ const CardContainer = styled.article`
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
@@ -71,13 +73,15 @@ const TechText = styled.p`
 `;
 
 const ProjectCard = ({
-  projectName,
-  year,
-  imagePath,
-  gifPath,
-  techText,
-}: {
+                       projectName,
+    projectId,
+                       year,
+                       imagePath,
+                       gifPath,
+                       techText,
+                     }: {
   projectName: string;
+  projectId: string;
   year: string;
   imagePath: string;
   gifPath: string;
@@ -86,22 +90,24 @@ const ProjectCard = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <CardContainer
-      aria-labelledby={`project-${projectName}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <ImageContainer
-        imagePath={isHovered ? gifPath : imagePath}
-      ></ImageContainer>
-      <TextContainer id={`project-${projectName}`}>
-        <HeaderContainer>
-          <ProjectName>{projectName}</ProjectName>
-          <Year>{year}</Year>
-        </HeaderContainer>
-        <TechText>{techText}</TechText>
-      </TextContainer>
-    </CardContainer>
+      <Link href={`/portfolio/${projectId.replaceAll(/\s+/g,"-")}`} passHref>
+        <CardContainer
+            aria-labelledby={`project-${projectName}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+          <ImageContainer
+              imagePath={isHovered ? gifPath : imagePath}
+          ></ImageContainer>
+          <TextContainer id={`project-${projectName}`}>
+            <HeaderContainer>
+              <ProjectName>{projectName}</ProjectName>
+              <Year>{year}</Year>
+            </HeaderContainer>
+            <TechText>{techText}</TechText>
+          </TextContainer>
+        </CardContainer>
+      </Link>
   );
 };
 
