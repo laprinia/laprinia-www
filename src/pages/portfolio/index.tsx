@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const Portfolio = () => {
   const categories = Object.keys(projects) as (keyof ProjectCategories)[];
+
   return (
     <Layout>
       <NavBar items={navItems} highlightedIndex={0} />
@@ -34,8 +35,8 @@ const Portfolio = () => {
                       key={project.name}
                       projectName={`${projectNumber} ${project.name}`}
                       year={String(project.year)}
-                      imagePath={`/${projectNumber}/1.png`}
-                      gifPath={`/${projectNumber}/2.gif`}
+                      imagePath={`/projects/${project.name.replaceAll(/\s+/g,"-")}/headshot.png`}
+                      gifPath={`/projects/${project.name.replaceAll(/\s+/g,"-")}/headshot.gif`}
                       techText={project.techStackPreview}
                     />
                   );
