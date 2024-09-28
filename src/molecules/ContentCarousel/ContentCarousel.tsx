@@ -124,9 +124,15 @@ const Carousel = ({ items }: { items: { type: string; src: string }[] }) => {
         >
           <Media>
             {item.type === "video" ? (
-              <video src={item.src} controls aria-label={`Video ${i + 1}`} />
+                <video
+                    src={item.src}
+                    autoPlay
+                    muted
+                    loop
+                    aria-label={`Video ${i + 1}`}
+                />
             ) : (
-              <img src={item.src} alt={`Image ${i + 1}`} />
+                <img src={item.src} alt={`Image ${i + 1}`}/>
             )}
           </Media>
         </CarouselContent>
