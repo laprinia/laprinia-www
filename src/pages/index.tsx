@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
+      setIsMobile(window.innerWidth <= 1000);
     };
 
     handleResize();
