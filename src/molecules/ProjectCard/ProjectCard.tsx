@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit; 
+`;
+
 const CardContainer = styled.article`
   overflow: hidden;
   height: 18.7rem;
@@ -90,7 +95,7 @@ const ProjectCard = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-      <Link href={`/portfolio/${projectId.replaceAll(/\s+/g,"-")}`} passHref>
+      <StyledLink href={`/portfolio/${projectId.replaceAll(/\s+/g,"-")}`} passHref>
         <CardContainer
             aria-labelledby={`project-${projectName}`}
             onMouseEnter={() => setIsHovered(true)}
@@ -107,7 +112,7 @@ const ProjectCard = ({
             <TechText>{techText}</TechText>
           </TextContainer>
         </CardContainer>
-      </Link>
+      </StyledLink>
   );
 };
 
