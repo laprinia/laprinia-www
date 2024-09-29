@@ -41,6 +41,9 @@ const LoopingTextContainer = styled.div`
 const ScrollArea = styled.div`
   overflow-y: auto;
   flex-grow: 1;
+  @media (max-width: 900px) {
+    overflow-y: inherit;
+  }
 `;
 
 const Section = styled.section`

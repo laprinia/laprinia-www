@@ -6,7 +6,6 @@ import ColorSwatchesContainer from "../../molecules/ColorSwatchesContainer/Color
 import {
   Button,
   MediaContent,
-  ProjectCategories,
   projects,
   TextArticle,
 } from "../../const/projects";
@@ -17,6 +16,9 @@ const ContainerWrapper = styled.main`
   padding: 0 0rem;
   display: flex;
   flex: 1;
+  @media (max-width: 900px) {
+    overflow-y: auto;
+  }
 `;
 
 const Container = styled.div`
@@ -28,7 +30,6 @@ const Container = styled.div`
   @media (max-width: 900px) {
     border: none;
     flex-direction: column;
-    overflow-y: auto;
   }
 `;
 
@@ -36,8 +37,6 @@ const DetailsContainer = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
-  @media (max-width: 900px) {
-  }
 `;
 
 const ProjectTemplate = ({
