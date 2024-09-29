@@ -48,12 +48,35 @@ const Section = styled.section`
 
   h2 {
     font-size: var(--font-size-base-desktop);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-size: var(--font-size-base-desktop);
+    font-weight: var(--font-weight-regular);
   }
 
   p {
     text-align: justify;
+    font-weight: var(--font-weight-light);
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    text-align: justify;
+    list-style-type: none;
+    margin-left: 1.5rem;
+  }
+
+  li {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+  }
+  code {
+    font-size: 14px;
+    font-weight: var(--font-weight-light);
+    background-color: var(--accent-color);
+    color: var(--background-color);
   }
 `;
 
@@ -73,7 +96,9 @@ const ProjectDescriptionContainer = ({
       <h2 hidden id="project-description">
         Project Description
       </h2>
-      <Header>{projectName}</Header>
+      <Header>
+        <strong>{projectName}</strong>
+      </Header>
       <LoopingTextContainer>
         {/*<LoopingText items={tags} />*/}
       </LoopingTextContainer>
@@ -82,7 +107,7 @@ const ProjectDescriptionContainer = ({
         {content.map((item, index) => (
           <Section key={index}>
             <h2>{item.header.toUpperCase()}</h2>
-            <p>{item.text}</p>
+            <article dangerouslySetInnerHTML={{ __html: item.text }} />
           </Section>
         ))}
       </ScrollArea>

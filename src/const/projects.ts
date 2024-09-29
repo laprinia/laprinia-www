@@ -92,31 +92,50 @@ export const projects: ProjectCategories = {
       textContents: [
         {
           header: "A) About",
-          text: "React & Node.js full-stack authentication for a creative web app written in TypeScript where I dabbled in glassmorphism 🥛.",
+          text: "React & Node.js full-stack authentication for a creative web app, written in TypeScript with the purpose of using glassmorphism 🫥.",
         },
         {
           header: "B) Recipe",
           text:
-            "Frontend:\n" +
-            " - Mantine for UI components\n" +
-            " - Radix-UI icons\n" +
-            " - Axios for services\n" +
-            " - Unsplash API for randomized backgrounds\n" +
-            " - Backend:\n" +
-            " - BCrypt for encrypting passwords\n" +
-            " - Mongoose for interacting with the MongoDB Atlas data base\n" +
-            " - Joi for data validation\n" +
-            " - JWT for creating authentication tokens\n" +
-            " - Nodemon for better server management",
+            "\n" +
+            "  <section>\n" +
+            "    <h3>Frontend:</h3>\n" +
+            "    <ul>\n" +
+            "      <li>Mantine for UI components</li>\n" +
+            "      <li>Radix-UI icons</li>\n" +
+            "      <li>Axios for services</li>\n" +
+            "      <li>Unsplash API for randomized backgrounds</li>\n" +
+            "    </ul>\n" +
+            "\n" +
+            "    <h3>Backend:</h3>\n" +
+            "    <ul>\n" +
+            "      <li>BCrypt for encrypting passwords</li>\n" +
+            "      <li>Mongoose for interacting with the MongoDB Atlas database</li>\n" +
+            "      <li>Joi for data validation</li>\n" +
+            "      <li>JWT for creating authentication tokens</li>\n" +
+            "      <li>Nodemon for better server management</li>\n" +
+            "    </ul>\n" +
+            "  </section>",
         },
         {
           header: "C) Key Feats",
           text:
-            " - Joi data validation for the backend\n" +
-            " - Mongoose DB schema uses TypeScript types to impose accepted color outputs and formats\n" +
-            " - Randomized custom background provided by the unsplash API\n" +
-            " - Glassmorphism components using custom CSS inside Mantine components\n" +
-            " - Field & form validation",
+            "<ul>\n" +
+            "  <li>Joi for data validation in the backend</li>\n" +
+            "  <li>Mongoose DB schema using TypeScript types to enforce accepted color outputs and formats</li>\n" +
+            "  <li>Randomized custom backgrounds provided by the Unsplash API</li>\n" +
+            "  <li>Glassmorphism components styled with custom CSS inside Mantine components</li>\n" +
+            "  <li>Field & form validation implemented</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "D) Glassmorphism",
+          text:
+            "<code>sx={{\n" +
+            "       background: `rgba(24,24,24,0.5)`,\n" +
+            '       boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.5)",\n' +
+            "       backdropFilter: `blur(5px)`,\n" +
+            "     }}</code>",
         },
       ],
       colors: ["#FB6009", "#2E2623", "#ECE3E1", "#040406"],
@@ -165,16 +184,48 @@ export const projects: ProjectCategories = {
       textContents: [
         {
           header: "A) About",
-          text: 'OpenGL real-time ray tracer using Compute Shaders. Based on the "Ray Tracing in One Weekend series".',
+          text: 'OpenGL real-time ray tracer using Compute Shaders. Based on the "Ray Tracing in One Weekend series" 🌄.',
         },
         {
           header: "B) Process",
           text:
-            "1. For matte materials the process is simple: normalizing the y coordinate and interpolating between two colors. Checking if the rays hit the sphere and displaying the color. Computed the resulting color by picking a random point inside a unit radius sphere, whose normal starts from the initial ray hit point. This is done recursively until a ray doesn't hit anything or a maximum depth is reached.\n" +
-            "3. For metallic surfaces, rays aren't randomly scattered. Luckily, GLSL has the reflect function which returns the reflected ray. Randomizing the reflected ray by choosing a random endpoint as we did for the matte surface, we can get more rough (fuzzy) surfaces.\n" +
-            "4. For a dielectric surface, a ray is split into both a reflected one and a refracted one. Assuming that all rays are only refracted we get this result. Using Schlick's polynomial approximation we can determine if rays must pe reflected instead of refracted, giving the final result.\n" +
-            "5. Next is adding a Cornell Box for more complexity in the scene. To make things more realistic, I added an emissive material for some ceiling lights & spheres. Rays hitting an emissive surface won't scatter so they retain their true albedo color output.\n" +
-            "6. On the Post Processing layer, I added HDR, so the emissive material pops out more. I also added Bloom, which basically renders our lights as blurred (using Gaussian Blur), and adds the result on top of the base color.",
+            "<section>\n" +
+            "  <h3>1. Matte Materials</h3>\n" +
+            "  <p>\n" +
+            "    The process is simple: normalizing the y coordinate and interpolating between two colors.\n" +
+            "    Checking if the rays hit the sphere and displaying the color. The resulting color is computed\n" +
+            "    by picking a random point inside a unit radius sphere, whose normal starts from the initial ray hit point.\n" +
+            "    This is done recursively until a ray doesn't hit anything or a maximum depth is reached.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>2. Metallic Surfaces</h3>\n" +
+            "  <p>\n" +
+            "    For metallic surfaces, rays aren't randomly scattered. Luckily, GLSL has the \n" +
+            "    <code>reflect()</code> function, which returns the reflected ray. Randomizing the reflected\n" +
+            "    ray by choosing a random endpoint, as we did for the matte surface, gives rough (fuzzy) surfaces.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>3. Dielectric Surfaces</h3>\n" +
+            "  <p>\n" +
+            "    A ray is split into both a reflected one and a refracted one. Assuming that all rays are \n" +
+            "    only refracted results in one outcome. Using Schlick's polynomial approximation, we can \n" +
+            "    determine if rays must be reflected instead of refracted, producing the final result.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>4. Cornell Box</h3>\n" +
+            "  <p>\n" +
+            "    Adding a Cornell Box introduces more complexity into the scene. To make things more \n" +
+            "    realistic, emissive materials are added for ceiling lights and spheres. Rays hitting \n" +
+            "    an emissive surface won't scatter, so they retain their true albedo color output.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>5. Post-Processing</h3>\n" +
+            "  <p>\n" +
+            "    On the post-processing layer, HDR is applied, making the emissive material stand out more. \n" +
+            "    Bloom is also added, which renders lights as blurred (using Gaussian Blur) and adds the \n" +
+            "    result on top of the base color.\n" +
+            "  </p>\n" +
+            "</section>\n",
         },
       ],
       colors: [
