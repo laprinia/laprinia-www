@@ -21,19 +21,22 @@ export const GlobalStyle = createGlobalStyle`
         // Desktop Sizes
         --font-size-base-desktop: ${baseFontSizeDesktop};
         --font-size-heading1-desktop: ${remDesktop("22px")};
-        --font-size-heading2-desktop: ${remDesktop("20px")};
+        --font-size-heading2-desktop: ${remDesktop("60px")};
+        --font-size-heading3-desktop: ${remDesktop("60px")};
         --font-size-body-desktop: ${remDesktop("18px")};
 
         // Tablet Sizes
         --font-size-base-tablet: ${baseFontSizeTablet};
-        --font-size-heading1-tablet: ${remTablet("20px")};
-        --font-size-heading2-tablet: ${remTablet("18px")};
+        --font-size-heading1-tablet: ${remTablet("18px")};
+        --font-size-heading2-tablet: ${remTablet("20px")};
+        --font-size-heading3-tablet: ${remDesktop("40px")};
         --font-size-body-tablet: ${remTablet("16px")};
 
         // Phone Sizes
         --font-size-base-phone: ${baseFontSizePhone};
-        --font-size-heading1-phone: ${remPhone("20px")};
-        --font-size-heading2-phone: ${remPhone("18px")};
+        --font-size-heading1-phone: ${remPhone("18x")};
+        --font-size-heading2-phone: ${remPhone("20px")};
+        --font-size-heading3-phone: ${remDesktop("40px")};
         --font-size-body-phone: ${remPhone("16px")};
 
         --background-color: #F6F6F6;
