@@ -11,7 +11,6 @@ const getColorIntensity = (color: string) => {
 
 const Container = styled.div`
   display: flex;
-  padding: 1.5rem 1rem;
   box-sizing: border-box;
   width: 100%;
   height: 100%;

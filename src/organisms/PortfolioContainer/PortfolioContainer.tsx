@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MDivider from "../../molecules/Divider/MDivider";
 import React from "react";
 
 const ContainerWrapper = styled.main`

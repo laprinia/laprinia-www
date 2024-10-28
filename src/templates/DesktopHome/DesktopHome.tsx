@@ -65,11 +65,23 @@ const TopAlignedBox = styled(Box)<{ align: string }>`
       font-weight: var(--font-weight-light);
       margin-bottom: 0.5rem;
       text-decoration: none;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      @media (min-width: 1800px) {
+        font-size: 2rem;
+      }
     }
   }
 
   @media (max-width: 1023px) {
-    font-size: var(--font-size-L);
+    font-size: var(--font-size-body-desktop);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 2rem;
   }
 
   @media (max-width: 767px) {
@@ -107,6 +119,10 @@ const BottomAlignedBoxContent = styled.section`
 
   @media (max-width: 767px) {
     font-size: var(--font-size-heading1-tablet);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 2rem;
   }
 `;
 

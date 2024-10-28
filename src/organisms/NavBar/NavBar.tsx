@@ -13,6 +13,9 @@ const Nav = styled.nav`
     font-size: var(--font-size-heading1-tablet);
   }
 
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-heading1-xl);
+  }
   @media (max-width: 767px) {
     font-size: var(--font-size-heading1-phone);
     flex-direction: row;
