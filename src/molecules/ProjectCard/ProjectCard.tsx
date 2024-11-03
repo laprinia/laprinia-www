@@ -20,6 +20,7 @@ const CardContainer = styled.article`
   &:hover {
     transform: scale(1.1);
   }
+
   @media (min-width: 1800px) {
     height: 30.5rem;
     &:hover {
@@ -41,6 +42,10 @@ const ImageContainer = styled.figure<{ imagePath: string }>`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (min-width: 1800px) {
+    width: 100%;
   }
 `;
 
@@ -69,12 +74,20 @@ const ProjectName = styled.h2`
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-base-desktop);
   margin: 0;
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-base-xl);
+  }
 `;
 
 const Year = styled.h3`
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-base-desktop);
   margin: 0;
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-base-xl);
+  }
 `;
 
 const TechText = styled.p`
@@ -82,8 +95,13 @@ const TechText = styled.p`
   font-size: var(--font-size-M);
   font-weight: var(--font-weight-lighter);
   margin: 0.5rem 0;
+
   @media (max-width: 1023px) {
-    font-size: var(--font-size-S);
+    font-size: var(--font-size-base-tablet);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-base-xl);
   }
 `;
 
@@ -114,9 +132,7 @@ const ProjectCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <ImageContainer
-          imagePath={isHovered ? gifPath : imagePath}
-        ></ImageContainer>
+        <ImageContainer imagePath={isHovered ? gifPath : imagePath} />
         <TextContainer id={`project-${projectName}`}>
           <HeaderContainer>
             <ProjectName>{projectName}</ProjectName>
