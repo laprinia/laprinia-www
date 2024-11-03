@@ -8,6 +8,9 @@ const DescriptionContainer = styled.section`
 
   p {
     text-align: justify;
+    @media (min-width: 1800px) {
+      font-size: var(--font-size-base-xl);
+    }
   }
 
   @media (max-width: 900px) {

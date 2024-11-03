@@ -16,10 +16,38 @@ const Article = styled.article<{ isActive: boolean }>`
   }
   p {
     text-align: justify;
+    font-size: var(--font-size-body-desktop);
     background-color: ${({ isActive }) =>
       isActive ? "var(--accent-color)" : "var(--background-color)"};
     color: ${({ isActive }) => (isActive ? "white" : "black")};
     margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: var(--font-size-heading1-tablet);
+    }
+    p {
+      font-size: var(--font-size-body-tablet);
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: var(--font-size-heading1-phone);
+    }
+    p {
+      font-size: var(--font-size-body-phone);
+    }
+  }
+
+  @media (min-width: 1800px) {
+    h2 {
+      font-size: var(--font-size-heading1-xl);
+    }
+    p {
+      font-size: var(--font-size-body-xl);
+    }
   }
 `;
 

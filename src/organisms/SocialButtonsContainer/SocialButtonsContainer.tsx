@@ -37,6 +37,12 @@ const HeadshotButton = styled.a`
     min-width: 4rem;
   }
 
+  @media (min-width: 1800px) {
+    height: 3rem;
+    max-width: 4rem;
+    min-width: 4rem;
+  }
+
   img {
     transition: transform 0.3s ease-in-out;
     height: 100%;

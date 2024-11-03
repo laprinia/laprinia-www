@@ -36,6 +36,21 @@ const ScrollingTextInner = styled.div<{
 const ScrollingText = styled.div`
   display: flex;
   align-items: center;
+  font-family: var(--font-heading);
+
+  font-size: var(--font-size-body-desktop);
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-body-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-body-phone);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-body-xl);
+  }
 `;
 
 const ScrollingTextItem = styled.div`
@@ -48,7 +63,21 @@ const Divider = styled.span`
   display: flex;
   margin: 0 0.5rem;
   transform: translateY(25%);
-  font-size: var(--font-size-L-heading);
+  color: var(--darker-accent-color);
+
+  font-size: var(--font-size-heading1-desktop);
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-heading1-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-heading1-phone);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-heading1-xl);
+  }
 `;
 
 const LoopingText = ({

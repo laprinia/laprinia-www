@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Flip, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const ContainerWrapper = styled.main`
   flex-direction: column;
   margin: 0;
@@ -11,12 +12,12 @@ const ContainerWrapper = styled.main`
   display: flex;
   flex: 1;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1280px) {
     overflow: hidden;
     height: calc(var(--vh, 1vh) * 100 - 5rem);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     align-items: center;
     justify-content: center;
   }
@@ -82,7 +83,21 @@ const Form = styled.form`
 
 const Label = styled.label`
   margin-bottom: 0.5rem;
-  font-size: var(--font-size-M);
+
+  @media (max-width: 1280px) {
+    font-size: var(--font-size-body-desktop);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-body-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-body-phone);
+  }
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-body-xl);
+  }
 `;
 
 const Input = styled.input`
@@ -95,6 +110,22 @@ const Input = styled.input`
   border-bottom: 1px solid gray;
   background: none;
   transition: border-bottom 0.3s ease;
+
+  @media (max-width: 1280px) {
+    font-size: var(--font-size-body-desktop);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-body-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-body-phone);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-body-xl);
+  }
 
   &:focus {
     outline: none;
@@ -114,6 +145,22 @@ const TextArea = styled.textarea`
   background: none;
   transition: border-bottom 0.3s ease;
 
+  @media (max-width: 1280px) {
+    font-size: var(--font-size-body-desktop);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-body-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-body-phone);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-body-xl);
+  }
+
   &:focus {
     outline: none;
     border-bottom: 1px solid black;
@@ -122,11 +169,26 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   font-family: var(--font-heading);
-  font-size: var(--font-size-M);
   border: none;
   background-color: var(--accent-color);
   color: white;
   padding: 0.5rem;
+
+  @media (max-width: 1280px) {
+    font-size: var(--font-size-body-desktop);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-body-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-body-phone);
+  }
+
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-body-xl);
+  }
 
   &:hover {
     cursor: pointer;

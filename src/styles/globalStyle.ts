@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { lora, raleway, robotoFlex } from "./fonts";
+import { lora, raleway } from "./fonts";
 
 const baseFontSizeXL = "22px";
 const baseFontSizeDesktop = "18px";

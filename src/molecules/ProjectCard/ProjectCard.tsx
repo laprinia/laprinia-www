@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
 `;
 
 const CardContainer = styled.article`
@@ -19,6 +19,12 @@ const CardContainer = styled.article`
 
   &:hover {
     transform: scale(1.1);
+  }
+  @media (min-width: 1800px) {
+    height: 30.5rem;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
 
@@ -47,6 +53,10 @@ const TextContainer = styled.figcaption`
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
+
+  @media (min-width: 1800px) {
+    justify-content: space-evenly;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -78,13 +88,13 @@ const TechText = styled.p`
 `;
 
 const ProjectCard = ({
-                       projectName,
-    projectId,
-                       year,
-                       imagePath,
-                       gifPath,
-                       techText,
-                     }: {
+  projectName,
+  projectId,
+  year,
+  imagePath,
+  gifPath,
+  techText,
+}: {
   projectName: string;
   projectId: string;
   year: string;
@@ -95,24 +105,27 @@ const ProjectCard = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-      <StyledLink href={`/portfolio/${projectId.replaceAll(/\s+/g,"-")}`} passHref>
-        <CardContainer
-            aria-labelledby={`project-${projectName}`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-          <ImageContainer
-              imagePath={isHovered ? gifPath : imagePath}
-          ></ImageContainer>
-          <TextContainer id={`project-${projectName}`}>
-            <HeaderContainer>
-              <ProjectName>{projectName}</ProjectName>
-              <Year>{year}</Year>
-            </HeaderContainer>
-            <TechText>{techText}</TechText>
-          </TextContainer>
-        </CardContainer>
-      </StyledLink>
+    <StyledLink
+      href={`/portfolio/${projectId.replaceAll(/\s+/g, "-")}`}
+      passHref
+    >
+      <CardContainer
+        aria-labelledby={`project-${projectName}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <ImageContainer
+          imagePath={isHovered ? gifPath : imagePath}
+        ></ImageContainer>
+        <TextContainer id={`project-${projectName}`}>
+          <HeaderContainer>
+            <ProjectName>{projectName}</ProjectName>
+            <Year>{year}</Year>
+          </HeaderContainer>
+          <TechText>{techText}</TechText>
+        </TextContainer>
+      </CardContainer>
+    </StyledLink>
   );
 };
 

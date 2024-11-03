@@ -43,6 +43,9 @@ const GridContainer = styled.div`
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  @media (min-width: 1800px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const PortfolioContainer = ({
