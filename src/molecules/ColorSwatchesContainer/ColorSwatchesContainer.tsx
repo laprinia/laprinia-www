@@ -1,9 +1,11 @@
 import ColorSwatches from "../ColorSwatches/ColorSwatches";
 import React from "react";
 import styled from "styled-components";
+import { color } from "framer-motion";
 
 const Container = styled.aside`
-  flex: 0 0 15%;
+  height: 100%;
+  width: 100%;
   @media (max-width: 900px) {
     flex: 0 0 5rem;
     width: 100%;

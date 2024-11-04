@@ -102,15 +102,21 @@ const Media = styled.div`
   }
 `;
 
-const Carousel = ({ items }: { items: { type: string; src: string }[] }) => {
-  const [index, setIndex] = useState(0);
-
+const Carousel = ({
+  items,
+  index,
+  setIndex,
+}: {
+  items: { type: string; src: string }[];
+  index: number;
+  setIndex: any;
+}) => {
   const handlePrevious = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+    setIndex((prevIndex: any) => (prevIndex - 1 + items.length) % items.length);
   };
 
   const handleNext = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % items.length);
+    setIndex((prevIndex: any) => (prevIndex + 1) % items.length);
   };
 
   return (
@@ -124,27 +130,21 @@ const Carousel = ({ items }: { items: { type: string; src: string }[] }) => {
         >
           <Media>
             {item.type === "video" ? (
-                <video
-                    src={item.src}
-                    autoPlay
-                    muted
-                    loop
-                    aria-label={`Video ${i + 1}`}
-                />
+              <video
+                src={item.src}
+                autoPlay
+                muted
+                loop
+                aria-label={`Video ${i + 1}`}
+              />
             ) : (
-                <img src={item.src} alt={`Image ${i + 1}`}/>
+              <img src={item.src} alt={`Image ${i + 1}`} />
             )}
           </Media>
         </CarouselContent>
       ))}
       <ClickableArea left onClick={handlePrevious} aria-label="Previous item" />
       <ClickableArea right onClick={handleNext} aria-label="Next item" />
-      {/*<Arrow left onClick={handlePrevious} aria-label="Previous item">*/}
-      {/*  ◀*/}
-      {/*</Arrow>*/}
-      {/*<Arrow right onClick={handleNext} aria-label="Next item">*/}
-      {/*  ▶*/}
-      {/*</Arrow>*/}
     </CarouselWrapper>
   );
 };

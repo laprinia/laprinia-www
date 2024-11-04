@@ -53,8 +53,8 @@ const ScrollingText = styled.div`
   }
 `;
 
-const ScrollingTextItem = styled.div`
-  padding: 0 1.5rem;
+const ScrollingTextItem = styled.div<{ padding: string }>`
+  padding: 0 ${(props) => props.padding};
   display: flex;
   align-items: center;
 `;
@@ -83,11 +83,13 @@ const Divider = styled.span`
 const LoopingText = ({
   items,
   marqueeSpeed = "60s",
+  padding = "1.5rem",
   isReverse = false,
   withDivider = false,
 }: {
   items: string[];
   marqueeSpeed?: string;
+  padding?: string;
   isReverse?: boolean;
   withDivider?: boolean;
 }) => {
@@ -97,13 +99,13 @@ const LoopingText = ({
         <ScrollingText>
           {items.map((item, index) => (
             <React.Fragment key={index}>
-              <ScrollingTextItem>{item}</ScrollingTextItem>
+              <ScrollingTextItem padding={padding}>{item}</ScrollingTextItem>
               {withDivider && index < items.length - 1 && <Divider>*</Divider>}
             </React.Fragment>
           ))}
           {items.map((item, index) => (
             <React.Fragment key={index + items.length}>
-              <ScrollingTextItem>{item}</ScrollingTextItem>
+              <ScrollingTextItem padding={padding}>{item}</ScrollingTextItem>
               {withDivider && index < items.length - 1 && <Divider>*</Divider>}
             </React.Fragment>
           ))}

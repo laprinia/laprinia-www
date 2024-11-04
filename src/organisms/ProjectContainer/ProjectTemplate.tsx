@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import CarouselContainer from "../../molecules/CarouselContainer/CarouselContainer";
 import ProjectDescriptionContainer from "../../molecules/ProjectDescriptionContainer/ProjectDescriptionContainer";
-import ColorSwatchesContainer from "../../molecules/ColorSwatchesContainer/ColorSwatchesContainer";
 import {
   Button,
   MediaContent,
@@ -11,19 +10,23 @@ import {
 } from "../../const/projects";
 
 const ContainerWrapper = styled.main`
-  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  flex: 1;
   margin: 0;
   padding: 0 0rem;
-  display: flex;
-  flex: 1;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+
   @media (max-width: 900px) {
-    overflow-y: auto;
+    flex-direction: column;
   }
 `;
-
 const Container = styled.div`
   display: flex;
-  flex: 1;
+  width: 100%;
+  height: 100%;
   margin: 0;
   border-top: 0.25rem solid var(--accent-color);
 
@@ -33,8 +36,14 @@ const Container = styled.div`
   }
 `;
 
+const CarouselWrapper = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+`;
+
 const DetailsContainer = styled.section`
-  flex: 1;
+  width: 40%;
   display: flex;
   flex-direction: column;
 `;
@@ -80,7 +89,8 @@ const ProjectTemplate = ({
           aria-labelledby="media-carousel"
           items={mediaContents}
         />
-        <DetailsContainer aria-labelledby="project-media">
+        <CarouselWrapper />
+        <DetailsContainer aria-labelledby="project-details">
           <h2 hidden id="project-description">
             Project Description
           </h2>
@@ -89,11 +99,8 @@ const ProjectTemplate = ({
             tags={tags}
             buttons={buttons}
             content={content}
+            colors={colors}
           />
-          <h2 hidden id="color-swatches">
-            Color Swatches
-          </h2>
-          <ColorSwatchesContainer colors={colors} />
         </DetailsContainer>
       </Container>
     </ContainerWrapper>
