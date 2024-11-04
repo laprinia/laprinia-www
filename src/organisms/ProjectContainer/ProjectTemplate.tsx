@@ -40,12 +40,20 @@ const CarouselWrapper = styled.div`
   width: 60%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 900px) {
+    width: 100%;
+    height: 40%;
+  }
 `;
 
 const DetailsContainer = styled.section`
   width: 40%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const ProjectTemplate = ({

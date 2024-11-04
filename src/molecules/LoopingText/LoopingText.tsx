@@ -100,7 +100,7 @@ const LoopingText = ({
           {items.map((item, index) => (
             <React.Fragment key={index}>
               <ScrollingTextItem padding={padding}>{item}</ScrollingTextItem>
-              {withDivider && index < items.length - 1 && <Divider>*</Divider>}
+              {withDivider && <Divider>*</Divider>}
             </React.Fragment>
           ))}
           {items.map((item, index) => (

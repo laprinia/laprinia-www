@@ -15,7 +15,7 @@ const BottomSection = styled.div`
 const TextContainer = styled.aside`
   flex: 1;
   height: 95%;
-  padding: 1rem 1rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -24,9 +24,10 @@ const TextContainer = styled.aside`
   @media (max-width: 900px) {
     padding-top: 0rem;
     border: none;
-    flex: 0 0 40rem;
     width: 100%;
     margin-bottom: 1rem;
+    height: auto;
+    max-height: 40rem;
   }
 `;
 
@@ -46,25 +47,59 @@ const LoopingTextWrapper = styled.div`
 
 const ScrollArea = styled.div`
   overflow-y: auto;
-  flex-grow: 1;
+  height: 100%;
   @media (max-width: 900px) {
-    overflow-y: inherit;
+    overflow-y: auto;
+    height: auto;
+    max-height: 30rem;
   }
 `;
 
 const Section = styled.section`
   margin-bottom: 1rem;
+  @media (max-width: 1280px) {
+    font-size: var(--font-size-body-desktop);
+  }
 
-  h2 {
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-body-tablet);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-body-phone);
+  }
+  @media (min-width: 1800px) {
+    font-size: var(--font-size-body-xl);
+  }
+  h2,
+  h3 {
     font-size: var(--font-size-base-desktop);
     font-weight: var(--font-weight-semibold);
     margin-bottom: 0.5rem;
   }
-
+  strong {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base-desktop);
+  }
   p {
     text-align: justify;
     font-weight: var(--font-weight-light);
     margin-bottom: 0.5rem;
+  }
+  ul {
+    text-align: justify;
+    list-style-type: none;
+    margin-left: 1.5rem;
+  }
+  li {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+  }
+  code {
+    font-size: 14px;
+    font-weight: var(--font-weight-light);
+    background-color: var(--accent-color);
+    color: var(--background-color);
   }
 `;
 
@@ -91,7 +126,12 @@ const ProjectDescriptionContainer = ({
           <strong>{projectName}</strong>
         </Header>
         <LoopingTextWrapper>
-          <LoopingText items={tags} padding={"0rem"} withDivider />
+          <LoopingText
+            items={tags}
+            padding={"0rem"}
+            withDivider
+            marqueeSpeed={"30s"}
+          />
         </LoopingTextWrapper>
         <ButtonContainer buttons={buttons} />
         <ScrollArea>
