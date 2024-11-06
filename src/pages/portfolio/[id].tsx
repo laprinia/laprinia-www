@@ -14,7 +14,11 @@ const PortfolioItemPage = () => {
     id: string | string[] | undefined,
   ): Project | null => {
     if (!id) return null;
-    const allProjects = [...projects.web, ...projects.graphics];
+    const allProjects = [
+      ...projects.web,
+      ...projects.graphics,
+      ...projects.others,
+    ];
     return (
       allProjects.find(
         (project) =>

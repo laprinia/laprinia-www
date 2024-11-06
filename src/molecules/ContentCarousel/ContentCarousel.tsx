@@ -88,17 +88,26 @@ const Arrow = styled.div<{ right: boolean; left: boolean }>`
 `;
 
 const Media = styled.div`
-  max-width: 100%;
-  max-height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   img,
   video {
-    max-width: 100%;
-    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+
+    @media (min-width: 900px) {
+      object-fit: scale-down;
+    }
   }
 `;
 
