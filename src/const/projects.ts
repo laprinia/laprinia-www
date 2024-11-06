@@ -25,6 +25,7 @@ export type Project = {
 export type ProjectCategories = {
   web: Project[];
   graphics: Project[];
+  others: Project[];
   //"ui/ux": Project[];
 };
 
@@ -400,6 +401,103 @@ export const projects: ProjectCategories = {
         },
       ],
       colors: ["#e97972", "#E53190", "#2EABD3", "#E3E874", "#E4E3EA"],
+    },
+  ],
+  others: [
+    {
+      name: "lissajous curves",
+      year: 2024,
+      techStackPreview: "*/touchdesigner, python*/",
+      tags: [
+        "touchdesigner",
+        "math",
+        "python",
+        "generative art",
+        "rendering",
+        "3d",
+      ],
+      mediaContents: [
+        { type: "image", src: "/projects/ray-tracer/content/1.png" },
+        { type: "image", src: "/projects/ray-tracer/content/3.png" },
+        { type: "image", src: "/projects/ray-tracer/content/2.png" },
+        { type: "image", src: "/projects/ray-tracer/content/4.png" },
+        { type: "image", src: "/projects/ray-tracer/content/5.png" },
+        { type: "image", src: "/projects/ray-tracer/content/6.png" },
+        { type: "image", src: "/projects/ray-tracer/content/7.png" },
+        { type: "image", src: "/projects/ray-tracer/content/8.png" },
+        { type: "image", src: "/projects/ray-tracer/content/9.png" },
+        { type: "image", src: "/projects/ray-tracer/content/10.png" },
+        { type: "image", src: "/projects/ray-tracer/content/11.png" },
+        { type: "image", src: "/projects/ray-tracer/content/12.png" },
+        { type: "video", src: "/projects/ray-tracer/content/13.mp4" },
+      ],
+      buttons: [
+        {
+          imageSrc: "/social/behance.png",
+          alt: "Behance",
+          link: "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer",
+        },
+        {
+          imageSrc: "/social/github.png",
+          alt: "GitHub",
+          link: "https://github.com/laprinia/hyzu",
+        },
+      ],
+      textContents: [
+        {
+          header: "A) About",
+          text: "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a vibrant red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output.",
+        },
+        {
+          header: "B) Process",
+          text:
+            "<section>\n" +
+            "  <h3>1. Setup and Initialization</h3>\n" +
+            "  <p>\n" +
+            "    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n" +
+            "    <code>transform</code> positions and rotation based on the base name. During initialization,\n" +
+            "    the script extracts specific characters from the name of each base to determine its parameters.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>2. Curve Manipulation</h3>\n" +
+            "  <p>\n" +
+            "    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n" +
+            "    position and rotation. For instance:\n" +
+            "    <pre><code>\n" +
+            "      BaseName = op('..').name\n" +
+            "      Name = list(BaseName)\n" +
+            "      NameLength = len(Name)\n" +
+            "      op('transform1').par.tx = Name[NameLength - 2]\n" +
+            "      op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5\n" +
+            "    </code></pre>\n" +
+            "    These values are dynamically applied, ensuring that each curve has a distinct placement and\n" +
+            "    rotation within the grid.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>3. Emissive Materials</h3>\n" +
+            "  <p>\n" +
+            "    Each curve is rendered with emissive materials, adding a glow effect against the red background.\n" +
+            "    The emissive settings make each base visually distinct, creating a striking 3x3 grid that\n" +
+            "    emphasizes each Lissajous curve's shape and form.\n" +
+            "  </p>\n" +
+            "\n" +
+            "  <h3>4. Parameter-Based Transformations</h3>\n" +
+            "  <p>\n" +
+            "    Specific transformations are applied based on the last character of the base name. For example:\n" +
+            "    <pre><code>\n" +
+            "      if Name[NameLength - 2] == '3':\n" +
+            "          op('transform1').par.ry = 30\n" +
+            "      elif Name[NameLength - 2] == '5':\n" +
+            "          op('transform1').par.ry = 10\n" +
+            "      elif Name[NameLength - 2] == '7':\n" +
+            "          op('transform1').par.ry = 110\n" +
+            "    </code></pre>\n" +
+            "    These conditions provide controlled, visually interesting variations across the grid.\n" +
+            "  </p>\n" +
+            "</section>\n",
+        },
+      ],
+      colors: ["#AD2337"],
     },
   ],
 };

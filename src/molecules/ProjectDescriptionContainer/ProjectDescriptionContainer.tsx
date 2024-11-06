@@ -10,6 +10,10 @@ const BottomSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const TextContainer = styled.aside`
@@ -25,9 +29,8 @@ const TextContainer = styled.aside`
     padding-top: 0rem;
     border: none;
     width: 100%;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     height: auto;
-    max-height: 40rem;
   }
 `;
 
@@ -35,6 +38,19 @@ const Header = styled.h1`
   font-size: calc(1.2 * var(--font-size-heading1-desktop));
   font-weight: var(--font-weight-semibold);
   color: var(--accent-color);
+  @media (max-width: 900px) {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+`;
+
+const MobileColorSwatches = styled.div`
+  display: none;
+  @media (max-width: 900px) {
+    display: block;
+    height: 2rem;
+    width: 100%;
+  }
 `;
 
 const LoopingTextWrapper = styled.div`
@@ -43,15 +59,19 @@ const LoopingTextWrapper = styled.div`
   position: relative;
   white-space: nowrap;
   padding-bottom: 1rem;
+  @media (max-width: 900px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const ScrollArea = styled.div`
   overflow-y: auto;
   height: 100%;
+  max-height: 100%;
+
   @media (max-width: 900px) {
-    overflow-y: auto;
     height: auto;
-    max-height: 30rem;
+    padding-bottom: 4rem;
   }
 `;
 
@@ -118,6 +138,9 @@ const ProjectDescriptionContainer = ({
 }) => {
   return (
     <>
+      <MobileColorSwatches>
+        <ColorSwatchesContainer colors={colors} />
+      </MobileColorSwatches>
       <TextContainer aria-labelledby="project-description">
         <h2 hidden id="project-description">
           Project Description

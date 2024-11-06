@@ -18,9 +18,11 @@ const ContainerWrapper = styled.main`
   box-sizing: border-box;
   max-width: 100%;
   max-height: 100%;
-
   @media (max-width: 900px) {
+    flex: none;
     flex-direction: column;
+    overflow: auto;
+    height: auto;
   }
 `;
 const Container = styled.div`
@@ -53,6 +55,8 @@ const DetailsContainer = styled.section`
 
   @media (max-width: 900px) {
     width: 100%;
+    height: auto;
+    overflow: visible;
   }
 `;
 

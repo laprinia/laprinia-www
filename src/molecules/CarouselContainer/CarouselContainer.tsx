@@ -34,6 +34,7 @@ const ImageNumberContainer = styled.aside`
   font-weight: var(--font-weight-semibold);
   @media (max-width: 900px) {
     border: none;
+    height: 2rem;
   }
   @media (max-width: 1280px) {
     font-size: var(--font-size-body-desktop);
