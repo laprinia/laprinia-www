@@ -51,7 +51,6 @@ const HeadshotButton = styled.a`
   }
 
   &:hover {
-    cursor: pointer;
     background-color: var(--darker-accent-color);
   }
 

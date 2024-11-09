@@ -32,6 +32,80 @@ export type ProjectCategories = {
 export const projects: ProjectCategories = {
   web: [
     {
+      name: "text wave",
+      year: 2024,
+      techStackPreview: "*/react, webgl*/",
+      tags: [
+        "react",
+        "typescript",
+        "react-three-fiber",
+        "drei",
+        "styled components",
+      ],
+      mediaContents: [
+        {
+          type: "video",
+          src: "/projects/text-wave/content/0.mov",
+        },
+        {
+          type: "video",
+          src: "/projects/text-wave/content/1.mov",
+        },
+        {
+          type: "video",
+          src: "/projects/text-wave/content/3.mov",
+        },
+        {
+          type: "video",
+          src: "/projects/text-wave/content/4.mov",
+        },
+      ],
+      buttons: [
+        {
+          imageSrc: "/social/github.png",
+          alt: "GitHub",
+          link: "hhttps://github.com/laprinia/laprinia-www",
+        },
+      ],
+      textContents: [
+        {
+          header: "A) About",
+          text: "Animating text textures in web applications using React Three Fiber. This project explores dynamic 3D text textures that can either auto-animate or respond to the cursor position, controlling the intensity of the animation in real-time.",
+        },
+        {
+          header: "B) Follows",
+          text:
+            "<ul>\n" +
+            "  <li>react-three-fiber for rendering 3D scenes within React</li>\n" +
+            "  <li>drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n" +
+            "  <li>three.js for texture management and geometry manipulation</li>\n" +
+            "  <li>Mantine for streamlined UI components</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "C) Key Feats",
+          text:
+            "<ul>\n" +
+            "  <li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the center of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n" +
+            "  <li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n" +
+            "  <li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n" +
+            "  <li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n" +
+            "  <code>const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);\n" +
+            "const waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);\n" +
+            "vertex.z = targetIntensityRef.current * (waveX1 + waveY1);</code>\n" +
+            "  </li>\n" +
+            "  <li><h3>🖱️ Cursor-Driven Interaction</h3> The wave's amplitude is determined by the distance between the cursor and the canvas center:</li>\n" +
+            "  <code>const distance = Math.sqrt(Math.pow(clientX - canvasCenter.x, 2) + Math.pow(clientY - canvasCenter.y, 2));\n" +
+            "const newTargetIntensity = (distance * 0.5) / maxDistance / 200;</code>n" +
+            "  </li>\n" +
+            "  <li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes, ensuring a responsive and immersive experience.</li>\n" +
+            "  <li><h3>🎨 Customizable UI</h3> Control panel to switch between auto-animated and cursor-driven modes, adjust animation speed, and change texture paths on the fly.</li>\n" +
+            "</ul>\n",
+        },
+      ],
+      colors: ["#01692B", "#004392", "#F17019"],
+    },
+    {
       name: "fullstack authentication",
       year: 2023,
       techStackPreview: "*/react, mongodb*/",

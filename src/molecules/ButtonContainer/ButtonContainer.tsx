@@ -21,7 +21,6 @@ const Container = styled.div`
     }
 
     &:hover {
-      cursor: pointer;
       background-color: var(--darker-accent-color);
     }
 

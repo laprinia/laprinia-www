@@ -62,6 +62,10 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        cursor:none;
+        *:hover, *:active, *:focus {
+            cursor:none;
+        }
     }
 
     body {
@@ -83,10 +87,6 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: var(--background-color);
         font-family: var(--font-heading), sans-serif;
-        //cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
     }
-
-    *:hover, *:active, *:focus {
-        //cursor: url('/cursor.png') 4 4, auto;  /* Hardcoded cursor size */
-    }
+    
 `;

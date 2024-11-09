@@ -191,7 +191,6 @@ const Button = styled.button`
   }
 
   &:hover {
-    cursor: pointer;
     background-color: var(--darker-accent-color);
   }
 `;

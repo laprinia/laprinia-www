@@ -3,9 +3,11 @@ import { GlobalStyle } from "../styles/globalStyle";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/system";
 import ErrorBoundary from "../templates/ErrorBoundary/ErrorBoundary";
+import CustomCursor from "../molecules/CustomCursor/CustomCursor";
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
+      <CustomCursor />
       <Head>
         <title>laprinia</title>
         <meta
