@@ -3,7 +3,7 @@ import StillTexture from "../../molecules/Texture/StillTexture";
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
 import { landingName, landingPageIntroduction } from "../../consts";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import styled from "styled-components";
 import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
 
@@ -141,16 +141,20 @@ const DesktopHome = ({
 }) => {
   const [isTablet, setIsTablet] = useState(false);
   useEffect(() => {
-    const handleResize = () => {
+    const debounce = (func: Function, delay: number) => {
+      let timer: NodeJS.Timeout;
+      return (...args: any[]) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => func(...args), delay);
+      };
+    };
+
+    const handleResize = debounce(() => {
       setIsTablet(window.innerWidth <= 1023);
-    };
+    }, 100);
 
-    handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (

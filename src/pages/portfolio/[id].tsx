@@ -18,6 +18,7 @@ const PortfolioItemPage = () => {
       ...projects.web,
       ...projects.graphics,
       ...projects.others,
+      ...projects["ui/ux"],
     ];
     return (
       allProjects.find(

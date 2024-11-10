@@ -36,4 +36,4 @@ const HomeNavBar = ({ isMobile = false }: { isMobile?: boolean }) => {
   );
 };
 
-export default HomeNavBar;
+export default React.memo(HomeNavBar);

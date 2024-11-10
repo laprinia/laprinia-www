@@ -26,11 +26,89 @@ export type ProjectCategories = {
   web: Project[];
   graphics: Project[];
   others: Project[];
-  //"ui/ux": Project[];
+  "ui/ux": Project[];
 };
 
 export const projects: ProjectCategories = {
   web: [
+    {
+      name: "personal website",
+      year: 2024,
+      techStackPreview: "*/react, next.js*/",
+      tags: [
+        "react",
+        "typescript",
+        "react-three-fiber",
+        "css",
+        "html",
+        "seo",
+        "next.js",
+        "styled components",
+        "webpack",
+        "vercel",
+        "ffmpeg",
+        "magick",
+      ],
+      mediaContents: [
+        {
+          type: "video",
+          src: "/projects/personal-website/content/1.mov",
+        },
+        {
+          type: "video",
+          src: "/projects/personal-website/content/2.mov",
+        },
+        {
+          type: "video",
+          src: "/projects/personal-website/content/3.mov",
+        },
+        {
+          type: "video",
+          src: "/projects/personal-website/content/4.mov",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website/content/5.png",
+        },
+      ],
+      buttons: [
+        {
+          imageSrc: "/social/github.png",
+          alt: "GitHub",
+          link: "hhttps://github.com/laprinia/laprinia-www",
+        },
+      ],
+      textContents: [
+        {
+          header: "A) About",
+          text: "My personal website that acts as a love 💌 to all my favorite UX design trends and best practices I've gained over the years as a web developer. It highlights my creative approach to website building, combining simplicity in style and typography with engaging animations, CSS transitions, and bold colors. The site is a showcase of both creativity and technical prowess, designed to keep users engaged and ensure a fun experience. Enjoy!",
+        },
+        {
+          header: "B) Frontend Recipe",
+          text:
+            "<ul>\n" +
+            "  <li>Next.js for improved SEO and faster load times through server-side rendering</li>\n" +
+            "  <li>React with TypeScript for type safety and robust code management</li>\n" +
+            "  <li>react-three-fiber for 3D text animations and visual effects</li>\n" +
+            "  <li>Framer Motion for smooth, CSS-based animations and transitions</li>\n" +
+            "  <li>Focus on accessibility features and responsive design for a seamless experience on all devices</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "C) Key Feats",
+          text:
+            "<ul>\n" +
+            "  <li><h3>🌐 SEO & Performance Optimization</h3></li>\n" +
+            "  <li><h3>🎨 Responsive Design</h3></li>\n" +
+            "  <li><h3>✨ 3D Text Animations</h3></li>\n" +
+            "  <li><h3>🖼️ Mixed Media Carousel</h3></li>\n" +
+            "  <li><h3>📄 Modular Page Structure</h3></li>\n" +
+            "  <li><h3>🛠️ Framer Motion Animations</h3></li>\n" +
+            "</ul>\n",
+        },
+      ],
+      colors: ["#0141D5"],
+    },
     {
       name: "text wave",
       year: 2024,
@@ -300,6 +378,79 @@ export const projects: ProjectCategories = {
         },
       ],
       colors: ["#0C1210", "#1D4636", "#2C5C64", "#99ABB7", "#6BADE7"],
+    },
+  ],
+  "ui/ux": [
+    {
+      name: "personal website ux",
+      year: 2024,
+      techStackPreview: "*/figma, adobe*/",
+      tags: [
+        "figma",
+        "adobe fonts",
+        "adobe photoshop",
+        "adobe rush",
+        "responsive design",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/1.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/2.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/3.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/4.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/5.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/6.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/7.png",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/8.png",
+        },
+      ],
+      buttons: [
+        {
+          imageSrc: "/social/github.png",
+          alt: "GitHub",
+          link: "hhttps://github.com/laprinia/laprinia-www",
+        },
+      ],
+      textContents: [
+        {
+          header: "A) Goals",
+          text: "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer 🙂‍↕️. The site serves as a portfolio to showcase my projects in a fun and engaging. The objective was to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic.",
+        },
+        {
+          header: "B) Process & Solution",
+          text:
+            "<ul>\n" +
+            "  <li><h3>🔍 Research & Planning</h3> I began by identifying the key sections of the website: a Landing Page for a quick introduction, a Portfolio Overview for an at-a-glance view of all projects, Individual Project Pages for detailed insights, and an About Page for personal background and contact information.</li>\n" +
+            "  <li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures, ensuring a polished visual presentation. Adobe Rush was used to create short, impactful videos for my project showcases.</li>\n" +
+            "  <li><h3>🎨 Visual Design & Accessibility</h3> The color palette was chosen to balance a clean look with bold accents: a soft background color (#F6F6F6) paired with striking blue tones (#0141D5, #0136af, #002986). These colors were applied thoughtfully to maintain accessibility and contrast ratios. Typography breakpoints were defined for XL desktops, desktops, tablets, and phones, ensuring readability across all devices.</li>\n" +
+            "  <li><h3>💻 Development & Implementation</h3> Leveraged Next.js for SEO optimization and fast page loading. Used React with TypeScript for type safety and component reusability. Integrated react-three-fiber for dynamic 3D text animations, bringing the site to life, and Framer Motion for smooth transitions and micro-interactions. Focused on a mobile-first responsive design that adapts seamlessly from small screens to large desktops, offering unique perspectives for different devices.</li>\n" +
+            "  <li><h3>🖼️ Content Structure & Navigation</h3> The content was structured to allow easy navigation: the Landing Page offers a clear introduction, while the Portfolio section provides a snapshot of each project. Individual Project Pages delve into technologies used, code snippets, and include a mixed-media carousel of images and videos. The About Page connects visitors to my background and personal interests.</li>\n" +
+            "</ul>\n",
+        },
+      ],
+      colors: ["#0141D5"],
     },
   ],
   graphics: [
