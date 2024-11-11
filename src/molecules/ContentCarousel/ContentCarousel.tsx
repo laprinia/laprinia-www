@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
+import Image from "next/image";
 
 const CarouselWrapper = styled.section`
   position: relative;

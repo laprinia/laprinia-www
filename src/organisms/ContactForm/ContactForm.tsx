@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BisectorText from "../../molecules/BisectorText/BisectorText";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Flip, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 const ContainerWrapper = styled.main`
   flex-direction: column;
   margin: 0;
-  padding: 0 0rem;
+  padding: 0 0;
   display: flex;
   flex: 1;
 
@@ -200,6 +200,7 @@ const ContactForm = () => {
   const nameRef = useRef<HTMLInputElement | null>(null);
   const emailRef = useRef<HTMLInputElement | null>(null);
   const messageRef = useRef<HTMLTextAreaElement | null>(null);
+  const [isSent, setIsSent] = useState(false);
 
   useEffect(() => {
     const updateVh = () => {
@@ -217,11 +218,17 @@ const ContactForm = () => {
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (form.current) {
+    setIsSent(true);
+    if (form.current && !isSent) {
       emailjs
-        .sendForm("service_xr7hbe8", "template_bbtt41o", form.current, {
-          publicKey: "QPN0eIf0zed3MnRFt",
-        })
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
+          form.current,
+          {
+            publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+          },
+        )
         .then(
           () => {
             toast.success("I will get back to you ASAP! 💌", {
@@ -251,6 +258,7 @@ const ContactForm = () => {
           },
         )
         .finally(() => {
+          setIsSent(false);
           if (nameRef.current && emailRef.current && messageRef.current) {
             nameRef.current.value = "";
             emailRef.current.value = "";

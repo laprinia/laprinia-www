@@ -11,7 +11,7 @@ const MobileContainer = styled.main`
   flex-direction: column;
   height: calc(100vh - 5rem);
   flex: 1;
-  @media (max-width: 767px) {
+  @media (max-width: 1000px) {
     padding: 1.25rem 1.5rem 1.5rem;
     gap: 0.5rem;
   }
@@ -31,7 +31,7 @@ const InfoSection = styled.section`
   height: 40%;
   text-align: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1000px) {
     justify-content: space-evenly !important;
   }
 `;
