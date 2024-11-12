@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -121,6 +121,20 @@ const ProjectCard = ({
   techText: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsMobile(window.matchMedia("(max-width: 900px)").matches);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <StyledLink
@@ -132,7 +146,9 @@ const ProjectCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <ImageContainer imagePath={isHovered ? gifPath : imagePath} />
+        <ImageContainer
+          imagePath={isMobile ? gifPath : isHovered ? gifPath : imagePath}
+        />
         <TextContainer id={`project-${projectName}`}>
           <HeaderContainer>
             <ProjectName>{projectName}</ProjectName>

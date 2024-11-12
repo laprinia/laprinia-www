@@ -6,16 +6,29 @@ const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState(25);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const updateCursorSize = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth < 600) {
-      setSize(28);
+      setSize(20);
     } else if (screenWidth >= 600 && screenWidth < 900) {
-      setSize(28);
+      setSize(20);
     } else {
       setSize(25);
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsMobile(window.innerWidth <= 768);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     updateCursorSize();
@@ -42,7 +55,7 @@ const CustomCursor = () => {
     };
   }, [isVisible]);
 
-  return (
+  return !isMobile ? (
     <aside
       ref={cursorRef}
       style={{
@@ -60,6 +73,8 @@ const CustomCursor = () => {
         transition: "opacity 0.2s ease-out",
       }}
     />
+  ) : (
+    <></>
   );
 };
 

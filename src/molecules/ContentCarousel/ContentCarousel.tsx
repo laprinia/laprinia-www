@@ -118,6 +118,7 @@ const Carousel = ({
                 autoPlay
                 muted
                 loop
+                playsInline
                 aria-label={`Video ${i + 1}`}
               />
             ) : (
