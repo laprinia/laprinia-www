@@ -98,12 +98,12 @@ export const projects: ProjectCategories = {
           header: "C) Key Feats",
           text:
             "<ul>\n" +
-            "  <li><h3>🌐 SEO & Performance Optimization</h3></li>\n" +
-            "  <li><h3>🎨 Responsive Design</h3></li>\n" +
-            "  <li><h3>✨ 3D Text Animations</h3></li>\n" +
-            "  <li><h3>🖼️ Mixed Media Carousel</h3></li>\n" +
-            "  <li><h3>📄 Modular Page Structure</h3></li>\n" +
-            "  <li><h3>🛠️ Framer Motion Animations</h3></li>\n" +
+            "  <li>🌐 SEO & Performance Optimization</li>\n" +
+            "  <li>🎨 Responsive Design</li>\n" +
+            "  <li>✨ 3D Text Animations</li>\n" +
+            "  <li>🖼️ Mixed Media Carousel</li>\n" +
+            "  <li>📄 Modular Page Structure</li>\n" +
+            "  <li>🛠️ Framer Motion Animations</li>\n" +
             "</ul>\n",
         },
       ],
@@ -142,13 +142,13 @@ export const projects: ProjectCategories = {
         {
           imageSrc: "/social/github.png",
           alt: "GitHub",
-          link: "hhttps://github.com/laprinia/laprinia-www",
+          link: "https://github.com/laprinia/laprinia-www",
         },
       ],
       textContents: [
         {
           header: "A) About",
-          text: "Animating text textures in web applications using React Three Fiber. This project explores dynamic 3D text textures that can either auto-animate or respond to the cursor position, controlling the intensity of the animation in real-time.",
+          text: "Animating text textures for my web apps using React Three Fiber. This project explores dynamic 3D text textures that can either auto-animate or respond to the cursor position, controlling the intensity of the animation in real-time.",
         },
         {
           header: "B) Follows",
@@ -157,14 +157,14 @@ export const projects: ProjectCategories = {
             "  <li>react-three-fiber for rendering 3D scenes within React</li>\n" +
             "  <li>drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n" +
             "  <li>three.js for texture management and geometry manipulation</li>\n" +
-            "  <li>Mantine for streamlined UI components</li>\n" +
+            "  <li>Raleway font used for my text samples</li>\n" +
             "</ul>\n",
         },
         {
           header: "C) Key Feats",
           text:
             "<ul>\n" +
-            "  <li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the center of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n" +
+            "  <li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the top left of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n" +
             "  <li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n" +
             "  <li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n" +
             "  <li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n" +
@@ -172,12 +172,7 @@ export const projects: ProjectCategories = {
             "const waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);\n" +
             "vertex.z = targetIntensityRef.current * (waveX1 + waveY1);</code>\n" +
             "  </li>\n" +
-            "  <li><h3>🖱️ Cursor-Driven Interaction</h3> The wave's amplitude is determined by the distance between the cursor and the canvas center:</li>\n" +
-            "  <code>const distance = Math.sqrt(Math.pow(clientX - canvasCenter.x, 2) + Math.pow(clientY - canvasCenter.y, 2));\n" +
-            "const newTargetIntensity = (distance * 0.5) / maxDistance / 200;</code>n" +
-            "  </li>\n" +
-            "  <li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes, ensuring a responsive and immersive experience.</li>\n" +
-            "  <li><h3>🎨 Customizable UI</h3> Control panel to switch between auto-animated and cursor-driven modes, adjust animation speed, and change texture paths on the fly.</li>\n" +
+            "  <li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes.</li>\n" +
             "</ul>\n",
         },
       ],
@@ -350,7 +345,7 @@ export const projects: ProjectCategories = {
       textContents: [
         {
           header: "A) About",
-          text: "React 3D terrain generation using React-Three-Fiber, using the marching cubes algo",
+          text: "React 3D terrain generation editor and visualiser using React-Three-Fiber, using the marching cubes algo.",
         },
         {
           header: "B) Frontend Recipe",
@@ -436,14 +431,14 @@ export const projects: ProjectCategories = {
       textContents: [
         {
           header: "A) Goals",
-          text: "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer 🙂‍↕️. The site serves as a portfolio to showcase my projects in a fun and engaging. The objective was to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic.",
+          text: "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer 🙂‍↕️. The site serves as a portfolio to showcase my projects in a fun and engaging. Iwanted to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic.",
         },
         {
           header: "B) Process & Solution",
           text:
             "<ul>\n" +
             "  <li><h3>🔍 Research & Planning</h3> I began by identifying the key sections of the website: a Landing Page for a quick introduction, a Portfolio Overview for an at-a-glance view of all projects, Individual Project Pages for detailed insights, and an About Page for personal background and contact information.</li>\n" +
-            "  <li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures, ensuring a polished visual presentation. Adobe Rush was used to create short, impactful videos for my project showcases.</li>\n" +
+            "  <li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures. Adobe Rush was used to create short, impactful videos for my project showcases.</li>\n" +
             "  <li><h3>🎨 Visual Design & Accessibility</h3> The color palette was chosen to balance a clean look with bold accents: a soft background color (#F6F6F6) paired with striking blue tones (#0141D5, #0136af, #002986). These colors were applied thoughtfully to maintain accessibility and contrast ratios. Typography breakpoints were defined for XL desktops, desktops, tablets, and phones, ensuring readability across all devices.</li>\n" +
             "  <li><h3>💻 Development & Implementation</h3> Leveraged Next.js for SEO optimization and fast page loading. Used React with TypeScript for type safety and component reusability. Integrated react-three-fiber for dynamic 3D text animations, bringing the site to life, and Framer Motion for smooth transitions and micro-interactions. Focused on a mobile-first responsive design that adapts seamlessly from small screens to large desktops, offering unique perspectives for different devices.</li>\n" +
             "  <li><h3>🖼️ Content Structure & Navigation</h3> The content was structured to allow easy navigation: the Landing Page offers a clear introduction, while the Portfolio section provides a snapshot of each project. Individual Project Pages delve into technologies used, code snippets, and include a mixed-media carousel of images and videos. The About Page connects visitors to my background and personal interests.</li>\n" +
