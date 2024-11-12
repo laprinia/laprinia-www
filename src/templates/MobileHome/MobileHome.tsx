@@ -1,10 +1,10 @@
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
-import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import { landingPageIntroduction } from "../../consts";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
+import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
+import { Canvas } from "@react-three/fiber";
 
 const MobileContainer = styled.main`
   display: flex;

@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { footerHeroPath, headerHeroPath, mobileHeroPath } from "../consts";
-import MobileHome from "../templates/MobileHome/MobileHome";
-import DesktopHome from "../templates/DesktopHome/DesktopHome";
 import NoWebGL from "../templates/NoWebGL/NoWebGL";
+import dynamic from "next/dynamic";
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
-
+  const DesktopHome = dynamic(
+    () => import("../templates/DesktopHome/DesktopHome"),
+    {
+      loading: () => <p>Loading...</p>,
+      ssr: false,
+    },
+  );
+  const MobileHome = dynamic(
+    () => import("../templates/MobileHome/MobileHome"),
+    {
+      loading: () => <p>Loading...</p>,
+      ssr: false,
+    },
+  );
   useEffect(() => {
     const isWebGLAvailable = () => {
       try {

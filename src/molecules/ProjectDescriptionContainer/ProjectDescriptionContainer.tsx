@@ -4,7 +4,7 @@ import ButtonContainer from "../ButtonContainer/ButtonContainer";
 import ColorSwatchesContainer from "../ColorSwatchesContainer/ColorSwatchesContainer";
 import LoopingText from "../../molecules/LoopingText/LoopingText";
 
-const BottomSection = styled.div`
+const BottomSection = styled.section`
   height: 5%;
   width: 100%;
   display: flex;
@@ -44,7 +44,7 @@ const Header = styled.h1`
   }
 `;
 
-const MobileColorSwatches = styled.div`
+const MobileColorSwatches = styled.aside`
   display: none;
   @media (max-width: 900px) {
     display: block;
@@ -53,7 +53,7 @@ const MobileColorSwatches = styled.div`
   }
 `;
 
-const LoopingTextWrapper = styled.div`
+const LoopingTextWrapper = styled.aside`
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -64,7 +64,7 @@ const LoopingTextWrapper = styled.div`
   }
 `;
 
-const ScrollArea = styled.div`
+const ScrollArea = styled.article`
   overflow-y: auto;
   height: 100%;
   max-height: 100%;

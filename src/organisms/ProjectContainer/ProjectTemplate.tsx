@@ -25,7 +25,7 @@ const ContainerWrapper = styled.main`
     height: auto;
   }
 `;
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   width: 100%;
   height: 100%;
@@ -38,7 +38,7 @@ const Container = styled.div`
   }
 `;
 
-const CarouselWrapper = styled.div`
+const CarouselWrapper = styled.main`
   width: 60%;
   display: flex;
   flex-direction: column;

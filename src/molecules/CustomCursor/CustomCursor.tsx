@@ -4,16 +4,16 @@ import cursorImage from "../../../public/cursor.png";
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState(20);
+  const [size, setSize] = useState(25);
   const [isVisible, setIsVisible] = useState(false);
   const updateCursorSize = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth < 600) {
-      setSize(14);
+      setSize(28);
     } else if (screenWidth >= 600 && screenWidth < 900) {
-      setSize(12);
+      setSize(28);
     } else {
-      setSize(20);
+      setSize(25);
     }
   };
 
@@ -43,7 +43,7 @@ const CustomCursor = () => {
   }, [isVisible]);
 
   return (
-    <div
+    <aside
       ref={cursorRef}
       style={{
         position: "fixed",

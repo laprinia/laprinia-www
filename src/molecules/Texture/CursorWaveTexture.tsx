@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Plane } from "@react-three/drei";
 import * as THREE from "three";
@@ -20,6 +20,7 @@ const CursorWaveTexture = ({
   const [planeSize, setPlaneSize] = useState<[number, number]>([1, 1]);
   const [texture, setTexture] = useState<THREE.Texture | null>(null);
 
+  // Memoize the texture loading logic to avoid redundant operations
   useEffect(() => {
     const textureLoader = new THREE.TextureLoader();
     textureLoader.load(texturePath, (loadedTexture) => {
@@ -40,8 +41,11 @@ const CursorWaveTexture = ({
       }
       setPlaneSize([width, height]);
     });
+  }, [texturePath, viewport]);
 
-    const handleMouseMove = (event: MouseEvent) => {
+  // Efficient mouse move handler (debounced or throttled)
+  const handleMouseMove = useCallback(
+    (event: MouseEvent) => {
       const { clientX, clientY } = event;
       canvasCenterRef.current = {
         x: size.width / 2,
@@ -58,8 +62,11 @@ const CursorWaveTexture = ({
 
       const newTargetIntensity = (distance * 0.5) / maxDistance / 200;
       targetIntensityRef.current = Math.max(0.01, newTargetIntensity);
-    };
+    },
+    [size, viewport],
+  );
 
+  useEffect(() => {
     if (!isAutoAnimated) {
       window.addEventListener("mousemove", handleMouseMove);
     } else {
@@ -71,16 +78,17 @@ const CursorWaveTexture = ({
         window.removeEventListener("mousemove", handleMouseMove);
       }
     };
-  }, [texturePath, size, viewport, isAutoAnimated]);
+  }, [handleMouseMove, isAutoAnimated, animationSpeed]);
 
+  // Update the mesh in the frame loop
   useFrame(() => {
     const mesh = meshRef.current;
     if (mesh && mesh.geometry) {
       const positions = mesh.geometry.attributes.position;
       const time = Date.now() * 0.001;
 
+      const vertex = new THREE.Vector3();
       for (let i = 0; i < positions.count; i++) {
-        const vertex = new THREE.Vector3();
         vertex.fromBufferAttribute(positions, i);
 
         const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);
@@ -96,6 +104,7 @@ const CursorWaveTexture = ({
     }
   });
 
+  // Don't render the plane if the texture isn't loaded yet
   if (!texture) {
     return null;
   }

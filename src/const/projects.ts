@@ -84,7 +84,7 @@ export const projects: ProjectCategories = {
           text: "My personal website that acts as a love 💌 to all my favorite UX design trends and best practices I've gained over the years as a web developer. It highlights my creative approach to website building, combining simplicity in style and typography with engaging animations, CSS transitions, and bold colors. The site is a showcase of both creativity and technical prowess, designed to keep users engaged and ensure a fun experience. Enjoy!",
         },
         {
-          header: "B) Frontend Recipe",
+          header: "B) Recipe",
           text:
             "<ul>\n" +
             "  <li>Next.js for improved SEO and faster load times through server-side rendering</li>\n" +
@@ -107,7 +107,7 @@ export const projects: ProjectCategories = {
             "</ul>\n",
         },
       ],
-      colors: ["#0141D5"],
+      colors: ["#0141D5", "#F6F6F6", "#000000"],
     },
     {
       name: "text wave",
@@ -450,7 +450,7 @@ export const projects: ProjectCategories = {
             "</ul>\n",
         },
       ],
-      colors: ["#0141D5"],
+      colors: ["#0141D5", "#F6F6F6", "#000000"],
     },
   ],
   graphics: [

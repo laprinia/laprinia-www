@@ -3,11 +3,11 @@ import StillTexture from "../../molecules/Texture/StillTexture";
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
 import { landingName, landingPageIntroduction } from "../../consts";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
 
-const DesktopContainer = styled.div`
+const DesktopContainer = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -126,7 +126,7 @@ const BottomAlignedBoxContent = styled.section`
   }
 `;
 
-const CanvasSection = styled.div`
+const CanvasSection = styled.section`
   width: 100%;
   height: 100%;
   position: relative;

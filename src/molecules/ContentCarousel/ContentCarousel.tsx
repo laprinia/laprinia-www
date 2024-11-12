@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Image from "next/image";
 
 const CarouselWrapper = styled.section`
   position: relative;
@@ -37,7 +36,7 @@ const CarouselContent = styled.figure<{ active: boolean }>`
     `}
 `;
 
-const ClickableArea = styled.div<{ right?: boolean; left?: boolean }>`
+const ClickableArea = styled.main<{ right?: boolean; left?: boolean }>`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -62,36 +61,7 @@ const ClickableArea = styled.div<{ right?: boolean; left?: boolean }>`
     `}
 `;
 
-const Arrow = styled.div<{ right: boolean; left: boolean }>`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.8rem;
-  opacity: 50%;
-  color: #0141d5;
-  cursor: pointer;
-  border: none;
-  padding: 10px;
-  z-index: 10;
-
-  &:focus {
-    outline: 2px solid #fff; /* Visible focus indicator */
-  }
-
-  ${({ left }) =>
-    left &&
-    css`
-      left: 20px;
-    `}
-
-  ${({ right }) =>
-    right &&
-    css`
-      right: 20px;
-    `}
-`;
-
-const Media = styled.div`
+const Media = styled.section`
   position: relative;
   width: 100%;
   height: 100%;

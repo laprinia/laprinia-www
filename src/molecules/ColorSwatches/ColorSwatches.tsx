@@ -9,14 +9,14 @@ const getColorIntensity = (color: string) => {
   return r + g + b;
 };
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
 `;
 
-const ColorBox = styled.div<{ color: string }>`
+const ColorBox = styled.article<{ color: string }>`
   flex: 1;
   background-color: ${(props) => props.color};
 `;

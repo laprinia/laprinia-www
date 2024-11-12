@@ -22,7 +22,7 @@ const ScrollableWrapper = styled.article`
 `;
 
 // Parent component that uses Container
-const LayoutWrapper = styled.div`
+const LayoutWrapper = styled.main`
   display: flex;
   flex-direction: column;
   width: 65%;

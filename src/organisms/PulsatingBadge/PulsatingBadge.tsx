@@ -31,7 +31,7 @@ const outlinePulse = keyframes`
   }
 `;
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -42,7 +42,7 @@ const Container = styled.div`
   height: auto;
 `;
 
-const Circle = styled.div`
+const Circle = styled.section`
   position: relative;
   min-width: 16px;
   width: 16px;
@@ -66,7 +66,7 @@ const Circle = styled.div`
   }
 `;
 
-const Text = styled.div`
+const Text = styled.article`
   text-align: justify;
 `;
 

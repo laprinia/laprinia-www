@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;

@@ -7,27 +7,27 @@ const ContainerWrapper = styled.main`
   width: 100%;
 `;
 
-const CategoryHeader = styled.article`
+const CategoryHeader = styled.section`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 1rem;
 `;
 
-const CategoryText = styled.div`
+const CategoryText = styled.article`
   font-size: var(--font-size-heading1-desktop);
   font-weight: var(--font-weight-semibold);
   color: var(--accent-color);
 `;
 
-const Line = styled.div`
+const Line = styled.section`
   height: 0.25rem;
   background-color: var(--accent-color);
   border-radius: 1rem;
   margin: 1rem 0;
 `;
 
-const GridContainer = styled.div`
+const GridContainer = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 
-const DesktopContainer = styled.div`
+const DesktopContainer = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;

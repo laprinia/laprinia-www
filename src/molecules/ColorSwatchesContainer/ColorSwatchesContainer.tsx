@@ -1,7 +1,6 @@
 import ColorSwatches from "../ColorSwatches/ColorSwatches";
 import React from "react";
 import styled from "styled-components";
-import { color } from "framer-motion";
 
 const Container = styled.aside`
   height: 100%;
