@@ -5,10 +5,12 @@ import { NextUIProvider } from "@nextui-org/system";
 import ErrorBoundary from "../templates/ErrorBoundary/ErrorBoundary";
 import CustomCursor from "../molecules/CustomCursor/CustomCursor";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
+      <SpeedInsights />
       <CustomCursor />
       <Head>
         <title>laprinia</title>
