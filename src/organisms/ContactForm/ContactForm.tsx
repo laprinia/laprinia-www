@@ -244,7 +244,6 @@ const ContactForm = () => {
             });
           },
           (error) => {
-            console.log(error);
             toast.error("Oops! Something went wrong! 🥸", {
               position: "bottom-left",
               autoClose: 5000,
