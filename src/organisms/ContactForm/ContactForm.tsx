@@ -222,11 +222,11 @@ const ContactForm = () => {
     if (form.current && !isSent) {
       emailjs
         .sendForm(
-          process.env.NEXT_SERVICE_ID || "",
-          process.env.NEXT_TEMPLATE_ID || "",
+          process.env.NEXT_PUBLIC_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
           form.current,
           {
-            publicKey: process.env.NEXT_KEY,
+            publicKey: process.env.NEXT_PUBLIC_KEY,
           },
         )
         .then(
