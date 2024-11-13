@@ -42,4 +42,7 @@ Thumbs.db
 *.sln
 *.sw?
 
+.env.local
 .env
+.env.development
+.env.production
