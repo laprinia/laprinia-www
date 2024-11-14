@@ -121,6 +121,7 @@ const Carousel = ({
                 loop
                 playsInline
                 aria-label={`Video ${i + 1}`}
+                preload="metadata"
               />
             ) : (
               <Image
