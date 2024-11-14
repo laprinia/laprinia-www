@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import Image from "next/image";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -29,20 +30,12 @@ const CardContainer = styled.article`
   }
 `;
 
-const ImageContainer = styled.figure<{ imagePath: string }>`
+const ImageContainer = styled.figure`
   width: max(16rem, 100%);
   height: 70%;
   margin: 0;
-  background-size: cover;
-  background-position: center;
+  position: relative;
   align-self: center;
-  background-image: url(${(props) => props.imagePath});
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
   @media (min-width: 1800px) {
     width: 100%;
@@ -146,9 +139,15 @@ const ProjectCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <ImageContainer
-          imagePath={isMobile ? gifPath : isHovered ? gifPath : imagePath}
-        />
+        <ImageContainer>
+          <Image
+            src={isMobile ? gifPath : isHovered ? gifPath : imagePath}
+            alt={projectName}
+            loading="lazy"
+            layout="fill"
+            objectFit="cover"
+          />
+        </ImageContainer>
         <TextContainer id={`project-${projectName}`}>
           <HeaderContainer>
             <ProjectName>{projectName}</ProjectName>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Image from "next/image";
 const Container = styled.section`
   display: flex;
   gap: 0.5rem;
@@ -46,7 +46,13 @@ const ButtonContainer = ({
           key={index}
           onClick={() => (window.location.href = button.link)}
         >
-          <img src={button.imageSrc} alt={button.alt} />
+          <Image
+            src={button.imageSrc}
+            alt={button.alt}
+            loading="lazy"
+            width={100}
+            height={100}
+          />
         </button>
       ))}
     </Container>

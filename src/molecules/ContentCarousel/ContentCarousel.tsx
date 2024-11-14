@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Image from "next/image";
 
 const CarouselWrapper = styled.section`
   position: relative;
@@ -122,7 +123,13 @@ const Carousel = ({
                 aria-label={`Video ${i + 1}`}
               />
             ) : (
-              <img src={item.src} alt={`Image ${i + 1}`} />
+              <Image
+                src={item.src}
+                alt={`Image ${i + 1}`}
+                loading="lazy"
+                width={700}
+                height={700}
+              />
             )}
           </Media>
         </CarouselContent>

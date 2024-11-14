@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Image from "next/image";
+import React from "react";
 
 const HeadshotButtonContainerWrapper = styled.nav`
   width: 100%;
@@ -74,7 +76,13 @@ const SocialButtonsContainer = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={button.imgSrc} alt={button.alt} />
+          <Image
+            src={button.imgSrc}
+            alt={button.alt}
+            loading="lazy"
+            width={100}
+            height={100}
+          />
         </HeadshotButton>
       ))}
     </HeadshotButtonContainerWrapper>
