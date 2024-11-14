@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -26,10 +24,10 @@ const nextConfig = {
     };
 
     if (process.env.ANALYZE === "true") {
+      const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
       config.plugins.push(
         new BundleAnalyzerPlugin({
           analyzerMode: "static",
-          openAnalyzer: false,
           reportFilename: isServer
             ? "../analyze/server.html"
             : "./analyze/client.html",
@@ -40,72 +38,21 @@ const nextConfig = {
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: "all",
-        maxInitialRequests: 30,
-        minSize: 30000,
+        maxInitialRequests: 25,
+        minSize: 20000,
       };
     }
 
-    config.output = {
-      ...config.output,
-      ecmaVersion: "latest",
-    };
-
-    config.optimization.minimize = true;
-    config.optimization.minimizer = [
-      {
-        apply: (compiler) => {
-          const TerserPlugin = require("terser-webpack-plugin");
-          new TerserPlugin({
-            terserOptions: {
-              format: {
-                comments: false,
-              },
-              compress: {
-                drop_console: true,
-                drop_debugger: true,
-              },
-            },
-            extractComments: false,
-          }).apply(compiler);
+    if (!dev) {
+      config.cache = {
+        type: "filesystem",
+        buildDependencies: {
+          config: [__filename],
         },
-      },
-    ];
+      };
+    }
 
     return config;
-  },
-
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=31536000; includeSubDomains; preload",
-          },
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "no-referrer-when-downgrade",
-          },
-          {
-            key: "Permissions-Policy",
-            value: "geolocation=(self), microphone=()",
-          },
-        ],
-      },
-    ];
   },
 };
 
