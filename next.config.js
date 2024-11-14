@@ -17,6 +17,7 @@ const nextConfig = {
         type: "filesystem",
       };
     }
+
     if (process.env.ANALYZE === "true") {
       const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
       config.plugins.push(
@@ -34,6 +35,15 @@ const nextConfig = {
         chunks: "all",
         maxInitialRequests: 25,
         minSize: 20000,
+      };
+    }
+
+    if (!dev) {
+      config.cache = {
+        type: "filesystem",
+        buildDependencies: {
+          config: [__filename],
+        },
       };
     }
 
