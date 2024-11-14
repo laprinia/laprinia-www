@@ -52,6 +52,7 @@ const ButtonContainer = ({
             loading="lazy"
             width={100}
             height={100}
+            quality={75}
           />
         </button>
       ))}

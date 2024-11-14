@@ -130,6 +130,7 @@ const Carousel = ({
                 loading="lazy"
                 width={700}
                 height={700}
+                quality={75}
               />
             )}
           </Media>

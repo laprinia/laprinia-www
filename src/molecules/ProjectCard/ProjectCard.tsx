@@ -146,6 +146,7 @@ const ProjectCard = ({
             loading="lazy"
             layout="fill"
             objectFit="cover"
+            quality={10}
           />
         </ImageContainer>
         <TextContainer id={`project-${projectName}`}>

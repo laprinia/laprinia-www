@@ -61,25 +61,25 @@ export const socialButtons = [
   {
     id: "button-1",
     href: linkedinLink,
-    imgSrc: "/social/linkedin.png",
+    imgSrc: "/social/linkedin.webp",
     alt: "LinkedIn Logo",
   },
   {
     id: "button-2",
     href: behanceLink,
-    imgSrc: "/social/behance.png",
+    imgSrc: "/social/behance.webp",
     alt: "Behance Logo",
   },
   {
     id: "button-3",
     href: githubLink,
-    imgSrc: "/social/github.png",
+    imgSrc: "/social/github.webp",
     alt: "GitHub Logo",
   },
   {
     id: "button-4",
     href: instagramLink,
-    imgSrc: "/social/instagram.png",
+    imgSrc: "/social/instagram.webp",
     alt: "Instagram Logo",
   },
 ];
