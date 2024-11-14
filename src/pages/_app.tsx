@@ -6,7 +6,7 @@ import ErrorBoundary from "../templates/ErrorBoundary/ErrorBoundary";
 import CustomCursor from "../molecules/CustomCursor/CustomCursor";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
