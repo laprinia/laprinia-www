@@ -48,7 +48,7 @@ const MobileAboutLayout = ({
   return (
     <MobileContainerWrapper>
       <DoubleTextRibbon tags={technologies} />
-      <HeadshotImage src={"/headshot.webp"} relativeHeight={"50%"} />
+      <HeadshotImage src={"/headshot.avif"} relativeHeight={"50%"} />
       <SocialButtonsContainer buttons={buttons} />
       <Description content={descriptionText} />
       <ArticlesContainer leftColumn={leftColumn} rightColumn={rightColumn} />

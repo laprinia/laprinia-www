@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 // @ts-ignore
-import cursorImage from "../../../public/cursor.png";
+import cursorImage from "../../../public/cursor.avif";
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);

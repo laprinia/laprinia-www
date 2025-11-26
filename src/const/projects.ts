@@ -68,12 +68,12 @@ export const projects: ProjectCategories = {
         },
         {
           type: "image",
-          src: "/projects/personal-website/content/5.webp",
+          src: "/projects/personal-website/content/5.avif",
         },
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "hhttps://github.com/laprinia/laprinia-www",
         },
@@ -140,7 +140,7 @@ export const projects: ProjectCategories = {
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/laprinia-www",
         },
@@ -198,23 +198,23 @@ export const projects: ProjectCategories = {
       mediaContents: [
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/1.webp",
+          src: "/projects/fullstack-authentication/content/1.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/2.webp",
+          src: "/projects/fullstack-authentication/content/2.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/3.webp",
+          src: "/projects/fullstack-authentication/content/3.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/4.webp",
+          src: "/projects/fullstack-authentication/content/4.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/5.webp",
+          src: "/projects/fullstack-authentication/content/5.avif",
         },
         {
           type: "video",
@@ -227,12 +227,12 @@ export const projects: ProjectCategories = {
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/opea",
         },
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism",
         },
@@ -304,7 +304,7 @@ export const projects: ProjectCategories = {
       mediaContents: [
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/1.webp",
+          src: "/projects/web-3d-terrain-generator/content/1.avif",
         },
         {
           type: "video",
@@ -312,23 +312,23 @@ export const projects: ProjectCategories = {
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/2.webp",
+          src: "/projects/web-3d-terrain-generator/content/2.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/3.webp",
+          src: "/projects/web-3d-terrain-generator/content/3.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/4.webp",
+          src: "/projects/web-3d-terrain-generator/content/4.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/5.webp",
+          src: "/projects/web-3d-terrain-generator/content/5.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/6.webp",
+          src: "/projects/web-3d-terrain-generator/content/6.avif",
         },
         {
           type: "video",
@@ -337,7 +337,7 @@ export const projects: ProjectCategories = {
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/phea",
         },
@@ -390,40 +390,40 @@ export const projects: ProjectCategories = {
       mediaContents: [
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/1.webp",
+          src: "/projects/personal-website-ux/content/1.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/2.webp",
+          src: "/projects/personal-website-ux/content/2.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/3.webp",
+          src: "/projects/personal-website-ux/content/3.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/4.webp",
+          src: "/projects/personal-website-ux/content/4.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/5.webp",
+          src: "/projects/personal-website-ux/content/5.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/6.webp",
+          src: "/projects/personal-website-ux/content/6.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/7.webp",
+          src: "/projects/personal-website-ux/content/7.avif",
         },
         {
           type: "image",
-          src: "/projects/personal-website-ux/content/8.webp",
+          src: "/projects/personal-website-ux/content/8.avif",
         },
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "hhttps://github.com/laprinia/laprinia-www",
         },
@@ -463,28 +463,28 @@ export const projects: ProjectCategories = {
         "various materials",
       ],
       mediaContents: [
-        { type: "image", src: "/projects/ray-tracer/content/1.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/2.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/3.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/4.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/5.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/6.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/7.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/8.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/9.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/10.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/11.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/12.webp" },
+        { type: "image", src: "/projects/ray-tracer/content/1.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/2.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/3.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/4.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/5.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/6.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/7.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/8.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/9.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/10.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/11.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/12.avif" },
         { type: "video", src: "/projects/ray-tracer/content/13.mp4" },
       ],
       buttons: [
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer",
         },
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/hyzu",
         },
@@ -558,20 +558,20 @@ export const projects: ProjectCategories = {
         "scene rendering",
       ],
       mediaContents: [
-        { type: "image", src: "/projects/volumetric-light/content/1.webp" },
+        { type: "image", src: "/projects/volumetric-light/content/1.avif" },
         { type: "video", src: "/projects/volumetric-light/content/2.mp4" },
-        { type: "image", src: "/projects/volumetric-light/content/3.webp" },
-        { type: "image", src: "/projects/volumetric-light/content/4.webp" },
-        { type: "image", src: "/projects/volumetric-light/content/5.webp" },
+        { type: "image", src: "/projects/volumetric-light/content/3.avif" },
+        { type: "image", src: "/projects/volumetric-light/content/4.avif" },
+        { type: "image", src: "/projects/volumetric-light/content/5.avif" },
       ],
       buttons: [
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study",
         },
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/mozu/tree/main",
         },
@@ -638,13 +638,13 @@ export const projects: ProjectCategories = {
       ],
       mediaContents: [
         { type: "video", src: "/projects/lissajous-curves/content/1.mp4" },
-        { type: "image", src: "/projects/lissajous-curves/content/3.webp" },
-        { type: "image", src: "/projects/lissajous-curves/content/2.webp" },
-        { type: "image", src: "/projects/lissajous-curves/content/4.webp" },
+        { type: "image", src: "/projects/lissajous-curves/content/3.avif" },
+        { type: "image", src: "/projects/lissajous-curves/content/2.avif" },
+        { type: "image", src: "/projects/lissajous-curves/content/4.avif" },
       ],
       buttons: [
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves",
         },

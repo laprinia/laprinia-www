@@ -36,12 +36,12 @@ const Portfolio = () => {
                       projectName={`${projectNumber} ${project.name}`}
                       projectId={project.name}
                       year={String(project.year)}
-                      imagePath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot-img.webp`}
-                      gifPath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot.webp`}
+                      imagePath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot-img.avif`}
+                      gifPath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot.avif`}
                       techText={project.techStackPreview}
                     />
                   );
-                },
+                }
               )}
             </PortfolioContainer>
             <MDivider />

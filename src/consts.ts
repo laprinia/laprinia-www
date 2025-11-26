@@ -4,19 +4,19 @@ export const navItems = [
   { label: "ABOUT", href: "/about" },
 ];
 
-export const mobileHeroPath = "/mobile.png";
+export const mobileHeroPath = "/mobile.avif";
 
-export const footerHeroPath = "/title.png";
+export const footerHeroPath = "/title.avif";
 
-export const headerHeroPath = "/name.png";
+export const headerHeroPath = "/name.avif";
 
-export const notFoundPath = "/notfound.png";
+export const notFoundPath = "/notfound.avif";
 
-export const somethingWentWrongPath = "/somethingwrong.png";
+export const somethingWentWrongPath = "/somethingwrong.avif";
 
 export const landingName = "Lavinia Dumitrenco";
 export const landingPageIntroduction =
-  "I'm Lavinia, a Web Developer and Designer based in Bucharest RO.";
+  "I'm Lavinia, a Design Engineer based in Bucharest RO.";
 
 export const aboutIntroduction =
   "A web dev & designer with 4 years of experience, based in Bucharest, Romania. I'm a fan of squiggly shapes, web development, computer graphics, and generative art. Got an idea for your next project? I'd love to hear it!";
@@ -61,25 +61,25 @@ export const socialButtons = [
   {
     id: "button-1",
     href: linkedinLink,
-    imgSrc: "/social/linkedin.webp",
+    imgSrc: "/social/linkedin.avif",
     alt: "LinkedIn Logo",
   },
   {
     id: "button-2",
     href: behanceLink,
-    imgSrc: "/social/behance.webp",
+    imgSrc: "/social/behance.avif",
     alt: "Behance Logo",
   },
   {
     id: "button-3",
     href: githubLink,
-    imgSrc: "/social/github.webp",
+    imgSrc: "/social/github.avif",
     alt: "GitHub Logo",
   },
   {
     id: "button-4",
     href: instagramLink,
-    imgSrc: "/social/instagram.webp",
+    imgSrc: "/social/instagram.avif",
     alt: "Instagram Logo",
   },
 ];

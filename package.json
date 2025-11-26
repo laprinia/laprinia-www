@@ -38,6 +38,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "convert:avif": "node scripts/convert-to-avif.js",
+    "assets:cleanup": "node scripts/cleanup-originals.js",
     "analyze": "ANALYZE=true next build"
   },
   "eslintConfig": {
