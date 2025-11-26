@@ -7,7 +7,6 @@ const DescriptionContainer = styled.section`
   align-items: flex-start;
 
   p {
-    text-align: justify;
     @media (min-width: 1800px) {
       font-size: var(--font-size-base-xl);
     }

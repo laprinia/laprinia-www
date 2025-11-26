@@ -75,11 +75,5 @@ export const socialButtons = [
     href: githubLink,
     imgSrc: "/social/github.avif",
     alt: "GitHub Logo",
-  },
-  {
-    id: "button-4",
-    href: instagramLink,
-    imgSrc: "/social/instagram.avif",
-    alt: "Instagram Logo",
-  },
+  }
 ];

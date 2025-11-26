@@ -102,17 +102,14 @@ const Section = styled.section`
     font-size: var(--font-size-base-desktop);
   }
   p {
-    text-align: justify;
     font-weight: var(--font-weight-light);
     margin-bottom: 0.5rem;
   }
   ul {
-    text-align: justify;
     list-style-type: none;
     margin-left: 1.5rem;
   }
   li {
-    text-align: justify;
     margin-bottom: 0.5rem;
   }
   code {
