@@ -1,35 +1,43 @@
+import styled from "styled-components";
 import SectionedArticle from "../SectionedArticle/SectionedArticle";
 
+const Section = styled.section`
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+
+  p strong {
+    font-weight: var(--font-weight-regular);
+  }
+`;
 const ExperienceArticle = () => {
   return (
     <SectionedArticle aria-labelledby="experience" heading={"A) EXPERIENCE"}>
-      <section>
+      <Section>
+        <p>
+          2024-current Design Engineer at <strong>In The Pocket</strong>
+        </p>
+      </Section>
+      <Section>
+        <p>
+          2024-2025 Web Developer & Designer at <strong>Siemens Energy</strong>
+        </p>
+      </Section>
+      <Section>
         <p>
           2023-2024 Frontend Engineer at <strong>Adobe</strong>
         </p>
-        <p>
-          Developed a microfrontend for Adobe Analytics using React, TypeScript,
-          and D3.
-        </p>
-      </section>
-      <section>
+      </Section>
+      <Section>
         <p>
           2022-2023 Web Developer at <strong>Ubisoft</strong>
         </p>
-        <p>
-          Enhanced functionalities and workflows for most used web product,
-          using React, Typescript, Node.js & SASS.
-        </p>
-      </section>
-      <section>
+      </Section>
+      <Section>
         <p>
           2021-2022 Fullstack Engineer at <strong>Adobe</strong>
         </p>
-        <p>
-          Prototyped and migrated Angular functionalities to new React
-          microfrontend. Used TypeScript, Node.js, Adobe XD & Jest.
-        </p>
-      </section>
+      </Section>
     </SectionedArticle>
   );
 };

@@ -19,7 +19,7 @@ export const landingPageIntroduction =
   "I'm Lavinia, a Design Engineer based in Bucharest RO.";
 
 export const aboutIntroduction =
-  "A web dev & designer with 4 years of experience, based in Bucharest, Romania. I'm a fan of squiggly shapes, web development, computer graphics, and generative art. Got an idea for your next project? I'd love to hear it!";
+  "Design Engineer with over 5 years of experience, based in Bucharest, Romania. I'm a fan of squiggly shapes, good design, web development, and 3d rendering. Got an idea for your next project? I'd love to hear it!";
 
 export const linkedinLink = "https://www.linkedin.com/in/lavdumi/";
 
