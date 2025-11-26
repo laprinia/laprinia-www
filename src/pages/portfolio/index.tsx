@@ -37,7 +37,7 @@ const Portfolio = () => {
                       projectId={project.name}
                       year={String(project.year)}
                       imagePath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot-img.avif`}
-                      gifPath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot.avif`}
+                      gifPath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot.webp`}
                       techText={project.techStackPreview}
                     />
                   );
