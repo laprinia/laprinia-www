@@ -105,10 +105,7 @@ const Section = styled.section`
     font-weight: var(--font-weight-light);
     margin-bottom: 0.5rem;
   }
-  ul {
-    list-style-type: none;
-    margin-left: 1.5rem;
-  }
+
   li {
     margin-bottom: 0.5rem;
   }
