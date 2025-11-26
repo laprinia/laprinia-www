@@ -6,7 +6,7 @@ export const navItems = [
 
 export const mobileHeroPath = "/mobile.png";
 
-export const footerHeroPath = "/dev.png";
+export const footerHeroPath = "/title.png";
 
 export const headerHeroPath = "/name.png";
 
