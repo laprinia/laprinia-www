@@ -18,13 +18,29 @@ const CertificationArticle = () => {
       heading={"E) CERTIFICATIONS"}
     >
       <Section>
-        <p>2024 Figma UI/UX Design Essentials, Udemy</p>
+        <p>
+          2025 <strong>Visual Design & Branding</strong>, SuperHi
+        </p>
       </Section>
       <Section>
-        <p>2023 Advanced CSS and Sass, Udemy</p>
+        <p>
+          2025 <strong>Graphic Design Specialization</strong>, Coursera
+        </p>
       </Section>
       <Section>
-        <p>2023 ReactJS - Mastering Redux, Udemy</p>
+        <p>
+          2024 <strong>Introduction to User Design</strong>, SuperHi
+        </p>
+      </Section>
+      <Section>
+        <p>
+          2023 <strong>Advanced CSS and Sass</strong>, Udemy
+        </p>
+      </Section>
+      <Section>
+        <p>
+          2023 <strong>ReactJS - Mastering Redux</strong>, Udemy
+        </p>
       </Section>
     </SectionedArticle>
   );

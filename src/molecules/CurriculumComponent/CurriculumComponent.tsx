@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { aboutIntroduction, technologiesTags } from "../../consts";
+import { aboutIntroduction, skillTags } from "../../consts";
 import Description from "../Description/Description";
 import DoubleTextRibbon from "../../organisms/TextRibbon/DoubleTextRibbon";
 import ArticlesContainer from "../../organisms/ArticlesContainer/ArticlesContainer";
@@ -43,7 +43,7 @@ const CurriculumComponent = ({ articles }: { articles: React.ReactNode[] }) => {
             rightColumn={rightColumn}
           />
         </ScrollableWrapper>
-        <DoubleTextRibbon tags={technologiesTags} />
+        <DoubleTextRibbon tags={skillTags} />
       </Container>
     </LayoutWrapper>
   );

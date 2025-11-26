@@ -15,7 +15,7 @@ const ExperienceArticle = () => {
     <SectionedArticle aria-labelledby="experience" heading={"A) EXPERIENCE"}>
       <Section>
         <p>
-          2024-current Design Engineer at <strong>In The Pocket</strong>
+          2025-now Design Engineer at <strong>In The Pocket</strong>
         </p>
       </Section>
       <Section>
