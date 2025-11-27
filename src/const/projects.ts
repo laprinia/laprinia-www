@@ -27,6 +27,7 @@ export type ProjectCategories = {
   web: Project[];
   "3d": Project[];
   experimental: Project[];
+  other: Project[];
 };
 
 export const projects: ProjectCategories = {
@@ -935,6 +936,47 @@ export const projects: ProjectCategories = {
   ],
   experimental: [
     {
+      name: "media pipe",
+      year: 2025,
+      techStackPreview: "*/touchdesigner*/",
+      tags: [
+        "touchdesigner",
+        "mediapipe",
+        "instancing",
+        "image processing"
+      ],
+      mediaContents: [
+        {
+          type: "video",
+          src: "/projects/media-pipe/content/1.mp4",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe.",
+        },
+        {
+          header: "B) MediaPipe Controls",
+          text:
+            "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence.",
+        },
+        {
+          header: "C) Instancing from Table",
+          text:
+            "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid.",
+        },
+        {
+          header: "D) Halftone & Transparency",
+          text:
+            "Halftone shaders and layered transparency emulate looking through a camera viewfinder.",
+        },
+      ],
+      colors: ["#000000"],
+    },
+    {
       name: "lissajous curves",
       year: 2024,
       techStackPreview: "*/touchdesigner, python*/",
@@ -994,6 +1036,74 @@ export const projects: ProjectCategories = {
         },
       ],
       colors: ["#790B0B"],
+    },
+  ],
+  other: [
+    {
+      name: "scissors",
+      year: 2025,
+      techStackPreview: "*/figma, illustrator, procreate*/",
+      tags: [
+        "graphic design",
+        "practice",
+        "figma",
+        "illustrator",
+        "procreate",
+        "digital illustration",
+        "graphic design",
+        "experimental",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/scissors/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/5.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Collection of digital representations of a simple household object: a pair of scissors—created for my design specialization, where I had to depict one item in four different styles using different tools.",
+        },
+        {
+          header: "B) Procreate Illustration",
+          text:
+            "The first piece is drawn in Procreate, with a minimalist color palette and dotted shadowing to give the scissors a soft, illustrative feel.",
+        },
+        {
+          header: "C) Figma Patterns",
+          text:
+            "The second piece is an SVG created in Figma using the newer pattern and brush presets.",
+        },
+        {
+          header: "D) Noise & Gradients",
+          text:
+            "The third and fourth SVGs explore background noise and gradients.",
+        },
+        {
+          header: "E) Opacity & Composition",
+          text:
+            "The fifth SVG, made in Figma, plays with opacity, overlaps, and vector placement.",
+        },
+      ],
+      colors: ["#000000"],
     },
     {
       name: "poster work",
