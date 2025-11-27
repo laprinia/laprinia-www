@@ -118,6 +118,10 @@ export const projects: ProjectCategories = {
       mediaContents: [
         {
           type: "image",
+          src: "/projects/veloura-brand-guide/content/0.avif",
+        },
+        {
+          type: "image",
           src: "/projects/veloura-brand-guide/content/1.avif",
         },
         {
@@ -564,6 +568,90 @@ export const projects: ProjectCategories = {
         },
       ],
       colors: ["#0C1210", "#1D4636", "#2C5C64", "#99ABB7", "#6BADE7"],
+    },
+    {
+      name: "ghent bikes",
+      year: 2024,
+      techStackPreview: "*/react, next.js, figma*/",
+      tags: [
+        "react",
+        "typescript",
+        "accessibility",
+        "next.js",
+        "figma",
+        "chakra ui",
+        "joi",
+        "winston",
+        "google maps",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/4.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Web app that surfaces bike and parking stations in Ghent from the city's open data API. Each station shows capacity, live availability, a copyable name, and a Google Maps preview so riders can quickly decide where to park.",
+        },
+        {
+          header: "B) UI & Accessibility",
+          text:
+            "<ul>\n" +
+            "<li>Chakra UI provides semantic building blocks, theming, and responsive breakpoints with minimal custom CSS.</li>\n" +
+            "<li>Hidden helper text (e.g., <code>&lt;p hidden&gt;</code>) describes map previews for screen readers.</li>\n" +
+            "<li><code>as</code> props and rem-based sizing support better semantics and scalable typography.</li>\n" +
+            "<li>Axe is used during development to catch and fix accessibility issues early.</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "C) Problem & Data Source",
+          text:
+            "Using the Stad Gent open data catalog for bikes, I wanted to turn raw datasets into a practical city tool: clear lists of bike stations and parking spots that are easy to scan, compare, and locate on a map.",
+        },
+        {
+          header: "D) Architecture & Validation",
+          text:
+            "<ul>\n" +
+            "<li>Next.js API routes handle fetching and routing, with Joi schemas validating incoming responses from the Ghent endpoints.</li>\n" +
+            "<li>Winston is used for logging validation issues or unexpected data shapes.</li>\n" +
+            "<li>This setup keeps the API layer small and opinionated, ideal for a focused, dataset-driven app.</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "E) Queries & Endpoints",
+          text:
+            "<pre><code>Bike spots\nSELECT name, bikes_in_use, bikes_available, geopoint\nORDER BY name ASC\n\nPark spots\nSELECT name, description, type, categorie, totalcapacity, availablecapacity, occupation, isopennow\nWHERE (availablecapacity / totalcapacity * 100) &gt; 50 AND isopennow = 1\nORDER BY availablecapacity DESC\n</code></pre>\n" +
+            "These structured queries are used to build the data.stad.gent URLs that power the bikes and parkings views.",
+        },
+        {
+          header: "F) Routing & Data Fetching",
+          text:
+            "<ul>\n" +
+            "<li>/ — landing page with hero and links into the bikes and parkings flows.</li>\n" +
+            "<li>/bikes — shows the four Blue Bikes locations with capacity information.</li>\n" +
+            "<li>/parkings — lists parking spots with at least 50% availability.</li>\n" +
+            "<li>/parkings/[slug] — details view for a single parking, where the slug is generated from the fetched data.</li>\n" +
+            "<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n" +
+            "</ul>\n",
+        },
+      ],
+      colors: ["#0141D5", "#42A5F5", "#1B5E20"],
     },
   ],
   "3d": [
