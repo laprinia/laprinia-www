@@ -102,6 +102,124 @@ export const projects: ProjectCategories = {
       ],
       colors: ["#0141D5", "#F6F6F6", "#000000"],
     },
+    {
+      name: "veloura brand guide",
+      year: 2025,
+      techStackPreview: "*/figma, illustrator*/",
+      tags: [
+        "branding",
+        "visual identity",
+        "logo design",
+        "color systems",
+        "typography",
+        "mockups",
+        "ui",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/5.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/6.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/7.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/8.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/9.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/10.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/11.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/12.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Capstone brand identity for VELOURA, created as my final project for Coursera's Graphic Design Specialization. I wanted to explore how a brand could speak to the new generation and tackle overconsumption, while still feeling playful, mystical, and fashion-forward.",
+        },
+        {
+          header: "B) Problem & Intent",
+          text:
+            "I envisioned a brand that felt like a cult favorite, rather than a polished corporate brand, which was something out of my comfort zone. My startup is a brand that sells vintage fashion items, based on tarot card readings, a business started in the dorms by two friends.",
+        },
+        {
+          header: "C) Research & Ideation",
+          text:
+            "Through mind mapping, I explored clusters of ideas around ritual, barter, sustaintability, which lead me to a curated aesthetic.",
+        },
+        {
+          header: "D) Naming & Positioning",
+          text:
+            "I chose the name VELOURA (velour + aura) to fuse tactile, vintage fashion with the idea of the tarot card readings. The core qualities I aimed for were mystical, hip, and timeless.",
+        },
+        {
+          header: "E) Visual Decisions",
+          text:
+            "I pulled from 1960s–80s psychedelia, pop culture, and editorial designs.",
+        },
+        {
+          header: "F) Logotype",
+          text:
+            "The VELOURA logotype is set in bold, uppercase psychedelic letterforms to feel iconic and instantly recognizable.",
+        },
+        {
+          header: "G) Typography",
+          text:
+            "I paired an expressive display font for headlines with a clean, neutral sans-serif for copy to balance personality with clarity.",
+        },
+        {
+          header: "H) Color System",
+          text:
+            "The color system combines saturated, psychedelic primaries with softer supporting tones for imagery, and neutrals for UI.",
+        },
+        {
+          header: "I) Imagery",
+          text:
+            "Imagery is treated like modern tarot cards, using high-fashion editorial photos framed with symbols, borders, and layered graphics.",
+        },
+        {
+          header: "J) Mockups",
+          text:
+            "I translated the system into store signage, tags, and responsive web mockups to show how VELOURA lives both offline and online.",
+        },
+      ],
+      colors: ["#DF3912", "#5DA24E", "#EA4574", "#DFC6F9", "#37373E"],
+    },
   ],
   web: [
     {
