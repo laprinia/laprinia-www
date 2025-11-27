@@ -995,6 +995,54 @@ export const projects: ProjectCategories = {
       ],
       colors: ["#790B0B"],
     },
+    {
+      name: "poster work",
+      year: 2024,
+      techStackPreview: "*/illustrator, figma, photoshop*/",
+      tags: [
+        "graphic design",
+        "print design",
+        "layout design",
+        "illustrator",
+        "figma",
+        "photoshop",
+        "typography",
+        "experimental",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/poster-work/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/poster-work/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/poster-work/content/3.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) Bauhaus Poster",
+          text:
+            "Vector Bauhaus-inspired poster created in Adobe Illustrator, a recreation of a well-known Bauhaus layout with my own color and composition tweaks.",
+        },
+        {
+          header: "B) Gill Sans Type Poster",
+          text:
+            "Gill Sans type specimen poster for my graphic design specialization, designed in Figma and inspired by 1920s English Art Deco posters and magazines, using a chic palette of F43210, 4C54CA, and FFFFFF with organic and rectangular shapes to frame the type's history and details.",
+        },
+        {
+          header: "C) Artifact Poster",
+          text:
+            "Experimental artifact poster built from scanned handmade figurines and color indexing in Adobe Photoshop to create a harsh, textural print aesthetic.",
+        },
+      ],
+      colors: ["#000000"],
+    },
   ],
 };
 
