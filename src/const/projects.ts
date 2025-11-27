@@ -224,6 +224,110 @@ export const projects: ProjectCategories = {
       ],
       colors: ["#DF3912", "#5DA24E", "#EA4574", "#DFC6F9", "#37373E"],
     },
+    {
+      name: "mood ring",
+      year: 2024,
+      techStackPreview: "*/figma*/",
+      tags: [
+        "figma",
+        "design systems",
+        "ui design",
+        "prototyping",
+        "wireframes",
+        "user flows",
+        "responsive design",
+    
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/5.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/6.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/7.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/8.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/9.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/10.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/11.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/12.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Capstone project for SuperHi's User Interface course: a design system and interface for Mood Ring, a journaling app that blends birth chart astrology with color therapy to deliver personalized self-reflection prompts.",
+        },
+        {
+          header: "B) Problem & Idea",
+          text:
+            "I wanted to experiment with creating reusable design elements and creating a good structure for my design files.",
+        },
+        {
+          header: "C) Design System",
+          text:
+            "I set up a reusable design system in Figma with color tokens, typography scales, spacing, and component variants so that buttons, cards, inputs could be reused and iterated on quickly.",
+        },
+        {
+          header: "D) Flows & Prototyping",
+          text:
+            "Wireframes and user flows map how someone moves from logging in to onboarding, then I turned them into interactive prototypes to test navigation, hierarchy, and microinteractions.",
+        },
+        {
+          header: "E) Responsive UI",
+          text:
+            "Layouts are designed mobile-first, then adapted to tablet and desktop, focusing on flexible grids and component behavior so the mood journal feels consistent yet tailored across screen sizes.",
+        },
+        {
+          header: "F) Color Palette",
+          text:
+            "The palette uses a warm primary coral, a soft neutral secondary, deep near-black, and white to balance emotional intensity with calm, legible UI.",
+        },
+        {
+          header: "G) Key Learnings",
+          text:
+            "This project solidified how to structure a design system, design for multiple breakpoints, build reusable variants, and prototype user journeys end to end.",
+        },
+      ],
+      colors: ["hsla(10, 81%, 60%, 1)", "hsla(240, 6%, 80%, 1)", "hsla(0, 0%, 5%, 1)"],
+    },
   ],
   web: [
     {
