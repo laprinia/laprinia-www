@@ -13,13 +13,13 @@ const remPhone = (size: string) => `${parseFloat(size) / 16}rem`;
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-body: "Atkinson Hyperlegible Next", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         --font-heading: ${raleway.style.fontFamily};
         --font-weight-lighter: 200;
-        --font-weight-light: 400;
-        --font-weight-regular: 500;
-        --font-weight-semibold: 600;
-        --font-weight-bold: 700;
+        --font-weight-light: 300;
+        --font-weight-regular: 400;
+        --font-weight-semibold: 500;
+        --font-weight-bold: 600;
         // XL Desktop Sizes
         --font-size-base-xl: ${baseFontSizeXL};
         --font-size-heading1-xl: ${remXL("26px")};

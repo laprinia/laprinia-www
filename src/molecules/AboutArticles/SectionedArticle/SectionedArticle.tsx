@@ -17,7 +17,7 @@ const Article = styled.article`
 
   h2 {
     font-size: var(--font-size-base-desktop);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
     font-family: var(--font-heading);
   }
 
