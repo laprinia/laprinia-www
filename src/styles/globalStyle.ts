@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { lora, raleway } from "./fonts";
+import { raleway } from "./fonts";
 
 const baseFontSizeXL = "22px";
 const baseFontSizeDesktop = "18px";
@@ -13,7 +13,7 @@ const remPhone = (size: string) => `${parseFloat(size) / 16}rem`;
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --font-body: ${lora.style.fontFamily};
+        --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         --font-heading: ${raleway.style.fontFamily};
         --font-weight-lighter: 200;
         --font-weight-light: 400;
@@ -90,7 +90,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: var(--background-color);
-        font-family: var(--font-heading), sans-serif;
+        font-family: var(--font-body);
     }
     
 `;
