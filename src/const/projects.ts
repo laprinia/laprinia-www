@@ -29,7 +29,6 @@ export type ProjectCategories = {
   web: Project[];
   "3d": Project[];
   experimental: Project[];
-  other: Project[];
 };
 
 export const projects: ProjectCategories = {

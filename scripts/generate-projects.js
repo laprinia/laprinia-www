@@ -118,7 +118,6 @@ export type ProjectCategories = {
   web: Project[];
   "3d": Project[];
   experimental: Project[];
-  other: Project[];
 };`;
 
 const output = `// Auto-generated from content/projects/*.yaml
