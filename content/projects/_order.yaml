@@ -1,0 +1,20 @@
+branding & design:
+  - veloura-brand-guide
+  - mood-ring
+  - personal-website-ux
+web:
+  - tectonic
+  - ghent-bikes
+  - personal-website
+  - text-wave
+  - fullstack-authentication
+  - web-3d-terrain-generator
+
+3d:
+  - ray-tracer
+  - volumetric-light
+
+experimental:
+  - media-pipe
+  - lissajous-curves
+

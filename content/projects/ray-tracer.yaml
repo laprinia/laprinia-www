@@ -1,0 +1,68 @@
+name: ray tracer
+year: 2022
+techStackPreview: "*/opengl, compute shaders*/"
+tags:
+  - opengl
+  - c++
+  - shaders
+  - imgui
+  - post processing
+  - sphere ray tracing
+  - various materials
+colors:
+  - "#AD2337"
+  - "#0b5caf"
+  - "#68CEE9"
+  - "#E3E874"
+  - "#E57CE0"
+  - "#efedff"
+buttons:
+  - alt: Behance
+    imageSrc: /social/behance.avif
+    link: https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer
+  - alt: GitHub
+    imageSrc: /social/github.avif
+    link: https://github.com/laprinia/hyzu
+
+articles:
+  - header: "A) About"
+    text: 'OpenGL real-time ray tracer using Compute Shaders. Based on the "Ray Tracing in One Weekend series" 🌄.'
+  - header: "B) Process"
+    text: |
+      <section>
+      <h3>1. Matte Materials</h3>
+      <p>
+          The process is simple: normalizing the y coordinate and interpolating between two colors.
+          Checking if the rays hit the sphere and displaying the color. The resulting color is computed
+          by picking a random point inside a unit radius sphere, whose normal starts from the initial ray hit point.
+          This is done recursively until a ray doesn't hit anything or a maximum depth is reached.
+        </p>
+
+      <h3>2. Metallic Surfaces</h3>
+      <p>
+          For metallic surfaces, rays aren't randomly scattered. Luckily, GLSL has the 
+          <code>reflect()</code> function, which returns the reflected ray. Randomizing the reflected
+          ray by choosing a random endpoint, as we did for the matte surface, gives rough (fuzzy) surfaces.
+        </p>
+
+      <h3>3. Dielectric Surfaces</h3>
+      <p>
+          A ray is split into both a reflected one and a refracted one. Assuming that all rays are 
+          only refracted results in one outcome. Using Schlick's polynomial approximation, we can 
+          determine if rays must be reflected instead of refracted, producing the final result.
+        </p>
+
+      <h3>4. Cornell Box</h3>
+      <p>
+          Adding a Cornell Box introduces more complexity into the scene. To make things more 
+          realistic, emissive materials are added for ceiling lights and spheres. Rays hitting 
+          an emissive surface won't scatter, so they retain their true albedo color output.
+        </p>
+
+      <h3>5. Post-Processing</h3>
+      <p>
+          On the post-processing layer, HDR is applied, making the emissive material stand out more. 
+          Bloom is also added, which renders lights as blurred (using Gaussian Blur) and adds the 
+          result on top of the base color.
+        </p>
+      </section>

@@ -1,0 +1,53 @@
+name: lissajous curves
+year: 2024
+techStackPreview: "*/touchdesigner, python*/"
+tags:
+  - touchdesigner
+  - math
+  - python
+  - generative art
+  - rendering
+  - 3d
+colors:
+  - "#790B0B"
+buttons:
+  - alt: Behance
+    imageSrc: /social/behance.avif
+    link: https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves
+
+# Explicit media order — non-standard: 1, 3, 2, 4
+media:
+  - 1.mp4
+  - 3.avif
+  - 2.avif
+  - 4.avif
+
+articles:
+  - header: "A) About"
+    text: "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
+  - header: "B) Process"
+    text: |
+      <section>
+      <h3>1. Setup and Initialization</h3>
+      <p>
+          Each base is controlled by an Execute DAT script. The script adjusts parameters such as
+          <code>transform</code> positions and rotation based on the base name. During initialization,
+          the script extracts specific characters from the name of each base to determine its parameters.
+        </p>
+
+      <h3>2. Curve Manipulation</h3>
+      <p>
+          Inside the <code>onFrameStart()</code> function, variables are set to control each curve's
+          position and rotation. For instance:
+          <pre><code>
+            BaseName = op('..').name
+            Name = list(BaseName)
+            NameLength = len(Name)
+            op('transform1').par.tx = Name[NameLength - 2]
+            op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5
+          </code></pre>
+          These values are dynamically applied, ensuring that each curve has a distinct placement and
+          rotation within the grid.
+        </p>
+
+      </section>

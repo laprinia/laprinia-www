@@ -1,0 +1,25 @@
+name: tectonic
+year: 2025
+techStackPreview: "*/webflow, figma*/"
+tags:
+  - webflow
+  - figma
+  - design engineering
+  - vanilla js
+  - design
+  - glassmorphism
+colors:
+  - "#764ba2"
+buttons: []
+
+articles:
+  - header: "A) About"
+    text: "Design engineering work for In The Pocket on Tectonic, a major Belgian tech conference where industry experts share talks and panels."
+  - header: "B) Role & Collaboration"
+    text: "As a design engineer, I collaborated with volunteers from Nexent and In The Pocket engineers to help bring the Webflow site to life, including key program and schedule sections."
+  - header: "C) Program Timeline"
+    text: "Using data from the Webflow CMS, I designed and styled a flexible timeline component that can display multiple days and events across different stages, each on its own swimlane."
+  - header: "D) Impact"
+    text: "The component streamlined adding and updating events—crucial for a live conference where times and sessions change frequently—and the result was a huge success for the organizing team."
+  - header: "E) Visual Direction"
+    text: "I followed Tectonic's futurist typography and color system, and introduced subtle glass-like effects on buttons and event cards to give the interface a polished, tech-forward feel."

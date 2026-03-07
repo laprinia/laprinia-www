@@ -1,0 +1,58 @@
+name: volumetric light
+year: 2021
+techStackPreview: "*/opengl, glsl shaders*/"
+tags:
+  - opengl
+  - c++
+  - shaders
+  - imgui
+  - post processing
+  - scene rendering
+colors:
+  - "#e97972"
+  - "#E53190"
+  - "#2EABD3"
+  - "#E3E874"
+  - "#E4E3EA"
+buttons:
+  - alt: Behance
+    imageSrc: /social/behance.avif
+    link: https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study
+  - alt: GitHub
+    imageSrc: /social/github.avif
+    link: https://github.com/laprinia/mozu/tree/main
+
+articles:
+  - header: "A) About"
+    text: "OpenGL lighting project made from scratch, destined to be a volumetric light implementation. 🌈"
+  - header: "B) Includes"
+    text: |
+      <ol>
+      <li>Blinn-Phong model</li>
+      <li>Multiple Light Sources:
+              <ul>
+      <li>Directional</li>
+      <li>Point</li>
+      <li>Spotlight</li>
+              </ul>
+      </li>
+      <li>Normal Mapping</li>
+      <li>Shadow Mapping using a depth map rendered from the light's point of view, projected in perspective</li>
+      </ol>
+  - header: "C) Process"
+    text: |
+      <p><strong>Initial Setup:</strong> I implemented the Blinn-Phong lighting model in the Fragment shader using only a directional light. Normal mapping was used to enhance specular highlights.</p>
+
+      <p>The colors still appeared "crunchy" due to the lack of Gamma Correction. To address this, I added a Post Processing shader for Gamma Correction and HDR, using another framebuffer to render the scene into a texture before applying Post Processing effects.</p>
+
+      <p><strong>Adding Shadows:</strong> I used an additional depth framebuffer to render the scene from the directional light's perspective, which uses a perspective projection. The render result is stored in a texture.</p>
+
+      <p>Then, I integrated the computed shadow with the directional light's diffuse and specular components. To add more dynamic lighting, I placed two point lights near the pool's ends and added two spotlights from side lamps for a more fitting ambiance.</p>
+
+      <p><strong>Volumetric Lighting:</strong> This was achieved using the occlusion texture and a ray marching technique.</p>
+  - header: "D) For Short"
+    text: |
+      <ul>
+      <li>Post-Processing effects: HDR, Gamma Correction, and Grain</li>
+      <li>Additional techniques: Anti-Aliasing, Blending, Depth Testing, and Skybox implementation</li>
+      </ul>

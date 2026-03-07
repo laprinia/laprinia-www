@@ -1,0 +1,47 @@
+name: personal website
+year: 2024
+techStackPreview: "*/react, next.js*/"
+tags:
+  - react
+  - typescript
+  - react-three-fiber
+  - css
+  - html
+  - seo
+  - next.js
+  - styled components
+  - webpack
+  - vercel
+  - ffmpeg
+  - magick
+colors:
+  - "#0141D5"
+  - "#F6F6F6"
+  - "#000000"
+buttons:
+  - alt: GitHub
+    imageSrc: /social/github.avif
+    link: "hhttps://github.com/laprinia/laprinia-www"
+
+articles:
+  - header: "A) About"
+    text: "My personal website that acts as a love 💌 to all my favorite UX design trends and best practices I've gained over the years as a web developer. It highlights my creative approach to website building, combining simplicity in style and typography with engaging animations, CSS transitions, and bold colors. The site is a showcase of both creativity and technical prowess, designed to keep users engaged and ensure a fun experience. Enjoy!"
+  - header: "B) Recipe"
+    text: |
+      <ul>
+      <li>Next.js for improved SEO and faster load times through server-side rendering</li>
+      <li>React with TypeScript for type safety and robust code management</li>
+      <li>React Three Fiber for 3D text animations and visual effects</li>
+      <li>Framer Motion for smooth, CSS-based animations and transitions</li>
+      <li>Focus on accessibility features and responsive design for a seamless experience on all devices</li>
+      </ul>
+  - header: "C) Key Feats"
+    text: |
+      <ul>
+      <li>🌐 SEO & Performance Optimization</li>
+      <li>🎨 Responsive Design</li>
+      <li>✨ 3D Text Animations</li>
+      <li>🖼️ Mixed Media Carousel</li>
+      <li>📄 Modular Page Structure</li>
+      <li>🛠️ Framer Motion Animations</li>
+      </ul>

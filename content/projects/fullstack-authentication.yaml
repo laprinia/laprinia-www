@@ -1,0 +1,67 @@
+name: fullstack authentication
+year: 2023
+techStackPreview: "*/react, mongodb*/"
+tags:
+  - react
+  - typescript
+  - glassmorphism
+  - mantine
+  - radix-ui
+  - axios
+  - unsplash api
+  - bcrypt
+  - mongoose
+  - joi
+  - jwt
+colors:
+  - "#FB6009"
+  - "#2E2623"
+  - "#ECE3E1"
+  - "#040406"
+buttons:
+  - alt: GitHub
+    imageSrc: /social/github.avif
+    link: https://github.com/laprinia/opea
+  - alt: Behance
+    imageSrc: /social/behance.avif
+    link: https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism
+
+articles:
+  - header: "A) About"
+    text: "React & Node.js full-stack authentication for a creative web app, written in TypeScript with the purpose of using glassmorphism 🫥."
+  - header: "B) Recipe"
+    text: |
+      <section>
+        <h3>Frontend:</h3>
+        <ul>
+          <li>Mantine for UI components</li>
+          <li>Radix UI icons</li>
+          <li>Axios for services</li>
+          <li>Unsplash API for randomized backgrounds</li>
+        </ul>
+
+        <h3>Backend:</h3>
+        <ul>
+          <li>BCrypt for encrypting passwords</li>
+          <li>Mongoose for interacting with the MongoDB Atlas database</li>
+          <li>Joi for data validation</li>
+          <li>JWT for creating authentication tokens</li>
+          <li>Nodemon for better server management</li>
+        </ul>
+      </section>
+  - header: "C) Key Feats"
+    text: |
+      <ul>
+      <li>Joi for data validation in the backend</li>
+      <li>Mongoose DB schema using TypeScript types to enforce accepted color outputs and formats</li>
+      <li>Randomized custom backgrounds provided by the Unsplash API</li>
+      <li>Glassmorphism components styled with custom CSS inside Mantine components</li>
+      <li>Field & form validation implemented</li>
+      </ul>
+  - header: "D) Glassmorphism"
+    text: |
+      <code>sx={{
+             background: `rgba(24,24,24,0.5)`,
+             boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.5)",
+             backdropFilter: `blur(5px)`,
+           }}</code>

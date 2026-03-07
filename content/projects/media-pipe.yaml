@@ -1,0 +1,21 @@
+name: media pipe
+year: 2025
+techStackPreview: "*/touchdesigner*/"
+tags:
+  - touchdesigner
+  - mediapipe
+  - instancing
+  - image processing
+colors:
+  - "#000000"
+buttons: []
+
+articles:
+  - header: "A) About"
+    text: "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe."
+  - header: "B) MediaPipe Controls"
+    text: "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence."
+  - header: "C) Instancing from Table"
+    text: "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid."
+  - header: "D) Halftone & Transparency"
+    text: "Halftone shaders and layered transparency emulate looking through a camera viewfinder."
