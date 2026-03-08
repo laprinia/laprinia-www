@@ -16,6 +16,22 @@ colors:
   - "#E3E874"
   - "#E57CE0"
   - "#efedff"
+headshot: headshot-img.avif
+headshotGif: headshot-img.webp
+media:
+  - 1.avif
+  - 2.avif
+  - 3.avif
+  - 4.avif
+  - 5.avif
+  - 6.avif
+  - 7.avif
+  - 8.avif
+  - 9.avif
+  - 10.avif
+  - 11.avif
+  - 12.avif
+  - 13.mp4
 buttons:
   - alt: Behance
     imageSrc: /social/behance.avif

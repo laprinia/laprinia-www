@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import Image from "next/image";
+import { cloudinaryUrl } from "../../lib/cloudinary";
 
 const CarouselWrapper = styled.section`
   position: relative;
@@ -115,7 +116,7 @@ const Carousel = ({
           <Media>
             {item.type === "video" ? (
               <video
-                src={item.src}
+                src={cloudinaryUrl(item.src)}
                 autoPlay
                 muted
                 loop

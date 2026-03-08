@@ -30,6 +30,9 @@ dist/
 build/
 *.log
 
+# Media assets (served from Cloudinary)
+public/projects/
+
 # OS generated files
 .DS_Store
 Thumbs.db

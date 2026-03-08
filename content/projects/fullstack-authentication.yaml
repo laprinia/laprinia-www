@@ -18,6 +18,16 @@ colors:
   - "#2E2623"
   - "#ECE3E1"
   - "#040406"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
+media:
+  - 1.avif
+  - 2.avif
+  - 3.avif
+  - 4.avif
+  - 5.avif
+  - 6.mp4
+  - 7.mp4
 buttons:
   - alt: GitHub
     imageSrc: /social/github.avif

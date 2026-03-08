@@ -12,6 +12,12 @@ tags:
   - experimental
 colors:
   - "#000000"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
+media:
+  - 1.avif
+  - 2.avif
+  - 3.avif
 buttons: []
 
 articles:

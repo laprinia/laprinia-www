@@ -14,6 +14,8 @@ colors:
   - "#2C5C64"
   - "#99ABB7"
   - "#6BADE7"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
 buttons:
   - alt: GitHub
     imageSrc: /social/github.avif

@@ -15,6 +15,13 @@ colors:
   - "#0141D5"
   - "#42A5F5"
   - "#1B5E20"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
+media:
+  - 1.avif
+  - 2.avif
+  - 3.avif
+  - 4.avif
 buttons: []
 
 articles:

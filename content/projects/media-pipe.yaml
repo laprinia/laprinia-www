@@ -8,6 +8,10 @@ tags:
   - image processing
 colors:
   - "#000000"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
+media:
+  - 1.mp4
 buttons: []
 
 articles:

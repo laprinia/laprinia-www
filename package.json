@@ -25,9 +25,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --webpack",
     "start": "next start",
-    "convert:avif": "node scripts/convert-to-avif.js",
-    "assets:cleanup": "node scripts/cleanup-originals.js",
     "generate:projects": "node scripts/generate-projects.js",
+    "upload:cloudinary": "node --env-file=.env.local scripts/upload-to-cloudinary.js",
     "analyze": "ANALYZE=true next build --webpack"
   },
   "browserslist": {
@@ -52,6 +51,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-styled-components": "^2.1.4",
+    "cloudinary": "^2.9.0",
     "js-yaml": "^4.1.1",
     "prettier": "^3.2.5",
     "styled-components": "^6.1.13",

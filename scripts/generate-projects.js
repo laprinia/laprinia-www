@@ -3,40 +3,9 @@ const path = require("path");
 const yaml = require("js-yaml");
 
 const CONTENT_DIR = path.join(__dirname, "..", "content", "projects");
-const PUBLIC_DIR = path.join(__dirname, "..", "public", "projects");
 const OUTPUT_FILE = path.join(__dirname, "..", "src", "const", "projects.ts");
 
 const VIDEO_EXTENSIONS = new Set([".mp4", ".mov", ".webm"]);
-const MEDIA_EXTENSIONS = new Set([
-  ".mp4",
-  ".mov",
-  ".webm",
-  ".avif",
-  ".webp",
-  ".png",
-  ".jpg",
-  ".jpeg",
-]);
-
-const naturalSort = (a, b) => {
-  return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
-};
-
-const discoverMedia = (slug) => {
-  const contentDir = path.join(PUBLIC_DIR, slug, "content");
-  if (!fs.existsSync(contentDir)) return [];
-
-  return fs
-    .readdirSync(contentDir)
-    .filter((f) => MEDIA_EXTENSIONS.has(path.extname(f).toLowerCase()))
-    .sort(naturalSort)
-    .map((f) => ({
-      type: VIDEO_EXTENSIONS.has(path.extname(f).toLowerCase())
-        ? "video"
-        : "image",
-      src: `/projects/${slug}/content/${f}`,
-    }));
-}
 
 const readProject = (slug) => {
   const raw = fs.readFileSync(
@@ -45,23 +14,27 @@ const readProject = (slug) => {
   );
   const data = yaml.load(raw);
 
-  let mediaContents;
-  if (data.media) {
-    mediaContents = data.media.map((f) => ({
-      type: VIDEO_EXTENSIONS.has(path.extname(f).toLowerCase())
-        ? "video"
-        : "image",
-      src: `/projects/${slug}/content/${f}`,
-    }));
-  } else {
-    mediaContents = discoverMedia(slug);
+  if (!data.media) {
+    throw new Error(`${slug}.yaml is missing a required "media" array`);
   }
+  if (!data.headshot || !data.headshotGif) {
+    throw new Error(`${slug}.yaml is missing required "headshot" / "headshotGif" fields`);
+  }
+
+  const mediaContents = data.media.map((f) => ({
+    type: VIDEO_EXTENSIONS.has(path.extname(f).toLowerCase())
+      ? "video"
+      : "image",
+    src: `/projects/${slug}/content/${f}`,
+  }));
 
   return {
     name: data.name,
     year: data.year,
     techStackPreview: data.techStackPreview,
     tags: data.tags || [],
+    headshot: `/projects/${slug}/${data.headshot}`,
+    headshotGif: `/projects/${slug}/${data.headshotGif}`,
     mediaContents,
     buttons: (data.buttons || []).map((b) => ({
       imageSrc: b.imageSrc,
@@ -107,6 +80,8 @@ export type Project = {
   year: number;
   techStackPreview: string;
   tags: string[];
+  headshot: string;
+  headshotGif: string;
   mediaContents: MediaContent[];
   buttons: Button[];
   textContents: TextArticle[];

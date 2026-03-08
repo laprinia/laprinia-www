@@ -18,6 +18,8 @@ export type Project = {
   year: number;
   techStackPreview: string;
   tags: string[];
+  headshot: string;
+  headshotGif: string;
   mediaContents: MediaContent[];
   buttons: Button[];
   textContents: TextArticle[];
@@ -46,6 +48,8 @@ export const projects: ProjectCategories = {
         "mockups",
         "ui"
       ],
+      "headshot": "/projects/veloura-brand-guide/headshot-img.avif",
+      "headshotGif": "/projects/veloura-brand-guide/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -164,6 +168,8 @@ export const projects: ProjectCategories = {
         "user flows",
         "responsive design"
       ],
+      "headshot": "/projects/mood-ring/headshot-img.avif",
+      "headshotGif": "/projects/mood-ring/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -262,6 +268,8 @@ export const projects: ProjectCategories = {
         "adobe rush",
         "responsive design"
       ],
+      "headshot": "/projects/personal-website-ux/headshot-img.avif",
+      "headshotGif": "/projects/personal-website-ux/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -333,6 +341,8 @@ export const projects: ProjectCategories = {
         "design",
         "glassmorphism"
       ],
+      "headshot": "/projects/tectonic/headshot-img.avif",
+      "headshotGif": "/projects/tectonic/headshot.webp",
       "mediaContents": [
         {
           "type": "video",
@@ -397,6 +407,8 @@ export const projects: ProjectCategories = {
         "winston",
         "google maps"
       ],
+      "headshot": "/projects/ghent-bikes/headshot-img.avif",
+      "headshotGif": "/projects/ghent-bikes/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -466,6 +478,8 @@ export const projects: ProjectCategories = {
         "ffmpeg",
         "magick"
       ],
+      "headshot": "/projects/personal-website/headshot-img.avif",
+      "headshotGif": "/projects/personal-website/headshot.webp",
       "mediaContents": [
         {
           "type": "video",
@@ -526,6 +540,8 @@ export const projects: ProjectCategories = {
         "drei",
         "styled components"
       ],
+      "headshot": "/projects/text-wave/headshot-img.avif",
+      "headshotGif": "/projects/text-wave/headshot.webp",
       "mediaContents": [
         {
           "type": "video",
@@ -588,6 +604,8 @@ export const projects: ProjectCategories = {
         "joi",
         "jwt"
       ],
+      "headshot": "/projects/fullstack-authentication/headshot-img.avif",
+      "headshotGif": "/projects/fullstack-authentication/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -667,6 +685,8 @@ export const projects: ProjectCategories = {
         "mantine",
         "glsl-noise"
       ],
+      "headshot": "/projects/web-3d-terrain-generator/headshot-img.avif",
+      "headshotGif": "/projects/web-3d-terrain-generator/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -745,6 +765,8 @@ export const projects: ProjectCategories = {
         "sphere ray tracing",
         "various materials"
       ],
+      "headshot": "/projects/ray-tracer/headshot-img.avif",
+      "headshotGif": "/projects/ray-tracer/headshot-img.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -842,6 +864,8 @@ export const projects: ProjectCategories = {
         "post processing",
         "scene rendering"
       ],
+      "headshot": "/projects/volumetric-light/headshot-img.avif",
+      "headshotGif": "/projects/volumetric-light/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
@@ -914,6 +938,8 @@ export const projects: ProjectCategories = {
         "instancing",
         "image processing"
       ],
+      "headshot": "/projects/media-pipe/headshot-img.avif",
+      "headshotGif": "/projects/media-pipe/headshot.webp",
       "mediaContents": [
         {
           "type": "video",
@@ -955,6 +981,8 @@ export const projects: ProjectCategories = {
         "rendering",
         "3d"
       ],
+      "headshot": "/projects/lissajous-curves/headshot-img.avif",
+      "headshotGif": "/projects/lissajous-curves/headshot.webp",
       "mediaContents": [
         {
           "type": "video",
