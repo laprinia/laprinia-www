@@ -17,7 +17,7 @@ colors:
   - "#E57CE0"
   - "#efedff"
 headshot: headshot-img.avif
-headshotGif: headshot-img.webp
+headshotGif: headshot.webp
 media:
   - 1.avif
   - 2.avif

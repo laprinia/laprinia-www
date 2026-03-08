@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
+import { cloudinaryRawUrl } from "../../lib/cloudinary";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -141,12 +142,31 @@ const ProjectCard = ({
       >
         <ImageContainer>
           <Image
-            src={isMobile ? gifPath : isHovered ? gifPath : imagePath}
+            src={imagePath}
             alt={projectName}
             loading="lazy"
             layout="fill"
             objectFit="cover"
             quality={10}
+            style={{
+              opacity: !isMobile && !isHovered ? 1 : 0,
+              transition: "opacity 0.3s ease",
+            }}
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={cloudinaryRawUrl(gifPath)}
+            alt={projectName}
+            loading="lazy"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: isMobile || isHovered ? 1 : 0,
+              transition: "opacity 0.3s ease",
+            }}
           />
         </ImageContainer>
         <TextContainer id={`project-${projectName}`}>

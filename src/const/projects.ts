@@ -766,7 +766,7 @@ export const projects: ProjectCategories = {
         "various materials"
       ],
       "headshot": "/projects/ray-tracer/headshot-img.avif",
-      "headshotGif": "/projects/ray-tracer/headshot-img.webp",
+      "headshotGif": "/projects/ray-tracer/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
