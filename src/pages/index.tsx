@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { footerHeroPath, headerHeroPath, mobileHeroPath } from "../consts";
-import NoWebGL from "../templates/NoWebGL/NoWebGL";
+import NoWebGL from "../components/templates/NoWebGL/NoWebGL";
 import dynamic from "next/dynamic";
 
 const DesktopHome = dynamic(
-  () => import("../templates/DesktopHome/DesktopHome"),
+  () => import("../components/templates/DesktopHome/DesktopHome"),
   {
     loading: () => <p>Loading...</p>,
     ssr: false,
   },
 );
 const MobileHome = dynamic(
-  () => import("../templates/MobileHome/MobileHome"),
+  () => import("../components/templates/MobileHome/MobileHome"),
   {
     loading: () => <p>Loading...</p>,
     ssr: false,

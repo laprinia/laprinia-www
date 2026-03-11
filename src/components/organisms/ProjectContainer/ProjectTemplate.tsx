@@ -1,12 +1,15 @@
 import styled from "styled-components";
-import CarouselContainer from "../../components/molecules/CarouselContainer/CarouselContainer";
-import ProjectDescriptionContainer from "../../components/molecules/ProjectDescriptionContainer/ProjectDescriptionContainer";
+import CarouselContainer from "../../molecules/CarouselContainer/CarouselContainer";
+import ProjectDescriptionContainer from "../../molecules/ProjectDescriptionContainer/ProjectDescriptionContainer";
 import {
-  Button,
-  MediaContent,
   projects,
-  TextArticle,
-} from "../../../scripts/const/projects";
+  type Button,
+  type MediaContent,
+  type Project,
+  type ProjectCategories,
+  type TextArticle,
+} from "../../../../scripts/const/projects";
+
 
 const ContainerWrapper = styled.main`
   display: flex;
@@ -77,7 +80,10 @@ const ProjectTemplate = ({
   const getPositionByName = () => {
     let position = "";
     let categoryIndex = -1;
-    for (const [category, categoryProjects] of Object.entries(projects)) {
+    for (const [, categoryProjects] of Object.entries(projects) as [
+      keyof ProjectCategories,
+      Project[],
+    ][]) {
       categoryIndex++;
       const projectIndex = categoryProjects.findIndex(
         (project) => project.name.toLowerCase() === projectName.toLowerCase(),

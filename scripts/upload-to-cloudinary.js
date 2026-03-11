@@ -27,7 +27,9 @@ function walkDir(dir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...walkDir(fullPath));
-    } else if (SUPPORTED_EXTENSIONS.has(path.extname(entry.name).toLowerCase())) {
+    } else if (
+      SUPPORTED_EXTENSIONS.has(path.extname(entry.name).toLowerCase())
+    ) {
       results.push(fullPath);
     }
   }
@@ -53,8 +55,7 @@ async function upload(filePath) {
       console.log(`  SKIP (exists) ${relativePath}`);
       return { skipped: true };
     }
-  } catch {
-  }
+  } catch {}
 
   const folder = path.posix.dirname(publicId);
   const filename = path.posix.basename(publicId);

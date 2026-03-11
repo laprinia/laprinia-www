@@ -1,9 +1,8 @@
-import React from "react";
-import NavBar from "../organisms/NavBar/NavBar";
+import NavBar from "../components/organisms/NavBar/NavBar";
 import { navItems, somethingWentWrongPath } from "../consts";
 import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../molecules/Texture/CursorWaveTexture";
-import Layout from "../organisms/Layout/Layout";
+import CursorWaveTexture from "../components/molecules/Texture/CursorWaveTexture";
+import Layout from "../components/organisms/Layout/Layout";
 import styled from "styled-components";
 
 function ErrorPage({ statusCode }: { statusCode: number }) {

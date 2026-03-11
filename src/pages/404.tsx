@@ -1,9 +1,8 @@
-import NavBar from "../organisms/NavBar/NavBar";
+import NavBar from "../components/organisms/NavBar/NavBar";
 import { navItems, notFoundPath } from "../consts";
-import Layout from "../organisms/Layout/Layout";
-import React from "react";
+import Layout from "../components/organisms/Layout/Layout";
 import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../molecules/Texture/CursorWaveTexture";
+import CursorWaveTexture from "../components/molecules/Texture/CursorWaveTexture";
 import styled from "styled-components";
 
 const CanvasSectionWrapper = styled.section`

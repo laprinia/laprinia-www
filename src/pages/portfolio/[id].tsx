@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
-import Layout from "../../organisms/Layout/Layout";
-import NavBar from "../../organisms/NavBar/NavBar";
+import Layout from "../../components/organisms/Layout/Layout";
+import NavBar from "../../components/organisms/NavBar/NavBar";
 import { navItems } from "../../consts";
-import React from "react";
-import ProjectTemplate from "../../organisms/ProjectContainer/ProjectTemplate";
-import { Project, projects } from "../../const/projects";
+import ProjectTemplate from "../../components/organisms/ProjectContainer/ProjectTemplate";
+import { Project, projects } from "../../../scripts/const/projects";
 
 const PortfolioItemPage = () => {
   const router = useRouter();

@@ -8,17 +8,16 @@ const OUTPUT_FILE = path.join(__dirname, "..", "src", "const", "projects.ts");
 const VIDEO_EXTENSIONS = new Set([".mp4", ".mov", ".webm"]);
 
 const readProject = (slug) => {
-  const raw = fs.readFileSync(
-    path.join(CONTENT_DIR, `${slug}.yaml`),
-    "utf8",
-  );
+  const raw = fs.readFileSync(path.join(CONTENT_DIR, `${slug}.yaml`), "utf8");
   const data = yaml.load(raw);
 
   if (!data.media) {
     throw new Error(`${slug}.yaml is missing a required "media" array`);
   }
   if (!data.headshot || !data.headshotGif) {
-    throw new Error(`${slug}.yaml is missing required "headshot" / "headshotGif" fields`);
+    throw new Error(
+      `${slug}.yaml is missing required "headshot" / "headshotGif" fields`,
+    );
   }
 
   const mediaContents = data.media.map((f) => ({
@@ -47,7 +46,7 @@ const readProject = (slug) => {
     })),
     colors: data.colors || [],
   };
-}
+};
 
 const order = yaml.load(
   fs.readFileSync(path.join(CONTENT_DIR, "_order.yaml"), "utf8"),

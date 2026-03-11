@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
-import NavBar from "../organisms/NavBar/NavBar";
+import { useEffect, useState } from "react";
+import NavBar from "../components/organisms/NavBar/NavBar";
 import {
   aboutIntroduction,
   navItems,
   socialButtons,
   skillTags,
 } from "../consts";
-import Layout from "../organisms/Layout/Layout";
+import Layout from "../components/organisms/Layout/Layout";
 import styled from "styled-components";
-import CurriculumComponent from "../molecules/CurriculumComponent/CurriculumComponent";
-import HeadshotComponent from "../organisms/HeadshotComponent/HeadshotComponent";
-import ExperienceArticle from "../molecules/AboutArticles/ExperienceArticle/ExperienceArticle";
-import KeyStrengthsArticle from "../molecules/AboutArticles/KeyStrengthsArticle/KeyStrenghtsArticle";
-import HobbiesArticle from "../molecules/AboutArticles/HobbiesArticle/HobbiesArticle";
-import EducationArticle from "../molecules/AboutArticles/EducationArticle/EducationArticle";
-import LanguageArticle from "../molecules/AboutArticles/LanguageArticle/LanguageArticle";
-import CertificationArticle from "../molecules/AboutArticles/CertificationsArticle/CertificationArticle";
-import MobileAbout from "../templates/MobileAbout/MobileAbout";
+import CurriculumComponent from "../components/molecules/CurriculumComponent/CurriculumComponent";
+import HeadshotComponent from "../components/organisms/HeadshotComponent/HeadshotComponent";
+import ExperienceArticle from "../components/molecules/AboutArticles/ExperienceArticle/ExperienceArticle";
+import KeyStrengthsArticle from "../components/molecules/AboutArticles/KeyStrengthsArticle/KeyStrenghtsArticle";
+import HobbiesArticle from "../components/molecules/AboutArticles/HobbiesArticle/HobbiesArticle";
+import EducationArticle from "../components/molecules/AboutArticles/EducationArticle/EducationArticle";
+import LanguageArticle from "../components/molecules/AboutArticles/LanguageArticle/LanguageArticle";
+import CertificationArticle from "../components/molecules/AboutArticles/CertificationsArticle/CertificationArticle";
+import MobileAbout from "../components/templates/MobileAbout/MobileAbout";
 
 const ContainerWrapper = styled.section`
   display: flex;
