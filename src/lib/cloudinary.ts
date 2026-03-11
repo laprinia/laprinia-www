@@ -39,7 +39,19 @@ export function cloudinaryRawUrl(localPath: string): string {
   const transforms = isAnimatedWebp ? "fl_animated" : "";
 
   const base = `https://res.cloudinary.com/${cloud}/${resourceType}/upload`;
-  return transforms ? `${base}/${transforms}/${cleanPath}` : `${base}/${cleanPath}`;
+  return transforms
+    ? `${base}/${transforms}/${cleanPath}`
+    : `${base}/${cleanPath}`;
+}
+
+const RAW_EXTENSIONS = /\.(obj|glb|gltf)$/i;
+
+export function cloudinary3dUrl(localPath: string): string {
+  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
+  if (!cloud) return localPath;
+
+  const cleanPath = localPath.startsWith("/") ? localPath.slice(1) : localPath;
+  return `https://res.cloudinary.com/${cloud}/raw/upload/${cleanPath}`;
 }
 
 export default function cloudinaryLoader({

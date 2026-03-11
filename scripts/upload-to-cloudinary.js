@@ -13,6 +13,9 @@ const SUPPORTED_EXTENSIONS = new Set([
   ".mp4",
   ".mov",
   ".webm",
+  ".obj",
+  ".glb",
+  ".gltf",
 ]);
 
 cloudinary.config({
@@ -42,10 +45,15 @@ async function upload(filePath) {
     filePath,
   );
   const ext = path.extname(filePath).toLowerCase();
-  const publicId = relativePath.replace(/\.[^.]+$/, "").replace(/\\/g, "/");
+  const publicId = relativePath
+    .replace(/\.[^.]+$/, "")
+    .replace(/\\/g, "/")
+    .replace(/^\.\//, "");
   const resourceType = [".mp4", ".mov", ".webm"].includes(ext)
     ? "video"
-    : "image";
+    : [".obj", ".glb", ".gltf"].includes(ext)
+      ? "raw"
+      : "image";
 
   try {
     const existing = await cloudinary.api.resource(publicId, {
@@ -60,12 +68,16 @@ async function upload(filePath) {
   const folder = path.posix.dirname(publicId);
   const filename = path.posix.basename(publicId);
 
-  const result = await cloudinary.uploader.upload(filePath, {
+  const uploadOpts = {
     public_id: filename,
-    folder: folder,
     resource_type: resourceType,
     overwrite: false,
-  });
+  };
+  if (folder && folder !== ".") {
+    uploadOpts.folder = folder;
+  }
+
+  const result = await cloudinary.uploader.upload(filePath, uploadOpts);
 
   console.log(`  UPLOADED ${relativePath} → ${result.secure_url}`);
   return { skipped: false, url: result.secure_url };
@@ -83,7 +95,10 @@ async function main() {
     process.exit(1);
   }
 
-  const files = walkDir(PUBLIC_DIR);
+  const extraArgs = process.argv.slice(2);
+  const files = extraArgs.length
+    ? extraArgs.map((f) => path.resolve(f))
+    : walkDir(PUBLIC_DIR);
   console.log(`Found ${files.length} assets to upload.\n`);
 
   let uploaded = 0;
