@@ -1,0 +1,85 @@
+import styled, { css } from "styled-components";
+
+export const CarouselWrapper = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  :hover {
+    cursor: none;
+  }
+`;
+
+export const CarouselContent = styled.figure<{ active: boolean }>`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  opacity: 0;
+  transform: translateX(100%);
+
+  ${({ active }) =>
+    active &&
+    css`
+      opacity: 1;
+      transform: translateX(0);
+    `}
+`;
+
+export const ClickableArea = styled.main<{ right?: boolean; left?: boolean }>`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0);
+
+  &:focus {
+    outline: 2px solid #fff;
+  }
+
+  ${({ left }) =>
+    left &&
+    css`
+      left: 0;
+    `}
+
+  ${({ right }) =>
+    right &&
+    css`
+      right: 0;
+    `}
+`;
+
+export const Media = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img,
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    @media (min-width: 900px) {
+      object-fit: scale-down;
+    }
+  }
+`;

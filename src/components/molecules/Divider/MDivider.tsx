@@ -1,9 +1,5 @@
-import styled from "styled-components";
+import { StyledSeparator } from "./MDivider.styles";
 
-const DividerContainer = styled.section`
-  width: 100%;
-  margin-top: 1rem;
-`;
-const MDivider = () => <DividerContainer />;
+const MDivider = () => <StyledSeparator decorative />;
 
 export default MDivider;

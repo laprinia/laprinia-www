@@ -1,11 +1,5 @@
-import styled from "styled-components";
 import { ReactNode } from "react";
-
-const Heading = styled.h1<{ sizing: number; fontColor: string }>`
-  color: ${({ fontColor }) => fontColor};
-  margin-bottom: 1rem;
-  text-align: center;
-`;
+import { Heading } from "./DummyHeading.styles";
 
 const DummyHeading = ({
   sizing = 2,

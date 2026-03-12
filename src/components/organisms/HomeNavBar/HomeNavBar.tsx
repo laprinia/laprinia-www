@@ -1,36 +1,14 @@
 import { memo } from "react";
-import styled, { css } from "styled-components";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { navItems } from "../../../consts";
-
-const Navbar = styled.nav<{ isMobile?: boolean }>`
-  font-family: var(--font-heading);
-
-  ${({ isMobile }) =>
-    isMobile &&
-    css`
-      display: flex;
-      justify-content: space-between;
-    `}
-
-  a {
-    font-size: var(--font-size-heading1-desktop);
-    @media (max-width: 1023px) {
-      font-size: var(--font-size-heading1-tablet);
-    }
-    @media (max-width: 767px) {
-      font-size: var(--font-size-heading1-phone);
-    }
-    text-decoration: none;
-    color: black;
-  }
-`;
+import { Navbar } from "./HomeNavBar.styles";
 
 const HomeNavBar = ({ isMobile = false }: { isMobile?: boolean }) => {
   return (
     <Navbar aria-labelledby="navigation" isMobile={isMobile}>
-      <p id="navigation" hidden>
-        Navigation
-      </p>
+      <VisuallyHidden.Root asChild>
+        <p id="navigation">Navigation</p>
+      </VisuallyHidden.Root>
       {navItems.map((item, index) => {
         return <a href={item.href}>{item.label.toUpperCase()}</a>;
       })}

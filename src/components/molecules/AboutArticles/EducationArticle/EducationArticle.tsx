@@ -1,11 +1,5 @@
-import styled from "styled-components";
 import SectionedArticle from "../SectionedArticle/SectionedArticle";
-
-const Section = styled.section`
-  margin-bottom: 2rem;
-  margin-right: 1rem;
-  margin-top: 0.5rem;
-`;
+import { Section } from "./EducationArticle.styles";
 
 const EducationArticle = () => {
   return (

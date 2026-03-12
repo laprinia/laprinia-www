@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import CarouselContainer from "../../molecules/CarouselContainer/CarouselContainer";
 import ProjectDescriptionContainer from "../../molecules/ProjectDescriptionContainer/ProjectDescriptionContainer";
 import {
@@ -9,58 +9,12 @@ import {
   type ProjectCategories,
   type TextArticle,
 } from "../../../../scripts/const/projects";
-
-
-const ContainerWrapper = styled.main`
-  display: flex;
-  overflow: hidden;
-  flex: 1;
-  margin: 0;
-  padding: 0 0rem;
-  box-sizing: border-box;
-  max-width: 100%;
-  max-height: 100%;
-  @media (max-width: 900px) {
-    flex: none;
-    flex-direction: column;
-    overflow: auto;
-    height: auto;
-  }
-`;
-const Container = styled.section`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-top: 0.25rem solid var(--accent-color);
-
-  @media (max-width: 900px) {
-    border: none;
-    flex-direction: column;
-  }
-`;
-
-const CarouselWrapper = styled.main`
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  @media (max-width: 900px) {
-    width: 100%;
-    height: 40%;
-  }
-`;
-
-const DetailsContainer = styled.section`
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 900px) {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-  }
-`;
+import {
+  CarouselWrapper,
+  Container,
+  ContainerWrapper,
+  DetailsContainer,
+} from "./ProjectTemplate.styles";
 
 const ProjectTemplate = ({
   projectName,
@@ -99,18 +53,18 @@ const ProjectTemplate = ({
   return (
     <ContainerWrapper>
       <Container>
-        <h2 hidden id="media-carousel">
-          Media Carousel
-        </h2>
+        <VisuallyHidden.Root asChild>
+          <h2 id="media-carousel">Media Carousel</h2>
+        </VisuallyHidden.Root>
         <CarouselContainer
           aria-labelledby="media-carousel"
           items={mediaContents}
         />
         <CarouselWrapper />
         <DetailsContainer aria-labelledby="project-details">
-          <h2 hidden id="project-description">
-            Project Description
-          </h2>
+          <VisuallyHidden.Root asChild>
+            <h2 id="project-description">Project Description</h2>
+          </VisuallyHidden.Root>
           <ProjectDescriptionContainer
             projectName={`${getPositionByName()} ${projectName}`}
             tags={tags}

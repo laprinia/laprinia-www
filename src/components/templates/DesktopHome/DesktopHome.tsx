@@ -1,4 +1,5 @@
 import { Canvas } from "@react-three/fiber";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import StillTexture from "../../molecules/Texture/StillTexture";
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
 import { landingName, landingPageIntroduction } from "../../../consts";
@@ -48,9 +49,9 @@ const DesktopHome = ({
       </CenterCanvasSection>
 
       <TopAlignedBox align="left" aria-labelledby="name">
-        <p id="name" hidden>
-          {landingName}
-        </p>
+        <VisuallyHidden.Root asChild>
+          <p id="name">{landingName}</p>
+        </VisuallyHidden.Root>
         <header
           aria-labelledby="name"
           style={{ width: "100%", height: "100%" }}
@@ -76,9 +77,9 @@ const DesktopHome = ({
       <BottomAlignedBox align="left">
         <BottomAlignedBoxContent>
           <article aria-labelledby="introduction">
-            <p id="introduction" hidden>
-              Introduction
-            </p>
+            <VisuallyHidden.Root asChild>
+              <p id="introduction">Introduction</p>
+            </VisuallyHidden.Root>
             <p>{landingPageIntroduction}</p>
           </article>
           <PulsatingBadge />
@@ -86,9 +87,9 @@ const DesktopHome = ({
       </BottomAlignedBox>
 
       <BottomAlignedBox align="right">
-        <p id="title" hidden>
-          Web Developer
-        </p>
+        <VisuallyHidden.Root asChild>
+          <p id="title">Web Developer</p>
+        </VisuallyHidden.Root>
         <footer
           aria-labelledby="job-title"
           style={{ width: "100%", height: "100%" }}

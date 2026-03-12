@@ -1,14 +1,6 @@
 import ColorSwatches from "../ColorSwatches/ColorSwatches";
-import styled from "styled-components";
+import { Container } from "./ColorSwatchesContainer.styles";
 
-const Container = styled.aside`
-  height: 100%;
-  width: 100%;
-  @media (max-width: 900px) {
-    flex: 0 0 5rem;
-    width: 100%;
-  }
-`;
 const ColorSwatchesContainer = ({ colors }: { colors: string[] }) => {
   return (
     <Container aria-labelledby="color-swatches">

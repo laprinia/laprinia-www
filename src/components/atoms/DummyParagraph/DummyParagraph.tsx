@@ -1,10 +1,5 @@
-import styled from "styled-components";
 import { ReactNode } from "react";
-
-const Paragraph = styled.p<{ sizing: number; fontColor: string }>`
-  text-align: center;
-  color: ${({ fontColor }) => fontColor};
-`;
+import { Paragraph } from "./DummyParagraph.styles";
 
 const DummyParagraph = ({
   sizing = 1.5,

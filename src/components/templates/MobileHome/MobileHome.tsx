@@ -1,45 +1,16 @@
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { landingPageIntroduction } from "../../../consts";
 import { useEffect } from "react";
-import styled from "styled-components";
 import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import { Canvas } from "@react-three/fiber";
-
-const MobileContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 5rem);
-  flex: 1;
-  @media (max-width: 1000px) {
-    padding: 1.25rem 1.5rem 1.5rem;
-    gap: 0.5rem;
-  }
-`;
-
-const CanvasSectionWrapper = styled.section`
-  height: 60%;
-  display: flex;
-  align-items: flex-end;
-`;
-
-const InfoSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 40%;
-  text-align: center;
-
-  @media (max-width: 1000px) {
-    justify-content: space-evenly !important;
-  }
-`;
-
-const CanvasSection = styled.article`
-  width: 100%;
-  height: 100%;
-`;
+import {
+  CanvasSection,
+  CanvasSectionWrapper,
+  InfoSection,
+  MobileContainer,
+} from "./MobileHome.styles";
 
 const MobileHome = ({ mobileHeroPath }: { mobileHeroPath: string }) => {
   useEffect(() => {
@@ -70,9 +41,9 @@ const MobileHome = ({ mobileHeroPath }: { mobileHeroPath: string }) => {
       </CanvasSectionWrapper>
 
       <InfoSection>
-        <p id="introduction" hidden>
-          Introduction
-        </p>
+        <VisuallyHidden.Root asChild>
+          <p id="introduction">Introduction</p>
+        </VisuallyHidden.Root>
         <p>{landingPageIntroduction}</p>
         <PulsatingBadge />
       </InfoSection>

@@ -4,19 +4,10 @@ import { navItems, somethingWentWrongPath } from "../../../consts";
 import { Canvas } from "@react-three/fiber";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import Layout from "../../organisms/Layout/Layout";
-import styled from "styled-components";
-
-const CanvasSectionWrapper = styled.section`
-  height: 80%;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-`;
-
-const CanvasSection = styled.article`
-  width: 100%;
-  height: 100%;
-`;
+import {
+  CanvasSection,
+  CanvasSectionWrapper,
+} from "./ErrorBoundary.styles";
 
 const ErrorBoundary = ({ children }: { children: ReactNode }) => {
   const [hasError, setHasError] = useState(false);
