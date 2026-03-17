@@ -1,8 +1,8 @@
-import HeadshotImage from "../../molecules/HeadshotImage/HeadshotImage";
 import Description from "../../molecules/Description/Description";
 import DoubleTextRibbon from "../../organisms/TextRibbon/DoubleTextRibbon";
 import ArticlesContainer from "../../organisms/ArticlesContainer/ArticlesContainer";
 import SocialButtonsContainer from "../../organisms/SocialButtonsContainer/SocialButtonsContainer";
+import CardPlayground from "../../organisms/CardPlayground/CardPlayground";
 import { type ReactNode } from "react";
 import { MobileScrollWrapper } from "./MobileAbout.styles";
 
@@ -23,7 +23,7 @@ const MobileAboutLayout = ({
   return (
     <MobileScrollWrapper>
       <DoubleTextRibbon tags={technologies} />
-      <HeadshotImage src={"/headshot.avif"} relativeHeight={"50%"} />
+      <CardPlayground interactive={false} />
       <SocialButtonsContainer buttons={buttons} />
       <Description content={descriptionText} />
       <ArticlesContainer leftColumn={leftColumn} rightColumn={rightColumn} />

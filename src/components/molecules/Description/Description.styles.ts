@@ -9,6 +9,7 @@ export const DescriptionContainer = styled.section`
   align-items: flex-start;
 
   p {
+    font-weight: var(--font-weight-light);
     min-width: 0;
     max-width: 100%;
     overflow-wrap: break-word;
