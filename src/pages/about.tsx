@@ -23,7 +23,6 @@ const ContainerWrapper = styled.section`
   flex: 1;
   margin: 0;
   padding: 0 0rem;
-  border-top: 0.25rem solid var(--accent-color);
   overflow: auto;
   box-sizing: border-box;
   max-width: 100%;

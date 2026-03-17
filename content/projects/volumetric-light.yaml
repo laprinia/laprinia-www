@@ -24,10 +24,10 @@ media:
   - 5.avif
 buttons:
   - alt: Behance
-    imageSrc: /social/behance.avif
+    imageSrc: /socials/behance
     link: https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study
   - alt: GitHub
-    imageSrc: /social/github.avif
+    imageSrc: /socials/github
     link: https://github.com/laprinia/mozu/tree/main
 
 articles:

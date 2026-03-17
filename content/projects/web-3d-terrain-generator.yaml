@@ -18,7 +18,7 @@ headshot: headshot-img.avif
 headshotGif: headshot.webp
 buttons:
   - alt: GitHub
-    imageSrc: /social/github.avif
+    imageSrc: /socials/github
     link: https://github.com/laprinia/phea
 
 # Explicit media order — named files (intro/outro) interleaved with numbered

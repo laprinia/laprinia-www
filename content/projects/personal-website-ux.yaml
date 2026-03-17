@@ -24,7 +24,7 @@ media:
   - 8.avif
 buttons:
   - alt: GitHub
-    imageSrc: /social/github.avif
+    imageSrc: /socials/github
     link: "hhttps://github.com/laprinia/laprinia-www"
 
 articles:

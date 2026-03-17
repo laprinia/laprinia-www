@@ -66,19 +66,19 @@ export const socialButtons = [
   {
     id: "button-1",
     href: linkedinLink,
-    imgSrc: "/social/linkedin.avif",
+    imgSrc: "/socials/linkedin",
     alt: "LinkedIn Logo",
   },
   {
     id: "button-2",
     href: behanceLink,
-    imgSrc: "/social/behance.avif",
+    imgSrc: "/socials/behance",
     alt: "Behance Logo",
   },
   {
     id: "button-3",
     href: githubLink,
-    imgSrc: "/social/github.avif",
+    imgSrc: "/socials/github",
     alt: "GitHub Logo",
   }
 ];

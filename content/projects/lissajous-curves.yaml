@@ -14,7 +14,7 @@ headshot: headshot-img.avif
 headshotGif: headshot.webp
 buttons:
   - alt: Behance
-    imageSrc: /social/behance.avif
+    imageSrc: /socials/behance
     link: https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves
 
 media:

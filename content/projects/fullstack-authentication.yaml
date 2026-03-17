@@ -30,10 +30,10 @@ media:
   - 7.mp4
 buttons:
   - alt: GitHub
-    imageSrc: /social/github.avif
+    imageSrc: /socials/github
     link: https://github.com/laprinia/opea
   - alt: Behance
-    imageSrc: /social/behance.avif
+    imageSrc: /socials/behance
     link: https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism
 
 articles:
