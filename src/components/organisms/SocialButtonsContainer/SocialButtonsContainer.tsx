@@ -2,12 +2,13 @@ import Image from "next/image";
 import {
   HeadshotButton,
   HeadshotButtonContainerWrapper,
+  ButtonLabel,
 } from "./SocialButtonsContainer.styles";
 
 const SocialButtonsContainer = ({
   buttons,
 }: {
-  buttons: { id: string; href: string; imgSrc: string; alt: string }[];
+  buttons: { id: string; href: string; imgSrc: string; alt: string; label: string }[];
 }) => {
   return (
     <HeadshotButtonContainerWrapper aria-labelledby="headshot-buttons">
@@ -27,6 +28,7 @@ const SocialButtonsContainer = ({
             height={100}
             quality={75}
           />
+          <ButtonLabel>{button.label}</ButtonLabel>
         </HeadshotButton>
       ))}
     </HeadshotButtonContainerWrapper>

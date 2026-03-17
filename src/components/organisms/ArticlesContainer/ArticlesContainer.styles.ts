@@ -10,6 +10,8 @@ export const CurriculumTextContainer = styled.section`
   @media (max-width: 900px) {
     flex-direction: column;
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
     padding-bottom: 0rem;
   }
 `;
@@ -21,5 +23,7 @@ export const Column = styled.article`
   @media (max-width: 900px) {
     padding-right: 0;
     width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 `;

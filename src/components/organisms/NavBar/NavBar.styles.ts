@@ -72,6 +72,8 @@ export const NavItems = styled.ul`
 `;
 
 export const NavLink = styled.a`
+  font-family: var(--font-heading);
+  text-transform: lowercase;
   text-decoration: none;
   color: inherit;
   &:hover {

@@ -1,60 +1,57 @@
 import styled from "styled-components";
 
 export const HeadshotButtonContainerWrapper = styled.nav`
-  width: 100%;
-  height: 20%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-
   @media (max-width: 900px) {
-    height: auto;
-    justify-content: space-evenly;
-  }
+  margin-bottom: 1.5rem;
 `;
 
 export const HeadshotButton = styled.a`
-  flex: 1 1 auto;
-  height: 2rem;
-  max-width: 4rem;
-  min-width: 4rem;
+  flex: 0 0 auto;
+  height: 2.25rem;
   border: none;
   background: var(--accent-color);
   color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  padding: 0.5rem;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
   text-decoration: none;
-
-  @media (max-width: 900px) {
-    max-width: 8rem;
-    min-width: 4rem;
-  }
+  transition: background-color 0.2s ease;
 
   @media (min-width: 1800px) {
-    height: 3rem;
-    max-width: 4rem;
-    min-width: 4rem;
+    height: 2.75rem;
   }
 
   img {
-    transition: transform 0.3s ease-in-out;
-    height: 100%;
-    width: auto;
-    display: block;
+    height: 1.1rem;
+    width: 1.1rem;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    @media (min-width: 1800px) {
+      height: 1.3rem;
+      width: 1.3rem;
+    }
   }
 
   &:hover {
     background-color: var(--darker-accent-color);
   }
+`;
 
-  &:hover img {
-    transform: scale(1.1);
+export const ButtonLabel = styled.span`
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-regular, 400);
+  white-space: nowrap;
+
+  @media (min-width: 1800px) {
+    font-size: 0.9rem;
   }
 `;

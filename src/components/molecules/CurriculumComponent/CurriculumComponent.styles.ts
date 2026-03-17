@@ -5,6 +5,7 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
   padding: 2rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -12,6 +13,7 @@ export const Container = styled.main`
 
 export const StyledScrollRoot = styled(ScrollAreaPrimitive.Root)`
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -20,6 +22,7 @@ export const StyledScrollRoot = styled(ScrollAreaPrimitive.Root)`
 export const StyledScrollViewport = styled(ScrollAreaPrimitive.Viewport)`
   width: 100%;
   height: 100%;
+  min-width: 0;
 `;
 
 export const StyledScrollbar = styled(ScrollAreaPrimitive.Scrollbar)`
@@ -42,4 +45,6 @@ export const LayoutWrapper = styled.main`
   display: flex;
   flex-direction: column;
   width: 65%;
+  min-width: 0;
+  max-width: 100%;
 `;
