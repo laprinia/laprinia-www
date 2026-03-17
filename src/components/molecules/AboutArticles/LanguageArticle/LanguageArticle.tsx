@@ -1,17 +1,18 @@
 import SectionedArticle from "../SectionedArticle/SectionedArticle";
+import { ArticleSection } from "../BaseArticle.styles";
 
 const LanguageArticle = () => {
   return (
-    <SectionedArticle aria-labelledby="experience" heading={"F) LANGUAGES"}>
-      <section>
+    <SectionedArticle ariaLabel="languages" heading={"F) LANGUAGES"}>
+      <ArticleSection>
         <p>Romanian - Native</p>
-      </section>
-      <section>
+      </ArticleSection>
+      <ArticleSection>
         <p>English - Proficient</p>
-      </section>
-      <section>
+      </ArticleSection>
+      <ArticleSection>
         <p>Spanish - Beginner</p>
-      </section>
+      </ArticleSection>
     </SectionedArticle>
   );
 };

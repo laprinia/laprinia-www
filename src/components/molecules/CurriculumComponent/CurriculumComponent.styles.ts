@@ -3,6 +3,7 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 export const Container = styled.main`
   display: flex;
+  gap: 2rem;
   flex-direction: column;
   flex: 1;
   min-width: 0;
@@ -41,7 +42,7 @@ export const StyledThumb = styled(ScrollAreaPrimitive.Thumb)`
   position: relative;
 `;
 
-export const LayoutWrapper = styled.main`
+export const LayoutWrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 65%;

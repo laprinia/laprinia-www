@@ -11,7 +11,7 @@ export const DescriptionContainer = styled.section`
   p {
     font-weight: var(--font-weight-light);
     min-width: 0;
-    max-width: 100%;
+    max-width: 65ch;
     overflow-wrap: break-word;
     word-wrap: break-word;
     @media (min-width: 1800px) {

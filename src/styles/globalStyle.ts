@@ -65,8 +65,7 @@ export const GlobalStyle = createGlobalStyle`
 
         // Phone Sizes
         --font-size-base-phone: ${baseFontSizePhone};
-        --font-size-heading1-phone: ${remPhone(
-            "18x")};
+        --font-size-heading1-phone: ${remPhone("18px")};
         --font-size-heading2-phone: ${remPhone("20px")};
         --font-size-heading3-phone: ${remPhone("40px")};
         --font-size-body-phone: ${remPhone("16px")};

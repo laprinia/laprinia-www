@@ -3,7 +3,7 @@ import SlabbedArticle from "../SlabbedArticle/SlabbedArticle";
 const HobbiesArticle = () => {
   return (
     <SlabbedArticle
-      aria-labelledby="hobbies"
+      ariaLabel="hobbies"
       heading={"C) HOBBIES"}
       slabs={[
         "PHOTOGRAPHY",

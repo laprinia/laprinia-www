@@ -1,24 +1,26 @@
-import { Article } from "./SlabbedArticle.styles";
+import { SlabbedWrapper } from "./SlabbedArticle.styles";
 
-const KeyStrengthsArticle = ({
+const SlabbedArticle = ({
   heading,
+  ariaLabel,
   slabs,
   isActive,
 }: {
   heading: string;
+  ariaLabel: string;
   slabs: string[];
   isActive: boolean;
 }) => {
   return (
-    <Article isActive={isActive}>
+    <SlabbedWrapper $isActive={isActive} aria-labelledby={ariaLabel}>
       <h2>{heading}</h2>
       <section>
         {slabs.map((slab, index) => (
           <p key={index}>{slab}</p>
         ))}
       </section>
-    </Article>
+    </SlabbedWrapper>
   );
 };
 
-export default KeyStrengthsArticle;
+export default SlabbedArticle;

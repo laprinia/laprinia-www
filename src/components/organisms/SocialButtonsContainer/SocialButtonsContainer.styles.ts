@@ -9,7 +9,8 @@ export const HeadshotButtonContainerWrapper = styled.nav`
   margin-top: 1rem;
   margin-bottom: 1rem;
   @media (max-width: 900px) {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const HeadshotButton = styled.a`

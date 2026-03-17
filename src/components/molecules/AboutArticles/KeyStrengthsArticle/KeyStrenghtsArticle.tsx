@@ -3,7 +3,7 @@ import SlabbedArticle from "../SlabbedArticle/SlabbedArticle";
 const KeyStrengthsArticle = () => {
   return (
     <SlabbedArticle
-      aria-labelledby="key-strenghts"
+      ariaLabel="key-strengths"
       heading={"B) KEY STRENGTHS"}
       slabs={[
         "DESIGN HANDOVER BRIDGER",
