@@ -10,7 +10,7 @@ const HomeNavBar = ({ isMobile = false }: { isMobile?: boolean }) => {
         <p id="navigation">Navigation</p>
       </VisuallyHidden.Root>
       {navItems.map((item, index) => {
-        return <a href={item.href}>{item.label.toUpperCase()}</a>;
+        return <a href={item.href} data-cursor-hide>{item.label.toUpperCase()}</a>;
       })}
     </Navbar>
   );

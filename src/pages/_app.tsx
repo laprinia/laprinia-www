@@ -3,6 +3,7 @@ import { GlobalStyle } from "../styles/globalStyle";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/system";
 import ErrorBoundary from "../components/templates/ErrorBoundary/ErrorBoundary";
+import CustomCursor from "../components/atoms/CustomCursor/CustomCursor";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "@fontsource-variable/atkinson-hyperlegible-next";
@@ -26,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <GlobalStyle />
+      <CustomCursor />
       <NextUIProvider>
         <ErrorBoundary>
           <Component {...pageProps} />

@@ -44,7 +44,7 @@ const DesktopHome = ({
 
   return (
     <DesktopContainer>
-      <CenterCanvasSection aria-hidden>
+      <CenterCanvasSection aria-hidden data-cursor-text="drag!">
         <HorseCanvas />
       </CenterCanvasSection>
 

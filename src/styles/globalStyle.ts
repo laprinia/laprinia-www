@@ -140,5 +140,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: var(--font-heading);
         font-weight: var(--font-weight-light);
     }
-    
+
+    @media (hover: hover) {
+        * {
+            cursor: none !important;
+        }
+    }
+        cursor: none !important;
 `;

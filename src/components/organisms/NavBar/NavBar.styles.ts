@@ -97,7 +97,10 @@ export const NavItems = styled.ul`
   }
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled.a.attrs({ "data-cursor-hide": "" } as Record<
+  string,
+  string
+>)`
   font-family: var(--font-heading);
   text-transform: lowercase;
   text-decoration: none;

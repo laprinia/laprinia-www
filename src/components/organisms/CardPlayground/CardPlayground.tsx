@@ -84,11 +84,19 @@ const CardPlayground = ({ interactive = true }: { interactive?: boolean }) => {
 
   if (!shuffled)
     return (
-      <PlaygroundContainer ref={containerRef} $interactive={interactive} />
+      <PlaygroundContainer
+        ref={containerRef}
+        $interactive={interactive}
+        data-cursor-text={interactive ? "drag!" : undefined}
+      />
     );
 
   return (
-    <PlaygroundContainer ref={containerRef} $interactive={interactive}>
+    <PlaygroundContainer
+      ref={containerRef}
+      $interactive={interactive}
+      data-cursor-text={interactive ? "drag!" : undefined}
+    >
       {shuffled.map(({ item, left, top, rotate, throwX, throwY }, i) => (
         <motion.img
           key={item.src}
