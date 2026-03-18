@@ -85,14 +85,6 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        @media (min-width: 900px) {
-            *:hover, *:active, *:focus {
-                cursor:none;
-            }
-            cursor:none;
-        }
-      
-        
     }
 
     body {

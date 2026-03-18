@@ -8,9 +8,6 @@ export const CarouselWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  :hover {
-    cursor: none;
-  }
 `;
 
 export const CarouselContent = styled.figure<{ active: boolean }>`

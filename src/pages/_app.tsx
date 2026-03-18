@@ -3,7 +3,6 @@ import { GlobalStyle } from "../styles/globalStyle";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/system";
 import ErrorBoundary from "../components/templates/ErrorBoundary/ErrorBoundary";
-import CustomCursor from "../components/molecules/CustomCursor/CustomCursor";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "@fontsource-variable/atkinson-hyperlegible-next";
@@ -13,7 +12,6 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <SpeedInsights />
       <Analytics />
-      <CustomCursor />
       <Head>
         <title>laprinia</title>
         <meta

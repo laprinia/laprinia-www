@@ -4,6 +4,8 @@ export const articleTypography = css`
   h2 {
     font-size: var(--font-size-base-desktop);
     font-weight: var(--font-weight-regular);
+    color: var(--accent-color);
+    font-family: var(--font-heading);
     margin-bottom: 0.5rem;
   }
 
