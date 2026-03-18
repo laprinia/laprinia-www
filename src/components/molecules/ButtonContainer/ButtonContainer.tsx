@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Container } from "./ButtonContainer.styles";
+import { Container, Icon } from "./ButtonContainer.styles";
 
 const ButtonContainer = ({
   buttons,
@@ -17,14 +16,7 @@ const ButtonContainer = ({
           key={index}
           onClick={() => (window.location.href = button.link)}
         >
-          <Image
-            src={button.imageSrc}
-            alt={button.alt}
-            loading="lazy"
-            width={100}
-            height={100}
-            quality={75}
-          />
+          <Icon $src={button.imageSrc} role="img" aria-label={button.alt} />
         </button>
       ))}
     </Container>

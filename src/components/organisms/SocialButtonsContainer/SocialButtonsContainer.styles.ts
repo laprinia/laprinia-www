@@ -31,21 +31,35 @@ export const HeadshotButton = styled.a`
     height: 2.75rem;
   }
 
-  img {
-    height: 1.1rem;
-    width: 1.1rem;
-    object-fit: contain;
-    flex-shrink: 0;
-
-    @media (min-width: 1800px) {
-      height: 1.3rem;
-      width: 1.3rem;
-    }
-  }
-
   &:hover {
     background-color: var(--neutral-700);
     color: var(--support-color);
+  }
+`;
+
+export const Icon = styled.span<{ $src: string }>`
+  display: inline-block;
+  height: 1.1rem;
+  width: 1.1rem;
+  flex-shrink: 0;
+  background-color: var(--neutral-000);
+  mask-image: url(${({ $src }) => $src});
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url(${({ $src }) => $src});
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: background-color 0.2s ease;
+
+  @media (min-width: 1800px) {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+
+  ${HeadshotButton}:hover & {
+    background-color: var(--support-color);
   }
 `;
 

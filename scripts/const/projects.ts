@@ -306,7 +306,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "hhttps://github.com/laprinia/laprinia-www"
         }
@@ -504,7 +504,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "hhttps://github.com/laprinia/laprinia-www"
         }
@@ -562,7 +562,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/laprinia-www"
         }
@@ -638,12 +638,12 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/opea"
         },
         {
-          "imageSrc": "/socials/behance",
+          "imageSrc": "/icons/behance.svg",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism"
         }
@@ -723,7 +723,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/phea"
         }
@@ -823,12 +823,12 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/behance",
+          "imageSrc": "/icons/behance.svg",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer"
         },
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/hyzu"
         }
@@ -890,12 +890,12 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/behance",
+          "imageSrc": "/icons/behance.svg",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study"
         },
         {
-          "imageSrc": "/socials/github",
+          "imageSrc": "/icons/github.svg",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/mozu/tree/main"
         }
@@ -1003,7 +1003,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/behance",
+          "imageSrc": "/icons/behance.svg",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
         }

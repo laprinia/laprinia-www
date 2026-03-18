@@ -52,7 +52,12 @@ export const ProjectName = styled.h2`
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-base-desktop);
   margin: 0;
-
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base-tablet);
+  }
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base-phone);
+  }
   @media (min-width: 1800px) {
     font-size: var(--font-size-base-xl);
   }
@@ -65,6 +70,12 @@ export const Year = styled.h3`
   color: var(--neutral-500);
   margin: 0;
 
+  @media (max-width: 1024px) {
+    font-size: var(--font-size-base-tablet);
+  }
+  @media (max-width: 768px) {
+    font-size: var(--font-size-base-phone);
+  }
   @media (min-width: 1800px) {
     font-size: var(--font-size-base-xl);
   }

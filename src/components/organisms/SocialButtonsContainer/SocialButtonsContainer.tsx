@@ -1,8 +1,8 @@
-import Image from "next/image";
 import {
   HeadshotButton,
   HeadshotButtonContainerWrapper,
   ButtonLabel,
+  Icon,
 } from "./SocialButtonsContainer.styles";
 
 const SocialButtonsContainer = ({
@@ -20,14 +20,7 @@ const SocialButtonsContainer = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            src={button.imgSrc}
-            alt={button.alt}
-            loading="lazy"
-            width={100}
-            height={100}
-            quality={75}
-          />
+          <Icon $src={button.imgSrc} role="img" aria-label={button.alt} />
           <ButtonLabel>{button.label}</ButtonLabel>
         </HeadshotButton>
       ))}

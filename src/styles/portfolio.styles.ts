@@ -10,8 +10,7 @@ export const PortfolioScrollRoot = styled(ScrollRoot)`
 `;
 
 export const Content = styled.div`
-  padding: calc(var(--nav-height) + 2rem) 1.5rem 2rem;
-  padding-right: calc(1.5rem + 12px);
+  padding: calc(var(--nav-height) + 2rem) 1.5rem 1.5rem;
 `;
 
 export const PortfolioScrollBar = styled(ScrollBar)`
