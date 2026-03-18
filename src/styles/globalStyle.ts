@@ -38,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --font-body: "Atkinson Hyperlegible Next Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         --font-heading: "Px Grotesk", sans-serif;
+        --font-mono: "IBM Plex Mono", monospace;
         --font-weight-lighter: 200;
         --font-weight-light: 300;
         --font-weight-regular: 400;

@@ -1,9 +1,8 @@
 import { type ReactNode } from "react";
 import {
   ContainerWrapper,
-  CategoryHeader,
-  CategoryText,
-  Line,
+  Legend,
+  LetterBadge,
   GridContainer,
 } from "./PortfolioContainer.styles";
 
@@ -18,10 +17,10 @@ const PortfolioContainer = ({
 }) => {
   return (
     <ContainerWrapper>
-      <CategoryHeader>
-        <CategoryText>{`${no}) ${category}`}</CategoryText>
-      </CategoryHeader>
-      <Line decorative />
+      <Legend>
+        <LetterBadge>{no}</LetterBadge>
+        {category}
+      </Legend>
       <GridContainer>{children}</GridContainer>
     </ContainerWrapper>
   );

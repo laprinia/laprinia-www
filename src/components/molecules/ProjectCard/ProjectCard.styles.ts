@@ -10,34 +10,25 @@ export const CardContainer = styled.article`
   overflow: hidden;
   border-radius: var(--border-radius);
   height: 18.7rem;
-  padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
   cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 
   @media (min-width: 1800px) {
     height: 30.5rem;
-    &:hover {
-      transform: scale(1.05);
-    }
   }
 `;
 
 export const ImageContainer = styled.figure`
-  width: max(16rem, 100%);
-  height: 70%;
+  width: 100%;
+  flex: 1;
   margin: 0;
+  border-radius: var(--border-radius);
   position: relative;
-  align-self: center;
+  overflow: hidden;
 
-  @media (min-width: 1800px) {
-    width: 100%;
+  img {
+    border-radius: var(--border-radius);
   }
 `;
 
@@ -45,25 +36,20 @@ export const TextContainer = styled.figcaption`
   text-align: left;
   margin: 0;
   width: 100%;
-  height: 30%;
+  padding-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-
-  @media (min-width: 1800px) {
-    justify-content: space-evenly;
-  }
+  gap: 0.75rem;
 `;
 
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 `;
 
 export const ProjectName = styled.h2`
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-base-desktop);
   margin: 0;
 
@@ -73,8 +59,10 @@ export const ProjectName = styled.h2`
 `;
 
 export const Year = styled.h3`
+  font-family: var(--font-heading);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-base-desktop);
+  color: var(--neutral-500);
   margin: 0;
 
   @media (min-width: 1800px) {
@@ -83,16 +71,22 @@ export const Year = styled.h3`
 `;
 
 export const TechText = styled.p`
-  font-family: var(--font-heading);
-  font-size: var(--font-size-M);
-  font-weight: var(--font-weight-lighter);
-  margin: 0.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-regular);
+  margin: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-base-tablet);
+  span {
+    background-color: var(--neutral-700);
+    color: var(--support-color);
+    padding: 0.15em 0.4em;
+    border-radius: var(--border-radius);
   }
 
   @media (min-width: 1800px) {
-    font-size: var(--font-size-base-xl);
+    font-size: 0.8rem;
   }
 `;

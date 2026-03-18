@@ -3,7 +3,6 @@ import { navItems } from "../../consts";
 import PortfolioContainer from "../../components/organisms/PortfolioContainer/PortfolioContainer";
 import Layout from "../../components/organisms/Layout/Layout";
 import ProjectCard from "../../components/molecules/ProjectCard/ProjectCard";
-import MDivider from "../../components/molecules/Divider/MDivider";
 import styled from "styled-components";
 import {
   Project,
@@ -48,7 +47,6 @@ const Portfolio = () => {
                 },
               )}
             </PortfolioContainer>
-            <MDivider />
           </>
         ))}
       </Wrapper>

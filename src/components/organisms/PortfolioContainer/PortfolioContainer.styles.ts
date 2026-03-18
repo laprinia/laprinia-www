@@ -1,49 +1,67 @@
 import styled from "styled-components";
-import * as Separator from "@radix-ui/react-separator";
 
-export const ContainerWrapper = styled.main`
-  margin: 0;
-  padding: 0rem 1rem;
+export const ContainerWrapper = styled.fieldset`
+  border: 1.5px solid var(--accent-color);
+  border-radius: 0.5rem;
+  margin: 0 0 2.5rem;
+  padding: 2rem;
   width: 100%;
+
+  @media (max-width: 767px) {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+  }
 `;
 
-export const CategoryHeader = styled.section`
+export const Legend = styled.legend`
+  margin-left: auto;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  margin-bottom: 1rem;
-`;
-
-export const CategoryText = styled.article`
+  gap: 0.5rem;
+  padding: 0 0.5rem;
   font-family: var(--font-heading);
   font-size: var(--font-size-heading1-desktop);
   font-weight: var(--font-weight-regular);
-  color: var(--accent-color);
+  color: var(--neutral-700);
+
+  @media (max-width: 1023px) {
+    font-size: var(--font-size-heading1-tablet);
+  }
 `;
 
-export const Line = styled(Separator.Root)`
-  height: 0.25rem;
-  background-color: var(--accent-color);
-  border-radius: 1rem;
-  margin: 1rem 0;
+export const LetterBadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background-color: var(--neutral-700);
+  color: var(--support-color);
+  border: 1px solid var(--support-color);
+  font-family: var(--font-heading);
+  font-size: 0.7em;
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
 `;
 
-export const GridContainer = styled.main`
+export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   box-sizing: border-box;
-  gap: 3rem;
+  gap: 2.5rem 2rem;
 
   @media (max-width: 1023px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2rem 1.5rem;
   }
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   @media (min-width: 1800px) {
     grid-template-columns: repeat(4, 1fr);
   }

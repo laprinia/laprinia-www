@@ -43,6 +43,11 @@ const ProjectCard = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const techTags = techText
+    .split(",")
+    .map((t) => t.trim())
+    .filter(Boolean);
+
   return (
     <StyledLink
       href={`/portfolio/${projectId.replaceAll(/\s+/g, "-")}`}
@@ -54,6 +59,18 @@ const ProjectCard = ({
         onMouseLeave={() => setIsHovered(false)}
       >
         <ImageContainer>
+          <img
+            src={cloudinaryRawUrl(gifPath)}
+            alt=""
+            loading="lazy"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
           <Image
             src={imagePath}
             alt={projectName}
@@ -62,23 +79,8 @@ const ProjectCard = ({
             objectFit="cover"
             quality={10}
             style={{
-              opacity: !isMobile && !isHovered ? 1 : 0,
-              transition: "opacity 0.3s ease",
-            }}
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={cloudinaryRawUrl(gifPath)}
-            alt={projectName}
-            loading="lazy"
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity: isMobile || isHovered ? 1 : 0,
-              transition: "opacity 0.3s ease",
+              opacity: isMobile ? 0 : isHovered ? 0 : 1,
+              transition: "opacity 0.6s ease-in-out",
             }}
           />
         </ImageContainer>
@@ -87,7 +89,11 @@ const ProjectCard = ({
             <ProjectName>{projectName}</ProjectName>
             <Year>{year}</Year>
           </HeaderContainer>
-          <TechText>{techText}</TechText>
+          <TechText>
+            {techTags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </TechText>
         </TextContainer>
       </CardContainer>
     </StyledLink>
