@@ -27,7 +27,7 @@ export const ImageNumberContainer = styled.aside`
   align-items: center;
   justify-content: flex-start;
   padding: 1rem;
-  color: white;
+  color: var(--neutral-000);
   border-right: 0.25rem solid var(--accent-color);
   font-weight: var(--font-weight-semibold);
   @media (max-width: 900px) {

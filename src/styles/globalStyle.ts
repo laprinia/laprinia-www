@@ -70,10 +70,24 @@ export const GlobalStyle = createGlobalStyle`
         --font-size-heading3-phone: ${remPhone("40px")};
         --font-size-body-phone: ${remPhone("16px")};
 
-        --background-color: #F6F6F6;
+        --background-color: var(--neutral-100);
         --accent-color: #0141D5;
         --darker-accent-color: #0136af;
         --way-darker-accent-color: #002986;
+        --support-color: #DAFE71;
+
+        --neutral-000: #FFFFFF;
+        --neutral-100: #F5F4F0;
+        --neutral-200: #E8E6DF;
+        --neutral-300: #D4D1C8;
+        --neutral-400: #B5B1A6;
+        --neutral-500: #918C80;
+        --neutral-600: #6B675C;
+        --neutral-700: #48453D;
+        --neutral-800: #2A2923;
+        --neutral-900: #000000;
+
+        --border-radius: 4px;
 
         --toastify-color-success: #0141D5;
         --toastify-color-error: #0141D5;

@@ -130,7 +130,9 @@ export const Section = styled.section`
   code {
     font-size: 14px;
     font-weight: var(--font-weight-light);
-    background-color: var(--accent-color);
-    color: var(--background-color);
+    background-color: var(--neutral-700);
+    color: var(--support-color);
+    border-radius: var(--border-radius);
+    padding: 0.1em 0.3em;
   }
 `;

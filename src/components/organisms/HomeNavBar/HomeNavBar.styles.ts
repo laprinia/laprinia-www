@@ -14,7 +14,7 @@ export const Navbar = styled.nav<{ isMobile?: boolean }>`
     font-size: 1.75rem;
     text-transform: lowercase;
     text-decoration: none;
-    color: black;
+    color: var(--neutral-900);
     font-weight: var(--font-weight-regular);
     @media (max-width: 1023px) {
       font-size: var(--font-size-heading1-tablet);
@@ -24,7 +24,8 @@ export const Navbar = styled.nav<{ isMobile?: boolean }>`
     }
 
     &:hover {
-      color: var(--accent-color);
+      color: var(--support-color);
+      background-color: var(--neutral-700);
       text-decoration: underline;
     }
   }

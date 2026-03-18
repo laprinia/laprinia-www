@@ -3,30 +3,30 @@ import styled, { keyframes } from "styled-components";
 export const pulse = keyframes`
   0% {
     transform: scale(1);
-    background-color: var(--accent-color);
+    background-color: var(--support-color);
   }
   50% {
     transform: scale(1.1);
-    background-color: var(--way-darker-accent-color);
+    background-color: var(--neutral-700);
   }
   100% {
     transform: scale(1);
-    background-color: var(--accent-color);
+    background-color: var(--support-color);
   }
 `;
 
 export const outlinePulse = keyframes`
   0% {
     transform: scale(1);
-    border-color: var(--darker-accent-color);
+    border-color: var(--support-color);
   }
   50% {
     transform: scale(1.5);
-    border-color: var(--way-darker-accent-color);
+    border-color: var(--neutral-500);
   }
   100% {
     transform: scale(1);
-    border-color: var(--accent-color);
+    border-color: var(--support-color);
   }
 `;
 
@@ -47,7 +47,7 @@ export const Circle = styled.section`
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: var(--accent-color);
+  background-color: var(--support-color);
   animation: ${pulse} 1.5s infinite;
   margin-right: 0.5rem;
 
@@ -59,7 +59,7 @@ export const Circle = styled.section`
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border: 1.6px solid var(--accent-color);
+    border: 1.6px solid var(--support-color);
     animation: ${outlinePulse} 1.5s infinite;
     z-index: -1;
   }

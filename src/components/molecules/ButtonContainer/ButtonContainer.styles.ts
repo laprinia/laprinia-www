@@ -9,6 +9,7 @@ export const Container = styled.section`
     width: 2rem;
     height: 2rem;
     border: none;
+    border-radius: var(--border-radius);
     background-color: var(--accent-color);
     padding: 0.5rem;
 
@@ -20,7 +21,7 @@ export const Container = styled.section`
     }
 
     &:hover {
-      background-color: var(--darker-accent-color);
+      background-color: var(--neutral-700);
     }
 
     &:hover img {

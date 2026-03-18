@@ -12,9 +12,11 @@ export const SlabbedWrapper = styled(ArticleWrapper)<{ $isActive: boolean }>`
 
   section p {
     padding: 0 0.5rem;
+    border-radius: var(--border-radius);
     background-color: ${({ $isActive }) =>
-      $isActive ? "var(--accent-color)" : "var(--background-color)"};
-    color: ${({ $isActive }) => ($isActive ? "white" : "black")};
+      $isActive ? "var(--neutral-700)" : "var(--background-color)"};
+    color: ${({ $isActive }) =>
+      $isActive ? "var(--support-color)" : "var(--neutral-900)"};
     margin: 0;
   }
 `;

@@ -8,6 +8,7 @@ export const StyledLink = styled(Link)`
 
 export const CardContainer = styled.article`
   overflow: hidden;
+  border-radius: var(--border-radius);
   height: 18.7rem;
   padding: 0.5rem 1rem;
   display: flex;

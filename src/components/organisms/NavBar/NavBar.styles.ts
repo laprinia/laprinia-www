@@ -75,8 +75,11 @@ export const NavLink = styled.a`
   font-family: var(--font-heading);
   text-transform: lowercase;
   text-decoration: none;
-  color: inherit;
+    color: inherit;
+  transition: color 0.2s ease, background-color 0.2s ease;
   &:hover {
+    color: var(--support-color);
+    background-color: var(--neutral-700);
     text-decoration: underline;
   }
 `;
@@ -144,16 +147,19 @@ export const DropdownContent = styled(DropdownMenu.Content)`
   position: absolute;
   top: 100%;
   right: 0;
+  border-radius: var(--border-radius);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
   a {
     padding: 1rem;
     display: block;
-    color: black;
+    color: var(--neutral-900);
     text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
     &:hover {
-      background-color: #f1f1f1;
+      color: var(--support-color);
+      background-color: var(--neutral-700);
     }
   }
 `;
