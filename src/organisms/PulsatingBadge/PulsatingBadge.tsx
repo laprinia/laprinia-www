@@ -66,9 +66,7 @@ const Circle = styled.section`
   }
 `;
 
-const Text = styled.article`
-  text-align: justify;
-`;
+const Text = styled.article``;
 
 const PulsatingBadge = () => {
   return (

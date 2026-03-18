@@ -10,6 +10,7 @@ const Container = styled.div`
   padding: 2rem;
   box-sizing: border-box;
   font-size: 4rem;
+  font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
   color: var(--background-color);
 

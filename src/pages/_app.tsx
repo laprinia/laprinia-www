@@ -4,9 +4,9 @@ import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/system";
 import ErrorBoundary from "../templates/ErrorBoundary/ErrorBoundary";
 import CustomCursor from "../molecules/CustomCursor/CustomCursor";
-import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import "@fontsource-variable/atkinson-hyperlegible-next";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -22,25 +22,10 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         <meta
           name="keywords"
-          content="Web Developer, Index, Hire Developer, Frontend Romania, Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner, laprinia, laprinion"
+          content="Design Engineer, Web Developer, Index, Hire Developer, Frontend Romania, Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner, laprinia, laprinion, Lavinia Dumitrenco, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-          as="font"
-          type="font/woff2"
-        />
       </Head>
-      {process.env.NODE_ENV === "development" && (
-        <Script
-          src="/_next/static/chunks/react-refresh.js"
-          strategy="beforeInteractive"
-        />
-      )}
       <GlobalStyle />
       <NextUIProvider>
         <ErrorBoundary>

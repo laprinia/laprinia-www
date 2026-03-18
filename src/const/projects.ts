@@ -23,14 +23,455 @@ export type Project = {
 };
 
 export type ProjectCategories = {
+  "branding & design": Project[];
   web: Project[];
-  graphics: Project[];
-  others: Project[];
-  "ui/ux": Project[];
+  "3d": Project[];
+  experimental: Project[];
+  other: Project[];
 };
 
 export const projects: ProjectCategories = {
+  "branding & design": [
+    {
+      name: "personal website ux",
+      year: 2024,
+      techStackPreview: "*/figma, adobe*/",
+      tags: [
+        "figma",
+        "adobe fonts",
+        "adobe photoshop",
+        "adobe rush",
+        "responsive design",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/5.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/6.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/7.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/personal-website-ux/content/8.avif",
+        },
+      ],
+      buttons: [
+        {
+          imageSrc: "/social/github.avif",
+          alt: "GitHub",
+          link: "hhttps://github.com/laprinia/laprinia-www",
+        },
+      ],
+      textContents: [
+        {
+          header: "A) Goals",
+          text: "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer 🙂‍↕️. The site serves as a portfolio to showcase my projects in a fun and engaging. Iwanted to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic.",
+        },
+        {
+          header: "B) Process & Solution",
+          text:
+            "<ul>\n" +
+            "<li><h3>🔍 Research & Planning</h3> I began by identifying the key sections of the website: a Landing Page for a quick introduction, a Portfolio Overview for an at-a-glance view of all projects, Individual Project Pages for detailed insights, and an About Page for personal background and contact information.</li>\n" +
+            "<li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures. Adobe Rush was used to create short, impactful videos for my project showcases.</li>\n" +
+            "<li><h3>🎨 Visual Design & Accessibility</h3> The color palette was chosen to balance a clean look with bold accents: a soft background color (#F6F6F6) paired with striking blue tones (#0141D5, #0136af, #002986). These colors were applied thoughtfully to maintain accessibility and contrast ratios. Typography breakpoints were defined for XL desktops, desktops, tablets, and phones, ensuring readability across all devices.</li>\n" +
+            "<li><h3>💻 Development & Implementation</h3> Leveraged Next.js for SEO optimization and fast page loading. Used React with TypeScript for type safety and component reusability. Integrated react-three-fiber for dynamic 3D text animations, bringing the site to life, and Framer Motion for smooth transitions and micro-interactions. Focused on a mobile-first responsive design that adapts seamlessly from small screens to large desktops, offering unique perspectives for different devices.</li>\n" +
+            "<li><h3>🖼️ Content Structure & Navigation</h3> The content was structured to allow easy navigation: the Landing Page offers a clear introduction, while the Portfolio section provides a snapshot of each project. Individual Project Pages delve into technologies used, code snippets, and include a mixed-media carousel of images and videos. The About Page connects visitors to my background and personal interests.</li>\n" +
+            "</ul>\n",
+        },
+      ],
+      colors: ["#0141D5", "#F6F6F6", "#000000"],
+    },
+    {
+      name: "veloura brand guide",
+      year: 2025,
+      techStackPreview: "*/figma, illustrator*/",
+      tags: [
+        "branding",
+        "visual identity",
+        "logo design",
+        "color systems",
+        "typography",
+        "mockups",
+        "ui",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/0.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/5.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/6.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/7.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/8.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/9.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/10.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/11.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/veloura-brand-guide/content/12.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Capstone brand identity for VELOURA, created as my final project for Coursera's Graphic Design Specialization. I wanted to explore how a brand could speak to the new generation and tackle overconsumption, while still feeling playful, mystical, and fashion-forward.",
+        },
+        {
+          header: "B) Problem & Intent",
+          text:
+            "I envisioned a brand that felt like a cult favorite, rather than a polished corporate brand, which was something out of my comfort zone. My startup is a brand that sells vintage fashion items, based on tarot card readings, a business started in the dorms by two friends.",
+        },
+        {
+          header: "C) Research & Ideation",
+          text:
+            "Through mind mapping, I explored clusters of ideas around ritual, barter, sustaintability, which lead me to a curated aesthetic.",
+        },
+        {
+          header: "D) Naming & Positioning",
+          text:
+            "I chose the name VELOURA (velour + aura) to fuse tactile, vintage fashion with the idea of the tarot card readings. The core qualities I aimed for were mystical, hip, and timeless.",
+        },
+        {
+          header: "E) Visual Decisions",
+          text:
+            "I pulled from 1960s–80s psychedelia, pop culture, and editorial designs.",
+        },
+        {
+          header: "F) Logotype",
+          text:
+            "The VELOURA logotype is set in bold, uppercase psychedelic letterforms to feel iconic and instantly recognizable.",
+        },
+        {
+          header: "G) Typography",
+          text:
+            "I paired an expressive display font for headlines with a clean, neutral sans-serif for copy to balance personality with clarity.",
+        },
+        {
+          header: "H) Color System",
+          text:
+            "The color system combines saturated, psychedelic primaries with softer supporting tones for imagery, and neutrals for UI.",
+        },
+        {
+          header: "I) Imagery",
+          text:
+            "Imagery is treated like modern tarot cards, using high-fashion editorial photos framed with symbols, borders, and layered graphics.",
+        },
+        {
+          header: "J) Mockups",
+          text:
+            "I translated the system into store signage, tags, and responsive web mockups to show how VELOURA lives both offline and online.",
+        },
+      ],
+      colors: ["#DF3912", "#5DA24E", "#EA4574", "#DFC6F9", "#37373E"],
+    },
+    {
+      name: "mood ring",
+      year: 2024,
+      techStackPreview: "*/figma*/",
+      tags: [
+        "figma",
+        "design systems",
+        "ui design",
+        "prototyping",
+        "wireframes",
+        "user flows",
+        "responsive design",
+    
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/5.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/6.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/7.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/8.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/9.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/10.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/11.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/mood-ring/content/12.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Capstone project for SuperHi's User Interface course: a design system and interface for Mood Ring, a journaling app that blends birth chart astrology with color therapy to deliver personalized self-reflection prompts.",
+        },
+        {
+          header: "B) Problem & Idea",
+          text:
+            "I wanted to experiment with creating reusable design elements and creating a good structure for my design files.",
+        },
+        {
+          header: "C) Design System",
+          text:
+            "I set up a reusable design system in Figma with color tokens, typography scales, spacing, and component variants so that buttons, cards, inputs could be reused and iterated on quickly.",
+        },
+        {
+          header: "D) Flows & Prototyping",
+          text:
+            "Wireframes and user flows map how someone moves from logging in to onboarding, then I turned them into interactive prototypes to test navigation, hierarchy, and microinteractions.",
+        },
+        {
+          header: "E) Responsive UI",
+          text:
+            "Layouts are designed mobile-first, then adapted to tablet and desktop, focusing on flexible grids and component behavior so the mood journal feels consistent yet tailored across screen sizes.",
+        },
+        {
+          header: "F) Color Palette",
+          text:
+            "The palette uses a warm primary coral, a soft neutral secondary, deep near-black, and white to balance emotional intensity with calm, legible UI.",
+        },
+        {
+          header: "G) Key Learnings",
+          text:
+            "This project solidified how to structure a design system, design for multiple breakpoints, build reusable variants, and prototype user journeys end to end.",
+        },
+      ],
+      colors: ["hsla(10, 81%, 60%, 1)", "hsla(240, 6%, 80%, 1)", "hsla(0, 0%, 5%, 1)"],
+    },
+  ],
   web: [
+    {
+      name: "tectonic",
+      year: 2025,
+      techStackPreview: "*/webflow, figma*/",
+      tags: ["webflow", "figma", "design engineering", "vanilla js", "design", "glassmorphism"],
+      mediaContents: [
+        {
+          type: "video",
+          src: "/projects/tectonic/content/1.mp4",
+        },
+        {
+          type: "image",
+          src: "/projects/tectonic/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/tectonic/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/tectonic/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/tectonic/content/5.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Design engineering work for In The Pocket on Tectonic, a major Belgian tech conference where industry experts share talks and panels.",
+        },
+        {
+          header: "B) Role & Collaboration",
+          text:
+            "As a design engineer, I collaborated with volunteers from Nexent and In The Pocket engineers to help bring the Webflow site to life, including key program and schedule sections.",
+        },
+        {
+          header: "C) Program Timeline",
+          text:
+            "Using data from the Webflow CMS, I designed and styled a flexible timeline component that can display multiple days and events across different stages, each on its own swimlane.",
+        },
+        {
+          header: "D) Impact",
+          text:
+            "The component streamlined adding and updating events—crucial for a live conference where times and sessions change frequently—and the result was a huge success for the organizing team.",
+        },
+        {
+          header: "E) Visual Direction",
+          text:
+            "I followed Tectonic’s futurist typography and color system, and introduced subtle glass-like effects on buttons and event cards to give the interface a polished, tech-forward feel.",
+        },
+      ],
+      colors: ["#764ba2"],
+    },
+    {
+      name: "ghent bikes",
+      year: 2024,
+      techStackPreview: "*/react, next.js, figma*/",
+      tags: [
+        "react",
+        "typescript",
+        "accessibility",
+        "next.js",
+        "figma",
+        "chakra ui",
+        "joi",
+        "winston",
+        "google maps",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/ghent-bikes/content/4.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Web app that surfaces bike and parking stations in Ghent from the city's open data API. Each station shows capacity, live availability, a copyable name, and a Google Maps preview so riders can quickly decide where to park.",
+        },
+        {
+          header: "B) UI & Accessibility",
+          text:
+            "<ul>\n" +
+            "<li>Chakra UI provides semantic building blocks, theming, and responsive breakpoints with minimal custom CSS.</li>\n" +
+            "<li>Hidden helper text (e.g., <code>&lt;p hidden&gt;</code>) describes map previews for screen readers.</li>\n" +
+            "<li><code>as</code> props and rem-based sizing support better semantics and scalable typography.</li>\n" +
+            "<li>Axe is used during development to catch and fix accessibility issues early.</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "C) Problem & Data Source",
+          text:
+            "Using the Stad Gent open data catalog for bikes, I wanted to turn raw datasets into a practical city tool: clear lists of bike stations and parking spots that are easy to scan, compare, and locate on a map.",
+        },
+        {
+          header: "D) Architecture & Validation",
+          text:
+            "<ul>\n" +
+            "<li>Next.js API routes handle fetching and routing, with Joi schemas validating incoming responses from the Ghent endpoints.</li>\n" +
+            "<li>Winston is used for logging validation issues or unexpected data shapes.</li>\n" +
+            "<li>This setup keeps the API layer small and opinionated, ideal for a focused, dataset-driven app.</li>\n" +
+            "</ul>\n",
+        },
+        {
+          header: "E) Queries & Endpoints",
+          text:
+            "<pre><code>Bike spots\nSELECT name, bikes_in_use, bikes_available, geopoint\nORDER BY name ASC\n\nPark spots\nSELECT name, description, type, categorie, totalcapacity, availablecapacity, occupation, isopennow\nWHERE (availablecapacity / totalcapacity * 100) &gt; 50 AND isopennow = 1\nORDER BY availablecapacity DESC\n</code></pre>\n" +
+            "These structured queries are used to build the data.stad.gent URLs that power the bikes and parkings views.",
+        },
+        {
+          header: "F) Routing & Data Fetching",
+          text:
+            "<ul>\n" +
+            "<li>/ — landing page with hero and links into the bikes and parkings flows.</li>\n" +
+            "<li>/bikes — shows the four Blue Bikes locations with capacity information.</li>\n" +
+            "<li>/parkings — lists parking spots with at least 50% availability.</li>\n" +
+            "<li>/parkings/[slug] — details view for a single parking, where the slug is generated from the fetched data.</li>\n" +
+            "<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n" +
+            "</ul>\n",
+        },
+      ],
+      colors: ["#0141D5", "#42A5F5", "#1B5E20"],
+    },
     {
       name: "personal website",
       year: 2024,
@@ -68,12 +509,12 @@ export const projects: ProjectCategories = {
         },
         {
           type: "image",
-          src: "/projects/personal-website/content/5.webp",
+          src: "/projects/personal-website/content/5.avif",
         },
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "hhttps://github.com/laprinia/laprinia-www",
         },
@@ -87,23 +528,23 @@ export const projects: ProjectCategories = {
           header: "B) Recipe",
           text:
             "<ul>\n" +
-            "  <li>Next.js for improved SEO and faster load times through server-side rendering</li>\n" +
-            "  <li>React with TypeScript for type safety and robust code management</li>\n" +
-            "  <li>react-three-fiber for 3D text animations and visual effects</li>\n" +
-            "  <li>Framer Motion for smooth, CSS-based animations and transitions</li>\n" +
-            "  <li>Focus on accessibility features and responsive design for a seamless experience on all devices</li>\n" +
+            "<li>Next.js for improved SEO and faster load times through server-side rendering</li>\n" +
+            "<li>React with TypeScript for type safety and robust code management</li>\n" +
+            "<li>React Three Fiber for 3D text animations and visual effects</li>\n" +
+            "<li>Framer Motion for smooth, CSS-based animations and transitions</li>\n" +
+            "<li>Focus on accessibility features and responsive design for a seamless experience on all devices</li>\n" +
             "</ul>\n",
         },
         {
           header: "C) Key Feats",
           text:
             "<ul>\n" +
-            "  <li>🌐 SEO & Performance Optimization</li>\n" +
-            "  <li>🎨 Responsive Design</li>\n" +
-            "  <li>✨ 3D Text Animations</li>\n" +
-            "  <li>🖼️ Mixed Media Carousel</li>\n" +
-            "  <li>📄 Modular Page Structure</li>\n" +
-            "  <li>🛠️ Framer Motion Animations</li>\n" +
+            "<li>🌐 SEO & Performance Optimization</li>\n" +
+            "<li>🎨 Responsive Design</li>\n" +
+            "<li>✨ 3D Text Animations</li>\n" +
+            "<li>🖼️ Mixed Media Carousel</li>\n" +
+            "<li>📄 Modular Page Structure</li>\n" +
+            "<li>🛠️ Framer Motion Animations</li>\n" +
             "</ul>\n",
         },
       ],
@@ -140,7 +581,7 @@ export const projects: ProjectCategories = {
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/laprinia-www",
         },
@@ -154,25 +595,25 @@ export const projects: ProjectCategories = {
           header: "B) Follows",
           text:
             "<ul>\n" +
-            "  <li>react-three-fiber for rendering 3D scenes within React</li>\n" +
-            "  <li>drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n" +
-            "  <li>three.js for texture management and geometry manipulation</li>\n" +
-            "  <li>Raleway font used for my text samples</li>\n" +
+            "<li>React Three Fiber for rendering 3D scenes within React</li>\n" +
+            "<li>Drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n" +
+            "<li>Three.js for texture management and geometry manipulation</li>\n" +
+            "<li>Raleway font used for my text samples</li>\n" +
             "</ul>\n",
         },
         {
           header: "C) Key Feats",
           text:
             "<ul>\n" +
-            "  <li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the top left of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n" +
-            "  <li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n" +
-            "  <li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n" +
-            "  <li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n" +
-            "  <code>const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);\n" +
+            "<li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the top left of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n" +
+            "<li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n" +
+            "<li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n" +
+            "<li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n" +
+            "<code>const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);\n" +
             "const waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);\n" +
             "vertex.z = targetIntensityRef.current * (waveX1 + waveY1);</code>\n" +
-            "  </li>\n" +
-            "  <li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes.</li>\n" +
+            "</li>\n" +
+            "<li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes.</li>\n" +
             "</ul>\n",
         },
       ],
@@ -198,23 +639,23 @@ export const projects: ProjectCategories = {
       mediaContents: [
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/1.webp",
+          src: "/projects/fullstack-authentication/content/1.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/2.webp",
+          src: "/projects/fullstack-authentication/content/2.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/3.webp",
+          src: "/projects/fullstack-authentication/content/3.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/4.webp",
+          src: "/projects/fullstack-authentication/content/4.avif",
         },
         {
           type: "image",
-          src: "/projects/fullstack-authentication/content/5.webp",
+          src: "/projects/fullstack-authentication/content/5.avif",
         },
         {
           type: "video",
@@ -227,12 +668,12 @@ export const projects: ProjectCategories = {
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/opea",
         },
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism",
         },
@@ -250,7 +691,7 @@ export const projects: ProjectCategories = {
             "    <h3>Frontend:</h3>\n" +
             "    <ul>\n" +
             "      <li>Mantine for UI components</li>\n" +
-            "      <li>Radix-UI icons</li>\n" +
+            "      <li>Radix UI icons</li>\n" +
             "      <li>Axios for services</li>\n" +
             "      <li>Unsplash API for randomized backgrounds</li>\n" +
             "    </ul>\n" +
@@ -269,11 +710,11 @@ export const projects: ProjectCategories = {
           header: "C) Key Feats",
           text:
             "<ul>\n" +
-            "  <li>Joi for data validation in the backend</li>\n" +
-            "  <li>Mongoose DB schema using TypeScript types to enforce accepted color outputs and formats</li>\n" +
-            "  <li>Randomized custom backgrounds provided by the Unsplash API</li>\n" +
-            "  <li>Glassmorphism components styled with custom CSS inside Mantine components</li>\n" +
-            "  <li>Field & form validation implemented</li>\n" +
+            "<li>Joi for data validation in the backend</li>\n" +
+            "<li>Mongoose DB schema using TypeScript types to enforce accepted color outputs and formats</li>\n" +
+            "<li>Randomized custom backgrounds provided by the Unsplash API</li>\n" +
+            "<li>Glassmorphism components styled with custom CSS inside Mantine components</li>\n" +
+            "<li>Field & form validation implemented</li>\n" +
             "</ul>\n",
         },
         {
@@ -304,7 +745,7 @@ export const projects: ProjectCategories = {
       mediaContents: [
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/1.webp",
+          src: "/projects/web-3d-terrain-generator/content/1.avif",
         },
         {
           type: "video",
@@ -312,23 +753,23 @@ export const projects: ProjectCategories = {
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/2.webp",
+          src: "/projects/web-3d-terrain-generator/content/2.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/3.webp",
+          src: "/projects/web-3d-terrain-generator/content/3.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/4.webp",
+          src: "/projects/web-3d-terrain-generator/content/4.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/5.webp",
+          src: "/projects/web-3d-terrain-generator/content/5.avif",
         },
         {
           type: "image",
-          src: "/projects/web-3d-terrain-generator/content/6.webp",
+          src: "/projects/web-3d-terrain-generator/content/6.avif",
         },
         {
           type: "video",
@@ -337,7 +778,7 @@ export const projects: ProjectCategories = {
       ],
       buttons: [
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/phea",
         },
@@ -351,104 +792,32 @@ export const projects: ProjectCategories = {
           header: "B) Frontend Recipe",
           text:
             "<ul>\n" +
-            "  <li>react three fiber, a React renderer for three.js</li>\n" +
-            "  <li>drei addons for react three fiber</li>\n" +
-            "  <li>glsl-noise for Simplex noise</li>\n" +
-            "  <li>Mantine for UI components</li>\n" +
+            "<li>React Three Fiber, a React renderer for Three.js</li>\n" +
+            "<li>Drei addons for React Three Fiber</li>\n" +
+            "<li>GLSL Noise for Simplex noise</li>\n" +
+            "<li>Mantine for UI components</li>\n" +
             "</ul>\n",
         },
         {
           header: "C) Key Feats",
           text:
             "<ul>\n" +
-            "  <li><h3>🧊 Marching cubes algorithm implementation</h3> Divides a volume in 3D space into cubes to approximate rendered faces for a mesh. Utilizes voxels to determine density and surface points.</li>\n" +
-            "  <li><h3>📼 Simplex Noise</h3> A 3D noise function for randomizing terrain height values. Parameters include noiseScale, octaves, weightMultiplier, persistencePerOctave, detailPerOctave, and noiseWeight.</li>\n" +
-            "  <li><h3>🏔️ Terracing</h3> Clamps terrain height on levels, with spacing set by <strong>terracingLevel</strong>.</li>\n" +
-            "  <li><h3>🌈 Color Height Map</h3> Uses a .png gradient for coloring fragments in the fragment shader.</li>\n" +
-            "  <li><h3>🍄 Visual Smoothing</h3> Smooths low-poly terrain by removing the world normal vector from height calculation in the fragment shader.</li>\n" +
-            "  <li><h3>✨ Post Processing</h3> Effects like TiltShift, Bloom, Noise, and BrightnessContrast achieved using r3f's postprocessing wrapper.</li>\n" +
-            "  <li><h3>🏊 Floating Effect & Mesh Rotation</h3> Uses a height vertex shader with elapsed time-based disturbance, and rotates the mesh on the y-axis.</li>\n" +
-            "  <li><h3>🎛️ The UI</h3> Controls gradient, marching cubes, and Simplex noise parameters, and regenerates the mesh.</li>\n" +
+            "<li><h3>🧊 Marching cubes algorithm implementation</h3> Divides a volume in 3D space into cubes to approximate rendered faces for a mesh. Utilizes voxels to determine density and surface points.</li>\n" +
+            "<li><h3>📼 Simplex Noise</h3> A 3D noise function for randomizing terrain height values. Parameters include noiseScale, octaves, weightMultiplier, persistencePerOctave, detailPerOctave, and noiseWeight.</li>\n" +
+            "<li><h3>🏔️ Terracing</h3> Clamps terrain height on levels, with spacing set by <strong>terracingLevel</strong>.</li>\n" +
+            "<li><h3>🌈 Color Height Map</h3> Uses a .png gradient for coloring fragments in the fragment shader.</li>\n" +
+            "<li><h3>🍄 Visual Smoothing</h3> Smooths low-poly terrain by removing the world normal vector from height calculation in the fragment shader.</li>\n" +
+            "<li><h3>✨ Post Processing</h3> Effects like TiltShift, Bloom, Noise, and BrightnessContrast achieved using r3f's postprocessing wrapper.</li>\n" +
+            "<li><h3>🏊 Floating Effect & Mesh Rotation</h3> Uses a height vertex shader with elapsed time-based disturbance, and rotates the mesh on the y-axis.</li>\n" +
+            "<li><h3>🎛️ The UI</h3> Controls gradient, marching cubes, and Simplex noise parameters, and regenerates the mesh.</li>\n" +
             "</ul>\n",
         },
       ],
       colors: ["#0C1210", "#1D4636", "#2C5C64", "#99ABB7", "#6BADE7"],
     },
+    
   ],
-  "ui/ux": [
-    {
-      name: "personal website ux",
-      year: 2024,
-      techStackPreview: "*/figma, adobe*/",
-      tags: [
-        "figma",
-        "adobe fonts",
-        "adobe photoshop",
-        "adobe rush",
-        "responsive design",
-      ],
-      mediaContents: [
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/1.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/2.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/3.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/4.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/5.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/6.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/7.webp",
-        },
-        {
-          type: "image",
-          src: "/projects/personal-website-ux/content/8.webp",
-        },
-      ],
-      buttons: [
-        {
-          imageSrc: "/social/github.webp",
-          alt: "GitHub",
-          link: "hhttps://github.com/laprinia/laprinia-www",
-        },
-      ],
-      textContents: [
-        {
-          header: "A) Goals",
-          text: "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer 🙂‍↕️. The site serves as a portfolio to showcase my projects in a fun and engaging. Iwanted to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic.",
-        },
-        {
-          header: "B) Process & Solution",
-          text:
-            "<ul>\n" +
-            "  <li><h3>🔍 Research & Planning</h3> I began by identifying the key sections of the website: a Landing Page for a quick introduction, a Portfolio Overview for an at-a-glance view of all projects, Individual Project Pages for detailed insights, and an About Page for personal background and contact information.</li>\n" +
-            "  <li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures. Adobe Rush was used to create short, impactful videos for my project showcases.</li>\n" +
-            "  <li><h3>🎨 Visual Design & Accessibility</h3> The color palette was chosen to balance a clean look with bold accents: a soft background color (#F6F6F6) paired with striking blue tones (#0141D5, #0136af, #002986). These colors were applied thoughtfully to maintain accessibility and contrast ratios. Typography breakpoints were defined for XL desktops, desktops, tablets, and phones, ensuring readability across all devices.</li>\n" +
-            "  <li><h3>💻 Development & Implementation</h3> Leveraged Next.js for SEO optimization and fast page loading. Used React with TypeScript for type safety and component reusability. Integrated react-three-fiber for dynamic 3D text animations, bringing the site to life, and Framer Motion for smooth transitions and micro-interactions. Focused on a mobile-first responsive design that adapts seamlessly from small screens to large desktops, offering unique perspectives for different devices.</li>\n" +
-            "  <li><h3>🖼️ Content Structure & Navigation</h3> The content was structured to allow easy navigation: the Landing Page offers a clear introduction, while the Portfolio section provides a snapshot of each project. Individual Project Pages delve into technologies used, code snippets, and include a mixed-media carousel of images and videos. The About Page connects visitors to my background and personal interests.</li>\n" +
-            "</ul>\n",
-        },
-      ],
-      colors: ["#0141D5", "#F6F6F6", "#000000"],
-    },
-  ],
-  graphics: [
+  "3d": [
     {
       name: "ray tracer",
       year: 2022,
@@ -463,28 +832,28 @@ export const projects: ProjectCategories = {
         "various materials",
       ],
       mediaContents: [
-        { type: "image", src: "/projects/ray-tracer/content/1.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/2.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/3.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/4.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/5.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/6.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/7.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/8.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/9.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/10.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/11.webp" },
-        { type: "image", src: "/projects/ray-tracer/content/12.webp" },
+        { type: "image", src: "/projects/ray-tracer/content/1.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/2.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/3.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/4.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/5.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/6.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/7.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/8.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/9.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/10.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/11.avif" },
+        { type: "image", src: "/projects/ray-tracer/content/12.avif" },
         { type: "video", src: "/projects/ray-tracer/content/13.mp4" },
       ],
       buttons: [
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer",
         },
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/hyzu",
         },
@@ -498,37 +867,37 @@ export const projects: ProjectCategories = {
           header: "B) Process",
           text:
             "<section>\n" +
-            "  <h3>1. Matte Materials</h3>\n" +
-            "  <p>\n" +
+            "<h3>1. Matte Materials</h3>\n" +
+            "<p>\n" +
             "    The process is simple: normalizing the y coordinate and interpolating between two colors.\n" +
             "    Checking if the rays hit the sphere and displaying the color. The resulting color is computed\n" +
             "    by picking a random point inside a unit radius sphere, whose normal starts from the initial ray hit point.\n" +
             "    This is done recursively until a ray doesn't hit anything or a maximum depth is reached.\n" +
             "  </p>\n" +
             "\n" +
-            "  <h3>2. Metallic Surfaces</h3>\n" +
-            "  <p>\n" +
+            "<h3>2. Metallic Surfaces</h3>\n" +
+            "<p>\n" +
             "    For metallic surfaces, rays aren't randomly scattered. Luckily, GLSL has the \n" +
             "    <code>reflect()</code> function, which returns the reflected ray. Randomizing the reflected\n" +
             "    ray by choosing a random endpoint, as we did for the matte surface, gives rough (fuzzy) surfaces.\n" +
             "  </p>\n" +
             "\n" +
-            "  <h3>3. Dielectric Surfaces</h3>\n" +
-            "  <p>\n" +
+            "<h3>3. Dielectric Surfaces</h3>\n" +
+            "<p>\n" +
             "    A ray is split into both a reflected one and a refracted one. Assuming that all rays are \n" +
             "    only refracted results in one outcome. Using Schlick's polynomial approximation, we can \n" +
             "    determine if rays must be reflected instead of refracted, producing the final result.\n" +
             "  </p>\n" +
             "\n" +
-            "  <h3>4. Cornell Box</h3>\n" +
-            "  <p>\n" +
+            "<h3>4. Cornell Box</h3>\n" +
+            "<p>\n" +
             "    Adding a Cornell Box introduces more complexity into the scene. To make things more \n" +
             "    realistic, emissive materials are added for ceiling lights and spheres. Rays hitting \n" +
             "    an emissive surface won't scatter, so they retain their true albedo color output.\n" +
             "  </p>\n" +
             "\n" +
-            "  <h3>5. Post-Processing</h3>\n" +
-            "  <p>\n" +
+            "<h3>5. Post-Processing</h3>\n" +
+            "<p>\n" +
             "    On the post-processing layer, HDR is applied, making the emissive material stand out more. \n" +
             "    Bloom is also added, which renders lights as blurred (using Gaussian Blur) and adds the \n" +
             "    result on top of the base color.\n" +
@@ -558,20 +927,20 @@ export const projects: ProjectCategories = {
         "scene rendering",
       ],
       mediaContents: [
-        { type: "image", src: "/projects/volumetric-light/content/1.webp" },
+        { type: "image", src: "/projects/volumetric-light/content/1.avif" },
         { type: "video", src: "/projects/volumetric-light/content/2.mp4" },
-        { type: "image", src: "/projects/volumetric-light/content/3.webp" },
-        { type: "image", src: "/projects/volumetric-light/content/4.webp" },
-        { type: "image", src: "/projects/volumetric-light/content/5.webp" },
+        { type: "image", src: "/projects/volumetric-light/content/3.avif" },
+        { type: "image", src: "/projects/volumetric-light/content/4.avif" },
+        { type: "image", src: "/projects/volumetric-light/content/5.avif" },
       ],
       buttons: [
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study",
         },
         {
-          imageSrc: "/social/github.webp",
+          imageSrc: "/social/github.avif",
           alt: "GitHub",
           link: "https://github.com/laprinia/mozu/tree/main",
         },
@@ -585,16 +954,16 @@ export const projects: ProjectCategories = {
           header: "B) Includes",
           text:
             "<ol>\n" +
-            "    <li>Blinn-Phong model</li>\n" +
-            "    <li>Multiple light sources:\n" +
+            "<li>Blinn-Phong model</li>\n" +
+            "<li>Multiple Light Sources:\n" +
             "        <ul>\n" +
-            "            <li>Directional</li>\n" +
-            "            <li>Point</li>\n" +
-            "            <li>Spotlight</li>\n" +
+            "<li>Directional</li>\n" +
+            "<li>Point</li>\n" +
+            "<li>Spotlight</li>\n" +
             "        </ul>\n" +
-            "    </li>\n" +
-            "    <li>Normal mapping</li>\n" +
-            "    <li>Shadow mapping using a depth map rendered from the light's point of view, projected in perspective</li>\n" +
+            "</li>\n" +
+            "<li>Normal Mapping</li>\n" +
+            "<li>Shadow Mapping using a depth map rendered from the light's point of view, projected in perspective</li>\n" +
             "</ol>\n" +
             "\n",
         },
@@ -615,15 +984,56 @@ export const projects: ProjectCategories = {
           header: "D) For Short",
           text:
             "<ul>\n" +
-            "    <li>Post Processing effects: HDR, Gamma Correction, and Grain</li>\n" +
-            "    <li>Additional techniques: Anti-Aliasing, Blending, Depth Testing, and Skybox implementation</li>\n" +
+            "<li>Post-Processing effects: HDR, Gamma Correction, and Grain</li>\n" +
+            "<li>Additional techniques: Anti-Aliasing, Blending, Depth Testing, and Skybox implementation</li>\n" +
             "</ul>",
         },
       ],
       colors: ["#e97972", "#E53190", "#2EABD3", "#E3E874", "#E4E3EA"],
     },
   ],
-  others: [
+  experimental: [
+    {
+      name: "media pipe",
+      year: 2025,
+      techStackPreview: "*/touchdesigner*/",
+      tags: [
+        "touchdesigner",
+        "mediapipe",
+        "instancing",
+        "image processing"
+      ],
+      mediaContents: [
+        {
+          type: "video",
+          src: "/projects/media-pipe/content/1.mp4",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe.",
+        },
+        {
+          header: "B) MediaPipe Controls",
+          text:
+            "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence.",
+        },
+        {
+          header: "C) Instancing from Table",
+          text:
+            "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid.",
+        },
+        {
+          header: "D) Halftone & Transparency",
+          text:
+            "Halftone shaders and layered transparency emulate looking through a camera viewfinder.",
+        },
+      ],
+      colors: ["#000000"],
+    },
     {
       name: "lissajous curves",
       year: 2024,
@@ -638,13 +1048,13 @@ export const projects: ProjectCategories = {
       ],
       mediaContents: [
         { type: "video", src: "/projects/lissajous-curves/content/1.mp4" },
-        { type: "image", src: "/projects/lissajous-curves/content/3.webp" },
-        { type: "image", src: "/projects/lissajous-curves/content/2.webp" },
-        { type: "image", src: "/projects/lissajous-curves/content/4.webp" },
+        { type: "image", src: "/projects/lissajous-curves/content/3.avif" },
+        { type: "image", src: "/projects/lissajous-curves/content/2.avif" },
+        { type: "image", src: "/projects/lissajous-curves/content/4.avif" },
       ],
       buttons: [
         {
-          imageSrc: "/social/behance.webp",
+          imageSrc: "/social/behance.avif",
           alt: "Behance",
           link: "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves",
         },
@@ -658,15 +1068,15 @@ export const projects: ProjectCategories = {
           header: "B) Process",
           text:
             "<section>\n" +
-            "  <h3>1. Setup and Initialization</h3>\n" +
-            "  <p>\n" +
+            "<h3>1. Setup and Initialization</h3>\n" +
+            "<p>\n" +
             "    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n" +
             "    <code>transform</code> positions and rotation based on the base name. During initialization,\n" +
             "    the script extracts specific characters from the name of each base to determine its parameters.\n" +
             "  </p>\n" +
             "\n" +
-            "  <h3>2. Curve Manipulation</h3>\n" +
-            "  <p>\n" +
+            "<h3>2. Curve Manipulation</h3>\n" +
+            "<p>\n" +
             "    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n" +
             "    position and rotation. For instance:\n" +
             "    <pre><code>\n" +
@@ -684,6 +1094,122 @@ export const projects: ProjectCategories = {
         },
       ],
       colors: ["#790B0B"],
+    },
+  ],
+  other: [
+    {
+      name: "scissors",
+      year: 2025,
+      techStackPreview: "*/figma, illustrator, procreate*/",
+      tags: [
+        "graphic design",
+        "practice",
+        "figma",
+        "illustrator",
+        "procreate",
+        "digital illustration",
+        "graphic design",
+        "experimental",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/scissors/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/3.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/4.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/scissors/content/5.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) About",
+          text:
+            "Collection of digital representations of a simple household object: a pair of scissors—created for my design specialization, where I had to depict one item in four different styles using different tools.",
+        },
+        {
+          header: "B) Procreate Illustration",
+          text:
+            "The first piece is drawn in Procreate, with a minimalist color palette and dotted shadowing to give the scissors a soft, illustrative feel.",
+        },
+        {
+          header: "C) Figma Patterns",
+          text:
+            "The second piece is an SVG created in Figma using the newer pattern and brush presets.",
+        },
+        {
+          header: "D) Noise & Gradients",
+          text:
+            "The third and fourth SVGs explore background noise and gradients.",
+        },
+        {
+          header: "E) Opacity & Composition",
+          text:
+            "The fifth SVG, made in Figma, plays with opacity, overlaps, and vector placement.",
+        },
+      ],
+      colors: ["#000000"],
+    },
+    {
+      name: "poster work",
+      year: 2024,
+      techStackPreview: "*/illustrator, figma, photoshop*/",
+      tags: [
+        "graphic design",
+        "print design",
+        "layout design",
+        "illustrator",
+        "figma",
+        "photoshop",
+        "typography",
+        "experimental",
+      ],
+      mediaContents: [
+        {
+          type: "image",
+          src: "/projects/poster-work/content/1.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/poster-work/content/2.avif",
+        },
+        {
+          type: "image",
+          src: "/projects/poster-work/content/3.avif",
+        },
+      ],
+      buttons: [],
+      textContents: [
+        {
+          header: "A) Bauhaus Poster",
+          text:
+            "Vector Bauhaus-inspired poster created in Adobe Illustrator, a recreation of a well-known Bauhaus layout with my own color and composition tweaks.",
+        },
+        {
+          header: "B) Gill Sans Type Poster",
+          text:
+            "Gill Sans type specimen poster for my graphic design specialization, designed in Figma and inspired by 1920s English Art Deco posters and magazines, using a chic palette of F43210, 4C54CA, and FFFFFF with organic and rectangular shapes to frame the type's history and details.",
+        },
+        {
+          header: "C) Artifact Poster",
+          text:
+            "Experimental artifact poster built from scanned handmade figurines and color indexing in Adobe Photoshop to create a harsh, textural print aesthetic.",
+        },
+      ],
+      colors: ["#000000"],
     },
   ],
 };

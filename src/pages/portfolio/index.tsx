@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { Project, ProjectCategories, projects } from "../../const/projects";
 
 const Wrapper = styled.div`
+  padding-top: 2rem;
   margin: 0 1.5rem;
   overflow-y: auto;
 `;
@@ -24,7 +25,7 @@ const Portfolio = () => {
           <>
             <PortfolioContainer
               key={category}
-              category={category.toUpperCase()}
+              category={category}
               no={String.fromCharCode(65 + categoryIndex)}
             >
               {projects[category].map(
@@ -36,7 +37,7 @@ const Portfolio = () => {
                       projectName={`${projectNumber} ${project.name}`}
                       projectId={project.name}
                       year={String(project.year)}
-                      imagePath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot-img.webp`}
+                      imagePath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot-img.avif`}
                       gifPath={`/projects/${project.name.replaceAll(/\s+/g, "-")}/headshot.webp`}
                       techText={project.techStackPreview}
                     />

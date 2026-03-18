@@ -4,7 +4,7 @@ import {
   aboutIntroduction,
   navItems,
   socialButtons,
-  technologiesTags,
+  skillTags,
 } from "../consts";
 import Layout from "../organisms/Layout/Layout";
 import styled from "styled-components";
@@ -65,7 +65,7 @@ const About = () => {
         <MobileAbout
           descriptionText={aboutIntroduction}
           articles={articles}
-          technologies={technologiesTags}
+          technologies={skillTags}
           buttons={socialButtons}
         />
       ) : (

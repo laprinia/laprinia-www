@@ -3,6 +3,8 @@ import React from "react";
 import { navItems } from "../../consts";
 
 const Navbar = styled.nav<{ isMobile?: boolean }>`
+  font-family: var(--font-heading);
+
   ${({ isMobile }) =>
     isMobile &&
     css`

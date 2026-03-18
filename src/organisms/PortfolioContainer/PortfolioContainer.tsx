@@ -15,8 +15,9 @@ const CategoryHeader = styled.section`
 `;
 
 const CategoryText = styled.article`
+  font-family: var(--font-heading);
   font-size: var(--font-size-heading1-desktop);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-regular);
   color: var(--accent-color);
 `;
 

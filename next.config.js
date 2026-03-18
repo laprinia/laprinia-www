@@ -1,19 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
+    qualities: [10, 75],
   },
 
   compiler: {
-    styledComponents: {
-      displayName: process.env.NODE_ENV !== "production",
-      ssr: true,
-      minify: true,
-    },
+    styledComponents: true,
   },
+
+  turbopack: {},
 
   webpack: (config, { dev, isServer }) => {
     config.cache = {

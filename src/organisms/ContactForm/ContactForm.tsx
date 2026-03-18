@@ -83,7 +83,8 @@ const Form = styled.form`
 
 const Label = styled.label`
   margin-bottom: 0.5rem;
-
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-regular);
   @media (max-width: 1280px) {
     font-size: var(--font-size-body-desktop);
   }
@@ -105,6 +106,7 @@ const Input = styled.input`
   padding: 0.5rem;
   font-family: var(--font-heading);
   font-size: var(--font-size-M);
+  font-weight: var(--font-weight-light);
   width: 100%;
   border: none;
   border-bottom: 1px solid gray;
@@ -136,7 +138,8 @@ const Input = styled.input`
 const TextArea = styled.textarea`
   margin-bottom: 1.5rem;
   padding: 0.5rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-light);
   font-size: var(--font-size-M);
   width: 100%;
   resize: none;
@@ -169,10 +172,12 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   font-family: var(--font-heading);
+  font-weight: var(--font-weight-regular);
   border: none;
   background-color: var(--accent-color);
   color: white;
   padding: 0.5rem;
+  font-size: var(--font-size-body-desktop);
 
   @media (max-width: 1280px) {
     font-size: var(--font-size-body-desktop);

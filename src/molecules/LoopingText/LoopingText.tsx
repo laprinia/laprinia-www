@@ -82,7 +82,7 @@ const Divider = styled.span`
 
 const LoopingText = ({
   items,
-  marqueeSpeed = "60s",
+  marqueeSpeed = "80s",
   padding = "1.5rem",
   isReverse = false,
   withDivider = false,

@@ -4,7 +4,9 @@ const CurriculumTextContainer = styled.section`
   flex: 1 1 auto;
   display: flex;
   padding-bottom: 2rem;
-
+  p {
+    font-weight: var(--font-weight-light);
+  }
   @media (max-width: 900px) {
     flex-direction: column;
     width: 100%;

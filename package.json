@@ -4,47 +4,30 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@next/font": "^14.2.3",
+    "@fontsource-variable/atkinson-hyperlegible-next": "^5.2.6",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@nextui-org/react": "^2.4.2",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/theme": "^2.2.6",
-    "@react-three/drei": "^9.107.2",
-    "@react-three/fiber": "^8.16.8",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.97",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@vercel/analytics": "^1.4.0",
     "@vercel/speed-insights": "^1.1.0",
-    "critters": "^0.0.23",
-    "emailjs": "^4.0.3",
     "framer-motion": "^11.2.12",
-    "next": "^14.2.3",
-    "prettier": "^3.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.1",
-    "react-scripts": "5.0.1",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-toastify": "^10.0.5",
     "sharp": "^0.33.5",
-    "three": "^0.165.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "three": "^0.183.2"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --turbopack",
+    "build": "next build --webpack",
     "start": "next start",
-    "analyze": "ANALYZE=true next build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "convert:avif": "node scripts/convert-to-avif.js",
+    "assets:cleanup": "node scripts/cleanup-originals.js",
+    "analyze": "ANALYZE=true next build --webpack"
   },
   "browserslist": {
     "production": [
@@ -59,9 +42,18 @@
     ]
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.0.3",
+    "@next/bundle-analyzer": "^16.1.6",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.97",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "babel-plugin-styled-components": "^2.1.4",
+    "prettier": "^3.2.5",
     "styled-components": "^6.1.13",
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
   }
 }

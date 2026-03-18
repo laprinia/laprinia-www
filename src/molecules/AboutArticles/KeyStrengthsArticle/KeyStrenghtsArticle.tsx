@@ -6,15 +6,14 @@ const KeyStrengthsArticle = () => {
       aria-labelledby="key-strenghts"
       heading={"B) KEY STRENGTHS"}
       slabs={[
+        "DESIGN HANDOVER BRIDGER",
         "CREATIVE",
         "RESPONSIBLE",
         "VISIONARY",
-        "ACCESSIBILITY",
-        "SEO",
-        "ADVANCED REACT",
-        "MODERN DESIGNER",
-        "CI/CD",
-        "TESTING",
+        "USER-CENTRIC",
+        "ACCESSIBILITY FOCUSED",
+        "RESPONSIVE DESIGN",
+        "ADVANCED REACT DEVELOPER",
       ]}
       isActive={true}
     />

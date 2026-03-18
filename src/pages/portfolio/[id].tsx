@@ -15,10 +15,11 @@ const PortfolioItemPage = () => {
   ): Project | null => {
     if (!id) return null;
     const allProjects = [
+      ...projects["branding & design"],
       ...projects.web,
-      ...projects.graphics,
-      ...projects.others,
-      ...projects["ui/ux"],
+      ...projects["3d"],
+      ...projects.experimental,
+      ...projects.other,
     ];
     return (
       allProjects.find(

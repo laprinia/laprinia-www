@@ -4,10 +4,10 @@ import styled from "styled-components";
 const Article = styled.article`
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 
   section {
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     margin-right: 1rem;
 
     p strong {
@@ -17,12 +17,10 @@ const Article = styled.article`
 
   h2 {
     font-size: var(--font-size-base-desktop);
-    font-weight: var(--font-weight-semibold);
-    font-family: var(--font-heading);
+    font-weight: var(--font-weight-regular);
   }
 
   p {
-    text-align: justify;
     font-size: var(--font-size-body-desktop);
   }
 
