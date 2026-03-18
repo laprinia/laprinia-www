@@ -47,7 +47,7 @@ const ProjectDescriptionContainer = ({
             items={tags}
             padding={"0rem"}
             withDivider
-            marqueeSpeed={"30s"}
+            marqueeSpeed={"100s"}
           />
         </LoopingTextWrapper>
         <ButtonContainer buttons={buttons} />

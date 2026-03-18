@@ -9,7 +9,7 @@ import {
 
 const LoopingText = ({
   items,
-  marqueeSpeed = "80s",
+  marqueeSpeed = "300s",
   padding = "1.5rem",
   isReverse = false,
   withDivider = false,

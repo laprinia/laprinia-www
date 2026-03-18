@@ -23,7 +23,9 @@ const CarouselContainer = ({
         <ContentCarousel items={items} index={index} setIndex={setIndex} />
       </MediaContainer>
       <ImageNumberContainer aria-labelledby="figure-number">
-        <p>fig. {index + 1}</p>
+        <p>
+          fig. {index + 1}/{items.length}
+        </p>
       </ImageNumberContainer>
     </Container>
   );

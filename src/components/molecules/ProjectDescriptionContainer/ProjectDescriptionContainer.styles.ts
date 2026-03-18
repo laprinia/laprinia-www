@@ -16,25 +16,30 @@ export const BottomSection = styled.section`
 export const TextContainer = styled.aside`
   flex: 1;
   height: 95%;
-  padding: 1rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
 
   @media (max-width: 900px) {
-    padding-top: 0rem;
-    border: none;
+    padding: 1rem;
+    padding-top: 0;
     width: 100%;
     padding-bottom: 1rem;
     height: auto;
   }
 `;
 
-export const Header = styled.h1`
+export const Header = styled.h2`
   font-size: calc(1.2 * var(--font-size-heading1-desktop));
   font-weight: var(--font-weight-semibold);
-  color: var(--accent-color);
+  color: var(--neutral-900);
+
+  strong {
+    color: var(--accent-color);
+  }
+
   @media (max-width: 900px) {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
@@ -73,6 +78,8 @@ export const StyledScrollRoot = styled(ScrollRoot)`
 
 export const Section = styled.section`
   margin-bottom: 1rem;
+  color: var(--neutral-700);
+
   @media (max-width: 1280px) {
     font-size: var(--font-size-body-desktop);
   }
@@ -84,20 +91,29 @@ export const Section = styled.section`
   @media (max-width: 768px) {
     font-size: var(--font-size-body-phone);
   }
+
   @media (min-width: 1800px) {
     font-size: var(--font-size-body-xl);
   }
+
   h2,
   h3 {
-    font-size: var(--font-size-base-desktop);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-heading4-desktop);
+    font-family: var(--font-heading4-desktop);
+    font-weight: var(--font-weight-regular);
+    color: var(--neutral-900);
+    margin-bottom: 0.6rem;
   }
+
   strong {
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-base-desktop);
+    color: var(--neutral-800);
   }
+
   p {
+    color: var(--neutral-800);
+    font-size: var(--font-size-body-desktop);
     font-weight: var(--font-weight-light);
     margin-bottom: 0.5rem;
   }
@@ -105,12 +121,14 @@ export const Section = styled.section`
   li {
     margin-bottom: 0.5rem;
   }
+
   code {
-    font-size: 14px;
-    font-weight: var(--font-weight-light);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-regular);
     background-color: var(--neutral-700);
     color: var(--support-color);
     border-radius: var(--border-radius);
-    padding: 0.1em 0.3em;
+    padding: 0.15em 0.4em;
   }
 `;

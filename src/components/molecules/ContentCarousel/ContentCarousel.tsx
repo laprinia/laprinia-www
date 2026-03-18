@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { cloudinaryUrl } from "../../../lib/cloudinary";
 import {
+  ArrowIcon,
   CarouselContent,
   CarouselWrapper,
-  ClickableArea,
+  LeftArrow,
   Media,
+  RightArrow,
 } from "./ContentCarousel.styles";
 
 const Carousel = ({
@@ -57,8 +59,12 @@ const Carousel = ({
           </Media>
         </CarouselContent>
       ))}
-      <ClickableArea left onClick={handlePrevious} aria-label="Previous item" />
-      <ClickableArea right onClick={handleNext} aria-label="Next item" />
+      <LeftArrow onClick={handlePrevious} aria-label="Previous item">
+        <ArrowIcon>‹</ArrowIcon>
+      </LeftArrow>
+      <RightArrow onClick={handleNext} aria-label="Next item">
+        <ArrowIcon>›</ArrowIcon>
+      </RightArrow>
     </CarouselWrapper>
   );
 };

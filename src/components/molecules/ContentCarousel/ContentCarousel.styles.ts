@@ -32,29 +32,57 @@ export const CarouselContent = styled.figure<{ active: boolean }>`
     `}
 `;
 
-export const ClickableArea = styled.main<{ right?: boolean; left?: boolean }>`
+export const ArrowButton = styled.button`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-000);
+  mix-blend-mode: difference;
+  padding: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
-  &:focus {
-    outline: 2px solid #fff;
+  &:hover {
+    transform: translateY(-50%) scale(1.15);
   }
 
-  ${({ left }) =>
-    left &&
-    css`
-      left: 0;
-    `}
+  @media (max-width: 900px) {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+`;
 
-  ${({ right }) =>
-    right &&
-    css`
-      right: 0;
-    `}
+export const LeftArrow = styled(ArrowButton)`
+  left: 1rem;
+
+  @media (max-width: 900px) {
+    left: 0.5rem;
+  }
+`;
+
+export const RightArrow = styled(ArrowButton)`
+  right: 1rem;
+
+  @media (max-width: 900px) {
+    right: 0.5rem;
+  }
+`;
+
+export const ArrowIcon = styled.span`
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-semibold);
+  color: #000000;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
 `;
 
 export const Media = styled.section`

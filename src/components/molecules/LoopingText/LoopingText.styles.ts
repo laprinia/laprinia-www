@@ -62,7 +62,7 @@ export const Divider = styled.span`
   display: flex;
   margin: 0 0.5rem;
   transform: translateY(25%);
-  color: var(--neutral-400);
+  color: var(--support-color);
 
   font-size: var(--font-size-heading1-desktop);
 
