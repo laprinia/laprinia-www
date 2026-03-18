@@ -8,3 +8,12 @@ export const LayoutContainer = styled.div`
   overflow: hidden;
   box-sizing: border-box;
 `;
+
+export const PageContent = styled.div`
+  padding-top: var(--nav-height);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+`;

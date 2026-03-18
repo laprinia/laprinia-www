@@ -9,11 +9,13 @@ import {
   MobileColorSwatches,
   LoopingTextWrapper,
   StyledScrollRoot,
-  StyledScrollViewport,
-  StyledScrollbar,
-  StyledThumb,
   Section,
 } from "./ProjectDescriptionContainer.styles";
+import {
+  ScrollViewport,
+  ScrollBar,
+  ScrollThumb,
+} from "../../atoms/ScrollArea/ScrollArea";
 
 const ProjectDescriptionContainer = ({
   projectName,
@@ -50,17 +52,17 @@ const ProjectDescriptionContainer = ({
         </LoopingTextWrapper>
         <ButtonContainer buttons={buttons} />
         <StyledScrollRoot>
-          <StyledScrollViewport>
+          <ScrollViewport>
             {content.map((item, index) => (
               <Section key={index}>
                 <h2>{item.header.toUpperCase()}</h2>
                 <article dangerouslySetInnerHTML={{ __html: item.text }} />
               </Section>
             ))}
-          </StyledScrollViewport>
-          <StyledScrollbar orientation="vertical">
-            <StyledThumb />
-          </StyledScrollbar>
+          </ScrollViewport>
+          <ScrollBar orientation="vertical">
+            <ScrollThumb />
+          </ScrollBar>
         </StyledScrollRoot>
       </TextContainer>
       <BottomSection>

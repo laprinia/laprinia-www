@@ -89,6 +89,7 @@ export const GlobalStyle = createGlobalStyle`
         --neutral-900: #000000;
 
         --border-radius: 4px;
+        --nav-height: 4rem;
 
         --toastify-color-success: #0141D5;
         --toastify-color-error: #0141D5;
@@ -106,13 +107,25 @@ export const GlobalStyle = createGlobalStyle`
         font-size: var(--font-size-base-desktop);
     }
 
+    @media (min-width: 1800px) {
+        :root {
+            --nav-height: 4.5rem;
+        }
+    }
+
     @media (max-width: 1024px) {
+        :root {
+            --nav-height: 3.5rem;
+        }
         body {
             font-size: var(--font-size-base-tablet);
         }
     }
 
     @media (max-width: 768px) {
+        :root {
+            --nav-height: 3rem;
+        }
         body {
             font-size: var(--font-size-base-phone);
         }

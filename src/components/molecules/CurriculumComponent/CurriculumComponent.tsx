@@ -3,14 +3,13 @@ import { aboutIntroduction, skillTags } from "../../../consts";
 import Description from "../Description/Description";
 import DoubleTextRibbon from "../../organisms/TextRibbon/DoubleTextRibbon";
 import ArticlesContainer from "../../organisms/ArticlesContainer/ArticlesContainer";
+import { Container, LayoutWrapper } from "./CurriculumComponent.styles";
 import {
-  Container,
-  LayoutWrapper,
-  StyledScrollbar,
-  StyledScrollRoot,
-  StyledScrollViewport,
-  StyledThumb,
-} from "./CurriculumComponent.styles";
+  ScrollRoot,
+  ScrollViewport,
+  ScrollBar,
+  ScrollThumb,
+} from "../../atoms/ScrollArea/ScrollArea";
 
 const CurriculumComponent = ({ articles }: { articles: ReactNode[] }) => {
   const midIndex = Math.ceil(articles.length / 2);
@@ -20,18 +19,18 @@ const CurriculumComponent = ({ articles }: { articles: ReactNode[] }) => {
   return (
     <LayoutWrapper>
       <Container>
-        <StyledScrollRoot>
-          <StyledScrollViewport>
+        <ScrollRoot>
+          <ScrollViewport>
             <Description content={aboutIntroduction} />
             <ArticlesContainer
               leftColumn={leftColumn}
               rightColumn={rightColumn}
             />
-          </StyledScrollViewport>
-          <StyledScrollbar orientation="vertical">
-            <StyledThumb />
-          </StyledScrollbar>
-        </StyledScrollRoot>
+          </ScrollViewport>
+          <ScrollBar orientation="vertical">
+            <ScrollThumb />
+          </ScrollBar>
+        </ScrollRoot>
         <DoubleTextRibbon tags={skillTags} />
       </Container>
     </LayoutWrapper>

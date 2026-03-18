@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 export const Container = styled.main`
   display: flex;
@@ -7,39 +6,9 @@ export const Container = styled.main`
   flex-direction: column;
   flex: 1;
   min-width: 0;
-  padding: 2rem;
+  padding: 2rem 0.5rem;
   box-sizing: border-box;
   overflow: hidden;
-`;
-
-export const StyledScrollRoot = styled(ScrollAreaPrimitive.Root)`
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-`;
-
-export const StyledScrollViewport = styled(ScrollAreaPrimitive.Viewport)`
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-`;
-
-export const StyledScrollbar = styled(ScrollAreaPrimitive.Scrollbar)`
-  display: flex;
-  user-select: none;
-  touch-action: none;
-  padding: 2px;
-  width: 6px;
-  background: transparent;
-`;
-
-export const StyledThumb = styled(ScrollAreaPrimitive.Thumb)`
-  flex: 1;
-  background: var(--accent-color);
-  border-radius: 6px;
-  position: relative;
 `;
 
 export const LayoutWrapper = styled.section`

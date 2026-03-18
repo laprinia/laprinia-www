@@ -4,6 +4,7 @@ import { navItems, somethingWentWrongPath } from "../../../consts";
 import { Canvas } from "@react-three/fiber";
 import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
 import Layout from "../../organisms/Layout/Layout";
+import { PageContent } from "../../organisms/Layout/Layout.styles";
 import {
   CanvasSection,
   CanvasSectionWrapper,
@@ -43,18 +44,20 @@ const ErrorBoundary = ({ children }: { children: ReactNode }) => {
     return (
       <Layout>
         <NavBar items={navItems} highlightedIndex={1} />
-        <CanvasSectionWrapper>
-          <CanvasSection>
-            <Canvas>
-              <ambientLight intensity={3} />
-              <pointLight position={[10, 10, 10]} intensity={1} />
-              <CursorWaveTexture
-                texturePath={somethingWentWrongPath}
-                isAutoAnimated
-              />
-            </Canvas>
-          </CanvasSection>
-        </CanvasSectionWrapper>
+        <PageContent>
+          <CanvasSectionWrapper>
+            <CanvasSection>
+              <Canvas>
+                <ambientLight intensity={3} />
+                <pointLight position={[10, 10, 10]} intensity={1} />
+                <CursorWaveTexture
+                  texturePath={somethingWentWrongPath}
+                  isAutoAnimated
+                />
+              </Canvas>
+            </CanvasSection>
+          </CanvasSectionWrapper>
+        </PageContent>
       </Layout>
     );
   }

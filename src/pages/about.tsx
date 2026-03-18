@@ -7,6 +7,7 @@ import {
   skillTags,
 } from "../consts";
 import Layout from "../components/organisms/Layout/Layout";
+import { PageContent } from "../components/organisms/Layout/Layout.styles";
 import styled from "styled-components";
 import CurriculumComponent from "../components/molecules/CurriculumComponent/CurriculumComponent";
 import HeadshotComponent from "../components/organisms/HeadshotComponent/HeadshotComponent";
@@ -60,19 +61,21 @@ const About = () => {
   return (
     <Layout>
       <NavBar items={navItems} highlightedIndex={2} />
-      {isMobile ? (
-        <MobileAbout
-          descriptionText={aboutIntroduction}
-          articles={articles}
-          technologies={skillTags}
-          buttons={socialButtons}
-        />
-      ) : (
-        <ContainerWrapper>
-          <HeadshotComponent />
-          <CurriculumComponent articles={articles} />
-        </ContainerWrapper>
-      )}
+      <PageContent>
+        {isMobile ? (
+          <MobileAbout
+            descriptionText={aboutIntroduction}
+            articles={articles}
+            technologies={skillTags}
+            buttons={socialButtons}
+          />
+        ) : (
+          <ContainerWrapper>
+            <HeadshotComponent />
+            <CurriculumComponent articles={articles} />
+          </ContainerWrapper>
+        )}
+      </PageContent>
     </Layout>
   );
 };

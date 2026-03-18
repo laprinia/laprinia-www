@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
+import { ScrollRoot } from "../../atoms/ScrollArea/ScrollArea";
 
 export const BottomSection = styled.section`
   height: 5%;
@@ -61,36 +61,14 @@ export const LoopingTextWrapper = styled.aside`
   }
 `;
 
-export const StyledScrollRoot = styled(ScrollAreaPrimitive.Root)`
+export const StyledScrollRoot = styled(ScrollRoot)`
   height: 100%;
   max-height: 100%;
-  overflow: hidden;
 
   @media (max-width: 900px) {
     height: auto;
     padding-bottom: 4rem;
   }
-`;
-
-export const StyledScrollViewport = styled(ScrollAreaPrimitive.Viewport)`
-  width: 100%;
-  height: 100%;
-`;
-
-export const StyledScrollbar = styled(ScrollAreaPrimitive.Scrollbar)`
-  display: flex;
-  user-select: none;
-  touch-action: none;
-  padding: 2px;
-  width: 6px;
-  background: transparent;
-`;
-
-export const StyledThumb = styled(ScrollAreaPrimitive.Thumb)`
-  flex: 1;
-  background: var(--accent-color);
-  border-radius: 6px;
-  position: relative;
 `;
 
 export const Section = styled.section`

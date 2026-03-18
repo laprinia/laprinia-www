@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef, useCallback } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   Nav,
@@ -18,13 +19,41 @@ const NavBar = ({
   items: { label: string; href: string }[];
   highlightedIndex: number;
 }) => {
+  const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  const findScrollTarget = useCallback((): HTMLElement | null => {
+    const layout = navRef.current?.parentElement;
+    if (!layout) return null;
+    const viewport = layout.querySelector(
+      "[data-radix-scroll-area-viewport]",
+    );
+    if (viewport) return viewport as HTMLElement;
+    const children = layout.querySelectorAll("*");
+    for (const child of children) {
+      const { overflowY } = getComputedStyle(child);
+      if (overflowY === "auto" || overflowY === "scroll") {
+        return child as HTMLElement;
+      }
+    }
+    return null;
+  }, []);
+
+  useEffect(() => {
+    const target = findScrollTarget();
+    if (!target) return;
+    const onScroll = () => setScrolled(target.scrollTop > 10);
+    target.addEventListener("scroll", onScroll, { passive: true });
+    return () => target.removeEventListener("scroll", onScroll);
+  }, [findScrollTarget]);
+
   const reorderedItems = [
     items[highlightedIndex],
     ...items.filter((_, index) => index !== highlightedIndex),
   ];
 
   return (
-    <Nav>
+    <Nav ref={navRef} $scrolled={scrolled}>
       <NavItem highlighted={true}>
         <NavLink aria-labelledby="home-link" href="/">
           LD // HOME

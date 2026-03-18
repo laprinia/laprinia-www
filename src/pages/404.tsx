@@ -1,6 +1,7 @@
 import NavBar from "../components/organisms/NavBar/NavBar";
 import { navItems, notFoundPath } from "../consts";
 import Layout from "../components/organisms/Layout/Layout";
+import { PageContent } from "../components/organisms/Layout/Layout.styles";
 import { Canvas } from "@react-three/fiber";
 import CursorWaveTexture from "../components/molecules/Texture/CursorWaveTexture";
 import styled from "styled-components";
@@ -20,15 +21,17 @@ export default function Custom404() {
   return (
     <Layout>
       <NavBar items={navItems} highlightedIndex={1} />
-      <CanvasSectionWrapper>
-        <CanvasSection>
-          <Canvas>
-            <ambientLight intensity={3} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <CursorWaveTexture texturePath={notFoundPath} isAutoAnimated />
-          </Canvas>
-        </CanvasSection>
-      </CanvasSectionWrapper>
+      <PageContent>
+        <CanvasSectionWrapper>
+          <CanvasSection>
+            <Canvas>
+              <ambientLight intensity={3} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <CursorWaveTexture texturePath={notFoundPath} isAutoAnimated />
+            </Canvas>
+          </CanvasSection>
+        </CanvasSectionWrapper>
+      </PageContent>
     </Layout>
   );
 }
