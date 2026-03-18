@@ -11,6 +11,7 @@ export const SlabbedWrapper = styled(ArticleWrapper)<{ $isActive: boolean }>`
   }
 
   section p {
+    padding: 0 0.5rem;
     background-color: ${({ $isActive }) =>
       $isActive ? "var(--accent-color)" : "var(--background-color)"};
     color: ${({ $isActive }) => ($isActive ? "white" : "black")};

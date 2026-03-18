@@ -11,9 +11,10 @@ export const Navbar = styled.nav<{ isMobile?: boolean }>`
     `}
 
   a {
-    font-size: var(--font-size-heading1-desktop);
+    font-size: 1.75rem;
     text-transform: lowercase;
-    color: var(--accent-color);
+    text-decoration: none;
+    color: black;
     font-weight: var(--font-weight-regular);
     @media (max-width: 1023px) {
       font-size: var(--font-size-heading1-tablet);
@@ -21,7 +22,10 @@ export const Navbar = styled.nav<{ isMobile?: boolean }>`
     @media (max-width: 767px) {
       font-size: var(--font-size-heading1-phone);
     }
-    text-decoration: none;
-    color: black;
+
+    &:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
   }
 `;
