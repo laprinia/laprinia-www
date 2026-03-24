@@ -1,0 +1,40 @@
+name: ai playbooks
+year: 2025
+techStackPreview: "*/webflow, figma*/"
+tags:
+  - webflow
+  - figma
+  - design engineering
+  - gsap
+  - css
+  - design systems
+colors:
+  - "#E9EAF4"
+  - "#181A43"
+  - "#EDAC7D"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
+media:
+  - 1.mov
+  - 2.mov
+  - 3.mov
+buttons:
+  - alt: ITP Webpage
+    imageSrc: /socials/web
+    link: https://www.inthepocket.com/ai-playbooks
+
+articles:
+  - header: "A) About"
+    text: "Design engineering work for In The Pocket on AI Playbooks 🌈, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."
+  - header: "B) Aesthetic Direction"
+    text: "The visual language blends movement in photography with the actual motion of the page itself."
+  - header: "C) Scroll-Driven Card Spread"
+    text: "The hero interaction is a card spread effect that unfolds as the user scrolls, built with scroll-triggered GSAP animations in Webflow. It draws visitors in by turning passive scrolling into an act of discovery, setting the tone for how In The Pocket approaches AI."
+  - header: "D) Interactive Card System"
+    text: "Tool and event cards respond to hover and pointer movement with a 3D tilt effect powered by CSS perspective, giving the interface a tactile, dimensional quality. Each card layout is designed so the information hierarchy is immediately clear, what the tool or event is, when it was added, and when it takes place, making it easy for visitors to scan and orient themselves in time."
+  - header: "E) Visual System"
+    text: "The page is a showcase of In The Pocket's new design system, leaning into gradients and a pastel palette that communicates curiosity and playfulness rather than the cold, corporate tone AI content often defaults to."
+  - header: "F) User Research"
+    text: "While there was no formal user research phase, the design decisions were informed indirectly, through stakeholder conversations, observing how visitors navigated similar pages, and iterating on what made the offering easier to understand at a glance."
+  - header: "G) Impact"
+    text: "The page has brought more customers into active AI consultation discussions, made the AI roadmap clearer and more tangible for stakeholders, and served as a flagship example of the new design system in production."

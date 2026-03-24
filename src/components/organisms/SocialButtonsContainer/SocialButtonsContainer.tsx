@@ -1,3 +1,4 @@
+import { cloudinaryRawUrl } from "../../../lib/cloudinary";
 import {
   HeadshotButton,
   HeadshotButtonContainerWrapper,
@@ -8,7 +9,13 @@ import {
 const SocialButtonsContainer = ({
   buttons,
 }: {
-  buttons: { id: string; href: string; imgSrc: string; alt: string; label: string }[];
+  buttons: {
+    id: string;
+    href: string;
+    imgSrc: string;
+    alt: string;
+    label: string;
+  }[];
 }) => {
   return (
     <HeadshotButtonContainerWrapper aria-labelledby="headshot-buttons">
@@ -20,7 +27,11 @@ const SocialButtonsContainer = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon $src={button.imgSrc} role="img" aria-label={button.alt} />
+          <Icon
+            $src={cloudinaryRawUrl(button.imgSrc)}
+            role="img"
+            aria-label={button.alt}
+          />
           <ButtonLabel>{button.label}</ButtonLabel>
         </HeadshotButton>
       ))}

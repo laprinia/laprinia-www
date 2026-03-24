@@ -36,6 +36,77 @@ export type ProjectCategories = {
 export const projects: ProjectCategories = {
   "branding & design": [
     {
+      "name": "ai playbooks",
+      "year": 2025,
+      "techStackPreview": "*/webflow, figma*/",
+      "tags": [
+        "webflow",
+        "figma",
+        "design engineering",
+        "gsap",
+        "css",
+        "design systems"
+      ],
+      "headshot": "/projects/ai-playbooks/headshot-img.avif",
+      "headshotGif": "/projects/ai-playbooks/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/ai-playbooks/content/1.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/ai-playbooks/content/2.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/ai-playbooks/content/3.mov"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "ITP Webpage",
+          "link": "https://www.inthepocket.com/ai-playbooks"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Design engineering work for In The Pocket on AI Playbooks 🌈, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."
+        },
+        {
+          "header": "B) Aesthetic Direction",
+          "text": "The visual language blends movement in photography with the actual motion of the page itself."
+        },
+        {
+          "header": "C) Scroll-Driven Card Spread",
+          "text": "The hero interaction is a card spread effect that unfolds as the user scrolls, built with scroll-triggered GSAP animations in Webflow. It draws visitors in by turning passive scrolling into an act of discovery, setting the tone for how In The Pocket approaches AI."
+        },
+        {
+          "header": "D) Interactive Card System",
+          "text": "Tool and event cards respond to hover and pointer movement with a 3D tilt effect powered by CSS perspective, giving the interface a tactile, dimensional quality. Each card layout is designed so the information hierarchy is immediately clear, what the tool or event is, when it was added, and when it takes place, making it easy for visitors to scan and orient themselves in time."
+        },
+        {
+          "header": "E) Visual System",
+          "text": "The page is a showcase of In The Pocket's new design system, leaning into gradients and a pastel palette that communicates curiosity and playfulness rather than the cold, corporate tone AI content often defaults to."
+        },
+        {
+          "header": "F) User Research",
+          "text": "While there was no formal user research phase, the design decisions were informed indirectly, through stakeholder conversations, observing how visitors navigated similar pages, and iterating on what made the offering easier to understand at a glance."
+        },
+        {
+          "header": "G) Impact",
+          "text": "The page has brought more customers into active AI consultation discussions, made the AI roadmap clearer and more tangible for stakeholders, and served as a flagship example of the new design system in production."
+        }
+      ],
+      "colors": [
+        "#E9EAF4",
+        "#181A43",
+        "#EDAC7D"
+      ]
+    },
+    {
       "name": "veloura brand guide",
       "year": 2025,
       "techStackPreview": "*/figma, illustrator*/",
@@ -46,7 +117,8 @@ export const projects: ProjectCategories = {
         "color systems",
         "typography",
         "mockups",
-        "ui"
+        "ui",
+        "ux research"
       ],
       "headshot": "/projects/veloura-brand-guide/headshot-img.avif",
       "headshotGif": "/projects/veloura-brand-guide/headshot.webp",
@@ -108,7 +180,7 @@ export const projects: ProjectCategories = {
       "textContents": [
         {
           "header": "A) About",
-          "text": "Capstone brand identity for VELOURA, created as my final project for Coursera's Graphic Design Specialization. I wanted to explore how a brand could speak to the new generation and tackle overconsumption, while still feeling playful, mystical, and fashion-forward."
+          "text": "Capstone brand identity for VELOURA, created as my final project for Coursera's Graphic Design Specialization 🍬. I wanted to explore how a brand could speak to the new generation and tackle overconsumption, while still feeling playful, mystical, and fashion-forward 👢."
         },
         {
           "header": "B) Problem & Intent",
@@ -306,7 +378,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/github.svg",
+          "imageSrc": "/socials/github",
           "alt": "GitHub",
           "link": "hhttps://github.com/laprinia/laprinia-www"
         }
@@ -337,7 +409,6 @@ export const projects: ProjectCategories = {
         "webflow",
         "figma",
         "design engineering",
-        "vanilla js",
         "design",
         "glassmorphism"
       ],
@@ -373,18 +444,22 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "B) Role & Collaboration",
-          "text": "As a design engineer, I collaborated with volunteers from Nexent and In The Pocket engineers to help bring the Webflow site to life, including key program and schedule sections."
+          "text": "As a Design Engineer, I collaborated with volunteers from Nexent and In The Pocket engineers to help bring the Webflow site to life, including key program and schedule sections."
         },
         {
           "header": "C) Program Timeline",
           "text": "Using data from the Webflow CMS, I designed and styled a flexible timeline component that can display multiple days and events across different stages, each on its own swimlane."
         },
         {
-          "header": "D) Impact",
-          "text": "The component streamlined adding and updating events—crucial for a live conference where times and sessions change frequently—and the result was a huge success for the organizing team."
+          "header": "D) User Research",
+          "text": "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself."
         },
         {
-          "header": "E) Visual Direction",
+          "header": "E) Impact",
+          "text": "The component streamlined adding and updating events, crucial for a live conference where times and sessions change frequently, and the result was a huge success for the organizing team."
+        },
+        {
+          "header": "F) Visual Direction",
           "text": "I followed Tectonic's futurist typography and color system, and introduced subtle glass-like effects on buttons and event cards to give the interface a polished, tech-forward feel."
         }
       ],
@@ -451,82 +526,13 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "F) Routing & Data Fetching",
-          "text": "<ul>\n<li>/ — landing page with hero and links into the bikes and parkings flows.</li>\n<li>/bikes — shows the four Blue Bikes locations with capacity information.</li>\n<li>/parkings — lists parking spots with at least 50% availability.</li>\n<li>/parkings/[slug] — details view for a single parking, where the slug is generated from the fetched data.</li>\n<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n</ul>\n"
+          "text": "<ul>\n<li>/ - landing page with hero and links into the bikes and parkings flows.</li>\n<li>/bikes - shows the four Blue Bikes locations with capacity information.</li>\n<li>/parkings - lists parking spots with at least 50% availability.</li>\n<li>/parkings/[slug] - details view for a single parking, where the slug is generated from the fetched data.</li>\n<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n</ul>\n"
         }
       ],
       "colors": [
         "#0141D5",
         "#42A5F5",
         "#1B5E20"
-      ]
-    },
-    {
-      "name": "personal website",
-      "year": 2024,
-      "techStackPreview": "*/react, next.js*/",
-      "tags": [
-        "react",
-        "typescript",
-        "react-three-fiber",
-        "css",
-        "html",
-        "seo",
-        "next.js",
-        "styled components",
-        "webpack",
-        "vercel",
-        "ffmpeg",
-        "magick"
-      ],
-      "headshot": "/projects/personal-website/headshot-img.avif",
-      "headshotGif": "/projects/personal-website/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/personal-website/content/1.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/personal-website/content/2.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/personal-website/content/3.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/personal-website/content/4.mov"
-        },
-        {
-          "type": "image",
-          "src": "/projects/personal-website/content/5.avif"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/icons/github.svg",
-          "alt": "GitHub",
-          "link": "hhttps://github.com/laprinia/laprinia-www"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "My personal website that acts as a love 💌 to all my favorite UX design trends and best practices I've gained over the years as a web developer. It highlights my creative approach to website building, combining simplicity in style and typography with engaging animations, CSS transitions, and bold colors. The site is a showcase of both creativity and technical prowess, designed to keep users engaged and ensure a fun experience. Enjoy!"
-        },
-        {
-          "header": "B) Recipe",
-          "text": "<ul>\n<li>Next.js for improved SEO and faster load times through server-side rendering</li>\n<li>React with TypeScript for type safety and robust code management</li>\n<li>React Three Fiber for 3D text animations and visual effects</li>\n<li>Framer Motion for smooth, CSS-based animations and transitions</li>\n<li>Focus on accessibility features and responsive design for a seamless experience on all devices</li>\n</ul>\n"
-        },
-        {
-          "header": "C) Key Feats",
-          "text": "<ul>\n<li>🌐 SEO & Performance Optimization</li>\n<li>🎨 Responsive Design</li>\n<li>✨ 3D Text Animations</li>\n<li>🖼️ Mixed Media Carousel</li>\n<li>📄 Modular Page Structure</li>\n<li>🛠️ Framer Motion Animations</li>\n</ul>\n"
-        }
-      ],
-      "colors": [
-        "#0141D5",
-        "#F6F6F6",
-        "#000000"
       ]
     },
     {
@@ -562,7 +568,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/github.svg",
+          "imageSrc": "/socials/github",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/laprinia-www"
         }
@@ -638,12 +644,12 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/github.svg",
+          "imageSrc": "/socials/github",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/opea"
         },
         {
-          "imageSrc": "/icons/behance.svg",
+          "imageSrc": "/socials/behance",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism"
         }
@@ -651,19 +657,23 @@ export const projects: ProjectCategories = {
       "textContents": [
         {
           "header": "A) About",
-          "text": "React & Node.js full-stack authentication for a creative web app, written in TypeScript with the purpose of using glassmorphism 🫥."
+          "text": "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
         },
         {
-          "header": "B) Recipe",
-          "text": "<section>\n  <h3>Frontend:</h3>\n  <ul>\n    <li>Mantine for UI components</li>\n    <li>Radix UI icons</li>\n    <li>Axios for services</li>\n    <li>Unsplash API for randomized backgrounds</li>\n  </ul>\n\n  <h3>Backend:</h3>\n  <ul>\n    <li>BCrypt for encrypting passwords</li>\n    <li>Mongoose for interacting with the MongoDB Atlas database</li>\n    <li>Joi for data validation</li>\n    <li>JWT for creating authentication tokens</li>\n    <li>Nodemon for better server management</li>\n  </ul>\n</section>\n"
+          "header": "B) Problem",
+          "text": "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
         },
         {
-          "header": "C) Key Feats",
-          "text": "<ul>\n<li>Joi for data validation in the backend</li>\n<li>Mongoose DB schema using TypeScript types to enforce accepted color outputs and formats</li>\n<li>Randomized custom backgrounds provided by the Unsplash API</li>\n<li>Glassmorphism components styled with custom CSS inside Mantine components</li>\n<li>Field & form validation implemented</li>\n</ul>\n"
+          "header": "C) What It Solves",
+          "text": "<ul>\n<li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>\n<li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>\n<li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>\n</ul>\n"
         },
         {
-          "header": "D) Glassmorphism",
-          "text": "<code>sx={{\n       background: `rgba(24,24,24,0.5)`,\n       boxShadow: \"0 8px 32px 0 rgba(0, 0, 0, 0.5)\",\n       backdropFilter: `blur(5px)`,\n     }}</code>\n"
+          "header": "D) Recipe",
+          "text": "<section>\n  <h3>Frontend:</h3>\n  <ul>\n    <li>Mantine for UI components</li>\n    <li>Radix UI icons</li>\n    <li>Axios for API calls</li>\n    <li>Unsplash API for dynamic backgrounds</li>\n  </ul>\n  <h3>Backend:</h3>\n  <ul>\n    <li>BCrypt for password hashing</li>\n    <li>Mongoose with TypeScript-enforced schemas</li>\n    <li>Joi for input validation</li>\n    <li>JWT for token-based auth</li>\n  </ul>\n</section>\n"
+        },
+        {
+          "header": "E) Glassmorphism",
+          "text": "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."
         }
       ],
       "colors": [
@@ -723,7 +733,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/github.svg",
+          "imageSrc": "/socials/github",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/phea"
         }
@@ -731,15 +741,27 @@ export const projects: ProjectCategories = {
       "textContents": [
         {
           "header": "A) About",
-          "text": "React 3D terrain generation editor and visualiser using React-Three-Fiber, using the marching cubes algo."
+          "text": "A browser-based 3D terrain editor that lets you sculpt, tweak, and visualize procedural landscapes in real time, bringing the creative loop of 3D generation directly into the web."
         },
         {
-          "header": "B) Frontend Recipe",
-          "text": "<ul>\n<li>React Three Fiber, a React renderer for Three.js</li>\n<li>Drei addons for React Three Fiber</li>\n<li>GLSL Noise for Simplex noise</li>\n<li>Mantine for UI components</li>\n</ul>\n"
+          "header": "B) Recipe",
+          "text": "<ul>\n<li>React Three Fiber as a React renderer for Three.js</li>\n<li>Drei addons for camera, lighting, and helpers</li>\n<li>GLSL Noise for Simplex noise generation</li>\n<li>Mantine for the editor UI</li>\n</ul>\n"
         },
         {
-          "header": "C) Key Feats",
-          "text": "<ul>\n<li><h3>🧊 Marching cubes algorithm implementation</h3> Divides a volume in 3D space into cubes to approximate rendered faces for a mesh. Utilizes voxels to determine density and surface points.</li>\n<li><h3>📼 Simplex Noise</h3> A 3D noise function for randomizing terrain height values. Parameters include noiseScale, octaves, weightMultiplier, persistencePerOctave, detailPerOctave, and noiseWeight.</li>\n<li><h3>🏔️ Terracing</h3> Clamps terrain height on levels, with spacing set by <strong>terracingLevel</strong>.</li>\n<li><h3>🌈 Color Height Map</h3> Uses a .png gradient for coloring fragments in the fragment shader.</li>\n<li><h3>🍄 Visual Smoothing</h3> Smooths low-poly terrain by removing the world normal vector from height calculation in the fragment shader.</li>\n<li><h3>✨ Post Processing</h3> Effects like TiltShift, Bloom, Noise, and BrightnessContrast achieved using r3f's postprocessing wrapper.</li>\n<li><h3>🏊 Floating Effect & Mesh Rotation</h3> Uses a height vertex shader with elapsed time-based disturbance, and rotates the mesh on the y-axis.</li>\n<li><h3>🎛️ The UI</h3> Controls gradient, marching cubes, and Simplex noise parameters, and regenerates the mesh.</li>\n</ul>\n"
+          "header": "C) Real-Time Feedback Loop",
+          "text": "Every parameter change, noise scale, octaves, terracing, instantly regenerates the terrain, so the creative process feels like direct manipulation rather than a build-and-wait cycle."
+        },
+        {
+          "header": "D) Layered Control",
+          "text": "<ul>\n<li><h3>🧊 Shape</h3> Marching cubes turn a volume of density values into a visible mesh, giving full control over how terrain surfaces emerge.</li>\n<li><h3>📼 Noise</h3> Simplex noise drives height variation with tunable octaves, persistence, and detail, small tweaks produce dramatically different landscapes.</li>\n<li><h3>🏔️ Terracing</h3> Clamping height into discrete levels carves plateaus and cliff faces, adding structure to organic forms.</li>\n<li><h3>🌈 Color Mapping</h3> A gradient texture maps elevation to color, so visual identity shifts as the terrain evolves.</li>\n</ul>\n"
+        },
+        {
+          "header": "E) Visual Polish",
+          "text": "<ul>\n<li><h3>🍄 Smoothing</h3> Softens the low-poly facets into a more organic surface without losing the procedural character.</li>\n<li><h3>✨ Post-Processing</h3> Tilt-shift, bloom, noise grain, and brightness/contrast turn the raw mesh into something that feels cinematic.</li>\n<li><h3>🏊 Ambient Motion</h3> A gentle float and slow rotation keep the terrain alive even when idle, inviting exploration.</li>\n</ul>\n"
+        },
+        {
+          "header": "F) Editor UI",
+          "text": "The control panel exposes every generation parameter in a clear, grouped layout, gradient, marching cubes, so users can experiment freely."
         }
       ],
       "colors": [
@@ -823,12 +845,12 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/behance.svg",
+          "imageSrc": "/socials/behance",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer"
         },
         {
-          "imageSrc": "/icons/github.svg",
+          "imageSrc": "/socials/github",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/hyzu"
         }
@@ -890,12 +912,12 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/behance.svg",
+          "imageSrc": "/socials/behance",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study"
         },
         {
-          "imageSrc": "/icons/github.svg",
+          "imageSrc": "/socials/github",
           "alt": "GitHub",
           "link": "https://github.com/laprinia/mozu/tree/main"
         }
@@ -903,19 +925,19 @@ export const projects: ProjectCategories = {
       "textContents": [
         {
           "header": "A) About",
-          "text": "OpenGL lighting project made from scratch, destined to be a volumetric light implementation. 🌈"
+          "text": "An OpenGL exploration of how light behaves in a 3D space, from basic surface shading all the way to volumetric god rays."
         },
         {
-          "header": "B) Includes",
-          "text": "<ol>\n<li>Blinn-Phong model</li>\n<li>Multiple Light Sources:\n        <ul>\n<li>Directional</li>\n<li>Point</li>\n<li>Spotlight</li>\n        </ul>\n</li>\n<li>Normal Mapping</li>\n<li>Shadow Mapping using a depth map rendered from the light's point of view, projected in perspective</li>\n</ol>\n"
+          "header": "B) Lighting Layers",
+          "text": "<ul>\n<li><h3>☀️ Surface Shading</h3> Blinn-Phong reflectance with normal mapping gives every surface believable highlights and depth, even on flat geometry.</li>\n<li><h3>💡 Mixed Light Sources</h3> Directional, point, and spotlights each contribute differently, ambient fill, localized warmth near the pool, and focused beams from side lamps,creating a layered atmosphere.</li>\n<li><h3>🌑 Shadows</h3> A depth pass from the light's perspective produces shadow maps that ground objects in the scene and add contrast.</li>\n<li><h3>🌈 Volumetric Rays</h3> Ray marching through an occlusion texture produces visible light shafts, turning the lighting from a surface property into something you can see in the air.</li>\n</ul>\n"
         },
         {
-          "header": "C) Process",
-          "text": "<p><strong>Initial Setup:</strong> I implemented the Blinn-Phong lighting model in the Fragment shader using only a directional light. Normal mapping was used to enhance specular highlights.</p>\n\n<p>The colors still appeared \"crunchy\" due to the lack of Gamma Correction. To address this, I added a Post Processing shader for Gamma Correction and HDR, using another framebuffer to render the scene into a texture before applying Post Processing effects.</p>\n\n<p><strong>Adding Shadows:</strong> I used an additional depth framebuffer to render the scene from the directional light's perspective, which uses a perspective projection. The render result is stored in a texture.</p>\n\n<p>Then, I integrated the computed shadow with the directional light's diffuse and specular components. To add more dynamic lighting, I placed two point lights near the pool's ends and added two spotlights from side lamps for a more fitting ambiance.</p>\n\n<p><strong>Volumetric Lighting:</strong> This was achieved using the occlusion texture and a ray marching technique.</p>\n"
+          "header": "C) Building Up",
+          "text": "The scene evolved in stages, starting with a single directional light and flat shading, then layering in normal maps for surface detail, gamma correction and HDR to fix color accuracy, shadow mapping for spatial grounding, and finally volumetric rays as the visual payoff. Each step visibly improved the mood."
         },
         {
-          "header": "D) For Short",
-          "text": "<ul>\n<li>Post-Processing effects: HDR, Gamma Correction, and Grain</li>\n<li>Additional techniques: Anti-Aliasing, Blending, Depth Testing, and Skybox implementation</li>\n</ul>\n"
+          "header": "D) Visual Polish",
+          "text": "<ul>\n<li>HDR and Gamma Correction for accurate, rich color</li>\n<li>Film grain for texture and warmth</li>\n<li>Anti-aliasing and depth testing for clean geometry</li>\n<li>Skybox for environmental context</li>\n</ul>\n"
         }
       ],
       "colors": [
@@ -1003,7 +1025,7 @@ export const projects: ProjectCategories = {
       ],
       "buttons": [
         {
-          "imageSrc": "/icons/behance.svg",
+          "imageSrc": "/socials/behance",
           "alt": "Behance",
           "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
         }

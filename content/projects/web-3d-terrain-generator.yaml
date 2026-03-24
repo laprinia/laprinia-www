@@ -21,7 +21,7 @@ buttons:
     imageSrc: /socials/github
     link: https://github.com/laprinia/phea
 
-# Explicit media order — named files (intro/outro) interleaved with numbered
+# Explicit media order
 media:
   - 1.avif
   - intro.mp4
@@ -34,24 +34,31 @@ media:
 
 articles:
   - header: "A) About"
-    text: "React 3D terrain generation editor and visualiser using React-Three-Fiber, using the marching cubes algo."
-  - header: "B) Frontend Recipe"
+    text: "A browser-based 3D terrain editor that lets you sculpt, tweak, and visualize procedural landscapes in real time, bringing the creative loop of 3D generation directly into the web."
+  - header: "B) Recipe"
     text: |
       <ul>
-      <li>React Three Fiber, a React renderer for Three.js</li>
-      <li>Drei addons for React Three Fiber</li>
-      <li>GLSL Noise for Simplex noise</li>
-      <li>Mantine for UI components</li>
+      <li>React Three Fiber as a React renderer for Three.js</li>
+      <li>Drei addons for camera, lighting, and helpers</li>
+      <li>GLSL Noise for Simplex noise generation</li>
+      <li>Mantine for the editor UI</li>
       </ul>
-  - header: "C) Key Feats"
+  - header: "C) Real-Time Feedback Loop"
+    text: "Every parameter change, noise scale, octaves, terracing, instantly regenerates the terrain, so the creative process feels like direct manipulation rather than a build-and-wait cycle."
+  - header: "D) Layered Control"
     text: |
       <ul>
-      <li><h3>🧊 Marching cubes algorithm implementation</h3> Divides a volume in 3D space into cubes to approximate rendered faces for a mesh. Utilizes voxels to determine density and surface points.</li>
-      <li><h3>📼 Simplex Noise</h3> A 3D noise function for randomizing terrain height values. Parameters include noiseScale, octaves, weightMultiplier, persistencePerOctave, detailPerOctave, and noiseWeight.</li>
-      <li><h3>🏔️ Terracing</h3> Clamps terrain height on levels, with spacing set by <strong>terracingLevel</strong>.</li>
-      <li><h3>🌈 Color Height Map</h3> Uses a .png gradient for coloring fragments in the fragment shader.</li>
-      <li><h3>🍄 Visual Smoothing</h3> Smooths low-poly terrain by removing the world normal vector from height calculation in the fragment shader.</li>
-      <li><h3>✨ Post Processing</h3> Effects like TiltShift, Bloom, Noise, and BrightnessContrast achieved using r3f's postprocessing wrapper.</li>
-      <li><h3>🏊 Floating Effect & Mesh Rotation</h3> Uses a height vertex shader with elapsed time-based disturbance, and rotates the mesh on the y-axis.</li>
-      <li><h3>🎛️ The UI</h3> Controls gradient, marching cubes, and Simplex noise parameters, and regenerates the mesh.</li>
+      <li><h3>🧊 Shape</h3> Marching cubes turn a volume of density values into a visible mesh, giving full control over how terrain surfaces emerge.</li>
+      <li><h3>📼 Noise</h3> Simplex noise drives height variation with tunable octaves, persistence, and detail, small tweaks produce dramatically different landscapes.</li>
+      <li><h3>🏔️ Terracing</h3> Clamping height into discrete levels carves plateaus and cliff faces, adding structure to organic forms.</li>
+      <li><h3>🌈 Color Mapping</h3> A gradient texture maps elevation to color, so visual identity shifts as the terrain evolves.</li>
       </ul>
+  - header: "E) Visual Polish"
+    text: |
+      <ul>
+      <li><h3>🍄 Smoothing</h3> Softens the low-poly facets into a more organic surface without losing the procedural character.</li>
+      <li><h3>✨ Post-Processing</h3> Tilt-shift, bloom, noise grain, and brightness/contrast turn the raw mesh into something that feels cinematic.</li>
+      <li><h3>🏊 Ambient Motion</h3> A gentle float and slow rotation keep the terrain alive even when idle, inviting exploration.</li>
+      </ul>
+  - header: "F) Editor UI"
+    text: "The control panel exposes every generation parameter in a clear, grouped layout, gradient, marching cubes, so users can experiment freely."

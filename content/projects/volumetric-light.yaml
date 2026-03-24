@@ -32,35 +32,22 @@ buttons:
 
 articles:
   - header: "A) About"
-    text: "OpenGL lighting project made from scratch, destined to be a volumetric light implementation. 🌈"
-  - header: "B) Includes"
-    text: |
-      <ol>
-      <li>Blinn-Phong model</li>
-      <li>Multiple Light Sources:
-              <ul>
-      <li>Directional</li>
-      <li>Point</li>
-      <li>Spotlight</li>
-              </ul>
-      </li>
-      <li>Normal Mapping</li>
-      <li>Shadow Mapping using a depth map rendered from the light's point of view, projected in perspective</li>
-      </ol>
-  - header: "C) Process"
-    text: |
-      <p><strong>Initial Setup:</strong> I implemented the Blinn-Phong lighting model in the Fragment shader using only a directional light. Normal mapping was used to enhance specular highlights.</p>
-
-      <p>The colors still appeared "crunchy" due to the lack of Gamma Correction. To address this, I added a Post Processing shader for Gamma Correction and HDR, using another framebuffer to render the scene into a texture before applying Post Processing effects.</p>
-
-      <p><strong>Adding Shadows:</strong> I used an additional depth framebuffer to render the scene from the directional light's perspective, which uses a perspective projection. The render result is stored in a texture.</p>
-
-      <p>Then, I integrated the computed shadow with the directional light's diffuse and specular components. To add more dynamic lighting, I placed two point lights near the pool's ends and added two spotlights from side lamps for a more fitting ambiance.</p>
-
-      <p><strong>Volumetric Lighting:</strong> This was achieved using the occlusion texture and a ray marching technique.</p>
-  - header: "D) For Short"
+    text: "An OpenGL exploration of how light behaves in a 3D space, from basic surface shading all the way to volumetric god rays."
+  - header: "B) Lighting Layers"
     text: |
       <ul>
-      <li>Post-Processing effects: HDR, Gamma Correction, and Grain</li>
-      <li>Additional techniques: Anti-Aliasing, Blending, Depth Testing, and Skybox implementation</li>
+      <li><h3>☀️ Surface Shading</h3> Blinn-Phong reflectance with normal mapping gives every surface believable highlights and depth, even on flat geometry.</li>
+      <li><h3>💡 Mixed Light Sources</h3> Directional, point, and spotlights each contribute differently, ambient fill, localized warmth near the pool, and focused beams from side lamps,creating a layered atmosphere.</li>
+      <li><h3>🌑 Shadows</h3> A depth pass from the light's perspective produces shadow maps that ground objects in the scene and add contrast.</li>
+      <li><h3>🌈 Volumetric Rays</h3> Ray marching through an occlusion texture produces visible light shafts, turning the lighting from a surface property into something you can see in the air.</li>
+      </ul>
+  - header: "C) Building Up"
+    text: "The scene evolved in stages, starting with a single directional light and flat shading, then layering in normal maps for surface detail, gamma correction and HDR to fix color accuracy, shadow mapping for spatial grounding, and finally volumetric rays as the visual payoff. Each step visibly improved the mood."
+  - header: "D) Visual Polish"
+    text: |
+      <ul>
+      <li>HDR and Gamma Correction for accurate, rich color</li>
+      <li>Film grain for texture and warmth</li>
+      <li>Anti-aliasing and depth testing for clean geometry</li>
+      <li>Skybox for environmental context</li>
       </ul>

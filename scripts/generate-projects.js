@@ -3,7 +3,13 @@ const path = require("path");
 const yaml = require("js-yaml");
 
 const CONTENT_DIR = path.join(__dirname, "..", "content", "projects");
-const OUTPUT_FILE = path.join(__dirname, "..", "src", "const", "projects.ts");
+const OUTPUT_FILE = path.join(
+  __dirname,
+  "..",
+  "scripts",
+  "const",
+  "projects.ts",
+);
 
 const VIDEO_EXTENSIONS = new Set([".mp4", ".mov", ".webm"]);
 

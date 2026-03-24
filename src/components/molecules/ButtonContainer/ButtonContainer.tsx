@@ -1,3 +1,4 @@
+import { cloudinaryRawUrl } from "../../../lib/cloudinary";
 import { Container, Icon } from "./ButtonContainer.styles";
 
 const ButtonContainer = ({
@@ -16,7 +17,7 @@ const ButtonContainer = ({
           key={index}
           onClick={() => (window.location.href = button.link)}
         >
-          <Icon $src={button.imageSrc} role="img" aria-label={button.alt} />
+          <Icon $src={cloudinaryRawUrl(button.imageSrc)} role="img" aria-label={button.alt} />
         </button>
       ))}
     </Container>

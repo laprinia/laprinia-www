@@ -18,7 +18,7 @@ buttons:
     imageSrc: /socials/github
     link: https://github.com/laprinia/laprinia-www
 
-# Explicit media order — filesystem has files not used and non-sequential numbering
+# Explicit media order
 media:
   - 0.mov
   - 1.mov

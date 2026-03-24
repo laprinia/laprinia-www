@@ -34,6 +34,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "generate:projects": "node scripts/generate-projects.js",
+    "process:assets": "node scripts/process-assets.js",
     "upload:cloudinary": "node --env-file=.env.local scripts/upload-to-cloudinary.js",
     "analyze": "ANALYZE=true next build --webpack"
   },

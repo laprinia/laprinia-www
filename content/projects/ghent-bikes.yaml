@@ -59,9 +59,9 @@ articles:
   - header: "F) Routing & Data Fetching"
     text: |
       <ul>
-      <li>/ — landing page with hero and links into the bikes and parkings flows.</li>
-      <li>/bikes — shows the four Blue Bikes locations with capacity information.</li>
-      <li>/parkings — lists parking spots with at least 50% availability.</li>
-      <li>/parkings/[slug] — details view for a single parking, where the slug is generated from the fetched data.</li>
+      <li>/ - landing page with hero and links into the bikes and parkings flows.</li>
+      <li>/bikes - shows the four Blue Bikes locations with capacity information.</li>
+      <li>/parkings - lists parking spots with at least 50% availability.</li>
+      <li>/parkings/[slug] - details view for a single parking, where the slug is generated from the fetched data.</li>
       <li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>
       </ul>

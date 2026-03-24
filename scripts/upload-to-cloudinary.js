@@ -16,6 +16,7 @@ const SUPPORTED_EXTENSIONS = new Set([
   ".obj",
   ".glb",
   ".gltf",
+  ".svg",
 ]);
 
 cloudinary.config({
@@ -96,9 +97,20 @@ async function main() {
   }
 
   const extraArgs = process.argv.slice(2);
-  const files = extraArgs.length
-    ? extraArgs.map((f) => path.resolve(f))
-    : walkDir(PUBLIC_DIR);
+  let files;
+  if (extraArgs.length) {
+    files = [];
+    for (const arg of extraArgs) {
+      const resolved = path.resolve(arg);
+      if (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory()) {
+        files.push(...walkDir(resolved));
+      } else {
+        files.push(resolved);
+      }
+    }
+  } else {
+    files = walkDir(PUBLIC_DIR);
+  }
   console.log(`Found ${files.length} assets to upload.\n`);
 
   let uploaded = 0;

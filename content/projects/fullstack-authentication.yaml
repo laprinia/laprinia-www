@@ -38,40 +38,33 @@ buttons:
 
 articles:
   - header: "A) About"
-    text: "React & Node.js full-stack authentication for a creative web app, written in TypeScript with the purpose of using glassmorphism 🫥."
-  - header: "B) Recipe"
+    text: "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
+  - header: "B) Problem"
+    text: "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
+  - header: "C) What It Solves"
+    text: |
+      <ul>
+      <li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>
+      <li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>
+      <li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>
+      </ul>
+  - header: "D) Recipe"
     text: |
       <section>
         <h3>Frontend:</h3>
         <ul>
           <li>Mantine for UI components</li>
           <li>Radix UI icons</li>
-          <li>Axios for services</li>
-          <li>Unsplash API for randomized backgrounds</li>
+          <li>Axios for API calls</li>
+          <li>Unsplash API for dynamic backgrounds</li>
         </ul>
-
         <h3>Backend:</h3>
         <ul>
-          <li>BCrypt for encrypting passwords</li>
-          <li>Mongoose for interacting with the MongoDB Atlas database</li>
-          <li>Joi for data validation</li>
-          <li>JWT for creating authentication tokens</li>
-          <li>Nodemon for better server management</li>
+          <li>BCrypt for password hashing</li>
+          <li>Mongoose with TypeScript-enforced schemas</li>
+          <li>Joi for input validation</li>
+          <li>JWT for token-based auth</li>
         </ul>
       </section>
-  - header: "C) Key Feats"
-    text: |
-      <ul>
-      <li>Joi for data validation in the backend</li>
-      <li>Mongoose DB schema using TypeScript types to enforce accepted color outputs and formats</li>
-      <li>Randomized custom backgrounds provided by the Unsplash API</li>
-      <li>Glassmorphism components styled with custom CSS inside Mantine components</li>
-      <li>Field & form validation implemented</li>
-      </ul>
-  - header: "D) Glassmorphism"
-    text: |
-      <code>sx={{
-             background: `rgba(24,24,24,0.5)`,
-             boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.5)",
-             backdropFilter: `blur(5px)`,
-           }}</code>
+  - header: "E) Glassmorphism"
+    text: "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."
