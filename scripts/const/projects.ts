@@ -402,6 +402,65 @@ export const projects: ProjectCategories = {
   ],
   "web": [
     {
+      "name": "engie chatgpt widget",
+      "year": 2025,
+      "techStackPreview": "*/react, mcp, chatgpt sdk*/",
+      "tags": [
+        "react",
+        "mcp",
+        "chatgpt apps sdk",
+        "node.js",
+        "drizzle",
+        "vite",
+        "data visualization",
+        "design systems"
+      ],
+      "headshot": "/projects/engie-chatgpt-widget/headshot-img.avif",
+      "headshotGif": "/projects/engie-chatgpt-widget/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/1.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/2.mov"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they'll pay more or less than expected, all through a conversational interface powered by a custom MCP server."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Engie customers often struggle to understand their energy usage patterns, whether their advance payment is set correctly, and what they can do to optimize costs. This information exists across multiple screens and requires manual interpretation, making it hard to act on."
+        },
+        {
+          "header": "C) User Flow",
+          "text": "A customer opens ChatGPT with the Engie app context, asks about their households, and immediately sees their data. They can request a consumption graph, filter it by date range, hover for details, and prompt the agent directly from the widget to analyze trends or suggest optimizations. For advance payments, the agent compares past usage against the contract and recommends an adjusted amount, flagging overpayment or underpayment before the next billing cycle."
+        },
+        {
+          "header": "D) Features",
+          "text": "Interactive consumption graph with month filtering and hover details. Two-way prompting: users can ask ChatGPT to analyze data directly from within the widget. Advance payment tools: view, edit, and get AI-suggested values based on actual consumption. Household management: view, update, and delete records, all reflected in the real database."
+        },
+        {
+          "header": "E) Design Approach",
+          "text": "The widgets follow Engie's design system (colors, typography, spacing) while adapting to ChatGPT's constrained viewport, where they need to feel native next to chat bubbles. Minimal chrome, clear data hierarchy, and familiar brand language so customers read the visualizations at a glance without leaving the conversation."
+        },
+        {
+          "header": "F) Impact",
+          "text": "After the internal demo, Engie reached out to present the project to their board. The exploration is now being considered for a future production implementation as a new customer-facing channel."
+        }
+      ],
+      "colors": [
+        "#05A8FD",
+        "#23A9A3",
+        "#004A46"
+      ]
+    },
+    {
       "name": "tectonic",
       "year": 2025,
       "techStackPreview": "*/webflow, figma*/",
