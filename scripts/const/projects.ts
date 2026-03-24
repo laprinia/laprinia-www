@@ -37,7 +37,7 @@ export const projects: ProjectCategories = {
   "branding & design": [
     {
       "name": "ai playbooks",
-      "year": 2025,
+      "year": 2026,
       "techStackPreview": "*/webflow, figma*/",
       "tags": [
         "webflow",
@@ -104,6 +104,90 @@ export const projects: ProjectCategories = {
         "#E9EAF4",
         "#181A43",
         "#EDAC7D"
+      ]
+    },
+    {
+      "name": "dytto rebrand",
+      "year": 2025,
+      "techStackPreview": "*/figma*/",
+      "tags": [
+        "branding",
+        "design systems",
+        "prototyping",
+        "user research",
+        "wireframes",
+        "interaction design",
+        "figma"
+      ],
+      "headshot": "/projects/dytto-rebrand/headshot-img.avif",
+      "headshotGif": "/projects/dytto-rebrand/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/dytto-rebrand/content/1.mov"
+        },
+        {
+          "type": "image",
+          "src": "/projects/dytto-rebrand/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/dytto-rebrand/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/dytto-rebrand/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/dytto-rebrand/content/5.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/dytto-rebrand/content/6.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/dytto-rebrand/content/7.avif"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "Dytto Website",
+          "link": "https://www.dytto.ai/"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A full rebrand and design system build for Dytto, an AI-powered accounting assistant that intercepts incoming mail, extracts financial data, and handles bookkeeping tasks for you. The project spanned user research, brand exploration, a component-level design system, and an interactive prototype for the desktop app."
+        },
+        {
+          "header": "B) Brand Exploration",
+          "text": "Using style tiles, we had the client adjust brand sliders (formal vs. warm, affordable vs. premium) to map out the tonal space. After several rounds, we landed on a playful, approachable direction: hand-drawn animation, a warm color palette, and rounded corners that soften the experience without losing professionalism."
+        },
+        {
+          "header": "C) Design System",
+          "text": "I extracted a complete design system from the wireframes: tokens for color, typography, spacing, and radius; reusable components for buttons, inputs, cards, modals, and navigation; and documentation to keep the branding consistent as the product grows."
+        },
+        {
+          "header": "D) Prototype & Interaction",
+          "text": "Using the design system, I built an interactive Figma prototype covering login, the chat flow, and email detail views. Key interaction decisions: the pigeon mascot animates across states (idle, thinking, waiting) inspired by Notion AI, glow effects highlight incoming email actions and AI-processed components, and referenced files or customer profiles pop out inline so users never lose context."
+        },
+        {
+          "header": "E) Flow & Polish",
+          "text": "The focus was on making every transition feel intentional. Chat responses build smoothly, email cards surface the right details at the right moment, and the pigeon's state changes give users a clear signal of what the AI is doing without relying on loading spinners or text."
+        },
+        {
+          "header": "F) Impact",
+          "text": "Following the rebrand and prototype delivery, Dytto secured additional funding and is now an actively growing product. The design system continues to serve as the foundation for their website and app."
+        }
+      ],
+      "colors": [
+        "#C65C31",
+        "#EFBB55",
+        "#F6F6F4"
       ]
     },
     {
@@ -403,7 +487,7 @@ export const projects: ProjectCategories = {
   "web": [
     {
       "name": "engie chatgpt widget",
-      "year": 2025,
+      "year": 2026,
       "techStackPreview": "*/react, mcp, chatgpt sdk*/",
       "tags": [
         "react",
@@ -495,7 +579,13 @@ export const projects: ProjectCategories = {
           "src": "/projects/tectonic/content/5.avif"
         }
       ],
-      "buttons": [],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "Tectonic Website",
+          "link": "https://www.tectonicconf.eu/program"
+        }
+      ],
       "textContents": [
         {
           "header": "A) About",
@@ -511,7 +601,7 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "D) User Research",
-          "text": "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself."
+          "text": "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself. I also studied how attendees navigate a conference: needing to see which events run in parallel across stages, filtering by stage to narrow their view, and opening a details modal to get the full picture without leaving the schedule page."
         },
         {
           "header": "E) Impact",

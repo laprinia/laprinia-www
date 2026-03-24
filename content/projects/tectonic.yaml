@@ -17,7 +17,10 @@ media:
   - 3.avif
   - 4.avif
   - 5.avif
-buttons: []
+buttons:
+  - alt: Tectonic Website
+    imageSrc: /socials/web
+    link: https://www.tectonicconf.eu/program
 
 articles:
   - header: "A) About"
@@ -27,7 +30,7 @@ articles:
   - header: "C) Program Timeline"
     text: "Using data from the Webflow CMS, I designed and styled a flexible timeline component that can display multiple days and events across different stages, each on its own swimlane."
   - header: "D) User Research"
-    text: "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself."
+    text: "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself. I also studied how attendees navigate a conference: needing to see which events run in parallel across stages, filtering by stage to narrow their view, and opening a details modal to get the full picture without leaving the schedule page."
   - header: "E) Impact"
     text: "The component streamlined adding and updating events, crucial for a live conference where times and sessions change frequently, and the result was a huge success for the organizing team."
   - header: "F) Visual Direction"
