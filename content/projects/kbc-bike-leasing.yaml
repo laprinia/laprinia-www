@@ -1,0 +1,41 @@
+name: kbc bike leasing
+year: 2025
+techStackPreview: "*/react, figma*/"
+tags:
+  - react
+  - typescript
+  - figma
+  - design systems
+  - radix ui
+  - tailwind css
+  - accessibility
+  - react hook form
+  - zod
+colors:
+  - "#0074B8"
+  - "#00263E"
+  - "#00B8C9"
+headshot: headshot-img.avif
+headshotGif: headshot.webp
+media:
+  - 1.mov
+  - 2.avif
+  - 3.avif
+  - 4.avif
+buttons: []
+
+articles:
+  - header: "A) About"
+    text: "A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, replacing a process that previously required calling a KBC employee."
+  - header: "B) Problem"
+    text: "Calculating bike leasing costs in Belgium depends on salary taxation rules, marital status, and commute details. Before this tool, customers had to call a KBC employee who would run the numbers in a spreadsheet. There was no self-service option."
+  - header: "C) Design System"
+    text: "The Figma wireframes I inherited were static and didn't use components. I built a full component library from them: design tokens for KBC's brand colors, typography (MuseoSans), spacing, and radius; and component variants for inputs, buttons, radio groups, progress bars, and form states. Every component was created both in the Figma file and as a React component, giving KBC a reusable library for future projects."
+  - header: "D) User Flow"
+    text: "A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left."
+  - header: "E) Accessibility & Interaction"
+    text: "Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions, input focus states, and the progress bar make the flow feel responsive without distracting from the task."
+  - header: "F) Challenge"
+    text: "The core complexity was modeling Belgian salary taxation rules correctly: how gross-to-net calculations shift based on marital status, tax brackets, and employer contributions. Getting this right was essential since the simulator replaces a manual expert calculation."
+  - header: "G) Impact"
+    text: "Customers can now estimate their bike leasing cost independently, removing the need to call a KBC employee. The React component library built alongside the product serves as a reusable foundation for future KBC web projects."
