@@ -87,7 +87,7 @@ async function processHeadshots(projectDir) {
     if (VIDEO_EXTENSIONS.has(ext)) {
       execFileSync("ffmpeg", [
         "-i", inputPath,
-        "-vf", "scale=480:-1,format=gray,fps=15",
+        "-vf", "scale=480:-1,fps=15",
         "-c:v", "libwebp",
         "-loop", "0",
         "-quality", "50",
@@ -98,7 +98,6 @@ async function processHeadshots(projectDir) {
     } else {
       await sharp(inputPath, { animated: true })
         .resize(480)
-        .grayscale()
         .webp({ quality: 50, effort: 6 })
         .toFile(webpOutput);
       console.log(`  ${animSource} → headshot.webp (B&W, compressed, animated)`);
