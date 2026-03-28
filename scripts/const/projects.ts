@@ -1,4 +1,5 @@
 // Auto-generated from content/projects/*.yaml
+// Media paths (/projects/...) are Cloudinary public IDs (upload with: npm run upload:cloudinary -- public/projects/<slug>).
 
 export type MediaContent = {
   type: string;
@@ -309,6 +310,10 @@ export const projects: ProjectCategories = {
       "mediaContents": [
         {
           "type": "image",
+          "src": "/projects/mood-ring/content/0.avif"
+        },
+        {
+          "type": "image",
           "src": "/projects/mood-ring/content/1.avif"
         },
         {
@@ -342,18 +347,6 @@ export const projects: ProjectCategories = {
         {
           "type": "image",
           "src": "/projects/mood-ring/content/9.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/mood-ring/content/10.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/mood-ring/content/11.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/mood-ring/content/12.avif"
         }
       ],
       "buttons": [],
