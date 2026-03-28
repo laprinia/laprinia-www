@@ -97,10 +97,11 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  experimental: Project[];
+  playground: Project[];
 };`;
 
 const output = `// Auto-generated from content/projects/*.yaml
+// Media paths (/projects/...) are Cloudinary public IDs (upload with: npm run upload:cloudinary -- public/projects/<slug>).
 
 ${TYPE_DEFS}
 

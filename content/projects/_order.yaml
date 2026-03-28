@@ -8,15 +8,15 @@ web:
   - engie-chatgpt-widget
   - kbc-bike-leasing
   - tectonic
-  - ghent-bikes
-  - text-wave
-  - fullstack-authentication
   - web-3d-terrain-generator
 
 3d:
   - ray-tracer
   - volumetric-light
 
-experimental:
+playground:
+  - text-wave
+  - ghent-bikes
+  - fullstack-authentication
   - media-pipe
   - lissajous-curves

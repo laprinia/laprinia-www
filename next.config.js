@@ -1,16 +1,26 @@
 /** @type {import('next').NextConfig} */
+const cloudinaryCloud =
+  process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD || process.env.CLOUDINARY_CLOUD_NAME;
+
 const nextConfig = {
   reactStrictMode: true,
-  images: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD
-    ? {
-        loader: "custom",
-        loaderFile: "./src/lib/cloudinary.ts",
-      }
-    : {
-        formats: ["image/avif", "image/webp"],
-        minimumCacheTTL: 60,
-        qualities: [10, 75],
+  ...(cloudinaryCloud
+    ? { env: { NEXT_PUBLIC_CLOUDINARY_CLOUD: cloudinaryCloud } }
+    : {}),
+  images: {
+    loader: "custom",
+    loaderFile: "./src/lib/cloudinary.ts",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
       },
+    ],
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60,
+    qualities: [10, 75],
+  },
 
   compiler: {
     styledComponents: true,

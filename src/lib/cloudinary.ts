@@ -1,13 +1,28 @@
 const VIDEO_EXTENSIONS = /\.(mp4|mov|webm)$/i;
 const MAX_CLOUDINARY_WIDTH = 3200;
 
-export function cloudinaryUrl(
+const ABSOLUTE_URL = /^https?:\/\//i;
+
+export function isProjectAssetPath(localPath: string): boolean {
+  const cleanPath = localPath.startsWith("/") ? localPath.slice(1) : localPath;
+  return cleanPath.startsWith("projects/");
+}
+
+function requireCloudForProjectAssets(): string {
+  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
+  if (!cloud) {
+    throw new Error(
+      "Set your Cloudinary cloud name for project images: add NEXT_PUBLIC_CLOUDINARY_CLOUD to .env.local, or reuse the upload script value via CLOUDINARY_CLOUD_NAME (wired in next.config.js). Restart the dev server after changing env.",
+    );
+  }
+  return cloud;
+}
+
+function buildCloudinaryMediaUrl(
   localPath: string,
+  cloud: string,
   opts?: { width?: number; quality?: string },
 ): string {
-  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
-  if (!cloud) return localPath;
-
   const isVideo = VIDEO_EXTENSIONS.test(localPath);
   const resourceType = isVideo ? "video" : "image";
 
@@ -28,10 +43,7 @@ export function cloudinaryUrl(
   return `https://res.cloudinary.com/${cloud}/${resourceType}/upload/${transforms}/${cleanPath}`;
 }
 
-export function cloudinaryRawUrl(localPath: string): string {
-  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
-  if (!cloud) return localPath;
-
+function buildCloudinaryRawDeliveryUrl(localPath: string, cloud: string): string {
   const cleanPath = localPath.startsWith("/") ? localPath.slice(1) : localPath;
   const isVideo = VIDEO_EXTENSIONS.test(localPath);
   const resourceType = isVideo ? "video" : "image";
@@ -42,6 +54,33 @@ export function cloudinaryRawUrl(localPath: string): string {
   return transforms
     ? `${base}/${transforms}/${cleanPath}`
     : `${base}/${cleanPath}`;
+}
+
+export function cloudinaryUrl(
+  localPath: string,
+  opts?: { width?: number; quality?: string },
+): string {
+  if (isProjectAssetPath(localPath)) {
+    const cloud = requireCloudForProjectAssets();
+    return buildCloudinaryMediaUrl(localPath, cloud, opts);
+  }
+
+  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
+  if (!cloud) return localPath;
+
+  return buildCloudinaryMediaUrl(localPath, cloud, opts);
+}
+
+export function cloudinaryRawUrl(localPath: string): string {
+  if (isProjectAssetPath(localPath)) {
+    const cloud = requireCloudForProjectAssets();
+    return buildCloudinaryRawDeliveryUrl(localPath, cloud);
+  }
+
+  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
+  if (!cloud) return localPath;
+
+  return buildCloudinaryRawDeliveryUrl(localPath, cloud);
 }
 
 const RAW_EXTENSIONS = /\.(obj|glb|gltf)$/i;
@@ -63,6 +102,9 @@ export default function cloudinaryLoader({
   width: number;
   quality?: number;
 }) {
+  if (ABSOLUTE_URL.test(src)) {
+    return src;
+  }
   return cloudinaryUrl(src, {
     width,
     quality: quality ? String(quality) : undefined,

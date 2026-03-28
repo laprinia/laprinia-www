@@ -30,7 +30,7 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  experimental: Project[];
+  playground: Project[];
 };
 
 export const projects: ProjectCategories = {
@@ -669,222 +669,6 @@ export const projects: ProjectCategories = {
       ]
     },
     {
-      "name": "ghent bikes",
-      "year": 2024,
-      "techStackPreview": "*/react, next.js, figma*/",
-      "tags": [
-        "react",
-        "typescript",
-        "accessibility",
-        "next.js",
-        "figma",
-        "chakra ui",
-        "joi",
-        "winston",
-        "google maps"
-      ],
-      "headshot": "/projects/ghent-bikes/headshot-img.avif",
-      "headshotGif": "/projects/ghent-bikes/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/1.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/4.avif"
-        }
-      ],
-      "buttons": [],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "Web app that surfaces bike and parking stations in Ghent from the city's open data API. Each station shows capacity, live availability, a copyable name, and a Google Maps preview so riders can quickly decide where to park."
-        },
-        {
-          "header": "B) UI & Accessibility",
-          "text": "<ul>\n<li>Chakra UI provides semantic building blocks, theming, and responsive breakpoints with minimal custom CSS.</li>\n<li>Hidden helper text (e.g., <code>&lt;p hidden&gt;</code>) describes map previews for screen readers.</li>\n<li><code>as</code> props and rem-based sizing support better semantics and scalable typography.</li>\n<li>Axe is used during development to catch and fix accessibility issues early.</li>\n</ul>\n"
-        },
-        {
-          "header": "C) Problem & Data Source",
-          "text": "Using the Stad Gent open data catalog for bikes, I wanted to turn raw datasets into a practical city tool: clear lists of bike stations and parking spots that are easy to scan, compare, and locate on a map."
-        },
-        {
-          "header": "D) Architecture & Validation",
-          "text": "<ul>\n<li>Next.js API routes handle fetching and routing, with Joi schemas validating incoming responses from the Ghent endpoints.</li>\n<li>Winston is used for logging validation issues or unexpected data shapes.</li>\n<li>This setup keeps the API layer small and opinionated, ideal for a focused, dataset-driven app.</li>\n</ul>\n"
-        },
-        {
-          "header": "E) Queries & Endpoints",
-          "text": "<pre><code>Bike spots\nSELECT name, bikes_in_use, bikes_available, geopoint\nORDER BY name ASC\n\nPark spots\nSELECT name, description, type, categorie, totalcapacity, availablecapacity, occupation, isopennow\nWHERE (availablecapacity / totalcapacity * 100) &gt; 50 AND isopennow = 1\nORDER BY availablecapacity DESC\n</code></pre>\nThese structured queries are used to build the data.stad.gent URLs that power the bikes and parkings views.\n"
-        },
-        {
-          "header": "F) Routing & Data Fetching",
-          "text": "<ul>\n<li>/ - landing page with hero and links into the bikes and parkings flows.</li>\n<li>/bikes - shows the four Blue Bikes locations with capacity information.</li>\n<li>/parkings - lists parking spots with at least 50% availability.</li>\n<li>/parkings/[slug] - details view for a single parking, where the slug is generated from the fetched data.</li>\n<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n</ul>\n"
-        }
-      ],
-      "colors": [
-        "#0141D5",
-        "#42A5F5",
-        "#1B5E20"
-      ]
-    },
-    {
-      "name": "text wave",
-      "year": 2024,
-      "techStackPreview": "*/react, webgl*/",
-      "tags": [
-        "react",
-        "typescript",
-        "react-three-fiber",
-        "drei",
-        "styled components"
-      ],
-      "headshot": "/projects/text-wave/headshot-img.avif",
-      "headshotGif": "/projects/text-wave/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/text-wave/content/0.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/text-wave/content/1.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/text-wave/content/3.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/text-wave/content/4.mov"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/socials/github",
-          "alt": "GitHub",
-          "link": "https://github.com/laprinia/laprinia-www"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "Animating text textures for my web apps using React Three Fiber. This project explores dynamic 3D text textures that can either auto-animate or respond to the cursor position, controlling the intensity of the animation in real-time."
-        },
-        {
-          "header": "B) Follows",
-          "text": "<ul>\n<li>React Three Fiber for rendering 3D scenes within React</li>\n<li>Drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n<li>Three.js for texture management and geometry manipulation</li>\n<li>Raleway font used for my text samples</li>\n</ul>\n"
-        },
-        {
-          "header": "C) Key Feats",
-          "text": "<ul>\n<li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the top left of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n<li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n<li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n<li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n<code>const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);\nconst waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);\nvertex.z = targetIntensityRef.current * (waveX1 + waveY1);</code>\n</li>\n<li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes.</li>\n</ul>\n"
-        }
-      ],
-      "colors": [
-        "#01692B",
-        "#004392",
-        "#F17019"
-      ]
-    },
-    {
-      "name": "fullstack authentication",
-      "year": 2023,
-      "techStackPreview": "*/react, mongodb*/",
-      "tags": [
-        "react",
-        "typescript",
-        "glassmorphism",
-        "mantine",
-        "radix-ui",
-        "axios",
-        "unsplash api",
-        "bcrypt",
-        "mongoose",
-        "joi",
-        "jwt"
-      ],
-      "headshot": "/projects/fullstack-authentication/headshot-img.avif",
-      "headshotGif": "/projects/fullstack-authentication/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/1.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/4.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/5.avif"
-        },
-        {
-          "type": "video",
-          "src": "/projects/fullstack-authentication/content/6.mp4"
-        },
-        {
-          "type": "video",
-          "src": "/projects/fullstack-authentication/content/7.mp4"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/socials/github",
-          "alt": "GitHub",
-          "link": "https://github.com/laprinia/opea"
-        },
-        {
-          "imageSrc": "/socials/behance",
-          "alt": "Behance",
-          "link": "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
-        },
-        {
-          "header": "B) Problem",
-          "text": "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
-        },
-        {
-          "header": "C) What It Solves",
-          "text": "<ul>\n<li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>\n<li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>\n<li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>\n</ul>\n"
-        },
-        {
-          "header": "D) Recipe",
-          "text": "<section>\n  <h3>Frontend:</h3>\n  <ul>\n    <li>Mantine for UI components</li>\n    <li>Radix UI icons</li>\n    <li>Axios for API calls</li>\n    <li>Unsplash API for dynamic backgrounds</li>\n  </ul>\n  <h3>Backend:</h3>\n  <ul>\n    <li>BCrypt for password hashing</li>\n    <li>Mongoose with TypeScript-enforced schemas</li>\n    <li>Joi for input validation</li>\n    <li>JWT for token-based auth</li>\n  </ul>\n</section>\n"
-        },
-        {
-          "header": "E) Glassmorphism",
-          "text": "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."
-        }
-      ],
-      "colors": [
-        "#FB6009",
-        "#2E2623",
-        "#ECE3E1",
-        "#040406"
-      ]
-    },
-    {
       "name": "web 3d terrain generator",
       "year": 2022,
       "techStackPreview": "*/react, webgl*/",
@@ -1150,7 +934,223 @@ export const projects: ProjectCategories = {
       ]
     }
   ],
-  "experimental": [
+  "playground": [
+    {
+      "name": "text wave",
+      "year": 2024,
+      "techStackPreview": "*/react, webgl*/",
+      "tags": [
+        "react",
+        "typescript",
+        "react-three-fiber",
+        "drei",
+        "styled components"
+      ],
+      "headshot": "/projects/text-wave/headshot-img.avif",
+      "headshotGif": "/projects/text-wave/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/0.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/1.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/3.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/4.mov"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/laprinia-www"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Animating text textures for my web apps using React Three Fiber. This project explores dynamic 3D text textures that can either auto-animate or respond to the cursor position, controlling the intensity of the animation in real-time."
+        },
+        {
+          "header": "B) Follows",
+          "text": "<ul>\n<li>React Three Fiber for rendering 3D scenes within React</li>\n<li>Drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n<li>Three.js for texture management and geometry manipulation</li>\n<li>Raleway font used for my text samples</li>\n</ul>\n"
+        },
+        {
+          "header": "C) Key Feats",
+          "text": "<ul>\n<li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the top left of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n<li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n<li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n<li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n<code>const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);\nconst waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);\nvertex.z = targetIntensityRef.current * (waveX1 + waveY1);</code>\n</li>\n<li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes.</li>\n</ul>\n"
+        }
+      ],
+      "colors": [
+        "#01692B",
+        "#004392",
+        "#F17019"
+      ]
+    },
+    {
+      "name": "ghent bikes",
+      "year": 2024,
+      "techStackPreview": "*/react, next.js, figma*/",
+      "tags": [
+        "react",
+        "typescript",
+        "accessibility",
+        "next.js",
+        "figma",
+        "chakra ui",
+        "joi",
+        "winston",
+        "google maps"
+      ],
+      "headshot": "/projects/ghent-bikes/headshot-img.avif",
+      "headshotGif": "/projects/ghent-bikes/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/1.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/4.avif"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Web app that surfaces bike and parking stations in Ghent from the city's open data API. Each station shows capacity, live availability, a copyable name, and a Google Maps preview so riders can quickly decide where to park."
+        },
+        {
+          "header": "B) UI & Accessibility",
+          "text": "<ul>\n<li>Chakra UI provides semantic building blocks, theming, and responsive breakpoints with minimal custom CSS.</li>\n<li>Hidden helper text (e.g., <code>&lt;p hidden&gt;</code>) describes map previews for screen readers.</li>\n<li><code>as</code> props and rem-based sizing support better semantics and scalable typography.</li>\n<li>Axe is used during development to catch and fix accessibility issues early.</li>\n</ul>\n"
+        },
+        {
+          "header": "C) Problem & Data Source",
+          "text": "Using the Stad Gent open data catalog for bikes, I wanted to turn raw datasets into a practical city tool: clear lists of bike stations and parking spots that are easy to scan, compare, and locate on a map."
+        },
+        {
+          "header": "D) Architecture & Validation",
+          "text": "<ul>\n<li>Next.js API routes handle fetching and routing, with Joi schemas validating incoming responses from the Ghent endpoints.</li>\n<li>Winston is used for logging validation issues or unexpected data shapes.</li>\n<li>This setup keeps the API layer small and opinionated, ideal for a focused, dataset-driven app.</li>\n</ul>\n"
+        },
+        {
+          "header": "E) Queries & Endpoints",
+          "text": "<pre><code>Bike spots\nSELECT name, bikes_in_use, bikes_available, geopoint\nORDER BY name ASC\n\nPark spots\nSELECT name, description, type, categorie, totalcapacity, availablecapacity, occupation, isopennow\nWHERE (availablecapacity / totalcapacity * 100) &gt; 50 AND isopennow = 1\nORDER BY availablecapacity DESC\n</code></pre>\nThese structured queries are used to build the data.stad.gent URLs that power the bikes and parkings views.\n"
+        },
+        {
+          "header": "F) Routing & Data Fetching",
+          "text": "<ul>\n<li>/ - landing page with hero and links into the bikes and parkings flows.</li>\n<li>/bikes - shows the four Blue Bikes locations with capacity information.</li>\n<li>/parkings - lists parking spots with at least 50% availability.</li>\n<li>/parkings/[slug] - details view for a single parking, where the slug is generated from the fetched data.</li>\n<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n</ul>\n"
+        }
+      ],
+      "colors": [
+        "#0141D5",
+        "#42A5F5",
+        "#1B5E20"
+      ]
+    },
+    {
+      "name": "fullstack authentication",
+      "year": 2023,
+      "techStackPreview": "*/react, mongodb*/",
+      "tags": [
+        "react",
+        "typescript",
+        "glassmorphism",
+        "mantine",
+        "radix-ui",
+        "axios",
+        "unsplash api",
+        "bcrypt",
+        "mongoose",
+        "joi",
+        "jwt"
+      ],
+      "headshot": "/projects/fullstack-authentication/headshot-img.avif",
+      "headshotGif": "/projects/fullstack-authentication/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/1.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/5.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/fullstack-authentication/content/6.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/fullstack-authentication/content/7.mp4"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/opea"
+        },
+        {
+          "imageSrc": "/socials/behance",
+          "alt": "Behance",
+          "link": "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
+        },
+        {
+          "header": "C) What It Solves",
+          "text": "<ul>\n<li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>\n<li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>\n<li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>\n</ul>\n"
+        },
+        {
+          "header": "D) Recipe",
+          "text": "<section>\n  <h3>Frontend:</h3>\n  <ul>\n    <li>Mantine for UI components</li>\n    <li>Radix UI icons</li>\n    <li>Axios for API calls</li>\n    <li>Unsplash API for dynamic backgrounds</li>\n  </ul>\n  <h3>Backend:</h3>\n  <ul>\n    <li>BCrypt for password hashing</li>\n    <li>Mongoose with TypeScript-enforced schemas</li>\n    <li>Joi for input validation</li>\n    <li>JWT for token-based auth</li>\n  </ul>\n</section>\n"
+        },
+        {
+          "header": "E) Glassmorphism",
+          "text": "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."
+        }
+      ],
+      "colors": [
+        "#FB6009",
+        "#2E2623",
+        "#ECE3E1",
+        "#040406"
+      ]
+    },
     {
       "name": "media pipe",
       "year": 2025,
