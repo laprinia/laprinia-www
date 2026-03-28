@@ -209,10 +209,6 @@ export const projects: ProjectCategories = {
       "mediaContents": [
         {
           "type": "image",
-          "src": "/projects/veloura-brand-guide/content/0.avif"
-        },
-        {
-          "type": "image",
           "src": "/projects/veloura-brand-guide/content/1.avif"
         },
         {
@@ -242,22 +238,6 @@ export const projects: ProjectCategories = {
         {
           "type": "image",
           "src": "/projects/veloura-brand-guide/content/8.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/veloura-brand-guide/content/9.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/veloura-brand-guide/content/10.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/veloura-brand-guide/content/11.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/veloura-brand-guide/content/12.avif"
         }
       ],
       "buttons": [],
