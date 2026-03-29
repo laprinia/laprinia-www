@@ -31,7 +31,8 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  playground: Project[];
+  experimental: Project[];
+  archive: Project[];
 };
 
 export const projects: ProjectCategories = {
@@ -740,6 +741,588 @@ export const projects: ProjectCategories = {
       ]
     }
   ],
-  "3d": [],
-  playground: []
+  "3d": [
+    {
+      "name": "ray tracer",
+      "year": 2022,
+      "techStackPreview": "*/opengl, compute shaders*/",
+      "tags": [
+        "opengl",
+        "c++",
+        "shaders",
+        "imgui",
+        "post processing",
+        "sphere ray tracing",
+        "various materials"
+      ],
+      "headshot": "/projects/ray-tracer/headshot-img.avif",
+      "headshotGif": "/projects/ray-tracer/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/1.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/5.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/6.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/7.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/8.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/9.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/10.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/11.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ray-tracer/content/12.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/ray-tracer/content/13.mp4"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/behance",
+          "alt": "Behance",
+          "link": "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer"
+        },
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/hyzu"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "OpenGL real-time ray tracer using Compute Shaders. Based on the \"Ray Tracing in One Weekend series\" 🌄."
+        },
+        {
+          "header": "B) Process",
+          "text": "<section>\n<h3>1. Matte Materials</h3>\n<p>\n    The process is simple: normalizing the y coordinate and interpolating between two colors.\n    Checking if the rays hit the sphere and displaying the color. The resulting color is computed\n    by picking a random point inside a unit radius sphere, whose normal starts from the initial ray hit point.\n    This is done recursively until a ray doesn't hit anything or a maximum depth is reached.\n  </p>\n\n<h3>2. Metallic Surfaces</h3>\n<p>\n    For metallic surfaces, rays aren't randomly scattered. Luckily, GLSL has the \n    <code>reflect()</code> function, which returns the reflected ray. Randomizing the reflected\n    ray by choosing a random endpoint, as we did for the matte surface, gives rough (fuzzy) surfaces.\n  </p>\n\n<h3>3. Dielectric Surfaces</h3>\n<p>\n    A ray is split into both a reflected one and a refracted one. Assuming that all rays are \n    only refracted results in one outcome. Using Schlick's polynomial approximation, we can \n    determine if rays must be reflected instead of refracted, producing the final result.\n  </p>\n\n<h3>4. Cornell Box</h3>\n<p>\n    Adding a Cornell Box introduces more complexity into the scene. To make things more \n    realistic, emissive materials are added for ceiling lights and spheres. Rays hitting \n    an emissive surface won't scatter, so they retain their true albedo color output.\n  </p>\n\n<h3>5. Post-Processing</h3>\n<p>\n    On the post-processing layer, HDR is applied, making the emissive material stand out more. \n    Bloom is also added, which renders lights as blurred (using Gaussian Blur) and adds the \n    result on top of the base color.\n  </p>\n</section>\n"
+        }
+      ],
+      "colors": [
+        "#AD2337",
+        "#0b5caf",
+        "#68CEE9",
+        "#E3E874",
+        "#E57CE0",
+        "#efedff"
+      ]
+    },
+    {
+      "name": "volumetric light",
+      "year": 2021,
+      "techStackPreview": "*/opengl, glsl shaders*/",
+      "tags": [
+        "opengl",
+        "c++",
+        "shaders",
+        "imgui",
+        "post processing",
+        "scene rendering"
+      ],
+      "headshot": "/projects/volumetric-light/headshot-img.avif",
+      "headshotGif": "/projects/volumetric-light/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/volumetric-light/content/1.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/volumetric-light/content/2.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/volumetric-light/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/volumetric-light/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/volumetric-light/content/5.avif"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/behance",
+          "alt": "Behance",
+          "link": "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study"
+        },
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/mozu/tree/main"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "An OpenGL exploration of how light behaves in a 3D space, from basic surface shading all the way to volumetric god rays."
+        },
+        {
+          "header": "B) Lighting Layers",
+          "text": "<ul>\n<li><h3>☀️ Surface Shading</h3> Blinn-Phong reflectance with normal mapping gives every surface believable highlights and depth, even on flat geometry.</li>\n<li><h3>💡 Mixed Light Sources</h3> Directional, point, and spotlights each contribute differently, ambient fill, localized warmth near the pool, and focused beams from side lamps,creating a layered atmosphere.</li>\n<li><h3>🌑 Shadows</h3> A depth pass from the light's perspective produces shadow maps that ground objects in the scene and add contrast.</li>\n<li><h3>🌈 Volumetric Rays</h3> Ray marching through an occlusion texture produces visible light shafts, turning the lighting from a surface property into something you can see in the air.</li>\n</ul>\n"
+        },
+        {
+          "header": "C) Building Up",
+          "text": "The scene evolved in stages, starting with a single directional light and flat shading, then layering in normal maps for surface detail, gamma correction and HDR to fix color accuracy, shadow mapping for spatial grounding, and finally volumetric rays as the visual payoff. Each step visibly improved the mood."
+        },
+        {
+          "header": "D) Visual Polish",
+          "text": "<ul>\n<li>HDR and Gamma Correction for accurate, rich color</li>\n<li>Film grain for texture and warmth</li>\n<li>Anti-aliasing and depth testing for clean geometry</li>\n<li>Skybox for environmental context</li>\n</ul>\n"
+        }
+      ],
+      "colors": [
+        "#e97972",
+        "#E53190",
+        "#2EABD3",
+        "#E3E874",
+        "#E4E3EA"
+      ]
+    }
+  ],
+  "experimental": [
+    {
+      "name": "media pipe",
+      "year": 2025,
+      "techStackPreview": "*/touchdesigner*/",
+      "tags": [
+        "touchdesigner",
+        "mediapipe",
+        "instancing",
+        "image processing"
+      ],
+      "headshot": "/projects/media-pipe/headshot-img.avif",
+      "headshotGif": "/projects/media-pipe/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/media-pipe/content/1.mp4"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe."
+        },
+        {
+          "header": "B) MediaPipe Controls",
+          "text": "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence."
+        },
+        {
+          "header": "C) Instancing from Table",
+          "text": "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid."
+        },
+        {
+          "header": "D) Halftone & Transparency",
+          "text": "Halftone shaders and layered transparency emulate looking through a camera viewfinder."
+        }
+      ],
+      "colors": [
+        "#000000"
+      ]
+    },
+    {
+      "name": "lissajous curves",
+      "year": 2024,
+      "techStackPreview": "*/touchdesigner, python*/",
+      "tags": [
+        "touchdesigner",
+        "math",
+        "python",
+        "generative art",
+        "rendering",
+        "3d"
+      ],
+      "headshot": "/projects/lissajous-curves/headshot-img.avif",
+      "headshotGif": "/projects/lissajous-curves/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/lissajous-curves/content/1.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/4.avif"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/behance",
+          "alt": "Behance",
+          "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
+        },
+        {
+          "header": "B) Process",
+          "text": "<section>\n<h3>1. Setup and Initialization</h3>\n<p>\n    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n    <code>transform</code> positions and rotation based on the base name. During initialization,\n    the script extracts specific characters from the name of each base to determine its parameters.\n  </p>\n\n<h3>2. Curve Manipulation</h3>\n<p>\n    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n    position and rotation. For instance:\n    <pre><code>\n      BaseName = op('..').name\n      Name = list(BaseName)\n      NameLength = len(Name)\n      op('transform1').par.tx = Name[NameLength - 2]\n      op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5\n    </code></pre>\n    These values are dynamically applied, ensuring that each curve has a distinct placement and\n    rotation within the grid.\n  </p>\n\n</section>\n"
+        }
+      ],
+      "colors": [
+        "#790B0B"
+      ]
+    }
+  ],
+  "archive": [
+    {
+      "name": "text wave",
+      "year": 2024,
+      "techStackPreview": "*/react, webgl*/",
+      "tags": [
+        "react",
+        "typescript",
+        "react-three-fiber",
+        "drei",
+        "styled components"
+      ],
+      "headshot": "/projects/text-wave/headshot-img.avif",
+      "headshotGif": "/projects/text-wave/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/0.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/1.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/3.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/text-wave/content/4.mov"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/laprinia-www"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Animating text textures for my web apps using React Three Fiber. This project explores dynamic 3D text textures that can either auto-animate or respond to the cursor position, controlling the intensity of the animation in real-time."
+        },
+        {
+          "header": "B) Follows",
+          "text": "<ul>\n<li>React Three Fiber for rendering 3D scenes within React</li>\n<li>Drei addons, specifically <code>Plane</code>, for easier creation of textured planes</li>\n<li>Three.js for texture management and geometry manipulation</li>\n<li>Raleway font used for my text samples</li>\n</ul>\n"
+        },
+        {
+          "header": "C) Key Feats",
+          "text": "<ul>\n<li><h3>🌊 Wave Animation Based on Cursor</h3> The 3D text texture deforms dynamically based on cursor distance from the top left of the canvas. The animation's intensity scales with the cursor's proximity to the edges, achieved via custom shaders and vertex displacement.</li>\n<li><h3>🔄 Auto-Animation Mode</h3> Enables a continuous, smooth wave effect on the text texture without requiring user interaction. This mode can be toggled, using a parameter to control the animation speed.</li>\n<li><h3>📄 Texture Handling</h3> Efficiently loads and maps textures using <code>THREE.TextureLoader</code>, ensuring optimal aspect ratio scaling on different viewports.</li>\n<li><h3>💻 Real-Time Vertex Displacement</h3> The vertex positions are recalculated every frame to create a wave effect using a combination of sinusoidal functions. For instance:</li>\n<code>const waveX1 = 0.5 * Math.sin(vertex.x + time * 2);\nconst waveY1 = 0.25 * Math.sin(vertex.y * 2.5 + time * 2);\nvertex.z = targetIntensityRef.current * (waveX1 + waveY1);</code>\n</li>\n<li><h3>📐 Responsive Scaling</h3> Automatically adjusts the plane size to maintain texture quality across different screen sizes.</li>\n</ul>\n"
+        }
+      ],
+      "colors": [
+        "#01692B",
+        "#004392",
+        "#F17019"
+      ]
+    },
+    {
+      "name": "ghent bikes",
+      "year": 2024,
+      "techStackPreview": "*/react, next.js, figma*/",
+      "tags": [
+        "react",
+        "typescript",
+        "accessibility",
+        "next.js",
+        "figma",
+        "chakra ui",
+        "joi",
+        "winston",
+        "google maps"
+      ],
+      "headshot": "/projects/ghent-bikes/headshot-img.avif",
+      "headshotGif": "/projects/ghent-bikes/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/1.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/ghent-bikes/content/4.avif"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Web app that surfaces bike and parking stations in Ghent from the city's open data API. Each station shows capacity, live availability, a copyable name, and a Google Maps preview so riders can quickly decide where to park."
+        },
+        {
+          "header": "B) UI & Accessibility",
+          "text": "<ul>\n<li>Chakra UI provides semantic building blocks, theming, and responsive breakpoints with minimal custom CSS.</li>\n<li>Hidden helper text (e.g., <code>&lt;p hidden&gt;</code>) describes map previews for screen readers.</li>\n<li><code>as</code> props and rem-based sizing support better semantics and scalable typography.</li>\n<li>Axe is used during development to catch and fix accessibility issues early.</li>\n</ul>\n"
+        },
+        {
+          "header": "C) Problem & Data Source",
+          "text": "Using the Stad Gent open data catalog for bikes, I wanted to turn raw datasets into a practical city tool: clear lists of bike stations and parking spots that are easy to scan, compare, and locate on a map."
+        },
+        {
+          "header": "D) Architecture & Validation",
+          "text": "<ul>\n<li>Next.js API routes handle fetching and routing, with Joi schemas validating incoming responses from the Ghent endpoints.</li>\n<li>Winston is used for logging validation issues or unexpected data shapes.</li>\n<li>This setup keeps the API layer small and opinionated, ideal for a focused, dataset-driven app.</li>\n</ul>\n"
+        },
+        {
+          "header": "E) Queries & Endpoints",
+          "text": "<pre><code>Bike spots\nSELECT name, bikes_in_use, bikes_available, geopoint\nORDER BY name ASC\n\nPark spots\nSELECT name, description, type, categorie, totalcapacity, availablecapacity, occupation, isopennow\nWHERE (availablecapacity / totalcapacity * 100) &gt; 50 AND isopennow = 1\nORDER BY availablecapacity DESC\n</code></pre>\nThese structured queries are used to build the data.stad.gent URLs that power the bikes and parkings views.\n"
+        },
+        {
+          "header": "F) Routing & Data Fetching",
+          "text": "<ul>\n<li>/ - landing page with hero and links into the bikes and parkings flows.</li>\n<li>/bikes - shows the four Blue Bikes locations with capacity information.</li>\n<li>/parkings - lists parking spots with at least 50% availability.</li>\n<li>/parkings/[slug] - details view for a single parking, where the slug is generated from the fetched data.</li>\n<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n</ul>\n"
+        }
+      ],
+      "colors": [
+        "#0141D5",
+        "#42A5F5",
+        "#1B5E20"
+      ]
+    },
+    {
+      "name": "fullstack authentication",
+      "year": 2023,
+      "techStackPreview": "*/react, mongodb*/",
+      "tags": [
+        "react",
+        "typescript",
+        "glassmorphism",
+        "mantine",
+        "radix-ui",
+        "axios",
+        "unsplash api",
+        "bcrypt",
+        "mongoose",
+        "joi",
+        "jwt"
+      ],
+      "headshot": "/projects/fullstack-authentication/headshot-img.avif",
+      "headshotGif": "/projects/fullstack-authentication/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/1.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/fullstack-authentication/content/5.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/fullstack-authentication/content/6.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/fullstack-authentication/content/7.mp4"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/opea"
+        },
+        {
+          "imageSrc": "/socials/behance",
+          "alt": "Behance",
+          "link": "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
+        },
+        {
+          "header": "C) What It Solves",
+          "text": "<ul>\n<li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>\n<li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>\n<li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>\n</ul>\n"
+        },
+        {
+          "header": "D) Recipe",
+          "text": "<section>\n  <h3>Frontend:</h3>\n  <ul>\n    <li>Mantine for UI components</li>\n    <li>Radix UI icons</li>\n    <li>Axios for API calls</li>\n    <li>Unsplash API for dynamic backgrounds</li>\n  </ul>\n  <h3>Backend:</h3>\n  <ul>\n    <li>BCrypt for password hashing</li>\n    <li>Mongoose with TypeScript-enforced schemas</li>\n    <li>Joi for input validation</li>\n    <li>JWT for token-based auth</li>\n  </ul>\n</section>\n"
+        },
+        {
+          "header": "E) Glassmorphism",
+          "text": "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."
+        }
+      ],
+      "colors": [
+        "#FB6009",
+        "#2E2623",
+        "#ECE3E1",
+        "#040406"
+      ]
+    },
+    {
+      "name": "media pipe",
+      "year": 2025,
+      "techStackPreview": "*/touchdesigner*/",
+      "tags": [
+        "touchdesigner",
+        "mediapipe",
+        "instancing",
+        "image processing"
+      ],
+      "headshot": "/projects/media-pipe/headshot-img.avif",
+      "headshotGif": "/projects/media-pipe/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/media-pipe/content/1.mp4"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe."
+        },
+        {
+          "header": "B) MediaPipe Controls",
+          "text": "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence."
+        },
+        {
+          "header": "C) Instancing from Table",
+          "text": "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid."
+        },
+        {
+          "header": "D) Halftone & Transparency",
+          "text": "Halftone shaders and layered transparency emulate looking through a camera viewfinder."
+        }
+      ],
+      "colors": [
+        "#000000"
+      ]
+    },
+    {
+      "name": "lissajous curves",
+      "year": 2024,
+      "techStackPreview": "*/touchdesigner, python*/",
+      "tags": [
+        "touchdesigner",
+        "math",
+        "python",
+        "generative art",
+        "rendering",
+        "3d"
+      ],
+      "headshot": "/projects/lissajous-curves/headshot-img.avif",
+      "headshotGif": "/projects/lissajous-curves/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/lissajous-curves/content/1.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/4.avif"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/behance",
+          "alt": "Behance",
+          "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
+        },
+        {
+          "header": "B) Process",
+          "text": "<section>\n<h3>1. Setup and Initialization</h3>\n<p>\n    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n    <code>transform</code> positions and rotation based on the base name. During initialization,\n    the script extracts specific characters from the name of each base to determine its parameters.\n  </p>\n\n<h3>2. Curve Manipulation</h3>\n<p>\n    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n    position and rotation. For instance:\n    <pre><code>\n      BaseName = op('..').name\n      Name = list(BaseName)\n      NameLength = len(Name)\n      op('transform1').par.tx = Name[NameLength - 2]\n      op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5\n    </code></pre>\n    These values are dynamically applied, ensuring that each curve has a distinct placement and\n    rotation within the grid.\n  </p>\n\n</section>\n"
+        }
+      ],
+      "colors": [
+        "#790B0B"
+      ]
+    }
+  ]
 };

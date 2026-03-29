@@ -10,13 +10,16 @@ web:
   - tectonic
   - web-terrain-visualizer
 
-# 3d:
-#   - ray-tracer
-#   - volumetric-light
+3d:
+  - ray-tracer
+  - volumetric-light
 
-# playground:
-#   - text-wave
-#   - ghent-bikes
-#   - fullstack-authentication
-#   - media-pipe
-#   - lissajous-curves
+experimental:
+  - media-pipe
+  - lissajous-curves
+archive:
+  - text-wave
+  - ghent-bikes
+  - fullstack-authentication
+  - media-pipe
+  - lissajous-curves
