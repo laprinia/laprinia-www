@@ -4,19 +4,19 @@ branding & design:
   - veloura-brand-guide
   - mood-ring
   - personal-website-ux
-web:
-  - engie-chatgpt-widget
-  - kbc-bike-leasing
-  - tectonic
-  - web-3d-terrain-generator
+# web:
+#   - engie-chatgpt-widget
+#   - kbc-bike-leasing
+#   - tectonic
+#   - web-3d-terrain-generator
 
-3d:
-  - ray-tracer
-  - volumetric-light
+# 3d:
+#   - ray-tracer
+#   - volumetric-light
 
-playground:
-  - text-wave
-  - ghent-bikes
-  - fullstack-authentication
-  - media-pipe
-  - lissajous-curves
+# playground:
+#   - text-wave
+#   - ghent-bikes
+#   - fullstack-authentication
+#   - media-pipe
+#   - lissajous-curves

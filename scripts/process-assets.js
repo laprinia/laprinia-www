@@ -11,7 +11,7 @@ const HEADSHOT_MAX_PX = 700;
 const HEADSHOT_AVIF_QUALITY = 60;
 const HEADSHOT_WEBP_QUALITY = 60;
 
-const HEADSHOT_FFMPEG_WIDTH = 550;   
+const HEADSHOT_FFMPEG_WIDTH = 5500;   
 const HEADSHOT_FFMPEG_WEBP_Q = 80;  
 
 const CONTENT_MAX_WIDTH = 1200;
@@ -52,7 +52,6 @@ function copyDirectoryRecursive(src, dest) {
   }
 }
 
-// Safe write helper (avoids sharp overwrite crash)
 async function safeWrite(inputPath, outputPath, transform) {
   const isSameFile = inputPath === outputPath;
 
@@ -62,7 +61,7 @@ async function safeWrite(inputPath, outputPath, transform) {
     fs.renameSync(tempPath, outputPath);
   } else {
     await transform(inputPath, outputPath);
-    fs.unlinkSync(inputPath);
+    // fs.unlinkSync(inputPath);  <-- REMOVE this line
   }
 }
 
@@ -124,6 +123,7 @@ async function processHeadshots(projectDir) {
     .readdirSync(projectDir)
     .filter((f) => !fs.statSync(path.join(projectDir, f)).isDirectory());
 
+  // -------- STATIC THUMBNAIL (grayscale) --------
   const imgSource = entries.find((f) => {
     const ext = path.extname(f).toLowerCase();
     const name = path.basename(f, ext).toLowerCase();
@@ -131,19 +131,8 @@ async function processHeadshots(projectDir) {
   });
 
   const hasHeadshotAvif = entries.some(
-    (f) => f.toLowerCase() === "headshot-img.avif",
+    (f) => f.toLowerCase() === "headshot-img.avif"
   );
-
-  const animSource = entries.find((f) => {
-    const ext = path.extname(f).toLowerCase();
-    const name = path.basename(f, ext).toLowerCase();
-    return (
-      name === "headshot" &&
-      (VIDEO_EXTENSIONS.has(ext) || ext === ".gif")
-    );
-  });
-
-  // -------- STATIC --------
 
   if (imgSource) {
     const inputPath = path.join(projectDir, imgSource);
@@ -151,7 +140,7 @@ async function processHeadshots(projectDir) {
 
     await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
       await sharp(inPath)
-        .grayscale()
+        .grayscale() // ONLY here
         .resize({
           width: HEADSHOT_MAX_PX,
           height: HEADSHOT_MAX_PX,
@@ -163,42 +152,32 @@ async function processHeadshots(projectDir) {
     });
 
     console.log(`  ${imgSource} → headshot-img.avif`);
-  } else if (hasHeadshotAvif && REPROCESS_AVIF) {
-    const file = path.join(projectDir, "headshot-img.avif");
-
-    await safeWrite(file, file, async (inPath, outPath) => {
-      await sharp(inPath)
-        .grayscale()
-        .resize({
-          width: HEADSHOT_MAX_PX,
-          height: HEADSHOT_MAX_PX,
-          fit: "inside",
-          withoutEnlargement: true,
-        })
-        .avif({ quality: HEADSHOT_AVIF_QUALITY, effort: 7 })
-        .toFile(outPath);
-    });
-
-    console.log(`  REPROCESSED headshot-img.avif`);
   } else if (hasHeadshotAvif) {
     console.log(`  SKIP headshot-img.avif`);
   } else {
-    console.warn("  WARNING: No static headshot found");
+    console.warn("  WARNING: No static thumbnail (headshot-img) found");
   }
 
-  // -------- ANIMATED --------
+  // -------- ANIMATED OR COLORFUL FALLBACK --------
+  const animSource = entries.find((f) => {
+    const ext = path.extname(f).toLowerCase();
+    const name = path.basename(f, ext).toLowerCase();
+    return name === "headshot" && (VIDEO_EXTENSIONS.has(ext) || ext === ".gif");
+  });
+
+  const webpOutput = path.join(projectDir, "headshot.webp");
 
   if (animSource) {
+    // Video / GIF → generate animated webp
     const inputPath = path.join(projectDir, animSource);
     const ext = path.extname(animSource).toLowerCase();
-    const outputPath = path.join(projectDir, "headshot.webp");
 
     if (VIDEO_EXTENSIONS.has(ext)) {
       execFileSync("ffmpeg", [
         "-i",
         inputPath,
         "-vf",
-        `scale=${HEADSHOT_FFMPEG_WIDTH}:-1,fps=15`,
+        `scale=${HEADSHOT_FFMPEG_WIDTH}:-1:flags=lanczos,fps=24`,
         "-c:v",
         "libwebp",
         "-loop",
@@ -206,14 +185,16 @@ async function processHeadshots(projectDir) {
         "-quality",
         String(HEADSHOT_FFMPEG_WEBP_Q),
         "-compression_level",
-        "6",
+        "4",
+        "-preset",
+        "picture",
         "-y",
-        outputPath,
+        webpOutput,
       ]);
-
       fs.unlinkSync(inputPath);
+      console.log(`  ${animSource} → headshot.webp (animated video)`);
     } else {
-      await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
+      await safeWrite(inputPath, webpOutput, async (inPath, outPath) => {
         await sharp(inPath, { animated: true })
           .resize({
             width: HEADSHOT_MAX_PX,
@@ -224,11 +205,40 @@ async function processHeadshots(projectDir) {
           .webp({ quality: HEADSHOT_WEBP_QUALITY, effort: 6 })
           .toFile(outPath);
       });
+      console.log(`  ${animSource} → headshot.webp (animated GIF)`);
     }
-
-    console.log(`  ${animSource} → headshot.webp`);
   } else {
-    console.warn("  WARNING: No animated headshot found");
+    // 🔥 FALLBACK: use colorful static headshot.png
+    const fallbackSource = entries.find((f) => {
+      const ext = path.extname(f).toLowerCase();
+      const name = path.basename(f, ext).toLowerCase();
+      return name === "headshot" && IMAGE_EXTENSIONS.has(ext);
+    });
+
+    if (fallbackSource) {
+      const inputPath = path.join(projectDir, fallbackSource);
+
+      await sharp(inputPath)
+        .resize({
+          width: HEADSHOT_FFMPEG_WIDTH,
+          height: HEADSHOT_FFMPEG_WIDTH,
+          fit: "inside",
+          withoutEnlargement: true,
+        })
+        .webp({
+          quality: 60, // static, colorful
+          effort: 6,
+        })
+        .toFile(webpOutput);
+
+      console.log(
+        `  ${fallbackSource} → headshot.webp (static fallback, COLOR)`
+      );
+    } else {
+      console.warn(
+        "  WARNING: No animated OR fallback headshot found"
+      );
+    }
   }
 }
 

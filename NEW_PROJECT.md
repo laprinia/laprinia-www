@@ -18,7 +18,7 @@ npm run process:assets -- public/projects/my-project
 npm run upload:cloudinary -- public/projects/upload/my-project
 
 # 6. Remove local assets (served from CDN)
-rm -rf public/projects/my-project
+rm -rf public/upload/projects/my-project
 
 # 7. Generate TypeScript
 npm run generate:projects
