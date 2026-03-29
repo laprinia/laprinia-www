@@ -662,40 +662,40 @@ export const projects: ProjectCategories = {
         "mantine",
         "glsl-noise"
       ],
-      "headshot": "/projects/web-3d-terrain-generator/headshot-img.avif",
-      "headshotGif": "/projects/web-3d-terrain-generator/headshot.webp",
+      "headshot": "/projects/web-terrain-visualizer/headshot-img.avif",
+      "headshotGif": "/projects/web-terrain-visualizer/headshot.webp",
       "mediaContents": [
         {
           "type": "image",
-          "src": "/projects/web-3d-terrain-generator/content/1.avif"
+          "src": "/projects/web-terrain-visualizer/content/1.avif"
         },
         {
           "type": "video",
-          "src": "/projects/web-3d-terrain-generator/content/intro.mp4"
+          "src": "/projects/web-terrain-visualizer/content/intro.mp4"
         },
         {
           "type": "image",
-          "src": "/projects/web-3d-terrain-generator/content/2.avif"
+          "src": "/projects/web-terrain-visualizer/content/2.avif"
         },
         {
           "type": "image",
-          "src": "/projects/web-3d-terrain-generator/content/3.avif"
+          "src": "/projects/web-terrain-visualizer/content/3.avif"
         },
         {
           "type": "image",
-          "src": "/projects/web-3d-terrain-generator/content/4.avif"
+          "src": "/projects/web-terrain-visualizer/content/4.avif"
         },
         {
           "type": "image",
-          "src": "/projects/web-3d-terrain-generator/content/5.avif"
+          "src": "/projects/web-terrain-visualizer/content/5.avif"
         },
         {
           "type": "image",
-          "src": "/projects/web-3d-terrain-generator/content/6.avif"
+          "src": "/projects/web-terrain-visualizer/content/6.avif"
         },
         {
           "type": "video",
-          "src": "/projects/web-3d-terrain-generator/content/outro.mp4"
+          "src": "/projects/web-terrain-visualizer/content/outro.mp4"
         }
       ],
       "buttons": [

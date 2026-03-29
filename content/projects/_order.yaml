@@ -8,7 +8,7 @@ web:
   - engie-chatgpt-widget
   - kbc-bike-leasing
   - tectonic
-  - web-3d-terrain-generator
+  - web-terrain-visualizer
 
 # 3d:
 #   - ray-tracer
