@@ -432,19 +432,19 @@ export const projects: ProjectCategories = {
       "textContents": [
         {
           "header": "A) Goals",
-          "text": "I wanted a portfolio that feels like me, not a template 🙂‍↕️—clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
+          "text": "I wanted a portfolio that feels like me, not a template 🙂‍↕️, clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
         },
         {
           "header": "B) Problem",
-          "text": "Most portfolio patterns assume one rhythm: neat grids, similar tiles, everything flattened to the same kind of proof. My work doesn’t show up that way. Some ideas need motion or a screen recording before they make sense; others need the quiet of a wireframe or a layout study; sometimes depth and space matter; sometimes the honest artifact is a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story—and that could stay truthful as the mix of work I take on changes over time."
+          "text": "Most portfolio patterns assume one rhythm: similar tiles, similar areas of work, everything flattened to the same kind of proof. My work doesn’t look that way. Some ideas need motion or a screen recording before they make sense, whereas others need the quiet of a wireframe or a layout study, sometimes I need to show a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story, and that could stay truthful as the mix of work I take on changes over time."
         },
         {
           "header": "C) Process",
-          "text": "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role—not lock me into last year’s categories."
+          "text": "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role: not locking me into last year’s categories."
         },
         {
           "header": "D) Outcome",
-          "text": "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work—the <em>shape</em> of my process, not only a list of employers and tools. Clear enough for someone outside the field, still credible in a serious hiring or partner conversation. Simple enough that I wouldn’t mind walking a kid through it; the structure carries part of the explanation for me."
+          "text": "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work, the <em>shape</em> of my process."
         }
       ],
       "colors": [

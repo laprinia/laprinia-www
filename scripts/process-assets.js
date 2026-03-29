@@ -3,6 +3,22 @@ const path = require("path");
 const sharp = require("sharp");
 const { execFileSync } = require("child_process");
 
+// ================= CONFIG =================
+
+const REPROCESS_AVIF = true;
+
+const HEADSHOT_MAX_PX = 700;
+const HEADSHOT_AVIF_QUALITY = 60;
+const HEADSHOT_WEBP_QUALITY = 60;
+
+const HEADSHOT_FFMPEG_WIDTH = 550;   
+const HEADSHOT_FFMPEG_WEBP_Q = 80;  
+
+const CONTENT_MAX_WIDTH = 1200;
+const CONTENT_MAX_HEIGHT = 900;
+const CONTENT_AVIF_QUALITY = 75;
+const CONTENT_AVIF_EFFORT = 7;
+
 const IMAGE_EXTENSIONS = new Set([
   ".png",
   ".jpg",
@@ -10,8 +26,47 @@ const IMAGE_EXTENSIONS = new Set([
   ".tiff",
   ".bmp",
   ".webp",
+  ".avif",
 ]);
+
 const VIDEO_EXTENSIONS = new Set([".mp4", ".mov", ".webm"]);
+
+// ================= HELPERS =================
+
+function copyDirectoryRecursive(src, dest) {
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
+  }
+
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirectoryRecursive(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+// Safe write helper (avoids sharp overwrite crash)
+async function safeWrite(inputPath, outputPath, transform) {
+  const isSameFile = inputPath === outputPath;
+
+  if (isSameFile) {
+    const tempPath = outputPath.replace(/(\.\w+)$/, ".tmp$1");
+    await transform(inputPath, tempPath);
+    fs.renameSync(tempPath, outputPath);
+  } else {
+    await transform(inputPath, outputPath);
+    fs.unlinkSync(inputPath);
+  }
+}
+
+// ================= CONTENT =================
 
 async function convertContentToAvif(contentDir) {
   if (!fs.existsSync(contentDir)) {
@@ -20,43 +75,64 @@ async function convertContentToAvif(contentDir) {
   }
 
   const files = fs.readdirSync(contentDir);
+
   for (const file of files) {
     const ext = path.extname(file).toLowerCase();
     const baseName = path.basename(file, ext);
     const inputPath = path.join(contentDir, file);
 
-    if (ext === ".avif") {
-      console.log(`  SKIP (already AVIF) ${file}`);
-      continue;
-    }
     if (VIDEO_EXTENSIONS.has(ext)) {
       console.log(`  SKIP (video) ${file}`);
       continue;
     }
+
+    if (ext === ".avif" && !REPROCESS_AVIF) {
+      console.log(`  SKIP (already AVIF) ${file}`);
+      continue;
+    }
+
     if (!IMAGE_EXTENSIONS.has(ext)) {
       console.log(`  SKIP (unsupported) ${file}`);
       continue;
     }
 
     const outputPath = path.join(contentDir, `${baseName}.avif`);
-    await sharp(inputPath).avif({ quality: 80 }).toFile(outputPath);
-    fs.unlinkSync(inputPath);
+
+    await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
+      await sharp(inPath)
+        .resize({
+          width: CONTENT_MAX_WIDTH,
+          height: CONTENT_MAX_HEIGHT,
+          fit: "inside",
+          withoutEnlargement: true,
+        })
+        .avif({
+          quality: CONTENT_AVIF_QUALITY,
+          effort: CONTENT_AVIF_EFFORT,
+        })
+        .toFile(outPath);
+    });
+
     console.log(`  CONVERTED ${file} → ${baseName}.avif`);
   }
 }
+
+// ================= HEADSHOTS =================
 
 async function processHeadshots(projectDir) {
   const entries = fs
     .readdirSync(projectDir)
     .filter((f) => !fs.statSync(path.join(projectDir, f)).isDirectory());
 
-  const ALL_IMAGE_EXTENSIONS = new Set([...IMAGE_EXTENSIONS, ".gif"]);
-
   const imgSource = entries.find((f) => {
     const ext = path.extname(f).toLowerCase();
     const name = path.basename(f, ext).toLowerCase();
-    return name === "headshot-img" && ALL_IMAGE_EXTENSIONS.has(ext);
+    return name === "headshot-img" && IMAGE_EXTENSIONS.has(ext);
   });
+
+  const hasHeadshotAvif = entries.some(
+    (f) => f.toLowerCase() === "headshot-img.avif",
+  );
 
   const animSource = entries.find((f) => {
     const ext = path.extname(f).toLowerCase();
@@ -67,75 +143,139 @@ async function processHeadshots(projectDir) {
     );
   });
 
+  // -------- STATIC --------
+
   if (imgSource) {
     const inputPath = path.join(projectDir, imgSource);
-    const avifOutput = path.join(projectDir, "headshot-img.avif");
-    await sharp(inputPath).grayscale().avif({ quality: 80 }).toFile(avifOutput);
-    fs.unlinkSync(inputPath);
-    console.log(`  ${imgSource} → headshot-img.avif (B&W)`);
+    const outputPath = path.join(projectDir, "headshot-img.avif");
+
+    await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
+      await sharp(inPath)
+        .grayscale()
+        .resize({
+          width: HEADSHOT_MAX_PX,
+          height: HEADSHOT_MAX_PX,
+          fit: "inside",
+          withoutEnlargement: true,
+        })
+        .avif({ quality: HEADSHOT_AVIF_QUALITY, effort: 7 })
+        .toFile(outPath);
+    });
+
+    console.log(`  ${imgSource} → headshot-img.avif`);
+  } else if (hasHeadshotAvif && REPROCESS_AVIF) {
+    const file = path.join(projectDir, "headshot-img.avif");
+
+    await safeWrite(file, file, async (inPath, outPath) => {
+      await sharp(inPath)
+        .grayscale()
+        .resize({
+          width: HEADSHOT_MAX_PX,
+          height: HEADSHOT_MAX_PX,
+          fit: "inside",
+          withoutEnlargement: true,
+        })
+        .avif({ quality: HEADSHOT_AVIF_QUALITY, effort: 7 })
+        .toFile(outPath);
+    });
+
+    console.log(`  REPROCESSED headshot-img.avif`);
+  } else if (hasHeadshotAvif) {
+    console.log(`  SKIP headshot-img.avif`);
   } else {
-    console.warn(
-      "  WARNING: No static headshot found (expected headshot-img.{png,jpg,...})",
-    );
+    console.warn("  WARNING: No static headshot found");
   }
+
+  // -------- ANIMATED --------
 
   if (animSource) {
     const inputPath = path.join(projectDir, animSource);
     const ext = path.extname(animSource).toLowerCase();
-    const webpOutput = path.join(projectDir, "headshot.webp");
+    const outputPath = path.join(projectDir, "headshot.webp");
 
     if (VIDEO_EXTENSIONS.has(ext)) {
       execFileSync("ffmpeg", [
-        "-i", inputPath,
-        "-vf", "scale=480:-1,fps=15",
-        "-c:v", "libwebp",
-        "-loop", "0",
-        "-quality", "50",
-        "-compression_level", "6",
-        "-y", webpOutput,
+        "-i",
+        inputPath,
+        "-vf",
+        `scale=${HEADSHOT_FFMPEG_WIDTH}:-1,fps=15`,
+        "-c:v",
+        "libwebp",
+        "-loop",
+        "0",
+        "-quality",
+        String(HEADSHOT_FFMPEG_WEBP_Q),
+        "-compression_level",
+        "6",
+        "-y",
+        outputPath,
       ]);
-      console.log(`  ${animSource} → headshot.webp (B&W, compressed, animated)`);
+
+      fs.unlinkSync(inputPath);
     } else {
-      await sharp(inputPath, { animated: true })
-        .resize(480)
-        .webp({ quality: 50, effort: 6 })
-        .toFile(webpOutput);
-      console.log(`  ${animSource} → headshot.webp (B&W, compressed, animated)`);
+      await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
+        await sharp(inPath, { animated: true })
+          .resize({
+            width: HEADSHOT_MAX_PX,
+            height: HEADSHOT_MAX_PX,
+            fit: "inside",
+            withoutEnlargement: true,
+          })
+          .webp({ quality: HEADSHOT_WEBP_QUALITY, effort: 6 })
+          .toFile(outPath);
+      });
     }
-    fs.unlinkSync(inputPath);
+
+    console.log(`  ${animSource} → headshot.webp`);
   } else {
-    console.warn(
-      "  WARNING: No animated headshot found (expected headshot.{mov,mp4,gif})",
-    );
+    console.warn("  WARNING: No animated headshot found");
   }
 }
 
+// ================= MAIN =================
+
 async function main() {
   const folderArg = process.argv[2];
+
   if (!folderArg) {
-    console.error(
-      "Usage: node scripts/process-assets.js <path-to-project-folder>\n" +
-        "Example: node scripts/process-assets.js public/projects/my-project",
-    );
+    console.error("Usage: node script <project-folder>");
     process.exit(1);
   }
 
-  const projectDir = path.resolve(folderArg);
-  if (!fs.existsSync(projectDir) || !fs.statSync(projectDir).isDirectory()) {
-    console.error(`Not a valid directory: ${projectDir}`);
+  const originalDir = path.resolve(folderArg);
+
+  if (!fs.existsSync(originalDir) || !fs.statSync(originalDir).isDirectory()) {
+    console.error("Invalid directory");
     process.exit(1);
   }
 
-  const slug = path.basename(projectDir);
-  console.log(`\nProcessing assets for "${slug}"...\n`);
+  const parentDir = path.dirname(originalDir);
+  const slug = path.basename(originalDir);
 
-  console.log("1) Headshots (B&W conversion)");
-  await processHeadshots(projectDir);
+  const uploadRoot = path.join(parentDir, "upload");
+  const uploadDir = path.join(uploadRoot, slug);
 
-  console.log("\n2) Content assets (AVIF conversion)");
-  await convertContentToAvif(path.join(projectDir, "content"));
+  console.log(`\nPreparing upload folder...\n`);
 
-  console.log("\nDone!\n");
+  if (!fs.existsSync(uploadRoot)) {
+    fs.mkdirSync(uploadRoot);
+  }
+
+  if (fs.existsSync(uploadDir)) {
+    fs.rmSync(uploadDir, { recursive: true, force: true });
+  }
+
+  copyDirectoryRecursive(originalDir, uploadDir);
+
+  console.log(`Processing "${slug}" → upload/${slug}\n`);
+
+  console.log("1) Headshots");
+  await processHeadshots(uploadDir);
+
+  console.log("\n2) Content");
+  await convertContentToAvif(path.join(uploadDir, "content"));
+
+  console.log("\nDone ✅ Originals untouched.\n");
 }
 
 main().catch((err) => {

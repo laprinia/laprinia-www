@@ -15,7 +15,7 @@ npm run process:assets -- public/projects/my-project
 # 4. Add slug to content/projects/_order.yaml
 
 # 5. Upload to Cloudinary
-npm run upload:cloudinary -- public/projects/my-project
+npm run upload:cloudinary -- public/projects/upload/my-project
 
 # 6. Remove local assets (served from CDN)
 rm -rf public/projects/my-project

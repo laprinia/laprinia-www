@@ -41,10 +41,16 @@ function walkDir(dir) {
 }
 
 async function upload(filePath) {
-  const relativePath = path.relative(
+  let relativePath = path.relative(
     path.join(__dirname, "..", "public"),
     filePath,
   );
+  
+  // Normalize slashes first (important on Windows)
+  relativePath = relativePath.replace(/\\/g, "/");
+  
+  // Remove "upload/" only if it appears after "projects/"
+  relativePath = relativePath.replace(/^projects\/upload\//, "projects/");
   const ext = path.extname(filePath).toLowerCase();
   const publicId = relativePath
     .replace(/\.[^.]+$/, "")
