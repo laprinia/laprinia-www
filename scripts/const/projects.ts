@@ -31,7 +31,8 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  playground: Project[];
+  experimental: Project[];
+  archive: Project[];
 };
 
 export const projects: ProjectCategories = {
