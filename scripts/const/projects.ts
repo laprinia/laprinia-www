@@ -739,5 +739,7 @@ export const projects: ProjectCategories = {
         "#6BADE7"
       ]
     }
-  ]
+  ],
+  "3d": [],
+  playground: []
 };
