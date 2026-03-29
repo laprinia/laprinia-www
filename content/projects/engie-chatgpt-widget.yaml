@@ -17,8 +17,10 @@ colors:
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
-  - 1.mov
-  - 2.mov
+  - 1.avif
+  - 2.mp4
+  - 3.mp4
+  - 4.mp4
 buttons: []
 
 articles:

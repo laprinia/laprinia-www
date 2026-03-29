@@ -7,11 +7,11 @@ const { execFileSync } = require("child_process");
 
 const REPROCESS_AVIF = true;
 
-const HEADSHOT_MAX_PX = 700;
+const HEADSHOT_MAX_PX = 650;
 const HEADSHOT_AVIF_QUALITY = 60;
 const HEADSHOT_WEBP_QUALITY = 60;
 
-const HEADSHOT_FFMPEG_WIDTH = 5500;   
+const HEADSHOT_FFMPEG_WIDTH = 650;   
 const HEADSHOT_FFMPEG_WEBP_Q = 80;  
 
 const CONTENT_MAX_WIDTH = 1200;

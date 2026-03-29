@@ -29,9 +29,9 @@ export type Project = {
 
 export type ProjectCategories = {
   "branding & design": Project[];
-  // web: Project[];
-  // "3d": Project[];
-  // playground: Project[];
+  web: Project[];
+  "3d": Project[];
+  playground: Project[];
 };
 
 export const projects: ProjectCategories = {
@@ -453,5 +453,309 @@ export const projects: ProjectCategories = {
         "#49453D"
       ]
     }
-  ]
+  ],
+  "web": [
+    {
+      "name": "engie chatgpt widget",
+      "year": 2026,
+      "techStackPreview": "*/react, mcp, chatgpt sdk*/",
+      "tags": [
+        "react",
+        "mcp",
+        "chatgpt apps sdk",
+        "node.js",
+        "drizzle",
+        "vite",
+        "data visualization",
+        "design systems"
+      ],
+      "headshot": "/projects/engie-chatgpt-widget/headshot-img.avif",
+      "headshotGif": "/projects/engie-chatgpt-widget/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/engie-chatgpt-widget/content/1.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/2.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/3.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/4.mp4"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they'll pay more or less than expected, all through a conversational interface powered by a custom MCP server."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Engie customers often struggle to understand their energy usage patterns, whether their advance payment is set correctly, and what they can do to optimize costs. This information exists across multiple screens and requires manual interpretation, making it hard to act on."
+        },
+        {
+          "header": "C) User Flow",
+          "text": "A customer opens ChatGPT with the Engie app context, asks about their households, and immediately sees their data. They can request a consumption graph, filter it by date range, hover for details, and prompt the agent directly from the widget to analyze trends or suggest optimizations. For advance payments, the agent compares past usage against the contract and recommends an adjusted amount, flagging overpayment or underpayment before the next billing cycle."
+        },
+        {
+          "header": "D) Features",
+          "text": "Interactive consumption graph with month filtering and hover details. Two-way prompting: users can ask ChatGPT to analyze data directly from within the widget. Advance payment tools: view, edit, and get AI-suggested values based on actual consumption. Household management: view, update, and delete records, all reflected in the real database."
+        },
+        {
+          "header": "E) Design Approach",
+          "text": "The widgets follow Engie's design system (colors, typography, spacing) while adapting to ChatGPT's constrained viewport, where they need to feel native next to chat bubbles. Minimal chrome, clear data hierarchy, and familiar brand language so customers read the visualizations at a glance without leaving the conversation."
+        },
+        {
+          "header": "F) Impact",
+          "text": "After the internal demo, Engie reached out to present the project to their board. The exploration is now being considered for a future production implementation as a new customer-facing channel."
+        }
+      ],
+      "colors": [
+        "#05A8FD",
+        "#23A9A3",
+        "#004A46"
+      ]
+    },
+    {
+      "name": "kbc bike leasing",
+      "year": 2025,
+      "techStackPreview": "*/react, figma*/",
+      "tags": [
+        "react",
+        "typescript",
+        "figma",
+        "design systems",
+        "radix ui",
+        "tailwind css",
+        "accessibility",
+        "react hook form",
+        "zod"
+      ],
+      "headshot": "/projects/kbc-bike-leasing/headshot-img.avif",
+      "headshotGif": "/projects/kbc-bike-leasing/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/kbc-bike-leasing/content/1.mov"
+        },
+        {
+          "type": "image",
+          "src": "/projects/kbc-bike-leasing/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/kbc-bike-leasing/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/kbc-bike-leasing/content/4.avif"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, replacing a process that previously required calling a KBC employee."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Calculating bike leasing costs in Belgium depends on salary taxation rules, marital status, and commute details. Before this tool, customers had to call a KBC employee who would run the numbers in a spreadsheet. There was no self-service option."
+        },
+        {
+          "header": "C) Design System",
+          "text": "The Figma wireframes I inherited were static and didn't use components. I built a full component library from them: design tokens for KBC's brand colors, typography (MuseoSans), spacing, and radius; and component variants for inputs, buttons, radio groups, progress bars, and form states. Every component was created both in the Figma file and as a React component, giving KBC a reusable library for future projects."
+        },
+        {
+          "header": "D) User Flow",
+          "text": "A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left."
+        },
+        {
+          "header": "E) Accessibility & Interaction",
+          "text": "Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions, input focus states, and the progress bar make the flow feel responsive without distracting from the task."
+        },
+        {
+          "header": "F) Challenge",
+          "text": "The core complexity was modeling Belgian salary taxation rules correctly: how gross-to-net calculations shift based on marital status, tax brackets, and employer contributions. Getting this right was essential since the simulator replaces a manual expert calculation."
+        },
+        {
+          "header": "G) Impact",
+          "text": "Customers can now estimate their bike leasing cost independently, removing the need to call a KBC employee. The React component library built alongside the product serves as a reusable foundation for future KBC web projects."
+        }
+      ],
+      "colors": [
+        "#0074B8",
+        "#00263E",
+        "#00B8C9"
+      ]
+    },
+    {
+      "name": "tectonic",
+      "year": 2025,
+      "techStackPreview": "*/webflow, figma*/",
+      "tags": [
+        "webflow",
+        "figma",
+        "design engineering",
+        "design",
+        "glassmorphism"
+      ],
+      "headshot": "/projects/tectonic/headshot-img.avif",
+      "headshotGif": "/projects/tectonic/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/tectonic/content/1.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/tectonic/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/tectonic/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/tectonic/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/tectonic/content/5.avif"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "Tectonic Website",
+          "link": "https://www.tectonicconf.eu/program"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Design engineering work for In The Pocket on Tectonic, a major Belgian tech conference where industry experts share talks and panels."
+        },
+        {
+          "header": "B) Role & Collaboration",
+          "text": "As a Design Engineer, I collaborated with volunteers from Nexent and In The Pocket engineers to help bring the Webflow site to life, including key program and schedule sections."
+        },
+        {
+          "header": "C) Program Timeline",
+          "text": "Using data from the Webflow CMS, I designed and styled a flexible timeline component that can display multiple days and events across different stages, each on its own swimlane."
+        },
+        {
+          "header": "D) User Research",
+          "text": "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself. I also studied how attendees navigate a conference: needing to see which events run in parallel across stages, filtering by stage to narrow their view, and opening a details modal to get the full picture without leaving the schedule page."
+        },
+        {
+          "header": "E) Impact",
+          "text": "The component streamlined adding and updating events, crucial for a live conference where times and sessions change frequently, and the result was a huge success for the organizing team."
+        },
+        {
+          "header": "F) Visual Direction",
+          "text": "I followed Tectonic's futurist typography and color system, and introduced subtle glass-like effects on buttons and event cards to give the interface a polished, tech-forward feel."
+        }
+      ],
+      "colors": [
+        "#764ba2"
+      ]
+    },
+    {
+      "name": "web 3d terrain generator",
+      "year": 2022,
+      "techStackPreview": "*/react, webgl*/",
+      "tags": [
+        "react",
+        "typescript",
+        "react-three-fiber",
+        "drei",
+        "mantine",
+        "glsl-noise"
+      ],
+      "headshot": "/projects/web-3d-terrain-generator/headshot-img.avif",
+      "headshotGif": "/projects/web-3d-terrain-generator/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/web-3d-terrain-generator/content/1.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/web-3d-terrain-generator/content/intro.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/web-3d-terrain-generator/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/web-3d-terrain-generator/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/web-3d-terrain-generator/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/web-3d-terrain-generator/content/5.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/web-3d-terrain-generator/content/6.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/web-3d-terrain-generator/content/outro.mp4"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/phea"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A browser-based 3D terrain editor that lets you sculpt, tweak, and visualize procedural landscapes in real time, bringing the creative loop of 3D generation directly into the web."
+        },
+        {
+          "header": "B) Recipe",
+          "text": "<ul>\n<li>React Three Fiber as a React renderer for Three.js</li>\n<li>Drei addons for camera, lighting, and helpers</li>\n<li>GLSL Noise for Simplex noise generation</li>\n<li>Mantine for the editor UI</li>\n</ul>\n"
+        },
+        {
+          "header": "C) Real-Time Feedback Loop",
+          "text": "Every parameter change, noise scale, octaves, terracing, instantly regenerates the terrain, so the creative process feels like direct manipulation rather than a build-and-wait cycle."
+        },
+        {
+          "header": "D) Layered Control",
+          "text": "<ul>\n<li><h3>🧊 Shape</h3> Marching cubes turn a volume of density values into a visible mesh, giving full control over how terrain surfaces emerge.</li>\n<li><h3>📼 Noise</h3> Simplex noise drives height variation with tunable octaves, persistence, and detail, small tweaks produce dramatically different landscapes.</li>\n<li><h3>🏔️ Terracing</h3> Clamping height into discrete levels carves plateaus and cliff faces, adding structure to organic forms.</li>\n<li><h3>🌈 Color Mapping</h3> A gradient texture maps elevation to color, so visual identity shifts as the terrain evolves.</li>\n</ul>\n"
+        },
+        {
+          "header": "E) Visual Polish",
+          "text": "<ul>\n<li><h3>🍄 Smoothing</h3> Softens the low-poly facets into a more organic surface without losing the procedural character.</li>\n<li><h3>✨ Post-Processing</h3> Tilt-shift, bloom, noise grain, and brightness/contrast turn the raw mesh into something that feels cinematic.</li>\n<li><h3>🏊 Ambient Motion</h3> A gentle float and slow rotation keep the terrain alive even when idle, inviting exploration.</li>\n</ul>\n"
+        },
+        {
+          "header": "F) Editor UI",
+          "text": "The control panel exposes every generation parameter in a clear, grouped layout, gradient, marching cubes, so users can experiment freely."
+        }
+      ],
+      "colors": [
+        "#0C1210",
+        "#1D4636",
+        "#2C5C64",
+        "#99ABB7",
+        "#6BADE7"
+      ]
+    }
+  ],
+  "3d": [],
+  playground: []
 };
