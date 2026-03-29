@@ -605,24 +605,12 @@ export const projects: ProjectCategories = {
       "headshotGif": "/projects/tectonic/headshot.webp",
       "mediaContents": [
         {
+          "type": "image",
+          "src": "/projects/tectonic/content/1.avif"
+        },
+        {
           "type": "video",
-          "src": "/projects/tectonic/content/1.mp4"
-        },
-        {
-          "type": "image",
-          "src": "/projects/tectonic/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/tectonic/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/tectonic/content/4.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/tectonic/content/5.avif"
+          "src": "/projects/tectonic/content/2.mp4"
         }
       ],
       "buttons": [
@@ -751,7 +739,5 @@ export const projects: ProjectCategories = {
         "#6BADE7"
       ]
     }
-  ],
-  "3d": [],
-  playground: []
+  ]
 };

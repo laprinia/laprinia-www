@@ -12,11 +12,8 @@ colors:
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
-  - 1.mp4
-  - 2.avif
-  - 3.avif
-  - 4.avif
-  - 5.avif
+  - 1.avif
+  - 2.mp4
 buttons:
   - alt: Tectonic Website
     imageSrc: /socials/web
