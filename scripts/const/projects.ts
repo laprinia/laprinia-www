@@ -391,11 +391,12 @@ export const projects: ProjectCategories = {
       "year": 2024,
       "techStackPreview": "*/figma, adobe*/",
       "tags": [
+        "ux",
+        "interaction design",
+        "3d",
         "figma",
-        "adobe fonts",
-        "adobe photoshop",
-        "adobe rush",
-        "responsive design"
+        "responsive design",
+        "affinity designer"
       ],
       "headshot": "/projects/personal-website-ux/headshot-img.avif",
       "headshotGif": "/projects/personal-website-ux/headshot.webp",
@@ -413,47 +414,43 @@ export const projects: ProjectCategories = {
           "src": "/projects/personal-website-ux/content/3.avif"
         },
         {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/4.avif"
+          "type": "video",
+          "src": "/projects/personal-website-ux/content/4.mp4"
         },
         {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/5.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/6.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/7.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/8.avif"
+          "type": "video",
+          "src": "/projects/personal-website-ux/content/5.mp4"
         }
       ],
       "buttons": [
         {
           "imageSrc": "/socials/github",
           "alt": "GitHub",
-          "link": "hhttps://github.com/laprinia/laprinia-www"
+          "link": "https://github.com/laprinia/laprinia-www"
         }
       ],
       "textContents": [
         {
           "header": "A) Goals",
-          "text": "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer 🙂‍↕️. The site serves as a portfolio to showcase my projects in a fun and engaging. Iwanted to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic."
+          "text": "I wanted a portfolio that feels like me, not a template 🙂‍↕️—clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
         },
         {
-          "header": "B) Process & Solution",
-          "text": "<ul>\n<li><h3>🔍 Research & Planning</h3> I began by identifying the key sections of the website: a Landing Page for a quick introduction, a Portfolio Overview for an at-a-glance view of all projects, Individual Project Pages for detailed insights, and an About Page for personal background and contact information.</li>\n<li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures. Adobe Rush was used to create short, impactful videos for my project showcases.</li>\n<li><h3>🎨 Visual Design & Accessibility</h3> The color palette was chosen to balance a clean look with bold accents: a soft background color (#F6F6F6) paired with striking blue tones (#0141D5, #0136af, #002986). These colors were applied thoughtfully to maintain accessibility and contrast ratios. Typography breakpoints were defined for XL desktops, desktops, tablets, and phones, ensuring readability across all devices.</li>\n<li><h3>💻 Development & Implementation</h3> Leveraged Next.js for SEO optimization and fast page loading. Used React with TypeScript for type safety and component reusability. Integrated react-three-fiber for dynamic 3D text animations, bringing the site to life, and Framer Motion for smooth transitions and micro-interactions. Focused on a mobile-first responsive design that adapts seamlessly from small screens to large desktops, offering unique perspectives for different devices.</li>\n<li><h3>🖼️ Content Structure & Navigation</h3> The content was structured to allow easy navigation: the Landing Page offers a clear introduction, while the Portfolio section provides a snapshot of each project. Individual Project Pages delve into technologies used, code snippets, and include a mixed-media carousel of images and videos. The About Page connects visitors to my background and personal interests.</li>\n</ul>\n"
+          "header": "B) Problem",
+          "text": "Most portfolio patterns assume one rhythm: neat grids, similar tiles, everything flattened to the same kind of proof. My work doesn’t show up that way. Some ideas need motion or a screen recording before they make sense; others need the quiet of a wireframe or a layout study; sometimes depth and space matter; sometimes the honest artifact is a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story—and that could stay truthful as the mix of work I take on changes over time."
+        },
+        {
+          "header": "C) Process",
+          "text": "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role—not lock me into last year’s categories."
+        },
+        {
+          "header": "D) Outcome",
+          "text": "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work—the <em>shape</em> of my process, not only a list of employers and tools. Clear enough for someone outside the field, still credible in a serious hiring or partner conversation. Simple enough that I wouldn’t mind walking a kid through it; the structure carries part of the explanation for me."
         }
       ],
       "colors": [
         "#0141D5",
-        "#F6F6F6",
-        "#000000"
+        "#F5F4F1",
+        "#49453D"
       ]
     }
   ],

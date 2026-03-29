@@ -2,40 +2,36 @@ name: personal website ux
 year: 2024
 techStackPreview: "*/figma, adobe*/"
 tags:
+  - ux
+  - interaction design
+  - 3d
   - figma
-  - adobe fonts
-  - adobe photoshop
-  - adobe rush
   - responsive design
+  - affinity designer
+
 colors:
   - "#0141D5"
-  - "#F6F6F6"
-  - "#000000"
+  - "#F5F4F1"
+  - "#49453D"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
   - 1.avif
   - 2.avif
   - 3.avif
-  - 4.avif
-  - 5.avif
-  - 6.avif
-  - 7.avif
-  - 8.avif
+  - 4.mp4
+  - 5.mp4
 buttons:
   - alt: GitHub
     imageSrc: /socials/github
-    link: "hhttps://github.com/laprinia/laprinia-www"
+    link: "https://github.com/laprinia/laprinia-www"
 
 articles:
   - header: "A) Goals"
-    text: "The primary goal of this personal website was to craft an engaging user experience that reflects my journey as a UX designer and web developer \U0001F642\u200D\u2195\uFE0F. The site serves as a portfolio to showcase my projects in a fun and engaging. Iwanted to create a responsive, user-friendly interface that highlights my skills, creativity, and technical expertise. By drawing inspiration from the structured, ordered design of old dictionaries, I aimed to establish a clear hierarchy and clean aesthetic."
-  - header: "B) Process & Solution"
-    text: |
-      <ul>
-      <li><h3>🔍 Research & Planning</h3> I began by identifying the key sections of the website: a Landing Page for a quick introduction, a Portfolio Overview for an at-a-glance view of all projects, Individual Project Pages for detailed insights, and an About Page for personal background and contact information.</li>
-      <li><h3>🖌️ Design & Prototyping</h3> Using Figma, I designed wireframes and high-fidelity mockups to visualize the site layout and interactions. I selected Adobe Fonts, specifically Raleway, for its minimalist and elegant appearance. I also utilized Adobe Photoshop for crafting mockup images and applying text textures. Adobe Rush was used to create short, impactful videos for my project showcases.</li>
-      <li><h3>🎨 Visual Design & Accessibility</h3> The color palette was chosen to balance a clean look with bold accents: a soft background color (#F6F6F6) paired with striking blue tones (#0141D5, #0136af, #002986). These colors were applied thoughtfully to maintain accessibility and contrast ratios. Typography breakpoints were defined for XL desktops, desktops, tablets, and phones, ensuring readability across all devices.</li>
-      <li><h3>💻 Development & Implementation</h3> Leveraged Next.js for SEO optimization and fast page loading. Used React with TypeScript for type safety and component reusability. Integrated react-three-fiber for dynamic 3D text animations, bringing the site to life, and Framer Motion for smooth transitions and micro-interactions. Focused on a mobile-first responsive design that adapts seamlessly from small screens to large desktops, offering unique perspectives for different devices.</li>
-      <li><h3>🖼️ Content Structure & Navigation</h3> The content was structured to allow easy navigation: the Landing Page offers a clear introduction, while the Portfolio section provides a snapshot of each project. Individual Project Pages delve into technologies used, code snippets, and include a mixed-media carousel of images and videos. The About Page connects visitors to my background and personal interests.</li>
-      </ul>
+    text: "I wanted a portfolio that feels like me, not a template \U0001F642\u200D\u2195\uFE0F, clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
+  - header: "B) Problem"
+    text: "Most portfolio patterns assume one rhythm: similar tiles, similar areas of work, everything flattened to the same kind of proof. My work doesn’t look that way. Some ideas need motion or a screen recording before they make sense, whereas others need the quiet of a wireframe or a layout study, sometimes I need to show a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story, and that could stay truthful as the mix of work I take on changes over time."
+  - header: "C) Process"
+    text: "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role: not locking me into last year’s categories."
+  - header: "D) Outcome"
+    text: "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work, the <em>shape</em> of my process.
