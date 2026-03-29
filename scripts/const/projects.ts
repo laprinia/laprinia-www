@@ -33,6 +33,7 @@ export type ProjectCategories = {
   "3d": Project[];
   experimental: Project[];
   archive: Project[];
+
 };
 
 export const projects: ProjectCategories = {
@@ -1228,100 +1229,6 @@ export const projects: ProjectCategories = {
         "#2E2623",
         "#ECE3E1",
         "#040406"
-      ]
-    },
-    {
-      "name": "media pipe",
-      "year": 2025,
-      "techStackPreview": "*/touchdesigner*/",
-      "tags": [
-        "touchdesigner",
-        "mediapipe",
-        "instancing",
-        "image processing"
-      ],
-      "headshot": "/projects/media-pipe/headshot-img.avif",
-      "headshotGif": "/projects/media-pipe/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/media-pipe/content/1.mp4"
-        }
-      ],
-      "buttons": [],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe."
-        },
-        {
-          "header": "B) MediaPipe Controls",
-          "text": "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence."
-        },
-        {
-          "header": "C) Instancing from Table",
-          "text": "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid."
-        },
-        {
-          "header": "D) Halftone & Transparency",
-          "text": "Halftone shaders and layered transparency emulate looking through a camera viewfinder."
-        }
-      ],
-      "colors": [
-        "#000000"
-      ]
-    },
-    {
-      "name": "lissajous curves",
-      "year": 2024,
-      "techStackPreview": "*/touchdesigner, python*/",
-      "tags": [
-        "touchdesigner",
-        "math",
-        "python",
-        "generative art",
-        "rendering",
-        "3d"
-      ],
-      "headshot": "/projects/lissajous-curves/headshot-img.avif",
-      "headshotGif": "/projects/lissajous-curves/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/lissajous-curves/content/1.mp4"
-        },
-        {
-          "type": "image",
-          "src": "/projects/lissajous-curves/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/lissajous-curves/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/lissajous-curves/content/4.avif"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/socials/behance",
-          "alt": "Behance",
-          "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
-        },
-        {
-          "header": "B) Process",
-          "text": "<section>\n<h3>1. Setup and Initialization</h3>\n<p>\n    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n    <code>transform</code> positions and rotation based on the base name. During initialization,\n    the script extracts specific characters from the name of each base to determine its parameters.\n  </p>\n\n<h3>2. Curve Manipulation</h3>\n<p>\n    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n    position and rotation. For instance:\n    <pre><code>\n      BaseName = op('..').name\n      Name = list(BaseName)\n      NameLength = len(Name)\n      op('transform1').par.tx = Name[NameLength - 2]\n      op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5\n    </code></pre>\n    These values are dynamically applied, ensuring that each curve has a distinct placement and\n    rotation within the grid.\n  </p>\n\n</section>\n"
-        }
-      ],
-      "colors": [
-        "#790B0B"
       ]
     }
   ]
