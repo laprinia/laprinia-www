@@ -541,20 +541,16 @@ export const projects: ProjectCategories = {
       "headshotGif": "/projects/kbc-bike-leasing/headshot.webp",
       "mediaContents": [
         {
-          "type": "video",
-          "src": "/projects/kbc-bike-leasing/content/1.mov"
+          "type": "image",
+          "src": "/projects/kbc-bike-leasing/content/1.avif"
         },
         {
           "type": "image",
           "src": "/projects/kbc-bike-leasing/content/2.avif"
         },
         {
-          "type": "image",
-          "src": "/projects/kbc-bike-leasing/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/kbc-bike-leasing/content/4.avif"
+          "type": "video",
+          "src": "/projects/kbc-bike-leasing/content/3.mp4"
         }
       ],
       "buttons": [],
