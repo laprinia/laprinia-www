@@ -31,13 +31,91 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  experimental: Project[];
-  archive: Project[];
-
+  playground: Project[];
 };
 
 export const projects: ProjectCategories = {
   "branding & design": [
+    {
+      "name": "eumar redesign",
+      "year": 2026,
+      "techStackPreview": "*/figma, react*/",
+      "tags": [
+        "product design",
+        "user research",
+        "user journeys",
+        "figma",
+        "design systems",
+        "data visualization",
+        "accessibility",
+        "enterprise ux",
+        "prototyping"
+      ],
+      "headshot": "/projects/eumar-redesign/headshot-img.avif",
+      "headshotGif": "/projects/eumar-redesign/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/eumar-redesign/content/1.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/eumar-redesign/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/eumar-redesign/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/eumar-redesign/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/eumar-redesign/content/5.avif"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "EuMAR website",
+          "link": "https://www.eshre.eu/Data-collection-and-research/EuMAR/For-professionals"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "EuMAR is a pan-European platform led by ESHRE and financed by the EU, designed to support fertility clinics by providing a shared record of medically assisted reproduction (MAR) treatments and outcomes. The product connects multiple actors: system admins, national registries, and clinic staff—into one unified system while enforcing strict access control and governance."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Fertility treatment data across Europe is fragmented across clinics and national systems, with no unified structure for oversight or research. The challenge was to design a system that centralizes data, respects role-based permissions, and remains efficient for daily use."
+        },
+        {
+          "header": "C) Users & Research",
+          "text": "Discovery identified three primary user groups: system admins, national registries, and clinic staff. Interviews clarified their needs: admins require a cross-country overview and configuration control; registries focus on national-level insights and oversight; clinic staff manage detailed patient and treatment data over time."
+        },
+        {
+          "header": "D) User Journeys",
+          "text": "The prototype emphasizes the system admin journey: the role that enables the entire ecosystem. Key flows include onboarding users, configuring countries and registries, and managing centers."
+        },
+        {
+          "header": "E) Navigation & Product Structure",
+          "text": "The interface is built around a stable application shell with a sidebar, main content area, and account controls. Navigation reflects the system’s hierarchy: users, centers, registries, and reporting. Data-heavy screens use consistent table patterns with search, sorting, pagination, and action columns, making complex datasets easy to scan and manage."
+        },
+        {
+          "header": "F) Design System",
+          "text": "A token-based design system ensures consistency across the platform, including typography, spacing, and color. Components such as tables, toolbars, and forms are designed for scalability."
+        },
+        {
+          "header": "G) Key Design Decisions",
+          "text": "Role-based editing was central: system admins can configure users and structures but cannot modify clinical data, which remains under clinic control. The UI balances density with clarity, using structured layouts and predictable interaction patterns. Consistency across navigation, layout, and components reinforces trust in a complex, data-heavy environment."
+        }
+      ],
+      "colors": [
+        "#036CA8"
+      ]
+    },
     {
       "name": "ai playbooks",
       "year": 2026,
