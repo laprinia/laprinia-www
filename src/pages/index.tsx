@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { footerHeroPath, headerHeroPath, mobileHeroPath } from "../consts";
+import { mobileHeroPath } from "../consts";
 import NoWebGL from "../components/templates/NoWebGL/NoWebGL";
 import dynamic from "next/dynamic";
 
@@ -51,10 +51,7 @@ const Home = () => {
     isMobile ? (
       <MobileHome mobileHeroPath={mobileHeroPath} />
     ) : (
-      <DesktopHome
-        headerHeroPath={headerHeroPath}
-        footerHeroPath={footerHeroPath}
-      />
+      <DesktopHome />
     )
   ) : (
     <NoWebGL />

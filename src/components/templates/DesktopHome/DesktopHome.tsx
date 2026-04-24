@@ -1,10 +1,6 @@
-import { Canvas } from "@react-three/fiber";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import StillTexture from "../../molecules/Texture/StillTexture";
 import HomeNavBar from "../../organisms/HomeNavBar/HomeNavBar";
-import { landingName, landingPageIntroduction } from "../../../consts";
-import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
-import { useEffect, useState } from "react";
+import { landingName, landingPageIntroduction, landingTitle } from "../../../consts";
 import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
 import { HorseCanvas } from "./HorseCanvas";
 import {
@@ -12,61 +8,19 @@ import {
   TopAlignedBox,
   BottomAlignedBox,
   BottomAlignedBoxContent,
-  CanvasSection,
   CenterCanvasSection,
 } from "./DesktopHome.styles";
 
-const DesktopHome = ({
-  headerHeroPath,
-  footerHeroPath,
-}: {
-  headerHeroPath: string;
-  footerHeroPath: string;
-}) => {
-  const [isTablet, setIsTablet] = useState(false);
-
-  useEffect(() => {
-    const debounce = (func: Function, delay: number) => {
-      let timer: NodeJS.Timeout;
-      return (...args: any[]) => {
-        clearTimeout(timer);
-        timer = setTimeout(() => func(...args), delay);
-      };
-    };
-
-    const handleResize = debounce(() => {
-      setIsTablet(window.innerWidth <= 1023);
-    }, 100);
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+const DesktopHome = () => {
   return (
     <DesktopContainer>
       <CenterCanvasSection aria-hidden data-cursor-text="drag!">
         <HorseCanvas />
       </CenterCanvasSection>
 
-      <TopAlignedBox align="left" aria-labelledby="name">
-        <VisuallyHidden.Root asChild>
-          <p id="name">{landingName}</p>
-        </VisuallyHidden.Root>
-        <header
-          aria-labelledby="name"
-          style={{ width: "100%", height: "100%" }}
-        >
-          <CanvasSection>
-            <Canvas
-              resize={{ debounce: { scroll: 50, resize: 50 } }}
-              gl={{ antialias: true }}
-              style={{ width: "100%", height: "100%" }}
-              camera={{ position: [0, 0, 5] }}
-            >
-              <ambientLight />
-              <StillTexture texturePath={headerHeroPath} />
-            </Canvas>
-          </CanvasSection>
+      <TopAlignedBox align="left">
+        <header aria-label={landingName} style={{ width: "100%", height: "100%" }}>
+          <p style={{ fontFamily: "var(--font-heading)" }}>{landingName.toUpperCase()}</p>
         </header>
       </TopAlignedBox>
 
@@ -87,27 +41,11 @@ const DesktopHome = ({
       </BottomAlignedBox>
 
       <BottomAlignedBox align="right">
-        <VisuallyHidden.Root asChild>
-          <p id="title">Web Developer</p>
-        </VisuallyHidden.Root>
         <footer
-          aria-labelledby="job-title"
-          style={{ width: "100%", height: "100%" }}
+          aria-label={landingTitle}
+          style={{ width: "100%", height: "100%", display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}
         >
-          <CanvasSection>
-            <Canvas
-              gl={{ antialias: true }}
-              style={{ width: "100%", height: "100%" }}
-              camera={{ position: [0, 0, 5] }}
-            >
-              <ambientLight />
-              <CursorWaveTexture
-                texturePath={footerHeroPath}
-                isAutoAnimated={isTablet}
-                animationSpeed={0.4}
-              />
-            </Canvas>
-          </CanvasSection>
+          <p style={{ fontFamily: "var(--font-heading)" }}>{landingTitle.toUpperCase()}</p>
         </footer>
       </BottomAlignedBox>
     </DesktopContainer>

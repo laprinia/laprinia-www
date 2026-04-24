@@ -46,7 +46,7 @@ export const TopAlignedBox = styled(Box)<{ align: string }>`
   p {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 5rem;
   }
 
   nav {
@@ -90,6 +90,10 @@ export const BottomAlignedBox = styled(Box)<{ align: string }>`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  footer > p {
+    font-size: 5rem;
+    font-weight: var(--font-weight-light);
+  }
 `;
 
 export const BottomAlignedBoxContent = styled.section`

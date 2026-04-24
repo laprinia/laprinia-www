@@ -6,15 +6,12 @@ export const navItems = [
 
 export const mobileHeroPath = "/mobile.avif";
 
-export const footerHeroPath = "/title.avif";
-
-export const headerHeroPath = "/name.avif";
-
 export const notFoundPath = "/notfound.avif";
 
 export const somethingWentWrongPath = "/somethingwrong.avif";
 
 export const landingName = "Lavinia Dumitrenco";
+export const landingTitle = "Design Engineer";
 export const landingPageIntroduction =
   "I'm Lavinia, a Design Engineer based in Bucharest RO.";
 
