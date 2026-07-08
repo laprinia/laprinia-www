@@ -97,7 +97,8 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  playground: Project[];
+  "experimental": Project[];
+  archive: Project[];
 };`;
 
 const output = `// Auto-generated from content/projects/*.yaml
