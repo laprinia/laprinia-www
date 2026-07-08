@@ -21,7 +21,10 @@ media:
   - 1.avif
   - 2.avif
   - 3.mp4
-buttons: []
+buttons: 
+  - alt: KBC Bike Leasing Simulator
+    imageSrc: /socials/web
+    link: https://leasebikecalculator.kbc.be/
 
 articles:
   - header: "A) About"
