@@ -31,8 +31,7 @@ export type ProjectCategories = {
   "branding & design": Project[];
   web: Project[];
   "3d": Project[];
-  experimental: Project[];
-  archive: Project[];
+  playground: Project[];
 };
 
 export const projects: ProjectCategories = {
@@ -634,7 +633,13 @@ export const projects: ProjectCategories = {
           "src": "/projects/kbc-bike-leasing/content/3.mp4"
         }
       ],
-      "buttons": [],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "KBC Bike Leasing Simulator",
+          "link": "https://leasebikecalculator.kbc.be/"
+        }
+      ],
       "textContents": [
         {
           "header": "A) About",
