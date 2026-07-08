@@ -173,26 +173,63 @@ async function processHeadshots(projectDir) {
     const ext = path.extname(animSource).toLowerCase();
 
     if (VIDEO_EXTENSIONS.has(ext)) {
-      execFileSync("ffmpeg", [
-        "-i",
-        inputPath,
-        "-vf",
-        `scale=${HEADSHOT_FFMPEG_WIDTH}:-1:flags=lanczos,fps=24`,
-        "-c:v",
-        "libwebp",
-        "-loop",
-        "0",
-        "-quality",
-        String(HEADSHOT_FFMPEG_WEBP_Q),
-        "-compression_level",
-        "4",
-        "-preset",
-        "picture",
-        "-y",
-        webpOutput,
-      ]);
-      fs.unlinkSync(inputPath);
-      console.log(`  ${animSource} → headshot.webp (animated video)`);
+      try {
+        execFileSync("ffmpeg", [
+          "-i",
+          inputPath,
+          "-vf",
+          `scale=${HEADSHOT_FFMPEG_WIDTH}:-1:flags=lanczos,fps=24`,
+          "-c:v",
+          "libwebp",
+          "-loop",
+          "0",
+          "-quality",
+          String(HEADSHOT_FFMPEG_WEBP_Q),
+          "-compression_level",
+          "4",
+          "-preset",
+          "picture",
+          "-y",
+          webpOutput,
+        ]);
+        fs.unlinkSync(inputPath);
+        console.log(`  ${animSource} → headshot.webp (animated video)`);
+      } catch (err) {
+        console.warn(
+          `  WARNING: Animated WebP conversion failed for ${animSource}. Falling back to a static WebP thumbnail.`,
+        );
+        const framePath = path.join(projectDir, "headshot-frame.png");
+        try {
+          execFileSync("ffmpeg", [
+            "-i",
+            inputPath,
+            "-ss",
+            "00:00:00",
+            "-frames:v",
+            "1",
+            "-update",
+            "1",
+            "-y",
+            framePath,
+          ]);
+          await sharp(framePath)
+            .resize({
+              width: HEADSHOT_MAX_PX,
+              height: HEADSHOT_MAX_PX,
+              fit: "inside",
+              withoutEnlargement: true,
+            })
+            .webp({ quality: HEADSHOT_WEBP_QUALITY, effort: 6 })
+            .toFile(webpOutput);
+          fs.unlinkSync(framePath);
+          console.log(`  ${animSource} → headshot.webp (static fallback)`);
+        } catch (fallbackErr) {
+          console.error(
+            `  ERROR: Fallback static thumbnail failed for ${animSource}: ${fallbackErr.message}`,
+          );
+          throw err;
+        }
+      }
     } else {
       await safeWrite(inputPath, webpOutput, async (inPath, outPath) => {
         await sharp(inPath, { animated: true })

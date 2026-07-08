@@ -1,0 +1,57 @@
+name: noc-monitoring
+
+year: 2026
+
+techStackPreview: "*/figma, figma make*/"
+
+tags:
+  - product design
+  - ux strategy
+  - user flows
+  - dashboard design
+  - data visualization
+  - enterprise ux
+  - design systems
+  - prototyping
+
+colors:
+  - "#3B82F6"
+  - "#1E293B"
+  - "#334155"
+  - "#64748B"
+
+headshot: headshot-img.avif
+
+headshotGif: headshot.webp
+
+media:
+  - 1.mp4
+  - 2.avif
+  - 3.avif
+  - 4.avif
+  - 5.avif
+  - 6.avif
+
+buttons: []
+
+articles:
+  - header: "A) About"
+    text: "A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments."
+
+  - header: "B) Problem"
+    text: "The existing experience exposed large amounts of operational data but lacked a clear information hierarchy, making it harder to identify critical issues at a glance. The challenge was balancing information density with fast decision making while supporting monitoring of up to twelve units simultaneously."
+
+  - header: "C) Product Discovery"
+    text: "I began by defining the primary administrator goal and breaking it into three key workflows: overview monitoring, alert response, and unit investigation. User flows mapped how operators move from spotting an issue to diagnosing it, helping prioritize the features that mattered most."
+
+  - header: "D) Research & Design Decisions"
+    text: "I analyzed competing monitoring platforms alongside dashboard products such as Grafana to identify best practices for real-time operations. Insights focused on glanceability, semantic color usage, scalable grid layouts, consistent spacing, and reducing cognitive load for users working in 24/7 mission-critical environments."
+
+  - header: "E) Solution"
+    text: "The redesigned experience introduced flexible list and grid views, stronger visual hierarchy, sortable data, grouped filtering, dedicated alert management, toast notifications, and an improved side panel for investigating individual units. Semantic states and high-contrast indicators make issues immediately visible from a distance."
+
+  - header: "F) Design System"
+    text: "To support rapid iteration and consistency, I created the foundations of a scalable design system including color tokens, typography, spacing tokens, responsive breakpoints, reusable components, and interactive state variants optimized for data-heavy enterprise interfaces."
+
+  - header: "G) Outcome"
+    text: "The project was completed in two days and delivered as a fully interactive prototype in Figma Make. By combining product thinking, user flows, design systems, and high-fidelity prototyping, the redesign demonstrates an end-to-end product design process rather than a purely visual UI exercise."

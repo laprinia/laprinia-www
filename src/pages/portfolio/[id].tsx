@@ -15,12 +15,17 @@ const PortfolioItemPage = () => {
   ): Project | null => {
     if (!id) return null;
     const allProjects = Object.values(projects).flat();
+    const normalizedId = id.toString().toLowerCase();
     return (
-      allProjects.find(
-        (project) =>
-          project.name.toLowerCase() ===
-          id.toString().toLowerCase().replaceAll("-", " "),
-      ) || null
+      allProjects.find((project) => {
+        const projectSlug = project.name.toLowerCase().replaceAll(" ", "-");
+        const projectNameSpaces = project.name.toLowerCase().replaceAll("-", " ");
+        return (
+          project.name.toLowerCase() === normalizedId ||
+          projectSlug === normalizedId ||
+          projectNameSpaces === normalizedId
+        );
+      }) || null
     );
   };
 
