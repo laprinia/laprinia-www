@@ -94,7 +94,7 @@ export type Project = {
 };
 
 export type ProjectCategories = {
-  "branding & ux": Project[];
+  "ux & branding": Project[];
   web: Project[];
   "3d": Project[];
   "experimental": Project[];
