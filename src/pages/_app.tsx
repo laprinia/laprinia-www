@@ -18,11 +18,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <title>laprinia</title>
         <meta
           name="description"
-          content="Hi! I am Lavinia, an experienced Web Developer based in Bucharest. Currently available for work."
+          content="Hi! I am Lavinia, an experienced Product Designer & Frontend Developer based in Bucharest. Currently available for work."
         />
         <meta
           name="keywords"
-          content="Design Engineer, Web Developer, Index, Hire Developer, Frontend Romania, Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner, laprinia, laprinion, Lavinia Dumitrenco, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO"
+          content=" UX Designer, Product Designer, UX Romania, UX Design, Design Engineer, Web Developer, Index, Hire Developer, Frontend Romania, Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner, laprinia, laprinion, Lavinia Dumitrenco, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>

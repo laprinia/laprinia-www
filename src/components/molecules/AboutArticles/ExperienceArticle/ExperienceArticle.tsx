@@ -6,7 +6,7 @@ const ExperienceArticle = () => {
     <SectionedArticle ariaLabel="experience" heading={"A) EXPERIENCE"}>
       <ArticleSection>
         <p>
-          2025-now Design Engineer at <strong>In The Pocket</strong>
+          2025-2026 Design Engineer at <strong>In The Pocket</strong>
         </p>
       </ArticleSection>
       <ArticleSection>
@@ -26,7 +26,7 @@ const ExperienceArticle = () => {
       </ArticleSection>
       <ArticleSection>
         <p>
-          2021-2022 Fullstack Engineer at <strong>Adobe</strong>
+          2021-2022 UX Developer & Designer at <strong>Adobe</strong>
         </p>
       </ArticleSection>
     </SectionedArticle>
