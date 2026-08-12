@@ -32,91 +32,10 @@ export type ProjectCategories = {
   web: Project[];
   "3d": Project[];
   "experimental": Project[];
-  archive: Project[];
 };
 
 export const projects: ProjectCategories = {
   "ux & branding": [
-    {
-      "name": "noc-monitoring",
-      "year": 2026,
-      "techStackPreview": "*/figma, figma make*/",
-      "tags": [
-        "product design",
-        "ux strategy",
-        "user flows",
-        "dashboard design",
-        "data visualization",
-        "enterprise ux",
-        "design systems",
-        "prototyping"
-      ],
-      "headshot": "/projects/noc-monitoring/headshot-img.avif",
-      "headshotGif": "/projects/noc-monitoring/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/noc-monitoring/content/1.mp4"
-        },
-        {
-          "type": "image",
-          "src": "/projects/noc-monitoring/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/noc-monitoring/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/noc-monitoring/content/4.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/noc-monitoring/content/5.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/noc-monitoring/content/6.avif"
-        }
-      ],
-      "buttons": [],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments."
-        },
-        {
-          "header": "B) Problem",
-          "text": "The existing experience exposed large amounts of operational data but lacked a clear information hierarchy, making it harder to identify critical issues at a glance. The challenge was balancing information density with fast decision making while supporting monitoring of up to twelve units simultaneously."
-        },
-        {
-          "header": "C) Product Discovery",
-          "text": "I began by defining the primary administrator goal and breaking it into three key workflows: overview monitoring, alert response, and unit investigation. User flows mapped how operators move from spotting an issue to diagnosing it, helping prioritize the features that mattered most."
-        },
-        {
-          "header": "D) Research & Design Decisions",
-          "text": "I analyzed competing monitoring platforms alongside dashboard products such as Grafana to identify best practices for real-time operations. Insights focused on glanceability, semantic color usage, scalable grid layouts, consistent spacing, and reducing cognitive load for users working in 24/7 mission-critical environments."
-        },
-        {
-          "header": "E) Solution",
-          "text": "The redesigned experience introduced flexible list and grid views, stronger visual hierarchy, sortable data, grouped filtering, dedicated alert management, toast notifications, and an improved side panel for investigating individual units. Semantic states and high-contrast indicators make issues immediately visible from a distance."
-        },
-        {
-          "header": "F) Design System",
-          "text": "To support rapid iteration and consistency, I created the foundations of a scalable design system including color tokens, typography, spacing tokens, responsive breakpoints, reusable components, and interactive state variants optimized for data-heavy enterprise interfaces."
-        },
-        {
-          "header": "G) Outcome",
-          "text": "The project was completed in two days and delivered as a fully interactive prototype in Figma Make. By combining product thinking, user flows, design systems, and high-fidelity prototyping, the redesign demonstrates an end-to-end product design process rather than a purely visual UI exercise."
-        }
-      ],
-      "colors": [
-        "#3B82F6",
-        "#1E293B",
-        "#334155",
-        "#64748B"
-      ]
-    },
     {
       "name": "eumar redesign",
       "year": 2026,
@@ -195,77 +114,6 @@ export const projects: ProjectCategories = {
       ],
       "colors": [
         "#036CA8"
-      ]
-    },
-    {
-      "name": "ai playbooks",
-      "year": 2026,
-      "techStackPreview": "*/webflow, figma*/",
-      "tags": [
-        "webflow",
-        "figma",
-        "design engineering",
-        "gsap",
-        "css",
-        "design systems"
-      ],
-      "headshot": "/projects/ai-playbooks/headshot-img.avif",
-      "headshotGif": "/projects/ai-playbooks/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/ai-playbooks/content/1.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/ai-playbooks/content/2.mov"
-        },
-        {
-          "type": "video",
-          "src": "/projects/ai-playbooks/content/3.mov"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/socials/web",
-          "alt": "ITP Webpage",
-          "link": "https://www.inthepocket.com/ai-playbooks"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "Design engineering work for In The Pocket on AI Playbooks 🌈, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."
-        },
-        {
-          "header": "B) Aesthetic Direction",
-          "text": "The visual language blends movement in photography with the actual motion of the page itself."
-        },
-        {
-          "header": "C) Scroll-Driven Card Spread",
-          "text": "The hero interaction is a card spread effect that unfolds as the user scrolls, built with scroll-triggered GSAP animations in Webflow. It draws visitors in by turning passive scrolling into an act of discovery, setting the tone for how In The Pocket approaches AI."
-        },
-        {
-          "header": "D) Interactive Card System",
-          "text": "Tool and event cards respond to hover and pointer movement with a 3D tilt effect powered by CSS perspective, giving the interface a tactile, dimensional quality. Each card layout is designed so the information hierarchy is immediately clear, what the tool or event is, when it was added, and when it takes place, making it easy for visitors to scan and orient themselves in time."
-        },
-        {
-          "header": "E) Visual System",
-          "text": "The page is a showcase of In The Pocket's new design system, leaning into gradients and a pastel palette that communicates curiosity and playfulness rather than the cold, corporate tone AI content often defaults to."
-        },
-        {
-          "header": "F) User Research",
-          "text": "While there was no formal user research phase, the design decisions were informed indirectly, through stakeholder conversations, observing how visitors navigated similar pages, and iterating on what made the offering easier to understand at a glance."
-        },
-        {
-          "header": "G) Impact",
-          "text": "The page has brought more customers into active AI consultation discussions, made the AI roadmap clearer and more tangible for stakeholders, and served as a flagship example of the new design system in production."
-        }
-      ],
-      "colors": [
-        "#E9EAF4",
-        "#181A43",
-        "#EDAC7D"
       ]
     },
     {
@@ -350,6 +198,224 @@ export const projects: ProjectCategories = {
         "#C65C31",
         "#EFBB55",
         "#F6F6F4"
+      ]
+    },
+    {
+      "name": "noc-monitoring",
+      "year": 2026,
+      "techStackPreview": "*/figma, figma make*/",
+      "tags": [
+        "product design",
+        "ux strategy",
+        "user flows",
+        "dashboard design",
+        "data visualization",
+        "enterprise ux",
+        "design systems",
+        "prototyping"
+      ],
+      "headshot": "/projects/noc-monitoring/headshot-img.avif",
+      "headshotGif": "/projects/noc-monitoring/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/noc-monitoring/content/1.mp4"
+        },
+        {
+          "type": "image",
+          "src": "/projects/noc-monitoring/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/noc-monitoring/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/noc-monitoring/content/4.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/noc-monitoring/content/5.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/noc-monitoring/content/6.avif"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments."
+        },
+        {
+          "header": "B) Problem",
+          "text": "The existing experience exposed large amounts of operational data but lacked a clear information hierarchy, making it harder to identify critical issues at a glance. The challenge was balancing information density with fast decision making while supporting monitoring of up to twelve units simultaneously."
+        },
+        {
+          "header": "C) Product Discovery",
+          "text": "I began by defining the primary administrator goal and breaking it into three key workflows: overview monitoring, alert response, and unit investigation. User flows mapped how operators move from spotting an issue to diagnosing it, helping prioritize the features that mattered most."
+        },
+        {
+          "header": "D) Research & Design Decisions",
+          "text": "I analyzed competing monitoring platforms alongside dashboard products such as Grafana to identify best practices for real-time operations. Insights focused on glanceability, semantic color usage, scalable grid layouts, consistent spacing, and reducing cognitive load for users working in 24/7 mission-critical environments."
+        },
+        {
+          "header": "E) Solution",
+          "text": "The redesigned experience introduced flexible list and grid views, stronger visual hierarchy, sortable data, grouped filtering, dedicated alert management, toast notifications, and an improved side panel for investigating individual units. Semantic states and high-contrast indicators make issues immediately visible from a distance."
+        },
+        {
+          "header": "F) Design System",
+          "text": "To support rapid iteration and consistency, I created the foundations of a scalable design system including color tokens, typography, spacing tokens, responsive breakpoints, reusable components, and interactive state variants optimized for data-heavy enterprise interfaces."
+        },
+        {
+          "header": "G) Outcome",
+          "text": "The project was completed in two days and delivered as a fully interactive prototype in Figma Make. By combining product thinking, user flows, design systems, and high-fidelity prototyping, the redesign demonstrates an end-to-end product design process rather than a purely visual UI exercise."
+        }
+      ],
+      "colors": [
+        "#3B82F6",
+        "#1E293B",
+        "#334155",
+        "#64748B"
+      ]
+    },
+    {
+      "name": "ai playbooks",
+      "year": 2026,
+      "techStackPreview": "*/webflow, figma*/",
+      "tags": [
+        "webflow",
+        "figma",
+        "design engineering",
+        "gsap",
+        "css",
+        "design systems"
+      ],
+      "headshot": "/projects/ai-playbooks/headshot-img.avif",
+      "headshotGif": "/projects/ai-playbooks/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "video",
+          "src": "/projects/ai-playbooks/content/1.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/ai-playbooks/content/2.mov"
+        },
+        {
+          "type": "video",
+          "src": "/projects/ai-playbooks/content/3.mov"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/web",
+          "alt": "ITP Webpage",
+          "link": "https://www.inthepocket.com/ai-playbooks"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "Design engineering work for In The Pocket on AI Playbooks 🌈, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."
+        },
+        {
+          "header": "B) Aesthetic Direction",
+          "text": "The visual language blends movement in photography with the actual motion of the page itself."
+        },
+        {
+          "header": "C) Scroll-Driven Card Spread",
+          "text": "The hero interaction is a card spread effect that unfolds as the user scrolls, built with scroll-triggered GSAP animations in Webflow. It draws visitors in by turning passive scrolling into an act of discovery, setting the tone for how In The Pocket approaches AI."
+        },
+        {
+          "header": "D) Interactive Card System",
+          "text": "Tool and event cards respond to hover and pointer movement with a 3D tilt effect powered by CSS perspective, giving the interface a tactile, dimensional quality. Each card layout is designed so the information hierarchy is immediately clear, what the tool or event is, when it was added, and when it takes place, making it easy for visitors to scan and orient themselves in time."
+        },
+        {
+          "header": "E) Visual System",
+          "text": "The page is a showcase of In The Pocket's new design system, leaning into gradients and a pastel palette that communicates curiosity and playfulness rather than the cold, corporate tone AI content often defaults to."
+        },
+        {
+          "header": "F) User Research",
+          "text": "While there was no formal user research phase, the design decisions were informed indirectly, through stakeholder conversations, observing how visitors navigated similar pages, and iterating on what made the offering easier to understand at a glance."
+        },
+        {
+          "header": "G) Impact",
+          "text": "The page has brought more customers into active AI consultation discussions, made the AI roadmap clearer and more tangible for stakeholders, and served as a flagship example of the new design system in production."
+        }
+      ],
+      "colors": [
+        "#E9EAF4",
+        "#181A43",
+        "#EDAC7D"
+      ]
+    },
+    {
+      "name": "personal website ux",
+      "year": 2024,
+      "techStackPreview": "*/figma, adobe*/",
+      "tags": [
+        "ux",
+        "interaction design",
+        "3d",
+        "figma",
+        "responsive design",
+        "affinity designer"
+      ],
+      "headshot": "/projects/personal-website-ux/headshot-img.avif",
+      "headshotGif": "/projects/personal-website-ux/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/personal-website-ux/content/1.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/personal-website-ux/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/personal-website-ux/content/3.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/personal-website-ux/content/4.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/personal-website-ux/content/5.mp4"
+        }
+      ],
+      "buttons": [
+        {
+          "imageSrc": "/socials/github",
+          "alt": "GitHub",
+          "link": "https://github.com/laprinia/laprinia-www"
+        }
+      ],
+      "textContents": [
+        {
+          "header": "A) Goals",
+          "text": "I wanted a portfolio that feels like me, not a template 🙂‍↕️, clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Most portfolio patterns assume one rhythm: similar tiles, similar areas of work, everything flattened to the same kind of proof. My work doesn’t look that way. Some ideas need motion or a screen recording before they make sense, whereas others need the quiet of a wireframe or a layout study, sometimes I need to show a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story, and that could stay truthful as the mix of work I take on changes over time."
+        },
+        {
+          "header": "C) Process",
+          "text": "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role: not locking me into last year’s categories."
+        },
+        {
+          "header": "D) Outcome",
+          "text": "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work, the <em>shape</em> of my process."
+        }
+      ],
+      "colors": [
+        "#0141D5",
+        "#F5F4F1",
+        "#49453D"
       ]
     },
     {
@@ -546,143 +612,9 @@ export const projects: ProjectCategories = {
         "hsla(240, 6%, 80%, 1)",
         "hsla(0, 0%, 5%, 1)"
       ]
-    },
-    {
-      "name": "personal website ux",
-      "year": 2024,
-      "techStackPreview": "*/figma, adobe*/",
-      "tags": [
-        "ux",
-        "interaction design",
-        "3d",
-        "figma",
-        "responsive design",
-        "affinity designer"
-      ],
-      "headshot": "/projects/personal-website-ux/headshot-img.avif",
-      "headshotGif": "/projects/personal-website-ux/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/1.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/personal-website-ux/content/3.avif"
-        },
-        {
-          "type": "video",
-          "src": "/projects/personal-website-ux/content/4.mp4"
-        },
-        {
-          "type": "video",
-          "src": "/projects/personal-website-ux/content/5.mp4"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/socials/github",
-          "alt": "GitHub",
-          "link": "https://github.com/laprinia/laprinia-www"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) Goals",
-          "text": "I wanted a portfolio that feels like me, not a template 🙂‍↕️, clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
-        },
-        {
-          "header": "B) Problem",
-          "text": "Most portfolio patterns assume one rhythm: similar tiles, similar areas of work, everything flattened to the same kind of proof. My work doesn’t look that way. Some ideas need motion or a screen recording before they make sense, whereas others need the quiet of a wireframe or a layout study, sometimes I need to show a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story, and that could stay truthful as the mix of work I take on changes over time."
-        },
-        {
-          "header": "C) Process",
-          "text": "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role: not locking me into last year’s categories."
-        },
-        {
-          "header": "D) Outcome",
-          "text": "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work, the <em>shape</em> of my process."
-        }
-      ],
-      "colors": [
-        "#0141D5",
-        "#F5F4F1",
-        "#49453D"
-      ]
     }
   ],
   "web": [
-    {
-      "name": "engie chatgpt widget",
-      "year": 2026,
-      "techStackPreview": "*/react, mcp, chatgpt sdk*/",
-      "tags": [
-        "react",
-        "mcp",
-        "chatgpt apps sdk",
-        "node.js",
-        "drizzle",
-        "vite",
-        "data visualization",
-        "design systems"
-      ],
-      "headshot": "/projects/engie-chatgpt-widget/headshot-img.avif",
-      "headshotGif": "/projects/engie-chatgpt-widget/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "image",
-          "src": "/projects/engie-chatgpt-widget/content/1.avif"
-        },
-        {
-          "type": "video",
-          "src": "/projects/engie-chatgpt-widget/content/2.mp4"
-        },
-        {
-          "type": "video",
-          "src": "/projects/engie-chatgpt-widget/content/3.mp4"
-        },
-        {
-          "type": "video",
-          "src": "/projects/engie-chatgpt-widget/content/4.mp4"
-        }
-      ],
-      "buttons": [],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they'll pay more or less than expected, all through a conversational interface powered by a custom MCP server."
-        },
-        {
-          "header": "B) Problem",
-          "text": "Engie customers often struggle to understand their energy usage patterns, whether their advance payment is set correctly, and what they can do to optimize costs. This information exists across multiple screens and requires manual interpretation, making it hard to act on."
-        },
-        {
-          "header": "C) User Flow",
-          "text": "A customer opens ChatGPT with the Engie app context, asks about their households, and immediately sees their data. They can request a consumption graph, filter it by date range, hover for details, and prompt the agent directly from the widget to analyze trends or suggest optimizations. For advance payments, the agent compares past usage against the contract and recommends an adjusted amount, flagging overpayment or underpayment before the next billing cycle."
-        },
-        {
-          "header": "D) Features",
-          "text": "Interactive consumption graph with month filtering and hover details. Two-way prompting: users can ask ChatGPT to analyze data directly from within the widget. Advance payment tools: view, edit, and get AI-suggested values based on actual consumption. Household management: view, update, and delete records, all reflected in the real database."
-        },
-        {
-          "header": "E) Design Approach",
-          "text": "The widgets follow Engie's design system (colors, typography, spacing) while adapting to ChatGPT's constrained viewport, where they need to feel native next to chat bubbles. Minimal chrome, clear data hierarchy, and familiar brand language so customers read the visualizations at a glance without leaving the conversation."
-        },
-        {
-          "header": "F) Impact",
-          "text": "After the internal demo, Engie reached out to present the project to their board. The exploration is now being considered for a future production implementation as a new customer-facing channel."
-        }
-      ],
-      "colors": [
-        "#05A8FD",
-        "#23A9A3",
-        "#004A46"
-      ]
-    },
     {
       "name": "kbc bike leasing",
       "year": 2025,
@@ -815,6 +747,73 @@ export const projects: ProjectCategories = {
       ],
       "colors": [
         "#764ba2"
+      ]
+    },
+    {
+      "name": "engie chatgpt widget",
+      "year": 2026,
+      "techStackPreview": "*/react, mcp, chatgpt sdk*/",
+      "tags": [
+        "react",
+        "mcp",
+        "chatgpt apps sdk",
+        "node.js",
+        "drizzle",
+        "vite",
+        "data visualization",
+        "design systems"
+      ],
+      "headshot": "/projects/engie-chatgpt-widget/headshot-img.avif",
+      "headshotGif": "/projects/engie-chatgpt-widget/headshot.webp",
+      "mediaContents": [
+        {
+          "type": "image",
+          "src": "/projects/engie-chatgpt-widget/content/1.avif"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/2.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/3.mp4"
+        },
+        {
+          "type": "video",
+          "src": "/projects/engie-chatgpt-widget/content/4.mp4"
+        }
+      ],
+      "buttons": [],
+      "textContents": [
+        {
+          "header": "A) About",
+          "text": "A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they'll pay more or less than expected, all through a conversational interface powered by a custom MCP server."
+        },
+        {
+          "header": "B) Problem",
+          "text": "Engie customers often struggle to understand their energy usage patterns, whether their advance payment is set correctly, and what they can do to optimize costs. This information exists across multiple screens and requires manual interpretation, making it hard to act on."
+        },
+        {
+          "header": "C) User Flow",
+          "text": "A customer opens ChatGPT with the Engie app context, asks about their households, and immediately sees their data. They can request a consumption graph, filter it by date range, hover for details, and prompt the agent directly from the widget to analyze trends or suggest optimizations. For advance payments, the agent compares past usage against the contract and recommends an adjusted amount, flagging overpayment or underpayment before the next billing cycle."
+        },
+        {
+          "header": "D) Features",
+          "text": "Interactive consumption graph with month filtering and hover details. Two-way prompting: users can ask ChatGPT to analyze data directly from within the widget. Advance payment tools: view, edit, and get AI-suggested values based on actual consumption. Household management: view, update, and delete records, all reflected in the real database."
+        },
+        {
+          "header": "E) Design Approach",
+          "text": "The widgets follow Engie's design system (colors, typography, spacing) while adapting to ChatGPT's constrained viewport, where they need to feel native next to chat bubbles. Minimal chrome, clear data hierarchy, and familiar brand language so customers read the visualizations at a glance without leaving the conversation."
+        },
+        {
+          "header": "F) Impact",
+          "text": "After the internal demo, Engie reached out to present the project to their board. The exploration is now being considered for a future production implementation as a new customer-facing channel."
+        }
+      ],
+      "colors": [
+        "#05A8FD",
+        "#23A9A3",
+        "#004A46"
       ]
     },
     {
@@ -1126,61 +1125,6 @@ export const projects: ProjectCategories = {
       ]
     },
     {
-      "name": "lissajous curves",
-      "year": 2024,
-      "techStackPreview": "*/touchdesigner, python*/",
-      "tags": [
-        "touchdesigner",
-        "math",
-        "python",
-        "generative art",
-        "rendering",
-        "3d"
-      ],
-      "headshot": "/projects/lissajous-curves/headshot-img.avif",
-      "headshotGif": "/projects/lissajous-curves/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "video",
-          "src": "/projects/lissajous-curves/content/1.mp4"
-        },
-        {
-          "type": "image",
-          "src": "/projects/lissajous-curves/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/lissajous-curves/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/lissajous-curves/content/4.avif"
-        }
-      ],
-      "buttons": [
-        {
-          "imageSrc": "/socials/behance",
-          "alt": "Behance",
-          "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
-        }
-      ],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
-        },
-        {
-          "header": "B) Process",
-          "text": "<section>\n<h3>1. Setup and Initialization</h3>\n<p>\n    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n    <code>transform</code> positions and rotation based on the base name. During initialization,\n    the script extracts specific characters from the name of each base to determine its parameters.\n  </p>\n\n<h3>2. Curve Manipulation</h3>\n<p>\n    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n    position and rotation. For instance:\n    <pre><code>\n      BaseName = op('..').name\n      Name = list(BaseName)\n      NameLength = len(Name)\n      op('transform1').par.tx = Name[NameLength - 2]\n      op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5\n    </code></pre>\n    These values are dynamically applied, ensuring that each curve has a distinct placement and\n    rotation within the grid.\n  </p>\n\n</section>\n"
-        }
-      ],
-      "colors": [
-        "#790B0B"
-      ]
-    }
-  ],
-  "archive": [
-    {
       "name": "text wave",
       "year": 2024,
       "techStackPreview": "*/react, webgl*/",
@@ -1239,161 +1183,56 @@ export const projects: ProjectCategories = {
       ]
     },
     {
-      "name": "ghent bikes",
+      "name": "lissajous curves",
       "year": 2024,
-      "techStackPreview": "*/react, next.js, figma*/",
+      "techStackPreview": "*/touchdesigner, python*/",
       "tags": [
-        "react",
-        "typescript",
-        "accessibility",
-        "next.js",
-        "figma",
-        "chakra ui",
-        "joi",
-        "winston",
-        "google maps"
+        "touchdesigner",
+        "math",
+        "python",
+        "generative art",
+        "rendering",
+        "3d"
       ],
-      "headshot": "/projects/ghent-bikes/headshot-img.avif",
-      "headshotGif": "/projects/ghent-bikes/headshot.webp",
+      "headshot": "/projects/lissajous-curves/headshot-img.avif",
+      "headshotGif": "/projects/lissajous-curves/headshot.webp",
       "mediaContents": [
         {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/1.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/ghent-bikes/content/4.avif"
-        }
-      ],
-      "buttons": [],
-      "textContents": [
-        {
-          "header": "A) About",
-          "text": "Web app that surfaces bike and parking stations in Ghent from the city's open data API. Each station shows capacity, live availability, a copyable name, and a Google Maps preview so riders can quickly decide where to park."
-        },
-        {
-          "header": "B) UI & Accessibility",
-          "text": "<ul>\n<li>Chakra UI provides semantic building blocks, theming, and responsive breakpoints with minimal custom CSS.</li>\n<li>Hidden helper text (e.g., <code>&lt;p hidden&gt;</code>) describes map previews for screen readers.</li>\n<li><code>as</code> props and rem-based sizing support better semantics and scalable typography.</li>\n<li>Axe is used during development to catch and fix accessibility issues early.</li>\n</ul>\n"
-        },
-        {
-          "header": "C) Problem & Data Source",
-          "text": "Using the Stad Gent open data catalog for bikes, I wanted to turn raw datasets into a practical city tool: clear lists of bike stations and parking spots that are easy to scan, compare, and locate on a map."
-        },
-        {
-          "header": "D) Architecture & Validation",
-          "text": "<ul>\n<li>Next.js API routes handle fetching and routing, with Joi schemas validating incoming responses from the Ghent endpoints.</li>\n<li>Winston is used for logging validation issues or unexpected data shapes.</li>\n<li>This setup keeps the API layer small and opinionated, ideal for a focused, dataset-driven app.</li>\n</ul>\n"
-        },
-        {
-          "header": "E) Queries & Endpoints",
-          "text": "<pre><code>Bike spots\nSELECT name, bikes_in_use, bikes_available, geopoint\nORDER BY name ASC\n\nPark spots\nSELECT name, description, type, categorie, totalcapacity, availablecapacity, occupation, isopennow\nWHERE (availablecapacity / totalcapacity * 100) &gt; 50 AND isopennow = 1\nORDER BY availablecapacity DESC\n</code></pre>\nThese structured queries are used to build the data.stad.gent URLs that power the bikes and parkings views.\n"
-        },
-        {
-          "header": "F) Routing & Data Fetching",
-          "text": "<ul>\n<li>/ - landing page with hero and links into the bikes and parkings flows.</li>\n<li>/bikes - shows the four Blue Bikes locations with capacity information.</li>\n<li>/parkings - lists parking spots with at least 50% availability.</li>\n<li>/parkings/[slug] - details view for a single parking, where the slug is generated from the fetched data.</li>\n<li>Most data is fetched client-side to keep it fresh; /parkings uses static generation with revalidation around every minute.</li>\n</ul>\n"
-        }
-      ],
-      "colors": [
-        "#0141D5",
-        "#42A5F5",
-        "#1B5E20"
-      ]
-    },
-    {
-      "name": "fullstack authentication",
-      "year": 2023,
-      "techStackPreview": "*/react, mongodb*/",
-      "tags": [
-        "react",
-        "typescript",
-        "glassmorphism",
-        "mantine",
-        "radix-ui",
-        "axios",
-        "unsplash api",
-        "bcrypt",
-        "mongoose",
-        "joi",
-        "jwt"
-      ],
-      "headshot": "/projects/fullstack-authentication/headshot-img.avif",
-      "headshotGif": "/projects/fullstack-authentication/headshot.webp",
-      "mediaContents": [
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/1.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/2.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/3.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/4.avif"
-        },
-        {
-          "type": "image",
-          "src": "/projects/fullstack-authentication/content/5.avif"
-        },
-        {
           "type": "video",
-          "src": "/projects/fullstack-authentication/content/6.mp4"
+          "src": "/projects/lissajous-curves/content/1.mp4"
         },
         {
-          "type": "video",
-          "src": "/projects/fullstack-authentication/content/7.mp4"
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/3.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/2.avif"
+        },
+        {
+          "type": "image",
+          "src": "/projects/lissajous-curves/content/4.avif"
         }
       ],
       "buttons": [
         {
-          "imageSrc": "/socials/github",
-          "alt": "GitHub",
-          "link": "https://github.com/laprinia/opea"
-        },
-        {
           "imageSrc": "/socials/behance",
           "alt": "Behance",
-          "link": "https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism"
+          "link": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
         }
       ],
       "textContents": [
         {
           "header": "A) About",
-          "text": "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
+          "text": "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
         },
         {
-          "header": "B) Problem",
-          "text": "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
-        },
-        {
-          "header": "C) What It Solves",
-          "text": "<ul>\n<li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>\n<li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>\n<li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>\n</ul>\n"
-        },
-        {
-          "header": "D) Recipe",
-          "text": "<section>\n  <h3>Frontend:</h3>\n  <ul>\n    <li>Mantine for UI components</li>\n    <li>Radix UI icons</li>\n    <li>Axios for API calls</li>\n    <li>Unsplash API for dynamic backgrounds</li>\n  </ul>\n  <h3>Backend:</h3>\n  <ul>\n    <li>BCrypt for password hashing</li>\n    <li>Mongoose with TypeScript-enforced schemas</li>\n    <li>Joi for input validation</li>\n    <li>JWT for token-based auth</li>\n  </ul>\n</section>\n"
-        },
-        {
-          "header": "E) Glassmorphism",
-          "text": "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."
+          "header": "B) Process",
+          "text": "<section>\n<h3>1. Setup and Initialization</h3>\n<p>\n    Each base is controlled by an Execute DAT script. The script adjusts parameters such as\n    <code>transform</code> positions and rotation based on the base name. During initialization,\n    the script extracts specific characters from the name of each base to determine its parameters.\n  </p>\n\n<h3>2. Curve Manipulation</h3>\n<p>\n    Inside the <code>onFrameStart()</code> function, variables are set to control each curve's\n    position and rotation. For instance:\n    <pre><code>\n      BaseName = op('..').name\n      Name = list(BaseName)\n      NameLength = len(Name)\n      op('transform1').par.tx = Name[NameLength - 2]\n      op('transform1').par.ty = float(Name[NameLength - 1]) * 1.5\n    </code></pre>\n    These values are dynamically applied, ensuring that each curve has a distinct placement and\n    rotation within the grid.\n  </p>\n\n</section>\n"
         }
       ],
       "colors": [
-        "#FB6009",
-        "#2E2623",
-        "#ECE3E1",
-        "#040406"
+        "#790B0B"
       ]
     }
   ]

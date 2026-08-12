@@ -1,15 +1,16 @@
 ux & branding:
-  - noc-monitoring
   - eumar-redesign
-  - ai-playbooks
   - dytto-rebrand
+  - noc-monitoring
+  - ai-playbooks
+  - personal-website-ux
   - veloura-brand-guide
   - mood-ring
-  - personal-website-ux
+  
 web:
-  - engie-chatgpt-widget
   - kbc-bike-leasing
   - tectonic
+  - engie-chatgpt-widget
   - web-terrain-visualizer
 
 3d:
@@ -18,8 +19,6 @@ web:
 
 experimental:
   - media-pipe
-  - lissajous-curves
-archive:
   - text-wave
-  - ghent-bikes
-  - fullstack-authentication
+  - lissajous-curves
+
