@@ -69,9 +69,11 @@ export const LoopingTextWrapper = styled.aside`
 export const StyledScrollRoot = styled(ScrollRoot)`
   height: 100%;
   max-height: 100%;
+  padding-right: calc(var(--scrollbar-width) + 0.25rem);
 
   @media (max-width: 900px) {
     height: auto;
+    padding-right: 0;
     padding-bottom: 4rem;
   }
 `;

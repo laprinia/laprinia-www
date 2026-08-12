@@ -2,6 +2,8 @@ import styled from "styled-components";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 export const ScrollRoot = styled(ScrollAreaPrimitive.Root)`
+  --scrollbar-width: 8px;
+
   flex: 1;
   overflow: hidden;
 `;
@@ -17,7 +19,7 @@ export const ScrollBar = styled(ScrollAreaPrimitive.Scrollbar)`
   user-select: none;
   touch-action: none;
   padding: 2px;
-  width: 8px;
+  width: var(--scrollbar-width);
   background: transparent;
 `;
 
