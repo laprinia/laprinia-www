@@ -11,7 +11,19 @@ import {
   CenterCanvasSection,
 } from "./DesktopHome.styles";
 
+const splitIntoTwoLines = (value: string) => {
+  const [firstWord, ...rest] = value.split(" ");
+
+  return {
+    firstWord: firstWord.toUpperCase(),
+    remainingWords: rest.join(" ").toUpperCase(),
+  };
+};
+
 const DesktopHome = () => {
+  const landingNameLines = splitIntoTwoLines(landingName);
+  const landingTitleLines = splitIntoTwoLines(landingTitle);
+
   return (
     <DesktopContainer>
       <CenterCanvasSection aria-hidden data-cursor-text="drag!">
@@ -20,7 +32,17 @@ const DesktopHome = () => {
 
       <TopAlignedBox align="left">
         <header aria-label={landingName} style={{ width: "100%", height: "100%" }}>
-          <p style={{ fontFamily: "var(--font-heading)" }}>{landingName.toUpperCase()}</p>
+          <p
+            style={{
+              fontFamily: "var(--font-heading)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <span>{landingNameLines.firstWord}</span>
+            <span>{landingNameLines.remainingWords}</span>
+          </p>
         </header>
       </TopAlignedBox>
 
@@ -45,7 +67,17 @@ const DesktopHome = () => {
           aria-label={landingTitle}
           style={{ width: "100%", height: "100%", display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}
         >
-          <p style={{ fontFamily: "var(--font-heading)" }}>{landingTitle.toUpperCase()}</p>
+          <p
+            style={{
+              fontFamily: "var(--font-heading)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+            }}
+          >
+            <span>{landingTitleLines.firstWord}</span>
+            <span>{landingTitleLines.remainingWords}</span>
+          </p>
         </footer>
       </BottomAlignedBox>
     </DesktopContainer>
