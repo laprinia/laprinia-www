@@ -146,5 +146,4 @@ export const GlobalStyle = createGlobalStyle`
             cursor: none !important;
         }
     }
-        cursor: none !important;
 `;
