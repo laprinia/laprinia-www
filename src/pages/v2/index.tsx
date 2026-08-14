@@ -1,12 +1,16 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { previewGate } from "../../lib/preview";
-import {
-  PreviewMain,
-  PreviewBadge,
-  PreviewTitle,
-  PreviewNote,
-  PreviewLink,
-} from "../../styles/preview.styles";
+import HomeHero from "../../components/v2/HomeHero/HomeHero";
+
+/**
+ * The only client-only piece on the page. Everything else — name, role, bio,
+ * nav — is server-rendered, so the page is meaningful without JavaScript.
+ */
+const HeroCanvas = dynamic(
+  () => import("../../components/v2/HeroCanvas/HeroCanvas"),
+  { ssr: false },
+);
 
 const HomeV2 = () => {
   return (
@@ -15,14 +19,9 @@ const HomeV2 = () => {
         <title>homepage v2 — preview</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <PreviewMain>
-        <PreviewBadge>preview · v2</PreviewBadge>
-        <PreviewTitle>Homepage v2</PreviewTitle>
-        <PreviewNote>
-          Placeholder. Phase 3 builds this.{" "}
-          <PreviewLink href="/v2/portfolio">Portfolio v2 →</PreviewLink>
-        </PreviewNote>
-      </PreviewMain>
+      <main>
+        <HomeHero canvas={<HeroCanvas />} />
+      </main>
     </>
   );
 };
