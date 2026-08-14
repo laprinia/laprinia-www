@@ -49,3 +49,7 @@ Thumbs.db
 .env
 .env.development
 .env.production
+
+# LocalMD files
+
+PORTFOLIO_REDESIGN_BRIEF.md
