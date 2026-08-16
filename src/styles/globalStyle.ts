@@ -88,7 +88,7 @@ export const GlobalStyle = createGlobalStyle`
         --neutral-800: #2A2923;
         --neutral-900: #000000;
 
-        --border-radius: 4px;
+        --border-radius: 8px;
         --nav-height: 4rem;
 
         --toastify-color-success: #0141D5;

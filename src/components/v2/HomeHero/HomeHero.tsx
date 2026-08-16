@@ -1,53 +1,45 @@
-import { type ReactNode } from "react";
-import PulsatingBadge from "../../organisms/PulsatingBadge/PulsatingBadge";
+import Image from "next/image";
+import { CornerRightDown } from "lucide-react";
+import Button from "../Button/Button";
+import { landingName, navItems } from "../../../consts";
 import {
-  landingName,
-  landingPageIntroduction,
+  heroPortraitAlt,
+  heroPortraitPath,
+  landingBio,
   landingTitle,
-  navItems,
-} from "../../../consts";
+  selectedWorkCta,
+  selectedWorkId,
+} from "../../../consts.v2";
 import {
   HeroSection,
-  HeroCanvasSlot,
-  HeroIdentity,
   HeroName,
-  HeroRole,
+  HeroKicker,
+  HeroNameFilled,
+  HeroNameOutlined,
+  HeroLower,
+  HeroPortrait,
   HeroIntro,
   HeroBio,
+  HeroCtaSlot,
   HeroNav,
   HeroNavLink,
 } from "./HomeHero.styles";
 
 const toStackedLines = (value: string) => {
-  const [first, ...rest] = value.toUpperCase().split(" ");
+  const [first, ...rest] = value.split(" ");
   return [first, rest.join(" ")].filter(Boolean);
 };
 
-const HomeHero = ({ canvas }: { canvas: ReactNode }) => {
+const HomeHero = () => {
+  const [nameFilled, nameOutlined] = toStackedLines(landingName);
+
   return (
     <HeroSection>
-      <HeroCanvasSlot aria-hidden="true" data-cursor-text="drag!">
-        {canvas}
-      </HeroCanvasSlot>
-
-      <HeroIdentity>
-        <HeroName>
-          {toStackedLines(landingName).map((line) => (
-            <span key={line}>{line}</span>
-          ))}
-        </HeroName>
-      </HeroIdentity>
-
-      <HeroRole>
-        {toStackedLines(landingTitle).map((line) => (
-          <span key={line}>{line}</span>
-        ))}
-      </HeroRole>
-
-      <HeroIntro>
-        <HeroBio>{landingPageIntroduction}</HeroBio>
-        <PulsatingBadge />
-      </HeroIntro>
+      <HeroName>
+        <HeroKicker>{landingTitle}</HeroKicker>{" "}
+        <HeroNameFilled>{nameFilled}</HeroNameFilled>{" "}
+        <HeroNameOutlined>{nameOutlined}</HeroNameOutlined>
+      </HeroName>
 
       <HeroNav aria-label="Primary">
         {navItems.map((item) => (
@@ -56,6 +48,33 @@ const HomeHero = ({ canvas }: { canvas: ReactNode }) => {
           </HeroNavLink>
         ))}
       </HeroNav>
+
+      <HeroLower>
+        <HeroPortrait>
+          <Image
+            src={heroPortraitPath}
+            alt={heroPortraitAlt}
+            width={600}
+            height={747}
+            sizes="(min-width: 1001px) 14vw, 45vw"
+            priority
+          />
+        </HeroPortrait>
+
+        <HeroIntro>
+          <HeroBio>{landingBio}</HeroBio>
+          <HeroCtaSlot>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              icon={<CornerRightDown strokeWidth={2.5} />}
+            >
+              <a href={`#${selectedWorkId}`}>{selectedWorkCta}</a>
+            </Button>
+          </HeroCtaSlot>
+        </HeroIntro>
+      </HeroLower>
     </HeroSection>
   );
 };
