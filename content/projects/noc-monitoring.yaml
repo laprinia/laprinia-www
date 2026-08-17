@@ -1,8 +1,8 @@
 name: noc-monitoring
 
 year: 2026
+description: "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as hierarchy."
 
-techStackPreview: "*/figma, figma make*/"
 
 tags:
   - product design

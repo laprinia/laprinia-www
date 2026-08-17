@@ -1,6 +1,6 @@
 name: volumetric light
 year: 2021
-techStackPreview: "*/opengl, glsl shaders*/"
+description: "OpenGL volumetric light scenic implementation."
 tags:
   - opengl
   - c++

@@ -1,6 +1,6 @@
 name: text wave
 year: 2024
-techStackPreview: "*/react, webgl*/"
+description: "3D texture animation exploration using React Three Fiber."
 tags:
   - react
   - typescript

@@ -1,14 +1,13 @@
 name: engie chatgpt widget
 year: 2026
-techStackPreview: "*/react, mcp, chatgpt sdk*/"
+description: "Interactive data visualisation widget built for Engie, following their branding system. A ChatGPT-embedded experience."
 tags:
+  - branding
+  - data visualization
+  - chatgpt apps sdk
   - react
   - mcp
-  - chatgpt apps sdk
   - node.js
-  - drizzle
-  - vite
-  - data visualization
   - design systems
 colors:
   - "#05A8FD"

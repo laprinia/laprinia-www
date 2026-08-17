@@ -1,9 +1,10 @@
 name: ai playbooks
 year: 2026
-techStackPreview: "*/webflow, figma*/"
+description: "Interactive product landing page that highlights micro-interactions using Webflow and GSAP animations."
 tags:
+  - micro-interactions
   - webflow
-  - figma
+  - branding
   - design engineering
   - gsap
   - css

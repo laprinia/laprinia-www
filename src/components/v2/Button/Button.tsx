@@ -20,6 +20,7 @@ export type ButtonProps = {
 
   iconOnly?: boolean;
   fullWidth?: boolean;
+  pill?: boolean;
   loading?: boolean;
 
   asChild?: boolean;
@@ -34,6 +35,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     iconPosition = "end",
     iconOnly = false,
     fullWidth = false,
+    pill = false,
     loading = false,
     asChild = false,
     disabled,
@@ -63,6 +65,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       $size={size}
       $iconOnly={iconOnly}
       $fullWidth={fullWidth}
+      $pill={pill}
       disabled={asChild ? undefined : isDisabled}
       aria-disabled={asChild && isDisabled ? true : undefined}
       data-loading={loading || undefined}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 const visuallyHidden = css`
@@ -14,14 +15,15 @@ const visuallyHidden = css`
 `;
 
 export const HeroSection = styled.section`
-  --hero-bio-width: 30vw;
+  --hero-bio-width: 38vw;
 
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  height: calc(100vh - 5rem);
-  padding: 1.25rem 1.5rem 1.5rem;
+  gap: 1rem;
+  height: 100svh;
+  padding: 1.25rem 1.5rem 2rem;
+  justify-content: space-between;
   box-sizing: border-box;
 
   @media (min-width: 1001px) {
@@ -58,12 +60,12 @@ export const HeroName = styled.h1`
     text-transform: lowercase;
     line-height: 0.85;
     color: var(--accent-color);
-    font-size: clamp(3rem, 9.5vw, 11rem);
+    font-size: var(--font-size-display);
   }
 `;
 
 export const HeroKicker = styled.span`
-  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  font-size: var(--font-size-eyebrow);
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.1;
@@ -82,77 +84,104 @@ export const HeroNameOutlined = styled.span`
   /* stylelint-disable property-no-vendor-prefix -- no unprefixed equivalent */
   @supports (-webkit-text-stroke: 1px currentcolor) {
     color: transparent;
-    -webkit-text-stroke: clamp(1.5px, 0.2vw, 3px) var(--accent-color);
+    -webkit-text-stroke: var(--text-stroke-width) var(--accent-color);
   }
   /* stylelint-enable property-no-vendor-prefix */
 `;
 
-export const HeroLower = styled.div`
-  display: contents;
+export const HeroLower = styled(motion.div)`
+  order: 2;
+  position: relative;
+  width: min(70%, 24rem);
+  margin-inline: auto;
 
   @media (min-width: 1001px) {
     grid-area: lower;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: auto;
+    margin-inline: 0;
     gap: 2.5rem;
   }
 `;
 
-export const HeroPortrait = styled.div`
-  order: 2;
-  align-self: center;
-  margin-block: auto;
-  width: clamp(8rem, 45vw, 14rem);
+export const HeroPortrait = styled(motion.div)`
+  position: absolute;
+  top: -2rem;
+  left: -6%;
+  width: 58%;
 
   img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: rotate(5deg);
+  }
+
+  @media (min-width: 1001px) {
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 2;
+    align-self: center;
+    width: clamp(4.5rem, 7vw, 6.5rem);
+    flex-shrink: 0;
+
+    img {
+      transform: none;
+    }
+  }
+`;
+
+export const HeroClip = styled(motion.div)`
+  position: absolute;
+  top: -1.1rem;
+  left: 1rem;
+  z-index: 3;
+  width: clamp(1.6rem, 6vw, 2.8rem);
+  color: var(--accent-color);
+  pointer-events: none;
+
+  svg {
     display: block;
     width: 100%;
     height: auto;
   }
 
   @media (min-width: 1001px) {
-    order: 0;
-    margin-block: 0;
-    width: clamp(4rem, 8vw, 8rem);
-    flex-shrink: 0;
+    top: -2.4rem;
+    left: auto;
+    right: -0.9rem;
   }
 `;
 
-export const HeroIntro = styled.div`
-  order: 3;
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
+export const HeroFolder = styled(motion.div)`
+  position: relative;
+  margin-top: 3rem;
+  width: 100%;
 
   @media (min-width: 1001px) {
-    order: 0;
-    height: auto;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 1.25rem;
-    text-align: left;
+    margin-top: 0;
+    z-index: 1;
     width: var(--hero-bio-width);
     flex-shrink: 0;
   }
 `;
 
 export const HeroBio = styled.p`
-  color: var(--neutral-900);
-
-  @media (min-width: 1001px) {
-    color: var(--accent-color);
-    text-align: justify;
-  }
+  color: var(--way-darker-accent-color);
 `;
 
 export const HeroCtaSlot = styled.div`
-  display: inline-flex;
+  order: 4;
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
 
   @media (min-width: 1001px) {
+    order: 0;
     position: absolute;
     right: 2rem;
     bottom: 2rem;
@@ -176,10 +205,10 @@ export const HeroNav = styled.nav`
 `;
 
 export const HeroNavLink = styled(Link)`
-  font-size: var(--font-size-heading1-phone);
+  font-size: var(--font-size-nav);
   text-transform: lowercase;
   text-decoration: none;
-  color: var(--neutral-900);
+  color: var(--accent-color);
   font-weight: var(--font-weight-regular);
 
   &:hover {
@@ -193,20 +222,7 @@ export const HeroNavLink = styled(Link)`
     outline-offset: 4px;
   }
 
-  @media (min-width: 768px) {
-    font-size: var(--font-size-heading1-tablet);
-  }
-
-  @media (min-width: 1001px) {
-    color: var(--accent-color);
-  }
-
   @media (min-width: 1024px) {
     margin-bottom: 0.5rem;
-    font-size: 1.75rem;
-  }
-
-  @media (min-width: 1800px) {
-    font-size: 2rem;
   }
 `;

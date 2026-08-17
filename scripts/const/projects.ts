@@ -17,7 +17,7 @@ export type TextArticle = {
 export type Project = {
   name: string;
   year: number;
-  techStackPreview: string;
+  description: string;
   tags: string[];
   headshot: string;
   headshotGif: string;
@@ -29,7 +29,7 @@ export type Project = {
 
 export type ProjectCategories = {
   "ux & branding": Project[];
-  web: Project[];
+  "web": Project[];
   "3d": Project[];
   "experimental": Project[];
 };
@@ -39,7 +39,7 @@ export const projects: ProjectCategories = {
     {
       "name": "eumar redesign",
       "year": 2026,
-      "techStackPreview": "*/figma, react*/",
+      "description": "Redesign, branding and development of a data-heavy medical web platform for ESHRE.",
       "tags": [
         "product design",
         "user research",
@@ -119,7 +119,7 @@ export const projects: ProjectCategories = {
     {
       "name": "dytto rebrand",
       "year": 2025,
-      "techStackPreview": "*/figma*/",
+      "description": "Brand and product refresh for an AI-powered accounting assistant desktop app.",
       "tags": [
         "branding",
         "design systems",
@@ -203,7 +203,7 @@ export const projects: ProjectCategories = {
     {
       "name": "noc-monitoring",
       "year": 2026,
-      "techStackPreview": "*/figma, figma make*/",
+      "description": "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as hierarchy.",
       "tags": [
         "product design",
         "ux strategy",
@@ -283,10 +283,11 @@ export const projects: ProjectCategories = {
     {
       "name": "ai playbooks",
       "year": 2026,
-      "techStackPreview": "*/webflow, figma*/",
+      "description": "Interactive product landing page that highlights micro-interactions using Webflow and GSAP animations.",
       "tags": [
+        "micro-interactions",
         "webflow",
-        "figma",
+        "branding",
         "design engineering",
         "gsap",
         "css",
@@ -354,7 +355,7 @@ export const projects: ProjectCategories = {
     {
       "name": "personal website ux",
       "year": 2024,
-      "techStackPreview": "*/figma, adobe*/",
+      "description": "Placeholder description for personal website ux.",
       "tags": [
         "ux",
         "interaction design",
@@ -421,7 +422,7 @@ export const projects: ProjectCategories = {
     {
       "name": "veloura brand guide",
       "year": 2025,
-      "techStackPreview": "*/figma, illustrator*/",
+      "description": "Brading and visual identity for vintage clothing resale app.",
       "tags": [
         "branding",
         "visual identity",
@@ -522,7 +523,7 @@ export const projects: ProjectCategories = {
     {
       "name": "mood ring",
       "year": 2024,
-      "techStackPreview": "*/figma*/",
+      "description": "Placeholder description for mood ring.",
       "tags": [
         "figma",
         "design systems",
@@ -618,15 +619,16 @@ export const projects: ProjectCategories = {
     {
       "name": "kbc bike leasing",
       "year": 2025,
-      "techStackPreview": "*/react, figma*/",
+      "description": "Design and development for KBC's multi-step leasing wizard replacing a manual bank process.",
       "tags": [
+        "design systems",
+        "accessibility",
+        "ux",
         "react",
         "typescript",
         "figma",
-        "design systems",
         "radix ui",
         "tailwind css",
-        "accessibility",
         "react hook form",
         "zod"
       ],
@@ -692,7 +694,7 @@ export const projects: ProjectCategories = {
     {
       "name": "tectonic",
       "year": 2025,
-      "techStackPreview": "*/webflow, figma*/",
+      "description": "Design of a flexible timeline component for a major Belgian tech conference.",
       "tags": [
         "webflow",
         "figma",
@@ -752,15 +754,14 @@ export const projects: ProjectCategories = {
     {
       "name": "engie chatgpt widget",
       "year": 2026,
-      "techStackPreview": "*/react, mcp, chatgpt sdk*/",
+      "description": "Interactive data visualisation widget built for Engie, following their branding system. A ChatGPT-embedded experience.",
       "tags": [
+        "branding",
+        "data visualization",
+        "chatgpt apps sdk",
         "react",
         "mcp",
-        "chatgpt apps sdk",
         "node.js",
-        "drizzle",
-        "vite",
-        "data visualization",
         "design systems"
       ],
       "headshot": "/projects/engie-chatgpt-widget/headshot-img.avif",
@@ -819,7 +820,7 @@ export const projects: ProjectCategories = {
     {
       "name": "web 3d terrain generator",
       "year": 2022,
-      "techStackPreview": "*/react, webgl*/",
+      "description": "Web 3D random terrain generator and tweaker using React Three Fiber.",
       "tags": [
         "react",
         "typescript",
@@ -910,7 +911,7 @@ export const projects: ProjectCategories = {
     {
       "name": "ray tracer",
       "year": 2022,
-      "techStackPreview": "*/opengl, compute shaders*/",
+      "description": "OpenGL real-time ray tracer using Compute Shaders, touching post-processing.",
       "tags": [
         "opengl",
         "c++",
@@ -1010,7 +1011,7 @@ export const projects: ProjectCategories = {
     {
       "name": "volumetric light",
       "year": 2021,
-      "techStackPreview": "*/opengl, glsl shaders*/",
+      "description": "OpenGL volumetric light scenic implementation.",
       "tags": [
         "opengl",
         "c++",
@@ -1086,7 +1087,7 @@ export const projects: ProjectCategories = {
     {
       "name": "media pipe",
       "year": 2025,
-      "techStackPreview": "*/touchdesigner*/",
+      "description": "Placeholder description for media pipe.",
       "tags": [
         "touchdesigner",
         "mediapipe",
@@ -1127,7 +1128,7 @@ export const projects: ProjectCategories = {
     {
       "name": "text wave",
       "year": 2024,
-      "techStackPreview": "*/react, webgl*/",
+      "description": "3D texture animation exploration using React Three Fiber.",
       "tags": [
         "react",
         "typescript",
@@ -1185,7 +1186,7 @@ export const projects: ProjectCategories = {
     {
       "name": "lissajous curves",
       "year": 2024,
-      "techStackPreview": "*/touchdesigner, python*/",
+      "description": "Placeholder description for lissajous curves.",
       "tags": [
         "touchdesigner",
         "math",

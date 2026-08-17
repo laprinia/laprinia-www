@@ -1,4 +1,12 @@
-import { forwardRef, type ReactNode, type RefObject } from "react";
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  type MutableRefObject,
+  type ReactNode,
+  type RefObject,
+} from "react";
 import {
   useScroll,
   useTransform,
@@ -30,15 +38,50 @@ export const useCoverFade = (
 
 export type StackLayerProps = {
   children: ReactNode;
-
   fade?: CoverFade;
   zIndex?: number;
 };
 
 const StackLayer = forwardRef<HTMLDivElement, StackLayerProps>(
   function StackLayer({ children, fade, zIndex = 0 }, ref) {
+    const layerRef = useRef<HTMLDivElement | null>(null);
+
+    const setRefs = useCallback(
+      (node: HTMLDivElement | null) => {
+        layerRef.current = node;
+        if (typeof ref === "function") ref(node);
+        else if (ref)
+          (ref as MutableRefObject<HTMLDivElement | null>).current = node;
+      },
+      [ref],
+    );
+
+    useEffect(() => {
+      const node = layerRef.current;
+      if (!node) return;
+
+      const syncStickyOffset = () => {
+        const overflow = node.offsetHeight - window.innerHeight;
+        node.style.setProperty(
+          "--layer-top",
+          overflow > 0 ? `${-overflow}px` : "0px",
+        );
+      };
+
+      syncStickyOffset();
+
+      const observer = new ResizeObserver(syncStickyOffset);
+      observer.observe(node);
+      window.addEventListener("resize", syncStickyOffset);
+
+      return () => {
+        observer.disconnect();
+        window.removeEventListener("resize", syncStickyOffset);
+      };
+    }, []);
+
     return (
-      <Layer ref={ref} style={fade ? { zIndex, ...fade } : { zIndex }}>
+      <Layer ref={setRefs} style={fade ? { zIndex, ...fade } : { zIndex }}>
         {children}
       </Layer>
     );

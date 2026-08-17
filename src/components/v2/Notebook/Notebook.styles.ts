@@ -3,17 +3,19 @@ import styled from "styled-components";
 export const NotebookPanel = styled.div`
   --notebook-hole-radius: 0.75rem;
   --notebook-hole-gap: 1.75rem;
-  --notebook-gutter: clamp(3.25rem, 6vw, 5rem);
+  --notebook-gutter: clamp(2.25rem, 3.5vw, 3rem);
   --notebook-line-width: 0.25rem;
   --notebook-holes-top: 2.5rem;
   --notebook-holes-bottom: 2.5rem;
   --notebook-margin: 0rem;
-  --notebook-padding-block: clamp(2.5rem, 6vw, 5rem);
+  --notebook-content-gap: 0rem;
+  --notebook-padding-block: clamp(1.75rem, 3.5vw, 3.25rem);
   --notebook-padding-inline: clamp(1.25rem, 3vw, 2rem);
   --notebook-background: var(--accent-color);
   --notebook-color: inherit;
   --notebook-radius: 1.25rem;
   --notebook-min-height: 0px;
+  --notebook-band-end: calc(100% - var(--notebook-holes-bottom));
   --notebook-pitch: calc(
     var(--notebook-hole-radius) * 2 + var(--notebook-hole-gap)
   );
@@ -30,6 +32,7 @@ export const NotebookPanel = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   margin: var(--notebook-margin);
+  scroll-margin-top: var(--notebook-margin);
   min-height: max(
     0px,
     calc(var(--notebook-min-height) - var(--notebook-margin) * 2)
@@ -44,8 +47,8 @@ export const NotebookPanel = styled.div`
       #000 0,
       #000 var(--notebook-holes-top),
       transparent var(--notebook-holes-top),
-      transparent calc(100% - var(--notebook-holes-bottom)),
-      #000 calc(100% - var(--notebook-holes-bottom))
+      transparent var(--notebook-band-end),
+      #000 var(--notebook-band-end)
     ),
     radial-gradient(
       circle var(--notebook-hole-radius) at var(--notebook-hole-x) 50%,
@@ -84,8 +87,8 @@ export const NotebookPanel = styled.div`
       #000 0,
       #000 var(--notebook-holes-top),
       transparent var(--notebook-holes-top),
-      transparent calc(100% - var(--notebook-holes-bottom)),
-      #000 calc(100% - var(--notebook-holes-bottom))
+      transparent var(--notebook-band-end),
+      #000 var(--notebook-band-end)
     ),
     radial-gradient(
       circle var(--notebook-hole-radius) at var(--notebook-hole-x) 50%,
@@ -123,6 +126,7 @@ export const NotebookContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: var(--notebook-content-gap);
   padding: var(--notebook-padding-block) var(--notebook-padding-inline);
   padding-left: calc(var(--notebook-gutter) + var(--notebook-padding-inline));
 `;

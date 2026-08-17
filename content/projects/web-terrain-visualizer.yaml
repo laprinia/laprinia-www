@@ -1,6 +1,6 @@
 name: web 3d terrain generator
 year: 2022
-techStackPreview: "*/react, webgl*/"
+description: "Web 3D random terrain generator and tweaker using React Three Fiber."
 tags:
   - react
   - typescript

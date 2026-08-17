@@ -41,7 +41,7 @@ const Portfolio = () => {
                         year={String(project.year)}
                         imagePath={project.headshot}
                         gifPath={project.headshotGif}
-                        techText={project.techStackPreview}
+                        tags={project.tags}
                       />
                     );
                   },

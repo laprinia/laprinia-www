@@ -9,7 +9,7 @@ export const SectionHeading = styled.h2`
   font-weight: 700;
   text-transform: lowercase;
   line-height: 0.85;
-  font-size: clamp(2.5rem, 8vw, 9rem);
+  font-size: var(--font-size-display);
 `;
 
 export const HeadingFilled = styled.span`
@@ -23,19 +23,22 @@ export const HeadingOutlined = styled.span`
   /* stylelint-disable property-no-vendor-prefix -- no unprefixed equivalent */
   @supports (-webkit-text-stroke: 1px currentcolor) {
     color: transparent;
-    -webkit-text-stroke: clamp(1.5px, 0.2vw, 3px) var(--section-ink);
+    -webkit-text-stroke: var(--text-stroke-width) var(--section-ink);
   }
   /* stylelint-enable property-no-vendor-prefix */
 `;
 
 export const SectionBody = styled.div`
-  margin-top: 1.5rem;
-  max-width: 46ch;
+  min-width: 0;
 `;
 
-export const SectionCta = styled.div`
-  display: inline-flex;
-  margin-top: auto;
-  padding-top: 2rem;
+export const SectionActions = styled.div`
+  --actions-gap: 0.75rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--actions-gap);
   align-self: flex-end;
 `;

@@ -1,6 +1,6 @@
 name: ghent bikes
 year: 2024
-techStackPreview: "*/react, next.js, figma*/"
+description: "Placeholder description for ghent bikes."
 tags:
   - react
   - typescript

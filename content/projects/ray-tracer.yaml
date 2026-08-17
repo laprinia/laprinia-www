@@ -1,6 +1,6 @@
 name: ray tracer
 year: 2022
-techStackPreview: "*/opengl, compute shaders*/"
+description: "OpenGL real-time ray tracer using Compute Shaders, touching post-processing."
 tags:
   - opengl
   - c++

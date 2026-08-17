@@ -1,14 +1,16 @@
 name: kbc bike leasing
 year: 2025
-techStackPreview: "*/react, figma*/"
+description: "Design and development for KBC's multi-step leasing wizard replacing a manual bank process."
 tags:
+
+  - design systems
+  - accessibility
+  - ux
   - react
   - typescript
   - figma
-  - design systems
   - radix ui
   - tailwind css
-  - accessibility
   - react hook form
   - zod
 colors:

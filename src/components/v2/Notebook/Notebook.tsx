@@ -1,4 +1,4 @@
-import type { CSSProperties, ElementType, ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 import { NotebookPanel, NotebookContent } from "./Notebook.styles";
 
 export type NotebookProps = {
@@ -15,6 +15,7 @@ export type NotebookProps = {
   margin?: string;
   holesTop?: string;
   holesBottom?: string;
+  contentGap?: string;
   paddingBlock?: string;
   paddingInline?: string;
   background?: string;
@@ -33,6 +34,7 @@ const toCssVars = (props: Partial<NotebookProps>): CSSProperties => {
     ["--notebook-margin", props.margin],
     ["--notebook-holes-top", props.holesTop],
     ["--notebook-holes-bottom", props.holesBottom],
+    ["--notebook-content-gap", props.contentGap],
     ["--notebook-padding-block", props.paddingBlock],
     ["--notebook-padding-inline", props.paddingInline],
     ["--notebook-background", props.background],
@@ -59,6 +61,7 @@ const Notebook = ({
   margin,
   holesTop,
   holesBottom,
+  contentGap,
   paddingBlock,
   paddingInline,
   background,
@@ -75,6 +78,7 @@ const Notebook = ({
     margin,
     holesTop,
     holesBottom,
+    contentGap,
     paddingBlock,
     paddingInline,
     background,
@@ -83,8 +87,50 @@ const Notebook = ({
     minHeight,
   });
 
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const node = panelRef.current;
+    if (!node) return;
+
+    const rootSize = () =>
+      parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+    const toPx = (value: string): number | null => {
+      const raw = value.trim();
+      if (raw.endsWith("px")) return parseFloat(raw);
+      if (raw.endsWith("rem")) return parseFloat(raw) * rootSize();
+      return null;
+    };
+
+    const syncBandEnd = () => {
+      const styles = getComputedStyle(node);
+      const radius = toPx(styles.getPropertyValue("--notebook-hole-radius"));
+      const gap = toPx(styles.getPropertyValue("--notebook-hole-gap"));
+      const top = toPx(styles.getPropertyValue("--notebook-holes-top"));
+      const bottom = toPx(styles.getPropertyValue("--notebook-holes-bottom"));
+      if (radius === null || gap === null || top === null || bottom === null) {
+        return;
+      }
+
+      const pitch = radius * 2 + gap;
+      const span = node.offsetHeight - bottom - top - radius * 2;
+      if (span < 0) return;
+
+      const lastHoleEnd = top + radius * 2 + Math.floor(span / pitch) * pitch;
+      node.style.setProperty("--notebook-band-end", `${lastHoleEnd}px`);
+    };
+
+    syncBandEnd();
+    const observer = new ResizeObserver(syncBandEnd);
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <NotebookPanel
+      ref={panelRef}
       as={as}
       id={id}
       className={className}

@@ -90,12 +90,6 @@ export const TechText = styled.p`
   flex-wrap: wrap;
   gap: 0.35rem;
 
-  span {
-    background-color: var(--neutral-700);
-    color: var(--support-color);
-    padding: 0.15em 0.4em;
-    border-radius: var(--border-radius);
-  }
 
   @media (min-width: 1800px) {
     font-size: 0.8rem;

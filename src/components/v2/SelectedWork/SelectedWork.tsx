@@ -1,9 +1,14 @@
+import { ArrowUpRight, CornerRightDown } from "lucide-react";
 import NotebookSection from "../NotebookSection/NotebookSection";
+import ProjectGrid from "../ProjectGrid/ProjectGrid";
 import {
-  aboutMeCta,
-  aboutMeId,
+  whatIDoCta,
+  whatIDoId,
+  featuredProjectNames,
+  portfolioHref,
   selectedWorkHeading,
   selectedWorkId,
+  viewMoreWorkCta,
 } from "../../../consts.v2";
 
 const SelectedWork = () => (
@@ -12,9 +17,20 @@ const SelectedWork = () => (
     heading={selectedWorkHeading}
     background="var(--accent-color)"
     color="var(--neutral-100)"
-    cta={{ label: aboutMeCta, href: `#${aboutMeId}` }}
+    actions={[
+      {
+        label: viewMoreWorkCta,
+        href: portfolioHref,
+        icon: <ArrowUpRight strokeWidth={2.5} />,
+      },
+      {
+        label: whatIDoCta,
+        href: `#${whatIDoId}`,
+        icon: <CornerRightDown strokeWidth={2.5} />,
+      },
+    ]}
   >
-    Project cards.
+    <ProjectGrid names={featuredProjectNames} />
   </NotebookSection>
 );
 

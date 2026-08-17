@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export type ButtonVariant = "solid" | "outline" | "ghost";
-export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonSize = "sm" | "md" | "lg" | "xl";
 
 const hoverInk = css`
   background-color: var(--neutral-700);
@@ -45,20 +45,26 @@ const sizes = {
   sm: css`
     min-height: 2rem;
     padding: 0 0.6rem;
-    font-size: 0.8rem;
+    font-size: var(--font-size-ui-sm);
     gap: 0.4rem;
   `,
   md: css`
     min-height: 2.25rem;
     padding: 0 0.9rem;
-    font-size: 0.95rem;
+    font-size: var(--font-size-ui-md);
     gap: 0.5rem;
   `,
   lg: css`
     min-height: 2.75rem;
     padding: 0 1.2rem;
-    font-size: 1.05rem;
+    font-size: var(--font-size-ui-lg);
     gap: 0.6rem;
+  `,
+  xl: css`
+    min-height: 3.5rem;
+    padding: 0 1.6rem;
+    font-size: var(--font-size-ui-xl);
+    gap: 0.7rem;
   `,
 } satisfies Record<ButtonSize, ReturnType<typeof css>>;
 
@@ -75,6 +81,10 @@ const iconOnlySizes = {
     width: 2.75rem;
     padding: 0;
   `,
+  xl: css`
+    width: 3.5rem;
+    padding: 0;
+  `,
 } satisfies Record<ButtonSize, ReturnType<typeof css>>;
 
 export const StyledButton = styled.button<{
@@ -82,13 +92,14 @@ export const StyledButton = styled.button<{
   $size: ButtonSize;
   $iconOnly: boolean;
   $fullWidth: boolean;
+  $pill: boolean;
 }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   border: 1.5px solid transparent;
-  border-radius: var(--border-radius);
+  border-radius: ${({ $pill }) => ($pill ? "var(--radius-pill)" : "var(--border-radius)")};
   font-family: var(--font-heading);
   font-weight: var(--font-weight-regular);
   line-height: 1;
@@ -101,7 +112,13 @@ export const StyledButton = styled.button<{
 
   ${({ $size }) => sizes[$size]}
   ${({ $variant }) => variants[$variant]}
-  ${({ $iconOnly, $size }) => $iconOnly && iconOnlySizes[$size]}
+  ${({ $iconOnly, $size }) =>
+    $iconOnly &&
+    css`
+      --button-icon-size: 1.6em;
+
+      ${iconOnlySizes[$size]}
+    `}
   ${({ $fullWidth }) =>
     $fullWidth &&
     css`
@@ -146,7 +163,7 @@ export const ButtonIcon = styled.span`
   flex-shrink: 0;
 
   svg {
-    width: 1.15em;
-    height: 1.15em;
+    width: var(--button-icon-size, 1.15em);
+    height: var(--button-icon-size, 1.15em);
   }
 `;

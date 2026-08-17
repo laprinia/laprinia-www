@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cloudinaryRawUrl } from "../../../lib/cloudinary";
+import Pill from "../../atoms/Pill/Pill";
 import {
   StyledLink,
   CardContainer,
@@ -18,14 +19,14 @@ const ProjectCard = ({
   year,
   imagePath,
   gifPath,
-  techText,
+  tags,
 }: {
   projectName: string;
   projectId: string;
   year: string;
   imagePath: string;
   gifPath: string;
-  techText: string;
+  tags: string[];
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -43,10 +44,7 @@ const ProjectCard = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const techTags = techText
-    .split(",")
-    .map((t) => t.trim())
-    .filter(Boolean);
+  const techTags = tags.slice(0, 2);
 
   return (
     <StyledLink
@@ -91,7 +89,9 @@ const ProjectCard = ({
           </HeaderContainer>
           <TechText>
             {techTags.map((tag) => (
-              <span key={tag}>{tag}</span>
+              <Pill key={tag} size="sm">
+                {tag}
+              </Pill>
             ))}
           </TechText>
         </TextContainer>

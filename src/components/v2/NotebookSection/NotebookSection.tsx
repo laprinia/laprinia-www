@@ -1,5 +1,4 @@
 import type { CSSProperties, ReactNode } from "react";
-import { CornerRightDown } from "lucide-react";
 import Notebook from "../Notebook/Notebook";
 import Button from "../Button/Button";
 import {
@@ -7,8 +6,14 @@ import {
   HeadingFilled,
   HeadingOutlined,
   SectionBody,
-  SectionCta,
+  SectionActions,
 } from "./NotebookSection.styles";
+
+export type SectionAction = {
+  label: string;
+  href: string;
+  icon?: ReactNode;
+};
 
 export type NotebookSectionProps = {
   id: string;
@@ -16,7 +21,7 @@ export type NotebookSectionProps = {
   heading: string;
   background: string;
   color: string;
-  cta?: { label: string; href: string };
+  actions?: SectionAction[];
   children?: ReactNode;
 };
 
@@ -25,7 +30,7 @@ const NotebookSection = ({
   heading,
   background,
   color,
-  cta,
+  actions,
   children,
 }: NotebookSectionProps) => {
   const [filled, ...rest] = heading.split(" ");
@@ -45,8 +50,9 @@ const NotebookSection = ({
       aria-labelledby={headingId}
       background={background}
       color={color}
-      margin="clamp(1.25rem, 2vw, 2rem)"
+      margin="clamp(2.5rem, 4vw, 8rem)"
       radius="0.5rem"
+      contentGap="2rem"
       minHeight="100svh"
       style={surface}
     >
@@ -57,17 +63,20 @@ const NotebookSection = ({
 
       {children ? <SectionBody>{children}</SectionBody> : null}
 
-      {cta ? (
-        <SectionCta>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            icon={<CornerRightDown strokeWidth={2.5} />}
-          >
-            <a href={cta.href}>{cta.label}</a>
-          </Button>
-        </SectionCta>
+      {actions?.length ? (
+        <SectionActions>
+          {actions.map((action) => (
+            <Button
+              key={action.href}
+              asChild
+              variant="outline"
+              size="lg"
+              icon={action.icon}
+            >
+              <a href={action.href}>{action.label}</a>
+            </Button>
+          ))}
+        </SectionActions>
       ) : null}
     </Notebook>
   );

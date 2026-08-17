@@ -36,7 +36,7 @@ const readProject = (slug) => {
   return {
     name: data.name,
     year: data.year,
-    techStackPreview: data.techStackPreview,
+    description: data.description,
     tags: data.tags || [],
     headshot: `/projects/${slug}/${data.headshot}`,
     headshotGif: `/projects/${slug}/${data.headshotGif}`,
@@ -83,7 +83,7 @@ export type TextArticle = {
 export type Project = {
   name: string;
   year: number;
-  techStackPreview: string;
+  description: string;
   tags: string[];
   headshot: string;
   headshotGif: string;
@@ -94,11 +94,9 @@ export type Project = {
 };
 
 export type ProjectCategories = {
-  "ux & branding": Project[];
-  web: Project[];
-  "3d": Project[];
-  "experimental": Project[];
-  archive: Project[];
+${Object.keys(projects)
+  .map((category) => `  ${JSON.stringify(category)}: Project[];`)
+  .join("\n")}
 };`;
 
 const output = `// Auto-generated from content/projects/*.yaml

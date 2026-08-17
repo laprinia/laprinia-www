@@ -1,6 +1,6 @@
 name: personal website
 year: 2024
-techStackPreview: "*/react, next.js*/"
+description: "Placeholder description for personal website."
 tags:
   - react
   - typescript

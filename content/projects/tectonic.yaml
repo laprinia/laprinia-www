@@ -1,6 +1,6 @@
 name: tectonic
 year: 2025
-techStackPreview: "*/webflow, figma*/"
+description: "Design of a flexible timeline component for a major Belgian tech conference."
 tags:
   - webflow
   - figma
