@@ -1,5 +1,6 @@
 name: mood ring
 year: 2024
+published: false
 description: "Placeholder description for mood ring."
 tags:
   - figma

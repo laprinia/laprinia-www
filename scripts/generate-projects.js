@@ -36,6 +36,7 @@ const readProject = (slug) => {
   return {
     name: data.name,
     year: data.year,
+    published: data.published !== false,
     description: data.description,
     tags: data.tags || [],
     headshot: `/projects/${slug}/${data.headshot}`,
@@ -83,6 +84,7 @@ export type TextArticle = {
 export type Project = {
   name: string;
   year: number;
+  published: boolean;
   description: string;
   tags: string[];
   headshot: string;

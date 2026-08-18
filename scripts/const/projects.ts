@@ -17,6 +17,7 @@ export type TextArticle = {
 export type Project = {
   name: string;
   year: number;
+  published: boolean;
   description: string;
   tags: string[];
   headshot: string;
@@ -39,6 +40,7 @@ export const projects: ProjectCategories = {
     {
       "name": "eumar redesign",
       "year": 2026,
+      "published": true,
       "description": "Redesign, branding and development of a data-heavy medical web platform for ESHRE.",
       "tags": [
         "product design",
@@ -119,6 +121,7 @@ export const projects: ProjectCategories = {
     {
       "name": "dytto rebrand",
       "year": 2025,
+      "published": true,
       "description": "Brand and product refresh for an AI-powered accounting assistant desktop app.",
       "tags": [
         "branding",
@@ -203,6 +206,7 @@ export const projects: ProjectCategories = {
     {
       "name": "noc-monitoring",
       "year": 2026,
+      "published": true,
       "description": "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as hierarchy.",
       "tags": [
         "product design",
@@ -283,6 +287,7 @@ export const projects: ProjectCategories = {
     {
       "name": "ai playbooks",
       "year": 2026,
+      "published": true,
       "description": "Interactive product landing page that highlights micro-interactions using Webflow and GSAP animations.",
       "tags": [
         "micro-interactions",
@@ -355,6 +360,7 @@ export const projects: ProjectCategories = {
     {
       "name": "personal website ux",
       "year": 2024,
+      "published": false,
       "description": "Placeholder description for personal website ux.",
       "tags": [
         "ux",
@@ -422,6 +428,7 @@ export const projects: ProjectCategories = {
     {
       "name": "veloura brand guide",
       "year": 2025,
+      "published": false,
       "description": "Brading and visual identity for vintage clothing resale app.",
       "tags": [
         "branding",
@@ -523,6 +530,7 @@ export const projects: ProjectCategories = {
     {
       "name": "mood ring",
       "year": 2024,
+      "published": false,
       "description": "Placeholder description for mood ring.",
       "tags": [
         "figma",
@@ -619,6 +627,7 @@ export const projects: ProjectCategories = {
     {
       "name": "kbc bike leasing",
       "year": 2025,
+      "published": true,
       "description": "Design and development for KBC's multi-step bike leasing wizard that replaces a manual bank process.",
       "tags": [
         "design systems",
@@ -694,6 +703,7 @@ export const projects: ProjectCategories = {
     {
       "name": "tectonic",
       "year": 2025,
+      "published": true,
       "description": "Design of a flexible timeline component for a major Belgian tech conference.",
       "tags": [
         "webflow",
@@ -754,6 +764,7 @@ export const projects: ProjectCategories = {
     {
       "name": "engie chatgpt widget",
       "year": 2026,
+      "published": true,
       "description": "Interactive data visualisation widget built for Engie, following their branding system. A ChatGPT-embedded experience.",
       "tags": [
         "branding",
@@ -820,6 +831,7 @@ export const projects: ProjectCategories = {
     {
       "name": "web 3d terrain generator",
       "year": 2022,
+      "published": true,
       "description": "Web 3D random terrain generator and tweaker using React Three Fiber.",
       "tags": [
         "react",
@@ -911,6 +923,7 @@ export const projects: ProjectCategories = {
     {
       "name": "ray tracer",
       "year": 2022,
+      "published": true,
       "description": "OpenGL real-time ray tracer using Compute Shaders, touching post-processing.",
       "tags": [
         "opengl",
@@ -1011,6 +1024,7 @@ export const projects: ProjectCategories = {
     {
       "name": "volumetric light",
       "year": 2021,
+      "published": true,
       "description": "OpenGL volumetric light scenic implementation.",
       "tags": [
         "opengl",
@@ -1087,6 +1101,7 @@ export const projects: ProjectCategories = {
     {
       "name": "media pipe",
       "year": 2025,
+      "published": true,
       "description": "Placeholder description for media pipe.",
       "tags": [
         "touchdesigner",
@@ -1128,6 +1143,7 @@ export const projects: ProjectCategories = {
     {
       "name": "text wave",
       "year": 2024,
+      "published": true,
       "description": "3D texture animation exploration using React Three Fiber.",
       "tags": [
         "react",
@@ -1186,6 +1202,7 @@ export const projects: ProjectCategories = {
     {
       "name": "lissajous curves",
       "year": 2024,
+      "published": true,
       "description": "Placeholder description for lissajous curves.",
       "tags": [
         "touchdesigner",
