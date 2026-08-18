@@ -2,6 +2,7 @@ import Head from "next/head";
 import { previewGate } from "../../lib/preview";
 import { V2GlobalStyle } from "../../styles/v2GlobalStyle";
 import HomeStage from "../../components/v2/HomeStage/HomeStage";
+import Footer from "../../components/v2/Footer/Footer";
 
 const HomeV2 = () => {
   return (
@@ -14,6 +15,7 @@ const HomeV2 = () => {
       <main>
         <HomeStage />
       </main>
+      <Footer />
     </>
   );
 };

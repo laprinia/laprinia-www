@@ -4,6 +4,7 @@ import { navItems } from "../../../consts";
 import { previewGate } from "../../../lib/preview";
 import { V2GlobalStyle } from "../../../styles/v2GlobalStyle";
 import PortfolioBoard from "../../../components/v2/PortfolioBoard/PortfolioBoard";
+import Footer from "../../../components/v2/Footer/Footer";
 import { PortfolioGround } from "../../../styles/portfolio.v2.styles";
 
 const PortfolioV2 = () => {
@@ -20,6 +21,7 @@ const PortfolioV2 = () => {
           <PortfolioBoard />
         </main>
       </PortfolioGround>
+      <Footer />
     </>
   );
 };
