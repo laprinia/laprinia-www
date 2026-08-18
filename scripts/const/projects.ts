@@ -20,6 +20,8 @@ export type Project = {
   published: boolean;
   description: string;
   tags: string[];
+  roles: string[];
+  discipline: string;
   headshot: string;
   headshotGif: string;
   mediaContents: MediaContent[];
@@ -53,6 +55,13 @@ export const projects: ProjectCategories = {
         "enterprise ux",
         "prototyping"
       ],
+      "roles": [
+        "research",
+        "ux",
+        "data viz",
+        "dev"
+      ],
+      "discipline": "product design",
       "headshot": "/projects/eumar-redesign/headshot-img.avif",
       "headshotGif": "/projects/eumar-redesign/headshot.webp",
       "mediaContents": [
@@ -132,6 +141,12 @@ export const projects: ProjectCategories = {
         "interaction design",
         "figma"
       ],
+      "roles": [
+        "research",
+        "branding",
+        "micro-interactions"
+      ],
+      "discipline": "brand & product",
       "headshot": "/projects/dytto-rebrand/headshot-img.avif",
       "headshotGif": "/projects/dytto-rebrand/headshot.webp",
       "mediaContents": [
@@ -204,7 +219,7 @@ export const projects: ProjectCategories = {
       ]
     },
     {
-      "name": "noc-monitoring",
+      "name": "noc monitoring",
       "year": 2026,
       "published": true,
       "description": "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as hierarchy.",
@@ -218,6 +233,12 @@ export const projects: ProjectCategories = {
         "design systems",
         "prototyping"
       ],
+      "roles": [
+        "research",
+        "ux",
+        "metrics"
+      ],
+      "discipline": "data-heavy ux",
       "headshot": "/projects/noc-monitoring/headshot-img.avif",
       "headshotGif": "/projects/noc-monitoring/headshot.webp",
       "mediaContents": [
@@ -298,6 +319,8 @@ export const projects: ProjectCategories = {
         "css",
         "design systems"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/ai-playbooks/headshot-img.avif",
       "headshotGif": "/projects/ai-playbooks/headshot.webp",
       "mediaContents": [
@@ -370,6 +393,8 @@ export const projects: ProjectCategories = {
         "responsive design",
         "affinity designer"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/personal-website-ux/headshot-img.avif",
       "headshotGif": "/projects/personal-website-ux/headshot.webp",
       "mediaContents": [
@@ -440,6 +465,8 @@ export const projects: ProjectCategories = {
         "ui",
         "ux research"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/veloura-brand-guide/headshot-img.avif",
       "headshotGif": "/projects/veloura-brand-guide/headshot.webp",
       "mediaContents": [
@@ -541,6 +568,8 @@ export const projects: ProjectCategories = {
         "user flows",
         "responsive design"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/mood-ring/headshot-img.avif",
       "headshotGif": "/projects/mood-ring/headshot.webp",
       "mediaContents": [
@@ -641,6 +670,12 @@ export const projects: ProjectCategories = {
         "react hook form",
         "zod"
       ],
+      "roles": [
+        "ux",
+        "accessibility",
+        "dev"
+      ],
+      "discipline": "flow design",
       "headshot": "/projects/kbc-bike-leasing/headshot-img.avif",
       "headshotGif": "/projects/kbc-bike-leasing/headshot.webp",
       "mediaContents": [
@@ -712,6 +747,8 @@ export const projects: ProjectCategories = {
         "design",
         "glassmorphism"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/tectonic/headshot-img.avif",
       "headshotGif": "/projects/tectonic/headshot.webp",
       "mediaContents": [
@@ -775,6 +812,13 @@ export const projects: ProjectCategories = {
         "node.js",
         "design systems"
       ],
+      "roles": [
+        "ux",
+        "design systems",
+        "branding",
+        "ai"
+      ],
+      "discipline": "interaction design",
       "headshot": "/projects/engie-chatgpt-widget/headshot-img.avif",
       "headshotGif": "/projects/engie-chatgpt-widget/headshot.webp",
       "mediaContents": [
@@ -841,6 +885,8 @@ export const projects: ProjectCategories = {
         "mantine",
         "glsl-noise"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/web-terrain-visualizer/headshot-img.avif",
       "headshotGif": "/projects/web-terrain-visualizer/headshot.webp",
       "mediaContents": [
@@ -934,6 +980,8 @@ export const projects: ProjectCategories = {
         "sphere ray tracing",
         "various materials"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/ray-tracer/headshot-img.avif",
       "headshotGif": "/projects/ray-tracer/headshot.webp",
       "mediaContents": [
@@ -1034,6 +1082,8 @@ export const projects: ProjectCategories = {
         "post processing",
         "scene rendering"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/volumetric-light/headshot-img.avif",
       "headshotGif": "/projects/volumetric-light/headshot.webp",
       "mediaContents": [
@@ -1109,6 +1159,8 @@ export const projects: ProjectCategories = {
         "instancing",
         "image processing"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/media-pipe/headshot-img.avif",
       "headshotGif": "/projects/media-pipe/headshot.webp",
       "mediaContents": [
@@ -1152,6 +1204,8 @@ export const projects: ProjectCategories = {
         "drei",
         "styled components"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/text-wave/headshot-img.avif",
       "headshotGif": "/projects/text-wave/headshot.webp",
       "mediaContents": [
@@ -1212,6 +1266,8 @@ export const projects: ProjectCategories = {
         "rendering",
         "3d"
       ],
+      "roles": [],
+      "discipline": "",
       "headshot": "/projects/lissajous-curves/headshot-img.avif",
       "headshotGif": "/projects/lissajous-curves/headshot.webp",
       "mediaContents": [

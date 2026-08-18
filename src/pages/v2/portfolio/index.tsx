@@ -1,12 +1,10 @@
 import Head from "next/head";
+import NavBar from "../../../components/organisms/NavBar/NavBar";
+import { navItems } from "../../../consts";
 import { previewGate } from "../../../lib/preview";
-import {
-  PreviewMain,
-  PreviewBadge,
-  PreviewTitle,
-  PreviewNote,
-  PreviewLink,
-} from "../../../styles/preview.styles";
+import { V2GlobalStyle } from "../../../styles/v2GlobalStyle";
+import PortfolioBoard from "../../../components/v2/PortfolioBoard/PortfolioBoard";
+import { PortfolioGround } from "../../../styles/portfolio.v2.styles";
 
 const PortfolioV2 = () => {
   return (
@@ -15,14 +13,13 @@ const PortfolioV2 = () => {
         <title>portfolio v2 — preview</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <PreviewMain>
-        <PreviewBadge>preview · v2</PreviewBadge>
-        <PreviewTitle>Portfolio v2</PreviewTitle>
-        <PreviewNote>
-          Placeholder. Phase 4 builds this.{" "}
-          <PreviewLink href="/v2">← Homepage v2</PreviewLink>
-        </PreviewNote>
-      </PreviewMain>
+      <V2GlobalStyle />
+      <NavBar items={navItems} highlightedIndex={0} />
+      <PortfolioGround>
+        <main>
+          <PortfolioBoard />
+        </main>
+      </PortfolioGround>
     </>
   );
 };

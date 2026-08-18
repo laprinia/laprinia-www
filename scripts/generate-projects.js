@@ -39,6 +39,8 @@ const readProject = (slug) => {
     published: data.published !== false,
     description: data.description,
     tags: data.tags || [],
+    roles: data.roles || [],
+    discipline: data.discipline || "",
     headshot: `/projects/${slug}/${data.headshot}`,
     headshotGif: `/projects/${slug}/${data.headshotGif}`,
     mediaContents,
@@ -87,6 +89,8 @@ export type Project = {
   published: boolean;
   description: string;
   tags: string[];
+  roles: string[];
+  discipline: string;
   headshot: string;
   headshotGif: string;
   mediaContents: MediaContent[];

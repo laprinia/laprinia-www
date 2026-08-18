@@ -1,6 +1,11 @@
 name: kbc bike leasing
 year: 2025
 description: "Design and development for KBC's multi-step bike leasing wizard that replaces a manual bank process."
+roles:
+  - ux
+  - accessibility
+  - dev
+discipline: "flow design"
 tags:
 
   - design systems

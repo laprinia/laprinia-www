@@ -1,6 +1,12 @@
 name: engie chatgpt widget
 year: 2026
 description: "Interactive data visualisation widget built for Engie, following their branding system. A ChatGPT-embedded experience."
+roles:
+  - ux
+  - design systems
+  - branding
+  - ai
+discipline: "interaction design"
 tags:
   - branding
   - data visualization
