@@ -619,7 +619,7 @@ export const projects: ProjectCategories = {
     {
       "name": "kbc bike leasing",
       "year": 2025,
-      "description": "Design and development for KBC's multi-step leasing wizard replacing a manual bank process.",
+      "description": "Design and development for KBC's multi-step bike leasing wizard that replaces a manual bank process.",
       "tags": [
         "design systems",
         "accessibility",
