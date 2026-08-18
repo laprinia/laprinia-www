@@ -125,6 +125,7 @@ export const HeroPortrait = styled(motion.div)`
     left: auto;
     z-index: 2;
     align-self: center;
+    transform-origin: top center;
     width: clamp(4.5rem, 7vw, 6.5rem);
     flex-shrink: 0;
 
@@ -132,6 +133,11 @@ export const HeroPortrait = styled(motion.div)`
       transform: none;
     }
   }
+`;
+
+export const HeroTilt = styled(motion.div)`
+  position: relative;
+  width: 100%;
 `;
 
 export const HeroClip = styled(motion.div)`
@@ -150,9 +156,10 @@ export const HeroClip = styled(motion.div)`
   }
 
   @media (min-width: 1001px) {
-    top: -2.4rem;
+    top: -0.35rem;
     left: auto;
-    right: -0.9rem;
+    right: -0.55rem;
+    width: clamp(1.2rem, 1.8vw, 1.9rem);
   }
 `;
 
@@ -164,6 +171,7 @@ export const HeroFolder = styled(motion.div)`
   @media (min-width: 1001px) {
     margin-top: 0;
     z-index: 1;
+    transform-origin: top center;
     width: var(--hero-bio-width);
     flex-shrink: 0;
   }

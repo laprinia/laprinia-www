@@ -1,6 +1,11 @@
 import { useCallback, useSyncExternalStore } from "react";
 import Image from "next/image";
-import { useReducedMotion, type Variants } from "framer-motion";
+import {
+  useReducedMotion,
+  useScroll,
+  useTransform,
+  type Variants,
+} from "framer-motion";
 import { CornerRightDown } from "lucide-react";
 import Button from "../Button/Button";
 import Folder from "../Folder/Folder";
@@ -22,6 +27,7 @@ import {
   HeroNameOutlined,
   HeroLower,
   HeroPortrait,
+  HeroTilt,
   HeroClip,
   HeroFolder,
   HeroBio,
@@ -38,19 +44,23 @@ const groupVariants: Variants = {
 };
 
 const portraitVariants: Variants = {
-  clipped: { x: "45%", rotate: 4 },
-  spread: { x: 0, rotate: 1.5, transition: spreadTransition },
+  clipped: { x: "150%", rotate: 5 },
+  spread: { x: 0, rotate: 0, transition: spreadTransition },
 };
 
 const folderVariants: Variants = {
-  clipped: { x: "-25%", rotate: -5 },
-  spread: { x: 0, rotate: -1.5, transition: spreadTransition },
+  clipped: { x: "-38%", rotate: -6 },
+  spread: { x: 0, rotate: 0, transition: spreadTransition },
 };
 
 const clipVariants: Variants = {
-  clipped: { rotate: -16 },
+  clipped: { rotate: -18 },
   spread: { rotate: -7, transition: spreadTransition },
 };
+
+const SCROLL_TILT_RANGE = [0, 600];
+const PORTRAIT_TILT = [0, 3];
+const FOLDER_TILT = [0, -3];
 
 const DESKTOP_QUERY = "(min-width: 1001px)";
 
@@ -77,10 +87,14 @@ const HomeHero = () => {
   const [nameFilled, nameOutlined] = toStackedLines(landingName);
   const prefersReducedMotion = useReducedMotion();
   const isDesktop = useIsDesktop();
-  const motionProps =
-    isDesktop && !prefersReducedMotion
-      ? { initial: "clipped" as const, animate: "spread" as const }
-      : {};
+  const animated = isDesktop && !prefersReducedMotion;
+  const motionProps = animated
+    ? { initial: "clipped" as const, animate: "spread" as const }
+    : {};
+
+  const { scrollY } = useScroll();
+  const portraitTilt = useTransform(scrollY, SCROLL_TILT_RANGE, PORTRAIT_TILT);
+  const folderTilt = useTransform(scrollY, SCROLL_TILT_RANGE, FOLDER_TILT);
 
   return (
     <HeroSection>
@@ -98,25 +112,33 @@ const HomeHero = () => {
         ))}
       </HeroNav>
 
-      <HeroLower {...motionProps} variants={groupVariants}>
+      <HeroLower
+        key={animated ? "animated" : "static"}
+        {...motionProps}
+        variants={groupVariants}
+      >
         <HeroPortrait variants={portraitVariants}>
-          <HeroClip variants={clipVariants}>
-            <Paperclip />
-          </HeroClip>
-          <Image
-            src={heroPortraitPath}
-            alt={heroPortraitAlt}
-            width={600}
-            height={747}
-            sizes="(min-width: 1001px) 7vw, 22.5vw"
-            priority
-          />
+          <HeroTilt style={animated ? { rotate: portraitTilt } : undefined}>
+            <HeroClip variants={clipVariants}>
+              <Paperclip />
+            </HeroClip>
+            <Image
+              src={heroPortraitPath}
+              alt={heroPortraitAlt}
+              width={600}
+              height={747}
+              sizes="(min-width: 1001px) 7vw, 22.5vw"
+              priority
+            />
+          </HeroTilt>
         </HeroPortrait>
 
         <HeroFolder variants={folderVariants}>
-          <Folder>
-            <HeroBio>{landingBio}</HeroBio>
-          </Folder>
+          <HeroTilt style={animated ? { rotate: folderTilt } : undefined}>
+            <Folder>
+              <HeroBio>{landingBio}</HeroBio>
+            </Folder>
+          </HeroTilt>
         </HeroFolder>
       </HeroLower>
 
