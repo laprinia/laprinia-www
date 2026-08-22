@@ -64,13 +64,13 @@ export const GlobalStyle = createGlobalStyle`
         /* Primary navigation links. */
         --font-size-nav: clamp(1.125rem, 1.95vw, 2rem);
 
-        /* Paragraph copy. */
-        --font-size-body: 1rem;
+        /* Paragraph copy. 16px up to ~1000px, then grows to 20px by 1600px. */
+        --font-size-body: clamp(1rem, 0.583rem + 0.667vw, 1.25rem);
 
         /* Controls: buttons and pills. One ramp shared by both, so a
            medium pill and a small button are deliberately the same size. */
-        --font-size-ui-xs: 0.75rem;
-        --font-size-ui-sm: 0.875rem;
+        --font-size-ui-xs: 0.8125rem;
+        --font-size-ui-sm: 0.9375rem;
         --font-size-ui-md: 1rem;
         --font-size-ui-lg: 1.125rem;
         --font-size-ui-xl: 1.25rem;
@@ -111,6 +111,7 @@ export const GlobalStyle = createGlobalStyle`
            COLOUR
            ============================================================ */
         --background-color: var(--neutral-100);
+        --foreground-color: var(--neutral-800);
         --accent-color: #0141D5;
         --darker-accent-color: #0136af;
         --way-darker-accent-color: #002986;
@@ -128,9 +129,68 @@ export const GlobalStyle = createGlobalStyle`
         --neutral-900: #000000;
 
         /* ============================================================
+           SPACING
+           4px basis. Step n == n * 4px.
+
+           Every gap, margin and padding comes from this scale, including
+           the bounds inside clamp(). Never write a literal rem value for
+           spacing: pick the nearest step instead. The step number is the
+           multiplier, so --space-6 is 6 * 4px = 24px.
+
+           Reach for the smallest step that still separates two things.
+           Closer spacing reads as "these belong together", so the jump
+           between two groups should be visibly larger than the spacing
+           inside either one.
+
+           INSIDE ONE ELEMENT
+           --space-1    4px  hairline: icon to its label, chip padding
+           --space-2    8px  tightly bound pair: index to title, tag rows,
+                             icon to text inside a link
+           --space-3   12px  within a single text block: heading to body
+
+           BETWEEN ELEMENTS IN A COMPONENT
+           --space-4   16px  grouped siblings: body copy to a tag row
+           --space-5   20px  sub-groups inside one component
+           --space-6   24px  compact component padding, block to block
+
+           COMPONENT LEVEL
+           --space-7   28px  roomier component padding
+           --space-8   32px  card padding, gap between sibling cards
+           --space-9   36px  wide-viewport card padding
+           --space-10  40px  list row rhythm, stacked card gaps
+           --space-12  48px  major blocks inside one section
+
+           SECTION LEVEL
+           --space-14  56px  section separation, tight viewports
+           --space-16  64px  section separation, mobile
+           --space-20  80px  section separation, desktop
+           --space-24  96px  page-level breaks, large screens
+
+           For fluid spacing, clamp between two steps rather than
+           inventing a value: clamp(var(--space-6), 3vw, var(--space-12)).
+           ============================================================ */
+        --space-1: 0.25rem;   /* 4px  */
+        --space-2: 0.5rem;    /* 8px  */
+        --space-3: 0.75rem;   /* 12px */
+        --space-4: 1rem;      /* 16px */
+        --space-5: 1.25rem;   /* 20px */
+        --space-6: 1.5rem;    /* 24px */
+        --space-7: 1.75rem;   /* 28px */
+        --space-8: 2rem;      /* 32px */
+        --space-9: 2.25rem;   /* 36px */
+        --space-10: 2.5rem;   /* 40px */
+        --space-12: 3rem;     /* 48px */
+        --space-14: 3.5rem;   /* 56px */
+        --space-16: 4rem;     /* 64px */
+        --space-20: 5rem;     /* 80px */
+        --space-24: 6rem;     /* 96px */
+
+        /* ============================================================
            RADIUS AND LAYOUT
            ============================================================ */
+        --radius-sm: 4px;
         --border-radius: 8px;
+        --radius-card: 1rem;
         --radius-pill: 999px;
         --nav-height: 4rem;
 
@@ -185,11 +245,5 @@ export const GlobalStyle = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-heading);
         font-weight: var(--font-weight-light);
-    }
-
-    @media (hover: hover) {
-        * {
-            cursor: none !important;
-        }
     }
 `;

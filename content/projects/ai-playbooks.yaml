@@ -1,6 +1,9 @@
 name: ai playbooks
 year: 2026
 description: "Interactive product landing page that highlights micro-interactions using Webflow and GSAP animations."
+client: "In The Pocket"
+role: "Design engineer"
+timeline: "4 weeks"
 tags:
   - micro-interactions
   - webflow
@@ -19,22 +22,65 @@ media:
   - 1.mov
   - 2.mov
   - 3.mov
+walkthrough: 1.mov
 buttons:
   - alt: ITP Webpage
     imageSrc: /socials/web
     link: https://www.inthepocket.com/ai-playbooks
 articles:
-  - header: "A) About"
-    text: "Design engineering work for In The Pocket on AI Playbooks 🌈, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."
-  - header: "B) Aesthetic Direction"
-    text: "The visual language blends movement in photography with the actual motion of the page itself."
-  - header: "C) Scroll-Driven Card Spread"
-    text: "The hero interaction is a card spread effect that unfolds as the user scrolls, built with scroll-triggered GSAP animations in Webflow. It draws visitors in by turning passive scrolling into an act of discovery, setting the tone for how In The Pocket approaches AI."
-  - header: "D) Interactive Card System"
-    text: "Tool and event cards respond to hover and pointer movement with a 3D tilt effect powered by CSS perspective, giving the interface a tactile, dimensional quality. Each card layout is designed so the information hierarchy is immediately clear, what the tool or event is, when it was added, and when it takes place, making it easy for visitors to scan and orient themselves in time."
-  - header: "E) Visual System"
-    text: "The page is a showcase of In The Pocket's new design system, leaning into gradients and a pastel palette that communicates curiosity and playfulness rather than the cold, corporate tone AI content often defaults to."
-  - header: "F) User Research"
-    text: "While there was no formal user research phase, the design decisions were informed indirectly, through stakeholder conversations, observing how visitors navigated similar pages, and iterating on what made the offering easier to understand at a glance."
-  - header: "G) Impact"
-    text: "The page has brought more customers into active AI consultation discussions, made the AI roadmap clearer and more tangible for stakeholders, and served as a flagship example of the new design system in production."
+  - header: "About"
+    text: "Design engineering work for In The Pocket on AI Playbooks, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."
+
+  - header: "Visual System"
+    text: |
+      The page doubles as a showcase of In The Pocket's new design system, and the
+      aesthetic direction is what ties its two halves together.
+
+      - **Motion as the through-line** — the visual language blends movement
+        captured in photography with the actual motion of the page itself.
+      - **Gradients and a pastel palette** — chosen to communicate curiosity and
+        playfulness, rather than the cold, corporate tone AI content often
+        defaults to.
+
+  - header: "Scroll-Driven Card Spread"
+    media:
+      - 2.mov
+    text: |
+      The hero interaction is a card spread that unfolds as the user scrolls, built
+      with scroll-triggered GSAP animations in Webflow. It **turns passive
+      scrolling into an act of discovery**, setting the tone for how In The Pocket
+      approaches AI.
+
+  - header: "Interactive Card System"
+    media:
+      - 3.mov
+    text: |
+      Tool and event cards respond to hover and pointer movement with a **3D tilt
+      effect powered by CSS perspective**, giving the interface a tactile,
+      dimensional quality.
+
+      - **A fixed information order** — every card answers what the tool or event
+        is, when it was added, and when it takes place, always in that sequence.
+      - **Scannable in time** — holding that order constant across the set lets
+        visitors orient themselves without reading each card in full.
+
+  - header: "User Research"
+    text: |
+      There was no formal research phase, so the decisions were informed
+      indirectly:
+
+      - **Stakeholder conversations** — surfacing what the practice actually needed
+        the page to communicate.
+      - **Observing comparable pages** — watching how visitors navigate similar
+        offerings elsewhere.
+      - **Iterating on comprehension** — repeatedly adjusting what made the
+        offering easier to understand at a glance.
+
+  - header: "Impact"
+    text: |
+      - **More customers in active AI consultation discussions** — the page moves
+        visitors toward a conversation rather than only explaining the practice.
+      - **A clearer AI roadmap for stakeholders** — the offering became more
+        tangible internally, not only for prospective clients.
+      - **A flagship for the new design system** — the first showcase of In The
+        Pocket's refreshed system in production.

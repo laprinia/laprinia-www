@@ -93,14 +93,20 @@ const Notebook = ({
     const node = panelRef.current;
     if (!node) return;
 
-    const rootSize = () =>
-      parseFloat(getComputedStyle(document.documentElement).fontSize);
+    // Custom properties resolve to their authored token stream, so a clamp()
+    // reads back verbatim and has to be measured through a real layout box.
+    const probe = document.createElement("div");
+    probe.style.cssText =
+      "position:absolute;visibility:hidden;pointer-events:none;height:0";
+    document.body.appendChild(probe);
 
     const toPx = (value: string): number | null => {
       const raw = value.trim();
-      if (raw.endsWith("px")) return parseFloat(raw);
-      if (raw.endsWith("rem")) return parseFloat(raw) * rootSize();
-      return null;
+      if (!raw) return null;
+      probe.style.width = "0px";
+      probe.style.width = raw;
+      const px = parseFloat(getComputedStyle(probe).width);
+      return Number.isFinite(px) ? px : null;
     };
 
     const syncBandEnd = () => {
@@ -125,7 +131,10 @@ const Notebook = ({
     const observer = new ResizeObserver(syncBandEnd);
     observer.observe(node);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      probe.remove();
+    };
   }, []);
 
   return (

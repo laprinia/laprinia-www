@@ -1,4 +1,6 @@
 import Head from "next/head";
+import NavBar from "../../components/organisms/NavBar/NavBar";
+import { navItems } from "../../consts";
 import { previewGate } from "../../lib/preview";
 import { V2GlobalStyle } from "../../styles/v2GlobalStyle";
 import HomeStage from "../../components/v2/HomeStage/HomeStage";
@@ -12,6 +14,12 @@ const HomeV2 = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <V2GlobalStyle />
+      <NavBar
+        items={navItems}
+        highlightedIndex={0}
+        variant="highlight"
+        currentHref="/"
+      />
       <main>
         <HomeStage />
       </main>

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const NotebookPanel = styled.div`
-  --notebook-hole-radius: 0.75rem;
-  --notebook-hole-gap: 1.75rem;
-  --notebook-gutter: clamp(2.25rem, 3.5vw, 3rem);
-  --notebook-line-width: 0.25rem;
-  --notebook-holes-top: 2.5rem;
-  --notebook-holes-bottom: 2.5rem;
+  --notebook-hole-radius: clamp(0.4rem, 1.4vw, 0.75rem);
+  --notebook-hole-gap: clamp(0.9rem, 3vw, 1.75rem);
+  --notebook-gutter: clamp(1.5rem, 3.5vw, 3rem);
+  --notebook-line-width: clamp(0.15rem, 0.5vw, 0.25rem);
+  --notebook-holes-top: clamp(1.25rem, 4vw, 2.5rem);
+  --notebook-holes-bottom: clamp(1.25rem, 4vw, 2.5rem);
   --notebook-margin: 0rem;
   --notebook-content-gap: 0rem;
   --notebook-padding-block: clamp(1.75rem, 3.5vw, 3.25rem);

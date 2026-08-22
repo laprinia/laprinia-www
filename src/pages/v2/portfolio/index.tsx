@@ -15,7 +15,12 @@ const PortfolioV2 = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <V2GlobalStyle />
-      <NavBar items={navItems} highlightedIndex={0} />
+      <NavBar
+        items={navItems}
+        highlightedIndex={0}
+        variant="highlight"
+        currentHref="/portfolio"
+      />
       <PortfolioGround>
         <main>
           <PortfolioBoard />

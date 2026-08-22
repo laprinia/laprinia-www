@@ -7,14 +7,8 @@ import {
   portfolioHeading,
   selectedProjectNames,
 } from "../../../consts.v2.portfolio";
-import {
-  Board,
-  SectionHeading,
-  HeadingFilled,
-  HeadingOutlined,
-  EntryList,
-  LabGrid,
-} from "./PortfolioBoard.styles";
+import SectionHeading from "../SectionHeading/SectionHeading";
+import { Board, EntryList, LabGrid } from "./PortfolioBoard.styles";
 
 const toSlug = (name: string) => name.replaceAll(/\s+/g, "-");
 
@@ -25,18 +19,6 @@ const byName = (names: string[]) => {
     .filter((project): project is Project => Boolean(project));
 };
 
-const SplitHeading = ({ id, text }: { id: string; text: string }) => {
-  const [filled, ...rest] = text.split(" ");
-  const outlined = rest.join(" ");
-
-  return (
-    <SectionHeading id={id}>
-      <HeadingFilled>{filled}</HeadingFilled>{" "}
-      {outlined ? <HeadingOutlined>{outlined}</HeadingOutlined> : null}
-    </SectionHeading>
-  );
-};
-
 const PortfolioBoard = () => {
   const selected = byName(selectedProjectNames);
   const lab = byName(labProjectNames);
@@ -44,18 +26,17 @@ const PortfolioBoard = () => {
   return (
     <Board>
       <section aria-labelledby="selected-work-heading">
-        <SplitHeading id="selected-work-heading" text={portfolioHeading} />
+        <SectionHeading id="selected-work-heading" text={portfolioHeading} />
         <EntryList>
           {selected.map((project, index) => (
             <DictionaryEntry
               key={project.name}
-              letter={String.fromCharCode(65 + index)}
+              index={index}
               term={project.name}
               definition={project.description}
               roles={project.roles}
-              year={project.year}
               imageSrc={project.headshot}
-              href={`/portfolio/${toSlug(project.name)}`}
+              href={`/v2/portfolio/${toSlug(project.name)}`}
               liveHref={project.buttons[0]?.link}
             />
           ))}
@@ -63,7 +44,7 @@ const PortfolioBoard = () => {
       </section>
 
       <section aria-labelledby="lab-heading">
-        <SplitHeading id="lab-heading" text={labHeading} />
+        <SectionHeading id="lab-heading" text={labHeading} />
         <LabGrid>
           {lab.map((project) => (
             <li key={project.name}>
@@ -73,7 +54,7 @@ const PortfolioBoard = () => {
                 motionSrc={project.headshotGif}
                 year={project.year}
                 tag={project.tags[0]}
-                href={`/portfolio/${toSlug(project.name)}`}
+                href={`/v2/portfolio/${toSlug(project.name)}`}
               />
             </li>
           ))}

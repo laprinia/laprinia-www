@@ -5,9 +5,10 @@ export const FooterShell = styled.footer`
 
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 5rem)
-    clamp(2rem, 4vw, 3rem);
+  gap: var(--space-8);
+  padding: clamp(var(--space-12), 7vw, var(--space-24))
+    clamp(var(--space-6), 5vw, var(--space-20))
+    clamp(var(--space-8), 4vw, var(--space-12));
   color: var(--footer-ink);
   background-color: var(--accent-color);
 
@@ -20,10 +21,10 @@ export const FooterShell = styled.footer`
 export const Brand = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--space-3);
 
   > :first-child {
-    margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
+    margin-bottom: clamp(var(--space-5), 3vw, var(--space-10));
   }
 `;
 
@@ -91,7 +92,7 @@ export const Note = styled.p`
 export const Links = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--space-4);
   margin: 0;
   padding: 0;
   list-style: none;

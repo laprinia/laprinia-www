@@ -1,0 +1,12 @@
+export const backToWorkLabel = "selected work";
+export const backToWorkHref = "/v2/portfolio";
+export const clientLabel = "client";
+export const roleLabel = "role";
+export const timelineLabel = "timeline";
+export const tagsLabel = "tags";
+export const linksLabel = "links";
+export const keywordsLabel = "Keywords";
+export const enlargeLabel = "Enlarge";
+export const closeLabel = "close";
+export const backToTopLabel = "back to top";
+export const caseTopId = "case-top";

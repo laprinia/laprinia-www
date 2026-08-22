@@ -3,83 +3,87 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import Pill from "../../atoms/Pill/Pill";
 import {
   Entry,
-  Letter,
+  Content,
+  EntryIndex,
+  Head,
   Term,
   TermLink,
-  Identity,
-  Body,
   Definition,
+  MetaRule,
   Roles,
-  Meta,
+  Links,
+  CaseCue,
+  CueText,
   MetaLink,
   Thumb,
 } from "./DictionaryEntry.styles";
 
 export type DictionaryEntryProps = {
-  letter: string;
+  index: number;
   term: string;
   definition: string;
   roles: string[];
-  year: number;
   imageSrc: string;
   href: string;
   liveHref?: string;
 };
 
 const DictionaryEntry = ({
-  letter,
+  index,
   term,
   definition,
   roles,
-  year,
   imageSrc,
   href,
   liveHref,
 }: DictionaryEntryProps) => (
   <Entry>
-    <Letter aria-hidden="true">{letter}</Letter>
+    <Content>
+      <Head>
+        <EntryIndex aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </EntryIndex>
 
-    <Identity>
-      <Term>
-        <TermLink href={href}>
-          {term}
-          <VisuallyHidden.Root> — read the case study</VisuallyHidden.Root>
-        </TermLink>
-      </Term>
+        <Term>
+          <TermLink href={href}>
+            {term}
+            <VisuallyHidden.Root> — read the case study</VisuallyHidden.Root>
+          </TermLink>
+        </Term>
+      </Head>
 
-      {roles.length ? (
-        <Roles aria-label={`Disciplines for ${term}`}>
-          {roles.map((role) => (
-            <Pill key={role} asChild variant="outline" size="sm">
-              <li>{role}</li>
-            </Pill>
-          ))}
-        </Roles>
-      ) : null}
-    </Identity>
-
-    <Body>
       <Definition>{definition}</Definition>
 
-      <Meta>
-        <span>{year}</span>
-        {liveHref ? (
-          <>
-            <span aria-hidden="true">·</span>
+      <MetaRule>
+        {roles.length ? (
+          <Roles aria-label={`Disciplines for ${term}`}>
+            {roles.map((role) => (
+              <Pill key={role} asChild variant="outline" size="sm">
+                <li>{role}</li>
+              </Pill>
+            ))}
+          </Roles>
+        ) : null}
+
+        <Links>
+          <CaseCue aria-hidden="true">
+            <CueText>read the case study </CueText>→
+          </CaseCue>
+          {liveHref ? (
             <MetaLink href={liveHref} target="_blank" rel="noopener noreferrer">
               view live ↗<VisuallyHidden.Root> {term}</VisuallyHidden.Root>
             </MetaLink>
-          </>
-        ) : null}
-      </Meta>
-    </Body>
+          ) : null}
+        </Links>
+      </MetaRule>
+    </Content>
 
     <Thumb>
       <Image
         src={imageSrc}
         alt=""
         fill
-        sizes="(min-width: 900px) 11rem, 60vw"
+        sizes="(min-width: 800px) 45vw, 90vw"
         quality={75}
       />
     </Thumb>

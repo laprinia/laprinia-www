@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Button from "../Button/Button";
 import Pill from "../../atoms/Pill/Pill";
 import {
@@ -42,7 +42,7 @@ const FeaturedProjectCard = ({
           size="xl"
           iconOnly
           pill
-          icon={<ArrowUpRight strokeWidth={2.5} />}
+          icon={<ArrowRight strokeWidth={2.5} />}
         >
           <a href={href}>
             <VisuallyHidden.Root>

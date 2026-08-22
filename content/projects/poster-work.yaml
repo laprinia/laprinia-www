@@ -21,9 +21,9 @@ media:
 buttons: []
 
 articles:
-  - header: "A) Bauhaus Poster"
+  - header: "Bauhaus Poster"
     text: "Vector Bauhaus-inspired poster created in Adobe Illustrator, a recreation of a well-known Bauhaus layout with my own color and composition tweaks."
-  - header: "B) Gill Sans Type Poster"
+  - header: "Gill Sans Type Poster"
     text: "Gill Sans type specimen poster for my graphic design specialization, designed in Figma and inspired by 1920s English Art Deco posters and magazines, using a chic palette of F43210, 4C54CA, and FFFFFF with organic and rectangular shapes to frame the type's history and details."
-  - header: "C) Artifact Poster"
+  - header: "Artifact Poster"
     text: "Experimental artifact poster built from scanned handmade figurines and color indexing in Adobe Photoshop to create a harsh, textural print aesthetic."

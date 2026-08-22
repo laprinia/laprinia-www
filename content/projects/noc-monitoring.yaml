@@ -1,11 +1,14 @@
 name: noc monitoring
 
 year: 2026
-description: "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as hierarchy."
+description: "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as good visual hierarchy."
+client: "Confidential client"
+role: "Product designer"
+timeline: "2 days"
 roles:
   - research
   - ux
-  - metrics
+  - ui
 discipline: "data-heavy ux"
 
 
@@ -36,27 +39,104 @@ media:
   - 4.avif
   - 5.avif
   - 6.avif
+walkthrough: 1.mp4
 
 buttons: []
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments."
 
-  - header: "B) Problem"
-    text: "The existing experience exposed large amounts of operational data but lacked a clear information hierarchy, making it harder to identify critical issues at a glance. The challenge was balancing information density with fast decision making while supporting monitoring of up to twelve units simultaneously."
+  - header: "Problem"
+    text: |
+      The existing experience exposed large amounts of operational data but
+      lacked a clear information hierarchy, making it harder to identify critical
+      issues at a glance. The challenge was balancing **information density with
+      fast decision making**, while supporting monitoring of **up to twelve units
+      simultaneously**.
 
-  - header: "C) Product Discovery"
-    text: "I began by defining the primary administrator goal and breaking it into three key workflows: overview monitoring, alert response, and unit investigation. User flows mapped how operators move from spotting an issue to diagnosing it, helping prioritize the features that mattered most."
+  - header: "Product Discovery"
+    text: |
+      I defined the primary administrator goal and broke it into three workflows,
+      then mapped how an operator moves from spotting an issue to diagnosing it.
 
-  - header: "D) Research & Design Decisions"
-    text: "I analyzed competing monitoring platforms alongside dashboard products such as Grafana to identify best practices for real-time operations. Insights focused on glanceability, semantic color usage, scalable grid layouts, consistent spacing, and reducing cognitive load for users working in 24/7 mission-critical environments."
+      - **Overview monitoring** — is anything wrong right now?
+      - **Alert response** — something is wrong; what is it and how urgent?
+      - **Unit investigation** — why is this specific unit failing?
 
-  - header: "E) Solution"
-    text: "The redesigned experience introduced flexible list and grid views, stronger visual hierarchy, sortable data, grouped filtering, dedicated alert management, toast notifications, and an improved side panel for investigating individual units. Semantic states and high-contrast indicators make issues immediately visible from a distance."
+      Sequencing them this way set the feature priority: the overview earns the
+      most screen, alerts interrupt it, and investigation happens in a side panel
+      without leaving the wall.
 
-  - header: "F) Design System"
-    text: "To support rapid iteration and consistency, I created the foundations of a scalable design system including color tokens, typography, spacing tokens, responsive breakpoints, reusable components, and interactive state variants optimized for data-heavy enterprise interfaces."
+  - header: "Research & Design Decisions"
+    text: |
+      I analysed competing monitoring platforms alongside dashboard products such
+      as Grafana to identify best practices for real-time operations.
 
-  - header: "G) Outcome"
-    text: "The project was completed in two days and delivered as a fully interactive prototype in Figma Make. By combining product thinking, user flows, design systems, and high-fidelity prototyping, the redesign demonstrates an end-to-end product design process rather than a purely visual UI exercise."
+      - **Glanceability before density** — these tools are read at a distance and
+        in peripheral vision, not studied up close.
+      - **Semantic colour, used sparingly** — colour is reserved for state so it
+        keeps its meaning. If everything is coloured, nothing reads as urgent.
+      - **A grid that scales without redesign** — the layout has to hold from one
+        unit to twelve.
+      - **Reduced cognitive load for 24/7 use** — operators work long shifts in
+        mission-critical conditions, where fatigue is the real failure mode.
+
+  - header: "Monitoring Multiple Transmissions"
+    text: |
+      Operators watch up to twelve units at once, so the grid has to answer
+      "is anything wrong?" before it answers anything else.
+
+      - **State is readable from across the room** — every unit carries a live
+        thumbnail, a semantic status badge and a signal percentage. Failing units
+        are outlined in red rather than only labelled, so a fault registers
+        without being looked for.
+      - **Grid and list views** — the grid suits sweeping all twelve at a glance;
+        the list suits sorting and comparing once something needs investigating.
+      - **Filtering by state** — narrowing to live, idle or error collapses the
+        wall to only what needs attention, which matters most mid-incident.
+      - **Search and device-type filters** — for reaching a named unit directly
+        instead of scanning for it.
+    media:
+      - 2.avif
+      - 3.avif
+
+  - header: "Alert Monitoring"
+    text: |
+      An alert has to interrupt without taking over the screen, since the operator
+      may already be handling a different fault.
+
+      - **The toast carries the whole diagnosis** — severity, unit, plain-language
+        cause and the measured value, so the operator can triage without opening
+        anything.
+      - **Two actions, not one** — *view* jumps to the failing unit, *acknowledge*
+        clears the alert in place. Separating them lets a known issue stop
+        competing for attention without being forgotten.
+      - **Non-blocking placement** — alerts sit clear of the grid, so monitoring
+        continues while one is being triaged.
+    media:
+      - 4.avif
+      - 5.avif
+  - header: "Design System"
+    text: |
+      Foundations built for rapid iteration and consistency across a data-heavy
+      enterprise interface.
+
+      - **Colour tokens** with semantic states for live, idle, warning and error.
+      - **Typography and spacing tokens** tuned for dense, tabular data. Using 4px basis in order to fit more content.å
+      - **Responsive breakpoints** that keep the unit grid legible as it reflows.
+      - **Reusable components with interactive state variants**, so new screens
+        inherit behaviour instead of re-specifying it.
+    media:
+      - 6.avif
+
+  - header: "Outcome"
+    text: |
+      Delivered as **a fully interactive prototype in Figma Make**. The value was in
+      showing an end-to-end product process, product thinking, user personas, user flows, design
+      system and high-fidelity prototyping, rather than a purely visual UI pass.
+    metrics:
+      - value: 3
+        label: "core operator workflows mapped"
+      - value: 2
+        label: "days from brief to interactive prototype"

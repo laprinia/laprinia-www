@@ -33,7 +33,7 @@ export const TileStill = styled.span`
 
 export const TileName = styled.span`
   display: block;
-  margin-top: 0.6rem;
+  margin-top: var(--space-2);
   font-family: var(--font-heading);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-ui-sm);
@@ -43,7 +43,7 @@ export const TileName = styled.span`
 
 export const TileMeta = styled.span`
   display: block;
-  margin-top: 0.15rem;
+  margin-top: var(--space-1);
   font-family: var(--font-mono);
   font-size: var(--font-size-ui-xs);
   line-height: 1.4;

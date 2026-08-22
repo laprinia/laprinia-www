@@ -1,6 +1,9 @@
 name: kbc bike leasing
 year: 2025
 description: "Design and development for KBC's multi-step bike leasing wizard that replaces a manual bank process."
+client: "KBC Bank Belgium"
+role: "Product designer & FE"
+timeline: "3 months"
 roles:
   - ux
   - accessibility
@@ -28,23 +31,73 @@ media:
   - 1.avif
   - 2.avif
   - 3.mp4
+walkthrough: 3.mp4
 buttons: 
   - alt: KBC Bike Leasing Simulator
     imageSrc: /socials/web
     link: https://leasebikecalculator.kbc.be/
 
 articles:
-  - header: "A) About"
-    text: "A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, replacing a process that previously required calling a KBC employee."
-  - header: "B) Problem"
+  - header: "About"
+    text: |
+      A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, **replacing a process that previously required calling a KBC employee**.
+  - header: "Problem"
     text: "Calculating bike leasing costs in Belgium depends on salary taxation rules, marital status, and commute details. Before this tool, customers had to call a KBC employee who would run the numbers in a spreadsheet. There was no self-service option."
-  - header: "C) Design System"
-    text: "The Figma wireframes I inherited were static and didn't use components. I built a full component library from them: design tokens for KBC's brand colors, typography (MuseoSans), spacing, and radius; and component variants for inputs, buttons, radio groups, progress bars, and form states. Every component was created both in the Figma file and as a React component, giving KBC a reusable library for future projects."
-  - header: "D) User Flow"
+  - header: "Design System"
+    text: |
+      The Figma wireframes I inherited were static and didn't use components, so
+      the first job was turning them into a system that could carry every state the
+      flow actually needs.
+
+      - **Components built as full variant sets** — inputs, buttons, radio groups,
+        progress bars and form states were specified across default, hover, active,
+        disabled, error and filled variants, rather than drawn once in their
+        happy-path state and improvised later.
+      - **Focus states as a first-class variant** — every interactive component
+        carries a visible focus style in the library itself. Specifying it
+        alongside hover and active is what stops it from being treated as optional
+        and dropped at build time, which is where keyboard accessibility usually
+        gets lost.
+      - **Tokens underneath the variants** — KBC brand colours, MuseoSans
+        typography, spacing and radius, so a change propagates through the set
+        instead of being re-specified per component.
+      - **Built twice, in Figma and in React** — each component exists in both, so
+        what KBC keeps is a working library rather than a picture of one.
+  - header: "User Flow"
     text: "A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left."
-  - header: "E) Accessibility & Interaction"
-    text: "Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions, input focus states, and the progress bar make the flow feel responsive without distracting from the task."
-  - header: "F) Challenge"
-    text: "The core complexity was modeling Belgian salary taxation rules correctly: how gross-to-net calculations shift based on marital status, tax brackets, and employer contributions. Getting this right was essential since the simulator replaces a manual expert calculation."
-  - header: "G) Impact"
-    text: "Customers can now estimate their bike leasing cost independently, removing the need to call a KBC employee. The React component library built alongside the product serves as a reusable foundation for future KBC web projects."
+    media:
+      - 1.avif
+  - header: "Accessibility & Interaction"
+    text: "Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions and the progress bar make the flow feel responsive without distracting from the task."
+  - header: "Challenge"
+    text: |
+      The core complexity was modelling Belgian salary taxation correctly. A quote
+      is only useful if it matches what a KBC employee would have calculated by
+      hand.
+
+      - **Gross-to-net shifts with marital status** — the same gross salary
+        produces a different net figure depending on the household situation
+        declared.
+      - **Tax brackets change the slope** — the saving from leasing does not scale
+        linearly with salary, so the result cannot be approximated.
+      - **Employer contributions feed the outcome** — the monthly cost depends on
+        what the employer carries, not only on what the employee earns.
+
+      Getting this wrong would have been worse than shipping nothing: the simulator
+      replaces an expert calculation, so a plausible-looking wrong number carries
+      more risk than a phone call did.
+    media:
+      - 2.avif
+  - header: "Impact"
+    text: |
+      Customers now estimate their bike leasing cost independently, and the React
+      component library built alongside the product serves as a reusable foundation
+      for future KBC web projects.
+    metrics:
+      - value: 0
+        label: "calls to a KBC employee needed to get a quote"
+      - value: 30
+        suffix: "%"
+        label: "faster to complete than the manual process"
+      - value: "full"
+        label: "keyboard and screen reader accessibility"

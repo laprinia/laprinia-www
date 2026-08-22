@@ -1,6 +1,9 @@
 name: lissajous curves
 year: 2024
 description: "Placeholder description for lissajous curves."
+client: "Self-initiated"
+role: "Creative developer"
+timeline: "1 week"
 tags:
   - touchdesigner
   - math
@@ -22,11 +25,16 @@ media:
   - 3.avif
   - 2.avif
   - 4.avif
+walkthrough: 1.mp4
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "This project is a TouchDesigner application that visualizes <em>Lissajous curves</em> using various bases. Each base (e.g., <code>base31</code>, <code>base51</code>, etc.) renders in a separate window, creating a unique 3x3 grid composition with emissive materials on a red background. The visual design utilizes custom scripts to manage the dynamic parameters of each base and add depth to the visual output."
-  - header: "B) Process"
+  - header: "Process"
+    media:
+      - 3.avif
+      - 2.avif
+      - 4.avif
     text: |
       <section>
       <h3>1. Setup and Initialization</h3>

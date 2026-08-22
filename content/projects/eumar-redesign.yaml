@@ -1,6 +1,9 @@
 name: eumar redesign
 year: 2026
 description: "Redesign, branding and development of a data-heavy medical web platform for ESHRE."
+client: "ESHRE"
+role: "Product designer & FE"
+timeline: "6 months"
 roles:
   - research
   - ux
@@ -27,30 +30,125 @@ media:
   - 3.avif
   - 4.avif
   - 5.avif
+walkthrough: 1.mp4
 
 buttons: 
   - alt: EuMAR website
     imageSrc: /socials/web
-    link: https://www.eshre.eu/Data-collection-and-research/EuMAR/For-professionals
 
 articles:
-  - header: "A) About"
-    text: "EuMAR is a pan-European platform led by ESHRE and financed by the EU, designed to support fertility clinics by providing a shared record of medically assisted reproduction (MAR) treatments and outcomes. The product connects multiple actors: system admins, national registries, and clinic staff—into one unified system while enforcing strict access control and governance."
+  - header: "About"
+    text: "EuMAR is a pan-European platform led by ESHRE and financed by the EU, designed to support fertility clinics by providing a shared record of medically assisted reproduction (MAR) treatments and outcomes. The product connects multiple actors: system admins, national registries, and clinic staff, into one unified system, enforcing strict access control and governance."
 
-  - header: "B) Problem"
-    text: "Fertility treatment data across Europe is fragmented across clinics and national systems, with no unified structure for oversight or research. The challenge was to design a system that centralizes data, respects role-based permissions, and remains efficient for daily use."
+  - header: "Problem"
+    text: "Fertility treatment data across Europe is fragmented across clinics and national systems, with no unified structure for oversight or research. The challenge was to revamp an EU-wide web platform that centralizes data, respects role-based permissions, and remains efficient for daily use."
 
-  - header: "C) Users & Research"
-    text: "Discovery identified three primary user groups: system admins, national registries, and clinic staff. Interviews clarified their needs: admins require a cross-country overview and configuration control; registries focus on national-level insights and oversight; clinic staff manage detailed patient and treatment data over time."
+  - header: "Presales & Winning the Work"
+    text: |
+      ESHRE already ran a legacy MAR registry, so this was never a blank page.
+      Winning the contract meant proving, before anything was signed, that we
+      understood the product and the challenges they had.
 
-  - header: "D) User Journeys"
-    text: "The prototype emphasizes the system admin journey: the role that enables the entire ecosystem. Key flows include onboarding users, configuring countries and registries, and managing centers."
+      I led the presales work and built an interactive prototype that redesigned
+      the legacy platform rather than replacing it wholesale:
 
-  - header: "E) Navigation & Product Structure"
-    text: "The interface is built around a stable application shell with a sidebar, main content area, and account controls. Navigation reflects the system’s hierarchy: users, centers, registries, and reporting. Data-heavy screens use consistent table patterns with search, sorting, pagination, and action columns, making complex datasets easy to scan and manage."
+      - **Small UX wins over a rebuild** - login, dashboard and the patient
+        registry were reworked where the existing flows cost the most time, so
+        the value was legible in a single walkthrough.
+      - **Familiarity preserved** — terminology, screen structure and existing
+        mental models carried over, so the panel recognised their own product
+        rather than a stranger's.
+      - **A first pass at branding** — the identity was explored during
+        presales, then polished in production.
 
-  - header: "F) Design System"
-    text: "A token-based design system ensures consistency across the platform, including typography, spacing, and color. Components such as tables, toolbars, and forms are designed for scalability."
+      Winning the contest on the strength of it was how we secured the contract.
 
-  - header: "G) Key Design Decisions"
-    text: "Role-based editing was central: system admins can configure users and structures but cannot modify clinical data, which remains under clinic control. The UI balances density with clarity, using structured layouts and predictable interaction patterns. Consistency across navigation, layout, and components reinforces trust in a complex, data-heavy environment."
+      The showcase below tracks all three stages for 3 key screens: Login, Dashboard and Patients.
+    media:
+      - 5.avif
+
+  - header: "Users & Research"
+    text: |
+      Discovery identified three primary user groups, and interviews clarified
+      what each one needs from the platform.
+
+      - **System admins** — onboarding new users and a cross-country overview, viewing data visualisation of
+        the key metrics across every participating registry.
+      - **National registries** — viewing national-level insights and oversight of the
+        clinics reporting into them.
+      - **Clinic staff** — registering new patients, entering partial treatment data and viewing detailed patient and treatment records, managed over
+        the full course of a treatment cycle. clinic staff also have their own levels of access.
+
+      Those three lenses on the same dataset drove the role-based structure the
+      rest of the product is built on.
+
+  - header: "User Journeys"
+    text: "The prototype emphasizes the system admin journey: the role that enables the entire ecosystem. Key flows include onboarding users, configuring countries and registries, managing centers and viewing key metrics about all centres across EU."
+
+  - header: "Navigation & Product Structure"
+    text: "The interface is built around a stable application shell with a sidebar, main content area, and account controls. Navigation reflects the system’s hierarchy: users, centers, registries, and reporting. Data-heavy screens use consistent table patterns with search, sorting, pagination, and action columns, making complex datasets easy to scan and manage by all our roles."
+
+  - header: "Design System"
+    text: |
+      - A token-based design system ensures consistency across the platform,
+        including typography, spacing, and color.
+      - Semantic tokens give meaning to each design decision and are easy to map
+        to real use cases.
+      - Components such as tables, toolbars, and forms are designed for
+        scalability and are previewed along their key states & types.
+      - Primitives and reusable components are defined in Storybook, being the
+        source-of-truth for the design decisions.
+    media:
+      - 2.avif
+      - 3.avif
+      - 4.avif
+
+  - header: "Key Design Decisions"
+    text: |
+      Three roles act on the same clinical records with different rights, and a
+      treatment cycle takes months to complete. Most decisions came down to
+      protecting the integrity of that data without slowing down daily work.
+
+      - **Role-based editing, not role-based interfaces** — every role gets the
+        same layout and navigation, and permissions scope the actions rather than
+        the screens. System Admins configure the ecosystem but cannot open
+        treatment details or register patients; National Registries oversee their
+        clinics without editing patient records. A separate interface per role
+        would have multiplied the surface to maintain and split a mental model
+        that all three groups benefit from sharing.
+      - **Restrictions are shown, not hidden** — where an action is out of scope
+        the UI says so explicitly, and the active role is stated in the left
+        sidebar. Silently removing controls reads as a broken product or missing
+        data and turns into support requests; an explained restriction teaches
+        the permission model instead of hiding it.
+      - **Filtering is the primary way to find a record** — GDPR keeps patients
+        anonymous, so there are no names to search for and no identifier anyone
+        can recall. Retrieval has to work by narrowing attributes such as country,
+        centre, birth year, cycle and status, which makes sorting and advanced
+        filters core navigation here rather than a power-user extra.
+      - **Partial entry, with validation limited to filled fields** — data arrives
+        as the treatment progresses, so a record is rarely complete in one sitting.
+        Validating the whole form on submit would block saving a legitimately
+        incomplete record and push staff to invent placeholder values, corrupting
+        the dataset the registry exists to protect. Records can be saved, reopened
+        and extended, and only entered fields are checked.
+      - **A stepper for patient and treatment entry** — related fields are grouped
+        into steps so an entry interrupted for weeks can be resumed at the right
+        place. One long form gives no sense of position and forces scrolling to
+        reach the section that finally has data.
+      - **A collapsible side panel on data-heavy screens** — tables like the
+        patient registry need horizontal room, and navigation competes with the
+        content for it.
+
+  - header: "Results"
+    text: |
+      The platform is live, with onboarding continuing across Europe as more
+      national registries join.
+    metrics:
+      - value: 6
+        label: "countries with researchers and clinicians already onboarded"
+      - value: "all"
+        label: "European languages supported"
+      - value: 50
+        suffix: "%"
+        label: "faster patient data entry"

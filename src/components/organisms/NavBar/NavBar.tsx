@@ -15,7 +15,11 @@ import {
 const NavBar = ({
   items,
   highlightedIndex,
+  variant,
+  currentHref,
 }: {
+  variant?: "highlight";
+  currentHref?: string;
   items: { label: string; href: string }[];
   highlightedIndex: number;
 }) => {
@@ -40,11 +44,20 @@ const NavBar = ({
   }, []);
 
   useEffect(() => {
+    // Some pages scroll an inner container, others scroll the window, so watch
+    // both: the container lookup is a heuristic and can pick the wrong element.
     const target = findScrollTarget();
-    if (!target) return;
-    const onScroll = () => setScrolled(target.scrollTop > 10);
-    target.addEventListener("scroll", onScroll, { passive: true });
-    return () => target.removeEventListener("scroll", onScroll);
+    const update = () =>
+      setScrolled((target?.scrollTop ?? 0) > 10 || window.scrollY > 10);
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    target?.addEventListener("scroll", update, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      target?.removeEventListener("scroll", update);
+    };
   }, [findScrollTarget]);
 
   const reorderedItems = [
@@ -53,10 +66,14 @@ const NavBar = ({
   ];
 
   return (
-    <Nav ref={navRef} $scrolled={scrolled}>
+    <Nav ref={navRef} $scrolled={scrolled} data-nav-variant={variant}>
       <NavItem highlighted={true}>
-        <NavLink aria-labelledby="home-link" href="/">
-          LD // HOME
+        <NavLink
+          aria-labelledby="home-link"
+          href="/"
+          aria-current={currentHref === "/" ? "page" : undefined}
+        >
+          lavinia dumitrenco
         </NavLink>
       </NavItem>
       <NavItemsContainer>
@@ -65,6 +82,9 @@ const NavBar = ({
             <NavLink
               href={reorderedItems[0].href}
               aria-labelledby={`${reorderedItems[0].label}`}
+              aria-current={
+                currentHref === reorderedItems[0].href ? "page" : undefined
+              }
             >
               {reorderedItems[0].label}
             </NavLink>
@@ -73,7 +93,11 @@ const NavBar = ({
         <NavItems>
           {reorderedItems.slice(1).map((item, index) => (
             <NavItem key={index} highlighted={false}>
-              <NavLink href={item.href} aria-labelledby={`${item.label}`}>
+              <NavLink
+                href={item.href}
+                aria-labelledby={`${item.label}`}
+                aria-current={currentHref === item.href ? "page" : undefined}
+              >
                 {item.label}
               </NavLink>
             </NavItem>

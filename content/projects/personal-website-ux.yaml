@@ -28,11 +28,11 @@ buttons:
     link: "https://github.com/laprinia/laprinia-www"
 
 articles:
-  - header: "A) Goals"
+  - header: "Goals"
     text: "I wanted a portfolio that feels like me, not a template \U0001F642\u200D\u2195\uFE0F, clear like the layout of an old dictionary, but lightened up with 3D and motion so it stays curious and fun. Easy to explore, and meant to show my work with warmth and a bit of play."
-  - header: "B) Problem"
+  - header: "Problem"
     text: "Most portfolio patterns assume one rhythm: similar tiles, similar areas of work, everything flattened to the same kind of proof. My work doesn’t look that way. Some ideas need motion or a screen recording before they make sense, whereas others need the quiet of a wireframe or a layout study, sometimes I need to show a small bit of logic or interface detail. I needed one place that could hold that range without pretending every project is the same story, and that could stay truthful as the mix of work I take on changes over time."
-  - header: "C) Process"
+  - header: "Process"
     text: "I approached it like a tiny product: map the journeys (arrive, browse, go deep on one piece), then design for curiosity—moments where you can look closer, move something, or feel pacing change instead of only scrolling. Alongside that, I designed the portfolio’s structure itself: groupings and labels that match how I think about my practice today, with room to rename and shuffle sections tomorrow so the site can grow with my role: not locking me into last year’s categories."
-  - header: "D) Outcome"
+  - header: "Outcome"
     text: "What I got is closer to a living introduction than a stiff deck: something I can show almost anyone and they still leave with a felt sense of what I do and how I work, the <em>shape</em> of my process."

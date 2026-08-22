@@ -1,6 +1,9 @@
 name: tectonic
 year: 2025
 description: "Design of a flexible timeline component for a major Belgian tech conference."
+client: "In The Pocket"
+role: "Design engineer"
+timeline: "6 weeks"
 tags:
   - webflow
   - figma
@@ -14,21 +17,24 @@ headshotGif: headshot.webp
 media:
   - 1.avif
   - 2.mp4
+walkthrough: 2.mp4
 buttons:
   - alt: Tectonic Website
     imageSrc: /socials/web
     link: https://www.tectonicconf.eu/program
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "Design engineering work for In The Pocket on Tectonic, a major Belgian tech conference where industry experts share talks and panels."
-  - header: "B) Role & Collaboration"
+  - header: "Role & Collaboration"
     text: "As a Design Engineer, I collaborated with volunteers from Nexent and In The Pocket engineers to help bring the Webflow site to life, including key program and schedule sections."
-  - header: "C) Program Timeline"
+  - header: "Program Timeline"
     text: "Using data from the Webflow CMS, I designed and styled a flexible timeline component that can display multiple days and events across different stages, each on its own swimlane."
-  - header: "D) User Research"
+  - header: "User Research"
     text: "Decisions were shaped by the organizing team's real pain points, frequent schedule changes, multi-stage layouts, and the need to update content on the fly during the event itself. I also studied how attendees navigate a conference: needing to see which events run in parallel across stages, filtering by stage to narrow their view, and opening a details modal to get the full picture without leaving the schedule page."
-  - header: "E) Impact"
+  - header: "Impact"
     text: "The component streamlined adding and updating events, crucial for a live conference where times and sessions change frequently, and the result was a huge success for the organizing team."
-  - header: "F) Visual Direction"
+  - header: "Visual Direction"
+    media:
+      - 1.avif
     text: "I followed Tectonic's futurist typography and color system, and introduced subtle glass-like effects on buttons and event cards to give the interface a polished, tech-forward feel."

@@ -1,6 +1,9 @@
 name: volumetric light
 year: 2021
 description: "OpenGL volumetric light scenic implementation."
+client: "Self-initiated"
+role: "Creative developer"
+timeline: "2 weeks"
 tags:
   - opengl
   - c++
@@ -22,6 +25,7 @@ media:
   - 3.avif
   - 4.avif
   - 5.avif
+walkthrough: 2.mp4
 buttons:
   - alt: Behance
     imageSrc: /socials/behance
@@ -31,19 +35,26 @@ buttons:
     link: https://github.com/laprinia/mozu/tree/main
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "An OpenGL exploration of how light behaves in a 3D space, from basic surface shading all the way to volumetric god rays."
-  - header: "B) Lighting Layers"
+  - header: "Lighting Layers"
+    media:
+      - 1.avif
     text: |
       <ul>
-      <li><h3>☀️ Surface Shading</h3> Blinn-Phong reflectance with normal mapping gives every surface believable highlights and depth, even on flat geometry.</li>
-      <li><h3>💡 Mixed Light Sources</h3> Directional, point, and spotlights each contribute differently, ambient fill, localized warmth near the pool, and focused beams from side lamps,creating a layered atmosphere.</li>
-      <li><h3>🌑 Shadows</h3> A depth pass from the light's perspective produces shadow maps that ground objects in the scene and add contrast.</li>
-      <li><h3>🌈 Volumetric Rays</h3> Ray marching through an occlusion texture produces visible light shafts, turning the lighting from a surface property into something you can see in the air.</li>
+      <li><h3>Surface Shading</h3> Blinn-Phong reflectance with normal mapping gives every surface believable highlights and depth, even on flat geometry.</li>
+      <li><h3>Mixed Light Sources</h3> Directional, point, and spotlights each contribute differently, ambient fill, localized warmth near the pool, and focused beams from side lamps,creating a layered atmosphere.</li>
+      <li><h3>Shadows</h3> A depth pass from the light's perspective produces shadow maps that ground objects in the scene and add contrast.</li>
+      <li><h3>Volumetric Rays</h3> Ray marching through an occlusion texture produces visible light shafts, turning the lighting from a surface property into something you can see in the air.</li>
       </ul>
-  - header: "C) Building Up"
+  - header: "Building Up"
+    media:
+      - 3.avif
+      - 4.avif
     text: "The scene evolved in stages, starting with a single directional light and flat shading, then layering in normal maps for surface detail, gamma correction and HDR to fix color accuracy, shadow mapping for spatial grounding, and finally volumetric rays as the visual payoff. Each step visibly improved the mood."
-  - header: "D) Visual Polish"
+  - header: "Visual Polish"
+    media:
+      - 5.avif
     text: |
       <ul>
       <li>HDR and Gamma Correction for accurate, rich color</li>

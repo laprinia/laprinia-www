@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import NotebookSection from "../NotebookSection/NotebookSection";
 import Button from "../Button/Button";
 import { githubLink, linkedinLink } from "../../../consts";
@@ -48,7 +48,7 @@ const AboutMe = () => (
             asChild
             variant="outline"
             size="lg"
-            icon={<ArrowUpRight strokeWidth={2.5} />}
+            icon={<ArrowRight strokeWidth={2.5} />}
           >
             <a href={aboutMeLink.href}>{aboutMeLink.label}</a>
           </Button>
@@ -92,7 +92,7 @@ const AboutMe = () => (
             asChild
             variant="solid"
             size="lg"
-            icon={<ArrowUpRight strokeWidth={2.5} />}
+            icon={<ArrowRight strokeWidth={2.5} />}
           >
             <a href={contactCta.href}>{contactCta.label}</a>
           </Button>

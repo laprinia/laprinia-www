@@ -61,6 +61,10 @@ export const NavItem = styled.li<NavItemProps>`
       : "var(--font-weight-light)"};
   margin: 0 1rem;
 
+  [data-nav-variant="highlight"] & {
+    font-weight: var(--font-weight-light);
+  }
+
   @media (max-width: 767px) {
     margin: 0;
   }
@@ -112,6 +116,40 @@ export const NavLink = styled.a.attrs({ "data-cursor-hide": "" } as Record<
     color: var(--support-color);
     background-color: var(--neutral-700);
     text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentcolor;
+    outline-offset: 3px;
+  }
+
+  [data-nav-variant="highlight"] & {
+    display: inline;
+    background-image: linear-gradient(
+      var(--support-color),
+      var(--support-color)
+    );
+    background-repeat: no-repeat;
+    background-position: 0 88%;
+    background-size: 0% 0.42em;
+    box-decoration-break: clone;
+    transition: background-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* stylelint-disable property-no-vendor-prefix -- Safari needs the prefix */
+    -webkit-box-decoration-break: clone;
+    /* stylelint-enable property-no-vendor-prefix */
+
+    &:hover,
+    &[aria-current="page"] {
+      color: inherit;
+      background-color: transparent;
+      background-size: 100% 0.42em;
+      text-decoration: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 `;
 

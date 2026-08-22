@@ -1,6 +1,9 @@
 name: media pipe
 year: 2025
 description: "Placeholder description for media pipe."
+client: "Self-initiated"
+role: "Creative developer"
+timeline: "1 week"
 tags:
   - touchdesigner
   - mediapipe
@@ -12,14 +15,15 @@ headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
   - 1.mp4
+walkthrough: 1.mp4
 buttons: []
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe."
-  - header: "B) MediaPipe Controls"
+  - header: "MediaPipe Controls"
     text: "Two tracked hands drive the interaction: one hand reveals the current image based on the distance between two fingers, and when the angle between the fingers of the other hand exceeds about 45 degrees the index advances to the next image in the sequence."
-  - header: "C) Instancing from Table"
+  - header: "Instancing from Table"
     text: "Images are populated from a DAT table of file paths and instanced across the viewport, with positions and transforms randomized so the archive feels like a living field of photos rather than a static grid."
-  - header: "D) Halftone & Transparency"
+  - header: "Halftone & Transparency"
     text: "Halftone shaders and layered transparency emulate looking through a camera viewfinder."

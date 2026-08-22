@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
+const { marked } = require("marked");
 
 const CONTENT_DIR = path.join(__dirname, "..", "content", "projects");
 const OUTPUT_FILE = path.join(
@@ -13,9 +14,31 @@ const OUTPUT_FILE = path.join(
 
 const VIDEO_EXTENSIONS = new Set([".mp4", ".mov", ".webm"]);
 
+// Articles authored as raw HTML pass through untouched; anything else is
+// markdown. Running the legacy HTML through marked would turn its indented
+// lines into code blocks.
+const renderArticle = (text) => {
+  const body = (text || "").trim();
+  if (body.startsWith("<")) return body;
+  return marked.parse(body, { async: false }).trim();
+};
+
+const parseProjectYaml = (slug, raw) => {
+  try {
+    return yaml.load(raw);
+  } catch (error) {
+    const hint = /sequence entry|mapping entry|bad indentation/.test(
+      error.message,
+    )
+      ? `\n\nThis is usually a "text: |" block whose body is not indented deeper\nthan the "text:" key itself. Every line of the block must sit at least\ntwo spaces further in:\n\n  - header: "Design System"\n    text: |\n      - first bullet\n      - second bullet\n`
+      : "";
+    throw new Error(`${slug}.yaml could not be parsed.\n\n${error.message}${hint}`);
+  }
+};
+
 const readProject = (slug) => {
   const raw = fs.readFileSync(path.join(CONTENT_DIR, `${slug}.yaml`), "utf8");
-  const data = yaml.load(raw);
+  const data = parseProjectYaml(slug, raw);
 
   if (!data.media) {
     throw new Error(`${slug}.yaml is missing a required "media" array`);
@@ -26,32 +49,67 @@ const readProject = (slug) => {
     );
   }
 
-  const mediaContents = data.media.map((f) => ({
+  const toMedia = (f) => ({
     type: VIDEO_EXTENSIONS.has(path.extname(f).toLowerCase())
       ? "video"
       : "image",
     src: `/projects/${slug}/content/${f}`,
-  }));
+  });
+
+  const mediaContents = data.media.map(toMedia);
+
+  const known = new Set(data.media);
+  const referenced = [
+    ...(data.walkthrough ? [data.walkthrough] : []),
+    ...(data.articles || []).flatMap((a) => a.media || []),
+  ];
+  for (const f of referenced) {
+    if (!known.has(f)) {
+      throw new Error(
+        `${slug}.yaml references "${f}" which is not listed in "media"`,
+      );
+    }
+  }
 
   return {
     name: data.name,
     year: data.year,
     published: data.published !== false,
     description: data.description,
+    client: data.client || "",
+    role: data.role || "",
+    timeline: data.timeline || "",
     tags: data.tags || [],
     roles: data.roles || [],
     discipline: data.discipline || "",
     headshot: `/projects/${slug}/${data.headshot}`,
     headshotGif: `/projects/${slug}/${data.headshotGif}`,
     mediaContents,
-    buttons: (data.buttons || []).map((b) => ({
-      imageSrc: b.imageSrc,
-      alt: b.alt,
-      link: b.link,
-    })),
+    walkthrough: data.walkthrough ? toMedia(data.walkthrough) : null,
+    buttons: (data.buttons || [])
+      .filter((b) => {
+        if (b.link) return true;
+        console.warn(
+          `  ! ${slug}.yaml: button "${b.alt || "(no alt)"}" has no "link" and was skipped`,
+        );
+        return false;
+      })
+      .map((b) => ({
+        imageSrc: b.imageSrc,
+        alt: b.alt,
+        link: b.link,
+      })),
     textContents: (data.articles || []).map((a) => ({
       header: a.header,
       text: a.text,
+      html: renderArticle(a.text),
+      metrics: (a.metrics || []).map((m) => ({
+        value: m.value,
+        prefix: m.prefix || "",
+        suffix: m.suffix || "",
+        label: m.label,
+      })),
+      media: (a.media || []).map(toMedia),
     })),
     colors: data.colors || [],
   };
@@ -79,21 +137,34 @@ export type Button = {
   alt: string;
   link: string;
 };
+export type Metric = {
+  value: number | string;
+  prefix: string;
+  suffix: string;
+  label: string;
+};
 export type TextArticle = {
   header: string;
   text: string;
+  html: string;
+  metrics: Metric[];
+  media: MediaContent[];
 };
 export type Project = {
   name: string;
   year: number;
   published: boolean;
   description: string;
+  client: string;
+  role: string;
+  timeline: string;
   tags: string[];
   roles: string[];
   discipline: string;
   headshot: string;
   headshotGif: string;
   mediaContents: MediaContent[];
+  walkthrough: MediaContent | null;
   buttons: Button[];
   textContents: TextArticle[];
   colors: string[];

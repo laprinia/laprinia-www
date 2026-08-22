@@ -37,18 +37,18 @@ buttons:
     link: https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "A full-stack authentication app built in React and Node.js, designed as a playground for combining secure auth flows with a glassmorphism-driven visual identity."
-  - header: "B) Problem"
+  - header: "Problem"
     text: "Most authentication templates are either visually bland or treat the login screen as an afterthought. I wanted to build a full auth flow that felt intentional from the first pixel: secure on the backend, delightful on the frontend."
-  - header: "C) What It Solves"
+  - header: "What It Solves"
     text: |
       <ul>
-      <li><h3>🔐 Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>
-      <li><h3>✅ Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>
-      <li><h3>🎨 Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>
+      <li><h3>Secure by default</h3> Passwords hashed with BCrypt, sessions managed via JWT, and input validated with Joi on the server before anything touches the database.</li>
+      <li><h3>Clear form feedback</h3> Field-level and form-level validation guide users through sign-up and login without guesswork.</li>
+      <li><h3>Personality from the start</h3> Randomized Unsplash backgrounds make every session feel fresh, while glassmorphism keeps the UI readable on any image.</li>
       </ul>
-  - header: "D) Recipe"
+  - header: "Recipe"
     text: |
       <section>
         <h3>Frontend:</h3>
@@ -66,5 +66,5 @@ articles:
           <li>JWT for token-based auth</li>
         </ul>
       </section>
-  - header: "E) Glassmorphism"
+  - header: "Glassmorphism"
     text: "Semi-transparent panels with backdrop blur let the background imagery bleed through while keeping text and inputs fully legible, giving the UI depth without sacrificing usability."

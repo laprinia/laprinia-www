@@ -1,6 +1,9 @@
 name: dytto rebrand
 year: 2025
 description: "Brand and product refresh for an AI-powered accounting assistant desktop app."
+client: "Dytto"
+role: "Brand & product designer"
+timeline: "5 days"
 roles:
   - research
   - branding
@@ -28,21 +31,58 @@ media:
   - 5.avif
   - 6.avif
   - 7.avif
+walkthrough: 1.mov
 buttons:
   - alt: Dytto Website
     imageSrc: /socials/web
     link: https://www.dytto.ai/
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "A full rebrand and design system build for Dytto, an AI-powered accounting assistant that intercepts incoming mail, extracts financial data, and handles bookkeeping tasks for you. The project spanned user research, brand exploration, a component-level design system, and an interactive prototype for the desktop app."
-  - header: "B) Brand Exploration"
+  - header: "Brand Exploration"
     text: "Using style tiles, we had the client adjust brand sliders (formal vs. warm, affordable vs. premium) to map out the tonal space. After several rounds, we landed on a playful, approachable direction: hand-drawn animation, a warm color palette, and rounded corners that soften the experience without losing professionalism."
-  - header: "C) Design System"
+    
+  - header: "Design System"
     text: "I extracted a complete design system from the wireframes: tokens for color, typography, spacing, and radius; reusable components for buttons, inputs, cards, modals, and navigation; and documentation to keep the branding consistent as the product grows."
-  - header: "D) Prototype & Interaction"
-    text: "Using the design system, I built an interactive Figma prototype covering login, the chat flow, and email detail views. Key interaction decisions: the pigeon mascot animates across states (idle, thinking, waiting) inspired by Notion AI, glow effects highlight incoming email actions and AI-processed components, and referenced files or customer profiles pop out inline so users never lose context."
-  - header: "E) Flow & Polish"
+    media:
+      - 5.avif
+      - 6.avif
+      - 7.avif
+  - header: "Prototype & Interaction"
+    text: |
+      Using the design system, I built an interactive Figma prototype covering
+      login, the chat flow and email detail views. The key interaction decisions:
+
+      - **The pigeon mascot carries the AI's state** — it animates across idle,
+        thinking and waiting, inspired by Notion AI, so the assistant's status is
+        legible from the mascot alone.
+      - **Glow marks what the AI touched** — incoming email actions and
+        AI-processed components are highlighted, separating the assistant's work
+        from the user's own.
+      - **Referenced content pops out inline** — files and customer profiles open
+        in place rather than on a new screen, so users never lose their context in
+        the conversation.
+    media:       
+      - 2.avif
+      - 3.avif
+      - 4.avif
+  - header: "Flow & Polish"
     text: "The focus was on making every transition feel intentional. Chat responses build smoothly, email cards surface the right details at the right moment, and the pigeon's state changes give users a clear signal of what the AI is doing without relying on loading spinners or text."
-  - header: "F) Impact"
-    text: "Following the rebrand and prototype delivery, Dytto secured additional funding and is now an actively growing product. The design system continues to serve as the foundation for their website and app."
+    
+  - header: "Outcome"
+    text: |
+      Delivered as a **full working prototype with micro-interactions**, covering
+      login, the chat flow and email detail views rather than static screens.
+
+      Following the rebrand, Dytto secured pre-seed funding and is now an actively
+      growing product. The design system continues to serve as the foundation for
+      both the desktop app and the website.
+    metrics:
+      - value: 1.5
+        prefix: "€"
+        label: "million raised in pre-seed funding for product development"
+      - value: 5
+        label: "days from brief to delivery"
+      - value: 2
+        label: "surfaces running the brand system, desktop app and web"

@@ -1,6 +1,6 @@
-import { ArrowUpRight, CornerRightDown } from "lucide-react";
+import { ArrowRight, CornerRightDown } from "lucide-react";
 import NotebookSection from "../NotebookSection/NotebookSection";
-import ProjectGrid from "../ProjectGrid/ProjectGrid";
+import WorkList from "../WorkList/WorkList";
 import {
   whatIDoCta,
   whatIDoId,
@@ -21,7 +21,7 @@ const SelectedWork = () => (
       {
         label: viewMoreWorkCta,
         href: portfolioHref,
-        icon: <ArrowUpRight strokeWidth={2.5} />,
+        icon: <ArrowRight strokeWidth={2.5} />,
       },
       {
         label: whatIDoCta,
@@ -30,7 +30,7 @@ const SelectedWork = () => (
       },
     ]}
   >
-    <ProjectGrid names={featuredProjectNames} />
+    <WorkList names={featuredProjectNames} />
   </NotebookSection>
 );
 

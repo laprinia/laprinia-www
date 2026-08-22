@@ -1,13 +1,8 @@
 import type { CSSProperties, ReactNode } from "react";
 import Notebook from "../Notebook/Notebook";
 import Button from "../Button/Button";
-import {
-  SectionHeading,
-  HeadingFilled,
-  HeadingOutlined,
-  SectionBody,
-  SectionActions,
-} from "./NotebookSection.styles";
+import SectionHeading from "../SectionHeading/SectionHeading";
+import { SectionBody, SectionActions } from "./NotebookSection.styles";
 
 export type SectionAction = {
   label: string;
@@ -33,8 +28,6 @@ const NotebookSection = ({
   actions,
   children,
 }: NotebookSectionProps) => {
-  const [filled, ...rest] = heading.split(" ");
-  const outlined = rest.join(" ");
   const headingId = `${id}-heading`;
 
   const surface = {
@@ -50,16 +43,13 @@ const NotebookSection = ({
       aria-labelledby={headingId}
       background={background}
       color={color}
-      margin="clamp(2.5rem, 4vw, 8rem)"
+      margin="clamp(var(--space-5), 0.7729rem + 2.0356vw, var(--space-24))"
       radius="0.5rem"
       contentGap="2rem"
       minHeight="100svh"
       style={surface}
     >
-      <SectionHeading id={headingId}>
-        <HeadingFilled>{filled}</HeadingFilled>{" "}
-        <HeadingOutlined>{outlined}</HeadingOutlined>
-      </SectionHeading>
+      <SectionHeading id={headingId} text={heading} />
 
       {children ? <SectionBody>{children}</SectionBody> : null}
 

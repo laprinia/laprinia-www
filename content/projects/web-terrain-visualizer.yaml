@@ -1,6 +1,9 @@
 name: web 3d terrain generator
 year: 2022
 description: "Web 3D random terrain generator and tweaker using React Three Fiber."
+client: "Self-initiated"
+role: "Creative developer"
+timeline: "3 weeks"
 tags:
   - react
   - typescript
@@ -31,11 +34,12 @@ media:
   - 5.avif
   - 6.avif
   - outro.mp4
+walkthrough: intro.mp4
 
 articles:
-  - header: "A) About"
+  - header: "About"
     text: "A browser-based 3D terrain editor that lets you sculpt, tweak, and visualize procedural landscapes in real time, bringing the creative loop of 3D generation directly into the web."
-  - header: "B) Recipe"
+  - header: "Recipe"
     text: |
       <ul>
       <li>React Three Fiber as a React renderer for Three.js</li>
@@ -43,22 +47,33 @@ articles:
       <li>GLSL Noise for Simplex noise generation</li>
       <li>Mantine for the editor UI</li>
       </ul>
-  - header: "C) Real-Time Feedback Loop"
+  - header: "Real-Time Feedback Loop"
+    media:
+      - 1.avif
+      - 2.avif
     text: "Every parameter change, noise scale, octaves, terracing, instantly regenerates the terrain, so the creative process feels like direct manipulation rather than a build-and-wait cycle."
-  - header: "D) Layered Control"
+  - header: "Layered Control"
+    media:
+      - 3.avif
+      - 4.avif
     text: |
       <ul>
-      <li><h3>🧊 Shape</h3> Marching cubes turn a volume of density values into a visible mesh, giving full control over how terrain surfaces emerge.</li>
-      <li><h3>📼 Noise</h3> Simplex noise drives height variation with tunable octaves, persistence, and detail, small tweaks produce dramatically different landscapes.</li>
-      <li><h3>🏔️ Terracing</h3> Clamping height into discrete levels carves plateaus and cliff faces, adding structure to organic forms.</li>
-      <li><h3>🌈 Color Mapping</h3> A gradient texture maps elevation to color, so visual identity shifts as the terrain evolves.</li>
+      <li><h3>Shape</h3> Marching cubes turn a volume of density values into a visible mesh, giving full control over how terrain surfaces emerge.</li>
+      <li><h3>Noise</h3> Simplex noise drives height variation with tunable octaves, persistence, and detail, small tweaks produce dramatically different landscapes.</li>
+      <li><h3>Terracing</h3> Clamping height into discrete levels carves plateaus and cliff faces, adding structure to organic forms.</li>
+      <li><h3>Color Mapping</h3> A gradient texture maps elevation to color, so visual identity shifts as the terrain evolves.</li>
       </ul>
-  - header: "E) Visual Polish"
+  - header: "Visual Polish"
+    media:
+      - 5.avif
+      - 6.avif
     text: |
       <ul>
-      <li><h3>🍄 Smoothing</h3> Softens the low-poly facets into a more organic surface without losing the procedural character.</li>
-      <li><h3>✨ Post-Processing</h3> Tilt-shift, bloom, noise grain, and brightness/contrast turn the raw mesh into something that feels cinematic.</li>
-      <li><h3>🏊 Ambient Motion</h3> A gentle float and slow rotation keep the terrain alive even when idle, inviting exploration.</li>
+      <li><h3>Smoothing</h3> Softens the low-poly facets into a more organic surface without losing the procedural character.</li>
+      <li><h3>Post-Processing</h3> Tilt-shift, bloom, noise grain, and brightness/contrast turn the raw mesh into something that feels cinematic.</li>
+      <li><h3>Ambient Motion</h3> A gentle float and slow rotation keep the terrain alive even when idle, inviting exploration.</li>
       </ul>
-  - header: "F) Editor UI"
+  - header: "Editor UI"
+    media:
+      - outro.mp4
     text: "The control panel exposes every generation parameter in a clear, grouped layout, gradient, marching cubes, so users can experiment freely."

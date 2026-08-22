@@ -1,6 +1,9 @@
 name: ray tracer
 year: 2022
 description: "OpenGL real-time ray tracer using Compute Shaders, touching post-processing."
+client: "Self-initiated"
+role: "Creative developer"
+timeline: "4 weeks"
 tags:
   - opengl
   - c++
@@ -32,6 +35,7 @@ media:
   - 11.avif
   - 12.avif
   - 13.mp4
+walkthrough: 13.mp4
 buttons:
   - alt: Behance
     imageSrc: /socials/behance
@@ -41,9 +45,23 @@ buttons:
     link: https://github.com/laprinia/hyzu
 
 articles:
-  - header: "A) About"
-    text: 'OpenGL real-time ray tracer using Compute Shaders. Based on the "Ray Tracing in One Weekend series" 🌄.'
-  - header: "B) Process"
+  - header: "About"
+    media:
+      - 1.avif
+      - 2.avif
+      - 3.avif
+      - 4.avif
+    text: 'OpenGL real-time ray tracer using Compute Shaders. Based on the "Ray Tracing in One Weekend series".'
+  - header: "Process"
+    media:
+      - 5.avif
+      - 6.avif
+      - 7.avif
+      - 8.avif
+      - 9.avif
+      - 10.avif
+      - 11.avif
+      - 12.avif
     text: |
       <section>
       <h3>1. Matte Materials</h3>
