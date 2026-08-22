@@ -7,6 +7,7 @@ import {
   CenteredItemWrapper,
   NavItems,
   NavLink,
+  NavLabel,
   Dropdown,
   DropdownButton,
   DropdownContent,
@@ -86,7 +87,7 @@ const NavBar = ({
                 currentHref === reorderedItems[0].href ? "page" : undefined
               }
             >
-              {reorderedItems[0].label}
+              <NavLabel>{reorderedItems[0].label}</NavLabel>
             </NavLink>
           </NavItem>
         </CenteredItemWrapper>
@@ -98,7 +99,7 @@ const NavBar = ({
                 aria-labelledby={`${item.label}`}
                 aria-current={currentHref === item.href ? "page" : undefined}
               >
-                {item.label}
+                <NavLabel>{item.label}</NavLabel>
               </NavLink>
             </NavItem>
           ))}
@@ -114,14 +115,17 @@ const NavBar = ({
             </DropdownButton>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>
-            <DropdownContent sideOffset={5}>
+            <DropdownContent sideOffset={5} data-nav-variant={variant}>
               {items.map((item, index) => (
                 <DropdownMenu.Item key={index} asChild>
                   <NavLink
                     href={item.href}
                     aria-labelledby={`dropdown-link-${index}`}
+                    aria-current={
+                      currentHref === item.href ? "page" : undefined
+                    }
                   >
-                    {item.label}
+                    <NavLabel>{item.label}</NavLabel>
                   </NavLink>
                 </DropdownMenu.Item>
               ))}

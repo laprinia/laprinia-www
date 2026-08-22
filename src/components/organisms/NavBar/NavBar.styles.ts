@@ -123,8 +123,18 @@ export const NavLink = styled.a.attrs({ "data-cursor-hide": "" } as Record<
     outline-offset: 3px;
   }
 
+  [data-nav-variant="highlight"] &:hover,
+  [data-nav-variant="highlight"] &[aria-current="page"] {
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+  }
+`;
+
+export const NavLabel = styled.span`
+  display: inline;
+
   [data-nav-variant="highlight"] & {
-    display: inline;
     background-image: linear-gradient(
       var(--support-color),
       var(--support-color)
@@ -138,18 +148,15 @@ export const NavLink = styled.a.attrs({ "data-cursor-hide": "" } as Record<
     /* stylelint-disable property-no-vendor-prefix -- Safari needs the prefix */
     -webkit-box-decoration-break: clone;
     /* stylelint-enable property-no-vendor-prefix */
+  }
 
-    &:hover,
-    &[aria-current="page"] {
-      color: inherit;
-      background-color: transparent;
-      background-size: 100% 0.42em;
-      text-decoration: none;
-    }
+  [data-nav-variant="highlight"] a:hover &,
+  [data-nav-variant="highlight"] a[aria-current="page"] & {
+    background-size: 100% 0.42em;
+  }
 
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 `;
 
@@ -234,5 +241,10 @@ export const DropdownContent = styled(DropdownMenu.Content)`
       color: var(--support-color);
       background-color: var(--neutral-700);
     }
+  }
+
+  &[data-nav-variant="highlight"] a:hover {
+    color: var(--neutral-900);
+    background-color: transparent;
   }
 `;
