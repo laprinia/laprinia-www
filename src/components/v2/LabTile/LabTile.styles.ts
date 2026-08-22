@@ -7,7 +7,7 @@ export const TileThumb = styled.span`
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--border-radius);
-  background-color: var(--neutral-200);
+  background-color: var(--surface-tint);
 `;
 
 export const TileMotion = styled.img`
@@ -55,8 +55,7 @@ export const TileLink = styled.a`
   color: inherit;
   text-decoration: none;
 
-  &:hover ${TileStill},
-  &:focus-visible ${TileStill} {
+  &:hover ${TileStill}, &:focus-visible ${TileStill} {
     opacity: 0;
   }
 
@@ -67,8 +66,7 @@ export const TileLink = styled.a`
   }
 
   @media (prefers-reduced-motion: reduce) {
-    &:hover ${TileStill},
-    &:focus-visible ${TileStill} {
+    &:hover ${TileStill}, &:focus-visible ${TileStill} {
       opacity: 1;
     }
   }

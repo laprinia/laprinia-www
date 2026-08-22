@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ContactGround = styled.div`
+  /* Deliberate: these grounds ink their headings in the accent. */
   --section-ink: var(--accent-color);
-  --section-surface: var(--background-color);
 
   display: flex;
   align-items: center;

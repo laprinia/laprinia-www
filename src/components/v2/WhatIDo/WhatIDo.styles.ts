@@ -9,7 +9,7 @@ export const EntryList = styled.dl`
 `;
 
 export const Entry = styled.div`
-  padding: 1.15rem 0;
+  padding: var(--space-5) 0;
   border-bottom: 1px solid var(--section-ink);
 `;
 
@@ -40,8 +40,7 @@ export const EntryBadge = styled.span`
 `;
 
 export const EntryDefinition = styled.dd`
-  margin: 0.5rem 0 0
-    calc(var(--entry-badge-size) + var(--entry-badge-gap));
+  margin: 0.5rem 0 0 calc(var(--entry-badge-size) + var(--entry-badge-gap));
   max-width: 62ch;
   font-size: var(--font-size-body);
   line-height: 1.5;

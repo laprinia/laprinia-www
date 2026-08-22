@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 export const CaseGround = styled.div`
-  --section-ink: var(--foreground-color);
-  --section-accent: var(--accent-color);
-  --section-muted: var(--neutral-600);
-  --section-surface: var(--background-color);
   --case-rail-width: 17rem;
   --case-gutter: clamp(var(--space-6), 5vw, var(--space-20));
   --case-column: 68rem;
@@ -341,7 +337,7 @@ export const ArticleText = styled.div`
   code {
     padding: 0.1em 0.35em;
     border-radius: 4px;
-    background-color: var(--neutral-200);
+    background-color: var(--surface-tint);
     font-family: var(--font-mono);
     font-size: var(--font-size-ui-sm);
   }
@@ -350,7 +346,7 @@ export const ArticleText = styled.div`
     padding: var(--space-4);
     overflow-x: auto;
     border-radius: var(--border-radius);
-    background-color: var(--neutral-200);
+    background-color: var(--surface-tint);
     font-family: var(--font-mono);
     font-size: var(--font-size-ui-sm);
     line-height: 1.5;

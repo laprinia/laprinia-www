@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Entry = styled.article`
-  --entry-surface: var(--neutral-200);
+  --entry-surface: var(--surface-tint);
   --entry-padding: 0.9rem 1rem 1.05rem;
   --pill-ink: var(--section-ink);
 

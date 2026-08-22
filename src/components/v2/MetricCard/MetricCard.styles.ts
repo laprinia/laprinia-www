@@ -11,7 +11,7 @@ export const MetricGrid = styled.ul`
 
 export const Card = styled.li`
   --metric-ink: var(--accent-color);
-  --metric-surface: var(--neutral-200);
+  --metric-surface: var(--surface-tint);
   --metric-label-ink: var(--neutral-600);
   --metric-value-size: clamp(2.25rem, 5vw, 3.25rem);
 

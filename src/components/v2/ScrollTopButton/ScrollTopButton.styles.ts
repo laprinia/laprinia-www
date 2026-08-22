@@ -12,7 +12,7 @@ export const FloatingTop = styled.a<{ $visible: boolean }>`
   height: 2.75rem;
   border-radius: var(--radius-pill);
   background-color: var(--support-color);
-  color: var(--neutral-800);
+  color: var(--foreground-color);
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   transform: translateY(${({ $visible }) => ($visible ? "0" : "0.5rem")});
   pointer-events: ${({ $visible }) => ($visible ? "auto" : "none")};
@@ -25,7 +25,7 @@ export const FloatingTop = styled.a<{ $visible: boolean }>`
   }
 
   &:focus-visible {
-    outline: 2px solid var(--neutral-800);
+    outline: 2px solid var(--foreground-color);
     outline-offset: 3px;
   }
 

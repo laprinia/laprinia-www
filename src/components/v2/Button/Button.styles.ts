@@ -44,27 +44,27 @@ const variants = {
 const sizes = {
   sm: css`
     min-height: 2rem;
-    padding: 0 0.6rem;
+    padding: 0 var(--space-2);
     font-size: var(--font-size-ui-sm);
-    gap: 0.4rem;
+    gap: var(--space-2);
   `,
   md: css`
     min-height: 2.25rem;
-    padding: 0 0.9rem;
+    padding: 0 var(--space-4);
     font-size: var(--font-size-ui-md);
-    gap: 0.5rem;
+    gap: var(--space-2);
   `,
   lg: css`
     min-height: 2.75rem;
-    padding: 0 1.2rem;
+    padding: 0 var(--space-5);
     font-size: var(--font-size-ui-lg);
-    gap: 0.6rem;
+    gap: var(--space-2);
   `,
   xl: css`
     min-height: 3.5rem;
-    padding: 0 1.6rem;
+    padding: 0 var(--space-6);
     font-size: var(--font-size-ui-xl);
-    gap: 0.7rem;
+    gap: var(--space-3);
   `,
 } satisfies Record<ButtonSize, ReturnType<typeof css>>;
 
@@ -99,7 +99,8 @@ export const StyledButton = styled.button<{
   justify-content: center;
   box-sizing: border-box;
   border: 1.5px solid transparent;
-  border-radius: ${({ $pill }) => ($pill ? "var(--radius-pill)" : "var(--border-radius)")};
+  border-radius: ${({ $pill }) =>
+    $pill ? "var(--radius-pill)" : "var(--border-radius)"};
   font-family: var(--font-heading);
   font-weight: var(--font-weight-regular);
   line-height: 1;

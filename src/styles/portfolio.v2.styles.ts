@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const PortfolioGround = styled.div`
+  /* Deliberate: these grounds ink their headings in the accent. */
   --section-ink: var(--accent-color);
-  --section-surface: var(--background-color);
 
   min-height: 100svh;
   padding: calc(var(--nav-height) + clamp(var(--space-8), 5vw, var(--space-16)))
@@ -11,4 +11,3 @@ export const PortfolioGround = styled.div`
   background-color: var(--section-surface);
   box-sizing: border-box;
 `;
-

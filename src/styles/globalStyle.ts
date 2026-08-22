@@ -129,6 +129,23 @@ export const GlobalStyle = createGlobalStyle`
         --neutral-900: #000000;
 
         /* ============================================================
+           SEMANTIC SURFACE
+           A v2 section reads these rather than the raw palette, so a
+           surface can be recoloured by redefining them on its root.
+           These are the defaults; a section that wants a different
+           treatment overrides only what differs (the portfolio and
+           contact grounds set --section-ink to the accent, for example),
+           and NotebookSection sets --section-ink per notebook at runtime.
+           ============================================================ */
+        --section-ink: var(--foreground-color);
+        --section-accent: var(--accent-color);
+        --section-muted: var(--neutral-600);
+        --section-surface: var(--background-color);
+
+        /* The tinted surface used for cards, chips and media wells. */
+        --surface-tint: var(--neutral-200);
+
+        /* ============================================================
            SPACING
            4px basis. Step n == n * 4px.
 

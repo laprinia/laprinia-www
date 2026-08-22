@@ -79,7 +79,7 @@ export const ZoomHint = styled.span`
   height: 1.9rem;
   border-radius: var(--radius-pill);
   background-color: var(--support-color);
-  color: var(--neutral-800);
+  color: var(--foreground-color);
   opacity: 0;
   transition: opacity 0.3s ease;
 
@@ -142,7 +142,7 @@ export const Lightbox = styled(Dialog.Content)`
     height: auto;
     object-fit: contain;
     border-radius: var(--border-radius);
-    background-color: var(--neutral-200);
+    background-color: var(--surface-tint);
   }
 
   &[data-state="open"] {
@@ -171,7 +171,7 @@ export const CloseButton = styled.button`
   border: none;
   border-radius: var(--radius-pill);
   background-color: var(--support-color);
-  color: var(--neutral-800);
+  color: var(--foreground-color);
   font-family: var(--font-heading);
   font-size: var(--font-size-ui-sm);
   text-transform: lowercase;

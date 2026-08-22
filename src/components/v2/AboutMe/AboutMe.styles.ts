@@ -48,7 +48,7 @@ export const ContactRow = styled.div`
   align-items: baseline;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.85rem 0;
+  padding: var(--space-3) 0;
   border-bottom: 1px solid var(--section-ink);
 `;
 
@@ -72,7 +72,7 @@ export const ContactLinks = styled.span`
   display: inline-flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.45rem;
+  gap: var(--space-2);
 
   a {
     color: inherit;
