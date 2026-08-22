@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 export const HeadingBlock = styled.header`
+  --heading-index-width: 3rem;
+  --heading-index-gap: var(--space-6);
+  --heading-index-align: left;
+
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-2);
 
   @media (min-width: 700px) {
-    grid-template-columns: 2.5rem minmax(0, 1fr);
-    column-gap: var(--space-6);
-    align-items: baseline;
+    grid-template-columns: var(--heading-index-width) minmax(0, 1fr);
+    column-gap: var(--heading-index-gap);
   }
 `;
 
@@ -19,7 +22,8 @@ export const HeadingIndex = styled.span`
   opacity: 0.6;
 
   @media (min-width: 700px) {
-    text-align: right;
+    padding-top: var(--space-2);
+    text-align: var(--heading-index-align);
   }
 `;
 
