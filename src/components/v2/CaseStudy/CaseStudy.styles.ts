@@ -11,6 +11,11 @@ export const CaseGround = styled.div`
   --case-measure: 100%;
   --case-index-width: 3rem;
   --case-index-gap: var(--space-6);
+  --case-rail-indent: 0px;
+
+  @media (min-width: 700px) and (max-width: 999px) {
+    --case-rail-indent: calc(var(--case-index-width) + var(--case-index-gap));
+  }
 
   min-height: 100svh;
   padding: calc(var(--nav-height) + clamp(var(--space-6), 4vw, var(--space-12)))
@@ -40,6 +45,7 @@ export const CaseLayout = styled.div`
 export const WalkthroughSlot = styled.div`
   order: 2;
   min-width: 0;
+  margin-left: var(--case-rail-indent);
 
   @media (min-width: 1000px) {
     grid-area: walk;
@@ -71,7 +77,7 @@ export const BackLink = styled.a`
   gap: var(--space-2);
   align-self: start;
   padding-left: var(--space-1);
-  margin-left: calc(var(--space-1) * -1);
+  margin-left: calc(var(--case-rail-indent) - var(--space-1));
   color: var(--section-accent);
   font-family: var(--font-mono);
   font-size: var(--font-size-ui-xs);
@@ -119,6 +125,7 @@ export const ProjectName = styled.h1`
   line-height: 0.95;
   text-transform: lowercase;
   text-wrap: balance;
+  margin-left: var(--case-rail-indent);
 `;
 
 export const NameMark = styled.span`
@@ -140,6 +147,7 @@ export const RailFacts = styled.dl`
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-5);
   margin: 0;
+  margin-left: var(--case-rail-indent);
 `;
 
 export const FactTerm = styled.dt`

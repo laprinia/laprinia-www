@@ -30,9 +30,7 @@ const NavBar = ({
   const findScrollTarget = useCallback((): HTMLElement | null => {
     const layout = navRef.current?.parentElement;
     if (!layout) return null;
-    const viewport = layout.querySelector(
-      "[data-radix-scroll-area-viewport]",
-    );
+    const viewport = layout.querySelector("[data-radix-scroll-area-viewport]");
     if (viewport) return viewport as HTMLElement;
     const children = layout.querySelectorAll("*");
     for (const child of children) {
@@ -74,7 +72,7 @@ const NavBar = ({
           href="/"
           aria-current={currentHref === "/" ? "page" : undefined}
         >
-          lavinia dumitrenco
+          <NavLabel>lavinia dumitrenco</NavLabel>
         </NavLink>
       </NavItem>
       <NavItemsContainer>
