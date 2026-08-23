@@ -9,6 +9,9 @@ const describe = (value: unknown): string => {
   return String(value);
 };
 
+const isOurCode = (source: unknown): boolean =>
+  typeof source === "string" && source.includes("/_next/");
+
 const ErrorBoundary = ({ children }: { children: ReactNode }) => {
   const [detail, setDetail] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);
@@ -24,12 +27,14 @@ const ErrorBoundary = ({ children }: { children: ReactNode }) => {
 
     const onRejection = (event: PromiseRejectionEvent) => {
       if (!(event.reason instanceof Error)) return;
+      if (!isOurCode(event.reason.stack)) return;
       report(event.reason);
     };
 
     const onError = (event: ErrorEvent) => {
       if (event.target && event.target !== window) return;
       if (!event.error) return;
+      if (!isOurCode(event.filename) && !isOurCode(event.error.stack)) return;
       report(event.error);
     };
 
