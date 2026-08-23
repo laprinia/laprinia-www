@@ -4,7 +4,6 @@ import Footer from "../components/v2/Footer/Footer";
 import About from "../components/v2/About/About";
 import ScrollTopButton from "../components/v2/ScrollTopButton/ScrollTopButton";
 import { navItems } from "../consts";
-import { aboutId } from "../consts.v2.about";
 import { backToTopLabel } from "../consts.v2.case";
 
 const AboutV2 = () => (
@@ -26,7 +25,7 @@ const AboutV2 = () => (
       <About />
     </main>
     <Footer />
-    <ScrollTopButton href={`#${aboutId}`} label={backToTopLabel} />
+    <ScrollTopButton label={backToTopLabel} />
   </>
 );
 

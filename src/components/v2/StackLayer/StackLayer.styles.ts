@@ -5,4 +5,5 @@ export const Layer = styled(motion.div)`
   position: sticky;
   top: var(--layer-top, 0px);
   overflow: hidden;
+  overflow-anchor: none;
 `;

@@ -3,7 +3,7 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { ArrowUp } from "lucide-react";
 import { FloatingTop } from "./ScrollTopButton.styles";
 
-const ScrollTopButton = ({ href, label }: { href: string; label: string }) => {
+const ScrollTopButton = ({ label }: { label: string }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -13,9 +13,12 @@ const ScrollTopButton = ({ href, label }: { href: string; label: string }) => {
     return () => window.removeEventListener("scroll", update);
   }, []);
 
+  const toTop = () => window.scrollTo({ top: 0 });
+
   return (
     <FloatingTop
-      href={href}
+      type="button"
+      onClick={toTop}
       $visible={visible}
       aria-hidden={visible ? undefined : true}
       tabIndex={visible ? undefined : -1}

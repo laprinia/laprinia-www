@@ -8,7 +8,7 @@ import ScrollTopButton from "../../components/v2/ScrollTopButton/ScrollTopButton
 import CaseStudy from "../../components/v2/CaseStudy/CaseStudy";
 import { RibbonBand } from "../../components/v2/CaseStudy/CaseStudy.styles";
 import { navItems } from "../../consts";
-import { backToTopLabel, caseTopId, keywordsLabel } from "../../consts.v2.case";
+import { backToTopLabel, keywordsLabel } from "../../consts.v2.case";
 import {
   allProjects,
   findProjectBySlug,
@@ -39,7 +39,7 @@ const CaseStudyPage = ({ project }: { project: Project }) => (
       </RibbonBand>
     ) : null}
     <Footer />
-    <ScrollTopButton href={`#${caseTopId}`} label={backToTopLabel} />
+    <ScrollTopButton label={backToTopLabel} />
   </>
 );
 

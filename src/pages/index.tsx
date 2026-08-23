@@ -2,7 +2,6 @@ import Head from "next/head";
 import NavBar from "../components/organisms/NavBar/NavBar";
 import CustomCursor from "../components/atoms/CustomCursor/CustomCursor";
 import { navItems } from "../consts";
-import { homeTopId } from "../consts.v2";
 import { backToTopLabel } from "../consts.v2.case";
 import HomeStage from "../components/v2/HomeStage/HomeStage";
 import Footer from "../components/v2/Footer/Footer";
@@ -29,7 +28,7 @@ const HomeV2 = () => {
         <HomeStage />
       </main>
       <Footer />
-      <ScrollTopButton href={`#${homeTopId}`} label={backToTopLabel} />
+      <ScrollTopButton label={backToTopLabel} />
     </>
   );
 };
