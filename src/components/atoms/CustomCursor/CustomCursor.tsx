@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Wrapper, Asterisk, Pill } from "./CustomCursor.styles";
 
-const CustomCursor = () => {
+const CustomCursor = ({ scoped = false }: { scoped?: boolean }) => {
   const ref = useRef<HTMLDivElement>(null);
   const visibleRef = useRef(false);
 
@@ -59,8 +59,10 @@ const CustomCursor = () => {
   if (!enabled) return null;
 
   return (
-    <Wrapper ref={ref} $visible={visible}>
-      <Asterisk $hidden={!!text} $active={active}>*</Asterisk>
+    <Wrapper ref={ref} $visible={visible && (!scoped || !!text)}>
+      <Asterisk $hidden={scoped || !!text} $active={active}>
+        *
+      </Asterisk>
       <Pill $visible={!!text}>
         <span>{text}</span>
       </Pill>

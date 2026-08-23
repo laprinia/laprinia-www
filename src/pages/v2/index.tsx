@@ -1,5 +1,6 @@
 import Head from "next/head";
 import NavBar from "../../components/organisms/NavBar/NavBar";
+import CustomCursor from "../../components/atoms/CustomCursor/CustomCursor";
 import { navItems } from "../../consts";
 import { previewGate } from "../../lib/preview";
 import { V2GlobalStyle } from "../../styles/v2GlobalStyle";
@@ -20,6 +21,7 @@ const HomeV2 = () => {
         variant="highlight"
         currentHref="/"
       />
+      <CustomCursor scoped />
       <main>
         <HomeStage />
       </main>

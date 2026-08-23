@@ -32,7 +32,7 @@ export const HeroCtaSlot = styled.div`
   display: none;
   justify-content: flex-end;
 
-  @media (min-width: 1230px) {
+  @media (min-width: 700px) {
     display: flex;
   }
 
