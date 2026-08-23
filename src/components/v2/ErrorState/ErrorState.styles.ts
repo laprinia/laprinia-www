@@ -71,6 +71,22 @@ export const Message = styled.p`
   text-wrap: pretty;
 `;
 
+export const Detail = styled.pre`
+  max-width: 100%;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-tint);
+  color: var(--neutral-700);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-ui-xs);
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+`;
+
 export const Actions = styled.div`
   --button-ink: var(--accent-color);
   --button-on-ink: var(--background-color);

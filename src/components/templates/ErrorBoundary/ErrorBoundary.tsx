@@ -4,33 +4,41 @@ import Footer from "../../v2/Footer/Footer";
 import ErrorState from "../../v2/ErrorState/ErrorState";
 import { navItems } from "../../../consts";
 
+const describe = (value: unknown): string => {
+  if (value instanceof Error) return `${value.name}: ${value.message}`;
+  return String(value);
+};
+
 const ErrorBoundary = ({ children }: { children: ReactNode }) => {
+  const [detail, setDetail] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);
 
-  const handleError = (error: Error) => {
-    console.error("Error captured by ErrorBoundary:", error);
-    setHasError(true);
-  };
-
   useEffect(() => {
-    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
-      handleError(event.reason);
+    const debugging = new URLSearchParams(window.location.search).has("debug");
+
+    const report = (value: unknown) => {
+      console.error("Error captured by ErrorBoundary:", value);
+      setDetail(debugging ? describe(value) : null);
+      setHasError(true);
     };
 
-    const handleErrorEvent = (event: Event) => {
-      const errorEvent = event as ErrorEvent;
-      handleError(errorEvent.error);
+    const onRejection = (event: PromiseRejectionEvent) => {
+      if (!(event.reason instanceof Error)) return;
+      report(event.reason);
     };
 
-    window.addEventListener("unhandledrejection", handleUnhandledRejection);
-    window.addEventListener("error", handleErrorEvent);
+    const onError = (event: ErrorEvent) => {
+      if (event.target && event.target !== window) return;
+      if (!event.error) return;
+      report(event.error);
+    };
+
+    window.addEventListener("unhandledrejection", onRejection);
+    window.addEventListener("error", onError);
 
     return () => {
-      window.removeEventListener(
-        "unhandledrejection",
-        handleUnhandledRejection,
-      );
-      window.removeEventListener("error", handleErrorEvent);
+      window.removeEventListener("unhandledrejection", onRejection);
+      window.removeEventListener("error", onError);
     };
   }, []);
 
@@ -42,6 +50,7 @@ const ErrorBoundary = ({ children }: { children: ReactNode }) => {
           title="something went"
           highlight="sideways"
           message="That is on my end, not yours. Reloading usually sorts it out."
+          detail={detail}
         />
         <Footer />
       </>

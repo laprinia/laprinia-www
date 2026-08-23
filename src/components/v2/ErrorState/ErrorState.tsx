@@ -7,6 +7,7 @@ import {
   Title,
   Mark,
   Message,
+  Detail,
   Actions,
 } from "./ErrorState.styles";
 
@@ -17,6 +18,7 @@ export type ErrorStateProps = {
   message: string;
   actionLabel?: string;
   actionHref?: string;
+  detail?: string | null;
 };
 
 const ErrorState = ({
@@ -26,6 +28,7 @@ const ErrorState = ({
   message,
   actionLabel = "back home",
   actionHref = "/",
+  detail,
 }: ErrorStateProps) => (
   <ErrorGround>
     <Face aria-hidden="true">:&apos;(</Face>
@@ -43,6 +46,8 @@ const ErrorState = ({
     </Title>
 
     <Message>{message}</Message>
+
+    {detail ? <Detail>{detail}</Detail> : null}
 
     <Actions>
       <Button
