@@ -17,4 +17,6 @@ export const labProjectNames = [
   "text wave",
   "web 3d terrain generator",
   "ray tracer",
+  "lissajous curves",
+  "volumetric light",
 ];

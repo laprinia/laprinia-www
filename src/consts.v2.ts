@@ -1,5 +1,7 @@
 export const landingTitle = "Product Designer & Developer";
 
+export const homeTopId = "home-top";
+
 export const selectedWorkId = "selected-work";
 
 export const selectedWorkCta = "selected work";

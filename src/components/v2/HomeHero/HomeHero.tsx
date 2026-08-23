@@ -2,12 +2,12 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { ArrowDown } from "lucide-react";
 import Button from "../Button/Button";
 import Crossword from "../Crossword/Crossword";
-import { selectedWorkCta, selectedWorkId } from "../../../consts.v2";
+import { homeTopId, selectedWorkCta, selectedWorkId } from "../../../consts.v2";
 import { crosswordStatement } from "../../../consts.v2.crossword";
 import { HeroSection, HeroCtaSlot } from "./HomeHero.styles";
 
 const HomeHero = () => (
-  <HeroSection>
+  <HeroSection id={homeTopId}>
     <VisuallyHidden.Root asChild>
       <h1>{crosswordStatement}</h1>
     </VisuallyHidden.Root>

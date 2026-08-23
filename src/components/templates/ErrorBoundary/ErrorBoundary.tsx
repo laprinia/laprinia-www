@@ -1,14 +1,8 @@
 import { useState, useEffect, type ReactNode } from "react";
 import NavBar from "../../organisms/NavBar/NavBar";
-import { navItems, somethingWentWrongPath } from "../../../consts";
-import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../../molecules/Texture/CursorWaveTexture";
-import Layout from "../../organisms/Layout/Layout";
-import { PageContent } from "../../organisms/Layout/Layout.styles";
-import {
-  CanvasSection,
-  CanvasSectionWrapper,
-} from "./ErrorBoundary.styles";
+import Footer from "../../v2/Footer/Footer";
+import ErrorState from "../../v2/ErrorState/ErrorState";
+import { navItems } from "../../../consts";
 
 const ErrorBoundary = ({ children }: { children: ReactNode }) => {
   const [hasError, setHasError] = useState(false);
@@ -42,23 +36,15 @@ const ErrorBoundary = ({ children }: { children: ReactNode }) => {
 
   if (hasError) {
     return (
-      <Layout>
-        <NavBar items={navItems} highlightedIndex={1} />
-        <PageContent>
-          <CanvasSectionWrapper>
-            <CanvasSection>
-              <Canvas>
-                <ambientLight intensity={3} />
-                <pointLight position={[10, 10, 10]} intensity={1} />
-                <CursorWaveTexture
-                  texturePath={somethingWentWrongPath}
-                  isAutoAnimated
-                />
-              </Canvas>
-            </CanvasSection>
-          </CanvasSectionWrapper>
-        </PageContent>
-      </Layout>
+      <>
+        <NavBar items={navItems} highlightedIndex={0} variant="highlight" />
+        <ErrorState
+          title="something went"
+          highlight="sideways"
+          message="That is on my end, not yours. Reloading usually sorts it out."
+        />
+        <Footer />
+      </>
     );
   }
 

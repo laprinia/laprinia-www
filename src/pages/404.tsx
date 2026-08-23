@@ -1,37 +1,26 @@
+import Head from "next/head";
 import NavBar from "../components/organisms/NavBar/NavBar";
-import { navItems, notFoundPath } from "../consts";
-import Layout from "../components/organisms/Layout/Layout";
-import { PageContent } from "../components/organisms/Layout/Layout.styles";
-import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../components/molecules/Texture/CursorWaveTexture";
-import styled from "styled-components";
+import Footer from "../components/v2/Footer/Footer";
+import ErrorState from "../components/v2/ErrorState/ErrorState";
+import { navItems } from "../consts";
 
-const CanvasSectionWrapper = styled.section`
-  height: 80%;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-`;
-const CanvasSection = styled.article`
-  width: 100%;
-  height: 100%;
-`;
+const Custom404 = () => (
+  <>
+    <Head>
+      <title>page not found — Lavinia Dumitrenco</title>
+      <meta name="robots" content="noindex" />
+    </Head>
+    <NavBar items={navItems} highlightedIndex={0} variant="highlight" />
+    <ErrorState
+      code="error 404"
+      title="this page went"
+      highlight="missing"
+      message="The link may be out of date, or the page may have moved. The work is all still here."
+      actionLabel="see the work"
+      actionHref="/portfolio"
+    />
+    <Footer />
+  </>
+);
 
-export default function Custom404() {
-  return (
-    <Layout>
-      <NavBar items={navItems} highlightedIndex={1} />
-      <PageContent>
-        <CanvasSectionWrapper>
-          <CanvasSection>
-            <Canvas>
-              <ambientLight intensity={3} />
-              <pointLight position={[10, 10, 10]} intensity={1} />
-              <CursorWaveTexture texturePath={notFoundPath} isAutoAnimated />
-            </Canvas>
-          </CanvasSection>
-        </CanvasSectionWrapper>
-      </PageContent>
-    </Layout>
-  );
-}
+export default Custom404;

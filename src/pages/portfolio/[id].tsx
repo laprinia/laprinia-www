@@ -1,54 +1,62 @@
-import { useRouter } from "next/router";
-import Layout from "../../components/organisms/Layout/Layout";
-import { PageContent } from "../../components/organisms/Layout/Layout.styles";
+import Head from "next/head";
+import type { GetStaticPaths, GetStaticProps } from "next";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import NavBar from "../../components/organisms/NavBar/NavBar";
+import DoubleTextRibbon from "../../components/organisms/TextRibbon/DoubleTextRibbon";
+import Footer from "../../components/v2/Footer/Footer";
+import ScrollTopButton from "../../components/v2/ScrollTopButton/ScrollTopButton";
+import CaseStudy from "../../components/v2/CaseStudy/CaseStudy";
+import { RibbonBand } from "../../components/v2/CaseStudy/CaseStudy.styles";
 import { navItems } from "../../consts";
-import ProjectTemplate from "../../components/organisms/ProjectContainer/ProjectTemplate";
-import { Project, projects } from "../../../scripts/const/projects";
+import { backToTopLabel, caseTopId, keywordsLabel } from "../../consts.v2.case";
+import {
+  allProjects,
+  findProjectBySlug,
+  toProjectSlug,
+} from "../../lib/projects";
+import type { Project } from "../../../scripts/const/projects";
 
-const PortfolioItemPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
+const CaseStudyPage = ({ project }: { project: Project }) => (
+  <>
+    <Head>
+      <title>{`${project.name} — Lavinia Dumitrenco`}</title>
+    </Head>
+    <NavBar
+      items={navItems}
+      highlightedIndex={0}
+      variant="highlight"
+      currentHref="/portfolio"
+    />
+    <main>
+      <CaseStudy project={project} />
+    </main>
+    {project.tags.length ? (
+      <RibbonBand>
+        <VisuallyHidden.Root asChild>
+          <h2 id="skills">{keywordsLabel}</h2>
+        </VisuallyHidden.Root>
+        <DoubleTextRibbon tags={project.tags} />
+      </RibbonBand>
+    ) : null}
+    <Footer />
+    <ScrollTopButton href={`#${caseTopId}`} label={backToTopLabel} />
+  </>
+);
 
-  const getProjectById = (
-    id: string | string[] | undefined,
-  ): Project | null => {
-    if (!id) return null;
-    const allProjects = Object.values(projects).flat();
-    const normalizedId = id.toString().toLowerCase();
-    return (
-      allProjects.find((project) => {
-        const projectSlug = project.name.toLowerCase().replaceAll(" ", "-");
-        const projectNameSpaces = project.name.toLowerCase().replaceAll("-", " ");
-        return (
-          project.name.toLowerCase() === normalizedId ||
-          projectSlug === normalizedId ||
-          projectNameSpaces === normalizedId
-        );
-      }) || null
-    );
-  };
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: allProjects()
+    .filter((project) => project.published)
+    .map((project) => ({ params: { id: toProjectSlug(project.name) } })),
+  fallback: false,
+});
 
-  const project = getProjectById(id);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const project = findProjectBySlug(String(params?.id));
+  if (!project || !project.published) {
+    return { notFound: true };
+  }
 
-  return (
-    <Layout>
-      <NavBar items={navItems} highlightedIndex={0} />
-      <PageContent>
-        {project && (
-          <ProjectTemplate
-            projectName={project.name}
-            tags={project.tags}
-            buttons={project.buttons}
-            content={project.textContents}
-            mediaContents={project.mediaContents}
-            colors={project.colors}
-          />
-        )}
-        {!project && <p>Project not found</p>}
-      </PageContent>
-    </Layout>
-  );
+  return { props: { project } };
 };
 
-export default PortfolioItemPage;
+export default CaseStudyPage;

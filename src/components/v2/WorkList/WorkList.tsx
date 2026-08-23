@@ -2,6 +2,7 @@ import Image from "next/image";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import Pill from "../../atoms/Pill/Pill";
 import { projects, type Project } from "../../../../scripts/const/projects";
+import { toProjectSlug } from "../../../lib/projects";
 import {
   List,
   Row,
@@ -15,8 +16,6 @@ import {
   Roles,
   Thumb,
 } from "./WorkList.styles";
-
-const toSlug = (name: string) => name.replaceAll(/\s+/g, "-");
 
 const WorkList = ({ names }: { names: string[] }) => {
   const all = Object.values(projects).flat() as Project[];
@@ -35,7 +34,7 @@ const WorkList = ({ names }: { names: string[] }) => {
           <Body>
             <Head>
               <Title>
-                <TitleLink href={`/portfolio/${toSlug(project.name)}`}>
+                <TitleLink href={`/portfolio/${toProjectSlug(project.name)}`}>
                   {project.name}
                   <VisuallyHidden.Root> — read the case study</VisuallyHidden.Root>
                 </TitleLink>

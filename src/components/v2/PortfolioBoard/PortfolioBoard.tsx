@@ -1,6 +1,7 @@
 import DictionaryEntry from "../DictionaryEntry/DictionaryEntry";
 import LabTile from "../LabTile/LabTile";
 import { projects, type Project } from "../../../../scripts/const/projects";
+import { toProjectSlug } from "../../../lib/projects";
 import {
   labHeading,
   labProjectNames,
@@ -9,8 +10,6 @@ import {
 } from "../../../consts.v2.portfolio";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import { Board, EntryList, LabGrid } from "./PortfolioBoard.styles";
-
-const toSlug = (name: string) => name.replaceAll(/\s+/g, "-");
 
 const byName = (names: string[]) => {
   const all = Object.values(projects).flat() as Project[];
@@ -36,7 +35,7 @@ const PortfolioBoard = () => {
               definition={project.description}
               roles={project.roles}
               imageSrc={project.headshot}
-              href={`/v2/portfolio/${toSlug(project.name)}`}
+              href={`/portfolio/${toProjectSlug(project.name)}`}
               liveHref={project.buttons[0]?.link}
             />
           ))}
@@ -54,7 +53,7 @@ const PortfolioBoard = () => {
                 motionSrc={project.headshotGif}
                 year={project.year}
                 tag={project.tags[0]}
-                href={`/v2/portfolio/${toSlug(project.name)}`}
+                href={`/portfolio/${toProjectSlug(project.name)}`}
               />
             </li>
           ))}

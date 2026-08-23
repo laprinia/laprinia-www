@@ -1,61 +1,37 @@
-import { useState, useEffect } from "react";
-import { mobileHeroPath } from "../consts";
-import NoWebGL from "../components/templates/NoWebGL/NoWebGL";
-import dynamic from "next/dynamic";
+import Head from "next/head";
+import NavBar from "../components/organisms/NavBar/NavBar";
+import CustomCursor from "../components/atoms/CustomCursor/CustomCursor";
+import { navItems } from "../consts";
+import { homeTopId } from "../consts.v2";
+import { backToTopLabel } from "../consts.v2.case";
+import HomeStage from "../components/v2/HomeStage/HomeStage";
+import Footer from "../components/v2/Footer/Footer";
+import ScrollTopButton from "../components/v2/ScrollTopButton/ScrollTopButton";
 
-const DesktopHome = dynamic(
-  () => import("../components/templates/DesktopHome/DesktopHome"),
-  {
-    loading: () => <p>Loading...</p>,
-    ssr: false,
-  },
-);
-const MobileHome = dynamic(
-  () => import("../components/templates/MobileHome/MobileHome"),
-  {
-    loading: () => <p>Loading...</p>,
-    ssr: false,
-  },
-);
-
-const Home = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [webglSupported, setWebglSupported] = useState(true);
-  useEffect(() => {
-    const isWebGLAvailable = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        return !!(
-          window.WebGLRenderingContext &&
-          (canvas.getContext("webgl") ||
-            canvas.getContext("experimental-webgl"))
-        );
-      } catch (e) {
-        return false;
-      }
-    };
-    setWebglSupported(isWebGLAvailable());
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1000);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return webglSupported ? (
-    isMobile ? (
-      <MobileHome mobileHeroPath={mobileHeroPath} />
-    ) : (
-      <DesktopHome />
-    )
-  ) : (
-    <NoWebGL />
+const HomeV2 = () => {
+  return (
+    <>
+      <Head>
+        <title>Lavinia Dumitrenco — product designer & developer</title>
+        <meta
+          name="description"
+          content="Product designer and developer in Bucharest. Five years of user research, flows and design systems, shipped into production."
+        />
+      </Head>
+      <NavBar
+        items={navItems}
+        highlightedIndex={0}
+        variant="highlight"
+        currentHref="/"
+      />
+      <CustomCursor scoped />
+      <main>
+        <HomeStage />
+      </main>
+      <Footer />
+      <ScrollTopButton href={`#${homeTopId}`} label={backToTopLabel} />
+    </>
   );
 };
 
-export default Home;
+export default HomeV2;

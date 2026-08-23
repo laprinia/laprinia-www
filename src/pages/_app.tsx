@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
-import { GlobalStyle } from "../styles/globalStyle";
 import Head from "next/head";
-import { NextUIProvider } from "@nextui-org/system";
+import { GlobalStyle } from "../styles/globalStyle";
+import { V2GlobalStyle } from "../styles/v2GlobalStyle";
 import ErrorBoundary from "../components/templates/ErrorBoundary/ErrorBoundary";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,23 +14,22 @@ const App = ({ Component, pageProps }: AppProps) => {
       <SpeedInsights />
       <Analytics />
       <Head>
-        <title>laprinia</title>
+        <title>Lavinia Dumitrenco — product designer &amp; developer</title>
         <meta
           name="description"
-          content="Hi! I am Lavinia, an experienced Product Designer & Frontend Developer based in Bucharest. Currently available for work."
+          content="Lavinia Dumitrenco — product designer and developer in Bucharest. Five years of user research, interaction design and design systems, shipped into production. Currently available for work."
         />
         <meta
           name="keywords"
-          content=" UX Designer, Product Designer, UX Romania, UX Design, Design Engineer, Web Developer, Index, Hire Developer, Frontend Romania, Freelance Developer Romania, Javascript, React, Typescript, Next.js, HTML, CSS, UI/UX Designer, Responsive Design, WebGL, 3D Rendering, TouchDesigner, laprinia, laprinion, Lavinia Dumitrenco, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO, Figma, Figma MCP, Figma Plugin Development, Adobe Photoshop, Adobe Illustrator, Adobe Rush, Adobe XD, Design Systems, Design Tokens, Accessibility, SEO"
+          content="Product Designer, UX Designer, Product Design Romania, UX Romania, Design Systems, Design Tokens, User Research, Interaction Design, Accessibility, WCAG, Data Visualization, B2B Product Design, Enterprise UX, Figma, Figma Variables, Prototyping, Frontend Developer, React, TypeScript, Next.js, Lavinia Dumitrenco, laprinia, Bucharest"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <GlobalStyle />
-      <NextUIProvider>
-        <ErrorBoundary>
-          <Component {...pageProps} />
-        </ErrorBoundary>
-      </NextUIProvider>
+      <V2GlobalStyle />
+      <ErrorBoundary>
+        <Component {...pageProps} />
+      </ErrorBoundary>
     </>
   );
 };

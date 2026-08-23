@@ -1,47 +1,32 @@
+import Head from "next/head";
 import NavBar from "../components/organisms/NavBar/NavBar";
-import { navItems, somethingWentWrongPath } from "../consts";
-import { Canvas } from "@react-three/fiber";
-import CursorWaveTexture from "../components/molecules/Texture/CursorWaveTexture";
-import Layout from "../components/organisms/Layout/Layout";
-import { PageContent } from "../components/organisms/Layout/Layout.styles";
-import styled from "styled-components";
+import Footer from "../components/v2/Footer/Footer";
+import ErrorState from "../components/v2/ErrorState/ErrorState";
+import { navItems } from "../consts";
 
-function ErrorPage({ statusCode }: { statusCode: number }) {
-  const CanvasSectionWrapper = styled.section`
-    height: 80%;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-  `;
-  const CanvasSection = styled.article`
-    width: 100%;
-    height: 100%;
-  `;
+const ErrorPage = ({ statusCode }: { statusCode?: number }) => (
+  <>
+    <Head>
+      <title>something went wrong — Lavinia Dumitrenco</title>
+      <meta name="robots" content="noindex" />
+    </Head>
+    <NavBar items={navItems} highlightedIndex={0} variant="highlight" />
+    <ErrorState
+      code={statusCode ? `error ${statusCode}` : "error"}
+      title="something went"
+      highlight="sideways"
+      message="That is on my end, not yours. Try again in a moment, or head back to the homepage."
+    />
+    <Footer />
+  </>
+);
 
-  return (
-    <Layout>
-      <NavBar items={navItems} highlightedIndex={1} />
-      <PageContent>
-        <CanvasSectionWrapper>
-          <CanvasSection>
-            <Canvas>
-              <ambientLight intensity={3} />
-              <pointLight position={[10, 10, 10]} intensity={1} />
-              <CursorWaveTexture
-                texturePath={somethingWentWrongPath}
-                isAutoAnimated
-              />
-            </Canvas>
-          </CanvasSection>
-        </CanvasSectionWrapper>
-      </PageContent>
-    </Layout>
-  );
-}
-
-ErrorPage.getInitialProps = ({ res, err }: { res: any; err: any }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
-};
+ErrorPage.getInitialProps = ({
+  res,
+  err,
+}: {
+  res?: { statusCode: number };
+  err?: { statusCode?: number };
+}) => ({ statusCode: res?.statusCode ?? err?.statusCode ?? 404 });
 
 export default ErrorPage;
