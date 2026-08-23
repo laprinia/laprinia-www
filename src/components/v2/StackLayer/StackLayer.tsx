@@ -22,7 +22,7 @@ export type CoverFade = {
 
 export const useCoverFade = (
   coverRef: RefObject<HTMLDivElement | null>,
-): CoverFade | undefined => {
+): CoverFade => {
   const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
@@ -31,9 +31,13 @@ export const useCoverFade = (
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.94]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    prefersReducedMotion ? [1, 1] : [1, 0.94],
+  );
 
-  return prefersReducedMotion ? undefined : { opacity, scale };
+  return { opacity, scale };
 };
 
 export type StackLayerProps = {
@@ -60,8 +64,18 @@ const StackLayer = forwardRef<HTMLDivElement, StackLayerProps>(
       const node = layerRef.current;
       if (!node) return;
 
+      const readSmallViewportHeight = () => {
+        const probe = document.createElement("div");
+        probe.style.cssText =
+          "position:absolute;top:0;left:0;width:0;height:100svh;visibility:hidden;pointer-events:none";
+        document.body.appendChild(probe);
+        const height = probe.getBoundingClientRect().height;
+        probe.remove();
+        return height || window.innerHeight;
+      };
+
       const syncStickyOffset = () => {
-        const overflow = node.offsetHeight - window.innerHeight;
+        const overflow = node.offsetHeight - readSmallViewportHeight();
         node.style.setProperty(
           "--layer-top",
           overflow > 0 ? `${-overflow}px` : "0px",
