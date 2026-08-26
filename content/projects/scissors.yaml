@@ -10,8 +10,6 @@ tags:
   - digital illustration
   - graphic design
   - experimental
-colors:
-  - "#000000"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -20,8 +18,7 @@ media:
   - 3.avif
   - 4.avif
   - 5.avif
-buttons: []
-
+links: []
 articles:
   - header: "About"
     text: "Collection of digital representations of a simple household object: a pair of scissors, created for my design specialization, where I had to depict one item in four different styles using different tools."

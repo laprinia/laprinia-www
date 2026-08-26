@@ -40,7 +40,7 @@ function walkDir(dir) {
   return results;
 }
 
-async function upload(filePath) {
+async function upload(filePath, force) {
   let relativePath = path.relative(
     path.join(__dirname, "..", "public"),
     filePath,
@@ -62,15 +62,17 @@ async function upload(filePath) {
       ? "raw"
       : "image";
 
-  try {
-    const existing = await cloudinary.api.resource(publicId, {
-      resource_type: resourceType,
-    });
-    if (existing) {
-      console.log(`  SKIP (exists) ${relativePath}`);
-      return { skipped: true };
-    }
-  } catch {}
+  if (!force) {
+    try {
+      const existing = await cloudinary.api.resource(publicId, {
+        resource_type: resourceType,
+      });
+      if (existing) {
+        console.log(`  SKIP (exists) ${relativePath}`);
+        return { skipped: true };
+      }
+    } catch {}
+  }
 
   const folder = path.posix.dirname(publicId);
   const filename = path.posix.basename(publicId);
@@ -78,7 +80,8 @@ async function upload(filePath) {
   const uploadOpts = {
     public_id: filename,
     resource_type: resourceType,
-    overwrite: false,
+    overwrite: Boolean(force),
+    invalidate: Boolean(force),
   };
   if (folder && folder !== ".") {
     uploadOpts.folder = folder;
@@ -86,7 +89,9 @@ async function upload(filePath) {
 
   const result = await cloudinary.uploader.upload(filePath, uploadOpts);
 
-  console.log(`  UPLOADED ${relativePath} → ${result.secure_url}`);
+  console.log(
+    `  ${force ? "REPLACED" : "UPLOADED"} ${relativePath} → ${result.secure_url}`,
+  );
   return { skipped: false, url: result.secure_url };
 }
 
@@ -102,7 +107,9 @@ async function main() {
     process.exit(1);
   }
 
-  const extraArgs = process.argv.slice(2);
+  const argv = process.argv.slice(2);
+  const force = argv.includes("--force");
+  const extraArgs = argv.filter((a) => a !== "--force");
   let files;
   if (extraArgs.length) {
     files = [];
@@ -117,13 +124,15 @@ async function main() {
   } else {
     files = walkDir(PUBLIC_DIR);
   }
-  console.log(`Found ${files.length} assets to upload.\n`);
+  console.log(
+    `Found ${files.length} assets to upload${force ? " (--force: replacing existing)" : ""}.\n`,
+  );
 
   let uploaded = 0;
   let skipped = 0;
 
   for (const file of files) {
-    const result = await upload(file);
+    const result = await upload(file, force);
     if (result.skipped) skipped++;
     else uploaded++;
   }

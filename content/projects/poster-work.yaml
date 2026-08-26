@@ -10,16 +10,13 @@ tags:
   - photoshop
   - typography
   - experimental
-colors:
-  - "#000000"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
   - 1.avif
   - 2.avif
   - 3.avif
-buttons: []
-
+links: []
 articles:
   - header: "Bauhaus Poster"
     text: "Vector Bauhaus-inspired poster created in Adobe Illustrator, a recreation of a well-known Bauhaus layout with my own color and composition tweaks."

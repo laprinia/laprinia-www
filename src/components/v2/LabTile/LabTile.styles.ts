@@ -55,7 +55,8 @@ export const TileLink = styled.a`
   color: inherit;
   text-decoration: none;
 
-  &:hover ${TileStill}, &:focus-visible ${TileStill} {
+  &:hover ${TileThumb}[data-motion="true"] ${TileStill},
+  &:focus-visible ${TileThumb}[data-motion="true"] ${TileStill} {
     opacity: 0;
   }
 
@@ -66,7 +67,8 @@ export const TileLink = styled.a`
   }
 
   @media (prefers-reduced-motion: reduce) {
-    &:hover ${TileStill}, &:focus-visible ${TileStill} {
+    &:hover ${TileThumb}[data-motion="true"] ${TileStill},
+    &:focus-visible ${TileThumb}[data-motion="true"] ${TileStill} {
       opacity: 1;
     }
   }

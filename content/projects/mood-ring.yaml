@@ -10,10 +10,6 @@ tags:
   - wireframes
   - user flows
   - responsive design
-colors:
-  - "hsla(10, 81%, 60%, 1)"
-  - "hsla(240, 6%, 80%, 1)"
-  - "hsla(0, 0%, 5%, 1)"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -27,8 +23,7 @@ media:
   - 7.avif
   - 8.avif
   - 9.avif
-buttons: []
-
+links: []
 articles:
   - header: "About"
     text: "Capstone project for SuperHi's User Interface course: a design system and interface for Mood Ring, a journaling app that blends birth chart astrology with color therapy to deliver personalized self-reflection prompts."

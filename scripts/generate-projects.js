@@ -43,10 +43,8 @@ const readProject = (slug) => {
   if (!data.media) {
     throw new Error(`${slug}.yaml is missing a required "media" array`);
   }
-  if (!data.headshot || !data.headshotGif) {
-    throw new Error(
-      `${slug}.yaml is missing required "headshot" / "headshotGif" fields`,
-    );
+  if (!data.headshot) {
+    throw new Error(`${slug}.yaml is missing a required "headshot" field`);
   }
 
   const toMedia = (f) => ({
@@ -55,8 +53,6 @@ const readProject = (slug) => {
       : "image",
     src: `/projects/${slug}/content/${f}`,
   });
-
-  const mediaContents = data.media.map(toMedia);
 
   const known = new Set(data.media);
   const referenced = [
@@ -81,27 +77,25 @@ const readProject = (slug) => {
     timeline: data.timeline || "",
     tags: data.tags || [],
     roles: data.roles || [],
-    discipline: data.discipline || "",
     headshot: `/projects/${slug}/${data.headshot}`,
-    headshotGif: `/projects/${slug}/${data.headshotGif}`,
-    mediaContents,
+    headshotGif: data.headshotGif
+      ? `/projects/${slug}/${data.headshotGif}`
+      : "",
     walkthrough: data.walkthrough ? toMedia(data.walkthrough) : null,
-    buttons: (data.buttons || [])
-      .filter((b) => {
-        if (b.link) return true;
+    links: (data.links || [])
+      .filter((l) => {
+        if (l.url) return true;
         console.warn(
-          `  ! ${slug}.yaml: button "${b.alt || "(no alt)"}" has no "link" and was skipped`,
+          `  ! ${slug}.yaml: link "${l.label || "(no label)"}" has no "url" and was skipped`,
         );
         return false;
       })
-      .map((b) => ({
-        imageSrc: b.imageSrc,
-        alt: b.alt,
-        link: b.link,
+      .map((l) => ({
+        label: l.label,
+        url: l.url,
       })),
     textContents: (data.articles || []).map((a) => ({
       header: a.header,
-      text: a.text,
       html: renderArticle(a.text),
       metrics: (a.metrics || []).map((m) => ({
         value: m.value,
@@ -111,7 +105,6 @@ const readProject = (slug) => {
       })),
       media: (a.media || []).map(toMedia),
     })),
-    colors: data.colors || [],
   };
 };
 
@@ -132,10 +125,9 @@ export type MediaContent = {
   type: string;
   src: string;
 };
-export type Button = {
-  imageSrc: string;
-  alt: string;
-  link: string;
+export type ProjectLink = {
+  label: string;
+  url: string;
 };
 export type Metric = {
   value: number | string;
@@ -145,7 +137,6 @@ export type Metric = {
 };
 export type TextArticle = {
   header: string;
-  text: string;
   html: string;
   metrics: Metric[];
   media: MediaContent[];
@@ -160,14 +151,11 @@ export type Project = {
   timeline: string;
   tags: string[];
   roles: string[];
-  discipline: string;
   headshot: string;
   headshotGif: string;
-  mediaContents: MediaContent[];
   walkthrough: MediaContent | null;
-  buttons: Button[];
+  links: ProjectLink[];
   textContents: TextArticle[];
-  colors: string[];
 };
 
 export type ProjectCategories = {

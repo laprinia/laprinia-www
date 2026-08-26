@@ -9,15 +9,12 @@ tags:
   - mediapipe
   - instancing
   - image processing
-colors:
-  - "#000000"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
   - 1.mp4
 walkthrough: 1.mp4
-buttons: []
-
+links: []
 articles:
   - header: "About"
     text: "Immersive viewing experience for my family photos, built in TouchDesigner using MediaPipe."

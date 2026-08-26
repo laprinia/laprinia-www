@@ -1,5 +1,3 @@
-export const landingTitle = "Product Designer & Developer";
-
 export const homeTopId = "home-top";
 
 export const selectedWorkId = "selected-work";
@@ -7,9 +5,6 @@ export const selectedWorkId = "selected-work";
 export const selectedWorkCta = "selected work";
 
 export const selectedWorkHeading = "selected work";
-
-export const landingBio =
-  "I'm Lavinia, a Product Designer & Developer based in Bucharest, Romania with 5+ years of EXP. UX Research, Interaction Design, Design Systems and Accessibility are the core of the work, building what I design is how I make sure it survives contact with production.";
 
 export const aboutMeId = "about-me";
 

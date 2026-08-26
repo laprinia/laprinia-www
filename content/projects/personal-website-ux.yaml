@@ -10,10 +10,6 @@ tags:
   - responsive design
   - affinity designer
 
-colors:
-  - "#0141D5"
-  - "#F5F4F1"
-  - "#49453D"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -22,10 +18,9 @@ media:
   - 3.avif
   - 4.mp4
   - 5.mp4
-buttons:
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: "https://github.com/laprinia/laprinia-www"
+links:
+  - label: GitHub
+    url: "https://github.com/laprinia/laprinia-www"
 
 articles:
   - header: "Goals"

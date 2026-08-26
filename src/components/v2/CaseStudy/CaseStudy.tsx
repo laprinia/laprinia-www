@@ -92,19 +92,19 @@ const CaseStudy = ({ project }: { project: Project }) => (
             </div>
           ) : null}
 
-          {project.buttons.length ? (
+          {project.links.length ? (
             <div>
               <FactTerm>{linksLabel}</FactTerm>
               <FactValue>
                 <RailLinks>
-                  {project.buttons.map((button) => (
-                    <li key={button.link}>
+                  {project.links.map((link) => (
+                    <li key={link.url}>
                       <RailLink
-                        href={button.link}
+                        href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span>{button.alt}</span>
+                        <span>{link.label}</span>
                         <ArrowUpRight size={14} aria-hidden="true" />
                       </RailLink>
                     </li>

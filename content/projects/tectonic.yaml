@@ -10,18 +10,15 @@ tags:
   - design engineering
   - design
   - glassmorphism
-colors:
-  - "#764ba2"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
   - 1.avif
   - 2.mp4
 walkthrough: 2.mp4
-buttons:
-  - alt: Tectonic Website
-    imageSrc: /socials/web
-    link: https://www.tectonicconf.eu/program
+links:
+  - label: Tectonic Website
+    url: https://www.tectonicconf.eu/program
 
 articles:
   - header: "About"

@@ -13,11 +13,6 @@ tags:
   - mongoose
   - joi
   - jwt
-colors:
-  - "#FB6009"
-  - "#2E2623"
-  - "#ECE3E1"
-  - "#040406"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -28,13 +23,11 @@ media:
   - 5.avif
   - 6.mp4
   - 7.mp4
-buttons:
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: https://github.com/laprinia/opea
-  - alt: Behance
-    imageSrc: /socials/behance
-    link: https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism
+links:
+  - label: GitHub
+    url: https://github.com/laprinia/opea
+  - label: Behance
+    url: https://www.behance.net/gallery/195410123/-React-fullstack-authentication-with-glassmorphism
 
 articles:
   - header: "About"

@@ -11,14 +11,11 @@ tags:
   - generative art
   - rendering
   - 3d
-colors:
-  - "#790B0B"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
-buttons:
-  - alt: Behance
-    imageSrc: /socials/behance
-    link: https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves
+links:
+  - label: Behance
+    url: https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves
 
 media:
   - 1.mp4

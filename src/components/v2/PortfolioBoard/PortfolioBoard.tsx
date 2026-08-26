@@ -36,7 +36,7 @@ const PortfolioBoard = () => {
               roles={project.roles}
               imageSrc={project.headshot}
               href={`/portfolio/${toProjectSlug(project.name)}`}
-              liveHref={project.buttons[0]?.link}
+              liveHref={project.links[0]?.url}
             />
           ))}
         </EntryList>

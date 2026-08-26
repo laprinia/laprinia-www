@@ -2,13 +2,12 @@ name: kbc bike leasing
 year: 2025
 description: "Design and development for KBC's multi-step bike leasing wizard that replaces a manual bank process."
 client: "KBC Bank Belgium"
-role: "Product designer & FE"
+role: "Product Designer & Fronted Developer"
 timeline: "3 months"
 roles:
   - ux
   - accessibility
-  - dev
-discipline: "flow design"
+  - web dev
 tags:
 
   - design systems
@@ -21,10 +20,6 @@ tags:
   - tailwind css
   - react hook form
   - zod
-colors:
-  - "#0074B8"
-  - "#00263E"
-  - "#00B8C9"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -32,10 +27,9 @@ media:
   - 2.avif
   - 3.mp4
 walkthrough: 3.mp4
-buttons: 
-  - alt: KBC Bike Leasing Simulator
-    imageSrc: /socials/web
-    link: https://leasebikecalculator.kbc.be/
+links:
+  - label: KBC Bike Leasing Simulator
+    url: https://leasebikecalculator.kbc.be/
 
 articles:
   - header: "About"
@@ -49,19 +43,19 @@ articles:
       the first job was turning them into a system that could carry every state the
       flow actually needs.
 
-      - **Components built as full variant sets** — inputs, buttons, radio groups,
+      - **Components built as full variant sets** - inputs, buttons, radio groups,
         progress bars and form states were specified across default, hover, active,
         disabled, error and filled variants, rather than drawn once in their
         happy-path state and improvised later.
-      - **Focus states as a first-class variant** — every interactive component
+      - **Focus states as a first-class variant** - every interactive component
         carries a visible focus style in the library itself. Specifying it
         alongside hover and active is what stops it from being treated as optional
         and dropped at build time, which is where keyboard accessibility usually
         gets lost.
-      - **Tokens underneath the variants** — KBC brand colours, MuseoSans
+      - **Tokens underneath the variants** - KBC brand colours, MuseoSans
         typography, spacing and radius, so a change propagates through the set
         instead of being re-specified per component.
-      - **Built twice, in Figma and in React** — each component exists in both, so
+      - **Built twice, in Figma and in React** - each component exists in both, so
         what KBC keeps is a working library rather than a picture of one.
   - header: "User Flow"
     text: "A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left."
@@ -75,12 +69,12 @@ articles:
       is only useful if it matches what a KBC employee would have calculated by
       hand.
 
-      - **Gross-to-net shifts with marital status** — the same gross salary
+      - **Gross-to-net shifts with marital status** - the same gross salary
         produces a different net figure depending on the household situation
         declared.
-      - **Tax brackets change the slope** — the saving from leasing does not scale
+      - **Tax brackets change the slope** - the saving from leasing does not scale
         linearly with salary, so the result cannot be approximated.
-      - **Employer contributions feed the outcome** — the monthly cost depends on
+      - **Employer contributions feed the outcome** - the monthly cost depends on
         what the employer carries, not only on what the employee earns.
 
       Getting this wrong would have been worse than shipping nothing: the simulator

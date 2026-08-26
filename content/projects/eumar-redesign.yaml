@@ -2,14 +2,13 @@ name: eumar redesign
 year: 2026
 description: "Redesign, branding and development of a data-heavy medical web platform for ESHRE."
 client: "ESHRE"
-role: "Product designer & FE"
+role: "Product Designer & Frontend Developer"
 timeline: "6 months"
 roles:
   - research
   - ux
   - data viz
-  - dev
-discipline: "product design"
+  - web dev
 tags:
   - product design
   - user research
@@ -20,8 +19,6 @@ tags:
   - accessibility
   - enterprise ux
   - prototyping
-colors:
-  - "#036CA8"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -32,9 +29,6 @@ media:
   - 5.avif
 walkthrough: 1.mp4
 
-buttons: 
-  - alt: EuMAR website
-    imageSrc: /socials/web
 
 articles:
   - header: "About"
@@ -55,15 +49,15 @@ articles:
       - **Small UX wins over a rebuild** - login, dashboard and the patient
         registry were reworked where the existing flows cost the most time, so
         the value was legible in a single walkthrough.
-      - **Familiarity preserved** — terminology, screen structure and existing
+      - **Familiarity preserved** - terminology, screen structure and existing
         mental models carried over, so the panel recognised their own product
         rather than a stranger's.
-      - **A first pass at branding** — the identity was explored during
+      - **A first pass at branding** - the identity was explored during
         presales, then polished in production.
 
       Winning the contest on the strength of it was how we secured the contract.
 
-      The showcase below tracks all three stages for 3 key screens: Login, Dashboard and Patients.
+      The showcase below tracks all three stages (Original, Presales, Production) for 3 key screens users use: Login, Dashboard and Patients.
     media:
       - 5.avif
 
@@ -72,11 +66,11 @@ articles:
       Discovery identified three primary user groups, and interviews clarified
       what each one needs from the platform.
 
-      - **System admins** — onboarding new users and a cross-country overview, viewing data visualisation of
+      - **System admins** - onboarding new users and a cross-country overview, viewing data visualisation of
         the key metrics across every participating registry.
-      - **National registries** — viewing national-level insights and oversight of the
+      - **National registries** - viewing national-level insights and oversight of the
         clinics reporting into them.
-      - **Clinic staff** — registering new patients, entering partial treatment data and viewing detailed patient and treatment records, managed over
+      - **Clinic staff** - registering new patients, entering partial treatment data and viewing detailed patient and treatment records, managed over
         the full course of a treatment cycle. clinic staff also have their own levels of access.
 
       Those three lenses on the same dataset drove the role-based structure the
@@ -109,34 +103,34 @@ articles:
       treatment cycle takes months to complete. Most decisions came down to
       protecting the integrity of that data without slowing down daily work.
 
-      - **Role-based editing, not role-based interfaces** — every role gets the
+      - **Role-based editing, not role-based interfaces** - every role gets the
         same layout and navigation, and permissions scope the actions rather than
         the screens. System Admins configure the ecosystem but cannot open
         treatment details or register patients; National Registries oversee their
         clinics without editing patient records. A separate interface per role
         would have multiplied the surface to maintain and split a mental model
         that all three groups benefit from sharing.
-      - **Restrictions are shown, not hidden** — where an action is out of scope
+      - **Restrictions are shown, not hidden** - where an action is out of scope
         the UI says so explicitly, and the active role is stated in the left
         sidebar. Silently removing controls reads as a broken product or missing
         data and turns into support requests; an explained restriction teaches
         the permission model instead of hiding it.
-      - **Filtering is the primary way to find a record** — GDPR keeps patients
+      - **Filtering is the primary way to find a record** - GDPR keeps patients
         anonymous, so there are no names to search for and no identifier anyone
         can recall. Retrieval has to work by narrowing attributes such as country,
         centre, birth year, cycle and status, which makes sorting and advanced
         filters core navigation here rather than a power-user extra.
-      - **Partial entry, with validation limited to filled fields** — data arrives
+      - **Partial entry, with validation limited to filled fields** - data arrives
         as the treatment progresses, so a record is rarely complete in one sitting.
         Validating the whole form on submit would block saving a legitimately
         incomplete record and push staff to invent placeholder values, corrupting
         the dataset the registry exists to protect. Records can be saved, reopened
         and extended, and only entered fields are checked.
-      - **A stepper for patient and treatment entry** — related fields are grouped
+      - **A stepper for patient and treatment entry** - related fields are grouped
         into steps so an entry interrupted for weeks can be resumed at the right
         place. One long form gives no sense of position and forces scrolling to
         reach the section that finally has data.
-      - **A collapsible side panel on data-heavy screens** — tables like the
+      - **A collapsible side panel on data-heavy screens** - tables like the
         patient registry need horizontal room, and navigation competes with the
         content for it.
 

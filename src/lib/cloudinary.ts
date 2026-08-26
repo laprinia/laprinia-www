@@ -43,7 +43,10 @@ function buildCloudinaryMediaUrl(
   return `https://res.cloudinary.com/${cloud}/${resourceType}/upload/${transforms}/${cleanPath}`;
 }
 
-function buildCloudinaryRawDeliveryUrl(localPath: string, cloud: string): string {
+function buildCloudinaryRawDeliveryUrl(
+  localPath: string,
+  cloud: string,
+): string {
   const cleanPath = localPath.startsWith("/") ? localPath.slice(1) : localPath;
   const isVideo = VIDEO_EXTENSIONS.test(localPath);
   const resourceType = isVideo ? "video" : "image";
@@ -69,6 +72,30 @@ export function cloudinaryUrl(
   if (!cloud) return localPath;
 
   return buildCloudinaryMediaUrl(localPath, cloud, opts);
+}
+
+function buildCloudinaryMotionUrl(
+  localPath: string,
+  cloud: string,
+  width: number,
+): string {
+  const cleanPath = localPath.startsWith("/") ? localPath.slice(1) : localPath;
+  const cappedWidth = Math.min(width, MAX_CLOUDINARY_WIDTH);
+  const transforms = `fl_animated,c_limit,q_auto,w_${cappedWidth}`;
+
+  return `https://res.cloudinary.com/${cloud}/image/upload/${transforms}/${cleanPath}`;
+}
+
+export function cloudinaryMotionUrl(localPath: string, width: number): string {
+  if (isProjectAssetPath(localPath)) {
+    const cloud = requireCloudForProjectAssets();
+    return buildCloudinaryMotionUrl(localPath, cloud, width);
+  }
+
+  const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD;
+  if (!cloud) return localPath;
+
+  return buildCloudinaryMotionUrl(localPath, cloud, width);
 }
 
 export function cloudinaryRawUrl(localPath: string): string {

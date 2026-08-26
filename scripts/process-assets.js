@@ -5,19 +5,20 @@ const { execFileSync } = require("child_process");
 
 // ================= CONFIG =================
 
-const REPROCESS_AVIF = true;
+const MASTER_QUALITY = 90;
+const MASTER_EFFORT = 5;
 
-const HEADSHOT_MAX_PX = 650;
-const HEADSHOT_AVIF_QUALITY = 60;
-const HEADSHOT_WEBP_QUALITY = 60;
+const CONTENT_MAX_EDGE = 3200;
 
-const HEADSHOT_FFMPEG_WIDTH = 650;   
-const HEADSHOT_FFMPEG_WEBP_Q = 80;  
+const HEADSHOT_MAX_PX = 1600;
 
-const CONTENT_MAX_WIDTH = 1200;
-const CONTENT_MAX_HEIGHT = 900;
-const CONTENT_AVIF_QUALITY = 75;
-const CONTENT_AVIF_EFFORT = 7;
+const MOTION_WIDTH = 650;
+const MOTION_QUALITY = 80;
+const MOTION_FPS = 15;
+const MAX_ANIMATED_MEGAPIXELS = 50;
+
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 100 * 1024 * 1024;
 
 const IMAGE_EXTENSIONS = new Set([
   ".png",
@@ -67,7 +68,30 @@ async function safeWrite(inputPath, outputPath, transform) {
 
 // ================= CONTENT =================
 
-async function convertContentToAvif(contentDir) {
+async function warnIfOverAnimatedLimit(filePath) {
+  try {
+    const meta = await sharp(filePath, { animated: true }).metadata();
+    const frames = meta.pages || 1;
+    const megapixels = (meta.width * (meta.pageHeight || meta.height) * frames) / 1e6;
+    if (megapixels > MAX_ANIMATED_MEGAPIXELS) {
+      console.warn(
+        `  WARNING: ${path.basename(filePath)} is ${megapixels.toFixed(0)}MP across ${frames} frames, over Cloudinary's ${MAX_ANIMATED_MEGAPIXELS}MP animated limit. It will be served untransformed. Shorten the clip or lower MOTION_FPS.`,
+      );
+    }
+  } catch {}
+}
+
+function warnIfOversized(filePath, limit, label) {
+  const { size } = fs.statSync(filePath);
+  if (size > limit) {
+    console.warn(
+      `  WARNING: ${path.basename(filePath)} is ${(size / 1024 / 1024).toFixed(1)}MB, over the ${label} Cloudinary limit`,
+    );
+  }
+  return size;
+}
+
+async function convertContentToMasters(contentDir) {
   if (!fs.existsSync(contentDir)) {
     console.log("  No content/ directory found, skipping.");
     return;
@@ -81,12 +105,8 @@ async function convertContentToAvif(contentDir) {
     const inputPath = path.join(contentDir, file);
 
     if (VIDEO_EXTENSIONS.has(ext)) {
-      console.log(`  SKIP (video) ${file}`);
-      continue;
-    }
-
-    if (ext === ".avif" && !REPROCESS_AVIF) {
-      console.log(`  SKIP (already AVIF) ${file}`);
+      warnIfOversized(inputPath, MAX_VIDEO_BYTES, "100MB video");
+      console.log(`  KEEP (video) ${file}`);
       continue;
     }
 
@@ -95,24 +115,24 @@ async function convertContentToAvif(contentDir) {
       continue;
     }
 
-    const outputPath = path.join(contentDir, `${baseName}.avif`);
+    const outputPath = path.join(contentDir, `${baseName}.webp`);
 
     await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
       await sharp(inPath)
         .resize({
-          width: CONTENT_MAX_WIDTH,
-          height: CONTENT_MAX_HEIGHT,
+          width: CONTENT_MAX_EDGE,
+          height: CONTENT_MAX_EDGE,
           fit: "inside",
           withoutEnlargement: true,
         })
-        .avif({
-          quality: CONTENT_AVIF_QUALITY,
-          effort: CONTENT_AVIF_EFFORT,
-        })
+        .webp({ quality: MASTER_QUALITY, effort: MASTER_EFFORT })
         .toFile(outPath);
     });
 
-    console.log(`  CONVERTED ${file} → ${baseName}.avif`);
+    const size = warnIfOversized(outputPath, MAX_IMAGE_BYTES, "10MB image");
+    console.log(
+      `  MASTER ${file} → ${baseName}.webp (${(size / 1024 / 1024).toFixed(1)}MB)`,
+    );
   }
 }
 
@@ -123,37 +143,37 @@ async function processHeadshots(projectDir) {
     .readdirSync(projectDir)
     .filter((f) => !fs.statSync(path.join(projectDir, f)).isDirectory());
 
-  // -------- STATIC THUMBNAIL (grayscale) --------
+  // -------- STATIC THUMBNAIL --------
   const imgSource = entries.find((f) => {
     const ext = path.extname(f).toLowerCase();
     const name = path.basename(f, ext).toLowerCase();
     return name === "headshot-img" && IMAGE_EXTENSIONS.has(ext);
   });
 
-  const hasHeadshotAvif = entries.some(
-    (f) => f.toLowerCase() === "headshot-img.avif"
+  const hasMaster = entries.some(
+    (f) => f.toLowerCase() === "headshot-img.webp"
   );
 
   if (imgSource) {
     const inputPath = path.join(projectDir, imgSource);
-    const outputPath = path.join(projectDir, "headshot-img.avif");
+    const outputPath = path.join(projectDir, "headshot-img.webp");
 
     await safeWrite(inputPath, outputPath, async (inPath, outPath) => {
       await sharp(inPath)
-        .grayscale() // ONLY here
         .resize({
           width: HEADSHOT_MAX_PX,
           height: HEADSHOT_MAX_PX,
           fit: "inside",
           withoutEnlargement: true,
         })
-        .avif({ quality: HEADSHOT_AVIF_QUALITY, effort: 7 })
+        .webp({ quality: MASTER_QUALITY, effort: MASTER_EFFORT })
         .toFile(outPath);
     });
 
-    console.log(`  ${imgSource} → headshot-img.avif`);
-  } else if (hasHeadshotAvif) {
-    console.log(`  SKIP headshot-img.avif`);
+    warnIfOversized(outputPath, MAX_IMAGE_BYTES, "10MB image");
+    console.log(`  ${imgSource} → headshot-img.webp`);
+  } else if (hasMaster) {
+    console.log(`  SKIP headshot-img.webp`);
   } else {
     console.warn("  WARNING: No static thumbnail (headshot-img) found");
   }
@@ -178,13 +198,13 @@ async function processHeadshots(projectDir) {
           "-i",
           inputPath,
           "-vf",
-          `scale=${HEADSHOT_FFMPEG_WIDTH}:-1:flags=lanczos,fps=24`,
+          `scale=${MOTION_WIDTH}:-1:flags=lanczos,fps=${MOTION_FPS}`,
           "-c:v",
           "libwebp",
           "-loop",
           "0",
           "-quality",
-          String(HEADSHOT_FFMPEG_WEBP_Q),
+          String(MOTION_QUALITY),
           "-compression_level",
           "4",
           "-preset",
@@ -193,6 +213,7 @@ async function processHeadshots(projectDir) {
           webpOutput,
         ]);
         fs.unlinkSync(inputPath);
+        await warnIfOverAnimatedLimit(webpOutput);
         console.log(`  ${animSource} → headshot.webp (animated video)`);
       } catch (err) {
         console.warn(
@@ -214,12 +235,12 @@ async function processHeadshots(projectDir) {
           ]);
           await sharp(framePath)
             .resize({
-              width: HEADSHOT_MAX_PX,
-              height: HEADSHOT_MAX_PX,
+              width: MOTION_WIDTH,
+              height: MOTION_WIDTH,
               fit: "inside",
               withoutEnlargement: true,
             })
-            .webp({ quality: HEADSHOT_WEBP_QUALITY, effort: 6 })
+            .webp({ quality: MOTION_QUALITY, effort: MASTER_EFFORT })
             .toFile(webpOutput);
           fs.unlinkSync(framePath);
           console.log(`  ${animSource} → headshot.webp (static fallback)`);
@@ -234,14 +255,15 @@ async function processHeadshots(projectDir) {
       await safeWrite(inputPath, webpOutput, async (inPath, outPath) => {
         await sharp(inPath, { animated: true })
           .resize({
-            width: HEADSHOT_MAX_PX,
-            height: HEADSHOT_MAX_PX,
+            width: MOTION_WIDTH,
+            height: MOTION_WIDTH,
             fit: "inside",
             withoutEnlargement: true,
           })
-          .webp({ quality: HEADSHOT_WEBP_QUALITY, effort: 6 })
+          .webp({ quality: MOTION_QUALITY, effort: MASTER_EFFORT })
           .toFile(outPath);
       });
+      await warnIfOverAnimatedLimit(webpOutput);
       console.log(`  ${animSource} → headshot.webp (animated GIF)`);
     }
   } else {
@@ -257,15 +279,12 @@ async function processHeadshots(projectDir) {
 
       await sharp(inputPath)
         .resize({
-          width: HEADSHOT_FFMPEG_WIDTH,
-          height: HEADSHOT_FFMPEG_WIDTH,
+          width: MOTION_WIDTH,
+          height: MOTION_WIDTH,
           fit: "inside",
           withoutEnlargement: true,
         })
-        .webp({
-          quality: 60, // static, colorful
-          effort: 6,
-        })
+        .webp({ quality: MOTION_QUALITY, effort: MASTER_EFFORT })
         .toFile(webpOutput);
 
       console.log(
@@ -320,7 +339,7 @@ async function main() {
   await processHeadshots(uploadDir);
 
   console.log("\n2) Content");
-  await convertContentToAvif(path.join(uploadDir, "content"));
+  await convertContentToMasters(path.join(uploadDir, "content"));
 
   console.log("\nDone ✅ Originals untouched.\n");
 }

@@ -12,13 +12,6 @@ tags:
   - post processing
   - sphere ray tracing
   - various materials
-colors:
-  - "#AD2337"
-  - "#0b5caf"
-  - "#68CEE9"
-  - "#E3E874"
-  - "#E57CE0"
-  - "#efedff"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -36,13 +29,11 @@ media:
   - 12.avif
   - 13.mp4
 walkthrough: 13.mp4
-buttons:
-  - alt: Behance
-    imageSrc: /socials/behance
-    link: https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: https://github.com/laprinia/hyzu
+links:
+  - label: Behance
+    url: https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer
+  - label: GitHub
+    url: https://github.com/laprinia/hyzu
 
 articles:
   - header: "About"

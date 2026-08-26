@@ -14,10 +14,6 @@ tags:
   - vercel
   - ffmpeg
   - magick
-colors:
-  - "#0141D5"
-  - "#F6F6F6"
-  - "#000000"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -26,10 +22,9 @@ media:
   - 3.mov
   - 4.mov
   - 5.avif
-buttons:
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: "hhttps://github.com/laprinia/laprinia-www"
+links:
+  - label: GitHub
+    url: "https://github.com/laprinia/laprinia-www"
 
 articles:
   - header: "About"

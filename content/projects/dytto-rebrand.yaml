@@ -2,13 +2,12 @@ name: dytto rebrand
 year: 2025
 description: "Brand and product refresh for an AI-powered accounting assistant desktop app."
 client: "Dytto"
-role: "Brand & product designer"
+role: "Product Designer"
 timeline: "5 days"
 roles:
   - research
   - branding
   - micro-interactions
-discipline: "brand & product"
 tags:
   - branding
   - design systems
@@ -17,10 +16,6 @@ tags:
   - wireframes
   - interaction design
   - figma
-colors:
-  - "#C65C31"
-  - "#EFBB55"
-  - "#F6F6F4"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -32,10 +27,9 @@ media:
   - 6.avif
   - 7.avif
 walkthrough: 1.mov
-buttons:
-  - alt: Dytto Website
-    imageSrc: /socials/web
-    link: https://www.dytto.ai/
+links:
+  - label: Dytto Website
+    url: https://www.dytto.ai/
 
 articles:
   - header: "About"
@@ -54,13 +48,13 @@ articles:
       Using the design system, I built an interactive Figma prototype covering
       login, the chat flow and email detail views. The key interaction decisions:
 
-      - **The pigeon mascot carries the AI's state** — it animates across idle,
+      - **The pigeon mascot carries the AI's state** - it animates across idle,
         thinking and waiting, inspired by Notion AI, so the assistant's status is
         legible from the mascot alone.
-      - **Glow marks what the AI touched** — incoming email actions and
+      - **Glow marks what the AI touched** - incoming email actions and
         AI-processed components are highlighted, separating the assistant's work
         from the user's own.
-      - **Referenced content pops out inline** — files and customer profiles open
+      - **Referenced content pops out inline** - files and customer profiles open
         in place rather than on a new screen, so users never lose their context in
         the conversation.
     media:       

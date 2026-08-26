@@ -11,18 +11,11 @@ tags:
   - drei
   - mantine
   - glsl-noise
-colors:
-  - "#0C1210"
-  - "#1D4636"
-  - "#2C5C64"
-  - "#99ABB7"
-  - "#6BADE7"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
-buttons:
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: https://github.com/laprinia/phea
+links:
+  - label: GitHub
+    url: https://github.com/laprinia/phea
 
 # Explicit media order
 media:

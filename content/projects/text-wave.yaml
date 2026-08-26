@@ -10,16 +10,11 @@ tags:
   - react-three-fiber
   - drei
   - styled components
-colors:
-  - "#01692B"
-  - "#004392"
-  - "#F17019"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
-buttons:
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: https://github.com/laprinia/laprinia-www
+links:
+  - label: GitHub
+    url: https://github.com/laprinia/laprinia-www
 
 # Explicit media order
 media:

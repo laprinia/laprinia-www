@@ -11,12 +11,6 @@ tags:
   - mockups
   - ui
   - ux research
-colors:
-  - "#DF3912"
-  - "#5DA24E"
-  - "#EA4574"
-  - "#DFC6F9"
-  - "#37373E"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -28,8 +22,7 @@ media:
   - 6.avif
   - 7.avif
   - 8.avif
-buttons: []
-
+links: []
 articles:
   - header: "About"
     text: "Capstone brand identity for VELOURA, created as my final project for Coursera's Graphic Design Specialization. I wanted to explore how a brand could speak to the new generation and tackle overconsumption, while still feeling playful, mystical, and fashion-forward."

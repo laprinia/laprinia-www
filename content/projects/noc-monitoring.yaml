@@ -3,14 +3,12 @@ name: noc monitoring
 year: 2026
 description: "Redesign of an existing NOC platform used to monitor live video transmission units. Touches design systems as much as good visual hierarchy."
 client: "Confidential client"
-role: "Product designer"
+role: "Product Designer"
 timeline: "2 days"
 roles:
   - research
   - ux
   - ui
-discipline: "data-heavy ux"
-
 
 tags:
   - product design
@@ -22,11 +20,6 @@ tags:
   - design systems
   - prototyping
 
-colors:
-  - "#3B82F6"
-  - "#1E293B"
-  - "#334155"
-  - "#64748B"
 
 headshot: headshot-img.avif
 
@@ -41,8 +34,7 @@ media:
   - 6.avif
 walkthrough: 1.mp4
 
-buttons: []
-
+links: []
 articles:
   - header: "About"
     text: "A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments."
@@ -60,9 +52,9 @@ articles:
       I defined the primary administrator goal and broke it into three workflows,
       then mapped how an operator moves from spotting an issue to diagnosing it.
 
-      - **Overview monitoring** — is anything wrong right now?
-      - **Alert response** — something is wrong; what is it and how urgent?
-      - **Unit investigation** — why is this specific unit failing?
+      - **Overview monitoring** - is anything wrong right now?
+      - **Alert response** - something is wrong; what is it and how urgent?
+      - **Unit investigation** - why is this specific unit failing?
 
       Sequencing them this way set the feature priority: the overview earns the
       most screen, alerts interrupt it, and investigation happens in a side panel
@@ -73,13 +65,13 @@ articles:
       I analysed competing monitoring platforms alongside dashboard products such
       as Grafana to identify best practices for real-time operations.
 
-      - **Glanceability before density** — these tools are read at a distance and
+      - **Glanceability before density** - these tools are read at a distance and
         in peripheral vision, not studied up close.
-      - **Semantic colour, used sparingly** — colour is reserved for state so it
+      - **Semantic colour, used sparingly** - colour is reserved for state so it
         keeps its meaning. If everything is coloured, nothing reads as urgent.
-      - **A grid that scales without redesign** — the layout has to hold from one
+      - **A grid that scales without redesign** - the layout has to hold from one
         unit to twelve.
-      - **Reduced cognitive load for 24/7 use** — operators work long shifts in
+      - **Reduced cognitive load for 24/7 use** - operators work long shifts in
         mission-critical conditions, where fatigue is the real failure mode.
 
   - header: "Monitoring Multiple Transmissions"
@@ -87,15 +79,15 @@ articles:
       Operators watch up to twelve units at once, so the grid has to answer
       "is anything wrong?" before it answers anything else.
 
-      - **State is readable from across the room** — every unit carries a live
+      - **State is readable from across the room** - every unit carries a live
         thumbnail, a semantic status badge and a signal percentage. Failing units
         are outlined in red rather than only labelled, so a fault registers
         without being looked for.
-      - **Grid and list views** — the grid suits sweeping all twelve at a glance;
+      - **Grid and list views** - the grid suits sweeping all twelve at a glance;
         the list suits sorting and comparing once something needs investigating.
-      - **Filtering by state** — narrowing to live, idle or error collapses the
+      - **Filtering by state** - narrowing to live, idle or error collapses the
         wall to only what needs attention, which matters most mid-incident.
-      - **Search and device-type filters** — for reaching a named unit directly
+      - **Search and device-type filters** - for reaching a named unit directly
         instead of scanning for it.
     media:
       - 2.avif
@@ -106,13 +98,13 @@ articles:
       An alert has to interrupt without taking over the screen, since the operator
       may already be handling a different fault.
 
-      - **The toast carries the whole diagnosis** — severity, unit, plain-language
+      - **The toast carries the whole diagnosis** - severity, unit, plain-language
         cause and the measured value, so the operator can triage without opening
         anything.
-      - **Two actions, not one** — *view* jumps to the failing unit, *acknowledge*
+      - **Two actions, not one** - *view* jumps to the failing unit, *acknowledge*
         clears the alert in place. Separating them lets a known issue stop
         competing for attention without being forgotten.
-      - **Non-blocking placement** — alerts sit clear of the grid, so monitoring
+      - **Non-blocking placement** - alerts sit clear of the grid, so monitoring
         continues while one is being triaged.
     media:
       - 4.avif

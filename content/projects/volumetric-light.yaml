@@ -11,12 +11,6 @@ tags:
   - imgui
   - post processing
   - scene rendering
-colors:
-  - "#e97972"
-  - "#E53190"
-  - "#2EABD3"
-  - "#E3E874"
-  - "#E4E3EA"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -26,13 +20,11 @@ media:
   - 4.avif
   - 5.avif
 walkthrough: 2.mp4
-buttons:
-  - alt: Behance
-    imageSrc: /socials/behance
-    link: https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study
-  - alt: GitHub
-    imageSrc: /socials/github
-    link: https://github.com/laprinia/mozu/tree/main
+links:
+  - label: Behance
+    url: https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study
+  - label: GitHub
+    url: https://github.com/laprinia/mozu/tree/main
 
 articles:
   - header: "About"

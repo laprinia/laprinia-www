@@ -12,10 +12,6 @@ tags:
   - gsap
   - css
   - design systems
-colors:
-  - "#E9EAF4"
-  - "#181A43"
-  - "#EDAC7D"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -23,10 +19,9 @@ media:
   - 2.mov
   - 3.mov
 walkthrough: 1.mov
-buttons:
-  - alt: ITP Webpage
-    imageSrc: /socials/web
-    link: https://www.inthepocket.com/ai-playbooks
+links:
+  - label: ITP Webpage
+    url: https://www.inthepocket.com/ai-playbooks
 articles:
   - header: "About"
     text: "Design engineering work for In The Pocket on AI Playbooks, a dedicated page for their AI maturity consultation practice. The page helps potential clients understand In The Pocket's AI focus and expertise, and spark a conversation."

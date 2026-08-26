@@ -2,14 +2,13 @@ name: engie chatgpt widget
 year: 2026
 description: "Interactive data visualisation widget built for Engie, following their branding system. A ChatGPT-embedded experience."
 client: "Engie"
-role: "Product designer & FE"
-timeline: "4 weeks"
+role: "Product Designer & Frontend Developer"
+timeline: "2 weeks"
 roles:
   - ux
   - design systems
   - branding
   - ai
-discipline: "interaction design"
 tags:
   - branding
   - data visualization
@@ -18,10 +17,6 @@ tags:
   - mcp
   - node.js
   - design systems
-colors:
-  - "#05A8FD"
-  - "#23A9A3"
-  - "#004A46"
 headshot: headshot-img.avif
 headshotGif: headshot.webp
 media:
@@ -30,8 +25,7 @@ media:
   - 3.mp4
   - 4.mp4
 walkthrough: 2.mp4
-buttons: []
-
+links: []
 articles:
   - header: "About"
     text: "A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they'll pay more or less than expected, all through a conversational interface powered by a custom MCP server."
@@ -49,14 +43,14 @@ articles:
 
   - header: "Features"
     text: |
-      - **Interactive consumption graph** — filtering by month and hover detail,
+      - **Interactive consumption graph** - filtering by month and hover detail,
         so a usage pattern can be read rather than reported.
-      - **Two-way prompting** — the user can ask ChatGPT to analyse the data from
+      - **Two-way prompting** - the user can ask ChatGPT to analyse the data from
         inside the widget, so the question and the chart stay in one place instead
         of the conversation restarting around them.
-      - **Advance payment tools** — view, edit, and get AI-suggested values derived
+      - **Advance payment tools** - view, edit, and get AI-suggested values derived
         from actual consumption rather than a flat estimate.
-      - **Household management** — view, update and delete records, **all written
+      - **Household management** - view, update and delete records, **all written
         through to the real database**, so the widget is a working client and not
         a mock.
     media:
@@ -68,13 +62,13 @@ articles:
       The hard part was belonging to two design languages at once: the widget has
       to read as Engie while sitting natively inside someone else's product.
 
-      - **Engie's design system carried over** — colours, typography and spacing
+      - **Engie's design system carried over** - colours, typography and spacing
         stay on-brand, so customers recognise who they are dealing with even
         outside an Engie surface.
-      - **Built for a constrained viewport** — ChatGPT offers a narrow column
+      - **Built for a constrained viewport** - ChatGPT offers a narrow column
         beside chat bubbles, not a dashboard, so the layout was designed to that
         limit rather than scaled down into it.
-      - **Minimal chrome, clear data hierarchy** — the visualisation has to be
+      - **Minimal chrome, clear data hierarchy** - the visualisation has to be
         legible at a glance, because every second spent decoding it is a second
         spent out of the conversation.
     media:
