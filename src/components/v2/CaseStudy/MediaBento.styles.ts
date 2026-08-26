@@ -74,10 +74,14 @@ export const ZoomHint = styled.span`
   bottom: var(--space-2);
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 1.9rem;
-  height: 1.9rem;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-ui-xs);
+  line-height: 1;
+  text-transform: lowercase;
+  white-space: nowrap;
   background-color: var(--support-color);
   color: var(--foreground-color);
   opacity: 0;
@@ -133,7 +137,6 @@ export const Lightbox = styled(Dialog.Content)`
   justify-content: center;
   padding: clamp(var(--space-4), 5vw, var(--space-14));
 
-  img,
   video {
     display: block;
     max-width: 100%;
@@ -156,6 +159,44 @@ export const Lightbox = styled(Dialog.Content)`
   @media (prefers-reduced-motion: reduce) {
     &[data-state="open"] {
       animation: none;
+    }
+  }
+`;
+
+export const Frame = styled.div`
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  max-height: calc(100svh - clamp(2rem, 10vw, 7rem));
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--border-radius);
+  background-color: var(--surface-tint);
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100svh - clamp(2rem, 10vw, 7rem));
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform-origin: top left;
+    scale: var(--media-zoom, 1);
+    cursor: zoom-in;
+    transition: scale 0.15s ease-out;
+  }
+
+  &[data-zoomed="true"] {
+    place-items: start;
+  }
+
+  &[data-zoomed="true"] img {
+    cursor: zoom-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    img {
+      transition: none;
     }
   }
 `;

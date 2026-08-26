@@ -115,7 +115,7 @@ articles:
       enterprise interface.
 
       - **Colour tokens** with semantic states for live, idle, warning and error.
-      - **Typography and spacing tokens** tuned for dense, tabular data. Using 4px basis in order to fit more content.å
+      - **Typography and spacing tokens** tuned for dense, tabular data. Using 4px basis in order to fit more content.
       - **Responsive breakpoints** that keep the unit grid legible as it reflows.
       - **Reusable components with interactive state variants**, so new screens
         inherit behaviour instead of re-specifying it.

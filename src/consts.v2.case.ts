@@ -8,5 +8,6 @@ export const linksLabel = "links";
 export const keywordsLabel = "Keywords";
 export const enlargeLabel = "Enlarge";
 export const closeLabel = "close";
+export const zoomHintLabel = "zoom";
 export const backToTopLabel = "back to top";
 export const caseTopId = "case-top";

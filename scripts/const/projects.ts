@@ -378,7 +378,7 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "Design System",
-          "html": "<p>Foundations built for rapid iteration and consistency across a data-heavy\nenterprise interface.</p>\n<ul>\n<li><strong>Colour tokens</strong> with semantic states for live, idle, warning and error.</li>\n<li><strong>Typography and spacing tokens</strong> tuned for dense, tabular data. Using 4px basis in order to fit more content.å</li>\n<li><strong>Responsive breakpoints</strong> that keep the unit grid legible as it reflows.</li>\n<li><strong>Reusable components with interactive state variants</strong>, so new screens\ninherit behaviour instead of re-specifying it.</li>\n</ul>",
+          "html": "<p>Foundations built for rapid iteration and consistency across a data-heavy\nenterprise interface.</p>\n<ul>\n<li><strong>Colour tokens</strong> with semantic states for live, idle, warning and error.</li>\n<li><strong>Typography and spacing tokens</strong> tuned for dense, tabular data. Using 4px basis in order to fit more content.</li>\n<li><strong>Responsive breakpoints</strong> that keep the unit grid legible as it reflows.</li>\n<li><strong>Reusable components with interactive state variants</strong>, so new screens\ninherit behaviour instead of re-specifying it.</li>\n</ul>",
           "metrics": [],
           "media": [
             {
