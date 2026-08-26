@@ -338,7 +338,12 @@ export const projects: ProjectCategories = {
           "header": "Product Discovery",
           "html": "<p>I defined the primary administrator goal and broke it into three workflows,\nthen mapped how an operator moves from spotting an issue to diagnosing it.</p>\n<ul>\n<li><strong>Overview monitoring</strong> - is anything wrong right now?</li>\n<li><strong>Alert response</strong> - something is wrong; what is it and how urgent?</li>\n<li><strong>Unit investigation</strong> - why is this specific unit failing?</li>\n</ul>\n<p>Sequencing them this way set the feature priority: the overview earns the\nmost screen, alerts interrupt it, and investigation happens in a side panel\nwithout leaving the wall.</p>",
           "metrics": [],
-          "media": []
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/noc-monitoring/content/7.avif"
+            }
+          ]
         },
         {
           "header": "Research & Design Decisions",

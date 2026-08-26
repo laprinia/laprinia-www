@@ -32,6 +32,7 @@ media:
   - 4.avif
   - 5.avif
   - 6.avif
+  - 7.avif
 walkthrough: 1.mp4
 
 links: []
@@ -59,6 +60,8 @@ articles:
       Sequencing them this way set the feature priority: the overview earns the
       most screen, alerts interrupt it, and investigation happens in a side panel
       without leaving the wall.
+    media:
+      - 7.avif  
 
   - header: "Research & Design Decisions"
     text: |
