@@ -5,7 +5,7 @@ import {
   whatIDoCta,
   whatIDoId,
   featuredProjectNames,
-  portfolioHref,
+  workHref,
   selectedWorkHeading,
   selectedWorkId,
   viewMoreWorkCta,
@@ -20,7 +20,7 @@ const SelectedWork = () => (
     actions={[
       {
         label: viewMoreWorkCta,
-        href: portfolioHref,
+        href: workHref,
         icon: <ArrowRight strokeWidth={2.5} />,
       },
       {

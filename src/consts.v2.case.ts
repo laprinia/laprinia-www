@@ -1,5 +1,5 @@
 export const backToWorkLabel = "selected work";
-export const backToWorkHref = "/portfolio";
+export const backToWorkHref = "/work";
 export const clientLabel = "client";
 export const roleLabel = "role";
 export const timelineLabel = "timeline";

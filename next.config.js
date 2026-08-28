@@ -28,6 +28,13 @@ const nextConfig = {
 
   turbopack: {},
 
+  async redirects() {
+    return [
+      { source: "/portfolio", destination: "/work", permanent: true },
+      { source: "/portfolio/:id", destination: "/work/:id", permanent: true },
+    ];
+  },
+
   webpack: (config, { dev, isServer }) => {
     config.cache = {
       type: "filesystem",

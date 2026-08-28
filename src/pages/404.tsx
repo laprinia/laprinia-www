@@ -17,7 +17,7 @@ const Custom404 = () => (
       highlight="missing"
       message="The link may be out of date, or the page may have moved. The work is all still here."
       actionLabel="see the work"
-      actionHref="/portfolio"
+      actionHref="/work"
     />
     <Footer />
   </>

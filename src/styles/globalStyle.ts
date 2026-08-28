@@ -133,7 +133,7 @@ export const GlobalStyle = createGlobalStyle`
            A v2 section reads these rather than the raw palette, so a
            surface can be recoloured by redefining them on its root.
            These are the defaults; a section that wants a different
-           treatment overrides only what differs (the portfolio and
+           treatment overrides only what differs (the work and
            contact grounds set --section-ink to the accent, for example),
            and NotebookSection sets --section-ink per notebook at runtime.
            ============================================================ */

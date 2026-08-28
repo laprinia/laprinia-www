@@ -16,7 +16,7 @@ stays inside Cloudinary's free-tier limits.
 | asset | master produced | why |
 | --- | --- | --- |
 | `content/*` images | WebP q90, long edge 3200px | 3200 is `MAX_CLOUDINARY_WIDTH` — the largest the site can ever request |
-| `headshot-img.*` | WebP q90, 1600px | thumbnail on `/portfolio` and the work list |
+| `headshot-img.*` | WebP q90, 1600px | thumbnail on `/work` and the work list |
 | `headshot.*` (video/gif) | animated WebP, 900px q80 | hover motion on the lab tiles |
 | `content/*` videos | untouched | Cloudinary transcodes on delivery |
 
@@ -92,7 +92,7 @@ the pipeline converts that and the tile shows a static image on hover.
 ## Links
 
 `links:` is an optional list of outbound links shown in the case study rail. The
-first one also becomes the live-site link on the portfolio board.
+first one also becomes the live-site link on the work board.
 
 ```yaml
 links:
@@ -106,7 +106,7 @@ links:
 rather than rendering a dead link. Omit `links:` entirely, or use `links: []`,
 for a project with nothing to link to.
 
-Add `livePreview: false` to keep a link out of the portfolio board's live-site
+Add `livePreview: false` to keep a link out of the work board's live-site
 slot; it still shows in the case study rail. The board uses the first link that
 is not opted out, so a project whose links are all `livePreview: false` shows no
 live-site link at all.
@@ -122,7 +122,7 @@ links:
 
 **Asset folders are keyed by the YAML filename, not the project name.**
 `web-terrain-visualizer.yaml` has `name: web 3d terrain generator`, so the page
-lives at `/portfolio/web-3d-terrain-generator` but its assets live under
+lives at `/work/web-3d-terrain-generator` but its assets live under
 `projects/web-terrain-visualizer/`. Name the asset folder after the YAML file.
 
 **Animated WebP has a hard 50 megapixel ceiling** — width x height x frames,

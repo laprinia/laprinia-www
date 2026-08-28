@@ -25,7 +25,7 @@ const CaseStudyPage = ({ project }: { project: Project }) => (
       items={navItems}
       highlightedIndex={0}
       variant="highlight"
-      currentHref="/portfolio"
+      currentHref="/work"
     />
     <main>
       <CaseStudy project={project} />

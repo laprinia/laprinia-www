@@ -34,7 +34,7 @@ const WorkList = ({ names }: { names: string[] }) => {
           <Body>
             <Head>
               <Title>
-                <TitleLink href={`/portfolio/${toProjectSlug(project.name)}`}>
+                <TitleLink href={`/work/${toProjectSlug(project.name)}`}>
                   {project.name}
                   <VisuallyHidden.Root>
                     {" "}

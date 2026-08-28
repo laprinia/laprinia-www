@@ -35,7 +35,7 @@ const PortfolioBoard = () => {
               definition={project.description}
               roles={project.roles}
               imageSrc={project.headshot}
-              href={`/portfolio/${toProjectSlug(project.name)}`}
+              href={`/work/${toProjectSlug(project.name)}`}
               liveHref={project.links.find((link) => link.livePreview)?.url}
             />
           ))}
@@ -53,7 +53,7 @@ const PortfolioBoard = () => {
                 motionSrc={project.headshotGif}
                 year={project.year}
                 tag={project.tags[0]}
-                href={`/portfolio/${toProjectSlug(project.name)}`}
+                href={`/work/${toProjectSlug(project.name)}`}
               />
             </li>
           ))}

@@ -18,5 +18,5 @@ This is my personal website, a love 💌 to my favorite UX design trends and the
 - **🎨 Responsive Design**: Layouts tuned for desktop, tablet, and mobile, with typography and spacing that adapt gracefully.
 - **✨ 3D Text Animations**: Interactive and ambient 3D text built with React Three Fiber.
 - **🖼️ Mixed Media Carousel**: A media carousel that supports images and videos to showcase projects in context.
-- **📄 Modular Page Structure**: Home, portfolio, and project detail pages built from reusable layout and content components.
+- **📄 Modular Page Structure**: Home, work, and project detail pages built from reusable layout and content components.
 - **🛠️ Framer Motion Animations**: Micro-interactions and transitions that give the site a polished, tactile feel.

@@ -25,7 +25,7 @@ export const featuredProjectNames = [
 
 export const viewMoreWorkCta = "view more";
 
-export const portfolioHref = "/portfolio";
+export const workHref = "/work";
 
 export const whatIDoId = "what-i-do";
 

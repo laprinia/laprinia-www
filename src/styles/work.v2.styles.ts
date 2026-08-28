@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PortfolioGround = styled.div`
+export const WorkGround = styled.div`
   /* Deliberate: these grounds ink their headings in the accent. */
   --section-ink: var(--accent-color);
 
