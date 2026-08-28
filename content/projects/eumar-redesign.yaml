@@ -1,4 +1,4 @@
-name: eumar redesign
+name: eumar revamp
 year: 2026
 description: "Redesign, branding and development of a data-heavy medical web platform for ESHRE."
 client: "ESHRE"
@@ -27,7 +27,14 @@ media:
   - 3.avif
   - 4.avif
   - 5.avif
+  - 6.avif
+  - 7.avif
+  - 8.avif
 walkthrough: 1.mp4
+links:
+  - label: EuMAR Platform
+    url: https://www.eshre.eu/Data-collection-and-research/EuMAR/EuMAR2
+    livePreview: false
 
 
 articles:
@@ -44,22 +51,29 @@ articles:
       understood the product and the challenges they had.
 
       I led the presales work and built an interactive prototype that redesigned
-      the legacy platform rather than replacing it wholesale:
-
-      - **Small UX wins over a rebuild** - login, dashboard and the patient
-        registry were reworked where the existing flows cost the most time, so
-        the value was legible in a single walkthrough.
-      - **Familiarity preserved** - terminology, screen structure and existing
-        mental models carried over, so the panel recognised their own product
-        rather than a stranger's.
-      - **A first pass at branding** - the identity was explored during
-        presales, then polished in production.
+      the legacy platform rather than replacing it wholesale.
 
       Winning the contest on the strength of it was how we secured the contract.
 
       The showcase below tracks all three stages (Original, Presales, Production) for 3 key screens users use: Login, Dashboard and Patients.
     media:
       - 5.avif
+
+  - header: "Branding Before Development"
+    text: |
+      The identity was reworked before a line of production code was written, so
+      the design system had something settled to build on.
+
+      - **Typography chosen for legibility** - Raleway was replaced with Work
+        Sans for headings and Open Sans for body and data, both of which hold up
+        at small sizes and in dense tables where the previous face blurred.
+      - **A more suggestive colour system with a neutrals ramp** - a full ramp of
+        neutrals carries the interface, and every pairing used for graphs,
+        statuses and text passes WCAG contrast, so data visualisation stays
+        readable rather than decorative.
+    media:
+      - 6.avif
+      - 7.avif
 
   - header: "Users & Research"
     text: |
@@ -75,6 +89,8 @@ articles:
 
       Those three lenses on the same dataset drove the role-based structure the
       rest of the product is built on.
+    media:
+      - 8.avif 
 
   - header: "User Journeys"
     text: "The prototype emphasizes the system admin journey: the role that enables the entire ecosystem. Key flows include onboarding users, configuring countries and registries, managing centers and viewing key metrics about all centres across EU."

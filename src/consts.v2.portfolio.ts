@@ -3,7 +3,7 @@ export const portfolioHeading = "selected work";
 export const labHeading = "lab";
 
 export const selectedProjectNames = [
-  "eumar redesign",
+  "eumar revamp",
   "kbc bike leasing",
   "dytto rebrand",
   "engie chatgpt widget",

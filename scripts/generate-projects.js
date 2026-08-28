@@ -93,6 +93,7 @@ const readProject = (slug) => {
       .map((l) => ({
         label: l.label,
         url: l.url,
+        livePreview: l.livePreview !== false,
       })),
     textContents: (data.articles || []).map((a) => ({
       header: a.header,
@@ -128,6 +129,7 @@ export type MediaContent = {
 export type ProjectLink = {
   label: string;
   url: string;
+  livePreview: boolean;
 };
 export type Metric = {
   value: number | string;

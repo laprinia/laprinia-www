@@ -17,7 +17,7 @@ export const heroPortraitPath = "/profile_ie7vo5";
 export const heroPortraitAlt = "Lavinia Dumitrenco";
 
 export const featuredProjectNames = [
-  "eumar redesign",
+  "eumar revamp",
   "kbc bike leasing",
   "engie chatgpt widget",
   "dytto rebrand",

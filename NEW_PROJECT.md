@@ -106,6 +106,18 @@ links:
 rather than rendering a dead link. Omit `links:` entirely, or use `links: []`,
 for a project with nothing to link to.
 
+Add `livePreview: false` to keep a link out of the portfolio board's live-site
+slot; it still shows in the case study rail. The board uses the first link that
+is not opted out, so a project whose links are all `livePreview: false` shows no
+live-site link at all.
+
+```yaml
+links:
+  - label: EuMAR Platform
+    url: https://www.eshre.eu/...
+    livePreview: false
+```
+
 ## Two gotchas
 
 **Asset folders are keyed by the YAML filename, not the project name.**

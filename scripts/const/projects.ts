@@ -8,6 +8,7 @@ export type MediaContent = {
 export type ProjectLink = {
   label: string;
   url: string;
+  livePreview: boolean;
 };
 export type Metric = {
   value: number | string;
@@ -48,7 +49,7 @@ export type ProjectCategories = {
 export const projects: ProjectCategories = {
   "ux & branding": [
     {
-      "name": "eumar redesign",
+      "name": "eumar revamp",
       "year": 2026,
       "published": true,
       "description": "Redesign, branding and development of a data-heavy medical web platform for ESHRE.",
@@ -78,7 +79,13 @@ export const projects: ProjectCategories = {
         "type": "video",
         "src": "/projects/eumar-redesign/content/1.mp4"
       },
-      "links": [],
+      "links": [
+        {
+          "label": "EuMAR Platform",
+          "url": "https://www.eshre.eu/Data-collection-and-research/EuMAR/EuMAR2",
+          "livePreview": false
+        }
+      ],
       "textContents": [
         {
           "header": "About",
@@ -94,7 +101,7 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "Presales & Winning the Work",
-          "html": "<p>ESHRE already ran a legacy MAR registry, so this was never a blank page.\nWinning the contract meant proving, before anything was signed, that we\nunderstood the product and the challenges they had.</p>\n<p>I led the presales work and built an interactive prototype that redesigned\nthe legacy platform rather than replacing it wholesale:</p>\n<ul>\n<li><strong>Small UX wins over a rebuild</strong> - login, dashboard and the patient\nregistry were reworked where the existing flows cost the most time, so\nthe value was legible in a single walkthrough.</li>\n<li><strong>Familiarity preserved</strong> - terminology, screen structure and existing\nmental models carried over, so the panel recognised their own product\nrather than a stranger&#39;s.</li>\n<li><strong>A first pass at branding</strong> - the identity was explored during\npresales, then polished in production.</li>\n</ul>\n<p>Winning the contest on the strength of it was how we secured the contract.</p>\n<p>The showcase below tracks all three stages (Original, Presales, Production) for 3 key screens users use: Login, Dashboard and Patients.</p>",
+          "html": "<p>ESHRE already ran a legacy MAR registry, so this was never a blank page.\nWinning the contract meant proving, before anything was signed, that we\nunderstood the product and the challenges they had.</p>\n<p>I led the presales work and built an interactive prototype that redesigned\nthe legacy platform rather than replacing it wholesale.</p>\n<p>Winning the contest on the strength of it was how we secured the contract.</p>\n<p>The showcase below tracks all three stages (Original, Presales, Production) for 3 key screens users use: Login, Dashboard and Patients.</p>",
           "metrics": [],
           "media": [
             {
@@ -104,10 +111,30 @@ export const projects: ProjectCategories = {
           ]
         },
         {
+          "header": "Branding Before Development",
+          "html": "<p>The identity was reworked before a line of production code was written, so\nthe design system had something settled to build on.</p>\n<ul>\n<li><strong>Typography chosen for legibility</strong> - Raleway was replaced with Work\nSans for headings and Open Sans for body and data, both of which hold up\nat small sizes and in dense tables where the previous face blurred.</li>\n<li><strong>A more suggestive colour system with a neutrals ramp</strong> - a full ramp of\nneutrals carries the interface, and every pairing used for graphs,\nstatuses and text passes WCAG contrast, so data visualisation stays\nreadable rather than decorative.</li>\n</ul>",
+          "metrics": [],
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/eumar-redesign/content/6.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/eumar-redesign/content/7.avif"
+            }
+          ]
+        },
+        {
           "header": "Users & Research",
           "html": "<p>Discovery identified three primary user groups, and interviews clarified\nwhat each one needs from the platform.</p>\n<ul>\n<li><strong>System admins</strong> - onboarding new users and a cross-country overview, viewing data visualisation of\nthe key metrics across every participating registry.</li>\n<li><strong>National registries</strong> - viewing national-level insights and oversight of the\nclinics reporting into them.</li>\n<li><strong>Clinic staff</strong> - registering new patients, entering partial treatment data and viewing detailed patient and treatment records, managed over\nthe full course of a treatment cycle. clinic staff also have their own levels of access.</li>\n</ul>\n<p>Those three lenses on the same dataset drove the role-based structure the\nrest of the product is built on.</p>",
           "metrics": [],
-          "media": []
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/eumar-redesign/content/8.avif"
+            }
+          ]
         },
         {
           "header": "User Journeys",
@@ -204,7 +231,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "Dytto Website",
-          "url": "https://www.dytto.ai/"
+          "url": "https://www.dytto.ai/",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -454,7 +482,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "ITP Webpage",
-          "url": "https://www.inthepocket.com/ai-playbooks"
+          "url": "https://www.inthepocket.com/ai-playbooks",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -529,7 +558,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "GitHub",
-          "url": "https://github.com/laprinia/laprinia-www"
+          "url": "https://github.com/laprinia/laprinia-www",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -748,7 +778,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "KBC Bike Leasing Simulator",
-          "url": "https://leasebikecalculator.kbc.be/"
+          "url": "https://leasebikecalculator.kbc.be/",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -850,7 +881,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "Tectonic Website",
-          "url": "https://www.tectonicconf.eu/program"
+          "url": "https://www.tectonicconf.eu/program",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -1006,7 +1038,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "GitHub",
-          "url": "https://github.com/laprinia/phea"
+          "url": "https://github.com/laprinia/phea",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -1109,11 +1142,13 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "Behance",
-          "url": "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer"
+          "url": "https://www.behance.net/gallery/161536343/-OpenGL-real-time-ray-tracer",
+          "livePreview": true
         },
         {
           "label": "GitHub",
-          "url": "https://github.com/laprinia/hyzu"
+          "url": "https://github.com/laprinia/hyzu",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -1207,11 +1242,13 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "Behance",
-          "url": "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study"
+          "url": "https://www.behance.net/gallery/162428687/-OpenGL-volumetric-light-study",
+          "livePreview": true
         },
         {
           "label": "GitHub",
-          "url": "https://github.com/laprinia/mozu/tree/main"
+          "url": "https://github.com/laprinia/mozu/tree/main",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -1336,7 +1373,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "GitHub",
-          "url": "https://github.com/laprinia/laprinia-www"
+          "url": "https://github.com/laprinia/laprinia-www",
+          "livePreview": true
         }
       ],
       "textContents": [
@@ -1400,7 +1438,8 @@ export const projects: ProjectCategories = {
       "links": [
         {
           "label": "Behance",
-          "url": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves"
+          "url": "https://www.behance.net/gallery/195409049/-Touch-Designer-lissajous-curves",
+          "livePreview": true
         }
       ],
       "textContents": [
