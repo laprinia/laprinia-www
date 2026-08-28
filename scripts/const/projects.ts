@@ -218,7 +218,16 @@ export const projects: ProjectCategories = {
           "header": "Brand Exploration",
           "html": "<p>Using style tiles, we had the client adjust brand sliders (formal vs. warm, affordable vs. premium) to map out the tonal space. After several rounds, we landed on a playful, approachable direction: hand-drawn animation, a warm color palette, and rounded corners that soften the experience without losing professionalism.</p>",
           "metrics": [],
-          "media": []
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/dytto-rebrand/content/9.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/dytto-rebrand/content/10.avif"
+            }
+          ]
         },
         {
           "header": "Design System",
@@ -262,7 +271,12 @@ export const projects: ProjectCategories = {
           "header": "Flow & Polish",
           "html": "<p>The focus was on making every transition feel intentional. Chat responses build smoothly, email cards surface the right details at the right moment, and the pigeon&#39;s state changes give users a clear signal of what the AI is doing without relying on loading spinners or text.</p>",
           "metrics": [],
-          "media": []
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/dytto-rebrand/content/8.avif"
+            }
+          ]
         },
         {
           "header": "Outcome",

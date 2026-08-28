@@ -26,6 +26,9 @@ media:
   - 5.avif
   - 6.avif
   - 7.avif
+  - 8.avif
+  - 9.avif
+  - 10.avif
 walkthrough: 1.mov
 links:
   - label: Dytto Website
@@ -36,7 +39,9 @@ articles:
     text: "A full rebrand and design system build for Dytto, an AI-powered accounting assistant that intercepts incoming mail, extracts financial data, and handles bookkeeping tasks for you. The project spanned user research, brand exploration, a component-level design system, and an interactive prototype for the desktop app."
   - header: "Brand Exploration"
     text: "Using style tiles, we had the client adjust brand sliders (formal vs. warm, affordable vs. premium) to map out the tonal space. After several rounds, we landed on a playful, approachable direction: hand-drawn animation, a warm color palette, and rounded corners that soften the experience without losing professionalism."
-    
+    media:
+      - 9.avif
+      - 10.avif
   - header: "Design System"
     text: "I extracted a complete design system from the wireframes: tokens for color, typography, spacing, and radius; reusable components for buttons, inputs, cards, modals, and navigation; and documentation to keep the branding consistent as the product grows."
     media:
@@ -63,7 +68,8 @@ articles:
       - 4.avif
   - header: "Flow & Polish"
     text: "The focus was on making every transition feel intentional. Chat responses build smoothly, email cards surface the right details at the right moment, and the pigeon's state changes give users a clear signal of what the AI is doing without relying on loading spinners or text."
-    
+    media:
+      - 8.avif  
   - header: "Outcome"
     text: |
       Delivered as a **full working prototype with micro-interactions**, covering
