@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import Pill from "../../atoms/Pill/Pill";
+import Tag from "../Tag/Tag";
 import {
   Entry,
   Content,
@@ -58,9 +58,7 @@ const DictionaryEntry = ({
         {roles.length ? (
           <Roles aria-label={`Disciplines for ${term}`}>
             {roles.map((role) => (
-              <Pill key={role} asChild variant="outline" size="sm">
-                <li>{role}</li>
-              </Pill>
+              <Tag key={role}>{role}</Tag>
             ))}
           </Roles>
         ) : null}

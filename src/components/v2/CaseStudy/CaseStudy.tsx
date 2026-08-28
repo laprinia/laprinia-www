@@ -1,6 +1,6 @@
 import { ArrowLeft, ArrowUp, ArrowUpRight } from "lucide-react";
-import Pill from "../../atoms/Pill/Pill";
 import MediaBento from "./MediaBento";
+import Tag from "../Tag/Tag";
 import MetricCard from "../MetricCard/MetricCard";
 import { MetricGrid } from "../MetricCard/MetricCard.styles";
 import ZoomableMedia from "./ZoomableMedia";
@@ -83,9 +83,7 @@ const CaseStudy = ({ project }: { project: Project }) => (
               <FactValue>
                 <RoleList>
                   {project.roles.map((role) => (
-                    <Pill key={role} asChild variant="outline" size="sm">
-                      <li>{role}</li>
-                    </Pill>
+                    <Tag key={role}>{role}</Tag>
                   ))}
                 </RoleList>
               </FactValue>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import SectionHeading from "../SectionHeading/SectionHeading";
-import Pill from "../../atoms/Pill/Pill";
+import Tag from "../Tag/Tag";
 import { githubLink, linkedinLink } from "../../../consts";
 import { heroPortraitAlt, heroPortraitPath } from "../../../consts.v2";
 import {
@@ -135,9 +135,7 @@ const About = () => (
               {section.kind === "tags" ? (
                 <Tags aria-label={section.title}>
                   {section.tags.map((tag) => (
-                    <Pill key={tag} asChild variant="outline" size="sm">
-                      <li>{tag}</li>
-                    </Pill>
+                    <Tag key={tag}>{tag}</Tag>
                   ))}
                 </Tags>
               ) : null}
@@ -149,9 +147,9 @@ const About = () => (
                       <GroupLabel>{group.label}</GroupLabel>
                       <Tags aria-label={group.label}>
                         {group.tags.map((tag) => (
-                          <Pill key={tag} asChild variant="outline" size="sm">
-                            <li>{tag}</li>
-                          </Pill>
+                          <Tag key={tag} variant="rect">
+                            {tag}
+                          </Tag>
                         ))}
                       </Tags>
                     </div>

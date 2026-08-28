@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import Pill from "../../atoms/Pill/Pill";
+import Tag from "../Tag/Tag";
 import { projects, type Project } from "../../../../scripts/const/projects";
 import { toProjectSlug } from "../../../lib/projects";
 import {
@@ -36,7 +36,10 @@ const WorkList = ({ names }: { names: string[] }) => {
               <Title>
                 <TitleLink href={`/portfolio/${toProjectSlug(project.name)}`}>
                   {project.name}
-                  <VisuallyHidden.Root> — read the case study</VisuallyHidden.Root>
+                  <VisuallyHidden.Root>
+                    {" "}
+                    — read the case study
+                  </VisuallyHidden.Root>
                 </TitleLink>
               </Title>
               <Cue aria-hidden="true">→</Cue>
@@ -47,9 +50,7 @@ const WorkList = ({ names }: { names: string[] }) => {
             {project.roles.length ? (
               <Roles aria-label={`Disciplines for ${project.name}`}>
                 {project.roles.slice(0, 3).map((role) => (
-                  <Pill key={role} asChild variant="outline" size="sm">
-                    <li>{role}</li>
-                  </Pill>
+                  <Tag key={role}>{role}</Tag>
                 ))}
               </Roles>
             ) : null}

@@ -1,4 +1,10 @@
-import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  type CSSProperties,
+  type ElementType,
+  type ReactNode,
+} from "react";
 import { NotebookPanel, NotebookContent } from "./Notebook.styles";
 
 export type NotebookProps = {

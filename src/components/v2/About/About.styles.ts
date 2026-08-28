@@ -56,7 +56,9 @@ export const Rail = styled.aside`
     gap: var(--space-6);
     position: sticky;
     top: calc(var(--nav-height) + clamp(var(--space-6), 4vw, var(--space-12)));
-    max-height: calc(100svh - var(--nav-height) - clamp(var(--space-12), 8vw, var(--space-24)));
+    max-height: calc(
+      100svh - var(--nav-height) - clamp(var(--space-12), 8vw, var(--space-24))
+    );
     overflow-y: auto;
     overscroll-behavior: contain;
   }
@@ -77,7 +79,6 @@ export const Portrait = styled.div`
     height: 100%;
     object-fit: cover;
   }
-
 `;
 
 export const Identity = styled.div`
@@ -100,10 +101,7 @@ export const Name = styled.h1`
 
 export const NameMark = styled.span`
   display: inline;
-  background-image: linear-gradient(
-    var(--support-color),
-    var(--support-color)
-  );
+  background-image: linear-gradient(var(--support-color), var(--support-color));
   background-repeat: no-repeat;
   background-position: 0 88%;
   background-size: 100% 0.42em;
@@ -298,21 +296,12 @@ export const Tags = styled.ul`
   padding: 0;
   list-style: none;
 
-  li {
-    transition:
-      background-color 0.25s ease,
-      color 0.25s ease;
-  }
-
   li:hover {
     background-color: var(--support-color);
-    color: var(--section-accent);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    li {
-      transition: none;
-    }
+  li:hover span {
+    color: var(--section-accent);
   }
 `;
 
