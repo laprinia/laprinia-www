@@ -171,7 +171,20 @@ export const projects: ProjectCategories = {
           "header": "Key Design Decisions",
           "html": "<p>Three roles act on the same clinical records with different rights, and a\ntreatment cycle takes months to complete. Most decisions came down to\nprotecting the integrity of that data without slowing down daily work.</p>\n<ul>\n<li><strong>Role-based editing, not role-based interfaces</strong> - every role gets the\nsame layout and navigation, and permissions scope the actions rather than\nthe screens. System Admins configure the ecosystem but cannot open\ntreatment details or register patients; National Registries oversee their\nclinics without editing patient records. A separate interface per role\nwould have multiplied the surface to maintain and split a mental model\nthat all three groups benefit from sharing.</li>\n<li><strong>Restrictions are shown, not hidden</strong> - where an action is out of scope\nthe UI says so explicitly, and the active role is stated in the left\nsidebar. Silently removing controls reads as a broken product or missing\ndata and turns into support requests; an explained restriction teaches\nthe permission model instead of hiding it.</li>\n<li><strong>Filtering is the primary way to find a record</strong> - GDPR keeps patients\nanonymous, so there are no names to search for and no identifier anyone\ncan recall. Retrieval has to work by narrowing attributes such as country,\ncentre, birth year, cycle and status, which makes sorting and advanced\nfilters core navigation here rather than a power-user extra.</li>\n<li><strong>Partial entry, with validation limited to filled fields</strong> - data arrives\nas the treatment progresses, so a record is rarely complete in one sitting.\nValidating the whole form on submit would block saving a legitimately\nincomplete record and push staff to invent placeholder values, corrupting\nthe dataset the registry exists to protect. Records can be saved, reopened\nand extended, and only entered fields are checked.</li>\n<li><strong>A stepper for patient and treatment entry</strong> - related fields are grouped\ninto steps so an entry interrupted for weeks can be resumed at the right\nplace. One long form gives no sense of position and forces scrolling to\nreach the section that finally has data.</li>\n<li><strong>A collapsible side panel on data-heavy screens</strong> - tables like the\npatient registry need horizontal room, and navigation competes with the\ncontent for it.</li>\n</ul>",
           "metrics": [],
-          "media": []
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/eumar-redesign/content/9.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/eumar-redesign/content/10.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/eumar-redesign/content/11.avif"
+            }
+          ]
         },
         {
           "header": "Results",

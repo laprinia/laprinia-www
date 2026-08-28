@@ -30,6 +30,9 @@ media:
   - 6.avif
   - 7.avif
   - 8.avif
+  - 9.avif
+  - 10.avif
+  - 11.avif
 walkthrough: 1.mp4
 links:
   - label: EuMAR Platform
@@ -149,7 +152,10 @@ articles:
       - **A collapsible side panel on data-heavy screens** - tables like the
         patient registry need horizontal room, and navigation competes with the
         content for it.
-
+    media:
+      - 9.avif
+      - 10.avif
+      - 11.avif
   - header: "Results"
     text: |
       The platform is live, with onboarding continuing across Europe as more
