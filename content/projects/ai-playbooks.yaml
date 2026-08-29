@@ -31,9 +31,9 @@ articles:
       The page doubles as a showcase of In The Pocket's new design system, and the
       aesthetic direction is what ties its two halves together.
 
-      - **Motion as the through-line** — the visual language blends movement
+      - **Motion as the through-line** - the visual language blends movement
         captured in photography with the actual motion of the page itself.
-      - **Gradients and a pastel palette** — chosen to communicate curiosity and
+      - **Gradients and a pastel palette** - chosen to communicate curiosity and
         playfulness, rather than the cold, corporate tone AI content often
         defaults to.
 
@@ -54,9 +54,9 @@ articles:
       effect powered by CSS perspective**, giving the interface a tactile,
       dimensional quality.
 
-      - **A fixed information order** — every card answers what the tool or event
+      - **A fixed information order** - every card answers what the tool or event
         is, when it was added, and when it takes place, always in that sequence.
-      - **Scannable in time** — holding that order constant across the set lets
+      - **Scannable in time** - holding that order constant across the set lets
         visitors orient themselves without reading each card in full.
 
   - header: "User Research"
@@ -64,18 +64,18 @@ articles:
       There was no formal research phase, so the decisions were informed
       indirectly:
 
-      - **Stakeholder conversations** — surfacing what the practice actually needed
+      - **Stakeholder conversations** - surfacing what the practice actually needed
         the page to communicate.
-      - **Observing comparable pages** — watching how visitors navigate similar
+      - **Observing comparable pages** - watching how visitors navigate similar
         offerings elsewhere.
-      - **Iterating on comprehension** — repeatedly adjusting what made the
+      - **Iterating on comprehension** - repeatedly adjusting what made the
         offering easier to understand at a glance.
 
   - header: "Impact"
     text: |
-      - **More customers in active AI consultation discussions** — the page moves
+      - **More customers in active AI consultation discussions** - the page moves
         visitors toward a conversation rather than only explaining the practice.
-      - **A clearer AI roadmap for stakeholders** — the offering became more
+      - **A clearer AI roadmap for stakeholders** - the offering became more
         tangible internally, not only for prospective clients.
-      - **A flagship for the new design system** — the first showcase of In The
+      - **A flagship for the new design system** - the first showcase of In The
         Pocket's refreshed system in production.

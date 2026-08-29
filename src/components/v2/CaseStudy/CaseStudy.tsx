@@ -152,7 +152,7 @@ const CaseStudy = ({ project }: { project: Project }) => (
               <ArticleMedia>
                 <MediaBento
                   items={article.media}
-                  label={`${project.name} — ${article.header}`}
+                  label={`${project.name} - ${article.header}`}
                 />
               </ArticleMedia>
             ) : null}

@@ -7,7 +7,7 @@ import { navItems } from "../consts";
 const ErrorPage = ({ statusCode }: { statusCode?: number }) => (
   <>
     <Head>
-      <title>something went wrong — Lavinia Dumitrenco</title>
+      <title>something went wrong - Lavinia Dumitrenco</title>
       <meta name="robots" content="noindex" />
     </Head>
     <NavBar items={navItems} highlightedIndex={0} variant="highlight" />

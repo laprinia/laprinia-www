@@ -14,31 +14,13 @@ const App = ({ Component, pageProps }: AppProps) => {
       <SpeedInsights />
       <Analytics />
       <Head>
-        <title>home - Lavinia Dumitrenco</title>
-        <meta
-          name="description"
-          content="Lavinia Dumitrenco — product designer and developer in Bucharest. Five years of user research, interaction design and design systems, shipped into production. Currently available for work."
-        />
-        <meta
-          name="keywords"
-          content="Product Designer, UX Designer, Product Design Romania, UX Romania, Design Systems, Design Tokens, User Research, Interaction Design, Accessibility, WCAG, Data Visualization, B2B Product Design, Enterprise UX, Figma, Figma Variables, Prototyping, Frontend Developer, React, TypeScript, Next.js, Lavinia Dumitrenco, laprinia, Bucharest"
-        />
+        <title>Lavinia Dumitrenco - Product Designer &amp; Developer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:type" content="website" key="og:type" />
         <meta
           property="og:site_name"
           content="Lavinia Dumitrenco"
           key="og:site_name"
-        />
-        <meta
-          property="og:title"
-          content="Lavinia Dumitrenco — product designer &amp; developer"
-          key="og:title"
-        />
-        <meta
-          property="og:description"
-          content="Product designer and developer in Bucharest. Five years of user research, interaction design and design systems, shipped into production."
-          key="og:description"
         />
         <meta
           name="twitter:card"

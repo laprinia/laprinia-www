@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../components/Seo/Seo";
 import NavBar from "../components/organisms/NavBar/NavBar";
 import Footer from "../components/v2/Footer/Footer";
 import About from "../components/v2/About/About";
@@ -8,13 +8,11 @@ import { backToTopLabel } from "../consts.v2.case";
 
 const AboutV2 = () => (
   <>
-    <Head>
-      <title>about - Lavinia Dumitrenco</title>
-      <meta
-        name="description"
-        content="Five years designing for complex, technical products — research, interaction design and design systems, built as well as designed."
-      />
-    </Head>
+    <Seo
+      title="About - Lavinia Dumitrenco"
+      description="Five years designing for complex, technical products - research, interaction design and design systems, built as well as designed."
+      path="/about"
+    />
     <NavBar
       items={navItems}
       highlightedIndex={2}

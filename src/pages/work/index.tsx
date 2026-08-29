@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../../components/Seo/Seo";
 import NavBar from "../../components/organisms/NavBar/NavBar";
 import { navItems } from "../../consts";
 import PortfolioBoard from "../../components/v2/PortfolioBoard/PortfolioBoard";
@@ -8,13 +8,11 @@ import { WorkGround } from "../../styles/work.v2.styles";
 const WorkPage = () => {
   return (
     <>
-      <Head>
-        <title>work - Lavinia Dumitrenco</title>
-        <meta
-          name="description"
-          content="Selected product design and development work: enterprise platforms, design systems and experiments."
-        />
-      </Head>
+      <Seo
+        title="Work — Lavinia Dumitrenco"
+        description="Selected product design and development work: enterprise platforms, design systems and experiments."
+        path="/work"
+      />
       <NavBar
         items={navItems}
         highlightedIndex={0}

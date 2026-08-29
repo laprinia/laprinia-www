@@ -38,7 +38,7 @@ const WorkList = ({ names }: { names: string[] }) => {
                   {project.name}
                   <VisuallyHidden.Root>
                     {" "}
-                    — read the case study
+                    - read the case study
                   </VisuallyHidden.Root>
                 </TitleLink>
               </Title>

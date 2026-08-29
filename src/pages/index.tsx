@@ -1,7 +1,9 @@
-import Head from "next/head";
+import Seo from "../components/Seo/Seo";
 import NavBar from "../components/organisms/NavBar/NavBar";
 import CustomCursor from "../components/atoms/CustomCursor/CustomCursor";
 import { navItems } from "../consts";
+import { personDescription } from "../consts.seo";
+import PersonSchema from "../components/Seo/PersonSchema";
 import { backToTopLabel } from "../consts.v2.case";
 import HomeStage from "../components/v2/HomeStage/HomeStage";
 import Footer from "../components/v2/Footer/Footer";
@@ -10,13 +12,12 @@ import ScrollTopButton from "../components/v2/ScrollTopButton/ScrollTopButton";
 const HomeV2 = () => {
   return (
     <>
-      <Head>
-        <title>home - Lavinia Dumitrenco</title>
-        <meta
-          name="description"
-          content="Product designer and developer in Bucharest. Five years of user research, flows and design systems, shipped into production."
-        />
-      </Head>
+      <Seo
+        title="Lavinia Dumitrenco - Product Designer & Developer"
+        description={personDescription}
+        path="/"
+      />
+      <PersonSchema />
       <NavBar
         items={navItems}
         highlightedIndex={0}

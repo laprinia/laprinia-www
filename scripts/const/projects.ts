@@ -508,7 +508,7 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "Visual System",
-          "html": "<p>The page doubles as a showcase of In The Pocket&#39;s new design system, and the\naesthetic direction is what ties its two halves together.</p>\n<ul>\n<li><strong>Motion as the through-line</strong> — the visual language blends movement\ncaptured in photography with the actual motion of the page itself.</li>\n<li><strong>Gradients and a pastel palette</strong> — chosen to communicate curiosity and\nplayfulness, rather than the cold, corporate tone AI content often\ndefaults to.</li>\n</ul>",
+          "html": "<p>The page doubles as a showcase of In The Pocket&#39;s new design system, and the\naesthetic direction is what ties its two halves together.</p>\n<ul>\n<li><strong>Motion as the through-line</strong> - the visual language blends movement\ncaptured in photography with the actual motion of the page itself.</li>\n<li><strong>Gradients and a pastel palette</strong> - chosen to communicate curiosity and\nplayfulness, rather than the cold, corporate tone AI content often\ndefaults to.</li>\n</ul>",
           "metrics": [],
           "media": []
         },
@@ -525,7 +525,7 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "Interactive Card System",
-          "html": "<p>Tool and event cards respond to hover and pointer movement with a <strong>3D tilt\neffect powered by CSS perspective</strong>, giving the interface a tactile,\ndimensional quality.</p>\n<ul>\n<li><strong>A fixed information order</strong> — every card answers what the tool or event\nis, when it was added, and when it takes place, always in that sequence.</li>\n<li><strong>Scannable in time</strong> — holding that order constant across the set lets\nvisitors orient themselves without reading each card in full.</li>\n</ul>",
+          "html": "<p>Tool and event cards respond to hover and pointer movement with a <strong>3D tilt\neffect powered by CSS perspective</strong>, giving the interface a tactile,\ndimensional quality.</p>\n<ul>\n<li><strong>A fixed information order</strong> - every card answers what the tool or event\nis, when it was added, and when it takes place, always in that sequence.</li>\n<li><strong>Scannable in time</strong> - holding that order constant across the set lets\nvisitors orient themselves without reading each card in full.</li>\n</ul>",
           "metrics": [],
           "media": [
             {
@@ -536,13 +536,13 @@ export const projects: ProjectCategories = {
         },
         {
           "header": "User Research",
-          "html": "<p>There was no formal research phase, so the decisions were informed\nindirectly:</p>\n<ul>\n<li><strong>Stakeholder conversations</strong> — surfacing what the practice actually needed\nthe page to communicate.</li>\n<li><strong>Observing comparable pages</strong> — watching how visitors navigate similar\nofferings elsewhere.</li>\n<li><strong>Iterating on comprehension</strong> — repeatedly adjusting what made the\noffering easier to understand at a glance.</li>\n</ul>",
+          "html": "<p>There was no formal research phase, so the decisions were informed\nindirectly:</p>\n<ul>\n<li><strong>Stakeholder conversations</strong> - surfacing what the practice actually needed\nthe page to communicate.</li>\n<li><strong>Observing comparable pages</strong> - watching how visitors navigate similar\nofferings elsewhere.</li>\n<li><strong>Iterating on comprehension</strong> - repeatedly adjusting what made the\noffering easier to understand at a glance.</li>\n</ul>",
           "metrics": [],
           "media": []
         },
         {
           "header": "Impact",
-          "html": "<ul>\n<li><strong>More customers in active AI consultation discussions</strong> — the page moves\nvisitors toward a conversation rather than only explaining the practice.</li>\n<li><strong>A clearer AI roadmap for stakeholders</strong> — the offering became more\ntangible internally, not only for prospective clients.</li>\n<li><strong>A flagship for the new design system</strong> — the first showcase of In The\nPocket&#39;s refreshed system in production.</li>\n</ul>",
+          "html": "<ul>\n<li><strong>More customers in active AI consultation discussions</strong> - the page moves\nvisitors toward a conversation rather than only explaining the practice.</li>\n<li><strong>A clearer AI roadmap for stakeholders</strong> - the offering became more\ntangible internally, not only for prospective clients.</li>\n<li><strong>A flagship for the new design system</strong> - the first showcase of In The\nPocket&#39;s refreshed system in production.</li>\n</ul>",
           "metrics": [],
           "media": []
         }

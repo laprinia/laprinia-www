@@ -47,7 +47,7 @@ const DictionaryEntry = ({
         <Term>
           <TermLink href={href}>
             {term}
-            <VisuallyHidden.Root> — read the case study</VisuallyHidden.Root>
+            <VisuallyHidden.Root> - read the case study</VisuallyHidden.Root>
           </TermLink>
         </Term>
       </Head>

@@ -19,7 +19,7 @@ const MediaBento = ({
         <ZoomableMedia
           key={item.src}
           item={item}
-          label={`${label} — ${index + 1}`}
+          label={`${label} - ${index + 1}`}
           ratio={
             items.length === 1 || (spansFirst && index === 0)
               ? "16 / 9"

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../components/Seo/Seo";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import NavBar from "../components/organisms/NavBar/NavBar";
 import Footer from "../components/v2/Footer/Footer";
@@ -10,13 +10,11 @@ import { ContactGround, ContactPanel } from "../styles/contact.v2.styles";
 
 const ContactV2 = () => (
   <>
-    <Head>
-      <title>contact - Lavinia Dumitrenco</title>
-      <meta
-        name="description"
-        content="Get in touch about product design, design systems or frontend work."
-      />
-    </Head>
+    <Seo
+      title="Contact - Lavinia Dumitrenco"
+      description="Get in touch about product design, design systems or frontend work."
+      path="/contact"
+    />
     <NavBar
       items={navItems}
       highlightedIndex={1}

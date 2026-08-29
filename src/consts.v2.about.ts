@@ -34,35 +34,35 @@ export const aboutSections: AboutSection[] = [
     kind: "timeline",
     entries: [
       {
-        period: "2025—2026",
+        period: "2025-2026",
         title: "Product Designer & Developer",
         org: "In The Pocket",
         description:
           "Sole UX/UI designer and engineer on cross-functional product work, from research through shipped frontend.",
       },
       {
-        period: "2024—2025",
+        period: "2024-2025",
         title: "UX Designer & Developer",
         org: "Siemens Energy",
         description:
           "Designed and built data visualization flows for complex B2B systems, running continuous user testing and iteration. Kept wireframes and React implementation consistent through semantic tokens.",
       },
       {
-        period: "2023—2024",
+        period: "2023-2024",
         title: "Frontend Developer, Design Systems & UX",
         org: "Adobe",
         description:
           "Mapped complex UX flows and built accessible components contributing to Spectrum, Adobe's core design system.",
       },
       {
-        period: "2022—2023",
+        period: "2022-2023",
         title: "Web Developer, Frontend & UI",
         org: "Ubisoft",
         description:
           "Designed and built user flows for a high-traffic web platform. Improved load time by 30%.",
       },
       {
-        period: "2021—2022",
+        period: "2021-2022",
         title: "Frontend Developer & UX Designer",
         org: "Adobe",
         description:
@@ -119,12 +119,12 @@ export const aboutSections: AboutSection[] = [
     kind: "timeline",
     entries: [
       {
-        period: "2020—2022",
+        period: "2020-2022",
         title: "MSc Computer Graphics, Multimedia & Virtual Reality",
         org: "Politehnica University of Bucharest",
       },
       {
-        period: "2017—2020",
+        period: "2017-2020",
         title: "BSc Economic Informatics",
         org: "Bucharest Academy of Economic Studies",
       },

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Seo from "../../components/Seo/Seo";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import NavBar from "../../components/organisms/NavBar/NavBar";
@@ -18,9 +18,12 @@ import type { Project } from "../../../scripts/const/projects";
 
 const CaseStudyPage = ({ project }: { project: Project }) => (
   <>
-    <Head>
-      <title>{`${project.name} - Lavinia Dumitrenco`}</title>
-    </Head>
+    <Seo
+      title={`${project.name} - Lavinia Dumitrenco`}
+      description={project.description}
+      path={`/work/${toProjectSlug(project.name)}`}
+      image={project.headshot}
+    />
     <NavBar
       items={navItems}
       highlightedIndex={0}
