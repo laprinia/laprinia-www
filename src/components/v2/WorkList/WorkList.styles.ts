@@ -23,47 +23,54 @@ export const List = styled.ul`
 export const Row = styled.li`
   position: relative;
   display: grid;
-  grid-template-columns: var(--row-index-width) minmax(0, 1fr) var(
-      --row-thumb-width
-    );
-  grid-template-areas: "index content thumb";
+  grid-template-columns: minmax(0, 1fr) var(--row-thumb-width);
+  grid-template-areas:
+    "head thumb"
+    "desc thumb"
+    "roles roles";
   align-items: start;
-  gap: var(--row-gap-x);
+  gap: var(--space-3) var(--row-gap-x);
   padding: var(--row-padding) 0;
   border-top: 1px solid var(--section-ink);
 
   @media (min-width: 700px) {
+    grid-template-columns: var(--row-index-width) minmax(0, 1fr) var(
+        --row-thumb-width
+      );
+    grid-template-areas: "index content thumb";
     align-items: stretch;
+    gap: var(--row-gap-x);
   }
 `;
 
 export const RowIndex = styled.span`
+  display: none;
   grid-area: index;
-  padding-top: var(--space-1);
   font-family: var(--font-mono);
   font-size: var(--font-size-ui-xs);
   opacity: 0.6;
 
   @media (min-width: 700px) {
+    display: block;
     align-self: center;
-    padding-top: 0;
   }
 `;
 
 export const Body = styled.div`
-  grid-area: content;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  min-width: 0;
+  display: contents;
 
   @media (min-width: 700px) {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: var(--space-4);
+    min-width: 0;
   }
 `;
 
 export const Head = styled.div`
+  grid-area: head;
   display: flex;
   align-items: baseline;
   gap: var(--space-2);
@@ -107,10 +114,15 @@ export const TitleLink = styled.a`
 `;
 
 export const Cue = styled.span`
+  display: none;
   flex-shrink: 0;
   font-size: var(--font-size-ui-md);
   line-height: 1;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @media (min-width: 700px) {
+    display: block;
+  }
 
   ${Row}:hover & {
     transform: translateX(0.2rem);
@@ -126,6 +138,7 @@ export const Cue = styled.span`
 `;
 
 export const Description = styled.p`
+  grid-area: desc;
   max-width: 52ch;
   font-size: var(--font-size-ui-sm);
   line-height: 1.45;
@@ -138,10 +151,11 @@ export const Description = styled.p`
 `;
 
 export const Roles = styled.ul`
+  grid-area: roles;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin: var(--space-2) 0 0;
+  margin: var(--space-1) 0 0;
   padding: 0;
   list-style: none;
 
