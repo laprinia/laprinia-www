@@ -177,44 +177,62 @@ export const DropdownButton = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   width: 24px;
   height: 24px;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 0.15em;
+  gap: var(--space-1);
+  padding: 0;
   z-index: 10;
 
   span {
     display: block;
-    width: 100%;
-    height: 3px;
+    width: 20px;
+    height: 1.5px;
+    border-radius: 999px;
     background-color: var(--accent-color);
     transition:
-      transform 0.3s ease,
-      opacity 0.3s ease,
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.2s ease,
       background-color 0.3s ease;
   }
 
-  &[data-state="open"] span:nth-child(1) {
-    transform: rotate(45deg) translateY(9.7px);
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
   }
+
+  &[data-state="open"] span:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+
   &[data-state="closed"] span:nth-child(1) {
     transform: rotate(0);
   }
 
   &[data-state="open"] span:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0.4);
   }
+
   &[data-state="closed"] span:nth-child(2) {
     opacity: 1;
+    transform: scaleX(1);
   }
 
   &[data-state="open"] span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-9.7px);
+    transform: translateY(-5.5px) rotate(-45deg);
   }
+
   &[data-state="closed"] span:nth-child(3) {
     transform: rotate(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    span {
+      transition: none;
+    }
   }
 `;
 
