@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUp, ArrowUpRight } from "lucide-react";
+import { ArrowUp, ArrowUpRight, MoveLeft } from "lucide-react";
 import MediaBento from "./MediaBento";
 import Tag from "../Tag/Tag";
 import MetricCard from "../MetricCard/MetricCard";
@@ -46,7 +46,7 @@ const CaseStudy = ({ project }: { project: Project }) => (
     <CaseLayout>
       <Rail>
         <BackLink href={backToWorkHref}>
-          <ArrowLeft size={14} aria-hidden="true" />
+          <MoveLeft size={18} aria-hidden="true" />
           <span>{backToWorkLabel}</span>
         </BackLink>
 

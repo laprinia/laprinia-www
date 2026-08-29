@@ -63,6 +63,8 @@ export const Rail = styled.aside`
     );
     overflow-y: auto;
     overscroll-behavior: contain;
+    padding-inline: var(--space-3);
+    margin-inline: calc(var(--space-3) * -1);
   }
 `;
 
@@ -72,8 +74,8 @@ export const BackLink = styled.a`
   align-items: center;
   gap: var(--space-2);
   align-self: start;
-  padding-left: var(--space-1);
-  margin-left: calc(var(--case-rail-indent) - var(--space-1));
+  padding-left: var(--space-2);
+  margin-left: calc(var(--case-rail-indent) - var(--space-2));
   color: var(--section-accent);
   font-family: var(--font-mono);
   font-size: var(--font-size-ui-xs);
