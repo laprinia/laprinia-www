@@ -62,9 +62,9 @@ export const whatIDoEntries = [
 ];
 
 export const aboutMeParagraphs = [
-  "I work best with engineers close by, most of my design decisions get better once someone tells me what's expensive to build.",
-  "I'm comfortable in domains I don't know yet. The medical, broadcast and banking work all started with me not understanding the problem, and interviewing people until I did.",
-  "Outside product work I make things with WebGL and TouchDesigner, which is where most of my visual ideas come from.",
+  "Product Designer who is not afraid to get technical, wether it's building a design system, implementing a component in React, or writing a custom WebGL shader.",
+  "I have five years of experience designing for complex, technical products, and I enjoy working on the full spectrum of design work: research, interaction design, and design systems.",
+  "Outside of work I enjoy drawing and creating art with anything I can get my hands on, from digital to traditional media :)",
 ];
 
 export const aboutMeLink = {
@@ -82,8 +82,8 @@ export const contactLinksLabel = "Profiles";
 export const contactFacts = [
   {
     label: "Looking for",
-    value: "Product design roles where research and interaction design lead",
+    value: "Product Design and Design Engineering roles",
   },
   { label: "Based in", value: "Bucharest, Romania · EET" },
-  { label: "Status", value: "Available for work (remote, on-site or hybrid)" },
+  { label: "Status", value: "Available for work (remote or hybrid)" },
 ];
