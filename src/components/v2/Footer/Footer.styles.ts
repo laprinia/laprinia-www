@@ -99,11 +99,18 @@ export const Links = styled.ul`
 `;
 
 export const FooterLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   color: inherit;
   font-family: var(--font-heading);
   font-size: var(--font-size-ui-sm);
   text-transform: lowercase;
   text-underline-offset: 0.25em;
+
+  svg {
+    flex-shrink: 0;
+  }
 
   &:focus-visible {
     outline: 2px solid var(--footer-ink);

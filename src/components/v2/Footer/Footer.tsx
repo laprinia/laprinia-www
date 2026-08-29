@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { githubLink, linkedinLink, navItems } from "../../../consts";
 import {
   FooterShell,
@@ -38,7 +39,8 @@ const Footer = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            {link.label} ↗
+            <span>{link.label}</span>
+            <ArrowUpRight size={14} aria-hidden="true" />
           </FooterLink>
         </li>
       ))}
