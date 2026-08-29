@@ -121,15 +121,17 @@ export const Definition = styled.p`
 
 export const MetaRule = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: baseline;
   gap: var(--space-2) var(--space-4);
   margin-top: auto;
   padding-top: var(--space-2);
   border-top: 1px solid var(--neutral-300);
 
   @media (min-width: 800px) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     padding-top: var(--space-4);
   }
 `;
@@ -145,16 +147,32 @@ export const Roles = styled.ul`
 
 export const Links = styled.div`
   display: flex;
+  flex-shrink: 0;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-4);
+  margin-left: auto;
   font-family: var(--font-mono);
   font-size: var(--font-size-ui-xs);
+
+  &:empty {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    flex-shrink: 1;
+    margin-left: 0;
+  }
 `;
 
 export const CaseCue = styled.span`
+  display: none;
   color: var(--accent-color);
   font-size: var(--font-size-ui-md);
+
+  @media (min-width: 800px) {
+    display: inline;
+  }
 `;
 
 export const CueText = styled.span`
