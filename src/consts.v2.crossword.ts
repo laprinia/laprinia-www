@@ -56,4 +56,4 @@ export const crosswordHintCellMobile = { row: 4, col: 2 };
 export const crosswordSolution =
   "Lavinia, Product Designer & Developer for Enterprise solutions, based in Bucharest. Five years of this. Currently available.";
 export const crosswordStatement =
-  "Lavinia Dumitrenco - product designer in Bucharest. Five years of user research, flows and design systems, shipped into production. Available for work.";
+  "Lavinia Dumitrenco,  Product Designer in Bucharest. Five years of user research, flows and design systems, shipped into production. Available for work.";

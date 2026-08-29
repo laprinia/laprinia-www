@@ -11,7 +11,7 @@ import { ContactGround, ContactPanel } from "../styles/contact.v2.styles";
 const ContactV2 = () => (
   <>
     <Head>
-      <title>contact — Lavinia Dumitrenco</title>
+      <title>contact - Lavinia Dumitrenco</title>
       <meta
         name="description"
         content="Get in touch about product design, design systems or frontend work."

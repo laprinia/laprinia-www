@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <SpeedInsights />
       <Analytics />
       <Head>
-        <title>Lavinia Dumitrenco — product designer &amp; developer</title>
+        <title>home - Lavinia Dumitrenco</title>
         <meta
           name="description"
           content="Lavinia Dumitrenco — product designer and developer in Bucharest. Five years of user research, interaction design and design systems, shipped into production. Currently available for work."

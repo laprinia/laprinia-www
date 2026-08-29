@@ -9,7 +9,7 @@ import { backToTopLabel } from "../consts.v2.case";
 const AboutV2 = () => (
   <>
     <Head>
-      <title>about — Lavinia Dumitrenco</title>
+      <title>about - Lavinia Dumitrenco</title>
       <meta
         name="description"
         content="Five years designing for complex, technical products — research, interaction design and design systems, built as well as designed."

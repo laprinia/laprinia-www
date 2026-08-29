@@ -19,7 +19,7 @@ import type { Project } from "../../../scripts/const/projects";
 const CaseStudyPage = ({ project }: { project: Project }) => (
   <>
     <Head>
-      <title>{`${project.name} — Lavinia Dumitrenco`}</title>
+      <title>{`${project.name} - Lavinia Dumitrenco`}</title>
     </Head>
     <NavBar
       items={navItems}

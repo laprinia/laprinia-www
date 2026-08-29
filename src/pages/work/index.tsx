@@ -9,7 +9,7 @@ const WorkPage = () => {
   return (
     <>
       <Head>
-        <title>work — Lavinia Dumitrenco</title>
+        <title>work - Lavinia Dumitrenco</title>
         <meta
           name="description"
           content="Selected product design and development work: enterprise platforms, design systems and experiments."

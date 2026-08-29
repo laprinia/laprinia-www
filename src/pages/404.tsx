@@ -7,7 +7,7 @@ import { navItems } from "../consts";
 const Custom404 = () => (
   <>
     <Head>
-      <title>page not found — Lavinia Dumitrenco</title>
+      <title>page not found - Lavinia Dumitrenco</title>
       <meta name="robots" content="noindex" />
     </Head>
     <NavBar items={navItems} highlightedIndex={0} variant="highlight" />

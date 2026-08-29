@@ -11,7 +11,7 @@ const HomeV2 = () => {
   return (
     <>
       <Head>
-        <title>Lavinia Dumitrenco — product designer & developer</title>
+        <title>home - Lavinia Dumitrenco</title>
         <meta
           name="description"
           content="Product designer and developer in Bucharest. Five years of user research, flows and design systems, shipped into production."
