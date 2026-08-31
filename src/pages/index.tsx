@@ -13,7 +13,7 @@ const HomeV2 = () => {
   return (
     <>
       <Seo
-        title="Lavinia Dumitrenco - Product Designer & Developer"
+        title="Lavinia Dumitrenco - Technical Product Designer"
         description={personDescription}
         path="/"
       />

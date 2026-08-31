@@ -21,7 +21,7 @@ export type AboutSection =
 
 export const aboutId = "about-top";
 export const aboutName = "lavinia dumitrenco";
-export const aboutRole = "product designer & developer";
+export const aboutRole = "technical product designer";
 export const aboutLocation = "based in bucharest, romania";
 export const aboutIntro =
   "Five years designing for complex, technical products. Research, interaction design and design systems are the core of the work; I build what I design so it survives contact with production.";

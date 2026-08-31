@@ -14,7 +14,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <SpeedInsights />
       <Analytics />
       <Head>
-        <title>Lavinia Dumitrenco - Product Designer &amp; Developer</title>
+        <title>Lavinia Dumitrenco - Technical Product Designer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:type" content="website" key="og:type" />
         <meta

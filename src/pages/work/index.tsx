@@ -9,7 +9,7 @@ const WorkPage = () => {
   return (
     <>
       <Seo
-        title="Work — Lavinia Dumitrenco"
+        title="Work - Lavinia Dumitrenco"
         description="Selected product design and development work: enterprise platforms, design systems and experiments."
         path="/work"
       />
