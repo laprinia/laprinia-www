@@ -26,10 +26,3 @@ export const List = styled.ul`
   padding: 0;
   list-style: none;
 `;
-
-export const CtaSlot = styled.div`
-  --button-ink: var(--support-color);
-  --button-on-ink: var(--way-darker-accent-color);
-
-  align-self: flex-start;
-`;

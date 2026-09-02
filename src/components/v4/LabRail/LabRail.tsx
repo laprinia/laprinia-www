@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
-import Button from "../../v2/Button/Button";
 import Tag from "../../v2/Tag/Tag";
 import ProjectRow from "../ProjectRow/ProjectRow";
 import { projects, type Project } from "../../../../scripts/const/projects";
 import {
-  v4ContactCta,
   v4LabFilterAll,
   v4LabFilters,
   v4LabHint,
@@ -19,7 +16,7 @@ import {
   RailHeading,
   RailNote,
 } from "../shared.styles";
-import { LabSection, Body, Filters, List, CtaSlot } from "./LabRail.styles";
+import { LabSection, Body, Filters, List } from "./LabRail.styles";
 
 const LabRail = () => {
   const [active, setActive] = useState<number | null>(null);
@@ -87,17 +84,6 @@ const LabRail = () => {
                 />
               ))}
             </List>
-
-            <CtaSlot>
-              <Button
-                asChild
-                variant="solid"
-                size="lg"
-                icon={<ArrowRight strokeWidth={2.5} />}
-              >
-                <a href="/contact">{v4ContactCta}</a>
-              </Button>
-            </CtaSlot>
           </Body>
         </Rail>
       </Container>
