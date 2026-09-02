@@ -1,4 +1,4 @@
-import { contactFacts } from "./consts.v2";
+import { contactFacts } from "./consts.content";
 
 export type TimelineEntry = {
   period: string;

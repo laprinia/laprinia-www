@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { GlobalStyle } from "../styles/globalStyle";
 import { V2GlobalStyle } from "../styles/v2GlobalStyle";
-import ErrorBoundary from "../components/templates/ErrorBoundary/ErrorBoundary";
+import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "@fontsource-variable/atkinson-hyperlegible-next";

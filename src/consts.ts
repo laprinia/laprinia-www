@@ -1,7 +1,7 @@
 export const navItems = [
-  { label: "WORK", href: "/work" },
-  { label: "CONTACT", href: "/contact" },
-  { label: "ABOUT", href: "/about" },
+  { label: "work", href: "/work" },
+  { label: "about", href: "/about" },
+  { label: "contact", href: "/contact" },
 ];
 
 export const linkedinLink = "https://www.linkedin.com/in/lavdumi/";

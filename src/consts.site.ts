@@ -1,45 +1,39 @@
-export const v4HomeTitle = "home v4 - Lavinia Dumitrenco";
+export const homeTitle = "Lavinia Dumitrenco - Technical Product Designer";
 
-export const v4HomeDescription =
+export const homeDescription =
   "Preview of the desk v3 homepage direction: masthead, sticky rail sections and a cursor-tracked bloom.";
 
-export const v4NavItems = [
-  { label: "work", href: "/v4/work" },
-  { label: "about", href: "/v4/about" },
-  { label: "contact", href: "/v4/contact" },
-];
+export const wordmark = "lavinia dumitrenco";
 
-export const v4Wordmark = "lavinia dumitrenco";
-
-export const v4HeroRibbon = {
+export const heroRibbon = {
   role: "technical product designer",
   location: "bucharest, romania",
   status: "available for work",
 };
 
-export const v4HeroName = ["lavinia", "dumitrenco"];
+export const heroName = ["lavinia", "dumitrenco"];
 
-export const v4HeroTagline = {
+export const heroTagline = {
   lead: "Five years of user research, flows and design systems, ",
   highlight: "shipped into production",
   tail: ".",
 };
 
-export const v4PhotoboothPath = "/photobooth_tbguux";
+export const photoboothPath = "/photobooth_tbguux";
 
-export const v4PhotoboothAlt = "Lavinia Dumitrenco, two-frame photobooth strip";
+export const photoboothAlt = "Lavinia Dumitrenco, two-frame photobooth strip";
 
-export const v4WorkLabel = "selected work";
-export const v4WorkHint = "hover to preview";
-export const v4WorkCta = "view more work";
+export const workLabel = "selected work";
+export const workHint = "hover to preview";
+export const workCta = "view more work";
 
-export const v4WhatIDoLabel = "what i do";
+export const whatIDoLabel = "what i do";
 
-export const v4AboutLabel = "about me";
-export const v4AboutCta = "more about how i work";
-export const v4ContactCta = "get in touch";
+export const aboutLabel = "about me";
+export const aboutCta = "more about how i work";
+export const contactCta = "get in touch";
 
-export const v4AboutMeta = [
+export const aboutMeta = [
   {
     term: "looking for",
     detail: "Product Design and Design Engineering roles",
@@ -48,11 +42,11 @@ export const v4AboutMeta = [
   { term: "status", detail: "Available for work (remote or hybrid)" },
 ];
 
-export const v4FooterWordmark = "laprinia";
-export const v4FooterNote = "bucharest, romania";
-export const v4FooterSignoff = ";)";
+export const footerWordmark = "laprinia";
+export const footerNote = "bucharest, romania";
+export const footerSignoff = ";)";
 
-export const v4ShotTilts = [
+export const shotTilts = [
   "-1.2deg",
   "1deg",
   "-0.8deg",
@@ -61,12 +55,12 @@ export const v4ShotTilts = [
   "1.2deg",
 ];
 
-export const v4WorkPageTitle = "work v4 - Lavinia Dumitrenco";
+export const workPageTitle = "Work - Lavinia Dumitrenco";
 
-export const v4WorkPageDescription =
-  "Preview of the v4 work page: client projects and lab experiments.";
+export const workPageDescription =
+  "Selected product design and development work: enterprise platforms, design systems and wizards, plus graphics and generative experiments.";
 
-export const v4WorkHeader = {
+export const workHeader = {
   ribbon: {
     highlight: "five client projects",
     muted: "eight experiments",
@@ -75,7 +69,7 @@ export const v4WorkHeader = {
   title: "work",
 };
 
-export const v4SelectedWorkNames = [
+export const selectedWorkNames = [
   "eumar revamp",
   "kbc bike leasing",
   "dytto rebrand",
@@ -83,7 +77,7 @@ export const v4SelectedWorkNames = [
   "noc monitoring",
 ];
 
-export const v4LabNames = [
+export const labNames = [
   "ai playbooks",
   "tectonic",
   "media pipe",
@@ -94,10 +88,10 @@ export const v4LabNames = [
   "volumetric light",
 ];
 
-export const v4LabLabel = "lab";
-export const v4LabHint = "graphics, shaders, generative";
-export const v4LabFilterAll = "all";
-export const v4LabFilters = [
+export const labLabel = "lab";
+export const labHint = "graphics, shaders, generative";
+export const labFilterAll = "all";
+export const labFilters = [
   "all",
   "touchdesigner",
   "react",
@@ -105,24 +99,24 @@ export const v4LabFilters = [
   "webflow",
 ];
 
-export const v4WorkHrefBase = "/v4/work";
-export const v4BackToWorkHref = "/v4/work";
+export const workHrefBase = "/work";
 
-export const v4AboutPageTitle = "about v4 - Lavinia Dumitrenco";
+export const aboutPageTitle = "About - Lavinia Dumitrenco";
 
-export const v4AboutPageDescription =
-  "Preview of the v4 about page: experience, capabilities, tools and details.";
+export const aboutPageDescription =
+  "Five years designing for complex, technical products. Experience, capabilities, tools, education and how I work.";
 
-export const v4PortraitPath = "/photobooth-shorter_wzua2j";
+export const portraitPath = "/photobooth-shorter_wzua2j";
 
-export const v4PortraitAlt = "Lavinia Dumitrenco";
+export const portraitAlt = "Lavinia Dumitrenco";
 
-export const v4AboutStatus = "available for work";
+export const aboutStatus = "available for work";
 
-export const v4ContactPageTitle = "contact v4 - Lavinia Dumitrenco";
+export const contactPageTitle = "Contact - Lavinia Dumitrenco";
 
-export const v4ContactPageDescription = "Preview of the v4 contact page.";
+export const contactPageDescription =
+  "Get in touch about product design and design engineering work.";
 
-export const v4ContactMeta = "bucharest, romania · eet";
+export const contactMeta = "bucharest, romania · eet";
 
-export const v4ContactHoleCount = 8;
+export const contactHoleCount = 8;

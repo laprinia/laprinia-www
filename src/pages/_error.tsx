@@ -1,7 +1,7 @@
 import Head from "next/head";
-import NavBar from "../components/organisms/NavBar/NavBar";
-import Footer from "../components/v2/Footer/Footer";
-import ErrorState from "../components/v2/ErrorState/ErrorState";
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
+import ErrorState from "../components/ErrorState/ErrorState";
 import { navItems } from "../consts";
 
 const ErrorPage = ({ statusCode }: { statusCode?: number }) => (
