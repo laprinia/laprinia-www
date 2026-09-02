@@ -46,15 +46,6 @@ export const footerWordmark = "laprinia";
 export const footerNote = "bucharest, romania";
 export const footerSignoff = ";)";
 
-export const shotTilts = [
-  "-1.2deg",
-  "1deg",
-  "-0.8deg",
-  "1.4deg",
-  "-1deg",
-  "1.2deg",
-];
-
 export const workPageTitle = "Work - Lavinia Dumitrenco";
 
 export const workPageDescription =

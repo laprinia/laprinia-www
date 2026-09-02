@@ -6,6 +6,11 @@ const sweep = keyframes`
   to   { background-size: 100% 0.42em; }
 `;
 
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
+
 export const Header = styled.header`
   position: relative;
   z-index: 2;
@@ -104,9 +109,14 @@ export const Tagline = styled.p`
   line-height: 1.25;
   color: var(--foreground-color);
   text-wrap: pretty;
+  animation: ${fadeUp} 0.9s var(--ease-out) 0.15s both;
 
   ${media.lg} {
     font-size: min(2.4vw, 4.2svh, 2.25rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 `;
 
@@ -120,7 +130,7 @@ export const Shipped = styled.strong`
   background-position: 0 88%;
   background-size: 0% 0.42em;
   box-decoration-break: clone;
-  animation: ${sweep} 0.8s cubic-bezier(0.45, 0, 0.25, 1) 0.4s forwards;
+  animation: ${sweep} 1.4s cubic-bezier(0.45, 0, 0.25, 1) 1.15s forwards;
 
   /* stylelint-disable property-no-vendor-prefix -- Safari needs the prefix */
   -webkit-box-decoration-break: clone;
@@ -143,13 +153,6 @@ export const InlineStrip = styled.figure`
     height: 22svh;
     padding: 0.4rem;
     filter: drop-shadow(0 14px 28px rgb(var(--lift-tint) / 16%));
-    transform: rotate(-1.5deg);
-    transition: none;
-  }
-
-  &:hover img,
-  img:hover {
-    transform: rotate(-1.5deg);
   }
 
   ${media.lg} {
@@ -174,13 +177,6 @@ export const Strip = styled.figure`
     padding: clamp(0.4rem, 0.8vh, 0.7rem);
     object-fit: contain;
     filter: drop-shadow(0 14px 28px rgb(var(--lift-tint) / 16%));
-    transform: rotate(-1.5deg);
-    transition: none;
-  }
-
-  &:hover img,
-  img:hover {
-    transform: rotate(-1.5deg);
   }
 
   ${media.lg} {

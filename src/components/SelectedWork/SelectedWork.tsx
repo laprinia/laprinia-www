@@ -4,7 +4,6 @@ import { projects, type Project } from "../../../scripts/const/projects";
 import {
   workHrefBase,
   selectedWorkNames,
-  shotTilts,
   workHint,
   workLabel,
 } from "../../consts.site";
@@ -54,7 +53,6 @@ const SelectedWork = () => {
                 roles={project.roles}
                 headshot={project.headshot}
                 meta={`${String(index + 1).padStart(2, "0")} · ${project.year} · ${project.client.toLowerCase()}`}
-                tilt={shotTilts[index % shotTilts.length]}
                 active={active === index}
                 onActivate={() => setActive(index)}
                 onDeactivate={() =>

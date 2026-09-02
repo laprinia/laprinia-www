@@ -3,13 +3,7 @@ import ArrowLink from "../ArrowLink/ArrowLink";
 import ProjectRow from "../ProjectRow/ProjectRow";
 import { projects, type Project } from "../../../scripts/const/projects";
 import { featuredProjectNames, workHref } from "../../consts.content";
-import {
-  workHrefBase,
-  shotTilts,
-  workCta,
-  workHint,
-  workLabel,
-} from "../../consts.site";
+import { workHrefBase, workCta, workHint, workLabel } from "../../consts.site";
 import {
   Container,
   Rail,
@@ -56,7 +50,6 @@ const WorkRail = () => {
                 roles={project.roles}
                 headshot={project.headshot}
                 index={index + 1}
-                tilt={shotTilts[index % shotTilts.length]}
                 active={active === index}
                 onActivate={() => setActive(index)}
                 onDeactivate={() =>

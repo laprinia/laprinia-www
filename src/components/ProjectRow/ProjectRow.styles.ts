@@ -127,7 +127,7 @@ export const Shot = styled.div`
   );
   box-shadow: var(--lift-2);
   opacity: 0.5;
-  transform: rotate(var(--shot-tilt, 0deg));
+  transform: scale(1);
   transition:
     opacity 0.3s ease,
     transform 0.45s var(--ease-out);
@@ -138,7 +138,7 @@ export const Shot = styled.div`
 
   ${Row}[data-active="true"] & {
     opacity: 1;
-    transform: rotate(var(--shot-tilt, 0deg)) scale(1.04);
+    transform: scale(1.04);
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import Image from "next/image";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import Tag from "../Tag/Tag";
@@ -25,7 +24,6 @@ export type ProjectRowProps = {
   hrefBase?: string;
   index?: number;
   meta?: string;
-  tilt?: string;
   active: boolean;
   filtered?: boolean;
   onActivate: () => void;
@@ -41,7 +39,6 @@ const ProjectRow = ({
   hrefBase = "/work",
   index,
   meta,
-  tilt,
   active,
   filtered = false,
   onActivate,
@@ -55,7 +52,6 @@ const ProjectRow = ({
       data-variant={variant}
       data-active={active}
       data-filtered={filtered}
-      style={tilt ? ({ "--shot-tilt": tilt } as CSSProperties) : undefined}
       onMouseEnter={onActivate}
       onMouseLeave={onDeactivate}
     >
