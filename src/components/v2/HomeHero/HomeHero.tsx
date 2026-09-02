@@ -12,7 +12,7 @@ const HomeHero = () => (
       <h1>{crosswordStatement}</h1>
     </VisuallyHidden.Root>
 
-    <Crossword>
+    <Crossword showClues={false}>
       <HeroCtaSlot>
         <Button
           asChild

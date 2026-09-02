@@ -18,11 +18,15 @@ const NavBar = ({
   highlightedIndex,
   variant,
   currentHref,
+  layout = "centered",
+  homeHref = "/",
 }: {
   variant?: "highlight";
   currentHref?: string;
   items: { label: string; href: string }[];
   highlightedIndex: number;
+  layout?: "centered" | "grouped";
+  homeHref?: string;
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -59,48 +63,61 @@ const NavBar = ({
     };
   }, [findScrollTarget]);
 
-  const reorderedItems = [
-    items[highlightedIndex],
-    ...items.filter((_, index) => index !== highlightedIndex),
-  ];
+  const grouped = layout === "grouped";
+
+  const reorderedItems = grouped
+    ? items
+    : [
+        items[highlightedIndex],
+        ...items.filter((_, index) => index !== highlightedIndex),
+      ];
 
   return (
-    <Nav ref={navRef} $scrolled={scrolled} data-nav-variant={variant}>
-      <NavItem highlighted={true}>
+    <Nav
+      ref={navRef}
+      $scrolled={scrolled}
+      data-nav-variant={variant}
+      data-nav-layout={layout}
+    >
+      <NavItem highlighted={!grouped}>
         <NavLink
           aria-labelledby="home-link"
-          href="/"
-          aria-current={currentHref === "/" ? "page" : undefined}
+          href={homeHref}
+          aria-current={currentHref === homeHref ? "page" : undefined}
         >
           <NavLabel>lavinia dumitrenco</NavLabel>
         </NavLink>
       </NavItem>
       <NavItemsContainer>
-        <CenteredItemWrapper>
-          <NavItem highlighted={true}>
-            <NavLink
-              href={reorderedItems[0].href}
-              aria-labelledby={`${reorderedItems[0].label}`}
-              aria-current={
-                currentHref === reorderedItems[0].href ? "page" : undefined
-              }
-            >
-              <NavLabel>{reorderedItems[0].label}</NavLabel>
-            </NavLink>
-          </NavItem>
-        </CenteredItemWrapper>
-        <NavItems>
-          {reorderedItems.slice(1).map((item, index) => (
-            <NavItem key={index} highlighted={false}>
+        {grouped ? null : (
+          <CenteredItemWrapper>
+            <NavItem highlighted={true}>
               <NavLink
-                href={item.href}
-                aria-labelledby={`${item.label}`}
-                aria-current={currentHref === item.href ? "page" : undefined}
+                href={reorderedItems[0].href}
+                aria-labelledby={`${reorderedItems[0].label}`}
+                aria-current={
+                  currentHref === reorderedItems[0].href ? "page" : undefined
+                }
               >
-                <NavLabel>{item.label}</NavLabel>
+                <NavLabel>{reorderedItems[0].label}</NavLabel>
               </NavLink>
             </NavItem>
-          ))}
+          </CenteredItemWrapper>
+        )}
+        <NavItems>
+          {(grouped ? reorderedItems : reorderedItems.slice(1)).map(
+            (item, index) => (
+              <NavItem key={index} highlighted={false}>
+                <NavLink
+                  href={item.href}
+                  aria-labelledby={`${item.label}`}
+                  aria-current={currentHref === item.href ? "page" : undefined}
+                >
+                  <NavLabel>{item.label}</NavLabel>
+                </NavLink>
+              </NavItem>
+            ),
+          )}
         </NavItems>
       </NavItemsContainer>
       <Dropdown>

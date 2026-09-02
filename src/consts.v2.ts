@@ -87,3 +87,23 @@ export const contactFacts = [
   { label: "Based in", value: "Bucharest, Romania · EET" },
   { label: "Status", value: "Available for work (remote or hybrid)" },
 ];
+
+export const trustRibbonLabel = "trusted by";
+
+export const trustRibbonMarqueeSpeed = "48s";
+
+export type TrustRibbonCompany = {
+  id: string;
+  name: string;
+  opticalScale: number;
+};
+
+export const trustRibbonCompanies: TrustRibbonCompany[] = [
+  { id: "adobe", name: "Adobe", opticalScale: 1 },
+  { id: "siemens-energy", name: "Siemens Energy", opticalScale: 1 },
+  { id: "engie", name: "Engie", opticalScale: 1 },
+  { id: "ubisoft", name: "Ubisoft", opticalScale: 1.15 },
+  { id: "in-the-pocket", name: "In The Pocket", opticalScale: 1 },
+  { id: "kbc", name: "KBC", opticalScale: 1.35 },
+  { id: "dytto", name: "Dytto", opticalScale: 1 },
+];

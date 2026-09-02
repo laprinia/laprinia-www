@@ -70,6 +70,10 @@ export const Board = styled.div`
     column-gap: clamp(var(--space-8), 4vw, var(--space-16));
     row-gap: clamp(var(--space-6), 3vw, var(--space-10));
   }
+
+  &[data-clues-hidden="true"] {
+    row-gap: 0;
+  }
 `;
 
 export const Main = styled.div`
@@ -290,6 +294,23 @@ export const Clues = styled.dl`
     grid-area: clues;
     align-self: start;
   }
+`;
+
+export const CluesShell = styled(Clues)<{ $visible: boolean }>`
+  ${({ $visible }) =>
+    $visible
+      ? ""
+      : `
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  `}
 `;
 
 export const Clue = styled.div`

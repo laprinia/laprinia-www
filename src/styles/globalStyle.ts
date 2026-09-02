@@ -1,12 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-const baseFontSizeXL = "22px";
-const baseFontSizeDesktop = "18px";
-const baseFontSizeTablet = "16px";
-const baseFontSizePhone = "16px";
-
-const rem = (px: string) => `${parseFloat(px) / 16}rem`;
-
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: "Px Grotesk";
@@ -40,11 +33,9 @@ export const GlobalStyle = createGlobalStyle`
         --font-heading: "Px Grotesk", sans-serif;
         --font-mono: "IBM Plex Mono", monospace;
 
-        --font-weight-lighter: 200;
         --font-weight-light: 300;
         --font-weight-regular: 400;
-        --font-weight-semibold: 500;
-        --font-weight-bold: 600;
+        --font-weight-bold: 700;
 
         /* ============================================================
            FLUID TYPE SCALE
@@ -79,51 +70,24 @@ export const GlobalStyle = createGlobalStyle`
         --text-stroke-width: max(0.75px, 0.025em);
 
         /* ============================================================
-           LEGACY BREAKPOINT TYPE SCALE
-           Used by the live pages only. Superseded by the fluid scale
-           above; remove once the v2 redesign replaces those pages.
-           ============================================================ */
-        --font-size-base-xl: ${baseFontSizeXL};
-        --font-size-heading1-xl: ${rem("26px")};
-        --font-size-heading2-xl: ${rem("80px")};
-        --font-size-heading3-xl: ${rem("80px")};
-        --font-size-body-xl: ${rem("22px")};
-
-        --font-size-base-desktop: ${baseFontSizeDesktop};
-        --font-size-heading1-desktop: ${rem("22px")};
-        --font-size-heading2-desktop: ${rem("60px")};
-        --font-size-heading3-desktop: ${rem("60px")};
-        --font-size-body-desktop: ${rem("18px")};
-
-        --font-size-base-tablet: ${baseFontSizeTablet};
-        --font-size-heading1-tablet: ${rem("18px")};
-        --font-size-heading2-tablet: ${rem("20px")};
-        --font-size-heading3-tablet: ${rem("40px")};
-        --font-size-body-tablet: ${rem("16px")};
-
-        --font-size-base-phone: ${baseFontSizePhone};
-        --font-size-heading1-phone: ${rem("18px")};
-        --font-size-heading2-phone: ${rem("20px")};
-        --font-size-heading3-phone: ${rem("40px")};
-        --font-size-body-phone: ${rem("16px")};
-
-        /* ============================================================
            COLOUR
            ============================================================ */
         --background-color: var(--neutral-100);
+        --background-rgb: 241 239 233;
         --foreground-color: var(--neutral-800);
         --accent-color: #0141D5;
+        --accent-rgb: 1 65 213;
         --darker-accent-color: #0136af;
         --way-darker-accent-color: #002986;
         --support-color: #DAFE71;
 
         --neutral-000: #FFFFFF;
-        --neutral-100: #F5F4F0;
+        --neutral-100: #F1EFE9;
         --neutral-200: #E8E6DF;
         --neutral-300: #D4D1C8;
         --neutral-400: #B5B1A6;
         --neutral-500: #918C80;
-        --neutral-600: #6B675C;
+        --neutral-600: #5F5A49;
         --neutral-700: #48453D;
         --neutral-800: #2A2923;
         --neutral-900: #000000;
@@ -201,6 +165,7 @@ export const GlobalStyle = createGlobalStyle`
         --space-16: 4rem;     /* 64px */
         --space-20: 5rem;     /* 80px */
         --space-24: 6rem;     /* 96px */
+        --space-28: 7rem;     /* 112px */
 
         /* ============================================================
            RADIUS AND LAYOUT
@@ -210,6 +175,38 @@ export const GlobalStyle = createGlobalStyle`
         --radius-card: 1rem;
         --radius-pill: 999px;
         --nav-height: 4rem;
+
+        /* ============================================================
+           ELEVATION
+           Tinted with --neutral-700, never pure black: a black shadow
+           over the warm grounds reads as dirt. Reach for the smallest
+           step that still separates two planes.
+           ============================================================ */
+        --lift-tint: 72 69 61;
+        --lift-1: 0 2px 6px rgb(var(--lift-tint) / 10%);
+        --lift-2: 0 6px 14px rgb(var(--lift-tint) / 12%);
+        --lift-3: 0 14px 28px rgb(var(--lift-tint) / 16%);
+        --lift-4: 0 28px 56px rgb(var(--lift-tint) / 20%);
+
+        /* ============================================================
+           BLOOM
+           Depth without bevels. Colour only: apply as a large blurred
+           shape behind content with filter: blur(70px) and
+           mix-blend-mode: multiply, plus pointer-events: none.
+           ============================================================ */
+        --bloom-lime: #DAFE71;
+        --bloom-blue: #0141D5;
+
+        /* ============================================================
+           MOTION
+           --ease-out is the house curve. Fast for colour and opacity,
+           mid for transforms and shadows, slow for entrances.
+           Every use needs a prefers-reduced-motion escape.
+           ============================================================ */
+        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        --dur-fast: 0.18s;
+        --dur-mid: 0.35s;
+        --dur-slow: 0.6s;
 
         /* ============================================================
            THIRD PARTY
@@ -226,37 +223,28 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    body {
-        font-size: var(--font-size-base-desktop);
-    }
-
-    @media (min-width: 1800px) {
+    @media (width >= 1800px) {
         :root {
             --nav-height: 4.5rem;
         }
     }
 
-    @media (max-width: 1024px) {
+    @media (width <= 1024px) {
         :root {
             --nav-height: 3.5rem;
         }
-        body {
-            font-size: var(--font-size-base-tablet);
-        }
     }
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
         :root {
             --nav-height: 3rem;
-        }
-        body {
-            font-size: var(--font-size-base-phone);
         }
     }
 
     body {
         background-color: var(--background-color);
         font-family: var(--font-body);
+        font-size: var(--font-size-body);
     }
 
     h1, h2, h3, h4, h5, h6 {

@@ -27,7 +27,7 @@ import {
   CellNumber,
   Photo,
   CtaSlot,
-  Clues,
+  CluesShell,
   Clue,
   ClueNumber,
   ClueText,
@@ -127,7 +127,15 @@ const cellUnder = (event: MouseEvent | TouchEvent | PointerEvent) => {
   return null;
 };
 
-const Crossword = ({ children }: { children?: ReactNode }) => {
+const Crossword = ({
+  children,
+  showClues = true,
+  showHint = true,
+}: {
+  children?: ReactNode;
+  showClues?: boolean;
+  showHint?: boolean;
+}) => {
   const [litWord, setLitWord] = useState<string | null>(null);
   const lit = litWord ? new Set(wordKeys.get(litWord)) : null;
   const reduced = useReducedMotion();
@@ -169,6 +177,7 @@ const Crossword = ({ children }: { children?: ReactNode }) => {
 
   return (
     <Board
+      data-clues-hidden={showClues ? undefined : "true"}
       style={
         {
           "--reveal-end": `${revealEnd}ms`,
@@ -184,7 +193,7 @@ const Crossword = ({ children }: { children?: ReactNode }) => {
           <Grid
             $cols={crosswordCols}
             aria-hidden="true"
-            data-cursor-text="drag"
+            data-cursor-text={showHint ? "drag" : undefined}
           >
             {blocks.map((block) => (
               <BlockCell
@@ -198,7 +207,7 @@ const Crossword = ({ children }: { children?: ReactNode }) => {
               />
             ))}
 
-            {hasDragged ? null : (
+            {hasDragged || !showHint ? null : (
               <DragHintAnchor>
                 <DragHint>
                   {crosswordDragLabel}
@@ -267,7 +276,7 @@ const Crossword = ({ children }: { children?: ReactNode }) => {
           </Grid>
         </GridWrap>
 
-        <Clues>
+        <CluesShell $visible={showClues}>
           {crosswordEntries.map((entry) => (
             <Clue
               key={entry.word}
@@ -284,7 +293,7 @@ const Crossword = ({ children }: { children?: ReactNode }) => {
               <ClueText>{entry.clue}</ClueText>
             </Clue>
           ))}
-        </Clues>
+        </CluesShell>
       </Main>
 
       <Aside>

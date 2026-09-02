@@ -6,7 +6,7 @@ export const Nav = styled.nav<{ $scrolled?: boolean }>`
   padding: 0 1.25rem;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--font-size-heading1-desktop);
+  font-size: var(--nav-font-size, var(--font-size-nav));
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@ export const Nav = styled.nav<{ $scrolled?: boolean }>`
   height: var(--nav-height);
   z-index: 100;
   background: ${({ $scrolled }) =>
-    $scrolled ? "rgba(245, 244, 240, 0.55)" : "var(--neutral-100)"};
+    $scrolled ? "rgb(var(--background-rgb) / 55%)" : "var(--neutral-100)"};
   backdrop-filter: ${({ $scrolled }) =>
     $scrolled ? "blur(14px) saturate(1.3)" : "none"};
   -webkit-backdrop-filter: ${({ $scrolled }) =>
@@ -35,15 +35,13 @@ export const Nav = styled.nav<{ $scrolled?: boolean }>`
     background-size: 128px 128px;
   }
 
-  @media (max-width: 1023px) {
-    font-size: var(--font-size-heading1-tablet);
+  &[data-nav-layout="grouped"] {
+    --nav-font-size: 1.0625rem;
+
+    font-weight: var(--font-weight-light);
   }
 
-  @media (min-width: 1800px) {
-    font-size: var(--font-size-heading1-xl);
-  }
   @media (max-width: 767px) {
-    font-size: var(--font-size-heading1-phone);
     flex-direction: row;
     align-items: center;
   }
@@ -57,7 +55,7 @@ export const NavItem = styled.li<NavItemProps>`
   list-style: none;
   font-weight: ${(props) =>
     props.highlighted
-      ? "var(--font-weight-semibold)"
+      ? "var(--font-weight-regular)"
       : "var(--font-weight-light)"};
   margin: 0 1rem;
 
@@ -241,7 +239,7 @@ export const DropdownContent = styled(DropdownMenu.Content)`
   top: 100%;
   right: 0;
   border-radius: var(--border-radius);
-  background: rgba(245, 244, 240, 0.75);
+  background: rgb(var(--background-rgb) / 75%);
   backdrop-filter: blur(8px) saturate(1.4);
   -webkit-backdrop-filter: blur(8px) saturate(1.4);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);

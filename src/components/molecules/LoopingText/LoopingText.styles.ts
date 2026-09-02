@@ -36,20 +36,7 @@ export const ScrollingText = styled.div`
   display: flex;
   align-items: center;
   font-family: var(--font-heading);
-
-  font-size: var(--font-size-body-desktop);
-
-  @media (max-width: 1024px) {
-    font-size: var(--font-size-body-tablet);
-  }
-
-  @media (max-width: 768px) {
-    font-size: var(--font-size-body-phone);
-  }
-
-  @media (min-width: 1800px) {
-    font-size: var(--font-size-body-xl);
-  }
+  font-size: var(--font-size-body);
 `;
 
 export const ScrollingTextItem = styled.div<{ padding: string }>`
@@ -63,18 +50,5 @@ export const Divider = styled.span`
   margin: 0 0.5rem;
   transform: translateY(25%);
   color: var(--support-color);
-
-  font-size: var(--font-size-heading1-desktop);
-
-  @media (max-width: 1024px) {
-    font-size: var(--font-size-heading1-tablet);
-  }
-
-  @media (max-width: 768px) {
-    font-size: var(--font-size-heading1-phone);
-  }
-
-  @media (min-width: 1800px) {
-    font-size: var(--font-size-heading1-xl);
-  }
+  font-size: var(--font-size-nav);
 `;

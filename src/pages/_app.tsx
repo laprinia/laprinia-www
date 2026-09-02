@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "@fontsource-variable/atkinson-hyperlegible-next";
 import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/600.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
