@@ -85,7 +85,7 @@ const ProjectRow = ({
             {roles.slice(0, compact ? 3 : 4).map((role) => (
               <Tag
                 key={role}
-                variant={compact ? "muted" : "outline"}
+                tone={compact ? "muted" : "accent"}
                 size={compact ? "xs" : "sm"}
               >
                 {role}

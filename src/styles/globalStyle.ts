@@ -163,6 +163,7 @@ export const GlobalStyle = createGlobalStyle`
         --space-12: 3rem;     /* 48px */
         --space-14: 3.5rem;   /* 56px */
         --space-16: 4rem;     /* 64px */
+        --space-18: 4.5rem;   /* 72px */
         --space-20: 5rem;     /* 80px */
         --space-24: 6rem;     /* 96px */
         --space-28: 7rem;     /* 112px */

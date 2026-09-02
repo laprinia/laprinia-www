@@ -147,7 +147,7 @@ const About = () => (
                       <GroupLabel>{group.label}</GroupLabel>
                       <Tags aria-label={group.label}>
                         {group.tags.map((tag) => (
-                          <Tag key={tag} variant="rect">
+                          <Tag key={tag} shape="rect">
                             {tag}
                           </Tag>
                         ))}

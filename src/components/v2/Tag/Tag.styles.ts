@@ -1,33 +1,30 @@
 import styled, { css } from "styled-components";
 
-export type TagVariant = "outline" | "rect" | "muted";
+export type TagShape = "pill" | "rect";
+export type TagTone = "accent" | "muted";
 export type TagSize = "xs" | "sm" | "md";
 
-const fillOnHover = css`
-  &:hover {
-    background-color: var(--tag-border);
-    color: var(--tag-on-ink, var(--background-color));
-  }
-`;
-
-const variants = {
-  outline: css`
+const shapes = {
+  pill: css`
     border-radius: var(--radius-pill);
-
-    ${fillOnHover}
   `,
   rect: css`
     border-radius: 0;
+  `,
+} satisfies Record<TagShape, ReturnType<typeof css>>;
 
-    ${fillOnHover}
+const tones = {
+  accent: css`
+    &:hover {
+      background-color: var(--tag-border);
+      color: var(--tag-on-ink, var(--background-color));
+    }
   `,
   muted: css`
     --tag-ink: var(--neutral-700);
     --tag-border: var(--neutral-600);
-
-    border-radius: var(--radius-pill);
   `,
-} satisfies Record<TagVariant, ReturnType<typeof css>>;
+} satisfies Record<TagTone, ReturnType<typeof css>>;
 
 const sizes = {
   xs: css`
@@ -51,7 +48,8 @@ const sizes = {
 } satisfies Record<TagSize, ReturnType<typeof css>>;
 
 export const StyledTag = styled.li<{
-  $variant: TagVariant;
+  $shape: TagShape;
+  $tone: TagTone;
   $size: TagSize;
 }>`
   --tag-ink: var(--pill-ink, var(--section-accent, var(--neutral-700)));
@@ -78,7 +76,8 @@ export const StyledTag = styled.li<{
     transition: color 0.25s ease;
   }
 
-  ${({ $variant }) => variants[$variant]}
+  ${({ $shape }) => shapes[$shape]}
+  ${({ $tone }) => tones[$tone]}
   ${({ $size }) => sizes[$size]}
 
   &[aria-pressed] {

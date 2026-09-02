@@ -1,8 +1,14 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
-import { StyledTag, type TagVariant, type TagSize } from "./Tag.styles";
+import {
+  StyledTag,
+  type TagShape,
+  type TagTone,
+  type TagSize,
+} from "./Tag.styles";
 
 export type TagProps = {
-  variant?: TagVariant;
+  shape?: TagShape;
+  tone?: TagTone;
   size?: TagSize;
   as?: ElementType;
   active?: boolean;
@@ -11,7 +17,8 @@ export type TagProps = {
   Pick<ComponentPropsWithoutRef<"button">, "type" | "disabled">;
 
 const Tag = ({
-  variant = "outline",
+  shape = "pill",
+  tone = "accent",
   size = "sm",
   as,
   active,
@@ -20,7 +27,8 @@ const Tag = ({
 }: TagProps) => (
   <StyledTag
     as={as}
-    $variant={variant}
+    $shape={shape}
+    $tone={tone}
     $size={size}
     aria-pressed={active === undefined ? undefined : active}
     {...rest}

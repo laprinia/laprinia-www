@@ -5,7 +5,7 @@ export const v4HomeDescription =
 
 export const v4NavItems = [
   { label: "work", href: "/v4/work" },
-  { label: "about", href: "/about" },
+  { label: "about", href: "/v4/about" },
   { label: "contact", href: "/contact" },
 ];
 
@@ -107,3 +107,14 @@ export const v4LabFilters = [
 
 export const v4WorkHrefBase = "/v4/work";
 export const v4BackToWorkHref = "/v4/work";
+
+export const v4AboutPageTitle = "about v4 - Lavinia Dumitrenco";
+
+export const v4AboutPageDescription =
+  "Preview of the v4 about page: experience, capabilities, tools and details.";
+
+export const v4PortraitPath = "/photobooth-shorter_wzua2j";
+
+export const v4PortraitAlt = "Lavinia Dumitrenco";
+
+export const v4AboutStatus = "available for work";
