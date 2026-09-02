@@ -109,6 +109,11 @@ export const GlobalStyle = createGlobalStyle`
         /* The tinted surface used for cards, chips and media wells. */
         --surface-tint: var(--neutral-200);
 
+        /* Raised paper: a sheet sitting above the page ground, with its
+           own inset tone for punched or dented detail. */
+        --paper-surface: #FBFAF7;
+        --paper-inset: #EFEDE7;
+
         /* ============================================================
            SPACING
            4px basis. Step n == n * 4px.

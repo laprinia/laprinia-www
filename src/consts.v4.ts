@@ -6,7 +6,7 @@ export const v4HomeDescription =
 export const v4NavItems = [
   { label: "work", href: "/v4/work" },
   { label: "about", href: "/v4/about" },
-  { label: "contact", href: "/contact" },
+  { label: "contact", href: "/v4/contact" },
 ];
 
 export const v4Wordmark = "lavinia dumitrenco";
@@ -118,3 +118,11 @@ export const v4PortraitPath = "/photobooth-shorter_wzua2j";
 export const v4PortraitAlt = "Lavinia Dumitrenco";
 
 export const v4AboutStatus = "available for work";
+
+export const v4ContactPageTitle = "contact v4 - Lavinia Dumitrenco";
+
+export const v4ContactPageDescription = "Preview of the v4 contact page.";
+
+export const v4ContactMeta = "bucharest, romania · eet";
+
+export const v4ContactHoleCount = 8;
