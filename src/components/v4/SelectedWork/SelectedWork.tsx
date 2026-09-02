@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProjectRow from "../ProjectRow/ProjectRow";
 import { projects, type Project } from "../../../../scripts/const/projects";
 import {
+  v4WorkHrefBase,
   v4SelectedWorkNames,
   v4ShotTilts,
   v4WorkHint,
@@ -46,6 +47,7 @@ const SelectedWork = () => {
           <List>
             {selected.map((project, index) => (
               <ProjectRow
+                hrefBase={v4WorkHrefBase}
                 key={project.name}
                 name={project.name}
                 description={project.description}

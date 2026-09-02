@@ -73,8 +73,6 @@ export const v4WorkHeader = {
     status: "2021 → 2026",
   },
   title: "work",
-  intro:
-    "Enterprise platforms, design systems and wizards on the client side; graphics, shaders and generative work in the lab.",
 };
 
 export const v4SelectedWorkNames = [
@@ -106,3 +104,6 @@ export const v4LabFilters = [
   "opengl",
   "webflow",
 ];
+
+export const v4WorkHrefBase = "/v4/work";
+export const v4BackToWorkHref = "/v4/work";

@@ -22,6 +22,7 @@ export type ProjectRowProps = {
   roles: string[];
   headshot: string;
   variant?: RowVariant;
+  hrefBase?: string;
   index?: number;
   meta?: string;
   tilt?: string;
@@ -37,6 +38,7 @@ const ProjectRow = ({
   roles,
   headshot,
   variant = "feature",
+  hrefBase = "/work",
   index,
   meta,
   tilt,
@@ -66,7 +68,7 @@ const ProjectRow = ({
           ) : null}
           <Title>
             <TitleLink
-              href={`/work/${toProjectSlug(name)}`}
+              href={`${hrefBase}/${toProjectSlug(name)}`}
               onFocus={onActivate}
               onBlur={onDeactivate}
             >

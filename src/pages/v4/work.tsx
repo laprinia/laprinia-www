@@ -34,11 +34,7 @@ const WorkV4 = () => (
     <Stage>
       <Bloom />
       <main>
-        <PageHeader
-          ribbon={v4WorkHeader.ribbon}
-          title={v4WorkHeader.title}
-          intro={v4WorkHeader.intro}
-        />
+        <PageHeader ribbon={v4WorkHeader.ribbon} title={v4WorkHeader.title} />
         <SelectedWork />
         <LabRail />
       </main>

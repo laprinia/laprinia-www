@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MetricGrid = styled.ul`
   display: grid;
@@ -9,7 +9,7 @@ export const MetricGrid = styled.ul`
   list-style: none;
 `;
 
-export const Card = styled.li`
+export const Card = styled.li<{ $highlight?: boolean }>`
   --metric-ink: var(--accent-color);
   --metric-surface: var(--surface-tint);
   --metric-label-ink: var(--neutral-600);
@@ -21,6 +21,14 @@ export const Card = styled.li`
   padding: clamp(var(--space-5), 2.5vw, var(--space-7));
   border-radius: var(--border-radius);
   background-color: var(--metric-surface);
+
+  ${({ $highlight }) =>
+    $highlight &&
+    css`
+      --metric-ink: var(--way-darker-accent-color);
+      --metric-surface: var(--support-color);
+      --metric-label-ink: var(--way-darker-accent-color);
+    `}
 `;
 
 export const Value = styled.p`

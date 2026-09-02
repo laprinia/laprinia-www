@@ -62,7 +62,6 @@ export const whatIDoEntries = [
 ];
 
 export const aboutMeParagraphs = [
-  "Product Designer who is not afraid to get technical, wether it's building a design system, implementing a component in React, or writing a custom WebGL shader.",
   "I have five years of experience designing for complex, technical products, and I enjoy working on the full spectrum of design work: research, interaction design, and design systems.",
   "Outside of work I enjoy drawing and creating art with anything I can get my hands on, from digital to traditional media :)",
 ];

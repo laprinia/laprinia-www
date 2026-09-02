@@ -52,3 +52,16 @@ export const RailNote = styled.p`
   line-height: 1.6;
   color: var(--section-muted);
 `;
+
+export const Mark = styled.span`
+  display: inline;
+  background-image: linear-gradient(var(--support-color), var(--support-color));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.42em;
+  box-decoration-break: clone;
+
+  /* stylelint-disable property-no-vendor-prefix -- Safari needs the prefix */
+  -webkit-box-decoration-break: clone;
+  /* stylelint-enable property-no-vendor-prefix */
+`;

@@ -3,6 +3,7 @@ import Tag from "../../v2/Tag/Tag";
 import ProjectRow from "../ProjectRow/ProjectRow";
 import { projects, type Project } from "../../../../scripts/const/projects";
 import {
+  v4WorkHrefBase,
   v4LabFilterAll,
   v4LabFilters,
   v4LabHint,
@@ -68,6 +69,7 @@ const LabRail = () => {
             <List>
               {experiments.map((project, index) => (
                 <ProjectRow
+                  hrefBase={v4WorkHrefBase}
                   key={project.name}
                   variant="compact"
                   name={project.name}

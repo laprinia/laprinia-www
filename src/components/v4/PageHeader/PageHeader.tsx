@@ -4,7 +4,7 @@ import { Header, RibbonSlot, Title, Intro } from "./PageHeader.styles";
 export type PageHeaderProps = {
   ribbon: { highlight: string; muted: string; status: string };
   title: string;
-  intro: string;
+  intro?: string;
 };
 
 const PageHeader = ({ ribbon, title, intro }: PageHeaderProps) => (
@@ -17,7 +17,7 @@ const PageHeader = ({ ribbon, title, intro }: PageHeaderProps) => (
       />
     </RibbonSlot>
     <Title>{title}</Title>
-    <Intro>{intro}</Intro>
+    {intro ? <Intro>{intro}</Intro> : null}
   </Header>
 );
 

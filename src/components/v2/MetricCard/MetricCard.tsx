@@ -6,7 +6,13 @@ import { Card, Label, Value } from "./MetricCard.styles";
 const useIsomorphicLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
 
-const MetricCard = ({ value, prefix, suffix, label }: Metric) => {
+const MetricCard = ({
+  value,
+  prefix,
+  suffix,
+  label,
+  highlight,
+}: Metric & { highlight?: boolean }) => {
   const numberRef = useRef<HTMLSpanElement>(null);
   const cardRef = useRef<HTMLLIElement>(null);
   const inView = useInView(cardRef, { once: true, margin: "-10% 0px" });
@@ -41,7 +47,7 @@ const MetricCard = ({ value, prefix, suffix, label }: Metric) => {
   }, [animated, inView, target, decimals]);
 
   return (
-    <Card ref={cardRef}>
+    <Card ref={cardRef} $highlight={highlight}>
       <Value>
         {prefix}
         <span ref={numberRef}>{value}</span>

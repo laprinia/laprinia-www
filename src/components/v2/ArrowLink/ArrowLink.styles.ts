@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export type ArrowLinkSize = "sm" | "md";
+export type ArrowLinkDirection = "forward" | "back" | "up" | "external";
 
 const sizes = {
   sm: css`
@@ -11,9 +12,17 @@ const sizes = {
   `,
 } satisfies Record<ArrowLinkSize, ReturnType<typeof css>>;
 
+const motions = {
+  forward: "translateX(0.25rem)",
+  back: "translateX(-0.25rem)",
+  up: "translateY(-0.25rem)",
+  external: "translate(0.15rem, -0.15rem)",
+} satisfies Record<ArrowLinkDirection, string>;
+
 export const StyledArrowLink = styled.a<{
-  $external: boolean;
+  $direction: ArrowLinkDirection;
   $size: ArrowLinkSize;
+  $mono: boolean;
 }>`
   display: inline-flex;
   align-items: center;
@@ -26,6 +35,14 @@ export const StyledArrowLink = styled.a<{
 
   ${({ $size }) => sizes[$size]}
 
+  ${({ $mono }) =>
+    $mono &&
+    css`
+      font-family: var(--font-mono);
+      font-size: var(--font-size-ui-xs);
+      text-transform: none;
+    `}
+
   &:hover {
     text-decoration: underline;
   }
@@ -37,8 +54,7 @@ export const StyledArrowLink = styled.a<{
 
   &:hover svg,
   &:focus-visible svg {
-    transform: ${({ $external }) =>
-      $external ? "translate(0.15rem, -0.15rem)" : "translateX(0.25rem)"};
+    transform: ${({ $direction }) => motions[$direction]};
   }
 
   &:focus-visible {
