@@ -1,11 +1,9 @@
 import { useState } from "react";
-import ArrowLink from "../../v2/ArrowLink/ArrowLink";
 import ProjectRow from "../ProjectRow/ProjectRow";
 import { projects, type Project } from "../../../../scripts/const/projects";
-import { featuredProjectNames, workHref } from "../../../consts.v2";
 import {
+  v4SelectedWorkNames,
   v4ShotTilts,
-  v4WorkCta,
   v4WorkHint,
   v4WorkLabel,
 } from "../../../consts.v4";
@@ -16,24 +14,24 @@ import {
   RailHeading,
   RailNote,
 } from "../shared.styles";
-import { List, More, WorkSection } from "./WorkRail.styles";
+import { SelectedSection, List } from "./SelectedWork.styles";
 
-const WorkRail = () => {
+const SelectedWork = () => {
   const [active, setActive] = useState<number | null>(null);
 
   const all = Object.values(projects).flat() as Project[];
-  const featured = featuredProjectNames
+  const selected = v4SelectedWorkNames
     .map((name) => all.find((project) => project.name === name))
     .filter((project): project is Project => Boolean(project));
 
-  const total = String(featured.length).padStart(2, "0");
+  const total = String(selected.length).padStart(2, "0");
   const counter =
     active === null
       ? `${total} projects`
       : `${String(active + 1).padStart(2, "0")} / ${total}`;
 
   return (
-    <WorkSection id="work">
+    <SelectedSection id="selected-work">
       <Container>
         <Rail>
           <RailLabel>
@@ -46,14 +44,14 @@ const WorkRail = () => {
           </RailLabel>
 
           <List>
-            {featured.map((project, index) => (
+            {selected.map((project, index) => (
               <ProjectRow
                 key={project.name}
                 name={project.name}
                 description={project.description}
                 roles={project.roles}
                 headshot={project.headshot}
-                index={index + 1}
+                meta={`${String(index + 1).padStart(2, "0")} · ${project.year} · ${project.client.toLowerCase()}`}
                 tilt={v4ShotTilts[index % v4ShotTilts.length]}
                 active={active === index}
                 onActivate={() => setActive(index)}
@@ -62,15 +60,11 @@ const WorkRail = () => {
                 }
               />
             ))}
-
-            <More>
-              <ArrowLink href={workHref}>{v4WorkCta}</ArrowLink>
-            </More>
           </List>
         </Rail>
       </Container>
-    </WorkSection>
+    </SelectedSection>
   );
 };
 
-export default WorkRail;
+export default SelectedWork;

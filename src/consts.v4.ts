@@ -4,9 +4,9 @@ export const v4HomeDescription =
   "Preview of the desk v3 homepage direction: masthead, sticky rail sections and a cursor-tracked bloom.";
 
 export const v4NavItems = [
-  { label: "work", href: "#work" },
-  { label: "about", href: "#about" },
-  { label: "contact", href: "#contact" },
+  { label: "work", href: "/v4/work" },
+  { label: "about", href: "/about" },
+  { label: "contact", href: "/contact" },
 ];
 
 export const v4Wordmark = "lavinia dumitrenco";
@@ -51,3 +51,58 @@ export const v4AboutMeta = [
 export const v4FooterWordmark = "laprinia";
 export const v4FooterNote = "bucharest, romania";
 export const v4FooterSignoff = ";)";
+
+export const v4ShotTilts = [
+  "-1.2deg",
+  "1deg",
+  "-0.8deg",
+  "1.4deg",
+  "-1deg",
+  "1.2deg",
+];
+
+export const v4WorkPageTitle = "work v4 - Lavinia Dumitrenco";
+
+export const v4WorkPageDescription =
+  "Preview of the v4 work page: client projects and lab experiments.";
+
+export const v4WorkHeader = {
+  ribbon: {
+    highlight: "five client projects",
+    muted: "eight experiments",
+    status: "2021 → 2026",
+  },
+  title: "work",
+  intro:
+    "Enterprise platforms, design systems and wizards on the client side; graphics, shaders and generative work in the lab.",
+};
+
+export const v4SelectedWorkNames = [
+  "eumar revamp",
+  "kbc bike leasing",
+  "dytto rebrand",
+  "engie chatgpt widget",
+  "noc monitoring",
+];
+
+export const v4LabNames = [
+  "ai playbooks",
+  "tectonic",
+  "media pipe",
+  "text wave",
+  "lissajous curves",
+  "web 3d terrain generator",
+  "ray tracer",
+  "volumetric light",
+];
+
+export const v4LabLabel = "lab";
+export const v4LabHint = "graphics, shaders, generative";
+export const v4LabFilterAll = "all";
+export const v4LabFilters = [
+  "all",
+  "touchdesigner",
+  "react",
+  "opengl",
+  "webflow",
+];

@@ -2,19 +2,23 @@ import Head from "next/head";
 import type { GetStaticProps } from "next";
 import NavBar from "../../components/organisms/NavBar/NavBar";
 import Bloom from "../../components/v4/Bloom/Bloom";
-import HomeHeroV4 from "../../components/v4/HomeHero/HomeHero";
-import WorkRail from "../../components/v4/WorkRail/WorkRail";
-import WhatIDoV4 from "../../components/v4/WhatIDo/WhatIDo";
-import AboutV4 from "../../components/v4/About/About";
+import PageHeader from "../../components/v4/PageHeader/PageHeader";
+import SelectedWork from "../../components/v4/SelectedWork/SelectedWork";
+import LabRail from "../../components/v4/LabRail/LabRail";
 import Footer from "../../components/v2/Footer/Footer";
-import { v4HomeDescription, v4HomeTitle, v4NavItems } from "../../consts.v4";
+import {
+  v4NavItems,
+  v4WorkHeader,
+  v4WorkPageDescription,
+  v4WorkPageTitle,
+} from "../../consts.v4";
 import { Stage, FooterSlot } from "../../components/v4/stage.styles";
 
-const HomeV4 = () => (
+const WorkV4 = () => (
   <>
     <Head>
-      <title>{v4HomeTitle}</title>
-      <meta name="description" content={v4HomeDescription} />
+      <title>{v4WorkPageTitle}</title>
+      <meta name="description" content={v4WorkPageDescription} />
       <meta name="robots" content="noindex, nofollow" />
     </Head>
 
@@ -24,16 +28,19 @@ const HomeV4 = () => (
       variant="highlight"
       layout="grouped"
       homeHref="/v4/home"
-      currentHref="/v4/home"
+      currentHref="/v4/work"
     />
 
     <Stage>
       <Bloom />
       <main>
-        <HomeHeroV4 />
-        <WorkRail />
-        <WhatIDoV4 />
-        <AboutV4 />
+        <PageHeader
+          ribbon={v4WorkHeader.ribbon}
+          title={v4WorkHeader.title}
+          intro={v4WorkHeader.intro}
+        />
+        <SelectedWork />
+        <LabRail />
       </main>
       <FooterSlot>
         <Footer />
@@ -50,4 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: {} };
 };
 
-export default HomeV4;
+export default WorkV4;
