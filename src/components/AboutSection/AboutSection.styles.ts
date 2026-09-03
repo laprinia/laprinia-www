@@ -61,6 +61,6 @@ export const CtaSlot = styled.div`
 `;
 
 export const AboutSection = styled(Section)`
-  padding-block: clamp(var(--space-12), 6vw, var(--space-20))
-    clamp(var(--space-16), 8vw, var(--space-28));
+  padding-block: clamp(var(--space-8), 6vw, var(--space-20))
+    clamp(var(--space-12), 8vw, var(--space-28));
 `;

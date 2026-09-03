@@ -6,13 +6,17 @@ import {
   heroTagline,
   photoboothAlt,
   photoboothPath,
+  portraitAlt,
+  portraitPath,
 } from "../../consts.site";
 import {
   Header,
   Intro,
   Ribbon,
+  Position,
   RibbonRole,
   RibbonPlace,
+  Availability,
   RibbonStatus,
   Stack,
   Name,
@@ -23,13 +27,24 @@ import {
   RibbonRow,
 } from "./HomeHero.styles";
 
+const portraitImage = (
+  <Image
+    src={portraitPath}
+    alt={portraitAlt}
+    width={802}
+    height={1088}
+    sizes="(min-width: 1000px) 1vw, 40vw"
+    priority
+  />
+);
+
 const stripImage = (
   <Image
     src={photoboothPath}
     alt={photoboothAlt}
     width={802}
     height={2177}
-    sizes="(min-width: 1000px) 30vw, 40vw"
+    sizes="(min-width: 1000px) 30vw, 1vw"
     priority
   />
 );
@@ -38,14 +53,18 @@ const HomeHeroV4 = () => (
   <Header id="top">
     <Intro>
       <Ribbon>
-        <RibbonRole>{heroRibbon.role}</RibbonRole>
-        <RibbonPlace>{heroRibbon.location}</RibbonPlace>
-        <RibbonStatus>{heroRibbon.status}</RibbonStatus>
+        <Position>
+          <RibbonRole>{heroRibbon.role}</RibbonRole>
+          <RibbonPlace>{heroRibbon.location}</RibbonPlace>
+        </Position>
+
+        <Availability>
+          <RibbonStatus>{heroRibbon.status}</RibbonStatus>
+          <InlineStrip>{portraitImage}</InlineStrip>
+        </Availability>
       </Ribbon>
 
       <Stack>
-        <InlineStrip>{stripImage}</InlineStrip>
-
         <Name>
           {heroName[0]}
           <br />

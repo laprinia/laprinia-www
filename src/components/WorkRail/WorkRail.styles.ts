@@ -16,5 +16,5 @@ export const More = styled.li`
 `;
 
 export const WorkSection = styled(Section)`
-  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+  padding-block: clamp(var(--space-8), 6vw, var(--space-20));
 `;

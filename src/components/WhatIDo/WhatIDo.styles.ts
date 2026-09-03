@@ -14,8 +14,10 @@ export const Entry = styled.div`
   gap: var(--space-4);
   transition: padding-left 0.3s var(--ease-out);
 
-  &:hover {
-    padding-left: var(--space-3);
+  @media (hover: hover) {
+    &:hover {
+      padding-left: var(--space-3);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -53,5 +55,5 @@ export const Detail = styled.dd`
 `;
 
 export const WhatIDoSection = styled(Section)`
-  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+  padding-block: clamp(var(--space-8), 6vw, var(--space-20));
 `;

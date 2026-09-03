@@ -126,19 +126,21 @@ export const Shot = styled.div`
     transparent 6px 14px
   );
   box-shadow: var(--lift-2);
-  opacity: 0.5;
-  transform: scale(1);
-  transition:
-    opacity 0.3s ease,
-    transform 0.45s var(--ease-out);
 
   img {
     object-fit: cover;
   }
 
-  ${Row}[data-active="true"] & {
-    opacity: 1;
-    transform: scale(1.04);
+  @media (hover: hover) {
+    opacity: 0.5;
+    transition:
+      opacity 0.3s ease,
+      transform 0.45s var(--ease-out);
+
+    ${Row}[data-active="true"] & {
+      opacity: 1;
+      transform: scale(1.04);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

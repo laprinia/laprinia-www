@@ -16,7 +16,7 @@ export const Section = styled.section`
 export const Rail = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(var(--space-6), 4vw, var(--space-12));
+  gap: clamp(var(--space-4), 4vw, var(--space-12));
   align-items: start;
 
   ${media.lg} {
@@ -27,7 +27,7 @@ export const Rail = styled.div`
 export const RailLabel = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: var(--space-2);
 
   ${media.lg} {
     position: sticky;

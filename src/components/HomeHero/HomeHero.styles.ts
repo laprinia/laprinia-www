@@ -17,40 +17,74 @@ export const Header = styled.header`
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 1fr auto;
-  gap: clamp(var(--space-4), 3vh, var(--space-8))
-    clamp(var(--space-4), 3vw, var(--space-12));
+  gap: var(--space-8) clamp(var(--space-4), 3vw, var(--space-12));
   align-items: stretch;
   width: 100%;
   max-width: 1440px;
-  height: 100svh;
   margin: 0 auto;
-  padding: var(--nav-height) clamp(var(--space-5), 4vw, var(--space-12))
-    clamp(var(--space-4), 2.5vh, var(--space-8));
+  padding: calc(var(--nav-height) + var(--space-4))
+    clamp(var(--space-5), 4vw, var(--space-12)) var(--space-10);
 
   ${media.lg} {
     grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+    gap: clamp(var(--space-4), 3vh, var(--space-8))
+      clamp(var(--space-4), 3vw, var(--space-12));
+    height: 100svh;
     min-height: 520px;
+    padding-block: var(--nav-height)
+      clamp(var(--space-4), 2.5vh, var(--space-8));
   }
 `;
 
 export const Intro = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: clamp(var(--space-4), 2.5vh, var(--space-8));
+  gap: var(--space-8);
   min-width: 0;
+
+  ${media.lg} {
+    justify-content: center;
+    gap: clamp(var(--space-4), 2.5vh, var(--space-8));
+  }
 `;
 
-export const Ribbon = styled.p`
+export const Ribbon = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
-  margin: 0;
+  flex-direction: column;
+  gap: var(--space-8);
   font-family: var(--font-mono);
   font-size: 0.875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--foreground-color);
+
+  ${media.lg} {
+    flex-flow: row wrap;
+    gap: var(--space-2) var(--space-4);
+  }
+`;
+
+export const Position = styled.p`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+
+  ${media.lg} {
+    display: contents;
+  }
+`;
+
+export const Availability = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  ${media.lg} {
+    display: contents;
+  }
 `;
 
 export const RibbonRole = styled.span`
@@ -82,8 +116,12 @@ export const RibbonStatus = styled.span`
 export const Stack = styled.div`
   display: flex;
   flex-direction: column;
-  gap: clamp(var(--space-4), 3vh, var(--space-10));
+  gap: var(--space-4);
   min-width: 0;
+
+  ${media.lg} {
+    gap: clamp(var(--space-4), 3vh, var(--space-10));
+  }
 `;
 
 export const Name = styled.h1`
@@ -149,9 +187,8 @@ export const InlineStrip = styled.figure`
 
   img {
     display: block;
-    width: auto;
-    height: 22svh;
-    padding: 0.4rem;
+    width: clamp(7rem, 32vw, 10rem);
+    height: auto;
     filter: drop-shadow(0 14px 28px rgb(var(--lift-tint) / 16%));
   }
 
@@ -189,5 +226,12 @@ export const RibbonRow = styled.div`
   grid-column: 1 / -1;
   align-items: center;
   min-width: 0;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--neutral-300);
   overflow: hidden;
+
+  ${media.lg} {
+    padding-top: 0;
+    border-top: 0;
+  }
 `;
