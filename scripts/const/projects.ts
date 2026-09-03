@@ -88,6 +88,31 @@ export const projects: ProjectCategories = {
       ],
       "textContents": [
         {
+          "header": "Results",
+          "html": "<p>The platform is live, with onboarding continuing across Europe as more\nnational registries join.</p>",
+          "metrics": [
+            {
+              "value": 6,
+              "prefix": "",
+              "suffix": "",
+              "label": "countries with researchers and clinicians already onboarded"
+            },
+            {
+              "value": "all",
+              "prefix": "",
+              "suffix": "",
+              "label": "European languages supported"
+            },
+            {
+              "value": 50,
+              "prefix": "",
+              "suffix": "%",
+              "label": "faster patient data entry"
+            }
+          ],
+          "media": []
+        },
+        {
           "header": "About",
           "html": "<p>EuMAR is a pan-European platform led by ESHRE and financed by the EU, designed to support fertility clinics by providing a shared record of medically assisted reproduction (MAR) treatments and outcomes. The product connects multiple actors: system admins, national registries, and clinic staff, into one unified system, enforcing strict access control and governance.</p>",
           "metrics": [],
@@ -185,31 +210,6 @@ export const projects: ProjectCategories = {
               "src": "/projects/eumar-redesign/content/11.avif"
             }
           ]
-        },
-        {
-          "header": "Results",
-          "html": "<p>The platform is live, with onboarding continuing across Europe as more\nnational registries join.</p>",
-          "metrics": [
-            {
-              "value": 6,
-              "prefix": "",
-              "suffix": "",
-              "label": "countries with researchers and clinicians already onboarded"
-            },
-            {
-              "value": "all",
-              "prefix": "",
-              "suffix": "",
-              "label": "European languages supported"
-            },
-            {
-              "value": 50,
-              "prefix": "",
-              "suffix": "%",
-              "label": "faster patient data entry"
-            }
-          ],
-          "media": []
         }
       ]
     },
@@ -249,6 +249,31 @@ export const projects: ProjectCategories = {
         }
       ],
       "textContents": [
+        {
+          "header": "Impact",
+          "html": "<p>Delivered as a <strong>full working prototype with micro-interactions</strong>, covering\nlogin, the chat flow and email detail views rather than static screens.</p>\n<p>Following the rebrand, Dytto secured pre-seed funding and is now an actively\ngrowing product. The design system continues to serve as the foundation for\nboth the desktop app and the website.</p>",
+          "metrics": [
+            {
+              "value": 1.5,
+              "prefix": "€",
+              "suffix": "",
+              "label": "million raised in pre-seed funding for product development"
+            },
+            {
+              "value": 5,
+              "prefix": "",
+              "suffix": "",
+              "label": "days from brief to delivery"
+            },
+            {
+              "value": 2,
+              "prefix": "",
+              "suffix": "",
+              "label": "surfaces running the brand system, desktop app and web"
+            }
+          ],
+          "media": []
+        },
         {
           "header": "About",
           "html": "<p>A full rebrand and design system build for Dytto, an AI-powered accounting assistant that intercepts incoming mail, extracts financial data, and handles bookkeeping tasks for you. The project spanned user research, brand exploration, a component-level design system, and an interactive prototype for the desktop app.</p>",
@@ -318,31 +343,6 @@ export const projects: ProjectCategories = {
               "src": "/projects/dytto-rebrand/content/8.avif"
             }
           ]
-        },
-        {
-          "header": "Outcome",
-          "html": "<p>Delivered as a <strong>full working prototype with micro-interactions</strong>, covering\nlogin, the chat flow and email detail views rather than static screens.</p>\n<p>Following the rebrand, Dytto secured pre-seed funding and is now an actively\ngrowing product. The design system continues to serve as the foundation for\nboth the desktop app and the website.</p>",
-          "metrics": [
-            {
-              "value": 1.5,
-              "prefix": "€",
-              "suffix": "",
-              "label": "million raised in pre-seed funding for product development"
-            },
-            {
-              "value": 5,
-              "prefix": "",
-              "suffix": "",
-              "label": "days from brief to delivery"
-            },
-            {
-              "value": 2,
-              "prefix": "",
-              "suffix": "",
-              "label": "surfaces running the brand system, desktop app and web"
-            }
-          ],
-          "media": []
         }
       ]
     },
@@ -377,6 +377,25 @@ export const projects: ProjectCategories = {
       },
       "links": [],
       "textContents": [
+        {
+          "header": "Outcome",
+          "html": "<p>Delivered as <strong>a fully interactive prototype in Figma Make</strong>. The value was in\nshowing an end-to-end product process, product thinking, user personas, user flows, design\nsystem and high-fidelity prototyping, rather than a purely visual UI pass.</p>",
+          "metrics": [
+            {
+              "value": 3,
+              "prefix": "",
+              "suffix": "",
+              "label": "core operator workflows mapped"
+            },
+            {
+              "value": 2,
+              "prefix": "",
+              "suffix": "",
+              "label": "days from brief to interactive prototype"
+            }
+          ],
+          "media": []
+        },
         {
           "header": "About",
           "html": "<p>A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments.</p>",
@@ -446,25 +465,6 @@ export const projects: ProjectCategories = {
               "src": "/projects/noc-monitoring/content/6.avif"
             }
           ]
-        },
-        {
-          "header": "Outcome",
-          "html": "<p>Delivered as <strong>a fully interactive prototype in Figma Make</strong>. The value was in\nshowing an end-to-end product process, product thinking, user personas, user flows, design\nsystem and high-fidelity prototyping, rather than a purely visual UI pass.</p>",
-          "metrics": [
-            {
-              "value": 3,
-              "prefix": "",
-              "suffix": "",
-              "label": "core operator workflows mapped"
-            },
-            {
-              "value": 2,
-              "prefix": "",
-              "suffix": "",
-              "label": "days from brief to interactive prototype"
-            }
-          ],
-          "media": []
         }
       ]
     },
@@ -797,52 +797,6 @@ export const projects: ProjectCategories = {
       ],
       "textContents": [
         {
-          "header": "About",
-          "html": "<p>A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, <strong>replacing a process that previously required calling a KBC employee</strong>.</p>",
-          "metrics": [],
-          "media": []
-        },
-        {
-          "header": "Problem",
-          "html": "<p>Calculating bike leasing costs in Belgium depends on salary taxation rules, marital status, and commute details. Before this tool, customers had to call a KBC employee who would run the numbers in a spreadsheet. There was no self-service option.</p>",
-          "metrics": [],
-          "media": []
-        },
-        {
-          "header": "Design System",
-          "html": "<p>The Figma wireframes I inherited were static and didn&#39;t use components, so\nthe first job was turning them into a system that could carry every state the\nflow actually needs.</p>\n<ul>\n<li><strong>Components built as full variant sets</strong> - inputs, buttons, radio groups,\nprogress bars and form states were specified across default, hover, active,\ndisabled, error and filled variants, rather than drawn once in their\nhappy-path state and improvised later.</li>\n<li><strong>Focus states as a first-class variant</strong> - every interactive component\ncarries a visible focus style in the library itself. Specifying it\nalongside hover and active is what stops it from being treated as optional\nand dropped at build time, which is where keyboard accessibility usually\ngets lost.</li>\n<li><strong>Tokens underneath the variants</strong> - KBC brand colours, MuseoSans\ntypography, spacing and radius, so a change propagates through the set\ninstead of being re-specified per component.</li>\n<li><strong>Built twice, in Figma and in React</strong> - each component exists in both, so\nwhat KBC keeps is a working library rather than a picture of one.</li>\n</ul>",
-          "metrics": [],
-          "media": []
-        },
-        {
-          "header": "User Flow",
-          "html": "<p>A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left.</p>",
-          "metrics": [],
-          "media": [
-            {
-              "type": "image",
-              "src": "/projects/kbc-bike-leasing/content/1.avif"
-            }
-          ]
-        },
-        {
-          "header": "Accessibility & Interaction",
-          "html": "<p>Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions and the progress bar make the flow feel responsive without distracting from the task.</p>",
-          "metrics": [],
-          "media": []
-        },
-        {
-          "header": "Challenge",
-          "html": "<p>The core complexity was modelling Belgian salary taxation correctly. A quote\nis only useful if it matches what a KBC employee would have calculated by\nhand.</p>\n<ul>\n<li><strong>Gross-to-net shifts with marital status</strong> - the same gross salary\nproduces a different net figure depending on the household situation\ndeclared.</li>\n<li><strong>Tax brackets change the slope</strong> - the saving from leasing does not scale\nlinearly with salary, so the result cannot be approximated.</li>\n<li><strong>Employer contributions feed the outcome</strong> - the monthly cost depends on\nwhat the employer carries, not only on what the employee earns.</li>\n</ul>\n<p>Getting this wrong would have been worse than shipping nothing: the simulator\nreplaces an expert calculation, so a plausible-looking wrong number carries\nmore risk than a phone call did.</p>",
-          "metrics": [],
-          "media": [
-            {
-              "type": "image",
-              "src": "/projects/kbc-bike-leasing/content/2.avif"
-            }
-          ]
-        },
-        {
           "header": "Impact",
           "html": "<p>Customers now estimate their bike leasing cost independently, and the React\ncomponent library built alongside the product serves as a reusable foundation\nfor future KBC web projects.</p>",
           "metrics": [
@@ -865,6 +819,74 @@ export const projects: ProjectCategories = {
               "label": "keyboard and screen reader accessibility"
             }
           ],
+          "media": []
+        },
+        {
+          "header": "About",
+          "html": "<p>A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, <strong>replacing a process that previously required calling a KBC employee</strong>.</p>",
+          "metrics": [],
+          "media": []
+        },
+        {
+          "header": "Problem",
+          "html": "<p>Calculating bike leasing costs in Belgium depends on salary taxation rules, marital status, and commute details. Before this tool, customers had to call a KBC employee who would run the numbers in a spreadsheet. There was no self-service option.</p>",
+          "metrics": [],
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/5.avif"
+            }
+          ]
+        },
+        {
+          "header": "Design System",
+          "html": "<p>The Figma wireframes I inherited were static and didn&#39;t use components, so\nthe first job was turning them into a system that could carry every state the\nflow actually needs.</p>\n<ul>\n<li><strong>Components built as full variant sets</strong> - inputs, buttons, radio groups,\nprogress bars and form states were specified across default, hover, active,\ndisabled, error and filled variants, rather than drawn once in their\nhappy-path state and improvised later.</li>\n<li><strong>Focus states as a first-class variant</strong> - every interactive component\ncarries a visible focus style in the library itself. Specifying it\nalongside hover and active is what stops it from being treated as optional\nand dropped at build time, which is where keyboard accessibility usually\ngets lost.</li>\n<li><strong>Tokens underneath the variants</strong> - KBC brand colours, MuseoSans\ntypography, spacing and radius, so a change propagates through the set\ninstead of being re-specified per component.</li>\n<li><strong>Built twice, in Figma and in React</strong> - each component exists in both, so\nwhat KBC keeps is a working library rather than a picture of one.</li>\n</ul>",
+          "metrics": [],
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/7.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/8.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/9.avif"
+            }
+          ]
+        },
+        {
+          "header": "User Flow",
+          "html": "<p>A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left.</p>",
+          "metrics": [],
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/4.avif"
+            },
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/6.avif"
+            }
+          ]
+        },
+        {
+          "header": "Accessibility & Interaction",
+          "html": "<p>Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions and the progress bar make the flow feel responsive without distracting from the task.</p>",
+          "metrics": [],
+          "media": [
+            {
+              "type": "image",
+              "src": "/projects/kbc-bike-leasing/content/1.avif"
+            }
+          ]
+        },
+        {
+          "header": "Challenge",
+          "html": "<p>The core complexity was modelling Belgian salary taxation correctly. A quote\nis only useful if it matches what a KBC employee would have calculated by\nhand.</p>\n<ul>\n<li><strong>Gross-to-net shifts with marital status</strong> - the same gross salary\nproduces a different net figure depending on the household situation\ndeclared.</li>\n<li><strong>Tax brackets change the slope</strong> - the saving from leasing does not scale\nlinearly with salary, so the result cannot be approximated.</li>\n<li><strong>Employer contributions feed the outcome</strong> - the monthly cost depends on\nwhat the employer carries, not only on what the employee earns.</li>\n</ul>\n<p>Getting this wrong would have been worse than shipping nothing: the simulator\nreplaces an expert calculation, so a plausible-looking wrong number carries\nmore risk than a phone call did.</p>",
+          "metrics": [],
           "media": []
         }
       ]
@@ -974,6 +996,12 @@ export const projects: ProjectCategories = {
       "links": [],
       "textContents": [
         {
+          "header": "Impact",
+          "html": "<p>The work began as my own initiative rather than an assigned brief, and that\nis what it turned into:</p>\n<ul>\n<li><strong>Invited onto the Engie engagement</strong> - I jumpstarted the exploration\nmyself, and that initiative is what brought me onto the work.</li>\n<li><strong>Invited to present to Engie&#39;s board</strong> - after the internal demo the\nproject went in front of leadership, rather than staying a side experiment.</li>\n<li><strong>Talks on the process, inside and out</strong> - I gave in-depth sessions on how\nthe work was approached, both at Engie and internally at my own company.</li>\n<li><strong>First to explore the ChatGPT Apps SDK</strong> - the first in the company to\nbuild on it, which is what made the exploration possible before there was\na brief asking for it.</li>\n</ul>\n<p>The exploration is now being considered for a production implementation as a\nnew customer-facing channel.</p>",
+          "metrics": [],
+          "media": []
+        },
+        {
           "header": "About",
           "html": "<p>A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they&#39;ll pay more or less than expected, all through a conversational interface powered by a custom MCP server.</p>",
           "metrics": [],
@@ -1016,12 +1044,6 @@ export const projects: ProjectCategories = {
               "src": "/projects/engie-chatgpt-widget/content/1.avif"
             }
           ]
-        },
-        {
-          "header": "Impact",
-          "html": "<p>The work began as my own initiative rather than an assigned brief, and that\nis what it turned into:</p>\n<ul>\n<li><strong>Invited onto the Engie engagement</strong> - I jumpstarted the exploration\nmyself, and that initiative is what brought me onto the work.</li>\n<li><strong>Invited to present to Engie&#39;s board</strong> - after the internal demo the\nproject went in front of leadership, rather than staying a side experiment.</li>\n<li><strong>Talks on the process, inside and out</strong> - I gave in-depth sessions on how\nthe work was approached, both at Engie and internally at my own company.</li>\n<li><strong>First to explore the ChatGPT Apps SDK</strong> - the first in the company to\nbuild on it, which is what made the exploration possible before there was\na brief asking for it.</li>\n</ul>\n<p>The exploration is now being considered for a production implementation as a\nnew customer-facing channel.</p>",
-          "metrics": [],
-          "media": []
         }
       ]
     },

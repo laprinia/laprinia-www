@@ -26,17 +26,38 @@ media:
   - 1.avif
   - 2.avif
   - 3.mp4
+  - 4.avif
+  - 5.avif
+  - 6.avif
+  - 7.avif
+  - 8.avif
+  - 9.avif
 walkthrough: 3.mp4
 links:
   - label: KBC Bike Leasing Simulator
     url: https://leasebikecalculator.kbc.be/
 
 articles:
+  - header: "Impact"
+    text: |
+      Customers now estimate their bike leasing cost independently, and the React
+      component library built alongside the product serves as a reusable foundation
+      for future KBC web projects.
+    metrics:
+      - value: 0
+        label: "calls to a KBC employee needed to get a quote"
+      - value: 30
+        suffix: "%"
+        label: "faster to complete than the manual process"
+      - value: "full"
+        label: "keyboard and screen reader accessibility"
   - header: "About"
     text: |
       A bike leasing price simulator for KBC Bank Belgium. Users walk through a multi-step wizard to estimate their monthly leasing cost based on bike type, marital and salary status, and commute distance, **replacing a process that previously required calling a KBC employee**.
   - header: "Problem"
     text: "Calculating bike leasing costs in Belgium depends on salary taxation rules, marital status, and commute details. Before this tool, customers had to call a KBC employee who would run the numbers in a spreadsheet. There was no self-service option."
+    media:
+      - 5.avif
   - header: "Design System"
     text: |
       The Figma wireframes I inherited were static and didn't use components, so
@@ -57,12 +78,19 @@ articles:
         instead of being re-specified per component.
       - **Built twice, in Figma and in React** - each component exists in both, so
         what KBC keeps is a working library rather than a picture of one.
+    media:
+      - 7.avif
+      - 8.avif
+      - 9.avif
   - header: "User Flow"
     text: "A four-step wizard guides the user through: selecting bike type and price, entering marital and salary status, adding commute details, and reviewing the calculated monthly cost. Each step validates input before progressing, and the progress bar gives a clear sense of where you are and how much is left."
     media:
-      - 1.avif
+      - 4.avif
+      - 6.avif
   - header: "Accessibility & Interaction"
     text: "Built on Radix UI primitives for keyboard navigation, focus management, and screen reader support out of the box. Microanimations on step transitions and the progress bar make the flow feel responsive without distracting from the task."
+    media:
+      - 1.avif
   - header: "Challenge"
     text: |
       The core complexity was modelling Belgian salary taxation correctly. A quote
@@ -80,18 +108,3 @@ articles:
       Getting this wrong would have been worse than shipping nothing: the simulator
       replaces an expert calculation, so a plausible-looking wrong number carries
       more risk than a phone call did.
-    media:
-      - 2.avif
-  - header: "Impact"
-    text: |
-      Customers now estimate their bike leasing cost independently, and the React
-      component library built alongside the product serves as a reusable foundation
-      for future KBC web projects.
-    metrics:
-      - value: 0
-        label: "calls to a KBC employee needed to get a quote"
-      - value: 30
-        suffix: "%"
-        label: "faster to complete than the manual process"
-      - value: "full"
-        label: "keyboard and screen reader accessibility"

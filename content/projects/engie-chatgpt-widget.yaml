@@ -27,6 +27,24 @@ media:
 walkthrough: 2.mp4
 links: []
 articles:
+  - header: "Impact"
+    text: |
+      The work began as my own initiative rather than an assigned brief, and that
+      is what it turned into:
+
+      - **Invited onto the Engie engagement** - I jumpstarted the exploration
+        myself, and that initiative is what brought me onto the work.
+      - **Invited to present to Engie's board** - after the internal demo the
+        project went in front of leadership, rather than staying a side experiment.
+      - **Talks on the process, inside and out** - I gave in-depth sessions on how
+        the work was approached, both at Engie and internally at my own company.
+      - **First to explore the ChatGPT Apps SDK** - the first in the company to
+        build on it, which is what made the exploration possible before there was
+        a brief asking for it.
+
+      The exploration is now being considered for a production implementation as a
+      new customer-facing channel.
+      
   - header: "About"
     text: "A ChatGPT-embedded experience for Engie that gives customers clear, interactive visualizations of their energy consumption and contract, suggests realistic advance payments, and flags whether they'll pay more or less than expected, all through a conversational interface powered by a custom MCP server."
 
@@ -74,20 +92,3 @@ articles:
     media:
       - 1.avif
 
-  - header: "Impact"
-    text: |
-      The work began as my own initiative rather than an assigned brief, and that
-      is what it turned into:
-
-      - **Invited onto the Engie engagement** - I jumpstarted the exploration
-        myself, and that initiative is what brought me onto the work.
-      - **Invited to present to Engie's board** - after the internal demo the
-        project went in front of leadership, rather than staying a side experiment.
-      - **Talks on the process, inside and out** - I gave in-depth sessions on how
-        the work was approached, both at Engie and internally at my own company.
-      - **First to explore the ChatGPT Apps SDK** - the first in the company to
-        build on it, which is what made the exploration possible before there was
-        a brief asking for it.
-
-      The exploration is now being considered for a production implementation as a
-      new customer-facing channel.

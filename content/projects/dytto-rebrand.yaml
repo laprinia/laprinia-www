@@ -35,6 +35,22 @@ links:
     url: https://www.dytto.ai/
 
 articles:
+  - header: "Impact"
+    text: |
+      Delivered as a **full working prototype with micro-interactions**, covering
+      login, the chat flow and email detail views rather than static screens.
+
+      Following the rebrand, Dytto secured pre-seed funding and is now an actively
+      growing product. The design system continues to serve as the foundation for
+      both the desktop app and the website.
+    metrics:
+      - value: 1.5
+        prefix: "€"
+        label: "million raised in pre-seed funding for product development"
+      - value: 5
+        label: "days from brief to delivery"
+      - value: 2
+        label: "surfaces running the brand system, desktop app and web"
   - header: "About"
     text: "A full rebrand and design system build for Dytto, an AI-powered accounting assistant that intercepts incoming mail, extracts financial data, and handles bookkeeping tasks for you. The project spanned user research, brand exploration, a component-level design system, and an interactive prototype for the desktop app."
   - header: "Brand Exploration"
@@ -70,19 +86,3 @@ articles:
     text: "The focus was on making every transition feel intentional. Chat responses build smoothly, email cards surface the right details at the right moment, and the pigeon's state changes give users a clear signal of what the AI is doing without relying on loading spinners or text."
     media:
       - 8.avif  
-  - header: "Outcome"
-    text: |
-      Delivered as a **full working prototype with micro-interactions**, covering
-      login, the chat flow and email detail views rather than static screens.
-
-      Following the rebrand, Dytto secured pre-seed funding and is now an actively
-      growing product. The design system continues to serve as the foundation for
-      both the desktop app and the website.
-    metrics:
-      - value: 1.5
-        prefix: "€"
-        label: "million raised in pre-seed funding for product development"
-      - value: 5
-        label: "days from brief to delivery"
-      - value: 2
-        label: "surfaces running the brand system, desktop app and web"

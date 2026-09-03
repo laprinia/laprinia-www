@@ -41,6 +41,19 @@ links:
 
 
 articles:
+  - header: "Results"
+    text: |
+      The platform is live, with onboarding continuing across Europe as more
+      national registries join.
+    metrics:
+      - value: 6
+        label: "countries with researchers and clinicians already onboarded"
+      - value: "all"
+        label: "European languages supported"
+      - value: 50
+        suffix: "%"
+        label: "faster patient data entry"
+        
   - header: "About"
     text: "EuMAR is a pan-European platform led by ESHRE and financed by the EU, designed to support fertility clinics by providing a shared record of medically assisted reproduction (MAR) treatments and outcomes. The product connects multiple actors: system admins, national registries, and clinic staff, into one unified system, enforcing strict access control and governance."
 
@@ -156,15 +169,4 @@ articles:
       - 9.avif
       - 10.avif
       - 11.avif
-  - header: "Results"
-    text: |
-      The platform is live, with onboarding continuing across Europe as more
-      national registries join.
-    metrics:
-      - value: 6
-        label: "countries with researchers and clinicians already onboarded"
-      - value: "all"
-        label: "European languages supported"
-      - value: 50
-        suffix: "%"
-        label: "faster patient data entry"
+

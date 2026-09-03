@@ -97,25 +97,15 @@ export const Content = styled.div`
 `;
 
 export const Article = styled.article`
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-4) clamp(var(--space-4), 2vw, var(--space-6));
-  align-items: start;
-
-  ${media.lg} {
-    grid-template-columns: var(--space-12) minmax(0, 1fr);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 `;
 
 export const ArticleIndex = styled.span`
-  padding-top: 0.45rem;
   font-family: var(--font-mono);
   font-size: var(--font-size-ui-xs);
   color: var(--section-muted);
-
-  ${media.lg} {
-    text-align: right;
-  }
 `;
 
 export const ArticleBody = styled.div`
@@ -146,7 +136,6 @@ export const ArticleText = styled.div`
   ul,
   ol {
     margin: 0;
-    max-width: 68ch;
   }
 
   ul,
@@ -184,10 +173,4 @@ export const ArticleMedia = styled.div`
 export const BackToTopRow = styled.div`
   padding-top: clamp(var(--space-4), 2vw, var(--space-6));
   border-top: 1px solid var(--neutral-300);
-
-  ${media.lg} {
-    margin-left: calc(
-      var(--space-12) + clamp(var(--space-4), 2vw, var(--space-6))
-    );
-  }
 `;

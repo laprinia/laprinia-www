@@ -37,6 +37,17 @@ walkthrough: 1.mp4
 
 links: []
 articles:
+  - header: "Outcome"
+    text: |
+      Delivered as **a fully interactive prototype in Figma Make**. The value was in
+      showing an end-to-end product process, product thinking, user personas, user flows, design
+      system and high-fidelity prototyping, rather than a purely visual UI pass.
+    metrics:
+      - value: 3
+        label: "core operator workflows mapped"
+      - value: 2
+        label: "days from brief to interactive prototype"
+
   - header: "About"
     text: "A redesign of an existing Network Operations Center (NOC) platform used to monitor live video transmission units. The objective was to improve how operators oversee multiple live streams, detect transmission issues, and respond quickly in high-pressure broadcast environments."
 
@@ -124,14 +135,3 @@ articles:
         inherit behaviour instead of re-specifying it.
     media:
       - 6.avif
-
-  - header: "Outcome"
-    text: |
-      Delivered as **a fully interactive prototype in Figma Make**. The value was in
-      showing an end-to-end product process, product thinking, user personas, user flows, design
-      system and high-fidelity prototyping, rather than a purely visual UI pass.
-    metrics:
-      - value: 3
-        label: "core operator workflows mapped"
-      - value: 2
-        label: "days from brief to interactive prototype"
